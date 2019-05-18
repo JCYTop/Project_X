@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 3c82abe2ea0cc694f9d8e5c7308daa73
+timeCreated: 1535004624
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Benmo Wuyu
+  fontNames:
+  - Benmo Wuyu
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: gameresource/font
+  assetBundleVariant: 
