@@ -1,0 +1,20 @@
+/** 
+----------------------------------
+ *Copyright(C) 2019 by #Company#
+ *All rights reserved.
+ *FileName:     #SCRIPTNAME#
+ *Author:       #AuthorName#
+ *Version:      #Version#
+ *AuthorEmail:  #AuthorEmail#
+ *UnityVersion：#UnityVersion#
+ *CreateTime:   #CreateTime#
+ *Description:  #Description# 
+ *History:
+ ----------------------------------
+*/
+{
+    "name": "#SCRIPTNAME#",
+    "optionalUnityReferences": [
+        "TestAssemblies"
+    ]
+}
