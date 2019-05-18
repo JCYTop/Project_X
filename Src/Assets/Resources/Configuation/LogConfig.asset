@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14bf1aeb9f7d46c4caf79c10ae00b445, type: 3}
+  m_Name: LogConfig
+  m_EditorClassIdentifier: 
+  All: 1
+  LogDatas:
+  - LogType: 0
+    Show: 1
+    LogColor: {r: 1, g: 1, b: 1, a: 1}
+  - LogType: 1
+    Show: 1
+    LogColor: {r: 0.6666667, g: 0, b: 0.73333335, a: 1}
+  - LogType: 2
+    Show: 0
+    LogColor: {r: 0, g: 1, b: 0, a: 1}
+  - LogType: 3
+    Show: 0
+    LogColor: {r: 0, g: 0, b: 1, a: 1}
+  - LogType: 4
+    Show: 0
+    LogColor: {r: 0.33333334, g: 0.9333334, b: 1, a: 1}
+  - LogType: 5
+    Show: 0
+    LogColor: {r: 1, g: 0.73333335, b: 0, a: 1}
+  - LogType: 6
+    Show: 1
+    LogColor: {r: 0.73333335, g: 0.73333335, b: 0.13333334, a: 1}
+  - LogType: 7
+    Show: 0
+    LogColor: {r: 1, g: 1, b: 1, a: 1}
+  - LogType: 8
+    Show: 1
+    LogColor: {r: 0, g: 0.86666673, b: 1, a: 1}

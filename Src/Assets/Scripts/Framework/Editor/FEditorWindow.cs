@@ -37,7 +37,7 @@ public static class FrameworkToolsMenu
         public const string OpenScence_Start = "Framework/OpenScence/Start";
         public const string FindMissScriptInResource = "Framework/FindMissScriptInResource";
         public const string ShowExcelTools = "Framework/ShowExcelTools";
-        public const string CreateScriptableObject = "Framework/AboutConfig/CreateScriptableObject";
+        public const string CreateScriptableObject = "Framework/创建配置文件";
         public const string RefreshUIConfig = "Framework/AboutConfig/RefreshUIConfig";
         public const string GetObjectPath = "Framework/快捷键/获取路径 %q";
     }
