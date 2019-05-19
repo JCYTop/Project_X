@@ -129,9 +129,9 @@ public static class FrameworkToolsMenu
         [MenuItem(ToolsList.RefreshUIConfig, false, (int) ToolsListPriorities.RefreshUIConfig)]
         public static void ResGOConfig()
         {
-            RefreshConfig.ResGOConfig();
+            //RefreshConfig.ResGOConfig();
         }
-        
+
         [MenuItem(ToolsList.GetObjectPath, false, (int) ToolsListPriorities.GetObjectPath)]
         public static void GetPath()
         {

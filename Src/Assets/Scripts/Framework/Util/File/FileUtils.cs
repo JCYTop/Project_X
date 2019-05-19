@@ -8,6 +8,7 @@
 // -  独立游戏开发
 //======================================================
 
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
@@ -52,7 +53,7 @@ public class FileUtils : MonoBehaviour
         }
         catch
         {
-            Debug.Log(" 没有找到文件 " + fullPath);
+            LogUtil.Log(String.Format(" 没有找到文件 {0}", fullPath), LogType.NormalLog);
         }
 
         return content;

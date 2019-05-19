@@ -20,7 +20,7 @@ using UnityEngine;
 public enum LogType
 {
     NormalLog = 0,
-    DataLog = 1,
+    AssetLog = 1,
     NetLog = 2,
     SdkLog = 3,
     TimerLog = 4,
@@ -28,4 +28,5 @@ public enum LogType
     EventLog = 6,
     GMCommandLog = 7,
     TaskLog = 8,
+    Editor = 9,
 }

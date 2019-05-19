@@ -42,9 +42,10 @@ public class Bezier
         position2.y = mousePositon.y * 1.3f;
         for (int i = 1; i <= segmentNum; i++)
         {
-            float t = i / (float)segmentNum;
+            float t = i / (float) segmentNum;
             point[i - 1] = CalculateBezierPoint(t, cardPosition, position1, position2, mousePositon);
         }
+
         return point;
     }
 
@@ -109,7 +110,7 @@ public class Bezier
         Vector3[] path = new Vector3[segmentNum];
         for (int i = 1; i <= segmentNum; i++)
         {
-            float t = i / (float)segmentNum;
+            float t = i / (float) segmentNum;
             Vector3 pixel = new Vector3();
             switch (points.Length)
             {
@@ -123,9 +124,11 @@ public class Bezier
                     pixel = CalculateBezierPoint(t, points[0], points[1], points[2], points[3]);
                     break;
             }
+
             path[i - 1] = pixel;
-            Debug.Log(path[i - 1]);
+            LogUtil.Log(path[i - 1].ToString(), LogType.NormalLog);
         }
+
         return path;
     }
 }

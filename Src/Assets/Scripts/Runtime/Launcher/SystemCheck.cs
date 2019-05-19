@@ -62,7 +62,7 @@ public class SystemCheck : ILanucherTask
             sb.Append(data + " || ");
         }
 
-        Debug.Log(sb);
+        LogUtil.Log(sb.ToString(), LogType.TaskLog);
         CalcTaskCount();
     }
 }

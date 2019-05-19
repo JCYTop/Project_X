@@ -8,8 +8,11 @@
 // -  独立游戏开发
 //======================================================
 
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
+using UnityEditor;
 using UnityEngine;
 
 public class ObjectIndex
@@ -76,8 +79,8 @@ public class RefreshConfig : MonoBehaviour
 {
 //    private GOConfig config;
 //
-    public static void ResGOConfig()
-    {
+//    public static void ResGOConfig()
+//    {
 //        ObjectIndex goindex = new ObjectIndex();
 //        GOConfig uiConfig = AssetDatabase.LoadAssetAtPath<GOConfig>("Assets/ABRes/Data/GOConfig.asset");
 //        Dictionary<long, GOData> uiDatas = new Dictionary<long, GOData>();
@@ -125,5 +128,5 @@ public class RefreshConfig : MonoBehaviour
 //
 //        EditorUtility.ClearProgressBar();
 //        Debug.Log(string.Format("共 {0} 个GO", uiDatas.Count));
-    }
+//    }
 }

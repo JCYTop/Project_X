@@ -15,7 +15,7 @@ using UnityEngine;
 /// <summary>
 /// GameObject池子基础类
 /// </summary>
-public abstract class GameObjectPoolBase : IPool
+public abstract class GameObjectPoolBase : MonoEventEmitter, IPool
 {
     protected Stack<IPoolable> gameObjectsPool = new Stack<IPoolable>();
 

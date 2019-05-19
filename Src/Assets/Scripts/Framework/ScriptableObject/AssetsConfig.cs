@@ -15,12 +15,14 @@ using UnityEngine;
 public class AssetsConfig : ScriptableObject
 {
     [Header("资源根目录")] public string GameResourceRootDir = "ABRes/";
+
     /// <summary>
-    /// 一般是一些常用的资源
+    /// 添加根目录或者文件夹
     /// </summary>
-    [Header("常驻系统资源")] public string[] LongAssetPath;
-    /// <summary>
-    /// 临时加载虽场景变化的
-    /// </summary>
-    [Header("短柱系统资源")] public string[] ShortAssetPath;
+    [Header("预加载系统资源")] public string[] preloadAssetPath;
+
+    [Header("UNITY_IPHONEl资源路径")] public string UNITY_IPHONE = Application.persistentDataPath + "/AssetBundle/";
+    [Header("UNITY_ANDROID资源路径")] public string UNITY_ANDROID = Application.persistentDataPath + "/AssetBundle/";
+    [Header("UNITY_STANDALONE_WIN资源路径")] public string UNITY_STANDALONE_WIN = Application.dataPath + "/StreamingAssets/AssetBundle/";
+    [Header("UNITY_EDITOR资源路径")] public string UNITY_EDITOR = Application.dataPath + "/StreamingAssets/AssetBundle/";
 }

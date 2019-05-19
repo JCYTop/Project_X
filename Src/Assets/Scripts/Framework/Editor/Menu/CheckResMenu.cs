@@ -63,13 +63,15 @@ public class CheckResMenu : EditorMenu<CheckResMenu>
                 mResources.Add(realFile);
             }
         }
+
         //查找所有miss文件
         foreach (string assetPath in mResources)
         {
             GameObject asset = AssetDatabase.LoadMainAssetAtPath(assetPath) as GameObject;
             FindInGO(asset);
         }
-        Debug.Log(string.Format("Searched {0} GameObjects, {1} components, found {2} missing", go_count, components_count, missing_count));
+
+        LogUtil.Log(string.Format("Searched {0} GameObjects, {1} components, found {2} missing", go_count, components_count, missing_count), LogType.Editor);
     }
 
     private string GetFileSuffix(string filePath)
@@ -97,13 +99,14 @@ public class CheckResMenu : EditorMenu<CheckResMenu>
                     s = t.parent.name + "/" + s;
                     t = t.parent;
                 }
-                Debug.Log(s + " has an empty script attached in position: " + i, g);
+
+                LogUtil.Log(string.Format("{0} has an empty script attached in position: {1} {2}", s, i, g), LogType.Editor);
             }
         }
+
         // Now recurse through each child GO (if there are any):
         foreach (Transform childT in g.transform)
         {
-            //Debug.Log("Searching " + childT.name  + " " );
             FindInGO(childT.gameObject);
         }
     }
@@ -119,6 +122,7 @@ public class CheckResMenu : EditorMenu<CheckResMenu>
             EditorUtility.DisplayDialog("Error", "you should select one items", "ok");
             return;
         }
+
         Object obj = objects[0];
         Material mat = obj as Material;
         if (mat == null)
@@ -126,8 +130,8 @@ public class CheckResMenu : EditorMenu<CheckResMenu>
             EditorUtility.DisplayDialog("Error", "you should select material", "ok");
             return;
         }
+
         string matPath = AssetDatabase.GetAssetPath(mat);
-        //Debug.Log(matPath);
         //获取所有资源路径       
         mResources.Clear();
         //Resource资源路径
@@ -146,18 +150,18 @@ public class CheckResMenu : EditorMenu<CheckResMenu>
                 mResources.Add(realFile);
             }
         }
+
         //查找所有引用该Material的文件
         foreach (string assetPath in mResources)
         {
             //获取包含的所有依赖
-            string[] depencies = AssetDatabase.GetDependencies(new string[] { assetPath });
+            string[] depencies = AssetDatabase.GetDependencies(new string[] {assetPath});
             foreach (string dep in depencies)
             {
                 //如果是材质
                 if (dep.EndsWith(".mat") && matPath == dep)
                 {
-
-                    Debug.Log(mat.name + "is referenced by" + assetPath);
+                    LogUtil.Log(string.Format("{0} is referenced by {1}", mat.name, assetPath));
                 }
             }
         }
@@ -186,6 +190,7 @@ public class CheckResMenu : EditorMenu<CheckResMenu>
                 mEffectResources.Add(realFile);
             }
         }
-        Debug.Log("Check finised!");
+
+        LogUtil.Log(string.Format("Check finised!"), LogType.NormalLog);
     }
 }
