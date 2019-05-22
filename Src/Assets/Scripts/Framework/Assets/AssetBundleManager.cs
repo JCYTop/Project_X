@@ -155,8 +155,7 @@ public class AssetBundleManager : MonoEventEmitter
     /// <exception cref="NotImplementedException"></exception>
     private void LoadAssetBundleInternal(string assetBundleName, bool isLoadingAssetBundleManifest = true)
     {
-        LoadedAssetBundle bundle = null;
-        loadedAssetBundles.TryGetValue(assetBundleName, out bundle);
+        loadedAssetBundles.TryGetValue(assetBundleName, out var bundle);
         if (bundle != null)
         {
             bundle.ReferencedCount++;
@@ -168,8 +167,8 @@ public class AssetBundleManager : MonoEventEmitter
             return;
         }
 
-        string url = AssetBundleLoader.Instance().GetBundleUrl(assetBundleName);
-        AssetBundleCreateRequest request = AssetBundle.LoadFromFileAsync(url);
+        var url = AssetBundleLoader.Instance().GetBundleUrl(assetBundleName);
+        var request = AssetBundle.LoadFromFileAsync(url);
         loadingRequest.Add(assetBundleName, request);
     }
 
@@ -180,20 +179,20 @@ public class AssetBundleManager : MonoEventEmitter
     /// <returns></returns>
     private string RemapVariantName(string assetBundleName)
     {
-        string[] bundlesWithVariant = assetBundleManifest.GetAllAssetBundlesWithVariant();
+        var bundlesWithVariant = assetBundleManifest.GetAllAssetBundlesWithVariant();
         //如果资产包没有变体，只需返回。
-        if (System.Array.IndexOf(bundlesWithVariant, assetBundleName) < 0)
+        if (Array.IndexOf(bundlesWithVariant, assetBundleName) < 0)
             return assetBundleName;
-        string[] split = assetBundleName.Split('.');
-        int bestFit = int.MaxValue;
-        int bestFitIndex = -1;
+        var split = assetBundleName.Split('.');
+        var bestFit = int.MaxValue;
+        var bestFitIndex = -1;
         //将所有AB循环以找到最适合的变体AB
         for (int i = 0; i < bundlesWithVariant.Length; i++)
         {
-            string[] curSplit = bundlesWithVariant[i].Split('.');
+            var curSplit = bundlesWithVariant[i].Split('.');
             if (curSplit[0] != split[0])
                 continue;
-            int found = System.Array.IndexOf(variants, curSplit[1]);
+            var found = Array.IndexOf(variants, curSplit[1]);
             if (found != -1 && found < bestFit)
             {
                 bestFit = found;
@@ -214,7 +213,7 @@ public class AssetBundleManager : MonoEventEmitter
     /// <param name="unload"></param>
     private void UnloadABInternal(string assetBundleName, bool unload = false)
     {
-        LoadedAssetBundle bundle = GetBundle(assetBundleName);
+        var bundle = GetBundle(assetBundleName);
         if (bundle != null && --bundle.ReferencedCount == 0)
         {
             bundle.AssetBundle.Unload(unload);
@@ -224,8 +223,7 @@ public class AssetBundleManager : MonoEventEmitter
 
     private LoadedAssetBundle GetBundle(string assetBundleName)
     {
-        LoadedAssetBundle bundle = null;
-        loadedAssetBundles.TryGetValue(assetBundleName, out bundle);
+        loadedAssetBundles.TryGetValue(assetBundleName, out var bundle);
         return bundle;
     }
 
@@ -236,8 +234,7 @@ public class AssetBundleManager : MonoEventEmitter
     /// <param name="unload"></param>
     private void UnloadDependencies(string assetBundleName, bool unload = false)
     {
-        string[] dependencies = null;
-        if (!dependenciesDic.TryGetValue(assetBundleName, out dependencies))
+        if (!dependenciesDic.TryGetValue(assetBundleName, out var dependencies))
             return;
         //循环查找所有依赖关系
         foreach (var dependency in dependencies)
@@ -258,10 +255,11 @@ public class AssetBundleManager : MonoEventEmitter
     /// <param name="bundleName"></param>
     /// <param name="assetName"></param>
     /// <param name="type"></param>
+    /// <param name="isSingle"></param>
     /// <returns></returns>
     public ABLoadAsset LoadAsset(string bundleName, string assetName, Type type, bool isSingle = true)
     {
-        ABLoadAsset operation = null;
+        ABLoadAsset operation;
 #if UNITY_EDITOR
         if (SimulateAssetBundleInEditor)
         {

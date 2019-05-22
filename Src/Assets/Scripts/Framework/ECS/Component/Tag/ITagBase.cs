@@ -21,7 +21,7 @@ using UnityEngine;
 /// <summary>
 /// 设计标签类
 /// </summary>
-public interface ITagBase : IComponentBase
+public interface ITagBase : IComponent
 {
     string name { set; get; }
 }

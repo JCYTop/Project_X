@@ -21,8 +21,8 @@ public class AssetsConfig : ScriptableObject
     /// </summary>
     [Header("预加载系统资源")] public string[] preloadAssetPath;
 
-    [Header("UNITY_IPHONEl资源路径")] public string UNITY_IPHONE = Application.persistentDataPath + "/AssetBundle/";
-    [Header("UNITY_ANDROID资源路径")] public string UNITY_ANDROID = Application.persistentDataPath + "/AssetBundle/";
-    [Header("UNITY_STANDALONE_WIN资源路径")] public string UNITY_STANDALONE_WIN = Application.dataPath + "/StreamingAssets/AssetBundle/";
-    [Header("UNITY_EDITOR资源路径")] public string UNITY_EDITOR = Application.dataPath + "/StreamingAssets/AssetBundle/";
+//    [Header("UNITY_IPHONEl资源路径")] public string UNITY_IPHONE = Application.persistentDataPath + "/AssetBundle/";
+//    [Header("UNITY_ANDROID资源路径")] public string UNITY_ANDROID = Application.persistentDataPath + "/AssetBundle/";
+//    [Header("UNITY_STANDALONE_WIN资源路径")] public string UNITY_STANDALONE_WIN = Application.dataPath + "/StreamingAssets/AssetBundle/";
+//    [Header("UNITY_EDITOR资源路径")] public string UNITY_EDITOR = Application.dataPath + "/StreamingAssets/AssetBundle/";
 }

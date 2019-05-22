@@ -17,6 +17,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// AB资源读取操作
+/// </summary>
 public abstract class ABLoadOperation : IEnumerator
 {
     public bool MoveNext()

@@ -13,5 +13,8 @@ MonoBehaviour:
   m_Name: AssetsConfig
   m_EditorClassIdentifier: 
   GameResourceRootDir: ABRes/
-  LongAssetPath: []
-  ShortAssetPath: []
+  preloadAssetPath: []
+  UNITY_IPHONE: 
+  UNITY_ANDROID: 
+  UNITY_STANDALONE_WIN: 
+  UNITY_EDITOR: 

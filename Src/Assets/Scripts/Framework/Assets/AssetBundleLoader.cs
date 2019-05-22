@@ -37,7 +37,7 @@ public class AssetBundleLoader : MonoBehaviour
 
     public string GetBundleUrl(string fileName)
     {
-        //暂时不适合
+        //TODO 暂时不适合
         //#if UNITY_EDITOR
         //        return Application.dataPath + "/../AssetBundles/" + SysUtil.GetPlatformName() + "/" + fileName;
         //#else
@@ -60,7 +60,7 @@ public class AssetBundleLoader : MonoBehaviour
         StartCoroutine(OnLoadAssetAsync(bundleName, assetName, action));
     }
 
-    private IEnumerator OnLoadAssetAsync(string assetBundleName, string assetName, Action<UnityEngine.Object> fn)
+    private IEnumerator OnLoadAssetAsync(string assetBundleName, string assetName, Action<UnityEngine.Object> callback)
     {
         ABLoadAsset request = AssetBundleManager.Instance().LoadAsset(assetBundleName, assetName, typeof(UnityEngine.Object));
         if (request == null)
@@ -68,6 +68,6 @@ public class AssetBundleLoader : MonoBehaviour
         yield return StartCoroutine(request);
 
         UnityEngine.Object obj = request.GetAsset<UnityEngine.Object>();
-        if (fn != null) fn(obj);
+        if (callback != null) callback(obj);
     }
 }

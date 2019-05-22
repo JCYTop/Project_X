@@ -14,11 +14,8 @@
 */
 
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
-using Object = UnityEngine.Object;
 
 public abstract class ABLoadAsset : ABLoadOperation
 {
@@ -32,8 +29,9 @@ public abstract class ABLoadAsset : ABLoadOperation
 public class ABLoadAssetSimulation : ABLoadAsset
 {
     protected float startTime;
-    private Object simulatedObject;
-    private Object[] allObject;
+    private object simulatedObject;
+    private object[] allObject;
+    protected float deltaTime = 0f;
 
     public ABLoadAssetSimulation(string assetBundleName, string assetName, bool single)
     {
@@ -52,22 +50,24 @@ public class ABLoadAssetSimulation : ABLoadAsset
 
     public override T GetAsset<T>()
     {
-        throw new System.NotImplementedException();
+        return simulatedObject as T;
     }
 
     public override T[] GetAllAsset<T>()
     {
-        throw new System.NotImplementedException();
+        return allObject as T[];
     }
 
     public override bool Update()
     {
-        throw new NotImplementedException();
+        return false;
     }
 
     public override bool IsDone()
     {
-        throw new NotImplementedException();
+        if ((Time.realtimeSinceStartup - startTime) < deltaTime)
+            return false;
+        return true;
     }
 }
 
@@ -80,8 +80,8 @@ public class ABLoadAssetFull : ABLoadAsset
     protected string assetName;
     protected Type type;
     protected bool isSingle = true;
-    protected AssetBundleRequest request = null;
-    protected AssetBundleRequest allRequest = null;
+    protected AssetBundleRequest request;
+    protected AssetBundleRequest allRequest;
 
     public ABLoadAssetFull(string bundleName, string assetName, Type type, bool bSingle)
     {
