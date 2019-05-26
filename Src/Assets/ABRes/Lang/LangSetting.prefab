@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5834672036963611575}
   - component: {fileID: 1009243613390912128}
+  - component: {fileID: 5471783834159423587}
   m_Layer: 0
   m_Name: LangSetting
   m_TagString: Util
@@ -47,3 +48,16 @@ MonoBehaviour:
   objectLayer: 0
   objectType: Util
   Des: "\u591A\u8BED\u8A00"
+--- !u!114 &5471783834159423587
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 652732097153272055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96740733c05710a4188eec3a1c7e82db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wordText: {fileID: 4900000, guid: 26ffc20639849f94282dac1c70a4e794, type: 3}

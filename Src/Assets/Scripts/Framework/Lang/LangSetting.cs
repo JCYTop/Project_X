@@ -14,6 +14,7 @@ using UnityEngine;
 
 public class LangSetting : MonoBehaviour
 {
+    //TODO 后期取消手动拖拽
     [SerializeField] private TextAsset wordText; //语言配置
     private static LangSetting instance;
     private Dictionary<string, Hashtable> wordMap = new Dictionary<string, Hashtable>(); //语言索引表
@@ -50,11 +51,11 @@ public class LangSetting : MonoBehaviour
     {
         if (wordText != null)
         {
-            string json = wordText.text;
-            List<LangItem> datas = FileUtils.ReadJsonData<List<LangItem>>(json, JSonUtilType.JsonConvert);
+            var json = wordText.text;
+            var datas = FileUtils.ReadJsonData<List<LangItem>>(json, JSonUtilType.JsonConvert);
             foreach (LangItem langItem in datas)
             {
-                Hashtable tmp = new Hashtable();
+                var tmp = new Hashtable();
                 tmp.Add("ChineseSimplified", langItem.ChineseSimplified);
                 tmp.Add("ChineseTraditional", langItem.ChineseTraditional);
                 tmp.Add("English", langItem.English);
@@ -87,7 +88,7 @@ public class LangSetting : MonoBehaviour
     {
         if (key != null)
         {
-            string word = wordMap[key][currLanguage] as string;
+            var word = wordMap[key][currLanguage] as string;
             if (string.IsNullOrEmpty(word))
             {
                 word = key;
@@ -114,4 +115,15 @@ public class LangSetting : MonoBehaviour
     }
 
     #endregion
+}
+
+/// <summary>
+/// 使用Newtonsoft.Json解析
+/// </summary>
+public class LangItem
+{
+    public string LanguageKey;
+    public string ChineseSimplified;
+    public string ChineseTraditional;
+    public string English;
 }
