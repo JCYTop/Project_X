@@ -22,6 +22,86 @@ using UnityEngine;
 /// </summary>
 public class Define
 {
+    #region 字段
+
+    private static AssetsConfig assetsConfig;
+    private static AuthorInfo authorInfo;
+    private static FrameworkDefine frameworkDefine;
+    private static LogConfig logConfig;
+    private static ABInfo abInfo;
+
+    #endregion
+
+    #region 属性
+
+    public static AssetsConfig AssetsConfig
+    {
+        get
+        {
+            if (assetsConfig == null)
+            {
+                assetsConfig = Resources.Load<AssetsConfig>("Configuation/AssetsConfig");
+            }
+
+            return assetsConfig;
+        }
+    }
+
+
+    public static AuthorInfo AuthorInfo
+    {
+        get
+        {
+            if (authorInfo == null)
+            {
+                authorInfo = Resources.Load<AuthorInfo>(AssetsConfig.AuthorInfoPath);
+            }
+
+            return authorInfo;
+        }
+    }
+
+    public static FrameworkDefine FrameworkDefine
+    {
+        get
+        {
+            if (frameworkDefine == null)
+            {
+                frameworkDefine = Resources.Load<FrameworkDefine>(AssetsConfig.FrameworkDefinePath);
+            }
+
+            return frameworkDefine;
+        }
+    }
+
+    public static LogConfig LogConfig
+    {
+        get
+        {
+            if (logConfig == null)
+            {
+                logConfig = Resources.Load<LogConfig>(AssetsConfig.LogConfigPath);
+            }
+
+            return logConfig;
+        }
+    }
+
+    public static ABInfo ABInfo
+    {
+        get
+        {
+            if (abInfo == null)
+            {
+                abInfo = Resources.Load<ABInfo>(AssetsConfig.ABInfoPath);
+            }
+
+            return abInfo;
+        }
+    }
+
+    #endregion
+
     /// <summary>
     /// 加载资源根目录
     /// </summary>

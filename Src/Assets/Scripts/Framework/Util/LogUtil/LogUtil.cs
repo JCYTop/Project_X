@@ -29,7 +29,7 @@ public static class LogUtil
         {
             if (config == null)
             {
-                config = Resources.Load<LogConfig>("Configuation/LogConfig");
+                config = Define.LogConfig;
             }
 
             return config;
@@ -97,6 +97,7 @@ public static class LogUtil
         {
             return;
         }
+
         if (isError)
             Debug.LogError(str);
         else

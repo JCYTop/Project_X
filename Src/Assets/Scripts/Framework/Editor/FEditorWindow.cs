@@ -36,9 +36,9 @@ public static class FrameworkToolsMenu
     {
         public const string OpenScence_Start = "Framework/OpenScence/Start";
         public const string FindMissScriptInResource = "Framework/FindMissScriptInResource";
-        public const string ShowExcelTools = "Framework/ShowExcelTools";
-        public const string CreateScriptableObject = "Framework/创建配置文件";
-        public const string RefreshUIConfig = "Framework/AboutConfig/RefreshUIConfig";
+        public const string ShowExcelTools = "Framework/Excel工具";
+        public const string CreateScriptableObject = "Framework/关于配置文件/创建配置文件";
+        public const string RefreshUIConfig = "Framework/关于配置文件/刷新配置文件";
         public const string GetObjectPath = "Framework/快捷键/获取路径 %q";
     }
 
@@ -63,8 +63,7 @@ public static class FrameworkToolsMenu
         private static void OpenCodeWebsite()
         {
             //直接打开网页
-            var webSite = Resources.Load<FrameworkDefine>("Configuation/FrameworkDefine");
-            Application.OpenURL(webSite.FrameworkWebsite);
+            Application.OpenURL(Define.FrameworkDefine.FrameworkWebsite);
         }
 
         private static void DownloadLatestVersion()
@@ -129,7 +128,7 @@ public static class FrameworkToolsMenu
         [MenuItem(ToolsList.RefreshUIConfig, false, (int) ToolsListPriorities.RefreshUIConfig)]
         public static void ResGOConfig()
         {
-            //RefreshConfig.ResGOConfig();
+            RefreshConfig.ResGOConfig();
         }
 
         [MenuItem(ToolsList.GetObjectPath, false, (int) ToolsListPriorities.GetObjectPath)]

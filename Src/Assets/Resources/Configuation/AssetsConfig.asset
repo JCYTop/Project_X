@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: AssetsConfig
   m_EditorClassIdentifier: 
   GameResourceRootDir: ABRes/
+  AuthorInfoPath: Configuation/AuthorInfo
+  FrameworkDefinePath: Configuation/FrameworkDefine
+  LogConfigPath: Configuation/LogConfig
+  ABInfoPath: Configuation/ABInfo
   preloadAssetPath: []
-  UNITY_IPHONE: 
-  UNITY_ANDROID: 
-  UNITY_STANDALONE_WIN: 
-  UNITY_EDITOR: 

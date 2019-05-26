@@ -16,43 +16,53 @@ using UnityEngine;
 
 public class ExcelToolMenu : EditorMenu<ExcelToolMenu>
 {
+    #region Field
+
     /// <summary>
-    /// 问价输出根目录
+    /// 输出根目录
     /// </summary>
     private string outPath;
-    #region Field
+
     /// <summary>
     /// 项目根路径	
     /// </summary>
     private static string pathRoot;
+
     /// <summary>
     /// Excel文件列表
     /// </summary>
     private static List<string> excelList;
+
     /// <summary>
     /// 滚动窗口初始位置
     /// </summary>
     private static Vector2 scrollPos;
+
     /// <summary>
     /// 输出格式索引
     /// </summary>
     private static int indexOfFormat = 0;
+
     /// <summary>
     /// 输出格式
     /// </summary>
-    private static string[] formatOption = new string[] { "JSON", "CSV", "XML", "LUA" };
+    private static string[] formatOption = new string[] {"JSON", "CSV", "XML", "LUA"};
+
     /// <summary>
     /// 编码索引
     /// </summary>
     private static int indexOfEncoding = 0;
+
     /// <summary>
     /// 编码选项
     /// </summary>
-    private static string[] encodingOption = new string[] { "UTF-8", "GB2312" };
+    private static string[] encodingOption = new string[] {"UTF-8", "GB2312"};
+
     /// <summary>
     /// 是否保留原始文件
     /// </summary>
     private static bool keepSource = true;
+
     #endregion
 
     public override void CreatWindow()
@@ -102,7 +112,7 @@ public class ExcelToolMenu : EditorMenu<ExcelToolMenu>
         if (excelList == null) excelList = new List<string>();
         excelList.Clear();
         //获取选中的对象
-        object[] selection = (object[])Selection.objects;
+        object[] selection = Selection.objects;
         //判断是否有对象被选中
         if (selection.Length == 0)
             return;
@@ -151,6 +161,7 @@ public class ExcelToolMenu : EditorMenu<ExcelToolMenu>
                 GUILayout.Toggle(true, s);
                 GUILayout.EndHorizontal();
             }
+
             GUILayout.EndScrollView();
             GUILayout.EndVertical();
             //输出
@@ -213,13 +224,16 @@ public class ExcelToolMenu : EditorMenu<ExcelToolMenu>
                 output = outPath + output;
                 excel.ConvertToLua(output, encoding);
             }
+
             //判断是否保留源文件
             if (!keepSource)
             {
                 FileUtil.DeleteFileOrDirectory(excelPath);
             }
+
             AssetDatabase.Refresh();
         }
+
         //转换完后关闭插件
         //这样做是为了解决窗口
         //再次点击时路径错误的Bug

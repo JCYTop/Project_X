@@ -13,20 +13,19 @@ public class AddAuthor : UnityEditor.AssetModificationProcessor
 
     private static void OnWillCreateAsset(string path)
     {
-        var AuthorInfo = (AuthorInfo) Resources.Load("Configuation/" + "AuthorInfo");
-        if (AuthorInfo != null)
+        if (Define.AuthorInfo != null)
         {
             path = path.Replace(".meta", "");
             if (path.EndsWith(".cs"))
             {
                 string allText = File.ReadAllText(path);
                 allText = allText.Replace("#Company#", "IndieGame");
-                allText = allText.Replace("#AuthorName#", AuthorInfo.AuthorName);
-                allText = allText.Replace("#Version#", AuthorInfo.Version);
-                allText = allText.Replace("#AuthorEmail#", AuthorInfo.AuthorEmail);
-                allText = allText.Replace("#UnityVersion#", AuthorInfo.UnityVersion);
+                allText = allText.Replace("#AuthorName#", Define.AuthorInfo.AuthorName);
+                allText = allText.Replace("#Version#", Define.AuthorInfo.Version);
+                allText = allText.Replace("#AuthorEmail#", Define.AuthorInfo.AuthorEmail);
+                allText = allText.Replace("#UnityVersion#", Define.AuthorInfo.UnityVersion);
                 allText = allText.Replace("#CreateTime#", System.DateTime.Now.ToString(CreateTime));
-                allText = allText.Replace("#Description#", AuthorInfo.Description);
+                allText = allText.Replace("#Description#", Define.AuthorInfo.Description);
                 File.WriteAllText(path, allText);
                 UnityEditor.AssetDatabase.Refresh();
             }
