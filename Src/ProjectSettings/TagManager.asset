@@ -13,6 +13,7 @@ TagManager:
   - DevTool
   - Manager
   - Canvas
+  - Util
   layers:
   - Default
   - TransparentFX

@@ -1,66 +1,59 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections;
+using NaughtyAttributes;
 using UnityEngine;
-
-/// <summary>
-/// Object类型
-/// </summary>
-public enum ObjectTag
-{
-    None = 0,
-    UI = 1,
-    Character = 2,
-    Camera = 3,
-    Trigger = 4,
-    GameObject = 5,
-    DevTool = 6,
-    Manager = 7,
-    Canvas = 8
-}
-
-/// <summary>
-/// Object所在的层级
-/// </summary>
-public enum ObjectLayer
-{
-    Default = 0,
-    FX = 1,
-    Water = 4,
-    UI = 5,
-    Scene = 8,//场景
-}
+using UnityEngine.Events;
 
 public class ObjectBase : MonoEventEmitter
 {
     #region 字段
-    [Header("唯一标识ID")]
-    [SerializeField]
+
+    [BoxGroup("基本属性设置")] [Header("唯一标识ID")] [SerializeField]
     protected long id;
-    [Header("物体命名")]
-    [SerializeField]
-    private string name = string.Empty;
-    [Header("Object类型")]
-    public ObjectTag ObjectType = ObjectTag.None;
-    [Header("Object所在的层级")]
-    public ObjectLayer ObjectLayer = ObjectLayer.Default;
-    [Header("描述")]
-    public string Des = string.Empty;
+
+    [BoxGroup("基本属性设置")] private string name = string.Empty;
+
+    [BoxGroup("基本属性设置")] [Header("Object所在的层级")] [SerializeField]
+    private int objectLayer = 0;
+
+    [BoxGroup("基本属性设置")] [Header("Object标签")] [SerializeField] [Tag]
+    private string objectType = string.Empty;
+
+    [BoxGroup("基本属性设置")] [Header("描述")] public string Des = string.Empty;
     private GameObject go;
+
     #endregion
 
     #region 属性
+
+    public int ObjectLayer
+    {
+        get => objectLayer;
+    }
+
+    public string ObjectType
+    {
+        get => objectType;
+    }
+
+    public string Name
+    {
+        get => name;
+    }
+
     public long ID
     {
         get => id;
+        set => id = value;
     }
+
     #endregion
 
     void Awake()
     {
+        UnityActionMgr.Instance().RunUnityAction(id, RunTimeUnityAction.Before);
         name = gameObject.name;
-        gameObject.tag = ObjectType.ToString();
-        gameObject.layer = (int)ObjectLayer;
+        gameObject.tag = objectType;
+        gameObject.layer = objectLayer;
         go = this.gameObject;
         Init();
     }
@@ -68,15 +61,19 @@ public class ObjectBase : MonoEventEmitter
     void OnEnable()
     {
         On(id.ToString(), Refresh);
+        UnityActionMgr.Instance().RunUnityAction(id, RunTimeUnityAction.Enable);
     }
 
     void OnDisable()
     {
         Off(id.ToString(), Refresh);
+        UnityActionMgr.Instance().RunUnityAction(id, RunTimeUnityAction.DisEnable);
     }
+
 
     void OnDestroy()
     {
+        UnityActionMgr.Instance().RunUnityAction(id, RunTimeUnityAction.Enable);
         Release();
     }
 
@@ -102,6 +99,5 @@ public class ObjectBase : MonoEventEmitter
     /// <param name="args">数据</param>
     public virtual void Refresh(params object[] args)
     {
-
     }
 }
