@@ -12,9 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c7ab4a1935c4d2899456f70d92ed3f0, type: 3}
   m_Name: ABInfo
   m_EditorClassIdentifier: 
-  UIDatas:
-  - name: LangSetting
-    ID: 1700000
-    Path: ABRes\Lang\LangSetting
+  ABDatas:
+  - ID: 1400000
+    name: GM
+    Path: ABRes\Prefabs\GM
+    Des: "GM\u5DE5\u5177"
+    Type: DevTool
+  - ID: 1700001
+    name: LangSetting
+    Path: ABRes\Prefabs\Lang\LangSetting
     Des: "\u591A\u8BED\u8A00"
     Type: Util

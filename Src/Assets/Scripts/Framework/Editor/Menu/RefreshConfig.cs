@@ -60,7 +60,7 @@ public class RefreshConfig : MonoBehaviour
                     int index2 = path.IndexOf(".", StringComparison.Ordinal) - 1;
                     path = path.Substring(index1 + 1, index2 - index1);
                     path = @"ABRes\" + path;
-                    uiDatas.Add(goIndex, new ABData()
+                    uiDatas.Add(goBase.ID, new ABData()
                     {
                         ID = goBase.ID,
                         Path = path,
@@ -75,7 +75,7 @@ public class RefreshConfig : MonoBehaviour
 
         if (uiDatas.Count != 0)
         {
-            abInfo.UIDatas = new List<ABData>(uiDatas.Values);
+            abInfo.ABDatas = new List<ABData>(uiDatas.Values);
             EditorUtility.SetDirty(abInfo);
             AssetDatabase.SaveAssets();
         }

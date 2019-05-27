@@ -8,6 +8,7 @@
 // -  独立游戏开发
 //======================================================
 
+using System.IO;
 using UnityEditor;
 using UnityEditor.SceneManagement;
 using UnityEngine;
@@ -37,8 +38,13 @@ public static class FrameworkToolsMenu
         public const string OpenScence_Start = "Framework/OpenScence/Start";
         public const string FindMissScriptInResource = "Framework/FindMissScriptInResource";
         public const string ShowExcelTools = "Framework/Excel工具";
+        public const string FindConfig_ABInfo = "Framework/关于配置文件/配置文件/ABInfo";
+        public const string FindConfig_AssetsConfig = "Framework/关于配置文件/配置文件/AssetsConfig";
+        public const string FindConfig_AuthorInfo = "Framework/关于配置文件/配置文件/AuthorInfo";
+        public const string FindConfig_FrameworkDefine = "Framework/关于配置文件/配置文件/FrameworkDefine";
+        public const string FindConfig_LogConfig = "Framework/关于配置文件/配置文件/LogConfig";
         public const string CreateScriptableObject = "Framework/关于配置文件/创建配置文件";
-        public const string RefreshUIConfig = "Framework/关于配置文件/刷新配置文件";
+        public const string RefreshConfig = "Framework/关于配置文件/刷新配置文件";
         public const string GetObjectPath = "Framework/快捷键/获取路径 %q";
     }
 
@@ -47,8 +53,13 @@ public static class FrameworkToolsMenu
         OpenScence_Start = 151,
         FindMissScriptInResource,
         ShowExcelTools,
+        FindConfig_ABInfo,
+        FindConfig_AssetsConfig,
+        FindConfig_AuthorInfo,
+        FindConfig_FrameworkDefine,
+        FindConfig_LogConfig,
         CreateScriptableObject,
-        RefreshUIConfig,
+        RefreshConfig,
         GetObjectPath
     }
 
@@ -125,7 +136,7 @@ public static class FrameworkToolsMenu
             ScriptableObjectMenu.Instance().ShowMenu();
         }
 
-        [MenuItem(ToolsList.RefreshUIConfig, false, (int) ToolsListPriorities.RefreshUIConfig)]
+        [MenuItem(ToolsList.RefreshConfig, false, (int) ToolsListPriorities.RefreshConfig)]
         public static void ResGOConfig()
         {
             RefreshConfig.ResGOConfig();
@@ -135,6 +146,58 @@ public static class FrameworkToolsMenu
         public static void GetPath()
         {
             GetObjectPath.GetAssetsPath();
+        }
+
+        [MenuItem(ToolsList.FindConfig_ABInfo, false, (int) ToolsListPriorities.FindConfig_ABInfo)]
+        public static void FindConfig_ABInfo()
+        {
+            Selection.activeObject = Define.ABInfo;
+        }
+
+        [MenuItem(ToolsList.FindConfig_AssetsConfig, false, (int) ToolsListPriorities.FindConfig_AssetsConfig)]
+        public static void FindConfig_AssetsConfig()
+        {
+            Selection.activeObject = Define.AssetsConfig;
+        }
+
+        [MenuItem(ToolsList.FindConfig_AuthorInfo, false, (int) ToolsListPriorities.FindConfig_AuthorInfo)]
+        public static void FindConfig_AuthorInfo()
+        {
+            Selection.activeObject = Define.AuthorInfo;
+        }
+
+        [MenuItem(ToolsList.FindConfig_FrameworkDefine, false, (int) ToolsListPriorities.FindConfig_FrameworkDefine)]
+        public static void FindConfig_FrameworkDefine()
+        {
+            Selection.activeObject = Define.FrameworkDefine;
+        }
+
+        [MenuItem(ToolsList.FindConfig_LogConfig, false, (int) ToolsListPriorities.FindConfig_LogConfig)]
+        public static void FindConfig_LogConfig()
+        {
+            Selection.activeObject = Define.LogConfig;
+        }
+
+        [MenuItem("Assets/开始游戏", false, 0)]
+        public static void StartGame()
+        {
+            //TODO 换成通用接口
+            if (!EditorApplication.isPlaying)
+            {
+                string currentSceneName = EditorApplication.currentScene;
+                File.WriteAllText("_lastScene", currentSceneName);
+                EditorApplication.SaveScene(EditorApplication.currentScene);
+                //TODO
+                EditorApplication.OpenScene("Assets/ABRes/Scenes/GameScenes/Awake.unity");
+                EditorApplication.isPlaying = true;
+            }
+
+            if (EditorApplication.isPlaying)
+            {
+                string lastScene = File.ReadAllText("lastScene");
+                EditorApplication.isPlaying = false;
+                EditorApplication.OpenScene(lastScene);
+            }
         }
     }
 }

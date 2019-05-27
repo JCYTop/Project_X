@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class ABInfo : ScriptableObject
 {
-    public List<ABData> UIDatas;
+    public List<ABData> ABDatas;
 }
 
 [Serializable]
 public class ABData
 {
-    public string name;
     public long ID;
+    public string name;
     public string Path;
     public string Des;
     public string Type;
