@@ -44,7 +44,7 @@ public abstract class ILanucherTask
         CalcTaskCount = () => { TaskCount -= 1; };
         AddTaskChild();
         TaskCount = list.Count;
-        CoroutineMgr.Start_Coroutine(OnProcess());
+        CoroutineMgr.Instance().StartUpCoroutine("OnProcess", OnProcess());
     }
 
     public abstract void AddTaskChild();
