@@ -92,7 +92,7 @@ public static class FrameworkToolsMenu
         [MenuItem(Packager, false, (int) FrameworkToolsMenuPriorities.Packager)]
         private static void ShowPackager()
         {
-            //Packager.Instance().ShowMenu();
+            BuildWindow.Instance().ShowMenu();
         }
 
         [MenuItem(FrameworkToolsMenu.OpenInFileBrowser, false, (int) FrameworkToolsMenuPriorities.OpenInFileBrowser)]

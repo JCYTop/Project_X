@@ -1,8 +1,7 @@
 fileFormatVersion: 2
 guid: 3c82abe2ea0cc694f9d8e5c7308daa73
-timeCreated: 1535004624
-licenseType: Free
 TrueTypeFontImporter:
+  externalObjects: {}
   serializedVersion: 4
   fontSize: 16
   forceTextureCase: -2
@@ -16,6 +15,8 @@ TrueTypeFontImporter:
   customCharacters: 
   fontRenderingMode: 0
   ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
   userData: 
-  assetBundleName: gameresource/font
+  assetBundleName: 
   assetBundleVariant: 

@@ -47,7 +47,6 @@ public class Define
         }
     }
 
-
     public static AuthorInfo AuthorInfo
     {
         get

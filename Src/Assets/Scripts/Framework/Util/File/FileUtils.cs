@@ -14,7 +14,7 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 
-public class FileUtils : MonoBehaviour
+public class FileUtils
 {
     /// <summary>
     /// 读取Json文件
@@ -24,7 +24,7 @@ public class FileUtils : MonoBehaviour
     /// <returns>返回模型对象</returns>
     public static T JsonFile<T>(string path, JSonUtilType jSonUtilType = JSonUtilType.JsonUtility)
     {
-        return JSonIO.Instance(jSonUtilType).Read<T>(ReadTextFromFile(path));
+        return JSonIO.Instance(jSonUtilType).Read<T>(path);
     }
 
     /// <summary>
@@ -38,35 +38,8 @@ public class FileUtils : MonoBehaviour
         return JSonIO.Instance(jSonUtilType).ReadData<T>(data);
     }
 
-    /// <summary>
-    /// 从文件中读取文本数据
-    /// </summary>
-    /// <param name="path">相对路径</param>
-    /// <returns></returns>
-    public static string ReadTextFromFile(string path)
+    public static T JsonWrite<T>(T data, string path, bool isPrint = true)
     {
-        string content = "";
-        string fullPath = GetFilePath(path);
-        try
-        {
-            content = File.ReadAllText(fullPath);
-        }
-        catch
-        {
-            LogUtil.Log(String.Format(" 没有找到文件 {0}", fullPath), LogType.NormalLog);
-        }
-
-        return content;
-    }
-
-    public static string GetFilePath(string path)
-    {
-        //TODO 补充
-//#if UNITY_EDITOR
-//        return Define.streamingPath + "/" + path;
-//#else
-//        return Define.persistenPath + "/" + path;
-//#endif
-        return default;
+        return JSonIO.Instance().Write<T>(data, path);
     }
 }

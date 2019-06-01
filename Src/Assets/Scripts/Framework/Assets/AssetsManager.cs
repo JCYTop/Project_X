@@ -142,7 +142,7 @@ public class AssetsManager : MonoEventEmitter
                     item.AssetName = assetName;
                 }
                 else
-                    LogUtil.LogError(string.Format("asset {0} is not a pool item", assetName));
+                    LogUtil.LogError(string.Format("asset {0} is not a pool item", assetName), LogType.AssetLog);
             }
         }
 
@@ -178,7 +178,7 @@ public class AssetsManager : MonoEventEmitter
                         item.AssetName = assetName;
                     }
                     else
-                        LogUtil.LogError(string.Format("asset {0} is not a pool item", assetName));
+                        LogUtil.LogError(string.Format("asset {0} is not a pool item", assetName), LogType.AssetLog);
 
                     callback(obj);
                 }

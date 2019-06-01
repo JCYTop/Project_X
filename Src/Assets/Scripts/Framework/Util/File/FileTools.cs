@@ -8,11 +8,11 @@
 // -  独立游戏开发
 //======================================================
 
+using System;
 using System.IO;
 using System.Text;
-using UnityEngine;
 
-public class FileTools : MonoBehaviour
+public class FileTools
 {
     public static void VerifyDirection(string path)
     {
@@ -81,5 +81,31 @@ public class FileTools : MonoBehaviour
     {
         VerifyDirection(dir);
         File.WriteAllText(dir, datas, Encoding.UTF8);
+    }
+
+
+    /// <summary>
+    /// 获得文件MD5码
+    /// </summary>
+    /// <param name="fs"></param>
+    /// <returns></returns>
+    public static string FSToMD5(FileStream fs)
+    {
+        try
+        {
+            var md5 = new System.Security.Cryptography.MD5CryptoServiceProvider();
+            var retVal = md5.ComputeHash(fs);
+            var sb = new StringBuilder();
+            for (int i = 0; i < retVal.Length; i++)
+            {
+                sb.Append(retVal[i].ToString("x2"));
+            }
+
+            return sb.ToString();
+        }
+        catch (Exception ex)
+        {
+            throw new Exception("md5file() fail, error:" + ex.Message);
+        }
     }
 }

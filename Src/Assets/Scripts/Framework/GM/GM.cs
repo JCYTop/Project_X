@@ -1,16 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEditor.Experimental.UIElements;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class GM : MonoBehaviour
 {
     private bool isShow = false;
-
-    private void Start()
-    {
-      
-    }
 
     private void Update()
     {
