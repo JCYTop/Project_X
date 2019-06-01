@@ -114,7 +114,7 @@ public class BuildWindow : EditorMenu<BuildWindow>
             LogUtil.Log(string.Format(curSymbol), LogType.NormalLog);
         }
 
-        GUILayout.Space(5);
+        GUILayout.Space(10);
 
         #endregion
 
@@ -127,7 +127,7 @@ public class BuildWindow : EditorMenu<BuildWindow>
             Packager.BuildOptions = buildOptions;
         }
 
-        GUILayout.Space(5);
+        GUILayout.Space(10);
 
         #endregion
 
@@ -141,7 +141,7 @@ public class BuildWindow : EditorMenu<BuildWindow>
             Packager.CurrTarget = buildTarget;
         }
 
-        GUILayout.Space(5);
+        GUILayout.Space(10);
 
         #endregion
 
@@ -155,7 +155,7 @@ public class BuildWindow : EditorMenu<BuildWindow>
             PlayerSettings.bundleVersion = appVer;
         }
 
-        GUILayout.Space(5);
+        GUILayout.Space(10);
 
         #endregion
 
@@ -169,7 +169,7 @@ public class BuildWindow : EditorMenu<BuildWindow>
             Packager.CreateVersion();
         }
 
-        GUILayout.Space(5);
+        GUILayout.Space(10);
 
         #endregion
 
@@ -182,7 +182,7 @@ public class BuildWindow : EditorMenu<BuildWindow>
             Packager.GenerateAB();
         }
 
-        GUILayout.Space(5);
+        GUILayout.Space(10);
         //=========================== 是否读取AB包 ===========================
         isReadAB = EditorGUILayout.Toggle(new GUIContent("读取AB包："), isReadAB);
         if (Packager.isReadAB != isReadAB)
@@ -222,7 +222,7 @@ public class BuildWindow : EditorMenu<BuildWindow>
             }
         }
 
-        GUILayout.Space(5);
+        GUILayout.Space(10);
         if (Packager.CurrTarget == BuildTargetGroup.iOS)
         {
             if (GUILayout.Button("生成IPA", GUILayout.Height(30)))
@@ -230,10 +230,10 @@ public class BuildWindow : EditorMenu<BuildWindow>
 //TODO 苹果IPA 生成大法？？？
             }
 
-            GUILayout.Space(5);
+            GUILayout.Space(10);
         }
 
-        GUILayout.Space(5);
+        GUILayout.Space(10);
         if (GUILayout.Button("生成版本更新包 ", GUILayout.Height(30)))
         {
             Packager.CopyFullABRes();
@@ -242,7 +242,7 @@ public class BuildWindow : EditorMenu<BuildWindow>
             patch.BuildPatch();
         }
 
-        GUILayout.Space(5);
+        GUILayout.Space(10);
 
         #endregion
     }
