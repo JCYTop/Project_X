@@ -18,7 +18,7 @@ using UnityEngine;
 
 public static class LogUtil
 {
-    private const string DefaultStr = "[Log] : ";
+    private const string DefaultStr = "[Log...] : ";
     private static LogConfig config = null;
 
     private static LogConfig Config
@@ -86,7 +86,7 @@ public static class LogUtil
     public static void Log(string logStr, Color color, bool isError = false)
     {
         string c = ColorUtility.ToHtmlStringRGB(color);
-        LogStr(string.Format("<color=#{0}>[log] : {1}</color>", c, logStr), isError);
+        LogStr(string.Format("<color=#{0}>[log...] : {1}</color>", c, logStr), isError);
     }
 
     private static void LogStr(string str, bool isError)

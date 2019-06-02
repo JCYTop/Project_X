@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using Unity.Transforms;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class GOCommonUtil : MonoSingleton<GOCommonUtil>
 {
@@ -33,5 +30,10 @@ public class GOCommonUtil : MonoSingleton<GOCommonUtil>
         }
 
         return gameObject;
+    }
+
+    public void DestroyGO(GameObject go)
+    {
+        Destroy(go);
     }
 }

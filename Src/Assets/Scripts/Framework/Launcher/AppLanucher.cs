@@ -10,7 +10,6 @@
 
 using System;
 using System.Collections.Generic;
-using UnityEngine;
 
 /// <summary>
 /// 需要细分插入其中，从0开始依次进行
@@ -76,7 +75,7 @@ public class AppLanucher
     /// <summary>
     /// 添加到任务队列
     /// </summary>
-    private void AddQueue() 
+    private void AddQueue()
     {
         if (taskList.Count <= 0) return;
         taskList.Sort((x, y) => { return x.TaskType.CompareTo(y.TaskType); });
@@ -85,7 +84,7 @@ public class AppLanucher
             taskQueue.Enqueue(task);
         }
 
-        taskList = null;
+        taskList.Clear();
     }
 
     /// <summary>

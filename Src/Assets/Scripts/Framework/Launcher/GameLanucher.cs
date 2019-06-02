@@ -8,8 +8,6 @@
 // -  独立游戏开发
 //======================================================
 
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class GameLanucher : MonoBehaviour
@@ -33,11 +31,13 @@ public class GameLanucher : MonoBehaviour
 
     private void OnStart()
     {
+        GlobalMediator.TaskIsFinish = false;
         isShowLog = true;
     }
 
     private void OnFinish()
     {
+        GlobalMediator.TaskIsFinish = true;
         isShowLog = false;
     }
 
