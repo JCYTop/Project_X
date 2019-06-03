@@ -35,7 +35,7 @@ public class LogData
         get
         {
             string color = ColorUtility.ToHtmlStringRGB(LogColor);
-            return string.Format($"<color=#{0}>[{1}] : </color>", color, LogType);
+            return string.Format("<color=#{0}>[{1}] : </color>", color, LogType);
         }
     }
 }

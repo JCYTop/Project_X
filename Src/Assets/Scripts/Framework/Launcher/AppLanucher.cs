@@ -17,9 +17,9 @@ using System.Collections.Generic;
 public enum TaskType
 {
     SystemCheck = 0, //检查程序运行
+    CheckMemory, //检查内存是否够用
     Assets, //资源管理启动
     Manager, //基础Manager启动
-    CheckMemory, //检查内存是否够用
     LoadBaseData, //载入配置信息
     CheckLoadMode, //检测登陆模式
     Config, //基础配置设置

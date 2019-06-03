@@ -25,7 +25,7 @@ public class AssetBundleManager : MonoEventEmitter
     /// <summary>
     /// AB的Manifest信息
     /// </summary>
-    public AssetBundleManifest assetBundleManifest = null;
+    public static AssetBundleManifest assetBundleManifest = null;
 
     /// <summary>
     /// 读取AB包中的一系列相关操作

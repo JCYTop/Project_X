@@ -21,7 +21,7 @@ using UnityEngine;
 /// <summary>
 /// AB加载器
 /// </summary>
-public class AssetBundleLoader : MonoBehaviour
+public class AssetBundleLoader : MonoEventEmitter
 {
     private static AssetBundleLoader instance;
 

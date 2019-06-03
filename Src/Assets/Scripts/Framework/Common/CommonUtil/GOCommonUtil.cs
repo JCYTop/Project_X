@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class GOCommonUtil : MonoSingleton<GOCommonUtil>
+public class GOCommonUtil
 {
     /// <summary>
     /// 创建一个GO
@@ -8,7 +8,7 @@ public class GOCommonUtil : MonoSingleton<GOCommonUtil>
     /// <param name="name"></param>
     /// <param name="IsDestroy"></param>
     /// <returns></returns>
-    public GameObject CreateGameobject(string name, bool IsDestroy = true)
+    public static GameObject CreateGameobject(string name, bool IsDestroy = true)
     {
         return CreateGameobject(name, Vector3.one, IsDestroy);
     }
@@ -20,20 +20,20 @@ public class GOCommonUtil : MonoSingleton<GOCommonUtil>
     /// <param name="pos"></param>
     /// <param name="IsDestroy"></param>
     /// <returns></returns>
-    public GameObject CreateGameobject(string name, Vector3 pos, bool IsDestroy)
+    public static GameObject CreateGameobject(string name, Vector3 pos, bool IsDestroy)
     {
         var gameObject = new GameObject(name);
         gameObject.transform.position = pos;
         if (!IsDestroy)
         {
-            DontDestroyOnLoad(gameObject);
+            Object.DontDestroyOnLoad(gameObject);
         }
 
         return gameObject;
     }
 
-    public void DestroyGO(GameObject go)
+    public static void DestroyGO(GameObject go)
     {
-        Destroy(go);
+        Object.Destroy(go);
     }
 }

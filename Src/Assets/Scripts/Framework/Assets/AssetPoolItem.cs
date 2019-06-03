@@ -30,6 +30,6 @@ public class AssetPoolItem : MonoBehaviour
     public void Drop()
     {
         gameObject.SetActive(false);
-        AssetsManager.Instance.PutGoToPool(this);
+        AssetsManager.Instance().PutGoToPool(this);
     }
 }

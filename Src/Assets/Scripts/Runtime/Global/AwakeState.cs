@@ -36,7 +36,7 @@ public class AwakeState : FSMState
     public override void OnEnter()
     {
         LogUtil.Log(string.Format("AwakeState"));
-        go = GOCommonUtil.Instance().CreateGameobject("GameLanucher");
+        go = GOCommonUtil.CreateGameobject("GameLanucher");
         go.AddComponent<GameLanucher>();
     }
 
@@ -46,6 +46,6 @@ public class AwakeState : FSMState
 
     public override void OnExit()
     {
-        GOCommonUtil.Instance().DestroyGO(go);
+        GOCommonUtil.DestroyGO(go);
     }
 }

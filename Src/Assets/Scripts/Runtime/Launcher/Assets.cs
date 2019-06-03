@@ -32,6 +32,9 @@ public class Assets : ILanucherTask
     private void TaskChild1()
     {
         LogUtil.Log(string.Format("资源加载启动"), LogType.TaskLog);
+        AssetsManager.Instance();
+        AssetBundleManager.Instance();
+        AssetBundleLoader.Instance();
         CalcTaskCount();
     }
 }

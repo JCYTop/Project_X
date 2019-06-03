@@ -22,17 +22,13 @@ public class AssetsManager : MonoEventEmitter
     private AssetCachePool shortAssetPool; //暂存资源
     private Dictionary<string, Queue<AssetPoolItem>> objectPoolMap = new Dictionary<string, Queue<AssetPoolItem>>();
 
-    public static AssetsManager Instance
+    public static AssetsManager Instance()
     {
-        get
+        if (instance == null)
         {
-            if (instance == null)
-            {
-                instance = SingletonProperty<AssetsManager>.Instance();
-            }
-
-            return instance;
+            instance = MonoSingletonProperty<AssetsManager>.Instance();
         }
+        return instance;
     }
 
     private void Awake()
