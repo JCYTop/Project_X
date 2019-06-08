@@ -40,7 +40,7 @@ public class AssetCachePool : MonoEventEmitter
             string path = list[i];
             string bundleName = path.ToLower();
             string assetName = path + ".prefab";
-            ABLoadAsset request = AssetBundleManager.Instance().LoadAsset(bundleName, assetName, typeof(UnityEngine.Object));
+            ABLoadAsset request = AssetBundleManager.Instance().LoadAssetAsync(bundleName, assetName, typeof(UnityEngine.Object));
             if (request != null)
             {
                 yield return StartCoroutine(request);
@@ -106,8 +106,7 @@ public class AssetCachePool : MonoEventEmitter
             AssetBundleLoader.Instance().LoadAssetAsync(bundleName, assetName, (assetObj) =>
             {
                 var go = abInfo.LoadedPrefab(assetObj as GameObject);
-                go.AddComponent<AssetPoolItem>().AssetName = assetName;
-                LogUtil.Log(string.Format("首次加载了资源{0}", go.name));
+                LogUtil.Log(string.Format("首次加载了资源{0}", go.name), LogType.AssetLog);
             });
         }
     }

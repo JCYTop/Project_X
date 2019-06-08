@@ -14,6 +14,8 @@ using UnityEngine;
 
 public class Manager : ILanucherTask
 {
+    private GameObject gm;
+
     public override string Name
     {
         get => "基础Manager启动";
@@ -26,6 +28,13 @@ public class Manager : ILanucherTask
 
     public override void AddTaskChild()
     {
-        throw new System.NotImplementedException();
+        LogUtil.Log(string.Format(Name), LogType.TaskLog);
+        StartChildTask();
+    }
+
+    private void StartChildTask()
+    {
+        gm = GOCommonUtil.CreateGameobject("GM");
+        gm.AddComponent<GM>();
     }
 }

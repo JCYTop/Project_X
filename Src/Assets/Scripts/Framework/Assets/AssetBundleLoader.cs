@@ -15,8 +15,6 @@
 
 using System;
 using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 
 /// <summary>
 /// AB加载器
@@ -62,12 +60,45 @@ public class AssetBundleLoader : MonoEventEmitter
 
     private IEnumerator OnLoadAssetAsync(string assetBundleName, string assetName, Action<UnityEngine.Object> callback)
     {
-        ABLoadAsset request = AssetBundleManager.Instance().LoadAsset(assetBundleName, assetName, typeof(UnityEngine.Object));
+        var request = AssetBundleManager.Instance().LoadAssetAsync(assetBundleName, assetName, typeof(UnityEngine.Object));
         if (request == null)
             yield break;
         yield return StartCoroutine(request);
 
-        UnityEngine.Object obj = request.GetAsset<UnityEngine.Object>();
+        var obj = request.GetAsset<UnityEngine.Object>();
         if (callback != null) callback(obj);
+    }
+
+    public void LoadAllAsset(string assetBundleName, string assetName, Action<UnityEngine.Object[]> callback)
+    {
+        StartCoroutine(OnLoadAllAsset(assetBundleName, assetName, callback));
+    }
+
+    private IEnumerator OnLoadAllAsset(string assetBundleName, string assetName, Action<UnityEngine.Object[]> callback)
+    {
+        var request = AssetBundleManager.Instance().LoadAssetAsync(assetBundleName, assetName, typeof(UnityEngine.Object), false);
+        if (request == null)
+            yield break;
+        yield return StartCoroutine(request);
+        var obj = request.GetAllAsset<UnityEngine.Object>();
+        //Debug.Log(assetName + (obj == null ? " isn't" : " is") + " loaded successfully at frame " + Time.frameCount);
+        if (callback != null) callback(obj);
+    }
+
+    public void LoadLevelAsset(string name, Action fn = null)
+    {
+        var bundle = Define.AssetsConfig.ScencePath + "/" + name;
+        StartCoroutine(LoadLevel(bundle.ToLower(), name, fn));
+    }
+
+    protected IEnumerator LoadLevel(string assetBundleName, string levelName, Action callback)
+    {
+        var request = AssetBundleManager.Instance().LoadLevelAsync(assetBundleName, levelName, false);
+        if (request != null)
+        {
+            yield return StartCoroutine(request);
+        }
+
+        if (callback != null) callback();
     }
 }

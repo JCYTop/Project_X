@@ -19,6 +19,7 @@ public class AssetsConfig : ScriptableObject
     [Header("FrameworkDefine路径")] public string FrameworkDefinePath = string.Empty;
     [Header("LogConfig路径")] public string LogConfigPath = string.Empty;
     [Header("ABInfo路径")] public string ABInfoPath = string.Empty;
+    [Header("Scence场景所在文件夹")] public string ScencePath = string.Empty;
 
     /// <summary>
     /// 添加根目录或者文件夹

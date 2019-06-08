@@ -26,6 +26,7 @@ public class Update : ILanucherTask
 
     public override void AddTaskChild()
     {
-        throw new System.NotImplementedException();
+        LogUtil.Log(string.Format(Name), LogType.TaskLog);
+        CalcTaskCount();
     }
 }

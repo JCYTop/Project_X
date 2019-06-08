@@ -42,7 +42,7 @@ public class FSM
     #region 状态机调用
 
     /// <summary>
-    /// 状态机开始状态,用于单独控制
+    /// 状态机开始
     /// </summary>
     /// <param name="startState">输入开始的状态</param>
     /// <returns></returns>
@@ -55,7 +55,7 @@ public class FSM
     }
 
     /// <summary>
-    /// 状态机运行状态 ,用于单独控制
+    /// 状态机运行
     /// </summary>
     /// <returns></returns>
     public FSM UpdateState()
@@ -74,7 +74,7 @@ public class FSM
     }
 
     /// <summary>
-    /// 状态机退出状态，用于单独控制
+    /// 状态机退出
     /// </summary>
     /// <returns></returns>
     public FSM ExitState()

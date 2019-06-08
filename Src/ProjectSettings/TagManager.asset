@@ -12,7 +12,6 @@ TagManager:
   - GameObject
   - DevTool
   - Manager
-  - Canvas
   - Util
   layers:
   - Default
@@ -50,4 +49,16 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: RootCanvas
+    uniqueID: 451701643
+    locked: 0
+  - name: StackCanvas
+    uniqueID: 85559227
+    locked: 0
+  - name: TopCanvas
+    uniqueID: 3926647655
+    locked: 0
+  - name: Tool
+    uniqueID: 3267503845
     locked: 0

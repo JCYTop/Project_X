@@ -32,8 +32,26 @@ public class GOCommonUtil
         return gameObject;
     }
 
+    /// <summary>
+    /// 删除物体
+    /// </summary>
+    /// <param name="go"></param>
     public static void DestroyGO(GameObject go)
     {
         Object.Destroy(go);
+    }
+
+    /// <summary>
+    /// 实例化物体
+    /// </summary>
+    /// <param name="go"></param>
+    /// <param name="IsDotDestory"></param>
+    /// <returns></returns>
+    public static GameObject InstantiateGo(GameObject go, bool IsDotDestory = false)
+    {
+        var _go = Object.Instantiate(go);
+        if (IsDotDestory)
+            Object.DontDestroyOnLoad(_go);
+        return _go;
     }
 }

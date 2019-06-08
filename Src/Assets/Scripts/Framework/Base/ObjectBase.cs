@@ -3,23 +3,25 @@ using NaughtyAttributes;
 using UnityEngine;
 using UnityEngine.Events;
 
+
+[RequireComponent(typeof(AssetPoolItem))]
 public class ObjectBase : MonoEventEmitter
 {
     #region 字段
 
-    [BoxGroup("基本属性设置")] [Header("唯一标识ID")] [SerializeField]
-    protected long id;
+    [BoxGroup("基本属性手动设置")] private string name = string.Empty;
 
-    [BoxGroup("基本属性设置")] private string name = string.Empty;
-
-    [BoxGroup("基本属性设置")] [Header("Object所在的层级")] [SerializeField]
+    [BoxGroup("基本属性手动设置")] [Header("Object所在的层级")] [SerializeField]
     private int objectLayer = 0;
 
-    [BoxGroup("基本属性设置")] [Header("Object标签")] [SerializeField] [Tag]
-    private string objectType = string.Empty;
+    [BoxGroup("基本属性手动设置")] [Header("Object标签")] [SerializeField] [Tag]
+    private string objectTag = string.Empty;
 
-    [BoxGroup("基本属性设置")] [Header("描述")] public string Des = string.Empty;
+    [BoxGroup("基本属性手动设置")] [Header("描述")] public string Des = string.Empty;
     private GameObject go;
+
+    [BoxGroup("自动设置")] [Header("唯一标识ID")] [SerializeField]
+    protected long id;
 
     #endregion
 
@@ -30,9 +32,9 @@ public class ObjectBase : MonoEventEmitter
         get => objectLayer;
     }
 
-    public string ObjectType
+    public string ObjectTag
     {
-        get => objectType;
+        get => objectTag;
     }
 
     public string Name
@@ -52,7 +54,7 @@ public class ObjectBase : MonoEventEmitter
     {
         UnityActionMgr.Instance().RunUnityAction(id, RunTimeUnityAction.Before);
         name = gameObject.name;
-        gameObject.tag = objectType;
+        gameObject.tag = objectTag;
         gameObject.layer = objectLayer;
         go = this.gameObject;
         Init();

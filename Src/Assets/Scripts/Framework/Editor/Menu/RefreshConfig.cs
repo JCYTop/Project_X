@@ -23,6 +23,7 @@ public class RefreshConfig : MonoBehaviour
     {
         //获取编辑器下所有的Tag
         var tags = UnityEditorInternal.InternalEditorUtility.tags;
+        var layers = UnityEditorInternal.InternalEditorUtility.layers;
         var goIndex = 0;
         var abInfo = Define.ABInfo;
         var uiDatas = new Dictionary<long, ABData>();
@@ -40,18 +41,26 @@ public class RefreshConfig : MonoBehaviour
                 var goBase = prefab.GetComponent<ObjectBase>();
                 if (goBase != null && !uiDatas.ContainsKey(goBase.ID))
                 {
-                    var index = 1;
+                    var indexTag = 0;
                     foreach (var tag in tags)
                     {
-                        if (tag == goBase.ObjectType)
+                        if (tag == goBase.ObjectTag)
                         {
                             break;
                         }
 
-                        index++;
+                        indexTag++;
                     }
 
-                    goBase.ID = index * 100000 + goIndex;
+                    var indexLayer = 0;
+                    var tmpLayer = layers[0];
+                    for (int j = 0; j < goBase.ObjectLayer; j++)
+                    {
+                        indexLayer++;
+                        tmpLayer = layers[j];
+                    }
+
+                    goBase.ID = indexLayer * 10000000 + indexTag * 1000 + goIndex;
                     AssetDatabase.SaveAssets();
                     string path = filesPath[i];
                     path = filesPath[i].Substring(filesPath[i].IndexOf("ABRes", StringComparison.Ordinal));
@@ -59,14 +68,15 @@ public class RefreshConfig : MonoBehaviour
                     int index1 = path.IndexOf("/", StringComparison.Ordinal);
                     int index2 = path.IndexOf(".", StringComparison.Ordinal) - 1;
                     path = path.Substring(index1 + 1, index2 - index1);
-                    path = @"ABRes\" + path;
+                    path = @"Assets\ABRes\" + path;
                     uiDatas.Add(goBase.ID, new ABData()
                     {
                         ID = goBase.ID,
                         Path = path,
                         name = goBase.gameObject.name,
                         Des = goBase.Des,
-                        Type = goBase.ObjectType,
+                        Layer = tmpLayer,
+                        Tag = goBase.ObjectTag,
                     });
                     goIndex++;
                 }

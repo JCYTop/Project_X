@@ -26,12 +26,12 @@ public class Assets : ILanucherTask
 
     public override void AddTaskChild()
     {
-        TaskChild1();
+        StartAsset();
     }
 
-    private void TaskChild1()
+    private void StartAsset()
     {
-        LogUtil.Log(string.Format("资源加载启动"), LogType.TaskLog);
+        LogUtil.Log(string.Format(Name), LogType.TaskLog);
         AssetsManager.Instance();
         AssetBundleManager.Instance();
         AssetBundleLoader.Instance();

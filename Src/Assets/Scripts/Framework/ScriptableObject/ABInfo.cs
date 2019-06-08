@@ -14,5 +14,6 @@ public class ABData
     public string name;
     public string Path;
     public string Des;
-    public string Type;
+    public string Layer;
+    public string Tag;
 }

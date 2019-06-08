@@ -49,6 +49,8 @@ public class AssetBundleManager : MonoEventEmitter
     /// </summary>
     private Dictionary<string, string[]> dependenciesDic = new Dictionary<string, string[]>();
 
+    private List<string> removeList = new List<string>();
+
 #if UNITY_EDITOR
     /// <summary>
     /// 与打包一起使用
@@ -56,7 +58,7 @@ public class AssetBundleManager : MonoEventEmitter
     /// <summary>
     /// 是否适用AB包标志位
     /// </summary>
-    private int simulateAssetBundleInEditor = -1; // 0: 读取ab包， // -1:读取prefab
+    private static int simulateAssetBundleInEditor = -1; // 0: 读取ab包， // -1:读取prefab
 
     /// <summary>
     /// 模拟AB资源包
@@ -69,7 +71,7 @@ public class AssetBundleManager : MonoEventEmitter
     #region 属性
 
 #if UNITY_EDITOR
-    public bool SimulateAssetBundleInEditor
+    public static bool SimulateAssetBundleInEditor
     {
         get
         {
@@ -257,7 +259,7 @@ public class AssetBundleManager : MonoEventEmitter
     /// <param name="type"></param>
     /// <param name="isSingle"></param>
     /// <returns></returns>
-    public ABLoadAsset LoadAsset(string bundleName, string assetName, Type type, bool isSingle = true)
+    public ABLoadAsset LoadAssetAsync(string bundleName, string assetName, Type type, bool isSingle = true)
     {
         ABLoadAsset operation;
 #if UNITY_EDITOR
@@ -320,4 +322,82 @@ public class AssetBundleManager : MonoEventEmitter
     }
 
     #endregion
+
+    public ABLoadBase LoadLevelAsync(string assetBundleName, string levelName, bool isAdditive)
+    {
+        ABLoadBase operation = null;
+#if UNITY_EDITOR
+        if (SimulateAssetBundleInEditor)
+        {
+            var levelPaths = AssetDatabase.GetAssetPathsFromAssetBundleAndAssetName(assetBundleName, levelName);
+            if (levelPaths.Length == 0)
+            {
+                ///@TODO: The error needs to differentiate that an asset bundle name doesn't exist
+                //        from that there right scene does not exist in the asset bundle...
+                LogUtil.LogError("There is no scene with name \"" + levelName + "\" in " + assetBundleName);
+                return null;
+            }
+
+            ABLoadLevelSimulation temp = new ABLoadLevelSimulation();
+            if (isAdditive)
+                temp.sceneRequest = EditorApplication.LoadLevelAdditiveAsyncInPlayMode(levelPaths[0]);
+            else
+                temp.sceneRequest = EditorApplication.LoadLevelAsyncInPlayMode(levelPaths[0]);
+
+            operation = temp;
+        }
+        else
+#endif
+        {
+            LoadAssetBundle(assetBundleName);
+            operation = new ABLoadLevel(assetBundleName, levelName, isAdditive);
+            inProgressOperations.Add(operation);
+        }
+
+        return operation;
+    }
+
+    private void Update()
+    {
+        if (loadingRequest.Count > 0)
+        {
+            foreach (var keyValue in loadingRequest)
+            {
+                var request = keyValue.Value;
+                if (request.isDone && request.assetBundle != null)
+                {
+                    if (!loadedAssetBundles.ContainsKey(keyValue.Key))
+                        loadedAssetBundles.Add(keyValue.Key, new LoadedAssetBundle(request.assetBundle));
+                    else
+                    {
+                        var ab = loadedAssetBundles[keyValue.Key].AssetBundle;
+                        if (ab == null)
+                        {
+                            loadedAssetBundles[keyValue.Key] = new LoadedAssetBundle(request.assetBundle);
+                        }
+                    }
+
+                    removeList.Add(keyValue.Key);
+                }
+            }
+
+            foreach (var key in removeList)
+            {
+                loadingRequest.Remove(key);
+            }
+
+            removeList.Clear();
+        }
+
+        //更新所有的操作请求
+        for (int i = 0; i < inProgressOperations.Count;)
+        {
+            if (!inProgressOperations[i].Update())
+            {
+                inProgressOperations.RemoveAt(i);
+            }
+            else
+                i++;
+        }
+    }
 }

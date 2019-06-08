@@ -30,13 +30,13 @@ public class SystemCheck : ILanucherTask
 
     public override void AddTaskChild()
     {
-        list.Add(TaskChild1);
+        list.Add(GetBaseInfo);
     }
 
     /// <summary>
     /// 子任务1
     /// </summary>
-    private void TaskChild1()
+    private void GetBaseInfo()
     {
         string[] info = new string[]
         {

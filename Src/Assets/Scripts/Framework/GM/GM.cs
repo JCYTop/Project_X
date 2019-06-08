@@ -1,8 +1,14 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class GM : MonoBehaviour
 {
     private bool isShow = false;
+
+    private void Start()
+    {
+        DontDestroyOnLoad(this.gameObject);
+    }
 
     private void Update()
     {

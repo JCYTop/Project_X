@@ -19,12 +19,11 @@ using UnityEngine;
 
 public class AssetPoolItem : MonoBehaviour
 {
-    private string assetName;
+    public string AssetName;
 
-    public string AssetName
+    void Awake()
     {
-        set { assetName = value; }
-        get { return assetName; }
+        AssetName = this.name;
     }
 
     public void Drop()

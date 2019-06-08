@@ -20,9 +20,8 @@ public enum TaskType
     CheckMemory, //检查内存是否够用
     Assets, //资源管理启动
     Manager, //基础Manager启动
-    LoadBaseData, //载入配置信息
+    LoadBase, //载入基础信息
     CheckLoadMode, //检测登陆模式
-    Config, //基础配置设置
     SDK, //SDK处理
     Update, //资源更新处理
     Preloading, //预加载资源（一般通用）

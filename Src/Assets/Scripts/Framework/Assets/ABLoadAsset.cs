@@ -16,6 +16,7 @@
 using System;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public abstract class ABLoadAsset : ABLoadOperation
 {
@@ -132,5 +133,71 @@ public class ABLoadAssetFull : ABLoadAsset
             return request != null && request.isDone;
         else
             return allRequest != null && allRequest.isDone;
+    }
+}
+
+public abstract class ABLoadBase : ABLoadOperation
+{
+    public AsyncOperation sceneRequest;
+}
+
+public class ABLoadLevelSimulation : ABLoadBase
+{
+    public ABLoadLevelSimulation()
+    {
+    }
+
+    public override bool Update()
+    {
+        return false;
+    }
+
+    public override bool IsDone()
+    {
+        return true;
+    }
+}
+
+public class ABLoadLevel : ABLoadBase
+{
+    protected string assetBundleName;
+    protected string levelName;
+    protected bool isAdditive;
+    protected string downloadingError;
+
+    public ABLoadLevel(string assetBundleName, string levelName, bool isAdditive)
+    {
+        this.assetBundleName = assetBundleName;
+        this.levelName = levelName;
+        this.isAdditive = isAdditive;
+    }
+
+    public override bool Update()
+    {
+        if (sceneRequest != null)
+            return false;
+
+        LoadedAssetBundle bundle = AssetBundleManager.Instance().GetLoadedAssetBundle(assetBundleName);
+        if (bundle != null)
+        {
+            if (isAdditive)
+                sceneRequest = SceneManager.LoadSceneAsync(levelName, LoadSceneMode.Additive);
+            else
+                sceneRequest = SceneManager.LoadSceneAsync(levelName);
+            return false;
+        }
+        else
+            return true;
+    }
+
+    public override bool IsDone()
+    {
+        if (sceneRequest == null && downloadingError != null)
+        {
+            LogUtil.LogError(downloadingError);
+            return true;
+        }
+
+        return sceneRequest != null && sceneRequest.isDone;
     }
 }

@@ -59,6 +59,7 @@ public class BuildWindow : EditorMenu<BuildWindow>
         EditorWindow = GetWindow<BuildWindow>();
         EditorWindow.position = new Rect(250, 300, 400, 600);
         EditorWindow.Show();
+        isReadAB = !AssetBundleManager.SimulateAssetBundleInEditor;
     }
 
     public override void OnEnable()
@@ -66,7 +67,6 @@ public class BuildWindow : EditorMenu<BuildWindow>
         appVer = Application.version;
         selectChannelEnvIndex = 0;
         buildTarget = EditorUserBuildSettings.selectedBuildTargetGroup;
-        isReadAB = false;
     }
 
     public override void OnDisable()
@@ -122,7 +122,7 @@ public class BuildWindow : EditorMenu<BuildWindow>
 
         //=========================== 打包选项 ================================
         buildOptions = (BuildOptions) EditorGUILayout.EnumMaskField("打包选项: ", buildOptions);
-        if (Packager.BuildOptions  != buildOptions)
+        if (Packager.BuildOptions != buildOptions)
         {
             Packager.BuildOptions = buildOptions;
         }
@@ -135,7 +135,7 @@ public class BuildWindow : EditorMenu<BuildWindow>
 
         //=========================== 选择平台 ================================
         buildTarget = (BuildTargetGroup) EditorGUILayout.EnumPopup(new GUIContent("平台："), buildTarget);
-        if (Packager.CurrTarget !=buildTarget)
+        if (Packager.CurrTarget != buildTarget)
         {
             // 重新判断当前版本设定
             Packager.CurrTarget = buildTarget;
@@ -159,6 +159,19 @@ public class BuildWindow : EditorMenu<BuildWindow>
 
         #endregion
 
+        #region 是否读取直接读取AB
+
+        GUILayout.Space(10);
+        //=========================== 是否读取AB包 ===========================
+        isReadAB = EditorGUILayout.Toggle(new GUIContent("读取AB包："), Packager.isReadAB);
+        if (Packager.isReadAB != isReadAB)
+        {
+            Packager.isReadAB = isReadAB;
+            AssetBundleManager.SimulateAssetBundleInEditor = !Packager.isReadAB;
+        }
+
+        #endregion
+
         #region 标记AB资源
 
         //=========================== 标记AB资源 ===========================
@@ -169,7 +182,7 @@ public class BuildWindow : EditorMenu<BuildWindow>
             Packager.CreateVersion();
         }
 
-        GUILayout.Space(10);
+        GUILayout.Space(20);
 
         #endregion
 
@@ -183,15 +196,6 @@ public class BuildWindow : EditorMenu<BuildWindow>
         }
 
         GUILayout.Space(10);
-        //=========================== 是否读取AB包 ===========================
-        isReadAB = EditorGUILayout.Toggle(new GUIContent("读取AB包："), isReadAB);
-        if (Packager.isReadAB != isReadAB)
-        {
-            Packager.isReadAB = isReadAB;
-//            AssetBundleManager.SimulateAssetBundleInEditor = !Packager.isReadAB;
-        }
-
-        GUILayout.Space(20);
 
         #endregion
 

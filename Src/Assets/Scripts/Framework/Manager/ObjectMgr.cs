@@ -5,7 +5,7 @@ using UnityEngine;
 /// <summary>
 /// 场景实例化出物体的管理
 /// </summary>
-public static class GameObjectMgr
+public class GameObjectMgr
 
 {
     #region 字段

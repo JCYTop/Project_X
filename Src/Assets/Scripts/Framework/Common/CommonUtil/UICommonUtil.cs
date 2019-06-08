@@ -28,4 +28,17 @@ public class UICommonUtil
     {
         return CleanAllChild(GameObjectMgr.GetGOInfo(ID).gameObject);
     }
+
+    /// <summary>
+    /// 设置孩子的父物体
+    /// </summary>
+    /// <param name="child"></param>
+    /// <param name="parent"></param>
+    /// <returns></returns>
+    public static void SetParent(GameObject child, GameObject parent)
+    {
+        child.transform.SetParent(parent.transform);
+        child.transform.localPosition = Vector3.zero;
+        child.transform.localScale = Vector3.one;
+    }
 }

@@ -28,6 +28,7 @@ public class AssetsManager : MonoEventEmitter
         {
             instance = MonoSingletonProperty<AssetsManager>.Instance();
         }
+
         return instance;
     }
 
@@ -79,6 +80,20 @@ public class AssetsManager : MonoEventEmitter
         shortAssetPool.LoadAssetAsync(path, callback);
     }
 
+    public void GetPrefabAsyncByName(string name, Action<GameObject> callback)
+    {
+        var langPath = string.Empty;
+        Define.ABInfo.ABDatas.ForEach((asset) =>
+        {
+            if (asset.name.Equals(name))
+            {
+                langPath = asset.Path.ToString();
+            }
+        });
+        GetPrefabAsync(langPath, callback);
+    }
+
+
     /// <summary>
     /// 清空资源列表
     /// </summary>
@@ -88,26 +103,6 @@ public class AssetsManager : MonoEventEmitter
     }
 
     #endregion
-
-    /// <summary>
-    /// 获取已加载的游戏实体Prefab
-    /// </summary>
-    /// <param name="assetName">资源名</param>
-    /// <returns>Prefab</returns>
-    public GameObject GetGOPrefab(string assetName)
-    {
-        return preloadAssetPool.GetPrefab(string.Format("{0} ", assetName));
-    }
-
-    /// <summary>
-    /// 异步获取已加载的游戏实体Prefab
-    /// </summary>
-    /// <param name="assetName"></param>
-    /// <param name="callback"></param>
-    public void GetGOPrefabAsync(string assetName, Action<GameObject> callback)
-    {
-        shortAssetPool.LoadAssetAsync(string.Format("{0} ", assetName), callback);
-    }
 
     #region 对象池
 
@@ -217,6 +212,60 @@ public class AssetsManager : MonoEventEmitter
     }
 
     #endregion
+
+    /// <summary>
+    /// 获取已加载的游戏实体Prefab
+    /// </summary>
+    /// <param name="assetName">资源名</param>
+    /// <returns>Prefab</returns>
+    public GameObject GetGOPrefab(string assetName)
+    {
+        return preloadAssetPool.GetPrefab(string.Format("{0} ", assetName));
+    }
+
+    /// <summary>
+    /// 异步获取已加载的游戏实体Prefab
+    /// </summary>
+    /// <param name="assetName"></param>
+    /// <param name="callback"></param>
+    public void GetGOPrefabAsync(string assetName, Action<GameObject> callback)
+    {
+        shortAssetPool.LoadAssetAsync(string.Format("{0} ", assetName), callback);
+    }
+
+    /// <summary>
+    /// 异步加载精灵
+    /// </summary>
+    /// <param name="path">贴图路径</param>
+    /// <param name="spName">精灵名称</param>
+    /// <param name="fn">返回精灵回调</param>
+    public void LoadSpriteAsync(string path, string spName, Action<Sprite> fn)
+    {
+        var bundleName = path.ToLower() + ".img";
+        var assetName = path + ".png";
+        AssetBundleLoader.Instance().LoadAllAsset(bundleName, assetName,
+            (arr) =>
+            {
+                //返回一个精灵列表
+                Sprite sprite = null;
+                if (arr != null)
+                {
+                    for (int i = 0; i < arr.Length; i++)
+                    {
+                        var obj = arr[i] as Sprite;
+                        //遍历寻找目标精灵
+                        if (obj != null && obj.name == spName)
+                        {
+                            sprite = obj;
+                            break;
+                        }
+                    }
+                }
+
+                //返回精灵
+                fn(sprite);
+            });
+    }
 }
 
 /// <summary>
