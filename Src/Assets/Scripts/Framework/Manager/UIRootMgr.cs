@@ -13,26 +13,39 @@
  ----------------------------------
 */
 
-using System;
-using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using NaughtyAttributes;
 using UnityEngine;
 
 public class UIRootMgr : MonoBehaviour
 {
-    private static UIRootMgr instance;
-
     #region 字段
 
+    public UIBase UIBase;
+    private static UIRootMgr instance;
     [SerializeField] private Camera UICamera;
     [SerializeField] private Canvas[] canvas;
     [SerializeField] private Canvas[] toolCanvas;
     private Canvas rootCanvas;
     private Canvas stackCanvas;
     private Canvas topCanvas;
-    private Queue<UIBase> rootUI = new Queue<UIBase>(1 << 4);
-    private Stack<UIBase> stackUI = new Stack<UIBase>(1 << 4);
-    private Queue<UIBase> topUI = new Queue<UIBase>(1 << 2);
+    private List<UIBase> rootUI;
+    private Stack<UIBase> stackUI;
+    private Stack<UIBase> topUI;
+    private DbLinkedList<UIBase> UILinkedList;
+
+    [BoxGroup("RootUI Lists")] [ReorderableList]
+    public List<UIBase> rootUIShow = new List<UIBase>(1 << 4);
+
+    [BoxGroup("StackUI Lists")] [ReorderableList]
+    public List<UIBase> stackUIShow = new List<UIBase>(1 << 4);
+
+    [BoxGroup("TopUI Lists")] [ReorderableList]
+    public List<UIBase> topUIShow = new List<UIBase>(1 << 2);
+
+    [BoxGroup("UILinkedList Lists")] [ReorderableList]
+    public List<UIBase> UILinkedListShow = new List<UIBase>(1 << 2);
 
     #endregion
 
@@ -110,34 +123,87 @@ public class UIRootMgr : MonoBehaviour
         return instance;
     }
 
-    private void Start()
+    private void Awake()
     {
+        rootUI = new List<UIBase>(1 << 4);
+        stackUI = new Stack<UIBase>(1 << 4);
+        topUI = new Stack<UIBase>(1 << 2);
+        UILinkedList = new DbLinkedList<UIBase>(new DbNode<UIBase>(UIBase), 1 << 2);
         foreach (var toolCanvas in toolCanvas)
         {
             toolCanvas.gameObject.SetActive(false);
         }
     }
 
-    public void PutUIBase(UIBase ui)
+    public void OpenUIBase(UIBase ui)
     {
+        GameObject go = default;
         switch (ui.ShowType)
         {
             case UIType.Root:
-                rootUI.Enqueue(ui);
+                rootUI.Add(ui);
+                go = RootCanvas.gameObject;
+                rootUIShow = rootUI.ToList();
                 break;
             case UIType.Stack:
                 stackUI.Push(ui);
-                UICommonUtil.SetParent(ui.gameObject, StackCanvas.gameObject);
+                go = StackCanvas.gameObject;
+                stackUIShow = stackUI.ToList();
                 break;
             case UIType.Top:
-                topUI.Enqueue(ui);
+                topUI.Push(ui);
+                go = TopCanvas.gameObject;
+                topUIShow = topUI.ToList();
+                break;
+            default:
+                return;
+        }
+
+        UICommonUtil.SetParent(ui.gameObject, go.gameObject);
+        //可根据当前的数量进行场景中UI删除（UI原则不删除只是隐藏，但如果UI过多可以删除。原则LRU策略），此处相当于标记垃圾UI等待处理
+        if (UILinkedList.Contains(ui))
+        {
+            UILinkedList.LRUSort(ui);
+            UILinkedList.LRUSort(UIBase);
+        }
+        else
+        {
+            UILinkedList.AddBefore(ui, 0);
+        }
+
+        if (UILinkedList.IsHandlebyCapacity)
+        {
+            UICommonUtil.DestroyGO(UILinkedList.LRUSortRemove());
+        }
+
+        UILinkedListShow = UILinkedList.ToList();
+    }
+
+    public UIBase CloseUIBase(UIBase ui)
+    {
+        UIBase tmp = null;
+        switch (ui.ShowType)
+        {
+            case UIType.Root:
+                tmp = ui;
+                rootUI.Remove(ui);
+                break;
+            case UIType.Stack:
+                tmp = stackUI.Pop();
+                break;
+            case UIType.Top:
+                tmp = topUI.Pop();
                 break;
         }
+
+
+        return tmp;
     }
 }
 
 public enum UIType
 {
+    None,
     Root,
     Stack,
     Top,

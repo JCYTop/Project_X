@@ -1,14 +1,27 @@
 ﻿using System;
+using NaughtyAttributes;
 using UnityEngine;
 
 public class UIBase : ObjectBase
 {
-    [Header("UI显示层级")] public UIType ShowType = UIType.Stack;
+    [BoxGroup("UI属性设置")] [Header("UI显示层级")]
+    public UIType ShowType = UIType.Stack;
 
     public override void Init()
     {
         GameObjectMgr.AddUIInfo(id, this);
-        UIRootMgr.Instance().PutUIBase(this);
+    }
+
+    public override void Enable()
+    {
+        base.Enable();
+        UIRootMgr.Instance().OpenUIBase(this);
+    }
+
+    public override void Disable()
+    {
+        base.Disable();
+        UIRootMgr.Instance().CloseUIBase(this);
     }
 
     public override void Release()
@@ -26,6 +39,7 @@ public class UIBase : ObjectBase
             }
         }
 
+        //LRU策略自动清理
         GameObjectMgr.RemoveUIInfo(id);
     }
 

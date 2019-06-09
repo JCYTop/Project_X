@@ -28,6 +28,6 @@ MonoBehaviour:
   - ID: 50008002
     name: UIRoot
     Path: Assets\ABRes\Prefabs\UI\UIRoot
-    Des: UITRoot
+    Des: UIRoot
     Layer: UI
     Tag: UI

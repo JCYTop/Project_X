@@ -13,6 +13,8 @@
  ----------------------------------
 */
 
+using System;
+using System.Collections.Generic;
 using System.Text;
 
 /// <summary>
@@ -21,6 +23,7 @@ using System.Text;
 public class DbLinkedList<T>
 {
     private DbNode<T> head;
+    private int capacity;
 
     public DbNode<T> Head
     {
@@ -48,13 +51,38 @@ public class DbLinkedList<T>
         }
     }
 
-    /// <summary>
-    /// 构造函数
-    /// </summary>
+    public bool IsHandlebyCapacity
+    {
+        get
+        {
+            if (Math.Ceiling(capacity * 1.75f) < Count)
+            {
+                return true;
+            }
+
+            return false;
+        }
+    }
+
+    #region 构造函数
+
     public DbLinkedList()
     {
         Head = null;
     }
+
+    public DbLinkedList(DbNode<T> node)
+    {
+        Head = node;
+    }
+
+    public DbLinkedList(DbNode<T> node, int capacity)
+    {
+        Head = node;
+        this.capacity = capacity;
+    }
+
+    #endregion
 
     /// <summary>
     /// 索引器
@@ -276,9 +304,18 @@ public class DbLinkedList<T>
 
         if (index == j)
         {
-            ptr.Next.Prev = q;
-            q.Next = ptr.Next;
-            return ptr.Data;
+            if (ptr.Next == null)
+            {
+                ptr.Prev.Next = null;
+                ptr.Prev = null;
+                return ptr.Data;
+            }
+            else
+            {
+                ptr.Next.Prev = q;
+                q.Next = ptr.Next;
+                return ptr.Data;
+            }
         }
         else
         {
@@ -309,7 +346,19 @@ public class DbLinkedList<T>
             index++;
         }
 
-        return index;
+        if (ptr.Data.Equals(value))
+        {
+            return index;
+        }
+        else
+        {
+            return -1;
+        }
+    }
+
+    public bool Contains(T value)
+    {
+        return IndexOf(value) != -1;
     }
 
     /// <summary>
@@ -414,13 +463,28 @@ public class DbLinkedList<T>
     public void Print()
     {
         var current = new DbNode<T>();
-        current = this.Head;
+        current = Head;
         LogUtil.Log(string.Format(current.Data + ","), LogType.NormalLog);
         while (current.Next != null)
         {
             LogUtil.Log(string.Format(current.Next.Data + ","), LogType.NormalLog);
             current = current.Next;
         }
+    }
+
+    public List<T> ToList()
+    {
+        var list = new List<T>();
+        var current = new DbNode<T>();
+        current = Head;
+        list.Add(current.Data);
+        while (current.Next != null)
+        {
+            current = current.Next;
+            list.Add(current.Data);
+        }
+
+        return list;
     }
 
     public override string ToString()
@@ -435,6 +499,46 @@ public class DbLinkedList<T>
         }
 
         return sb.ToString().TrimEnd(',');
+    }
+
+    /// <summary>
+    /// 最近最少使用策略
+    /// </summary>
+    /// <param name="tmp"></param>
+    /// <exception cref="NotImplementedException"></exception>
+    public DbNode<T> LRUSort(T value)
+    {
+        var index = IndexOf(value);
+        if (index > 0)
+        {
+            RemoveAt(index);
+            AddBefore(value, 0);
+        }
+        else if (index == -1)
+        {
+            LogUtil.LogError(String.Format("请检查是否存在节点"));
+        }
+
+        return head;
+    }
+
+    /// <summary>
+    /// LRU清除多余的链表节点
+    /// </summary>
+    /// <returns>返回被清除的链表节点</returns>
+    public List<T> LRUSortRemove()
+    {
+        var tmp = new List<T>();
+        var node = GetNodeAt(capacity);
+        var startNode = node;
+        while (node.Next != null)
+        {
+            tmp.Add(node.Data);
+            node = node.Next;
+        }
+
+        startNode.Next = null;
+        return tmp;
     }
 }
 

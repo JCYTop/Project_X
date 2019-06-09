@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 public class UICommonUtil
 {
@@ -41,4 +42,21 @@ public class UICommonUtil
         child.transform.localPosition = Vector3.zero;
         child.transform.localScale = Vector3.one;
     }
+
+    #region 删除物体
+
+    public static void DestroyGO(GameObject go)
+    {
+        Object.Destroy(go);
+    }
+
+    public static void DestroyGO<T>(List<T> list) where T : MonoBehaviour
+    {
+        foreach (var unit in list)
+        {
+            DestroyGO(unit.gameObject);
+        }
+    }
+
+    #endregion
 }

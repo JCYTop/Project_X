@@ -64,14 +64,15 @@ public class ObjectBase : MonoEventEmitter
     {
         On(id.ToString(), Refresh);
         UnityActionMgr.Instance().RunUnityAction(id, RunTimeUnityAction.Enable);
+        Enable();
     }
 
     void OnDisable()
     {
         Off(id.ToString(), Refresh);
         UnityActionMgr.Instance().RunUnityAction(id, RunTimeUnityAction.DisEnable);
+        Disable();
     }
-
 
     void OnDestroy()
     {
@@ -100,6 +101,15 @@ public class ObjectBase : MonoEventEmitter
     /// </summary>
     /// <param name="args">数据</param>
     public virtual void Refresh(params object[] args)
+    {
+    }
+
+    public virtual void Enable()
+    {
+    }
+
+
+    public virtual void Disable()
     {
     }
 }

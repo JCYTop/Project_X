@@ -80,7 +80,7 @@ MonoBehaviour:
   objectTag: UI
   Des: "\u6D4B\u8BD5UI"
   id: 50008001
-  ShowType: 1
+  ShowType: 2
 --- !u!1 &8387179247059613923
 GameObject:
   m_ObjectHideFlags: 0
