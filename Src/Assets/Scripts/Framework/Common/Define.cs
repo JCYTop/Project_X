@@ -90,11 +90,7 @@ public class Define
     {
         get
         {
-            if (abInfo == null)
-            {
-                abInfo = Resources.Load<ABInfo>(AssetsConfig.ABInfoPath);
-            }
-
+            abInfo = Resources.Load<ABInfo>(AssetsConfig.ABInfoPath);
             return abInfo;
         }
     }
@@ -117,5 +113,11 @@ public class Define
 #endif
             return Application.dataPath + "/ABRes/";
         }
+    }
+
+    class ABIDNameSet
+    {
+        public long ID { set; get; }
+        public string Name { set; get; }
     }
 }

@@ -13,6 +13,7 @@
  ----------------------------------
 */
 
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using NaughtyAttributes;
@@ -22,7 +23,7 @@ public class UIRootMgr : MonoBehaviour
 {
     #region 字段
 
-    public UIBase UIBase;
+    public UIBase MainUIBase;
     private static UIRootMgr instance;
     [SerializeField] private Camera UICamera;
     [SerializeField] private Canvas[] canvas;
@@ -128,7 +129,11 @@ public class UIRootMgr : MonoBehaviour
         rootUI = new List<UIBase>(1 << 4);
         stackUI = new Stack<UIBase>(1 << 4);
         topUI = new Stack<UIBase>(1 << 2);
-        UILinkedList = new DbLinkedList<UIBase>(new DbNode<UIBase>(UIBase), 1 << 2);
+        UILinkedList = new DbLinkedList<UIBase>(new DbNode<UIBase>(MainUIBase), 1 << 2);
+    }
+
+    private void Start()
+    {
         foreach (var toolCanvas in toolCanvas)
         {
             toolCanvas.gameObject.SetActive(false);
@@ -164,12 +169,13 @@ public class UIRootMgr : MonoBehaviour
         if (UILinkedList.Contains(ui))
         {
             UILinkedList.LRUSort(ui);
-            UILinkedList.LRUSort(UIBase);
         }
         else
         {
             UILinkedList.AddBefore(ui, 0);
         }
+
+        UILinkedList.LRUSort(MainUIBase);
 
         if (UILinkedList.IsHandlebyCapacity)
         {

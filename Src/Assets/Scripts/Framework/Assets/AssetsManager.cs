@@ -16,11 +16,77 @@ public delegate void CallBackWithPercent(int done, int total);
 
 public class AssetsManager : MonoEventEmitter
 {
+    #region 字段
+
     private static AssetsManager instance;
     private string gameResourceRootDir;
     private AssetCachePool preloadAssetPool; //常驻资源
     private AssetCachePool shortAssetPool; //暂存资源
     private Dictionary<string, Queue<AssetPoolItem>> objectPoolMap = new Dictionary<string, Queue<AssetPoolItem>>();
+
+    /// <summary>
+    /// 以名字检索的AB资源集合
+    /// </summary>
+    private static Dictionary<string, List<long>> strABInfo;
+
+    /// <summary>
+    /// 以ID检索的AB资源集合
+    /// </summary>
+    private static Dictionary<long, ABData> idABInfo;
+
+    #endregion
+
+    private static Dictionary<string, List<long>> StrABInfo
+    {
+        get
+        {
+            if (strABInfo == null)
+            {
+                strABInfo = new Dictionary<string, List<long>>();
+                foreach (var ab in Define.ABInfo.ABDatas)
+                {
+                    if (!strABInfo.ContainsKey(ab.name))
+                    {
+                        var tmp = new List<long>();
+                        tmp.Add(ab.ID);
+                        strABInfo.Add(ab.name, tmp);
+                    }
+                    else
+                    {
+                        strABInfo.TryGetValue(ab.name, out var tmp);
+                        tmp.Add(ab.ID);
+                    }
+                }
+            }
+
+            return strABInfo;
+        }
+    }
+
+    private static Dictionary<long, ABData> IDABInfo
+    {
+        get
+        {
+            if (idABInfo == null)
+            {
+                idABInfo = new Dictionary<long, ABData>();
+                foreach (var ab in Define.ABInfo.ABDatas)
+                {
+                    if (!idABInfo.ContainsKey(ab.ID))
+                    {
+                        idABInfo.Add(ab.ID, ab);
+                    }
+                    else
+                    {
+                        LogUtil.LogError(string.Format("发现ABInfo异常数据ID::: {0}", ab.ID), LogType.NormalLog);
+                        break;
+                    }
+                }
+            }
+
+            return idABInfo;
+        }
+    }
 
     public static AssetsManager Instance()
     {
@@ -75,22 +141,41 @@ public class AssetsManager : MonoEventEmitter
     /// </summary>
     /// <param name="path"></param>
     /// <param name="callback"></param>
-    public void GetPrefabAsync(string path, Action<GameObject> callback)
+    private void GetPrefabAsync(string path, Action<GameObject> callback)
     {
         shortAssetPool.LoadAssetAsync(path, callback);
     }
 
-    public void GetPrefabAsyncByName(string name, Action<GameObject> callback)
+    /// <summary>
+    /// 异步获取加载的预制体
+    /// </summary>
+    /// <param name="name">通过已知文件名字</param>
+    /// <param name="callback"></param>
+    /// <param name="isImportaLL">文件名字可能会重复，只有ID是唯一的，所以需要确认一个文件名字对应几个ID，当对应多个时候是否选择都加入</param>
+    public void GetPrefabAsync(string name, Action<GameObject> callback, bool isImportaLL = true)
     {
-        var langPath = string.Empty;
-        Define.ABInfo.ABDatas.ForEach((asset) =>
+        if (StrABInfo.TryGetValue(name, out var list))
         {
-            if (asset.name.Equals(name))
+            if (isImportaLL)
             {
-                langPath = asset.Path.ToString();
+                foreach (var id in list)
+                {
+                    GetPrefabAsync(id, callback);
+                }
             }
-        });
-        GetPrefabAsync(langPath, callback);
+            else
+            {
+                GetPrefabAsync(list[0], callback);
+            }
+        }
+    }
+
+    public void GetPrefabAsync(long id, Action<GameObject> callback)
+    {
+        if (IDABInfo.TryGetValue(id, out var data))
+        {
+            GetPrefabAsync(data.Path, callback);
+        }
     }
 
 

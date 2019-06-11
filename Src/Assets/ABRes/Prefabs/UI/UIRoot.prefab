@@ -350,7 +350,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83a124b262e739a4c892a962b3ff03d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UIBase: {fileID: 7901312140832347402}
+  MainUIBase: {fileID: 7901312140832347402}
   UICamera: {fileID: 6250375405261661826}
   canvas:
   - {fileID: 3084850502398484143}

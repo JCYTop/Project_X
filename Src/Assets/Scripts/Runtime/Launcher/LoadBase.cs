@@ -37,7 +37,7 @@ public class LoadBase : ILanucherTask
 
     private void StartChildTask1()
     {
-        AssetsManager.Instance().GetPrefabAsyncByName("LangSetting", (prefab) =>
+        AssetsManager.Instance().GetPrefabAsync("LangSetting", (prefab) =>
         {
             if (prefab != null)
             {
@@ -50,7 +50,7 @@ public class LoadBase : ILanucherTask
 
     private void StartChildTask2()
     {
-        AssetsManager.Instance().GetPrefabAsyncByName("UIRoot", (prefab) =>
+        AssetsManager.Instance().GetPrefabAsync("UIRoot", (prefab) =>
         {
             if (prefab != null)
             {
@@ -60,7 +60,7 @@ public class LoadBase : ILanucherTask
             CalcTaskCount();
         });
         
-        AssetsManager.Instance().GetPrefabAsyncByName("GameObject", (prefab) =>
+        AssetsManager.Instance().GetPrefabAsync("GameObject", (prefab) =>
         {
             if (prefab != null)
             {

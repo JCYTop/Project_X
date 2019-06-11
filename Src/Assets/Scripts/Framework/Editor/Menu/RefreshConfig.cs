@@ -12,6 +12,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using UnityEditor;
 using UnityEngine;
 
@@ -62,11 +63,11 @@ public class RefreshConfig : MonoBehaviour
 
                     goBase.ID = indexLayer * 10000000 + indexTag * 1000 + goIndex;
                     AssetDatabase.SaveAssets();
-                    string path = filesPath[i];
+                    var path = filesPath[i];
                     path = filesPath[i].Substring(filesPath[i].IndexOf("ABRes", StringComparison.Ordinal));
                     info = path;
-                    int index1 = path.IndexOf("/", StringComparison.Ordinal);
-                    int index2 = path.IndexOf(".", StringComparison.Ordinal) - 1;
+                    var index1 = path.IndexOf("/", StringComparison.Ordinal);
+                    var index2 = path.IndexOf(".", StringComparison.Ordinal) - 1;
                     path = path.Substring(index1 + 1, index2 - index1);
                     path = @"Assets\ABRes\" + path;
                     uiDatas.Add(goBase.ID, new ABData()
@@ -86,6 +87,7 @@ public class RefreshConfig : MonoBehaviour
         if (uiDatas.Count != 0)
         {
             abInfo.ABDatas = new List<ABData>(uiDatas.Values);
+            abInfo.ABDatas.Sort((x, y) => x.ID.CompareTo(y.ID));
             EditorUtility.SetDirty(abInfo);
             AssetDatabase.SaveAssets();
         }
