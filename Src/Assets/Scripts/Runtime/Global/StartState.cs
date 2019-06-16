@@ -30,7 +30,7 @@ public class StartState : FSMState
 
     public override void OnEnter()
     {
-        LogUtil.Log(string.Format("StartState"));
+        LogUtil.Log(string.Format("StartState"), LogType.State);
     }
 
     public override void OnUpdate()

@@ -114,10 +114,4 @@ public class Define
             return Application.dataPath + "/ABRes/";
         }
     }
-
-    class ABIDNameSet
-    {
-        public long ID { set; get; }
-        public string Name { set; get; }
-    }
 }
