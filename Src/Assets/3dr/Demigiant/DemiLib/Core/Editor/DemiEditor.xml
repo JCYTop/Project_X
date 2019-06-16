@@ -60,7 +60,7 @@
         </member>
         <member name="M:DG.DemiEditor.DeEditorFileUtils.IsProjectFolder(System.String)">
             <summary>
-            Returns TRUE if the given GUID refers to a valid and existing project folder
+            Returns TRUE if the given GUResID refers to a valid and existing project folder
             </summary>
         </member>
         <member name="M:DG.DemiEditor.DeEditorFileUtils.ADBPathToFullPath(System.String)">
@@ -101,10 +101,10 @@
             Returns the given path with all slashes converted to the correct ones used by the system
             </summary>
         </member>
-        <member name="M:DG.DemiEditor.DeEditorFileUtils.GUIDToExistingAssetPath(System.String)">
+        <member name="M:DG.DemiEditor.DeEditorFileUtils.GUResIDToExistingAssetPath(System.String)">
             <summary>
-            Returns the asset path of the given GUID (relative to Unity project's folder),
-            or an empty string if either the GUID is invalid or the related path doesn't exist.
+            Returns the asset path of the given GUResID (relative to Unity project's folder),
+            or an empty string if either the GUResID is invalid or the related path doesn't exist.
             </summary>
         </member>
         <member name="M:DG.DemiEditor.DeEditorFileUtils.IsEmpty(System.String)">
@@ -283,80 +283,80 @@
         <member name="F:DG.DemiEditor.DeDragResultType.Click">
             <summary>Dragging concluced but not accepted because too short</summary>
         </member>
-        <member name="T:DG.DemiEditor.DeGUIDrag">
+        <member name="T:DG.DemiEditor.DeGUResIDrag">
             <summary>
             Manages the dragging of GUI elements
             </summary>
         </member>
-        <member name="P:DG.DemiEditor.DeGUIDrag.isDragging">
+        <member name="P:DG.DemiEditor.DeGUResIDrag.isDragging">
             <summary>
             True if a GUI element is currently being dragged
             </summary>
         </member>
-        <member name="P:DG.DemiEditor.DeGUIDrag.draggedItem">
+        <member name="P:DG.DemiEditor.DeGUResIDrag.draggedItem">
             <summary>
             Return the current item being dragged, or NULL if there is none
             </summary>
         </member>
-        <member name="P:DG.DemiEditor.DeGUIDrag.draggedItemType">
+        <member name="P:DG.DemiEditor.DeGUResIDrag.draggedItemType">
             <summary>
             Type of current item being dragged, or NULL if there is none
             </summary>
         </member>
-        <member name="P:DG.DemiEditor.DeGUIDrag.draggedItemOriginalIndex">
+        <member name="P:DG.DemiEditor.DeGUResIDrag.draggedItemOriginalIndex">
             <summary>
             Starting index of current item being dragged, or NULL if there is none
             </summary>
         </member>
-        <member name="P:DG.DemiEditor.DeGUIDrag.optionalDragData">
+        <member name="P:DG.DemiEditor.DeGUResIDrag.optionalDragData">
             <summary>
             Retrieves the eventual optional data stored via the StartDrag method
             </summary>
         </member>
-        <member name="M:DG.DemiEditor.DeGUIDrag.StartDrag(System.Int32,UnityEditor.Editor,System.Collections.IList,System.Int32,System.Object)">
+        <member name="M:DG.DemiEditor.DeGUResIDrag.StartDrag(System.Int32,UnityEditor.Editor,System.Collections.IList,System.Int32,System.Object)">
             <summary>
             Starts a drag operation on a GUI element.
             </summary>
-            <param name="dragId">ID for this drag operation (must be the same for both StartDrag and Drag</param>
+            <param name="dragId">ResID for this drag operation (must be the same for both StartDrag and Drag</param>
             <param name="editor">Reference to the current editor drawing the GUI (used when a Repaint is needed)</param>
             <param name="draggableList">List containing the dragged item and all other relative draggable items</param>
             <param name="draggedItemIndex">DraggableList index of the item being dragged</param>
-            <param name="optionalData">Optional data that can be retrieved via the <see cref="P:DG.DemiEditor.DeGUIDrag.optionalDragData"/> static property</param>
+            <param name="optionalData">Optional data that can be retrieved via the <see cref="P:DG.DemiEditor.DeGUResIDrag.optionalDragData"/> static property</param>
         </member>
-        <member name="M:DG.DemiEditor.DeGUIDrag.StartDrag(System.Int32,UnityEditor.EditorWindow,System.Collections.IList,System.Int32,System.Object)">
+        <member name="M:DG.DemiEditor.DeGUResIDrag.StartDrag(System.Int32,UnityEditor.EditorWindow,System.Collections.IList,System.Int32,System.Object)">
             <summary>
             Starts a drag operation on a GUI element.
             </summary>
-            <param name="dragId">ID for this drag operation (must be the same for both StartDrag and Drag</param>
+            <param name="dragId">ResID for this drag operation (must be the same for both StartDrag and Drag</param>
             <param name="editorWindow">Reference to the current editor drawing the GUI (used when a Repaint is needed)</param>
             <param name="draggableList">List containing the dragged item and all other relative draggable items</param>
             <param name="draggedItemIndex">DraggableList index of the item being dragged</param>
-            <param name="optionalData">Optional data that can be retrieved via the <see cref="P:DG.DemiEditor.DeGUIDrag.optionalDragData"/> static property</param>
+            <param name="optionalData">Optional data that can be retrieved via the <see cref="P:DG.DemiEditor.DeGUResIDrag.optionalDragData"/> static property</param>
         </member>
-        <member name="M:DG.DemiEditor.DeGUIDrag.Drag(System.Int32,System.Collections.IList,System.Int32,System.Nullable{UnityEngine.Rect})">
+        <member name="M:DG.DemiEditor.DeGUResIDrag.Drag(System.Int32,System.Collections.IList,System.Int32,System.Nullable{UnityEngine.Rect})">
             <summary>
             Call this after each draggable GUI block, to calculate and draw the current drag state
             (or complete it if the mouse was released).
             </summary>
-            <param name="dragId">ID for this drag operation (must be the same for both StartDrag and Drag</param>
+            <param name="dragId">ResID for this drag operation (must be the same for both StartDrag and Drag</param>
             <param name="draggableList">List containing the draggable item and all other relative draggable items</param>
             <param name="currDraggableItemIndex">Current index of the draggable item being drawn</param>
             <param name="lastGUIRect">If NULL will calculate this automatically using <see cref="M:UnityEngine.GUILayoutUtility.GetLastRect"/>.
             Pass this if you're creating a drag between elements that don't use GUILayout</param>
         </member>
-        <member name="M:DG.DemiEditor.DeGUIDrag.Drag(System.Int32,System.Collections.IList,System.Int32,UnityEngine.Color,System.Nullable{UnityEngine.Rect})">
+        <member name="M:DG.DemiEditor.DeGUResIDrag.Drag(System.Int32,System.Collections.IList,System.Int32,UnityEngine.Color,System.Nullable{UnityEngine.Rect})">
             <summary>
             Call this after each draggable GUI block, to calculate and draw the current drag state
             (or complete it if the mouse was released).
             </summary>
-            <param name="dragId">ID for this drag operation (must be the same for both StartDrag and Drag</param>
+            <param name="dragId">ResID for this drag operation (must be the same for both StartDrag and Drag</param>
             <param name="draggableList">List containing the draggable item and all other relative draggable items</param>
             <param name="currDraggableItemIndex">Current index of the draggable item being drawn</param>
             <param name="dragEvidenceColor">Color to use for drag divider and selection</param>
             <param name="lastGUIRect">If NULL will calculate this automatically using <see cref="M:UnityEngine.GUILayoutUtility.GetLastRect"/>.
             Pass this if you're creating a drag between elements that don't use GUILayout</param>
         </member>
-        <member name="M:DG.DemiEditor.DeGUIDrag.EndDrag(System.Boolean)">
+        <member name="M:DG.DemiEditor.DeGUResIDrag.EndDrag(System.Boolean)">
             <summary>
             Ends the drag operations, and eventually applies the drag outcome.
             Returns TRUE if the position of the dragged item actually changed.
@@ -371,9 +371,9 @@
             </summary>
         </member>
         <member name="M:DG.DemiEditor.DeGUINodeSystem.ABSDeGUINode.GetAreas(UnityEngine.Vector2,DG.DemiLib.IEditorGUINode)">
-            <summary>Used to fill <see cref="T:DG.DemiEditor.DeGUINodeSystem.NodeGUIData"/></summary>
+            <summary>Used to fill <see cref="T:DG.DemiEditor.DeGUINodeSystem.NodeGUResIData"/></summary>
         </member>
-        <member name="M:DG.DemiEditor.DeGUINodeSystem.ABSDeGUINode.OnGUI(DG.DemiEditor.DeGUINodeSystem.NodeGUIData,DG.DemiLib.IEditorGUINode)">
+        <member name="M:DG.DemiEditor.DeGUINodeSystem.ABSDeGUINode.OnGUI(DG.DemiEditor.DeGUINodeSystem.NodeGUResIData,DG.DemiLib.IEditorGUINode)">
             <summary>Called when the node needs to be drawn</summary>
         </member>
         <member name="F:DG.DemiEditor.DeGUINodeSystem.ConnectionMode.Flexible">
@@ -404,14 +404,14 @@
         </member>
         <member name="M:DG.DemiEditor.DeGUINodeSystem.Core.NodesClipboard.GetNodesToPaste``1">
             <summary>
-            Returns a list of pasteable nodes, with their GUID recreated and their connections adapted
+            Returns a list of pasteable nodes, with their GUResID recreated and their connections adapted
             </summary>
             <returns></returns>
         </member>
         <member name="M:DG.DemiEditor.DeGUINodeSystem.Core.NodesClipboard.CloneNode``1(DG.DemiLib.IEditorGUINode)">
             <summary>
             Returns a clone of the given node (clones also lists, but leaves other references as references).
-            A new ID will be automatically generated.
+            A new ResID will be automatically generated.
             </summary>
         </member>
         <member name="T:DG.DemiEditor.DeGUINodeSystem.Core.Connector">
@@ -475,7 +475,7 @@
             </summary>
             <param name="newLine">If TRUE and there's other keys/targets, adds the new key on a new line preceded by a comma</param>
         </member>
-        <member name="M:DG.DemiEditor.DeGUINodeSystem.NodeGUIData.ShiftYBy(System.Single)">
+        <member name="M:DG.DemiEditor.DeGUINodeSystem.NodeGUResIData.ShiftYBy(System.Single)">
             <summary>
             Recalculates all rects based on the given Y shift
             </summary>
@@ -1051,7 +1051,7 @@
             A text field that becomes editable only on double-click
             </summary>
             <param name="editorWindow">EditorWindow reference</param>
-            <param name="id">A unique ID to use in order to determine if the text is selected or not</param>
+            <param name="id">A unique ResID to use in order to determine if the text is selected or not</param>
             <param name="text">Text</param>
             <param name="defaultStyle">Style for default (non-editing mode) appearance</param>
             <param name="editingStyle">Style for editing mode</param>
@@ -1061,7 +1061,7 @@
             A text field that becomes editable only on double-click
             </summary>
             <param name="editor">Editor reference</param>
-            <param name="id">A unique ID to use in order to determine if the text is selected or not</param>
+            <param name="id">A unique ResID to use in order to determine if the text is selected or not</param>
             <param name="text">Text</param>
             <param name="defaultStyle">Style for default (non-editing mode) appearance</param>
             <param name="editingStyle">Style for editing mode</param>
@@ -1071,9 +1071,9 @@
             A text field that becomes editable only on double-click and can also be dragged
             </summary>
             <param name="editorWindow">EditorWindow reference</param>
-            <param name="id">A unique ID to use in order to determine if the text is selected or not</param>
+            <param name="id">A unique ResID to use in order to determine if the text is selected or not</param>
             <param name="text">Text</param>
-            <param name="dragId">ID for this drag operation (must be the same for both this and Drag</param>
+            <param name="dragId">ResID for this drag operation (must be the same for both this and Drag</param>
             <param name="draggableList">List containing the dragged item and all other relative draggable items</param>
             <param name="draggedItemIndex">DraggableList index of the item being dragged</param>
             <param name="defaultStyle">Style for default (non-editing mode) appearance</param>
@@ -1085,9 +1085,9 @@
             A text field that becomes editable only on double-click and can also be dragged
             </summary>
             <param name="editor">Editor reference</param>
-            <param name="id">A unique ID to use in order to determine if the text is selected or not</param>
+            <param name="id">A unique ResID to use in order to determine if the text is selected or not</param>
             <param name="text">Text</param>
-            <param name="dragId">ID for this drag operation (must be the same for both this and Drag</param>
+            <param name="dragId">ResID for this drag operation (must be the same for both this and Drag</param>
             <param name="draggableList">List containing the dragged item and all other relative draggable items</param>
             <param name="draggedItemIndex">DraggableList index of the item being dragged</param>
             <param name="defaultStyle">Style for default (non-editing mode) appearance</param>
@@ -1286,7 +1286,7 @@
             </summary>
             <param name="rect">Area</param>
             <param name="editorWindow">EditorWindow reference</param>
-            <param name="id">A unique ID to use in order to determine if the text is selected or not</param>
+            <param name="id">A unique ResID to use in order to determine if the text is selected or not</param>
             <param name="text">Text</param>
             <param name="defaultStyle">Style for default (non-editing mode) appearance</param>
             <param name="editingStyle">Style for editing mode</param>
@@ -1297,7 +1297,7 @@
             </summary>
             <param name="rect">Area</param>
             <param name="editor">Editor reference</param>
-            <param name="id">A unique ID to use in order to determine if the text is selected or not</param>
+            <param name="id">A unique ResID to use in order to determine if the text is selected or not</param>
             <param name="text">Text</param>
             <param name="defaultStyle">Style for default (non-editing mode) appearance</param>
             <param name="editingStyle">Style for editing mode</param>
@@ -1308,9 +1308,9 @@
             </summary>
             <param name="rect">Area</param>
             <param name="editorWindow">EditorWindow reference</param>
-            <param name="id">A unique ID to use in order to determine if the text is selected or not</param>
+            <param name="id">A unique ResID to use in order to determine if the text is selected or not</param>
             <param name="text">Text</param>
-            <param name="dragId">ID for this drag operation (must be the same for both this and Drag</param>
+            <param name="dragId">ResID for this drag operation (must be the same for both this and Drag</param>
             <param name="draggableList">List containing the dragged item and all other relative draggable items</param>
             <param name="draggedItemIndex">DraggableList index of the item being dragged</param>
             <param name="defaultStyle">Style for default (non-editing mode) appearance</param>
@@ -1322,9 +1322,9 @@
             </summary>
             <param name="rect">Area</param>
             <param name="editor">Editor reference</param>
-            <param name="id">A unique ID to use in order to determine if the text is selected or not</param>
+            <param name="id">A unique ResID to use in order to determine if the text is selected or not</param>
             <param name="text">Text</param>
-            <param name="dragId">ID for this drag operation (must be the same for both this and Drag</param>
+            <param name="dragId">ResID for this drag operation (must be the same for both this and Drag</param>
             <param name="draggableList">List containing the dragged item and all other relative draggable items</param>
             <param name="draggedItemIndex">DraggableList index of the item being dragged</param>
             <param name="defaultStyle">Style for default (non-editing mode) appearance</param>
@@ -1336,7 +1336,7 @@
             </summary>
             <param name="rect">Area</param>
             <param name="editorWindow">EditorWindow reference</param>
-            <param name="id">A unique ID to use in order to determine if the text is selected or not</param>
+            <param name="id">A unique ResID to use in order to determine if the text is selected or not</param>
             <param name="text">Text</param>
             <param name="defaultStyle">Style for default (non-editing mode) appearance</param>
             <param name="editingStyle">Style for editing mode</param>
@@ -1347,7 +1347,7 @@
             </summary>
             <param name="rect">Area</param>
             <param name="editor">Editor reference</param>
-            <param name="id">A unique ID to use in order to determine if the text is selected or not</param>
+            <param name="id">A unique ResID to use in order to determine if the text is selected or not</param>
             <param name="text">Text</param>
             <param name="defaultStyle">Style for default (non-editing mode) appearance</param>
             <param name="editingStyle">Style for editing mode</param>
