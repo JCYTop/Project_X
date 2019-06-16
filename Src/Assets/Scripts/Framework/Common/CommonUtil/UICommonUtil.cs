@@ -25,9 +25,9 @@ public class UICommonUtil
     /// </summary>
     /// <param name="ID">全局唯一ID</param>
     /// <returns>返回清除物体的组合</returns>
-    public static GameObject[] CleanAllChild(long ID)
+    public static GameObject[] CleanAllChild(int ID)
     {
-        return CleanAllChild(GameObjectMgr.GetGOInfo(ID).gameObject);
+        return CleanAllChild(ScenesMgr.GetGOInfo(ID).gameObject);
     }
 
     /// <summary>

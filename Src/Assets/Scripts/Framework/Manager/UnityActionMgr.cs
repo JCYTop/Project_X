@@ -8,24 +8,24 @@ public class UnityActionMgr : Singleton<UnityActionMgr>
     /// <summary>
     /// 物体运行前调用
     /// </summary>
-    private static Dictionary<long, UnityAction> beforeUnityAction = new Dictionary<long, UnityAction>();
+    private static Dictionary<int, UnityAction> beforeUnityAction = new Dictionary<int, UnityAction>();
 
     /// <summary>
     /// 每次Enable时候调用
     /// </summary>
-    private static Dictionary<long, UnityAction> enableUnityAction = new Dictionary<long, UnityAction>();
+    private static Dictionary<int, UnityAction> enableUnityAction = new Dictionary<int, UnityAction>();
 
     /// <summary>
     /// 每次Disable时候调用
     /// </summary>
-    private static Dictionary<long, UnityAction> disableUnityAction = new Dictionary<long, UnityAction>();
+    private static Dictionary<int, UnityAction> disableUnityAction = new Dictionary<int, UnityAction>();
 
     /// <summary>
     /// 物体销毁时时候调用
     /// </summary>
-    private static Dictionary<long, UnityAction> afterUnityAction = new Dictionary<long, UnityAction>();
+    private static Dictionary<int, UnityAction> afterUnityAction = new Dictionary<int, UnityAction>();
 
-    private Dictionary<RunTimeUnityAction, Dictionary<long, UnityAction>> choseDic = new Dictionary<RunTimeUnityAction, Dictionary<long, UnityAction>>()
+    private Dictionary<RunTimeUnityAction, Dictionary<int, UnityAction>> choseDic = new Dictionary<RunTimeUnityAction, Dictionary<int, UnityAction>>()
     {
         {RunTimeUnityAction.Before, beforeUnityAction},
         {RunTimeUnityAction.Enable, enableUnityAction},
@@ -35,7 +35,7 @@ public class UnityActionMgr : Singleton<UnityActionMgr>
 
     #endregion
 
-    public UnityAction AddUnityAction(long target, UnityAction unityAction, RunTimeUnityAction runTime)
+    public UnityAction AddUnityAction(int target, UnityAction unityAction, RunTimeUnityAction runTime)
     {
         var dic = choseDic[runTime];
         var action = unityAction;
@@ -52,7 +52,7 @@ public class UnityActionMgr : Singleton<UnityActionMgr>
         return action;
     }
 
-    public bool RunUnityAction(long target, RunTimeUnityAction runTime)
+    public bool RunUnityAction(int target, RunTimeUnityAction runTime)
     {
         var dic = choseDic[runTime];
         var isRun = false;

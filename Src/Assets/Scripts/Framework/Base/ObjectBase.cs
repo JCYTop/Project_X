@@ -5,23 +5,30 @@ using UnityEngine.Events;
 
 
 [RequireComponent(typeof(AssetPoolItem))]
-public class ObjectBase : MonoEventEmitter
+public abstract class ObjectBase : MonoEventEmitter
 {
     #region 字段
 
     [BoxGroup("基本属性手动设置")] private string name = string.Empty;
 
-    [BoxGroup("基本属性手动设置")] [Header("Object所在的层级")] [SerializeField]
+    [BoxGroup("基本属性手动设置")] [SerializeField]
     private int objectLayer = 0;
 
-    [BoxGroup("基本属性手动设置")] [Header("Object标签")] [SerializeField] [Tag]
+    [BoxGroup("基本属性手动设置")] [SerializeField] [Tag]
     private string objectTag = string.Empty;
 
-    [BoxGroup("基本属性手动设置")] [Header("描述")] public string Des = string.Empty;
-    private GameObject go;
+    [BoxGroup("基本属性手动设置")] public string Des = string.Empty;
 
-    [BoxGroup("自动设置")] [Header("唯一标识ID")] [SerializeField]
-    protected long id;
+    [BoxGroup("基本属性手动设置")] [Header("是否预加载")]
+    public bool IsPreLoad = false;
+
+    [BoxGroup("自动设置")] [Header("唯一资源标识ID")] [SerializeField]
+    private long resID;
+
+    [BoxGroup("自动设置")] [Header("运行时场景唯一标识ID")] [SerializeField]
+    public int globalID;
+
+    protected GameObject go;
 
     #endregion
 
@@ -42,59 +49,54 @@ public class ObjectBase : MonoEventEmitter
         get => name;
     }
 
-    public long ID
+    public long ResID
     {
-        get => id;
-        set => id = value;
+        get => resID;
+        set => resID = value;
     }
 
     #endregion
 
     void Awake()
     {
-        UnityActionMgr.Instance().RunUnityAction(id, RunTimeUnityAction.Before);
+        globalID = ScenesMgr.GlobalID;
         name = gameObject.name;
         gameObject.tag = objectTag;
         gameObject.layer = objectLayer;
-        go = this.gameObject;
+        go = gameObject;
+        UnityActionMgr.Instance().RunUnityAction(globalID, RunTimeUnityAction.Before);
         Init();
     }
 
     void OnEnable()
     {
-        On(id.ToString(), Refresh);
-        UnityActionMgr.Instance().RunUnityAction(id, RunTimeUnityAction.Enable);
+        UnityActionMgr.Instance().RunUnityAction(globalID, RunTimeUnityAction.Enable);
+        On(globalID.ToString(), Refresh);
         Enable();
     }
 
     void OnDisable()
     {
-        Off(id.ToString(), Refresh);
-        UnityActionMgr.Instance().RunUnityAction(id, RunTimeUnityAction.DisEnable);
+        UnityActionMgr.Instance().RunUnityAction(globalID, RunTimeUnityAction.DisEnable);
+        Off(globalID.ToString(), Refresh);
         Disable();
     }
 
     void OnDestroy()
     {
-        UnityActionMgr.Instance().RunUnityAction(id, RunTimeUnityAction.Enable);
+        UnityActionMgr.Instance().RunUnityAction(globalID, RunTimeUnityAction.After);
         Release();
     }
 
     /// <summary>
     /// 初始化
     /// </summary>
-    public virtual void Init()
-    {
-        GameObjectMgr.AddGameObjectInfo(id, this);
-    }
+    public abstract void Init();
 
     /// <summary>
     /// 释放
     /// </summary>
-    public virtual void Release()
-    {
-        GameObjectMgr.RemoveGameObjectInfo(id);
-    }
+    public abstract void Release();
 
     /// <summary>
     /// 刷新    

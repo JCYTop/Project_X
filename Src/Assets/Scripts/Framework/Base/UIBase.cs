@@ -5,22 +5,27 @@ using UnityEngine;
 public class UIBase : ObjectBase
 {
     [BoxGroup("UI属性设置")] [Header("UI显示层级")]
-    public UIType ShowType = UIType.Stack;
+    public UIType ShowType = UIType.UIStack;
+
+    [BoxGroup("UI属性设置")] [Header("是否可以重复")]
+    public bool IsRepeat = false;
 
     public override void Init()
     {
-        GameObjectMgr.AddUIInfo(id, this);
+        ScenesMgr.AddUIInfo<UIType>(globalID, (int) ShowType, this);
     }
 
     public override void Enable()
     {
         base.Enable();
+        //LRU策略自动清理
         UIRootMgr.Instance().OpenUIBase(this);
     }
 
     public override void Disable()
     {
         base.Disable();
+        //LRU策略自动清理
         UIRootMgr.Instance().CloseUIBase(this);
     }
 
@@ -39,8 +44,7 @@ public class UIBase : ObjectBase
             }
         }
 
-        //LRU策略自动清理
-        GameObjectMgr.RemoveUIInfo(id);
+        ScenesMgr.RemoveUIInfo<UIType>(globalID, (int) ShowType);
     }
 
     public override void Refresh(params object[] args)
@@ -58,4 +62,12 @@ public class UIBase : ObjectBase
             }
         }
     }
+}
+
+public enum UIType
+{
+    UINone,
+    UIRoot,
+    UIStack,
+    UITop,
 }

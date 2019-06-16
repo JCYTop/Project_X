@@ -41,3 +41,9 @@ MonoBehaviour:
   - LogType: 8
     Show: 1
     LogColor: {r: 0, g: 0.86666673, b: 1, a: 1}
+  - LogType: 9
+    Show: 1
+    LogColor: {r: 0.8705883, g: 0.65882355, b: 0.29803923, a: 1}
+  - LogType: 10
+    Show: 1
+    LogColor: {r: 0.46274513, g: 0.7686275, b: 0.42352945, a: 1}

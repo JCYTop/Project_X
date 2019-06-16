@@ -145,17 +145,17 @@ public class UIRootMgr : MonoBehaviour
         GameObject go = default;
         switch (ui.ShowType)
         {
-            case UIType.Root:
+            case UIType.UIRoot:
                 rootUI.Add(ui);
                 go = RootCanvas.gameObject;
                 rootUIShow = rootUI.ToList();
                 break;
-            case UIType.Stack:
+            case UIType.UIStack:
                 stackUI.Push(ui);
                 go = StackCanvas.gameObject;
                 stackUIShow = stackUI.ToList();
                 break;
-            case UIType.Top:
+            case UIType.UITop:
                 topUI.Push(ui);
                 go = TopCanvas.gameObject;
                 topUIShow = topUI.ToList();
@@ -190,14 +190,14 @@ public class UIRootMgr : MonoBehaviour
         UIBase tmp = null;
         switch (ui.ShowType)
         {
-            case UIType.Root:
+            case UIType.UIRoot:
                 tmp = ui;
                 rootUI.Remove(ui);
                 break;
-            case UIType.Stack:
+            case UIType.UIStack:
                 tmp = stackUI.Pop();
                 break;
-            case UIType.Top:
+            case UIType.UITop:
                 tmp = topUI.Pop();
                 break;
         }
@@ -205,12 +205,4 @@ public class UIRootMgr : MonoBehaviour
 
         return tmp;
     }
-}
-
-public enum UIType
-{
-    None,
-    Root,
-    Stack,
-    Top,
 }

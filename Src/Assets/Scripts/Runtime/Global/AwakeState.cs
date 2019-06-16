@@ -35,7 +35,7 @@ public class AwakeState : FSMState
 
     public override void OnEnter()
     {
-        LogUtil.Log(string.Format("AwakeState"));
+        LogUtil.Log(string.Format("AwakeState"), LogType.State);
         go = GOCommonUtil.CreateGameobject("GameLanucher");
         go.AddComponent<GameLanucher>();
     }

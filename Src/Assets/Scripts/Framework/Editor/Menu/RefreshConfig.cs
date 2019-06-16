@@ -40,7 +40,7 @@ public class RefreshConfig : MonoBehaviour
             if (prefab != null)
             {
                 var goBase = prefab.GetComponent<ObjectBase>();
-                if (goBase != null && !uiDatas.ContainsKey(goBase.ID))
+                if (goBase != null && !uiDatas.ContainsKey(goBase.ResID))
                 {
                     var indexTag = 0;
                     foreach (var tag in tags)
@@ -61,7 +61,7 @@ public class RefreshConfig : MonoBehaviour
                         tmpLayer = layers[j];
                     }
 
-                    goBase.ID = indexLayer * 10000000 + indexTag * 1000 + goIndex;
+                    goBase.ResID = indexLayer * 10000000 + indexTag * 1000 + goIndex;
                     AssetDatabase.SaveAssets();
                     var path = filesPath[i];
                     path = filesPath[i].Substring(filesPath[i].IndexOf("ABRes", StringComparison.Ordinal));
@@ -70,9 +70,9 @@ public class RefreshConfig : MonoBehaviour
                     var index2 = path.IndexOf(".", StringComparison.Ordinal) - 1;
                     path = path.Substring(index1 + 1, index2 - index1);
                     path = @"Assets\ABRes\" + path;
-                    uiDatas.Add(goBase.ID, new ABData()
+                    uiDatas.Add(goBase.ResID, new ABData()
                     {
-                        ID = goBase.ID,
+                        ID = goBase.ResID,
                         Path = path,
                         name = goBase.gameObject.name,
                         Des = goBase.Des,
@@ -93,6 +93,6 @@ public class RefreshConfig : MonoBehaviour
         }
 
         EditorUtility.ClearProgressBar();
-        LogUtil.Log(string.Format("共 {0} 个GO", uiDatas.Count));
+        LogUtil.Log(string.Format("共 {0} 个GO", uiDatas.Count), LogType.Editor);
     }
 }

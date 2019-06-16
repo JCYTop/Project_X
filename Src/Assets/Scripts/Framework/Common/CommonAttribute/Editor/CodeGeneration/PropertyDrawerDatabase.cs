@@ -15,6 +15,7 @@ namespace NaughtyAttributes.Editor
             drawersByAttributeType[typeof(DisableIfAttribute)] = new DisableIfPropertyDrawer();
 drawersByAttributeType[typeof(DropdownAttribute)] = new DropdownPropertyDrawer();
 drawersByAttributeType[typeof(EnableIfAttribute)] = new EnableIfPropertyDrawer();
+drawersByAttributeType[typeof(EnumMixedAttribute)] = new EnumMixedDrawer();
 drawersByAttributeType[typeof(LabelAttribute)] = new LabelPropertyDrawer();
 drawersByAttributeType[typeof(MinMaxSliderAttribute)] = new MinMaxSliderPropertyDrawer();
 drawersByAttributeType[typeof(ProgressBarAttribute)] = new ProgressBarPropertyDrawer();

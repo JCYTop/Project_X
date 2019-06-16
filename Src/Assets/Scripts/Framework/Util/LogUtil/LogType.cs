@@ -29,4 +29,5 @@ public enum LogType
     GMCommandLog = 7,
     TaskLog = 8,
     Editor = 9,
+    State = 10,
 }
