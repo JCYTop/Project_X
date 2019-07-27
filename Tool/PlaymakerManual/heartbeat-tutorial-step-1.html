@@ -1,0 +1,173 @@
+<!DOCTYPE html> 
+<html xmlns:fb>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Heartbeat Tutorial Step 1</title>
+	<link href="css/main.css" rel="stylesheet" type="text/css" />
+    <script src="js/jquery.min.js"></script>
+</head>
+<body>
+	<div id="page">
+		<div id="container">
+			<div id = "hutongHeader">
+				<a href="http://hutonggames.com/index.html"><img src="http://hutonggames.com/images/playMaker.png"/></a>  
+				<a href="http://hutonggames.com/company.html"><img src="http://hutonggames.com/images/hutongGamesSmall.png" id="companyLogo"/></a>
+				<div id="socialLinks">
+					<a href="http://www.facebook.com/pages/Hutong-Games-LLC/163141367059519" target="_blank">
+					<img src="http://www.hutonggames.com/images/fb.png" width="32" height="32" alt="facebook" /></a>
+					<a href="http://twitter.com/hutonggames" target="_blank">
+					<img src="http://www.hutonggames.com/images/twitter.png" width="32" height="32" alt="twitter" /></a>
+					<a href="http://www.youtube.com/user/HutongGamesLLC" target="_blank">
+					<img src="http://www.hutonggames.com/images/youtube.png" width="32" height="32" alt="youtube" /></a>
+				</div>
+				<div id = "mainMenu">
+                    <ul>
+                        <li><a href="http://hutonggames.com/index.html">Home</a></li>
+                        <li><a href="http://hutonggames.com/store.html">Store</a></li>
+                        <li><a href="http://hutonggames.com/showcase.html">Showcase</a></li>
+                        <li><a href="http://hutonggames.com/tutorials.html">Tutorials</a></li>
+                        <li><a href="http://hutonggames.com/playmakerforum/index.php">Forums</a></li>
+                        <li><a href="playmaker-manual.html">Manual</a></li>
+                        <li><a href="https://hutonggames.fogbugz.com/default.asp?W546">Wiki</a></li>
+                        <li><a href="http://hutonggames.com/company.html">About Us</a></li>
+                    </ul>
+                </div>
+			</div>
+            <table id="wiki-page-breadcrumbs-container">
+		        <tr>
+			        <td class="wiki-page-breadcrumbs">
+				        <a href="index.html" title = "Home">Home</a>
+                        <span class="wikinav-breadcrumb-separator">»</span><a href="samples.html" title="Samples" class="">Samples</a><span class="wikinav-breadcrumb-separator">»</span><a href="heartbeat-tutorial.html" title="Heartbeat Tutorial" class="">Heartbeat Tutorial</a><span class="wikinav-breadcrumb-separator">»</span><a href="heartbeat-tutorial-step-1.html" title="Heartbeat Tutorial Step 1" class="">Heartbeat Tutorial Step 1</a>
+			        </td>
+		        </tr>
+	        </table>
+		    <table id="main-columns">
+			    <tr><td id="wiki-page-nav">
+				    <div class="wiki-page-browse-menu-title">Index</div>
+				    <ul class="wiki-page-browse-menu">
+					    <li><a href="installation.html" class="">Installation</a></li>
+					    <li><a href="core-concepts.html" class="">Core Concepts</a></li>
+					    <li><a href="user-interface.html" class="">User Interface</a></li>
+					    <li><a href="keyboard-shortcuts.html" class="">Shortcuts</a></li>
+					    <li><a href="editing-basics.html" class="">Editing Basics</a></li>
+					    <li><a href="samples.html" class="">Samples</a></li>
+					    <li><a href="debugging.html" class="">Debugging</a></li>
+					    <li><a href="action-reference.html" class="">Action Reference</a></li>
+					    <li><a href="networking.html" class="">Networking</a></li>
+					    <li><a href="api-reference.html" class="">API Reference</a></li>
+					    <li><a href="online-resources.html" class="">Online Resources</a></li>
+					    <li><a href="hints-and-tips.html" class="">Hints And Tips</a></li>
+					    <li><a href="known-issues.html" class="">Known Issues</a></li>
+					    <li><a href="release-notes.html" class="">Release Notes</a></li>
+					    <li><a href="frequently-asked-questions.html" class="">FAQ</a></li>
+				    </ul>
+			    </td>
+                <td id="body">
+					<div id="wiki-page-content">
+                        <h1>Heartbeat Tutorial Step 1</h1>
+                        <div class="article-content">
+                        <h4>
+	Getting Started</h4>
+<ul>
+	<li>
+		Launch Unity and start a new scene.</li>
+	<li>
+		<a href="launching-playmaker.html">Open Playmaker</a>.</li>
+	<li>
+		<a href="adding-an-fsm-to-a-game-object.html">Add an FSM to the Main Camera</a>.</li>
+</ul>
+<h4>
+	Rename the Start State</h4>
+<ul>
+	<li>
+		Left click on State 1 to&nbsp;<a href="selecting-states.html">select it</a>.</li>
+	<li>
+		<a href="state-inspector.html">Rename&nbsp;</a>the state to &quot;Heartbeat&quot;.</li>
+</ul>
+<h4>
+	Add a Play Sound Action</h4>
+<ul>
+	<li>
+		Open the&nbsp;<a href="action-browser.html">Action Browser</a>.</li>
+	<li>
+		Open the&nbsp;Audio Category&nbsp;and select&nbsp;<a href="play-sound.html">PlaySound</a>.</li>
+	<li>
+		Check Preview to preview the Play Sound editor.</li>
+	<li>
+		Click Add Action to add the Play Sound action to the Heartbeat state.</li>
+</ul>
+<h4>
+	Play a Sound</h4>
+<ul>
+	<li>
+		Set the Clip to a short Audio Clip (ideally heartbeat.wav from the sample project).</li>
+	<li>
+		Press Play and the state should activate and play the audio clip once.</li>
+</ul>
+<h4>
+	Add a &quot;repeat&quot; Event</h4>
+<ul>
+	<li>
+		Open the&nbsp;<a href="events-manager.html">Event Manager</a>.</li>
+	<li>
+		Type &quot;repeat&quot; in the New Event edit field and hit enter.</li>
+	<li>
+		The &quot;repeat&quot; event appears in the event table.</li>
+</ul>
+<h4>
+	Add a Transition to the Heartbeat State</h4>
+<ul>
+	<li>
+		<a href="editing-states.html">Right click</a>&nbsp;on the Heartbeat state and select Add Transition.</li>
+	<li>
+		<a href="editing-transitions.html">Right click</a>&nbsp;on the event box (...), and select the repeat event.</li>
+	<li>
+		<a href="editing-transitions.html">Drag an arrow</a>&nbsp;out of the event box and back onto the state.</li>
+</ul>
+<h4>
+	Add a Send Event Action to Trigger the Transition</h4>
+<ul>
+	<li>
+		Open the&nbsp;<a href="action-browser.html">Action Browser</a>.</li>
+	<li>
+		Open the StateMachine Category and select&nbsp;<a href="send-event.html">SendEvent</a>.</li>
+	<li>
+		Click Add Action to add it to the state.</li>
+	<li>
+		Click the Send Event pupup and select the repeat event.</li>
+	<li>
+		Set the delay to 1 second.</li>
+</ul>
+<p>
+	Press Play and the heartbeat should repeat once a second.</p>
+<p>
+	While the game is running you can play with Volume and Delay to see the effect.</p>
+<p>
+	<a href="heartbeat-tutorial-step-2.html">Step 2 - Using variables to control Volume and Delay.</a></p>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr><td><p>&nbsp;</p></td></tr>
+        </table>       
+        <div id="footer">
+		    <div id="copyright">copyright HutongGames, LLC. All rights reserved.</div>
+	    </div>
+    </div>
+    <script type="text/javascript">
+	    document.body.style.backgroundColor = "#444";
+        document.body.style.backgroundImage = "none";
+	    document.body.style.height = "100%";
+	    $("#mainArea").css("padding", "0px");
+	    $("#mainArea").css("margin", "0px");
+	    $("#contentWikiView").css("margin", "0px");
+	    $(document).ready(function() {
+            $("#container #paramRow").filter(":even").css("background-color", "#f2f2f2");
+            $("#container #paramRow").filter(":odd").css("background-color", "#f9f9f9");
+            $("#container #nameDesc").filter(":even").css("background-color", "#f2f2f2");
+            $("#container #nameDesc").filter(":odd").css("background-color", "#f9f9f9");
+        },0)
+    </script>
+</div>
+</body>
+</html>

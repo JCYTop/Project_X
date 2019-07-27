@@ -1,0 +1,201 @@
+<!DOCTYPE html> 
+<html xmlns:fb>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Action Editor</title>
+	<link href="css/main.css" rel="stylesheet" type="text/css" />
+    <script src="js/jquery.min.js"></script>
+</head>
+<body>
+	<div id="page">
+		<div id="container">
+			<div id = "hutongHeader">
+				<a href="http://hutonggames.com/index.html"><img src="http://hutonggames.com/images/playMaker.png"/></a>  
+				<a href="http://hutonggames.com/company.html"><img src="http://hutonggames.com/images/hutongGamesSmall.png" id="companyLogo"/></a>
+				<div id="socialLinks">
+					<a href="http://www.facebook.com/pages/Hutong-Games-LLC/163141367059519" target="_blank">
+					<img src="http://www.hutonggames.com/images/fb.png" width="32" height="32" alt="facebook" /></a>
+					<a href="http://twitter.com/hutonggames" target="_blank">
+					<img src="http://www.hutonggames.com/images/twitter.png" width="32" height="32" alt="twitter" /></a>
+					<a href="http://www.youtube.com/user/HutongGamesLLC" target="_blank">
+					<img src="http://www.hutonggames.com/images/youtube.png" width="32" height="32" alt="youtube" /></a>
+				</div>
+				<div id = "mainMenu">
+                    <ul>
+                        <li><a href="http://hutonggames.com/index.html">Home</a></li>
+                        <li><a href="http://hutonggames.com/store.html">Store</a></li>
+                        <li><a href="http://hutonggames.com/showcase.html">Showcase</a></li>
+                        <li><a href="http://hutonggames.com/tutorials.html">Tutorials</a></li>
+                        <li><a href="http://hutonggames.com/playmakerforum/index.php">Forums</a></li>
+                        <li><a href="playmaker-manual.html">Manual</a></li>
+                        <li><a href="https://hutonggames.fogbugz.com/default.asp?W546">Wiki</a></li>
+                        <li><a href="http://hutonggames.com/company.html">About Us</a></li>
+                    </ul>
+                </div>
+			</div>
+            <table id="wiki-page-breadcrumbs-container">
+		        <tr>
+			        <td class="wiki-page-breadcrumbs">
+				        <a href="index.html" title = "Home">Home</a>
+                        <span class="wikinav-breadcrumb-separator">»</span><a href="user-interface.html" title="User Interface" class="">User Interface</a><span class="wikinav-breadcrumb-separator">»</span><a href="inspector-panel.html" title="Inspector Panel" class="">Inspector Panel</a><span class="wikinav-breadcrumb-separator">»</span><a href="state-inspector.html" title="State Inspector" class="">State Inspector</a><span class="wikinav-breadcrumb-separator">»</span><a href="action-editor.html" title="Action Editor" class="">Action Editor</a>
+			        </td>
+		        </tr>
+	        </table>
+		    <table id="main-columns">
+			    <tr><td id="wiki-page-nav">
+				    <div class="wiki-page-browse-menu-title">Index</div>
+				    <ul class="wiki-page-browse-menu">
+					    <li><a href="installation.html" class="">Installation</a></li>
+					    <li><a href="core-concepts.html" class="">Core Concepts</a></li>
+					    <li><a href="user-interface.html" class="">User Interface</a></li>
+					    <li><a href="keyboard-shortcuts.html" class="">Shortcuts</a></li>
+					    <li><a href="editing-basics.html" class="">Editing Basics</a></li>
+					    <li><a href="samples.html" class="">Samples</a></li>
+					    <li><a href="debugging.html" class="">Debugging</a></li>
+					    <li><a href="action-reference.html" class="">Action Reference</a></li>
+					    <li><a href="networking.html" class="">Networking</a></li>
+					    <li><a href="api-reference.html" class="">API Reference</a></li>
+					    <li><a href="online-resources.html" class="">Online Resources</a></li>
+					    <li><a href="hints-and-tips.html" class="">Hints And Tips</a></li>
+					    <li><a href="known-issues.html" class="">Known Issues</a></li>
+					    <li><a href="release-notes.html" class="">Release Notes</a></li>
+					    <li><a href="frequently-asked-questions.html" class="">FAQ</a></li>
+				    </ul>
+			    </td>
+                <td id="body">
+					<div id="wiki-page-content">
+                        <h1>Action Editor</h1>
+                        <div class="article-content">
+                        <p>
+	Action Editors are shown in the&nbsp;<a href="state-inspector.html" rel="nofollow">State Inspector</a>.</p>
+<p>
+	Each Action has its own editor, but there are common elements:</p>
+<p>
+	<img border="0" inline="yes" src="images/manual/ActionEditor.png" title=""  /></p>
+<ol>
+	<li>
+		Enable/Disable Action.&nbsp;</li>
+	<li>
+		Help and Settings Menu.</li>
+	<li>
+		Action Parameters.</li>
+	<li>
+		Browse Button.</li>
+	<li>
+		Variable Toggle.</li>
+</ol>
+<h4>
+	Help And Settings</h4>
+<p>
+	The Help button opens online help for the Action.</p>
+<p>
+	The Settings Menu presents these options:</p>
+<ul>
+	<li>
+		Reset: Resets action parameters to default values.</li>
+	<li>
+		----------------------------------------------------------</li>
+	<li>
+		Edit Name: Edit the displayed name to better describe the action.</li>
+	<li>
+		Auto Name (beta): Some actions can automatically create a descriptive name that uses parameter names etc. (experimental feature)</li>
+	<li>
+		Copy Selected Actions: Copy the selected actions to the clipboard.</li>
+	<li>
+		Paste Actions Before: Paste actions before the currently selected action.</li>
+	<li>
+		Paste Actions Replace: Paste actions and replace the selected action.</li>
+	<li>
+		Paste Actions After: Paste actions after the selected action.</li>
+	<li>
+		Move Action Up/Down: Move action up/down in list.</li>
+	<li>
+		Move Action To Top/Bottom: Move action to top/bottom of list.</li>
+	<li>
+		----------------------------------------------------------</li>
+	<li>
+		Edit Script: Open the script in the default script editor.</li>
+	<li>
+		Select Script: Select the script asset in the Project Window.</li>
+	<li>
+		Find Script: Pings the script asset in the Project Window.</li>
+	<li>
+		----------------------------------------------------------</li>
+	<li>
+		Find Action in Browser: Finds the action in the&nbsp;<a href="action-browser.html" rel="nofollow">Action Browser</a>.</li>
+	<li>
+		Remove Action: Removes the action from the state.</li>
+</ul>
+<p>
+	NOTE: Actions are executed from top to bottom.</p>
+<h4>
+	Browse Button</h4>
+<p>
+	Some parameters present a menu of potential values pulled from the game object, while still allowing you to type your own value.</p>
+<h4>
+	Variable Toggle</h4>
+<p>
+	Many parameters can use either an explicit value that you enter or can reference the value of a named variable. The Variable Toggle switched between these options.</p>
+<p>
+	<img border="0" src="images/manual/ActionVariable.png" title=""  /></p>
+<h4>
+	Variable Selection Menu</h4>
+<p>
+	You can assign a variable to a parameter using the variable popup menu. Variables are created in the&nbsp;<a href="variables-manager.html" rel="nofollow">Variables Manager</a>.</p>
+<p>
+	<strong>NEW:</strong> Create a new variable in the variable menu:</p>
+<p>
+	<img border="0" src="images/manual/NewVariable.gif" title=""  /></p>
+<h4>
+	Event Selection Menu</h4>
+<p>
+	You can select an event from a popup menu. Events are created in the&nbsp;<a href="events-manager.html" rel="nofollow">Events Manager</a>.</p>
+<p>
+	<strong>NEW:</strong> Create a new event in the event menu:</p>
+<p>
+	<img border="0" src="images/manual/NewEvent.gif" title=""  /></p>
+<h4>
+	See Also:</h4>
+<div id="linkList">
+	<ul>
+		<li>
+			<a href="action-browser.html" rel="nofollow">Action Browser</a></li>
+		<li>
+			<a href="action-reference.html" rel="nofollow">Action Reference</a></li>
+		<li>
+			<a href="events-manager.html" rel="nofollow">Event Manager</a></li>
+		<li>
+			<a href="variables-manager.html" rel="nofollow">Variable Manager</a></li>
+		<li>
+			<a href="variables.html" rel="nofollow">Variables</a></li>
+	</ul>
+</div>
+<p>
+	&nbsp;</p>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr><td><p>&nbsp;</p></td></tr>
+        </table>       
+        <div id="footer">
+		    <div id="copyright">copyright HutongGames, LLC. All rights reserved.</div>
+	    </div>
+    </div>
+    <script type="text/javascript">
+	    document.body.style.backgroundColor = "#444";
+        document.body.style.backgroundImage = "none";
+	    document.body.style.height = "100%";
+	    $("#mainArea").css("padding", "0px");
+	    $("#mainArea").css("margin", "0px");
+	    $("#contentWikiView").css("margin", "0px");
+	    $(document).ready(function() {
+            $("#container #paramRow").filter(":even").css("background-color", "#f2f2f2");
+            $("#container #paramRow").filter(":odd").css("background-color", "#f9f9f9");
+            $("#container #nameDesc").filter(":even").css("background-color", "#f2f2f2");
+            $("#container #nameDesc").filter(":odd").css("background-color", "#f9f9f9");
+        },0)
+    </script>
+</div>
+</body>
+</html>

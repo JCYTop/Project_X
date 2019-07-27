@@ -1,0 +1,223 @@
+<!DOCTYPE html> 
+<html xmlns:fb>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Variables Manager</title>
+	<link href="css/main.css" rel="stylesheet" type="text/css" />
+    <script src="js/jquery.min.js"></script>
+</head>
+<body>
+	<div id="page">
+		<div id="container">
+			<div id = "hutongHeader">
+				<a href="http://hutonggames.com/index.html"><img src="http://hutonggames.com/images/playMaker.png"/></a>  
+				<a href="http://hutonggames.com/company.html"><img src="http://hutonggames.com/images/hutongGamesSmall.png" id="companyLogo"/></a>
+				<div id="socialLinks">
+					<a href="http://www.facebook.com/pages/Hutong-Games-LLC/163141367059519" target="_blank">
+					<img src="http://www.hutonggames.com/images/fb.png" width="32" height="32" alt="facebook" /></a>
+					<a href="http://twitter.com/hutonggames" target="_blank">
+					<img src="http://www.hutonggames.com/images/twitter.png" width="32" height="32" alt="twitter" /></a>
+					<a href="http://www.youtube.com/user/HutongGamesLLC" target="_blank">
+					<img src="http://www.hutonggames.com/images/youtube.png" width="32" height="32" alt="youtube" /></a>
+				</div>
+				<div id = "mainMenu">
+                    <ul>
+                        <li><a href="http://hutonggames.com/index.html">Home</a></li>
+                        <li><a href="http://hutonggames.com/store.html">Store</a></li>
+                        <li><a href="http://hutonggames.com/showcase.html">Showcase</a></li>
+                        <li><a href="http://hutonggames.com/tutorials.html">Tutorials</a></li>
+                        <li><a href="http://hutonggames.com/playmakerforum/index.php">Forums</a></li>
+                        <li><a href="playmaker-manual.html">Manual</a></li>
+                        <li><a href="https://hutonggames.fogbugz.com/default.asp?W546">Wiki</a></li>
+                        <li><a href="http://hutonggames.com/company.html">About Us</a></li>
+                    </ul>
+                </div>
+			</div>
+            <table id="wiki-page-breadcrumbs-container">
+		        <tr>
+			        <td class="wiki-page-breadcrumbs">
+				        <a href="index.html" title = "Home">Home</a>
+                        <span class="wikinav-breadcrumb-separator">»</span><a href="user-interface.html" title="User Interface" class="">User Interface</a><span class="wikinav-breadcrumb-separator">»</span><a href="inspector-panel.html" title="Inspector Panel" class="">Inspector Panel</a><span class="wikinav-breadcrumb-separator">»</span><a href="variables-manager.html" title="Variables Manager" class="">Variables Manager</a>
+			        </td>
+		        </tr>
+	        </table>
+		    <table id="main-columns">
+			    <tr><td id="wiki-page-nav">
+				    <div class="wiki-page-browse-menu-title">Index</div>
+				    <ul class="wiki-page-browse-menu">
+					    <li><a href="installation.html" class="">Installation</a></li>
+					    <li><a href="core-concepts.html" class="">Core Concepts</a></li>
+					    <li><a href="user-interface.html" class="">User Interface</a></li>
+					    <li><a href="keyboard-shortcuts.html" class="">Shortcuts</a></li>
+					    <li><a href="editing-basics.html" class="">Editing Basics</a></li>
+					    <li><a href="samples.html" class="">Samples</a></li>
+					    <li><a href="debugging.html" class="">Debugging</a></li>
+					    <li><a href="action-reference.html" class="">Action Reference</a></li>
+					    <li><a href="networking.html" class="">Networking</a></li>
+					    <li><a href="api-reference.html" class="">API Reference</a></li>
+					    <li><a href="online-resources.html" class="">Online Resources</a></li>
+					    <li><a href="hints-and-tips.html" class="">Hints And Tips</a></li>
+					    <li><a href="known-issues.html" class="">Known Issues</a></li>
+					    <li><a href="release-notes.html" class="">Release Notes</a></li>
+					    <li><a href="frequently-asked-questions.html" class="">FAQ</a></li>
+				    </ul>
+			    </td>
+                <td id="body">
+					<div id="wiki-page-content">
+                        <h1>Variables Manager</h1>
+                        <div class="article-content">
+                        <p>
+	The Variables Manager lets you add, delete, and edit the&nbsp;<a href="variables.html" rel="nofollow">variables&nbsp;</a>used by an FSM.</p>
+<p>
+	<img border="0" src="images/manual/VariableManager2.png" title=""  /></p>
+<ol>
+	<li>
+		<strong>Search Filter:</strong> Filter the Variables list to find variables.</li>
+	<li>
+		<strong>Variable Name:&nbsp;</strong>Descriptive name for the variable.</li>
+	<li>
+		<strong>Usage Count:</strong> The number of times the variable is used in the FSM.</li>
+	<li>
+		<strong>Variable Type:</strong>&nbsp;The variable type. See&nbsp;<a href="variables.html" rel="nofollow">FSM Variables</a>.</li>
+	<li>
+		<strong>Settings Menu:</strong> See below.</li>
+	<li>
+		<strong>Delete: </strong>Delete a variable.</li>
+	<li>
+		<strong>Variable Editor: </strong>Add or Edit Variables.</li>
+</ol>
+<h3>
+	&nbsp;</h3>
+<h3>
+	Settings Menu</h3>
+<ul>
+	<li>
+		<strong>Debug Variable Values:&nbsp;</strong>Show variable values. Great for runtime debugging.</li>
+	<li>
+		<strong>Delete Unused Variables:</strong> Delete any variables that are not used by this FSM.</li>
+	<li>
+		<strong>Global Variables:</strong> Open the&nbsp;<a href="global-variables.html" rel="nofollow">Global Variables Window</a>.</li>
+	<li>
+		<strong>Copy Variables:&nbsp;</strong>Copy all variables from the FSM.</li>
+	<li>
+		<strong>Paste Variables:&nbsp;</strong>Paste previously copied variables into an FSM.</li>
+	<li>
+		<strong>Paste Variables Values:&nbsp;</strong>Paste variable values into an FSM.</li>
+	<li>
+		<strong>Online Help:</strong> A link to this document.</li>
+</ul>
+<h3>
+	&nbsp;</h3>
+<h3>
+	Adding a New Variable</h3>
+<ul>
+	<li>
+		<strong>New Variable:</strong> Enter the name for the new variable.</li>
+	<li>
+		<strong>Variable Type:</strong> Set the type for the new variable.</li>
+	<li>
+		The new variable is auto-selected so you can edit it further. See below.</li>
+</ul>
+<p>
+	<strong>NEW</strong> You can also drag and drop Components and GameObjects into the panel to create new variables:</p>
+<p>
+	<img border="0" src="images/manual/DragComponentToVariables.gif" title=""  /></p>
+<h3>
+	&nbsp;</h3>
+<h3>
+	Editing a Variable</h3>
+<ul>
+	<li>
+		Select the variable in the table.</li>
+	<li>
+		Use the panel at the bottom to edit the variable:</li>
+</ul>
+<p>
+	&nbsp;<img border="0" src="images/manual/EditVariable.PNG" title=""  /></p>
+<ul>
+	<li>
+		<strong>Edit Variable: </strong>Set the variable&#39;s name.</li>
+	<li>
+		<strong>Value: </strong>Set the default value for the variable.</li>
+	<li>
+		<strong>Tooltip: </strong>Set the tooltip that will show when mousing over the variable.</li>
+	<li>
+		<strong>Category: </strong>Set the category that the variable should use. Categories are useful to organize lots of variables.</li>
+	<li>
+		<strong>Inspector: </strong>Show the variable in the <a href="fsm-inspector.html" rel="nofollow">FSM Inspector</a>&nbsp;as well as&nbsp;<a href="run-fsm.html" rel="nofollow">Run FSM</a>&nbsp;actions.</li>
+	<li>
+		<strong>Network Sync: </strong>Should this variable be automatically synced over the Network. Not available for all types.</li>
+</ul>
+<p>
+	NOTE: Enum, Object, and Array variables also&nbsp;require you to set the specific type to use.</p>
+<p>
+	For example an Object variable requires an Object Type:</p>
+<p>
+	<img border="0" src="images/manual/EditObjectVariable.png" title=""  /></p>
+<p>
+	Note that Network Sync in disabled since Unity Objects cannot be synced over the network.</p>
+<p>
+	HINTS:</p>
+<ul>
+	<li>
+		The Object Type selection menu is organized by namespace. Many standard components are under UnityEngine. Most third party scripts use their own namespace, making their types easier to find.</li>
+	<li>
+		Type letters to quickly navigate the Object Type Selection menu.</li>
+</ul>
+<h3>
+	&nbsp;</h3>
+<h3>
+	Organizing By Category</h3>
+<p>
+	<strong>NEW</strong>&nbsp;In 1.8.0, you can now organize variables into Categories:</p>
+<ul>
+	<li>
+		Select the variable</li>
+	<li>
+		Type a Category or select an existing category from the popup.</li>
+	<li>
+		The variable will now be listed in that category.</li>
+</ul>
+<p style="margin-left: 40px">
+	<img border="0" src="images/manual/VariableCategories.png" title=""  /></p>
+<p>
+	NOTE: Categories are also used in the&nbsp;<a href="fsm-inspector.html" rel="nofollow">FSM Inspector</a>&nbsp;tab and&nbsp;<a href="playmakerfsm-inspector.html">PlayMakerFSM Inspector</a>.</p>
+<h3>
+	&nbsp;</h3>
+<h3>
+	Finding Variables in Actions</h3>
+<p>
+	Right click on a variable name to find states/actions that use the variable.</p>
+<p>
+	&nbsp;</p>
+<h3>
+	See Also:</h3>
+<p>
+	<a href="variables.html" rel="nofollow">Variables</a></p>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr><td><p>&nbsp;</p></td></tr>
+        </table>       
+        <div id="footer">
+		    <div id="copyright">copyright HutongGames, LLC. All rights reserved.</div>
+	    </div>
+    </div>
+    <script type="text/javascript">
+	    document.body.style.backgroundColor = "#444";
+        document.body.style.backgroundImage = "none";
+	    document.body.style.height = "100%";
+	    $("#mainArea").css("padding", "0px");
+	    $("#mainArea").css("margin", "0px");
+	    $("#contentWikiView").css("margin", "0px");
+	    $(document).ready(function() {
+            $("#container #paramRow").filter(":even").css("background-color", "#f2f2f2");
+            $("#container #paramRow").filter(":odd").css("background-color", "#f9f9f9");
+            $("#container #nameDesc").filter(":even").css("background-color", "#f2f2f2");
+            $("#container #nameDesc").filter(":odd").css("background-color", "#f9f9f9");
+        },0)
+    </script>
+</div>
+</body>
+</html>

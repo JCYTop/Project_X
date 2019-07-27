@@ -1,0 +1,3158 @@
+
+	
+	.ckeditor-body a:link { color: #0F5491; }
+	.ckeditor-body a:visited { color: #993388; }
+	.ckeditor-body a { text-decoration: none; }
+	.ckeditor-body a.vb { color: #993388; }
+	.ckeditor-body a.uvb { color: #0F5491; }
+	
+	a.fb_attachment
+	{
+		padding-right: 20px;
+		background: transparent url(https://d1y3t9jk3e3tu5.cloudfront.net/814682000/images/paperclip.png) center right no-repeat; 
+	}
+
+	a.wikiNew {
+	  color: #FF0000;
+	}
+
+	a.wikiNew:visited {
+	  color: #AA0000;
+	}
+
+	img.conflictIcon {
+		border: 1px solid black;
+		cursor: pointer;
+		opacity: .6;
+		filter = "alpha(opacity=60)";
+		position: relative;
+		top: -2px;
+		left: 5px;
+		width: 22px;
+		height: 22px;
+	}
+
+	table p {
+		margin-top: 0px;
+		margin-bottom: 0px;
+	}
+
+	table.wikiSearch td {
+		vertical-align: top;
+	}
+
+	/* This sets up a blue border/background for the widget placeholders. */
+	.cke_widget {
+		border: 1px solid #aaa;
+		margin: 0 2px;
+	}
+	
+	.article-content table,
+	.article-content table td,
+	.article-content table th {
+		border-collapse: collapse;
+		border: 1px solid black;
+	}
+
+/* Customize the styles of an entire Wiki by editing this stylesheet. */
+
+.contentWikiView .topicWarning {
+background-color: #ff0000;
+font-size: 16px;
+color: #ffff00;
+padding: 3px;
+margin-bottom: 10px;
+}
+
+.contentWikiView .topicTitle {
+background-color: #333;
+font-size: 16px;
+color: #ddd;
+padding: 3px;
+margin-bottom: 10px;
+}
+
+.contentWikiView table.Basic p
+{
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.contentWikiView table.gridtable {
+	font-family: verdana,arial,sans-serif;
+	font-size:11px;
+	color:#333333;
+        width: 70%;
+	border-width: 1px;
+	border-color: #666666;
+	border-collapse: collapse;
+        margin-bottom: 10px;
+}
+.contentWikiView table.gridtable th {
+	border-width: 1px;
+	padding: 6px;
+	border-style: solid;
+	border-color: #666666;
+	background-color: #dedede;
+}
+.contentWikiView table.gridtable td {
+	border-width: 1px;
+	padding: 6px;
+        padding-left: 8px;
+        width: 50%;
+	border-style: solid;
+	border-color: #666666;
+	background-color: #ffffff;
+}
+
+.contentWikiView #page {
+	background-image: url(http://hutonggames.com/images/siteShadow.png);
+        background-repeat: repeat-y; 
+        background-position: center; 
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:10pt;
+	background-color:#444;
+	margin:0px;
+	padding:0px;
+        height: 100%;
+}
+
+.contentWikiView #container {
+	font-family: Verdana, Arial, sans-serif;
+	background-color:#333;
+	margin-left:auto;
+	margin-right:auto;
+        position: relative;
+        width: 960px;
+	height: 100%;
+}
+
+.contentWikiView #hutongHeader {
+	width:960px;
+font-family: Arial, Helvetica, sans-serif;
+	position:relative;
+	margin-left:auto;
+	margin-right:auto;
+	background-color: #2D4659;
+}
+
+.contentWikiView #companyLogo {
+	position: absolute;
+	top: 11px;
+	right: 5px;
+}
+
+.contentWikiView #socialLinks {
+	height: 32px;
+	position: absolute;
+	bottom: 0px;
+	right: 20px;
+	padding: 0;
+	margin: 0;
+}
+
+/* MAIN MENU */
+
+.contentWikiView #mainMenu {
+	height:24px;
+	text-transform: uppercase;
+	background-color:#10293C;
+	font-size: 12px;
+}
+
+.contentWikiView #mainMenu h2 {
+	font-size: 48px;
+	color:#FFF;
+	display: inline;
+	padding: 0 0 0 3px;
+	margin: 0;
+	float: left;
+}
+
+.contentWikiView #mainMenu ul {
+	overflow: hidden;
+	margin: 0;
+	padding: 0;
+	font-size: 14px;
+	margin-left: 50px;
+}
+
+.contentWikiView #mainMenu li {
+	list-style-type: none;
+	display: inline;
+	margin: 5px 5px 0 5px;
+	float: left;
+}
+
+.contentWikiView #mainMenu li a {
+	color: #AAA;
+	display: block;
+	text-decoration: none;
+}
+
+.contentWikiView #mainMenu li a:hover {
+	color: #FFFFFF;
+}
+	
+	/* Font Families */
+.contentWikiView span.Arial {
+	font-family: Arial, Helvetica, sans-serif
+}
+.contentWikiView span.Helvetica {
+	font-family: Helvetica, Arial, sans-serif
+}
+.contentWikiView span.ArialBlack {
+	font-family: Arial Black, Gadget, sans-serif
+}
+.contentWikiView span.Verdana {
+	font-family: Verdana, Geneva, sans-serif
+}
+
+/* Font Sizes */
+.contentWikiView span.LudicrousHuge {
+	font-size: 128px
+}
+.contentWikiView span.OutrageouslyHuge {
+	font-size: 64px
+}
+.contentWikiView span.VeryBig {
+	font-size: 26px
+}
+.contentWikiView span.Big {
+	font-size: 20px
+}
+.contentWikiView span.Small {
+	font-size: 12px
+}
+.contentWikiView span.VerySmall {
+	font-size: 10px
+}
+.contentWikiView span.Microscopic {
+	font-size: 6px
+}
+/* Image Styles */
+
+.contentWikiView img.FloatLeft {
+	float: left;
+}
+.contentWikiView img.FloatRight {
+	float: right;
+}
+.contentWikiView img.Outset {
+	border-top: 1px solid #C7C7C7;
+	border-left: 1px solid #C7C7C7;
+	border-right: 1px solid #444444;
+	border-bottom: 1px solid #444444;
+}
+
+.contentWikiView table {
+	BORDER-COLLAPSE: collapse;
+}
+
+.contentWikiView #actionHeader {
+clear: both;
+padding: 5px;
+}
+
+.contentWikiView #actionImg {
+display: block;
+padding-bottom: 8px;
+}
+
+.contentWikiView #actionDesc {
+display: block;
+vertical-align: middle;
+max-width: 700px;
+padding-bottom: 10px;
+}
+
+.contentWikiView #paramRow {
+clear:both;
+padding: 2px;
+padding-bottom: 10px;
+padding-top: 5px;
+width: 700px;
+}
+
+.contentWikiView #paramName {
+font-weight: 600;
+float: left;
+width: 180px;
+}
+
+.contentWikiView #paramDesc {
+margin-left: 180px;
+max-width: 600px; 
+}
+
+.contentWikiView #actionNotes {
+padding-top: 15px;
+}
+
+.contentWikiView #nameDesc {
+clear:both;
+padding: 2px;
+padding-bottom: 10px;
+padding-top: 5px;
+width: 700px;
+}
+
+.contentWikiView #name {
+font-weight: 600;
+}
+
+.contentWikiView #desc {
+padding-top: 5px; 
+}
+
+
+.contentWikiView h1 {
+	margin: 0;
+}
+
+.contentWikiView .center {
+	text-align: center;
+}
+
+
+.contentWikiView #minMaxSize {
+width: 100%;
+max-width: 960px;
+min-width: 960px;
+overflow: hidden;
+}
+
+.contentWikiView #header {
+	background: #2d4659 url(https://hutonggames.fogbugz.com/default.asp?pg=pgDownload&pgType=pgWikiAttachment&ixAttachment=8&sFileName=playMakerLogo_noBorder.png) no-repeat left center;
+	height: 67px;
+}
+
+.contentWikiView #main-columns {
+        background: #fff;
+        width: 100%;
+}
+
+.contentWikiView #linkList ul {
+	list-style-type: none;
+padding-left: 10px;
+}
+
+
+.contentWikiView #footer {
+        display: block;
+	background-color:#10293c;
+	height: 30px;
+        width: 100%;
+}
+
+.contentWikiView #copyright {
+font-size: 10px;
+color: #aaa;
+float:right;
+padding: 5px;
+padding-top: 10px;
+}
+
+.contentWikiView #rightPanel {
+        vertical-align: top;
+        width: 130px;
+}
+
+.contentWikiView #body {
+        vertical-align: top;
+	padding: 0;
+padding-right: 5px;
+}
+
+.contentWikiView #body hr {
+	border: 0;
+	color: #2d4659;
+	background-color: #2d4659;
+	height: 1px;
+	//width: 100%;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+.contentWikiView #wiki-page-breadcrumbs-container {
+        //background-color:#10293c;
+        background-color:#ccc;
+	z-index: 1;
+	margin: 0;
+        margin-top: 5px;
+	position: relative;
+	width: 100%;
+	height: 16px;
+	vertical-align: center;
+}
+.contentWikiView .wiki-page-breadcrumbs {
+	font-family: Verdana, Arial, sans-serif;
+	font-size: 12px;
+	margin: 0;
+	padding: 0;
+	padding-left: 6px;
+	padding-top: 4px;
+	border-spacing: 0px;
+}
+.contentWikiView .wiki-page-breadcrumbs a {
+	//color: #ddd;
+        color: #333;
+	padding: 4px 0 4px 3px;
+	display: inline;
+	float: left;
+	text-decoration: none;
+}
+.contentWikiView .wikinav-breadcrumbs a.last-crumb,.contentWikiView   .wikinav-breadcrumbs a.last-crumb:hover {
+	color: #ddd;
+	font-weight: normal;
+	cursor: default;
+	text-decoration: none;
+}
+.contentWikiView span.wikinav-breadcrumb-separator {
+	display: inline;
+	float: left;
+	padding: 4px 4px 10px;
+}
+.contentWikiView .wiki-page-breadcrumbs a:hover {
+	color: #fff;
+	text-decoration: none;
+}
+.contentWikiView #wiki-page-header {
+	background: #fff;
+	color: #4a4a4a;
+	font-family: Tahoma, Verdana, Helvetica, Arial, sans-serif;
+	font-size: 11px;
+	height: 23px;
+	overflow: hidden;
+	position: relative;
+}
+.contentWikiView #wiki-page-controls {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	right: -8px;
+	width: 350px;
+}
+
+.contentWikiView #wiki-page-content {
+padding-right: 60px;
+}
+
+
+.contentWikiView #wiki-page-content h1 {
+ //display: block;
+	color: black;
+	font-size: 20px;
+	font-weight: 600;
+	margin-bottom: 20px;
+	margin-top: 10px;
+	text-indent: 0px;
+}
+.contentWikiView #wiki-page-content h2 {
+	font-size: 16px;
+        font-weight: 600;
+	line-height: 20px;
+	margin: 0 0 15px 0;
+	padding: 0;
+}
+.contentWikiView #wiki-page-content h3 {
+	line-height: 18px;
+	margin: 0 0 10px 0;
+	padding: 0;
+}
+.contentWikiView #wiki-page-content h4 {
+	line-height: 18px;
+	margin: 0 0 10px 0;
+	padding: 0;
+}
+.contentWikiView #wiki-page-content h5 {
+	line-height: 18px;
+	margin: 0 0 10px 0;
+	padding: 0;
+}
+.contentWikiView #wiki-page-content h6 {
+	line-height: 18px;
+	margin: 0 0 18px 0;
+	padding: 0;
+}
+.contentWikiView .article-content p {
+	margin: 0 0 18px 0;
+padding-right: 20px;
+	padding: 0;
+}
+.contentWikiView #wiki-page-content ol,.contentWikiView   #wiki-page-content ul {
+	line-height: 18px;
+	margin-bottom: 18px;
+	margin-top: 18px;
+	padding-bottom: 0;
+	padding-top: 0;
+}
+.contentWikiView #wiki-page-content ol ol,.contentWikiView   #wiki-page-content ul ol,.contentWikiView   #wiki-page-content ol ul,.contentWikiView   #wiki-page-content ul ul {
+	margin-bottom: 0;
+	margin-top: 0;
+}
+.contentWikiView #wiki-page-content li {
+	line-height: 18px;
+}
+.contentWikiView .article-content a {
+	color: #003399;
+	text-decoration: none;
+}
+.contentWikiView .article-content a:hover {
+	text-decoration: underline;
+}
+.contentWikiView .article-content hr {
+	color: #4a4a4a;
+}
+.contentWikiView .article-content {
+	font-family: Verdana, Arial;
+	font-size: 12px;
+}
+.contentWikiView .article-content table.Basic,.contentWikiView  .article-content table.Monochrome,.contentWikiView  .article-content table.LightBlue,.contentWikiView  .article-content table.YellowHighlight,.contentWikiView  .article-content table.DarkBold {
+	border-collapse: collapse;
+	border: 1px solid #ccc;
+	border-bottom-color: #aaa;
+	line-height: 18px;
+	margin-bottom: 17px;
+}
+.contentWikiView .article-content table.Basic tr,.contentWikiView  .article-content table.Monochrome tr,.contentWikiView  .article-content table.LightBlue tr,.contentWikiView  .article-content table.YellowHighlight tr,.contentWikiView  .article-content table.DarkBold tr {
+	background: #fff;
+	vertical-align: top;
+}
+ .contentWikiView .article-content table.Basic tr:nth-child(even),.contentWikiView  .article-content table.Monochrome tr:nth-child(even),.contentWikiView  .article-content table.LightBlue tr:nth-child(even),.contentWikiView  .article-content table.YellowHighlight tr:nth-child(even),.contentWikiView  .article-content table.DarkBold tr:nth-child(even) {
+ background: #eee;
+}
+.contentWikiView .article-content table.Basic tr.even-row,.contentWikiView  .article-content table.Monochrome tr.even-row,.contentWikiView  .article-content table.LightBlue tr.even-row,.contentWikiView  .article-content table.YellowHighlight tr.even-row,.contentWikiView  .article-content table.DarkBold tr.even-row {
+	background: #eee;
+}
+ .contentWikiView .article-content table.Basic tr:nth-child(1) th,.contentWikiView  .article-content table.Monochrome tr:nth-child(1) th,.contentWikiView  .article-content table.LightBlue tr:nth-child(1) th,.contentWikiView  .article-content table.YellowHighlight tr:nth-child(1) th,.contentWikiView  .article-content table.DarkBold tr:nth-child(1) th {
+ background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ccc), to(#bbb));
+ background: -moz-linear-gradient(top, #ccc, #bbb);
+ border: 1px solid #aaa;
+ border-bottom-color: #999;
+ border-top-color: #bbb;
+ color: #333;
+ font-size: 14px;
+ padding: 8px 18px 8px 9px;
+}
+.contentWikiView .article-content table.Basic tr.first-row th,.contentWikiView  .article-content table.Monochrome tr.first-row th,.contentWikiView  .article-content table.LightBlue tr.first-row th,.contentWikiView  .article-content table.YellowHighlight tr.first-row th,.contentWikiView  .article-content table.DarkBold tr.first-row th {
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ccc), to(#bbb));
+	background: -moz-linear-gradient(top, #ccc, #bbb);
+	border: 1px solid #aaa;
+	border-bottom-color: #999;
+	border-top-color: #bbb;
+	box-shadow: 0px 1px 1px #ccc;
+	-moz-box-shadow: 0px 1px 1px #ccc;
+	-webkit-box-shadow: 0px 1px 1px #ccc;
+	color: #333;
+	font-size: 14px;
+	padding: 8px 18px 8px 9px;
+ //text-shadow: 0 1px #ddd;
+}
+.contentWikiView .article-content table.Basic tr.first-row th,.contentWikiView  .article-content table.Monochrome tr.first-row th,.contentWikiView  .article-content table.LightBlue tr.first-row th,.contentWikiView  .article-content table.YellowHighlight tr.first-row th,.contentWikiView  .article-content table.DarkBold tr.first-row th {
+	background-color: #bbb;
+}
+.contentWikiView .article-content table.Basic th,.contentWikiView  .article-content table.Monochrome th,.contentWikiView  .article-content table.LightBlue th,.contentWikiView  .article-content table.YellowHighlight th,.contentWikiView  .article-content table.DarkBold th {
+	background: #ddd;
+	border: 1px solid #bbb;
+	color: #000;
+	font-weight: normal;
+	padding: 4px 18px 4px 9px;
+	text-align: left;
+}
+ .contentWikiView .article-content table.Basic tr:nth-child(even) th,.contentWikiView  .article-content table.Monochrome tr:nth-child(even) th,.contentWikiView  .article-content table.LightBlue tr:nth-child(even) th,.contentWikiView  .article-content table.YellowHighlight tr:nth-child(even) th,.contentWikiView  .article-content table.DarkBold tr:nth-child(even) th {
+ background: #ccc;
+}
+.contentWikiView .article-content table.Basic tr.even-row th,.contentWikiView  .article-content table.Monochrome tr.even-row th,.contentWikiView  .article-content table.LightBlue tr.even-row th,.contentWikiView  .article-content table.YellowHighlight tr.even-row th,.contentWikiView  .article-content table.DarkBold tr.even-row th {
+	background: #ccc;
+}
+.contentWikiView .article-content table.Basic td,.contentWikiView  .article-content table.Monochrome td,.contentWikiView  .article-content table.LightBlue td,.contentWikiView  .article-content table.YellowHighlight td,.contentWikiView  .article-content table.DarkBold td {
+	border: 1px dotted #ccc;
+	padding: 2px 18px 4px 9px;
+}
+
+.contentWikiView .article-content table.actionInfo {
+border: 0px;
+padding: 5px;
+}
+.contentWikiView #wiki-page-controls li {
+	display: block;
+	float: right;
+	margin: 0;
+	padding: 3px 0 0 0;
+}
+.contentWikiView #wiki-page-controls li a,.contentWikiView   #wiki-page-controls li strong,.contentWikiView   #wiki-page-controls li span {
+	color: #4a4a4a;
+	display: inline-block;
+	vertical-align: top;
+	text-decoration: none;
+}
+/* The current page is not a link */
+			.contentWikiView #wiki-page-controls li strong {
+	color: black;
+}
+/* Separate the items a little bit */
+.contentWikiView #wiki-page-controls li a.articleBarTextLink,.contentWikiView   #wiki-page-controls li strong,.contentWikiView   #wiki-page-controls li span,.contentWikiView   #wiki-page-controls li.wiki-page-control-subscribe a {
+	padding-right: 10px;
+	padding-top: 5px;
+}
+.contentWikiView #wiki-page-controls li.wiki-page-control-rss a {
+	padding-right: 10px;
+}
+.contentWikiView #wiki-page-controls li a.articleBarDraftLink {
+	padding-right: 0;
+}
+.contentWikiView #wiki-page-controls li a:hover {
+	text-decoration: underline;
+}
+/* Images need to be shifted down so they line up */
+.contentWikiView #wiki-page-controls li img {
+	padding-top: 3px;
+}
+/* And Subscribe consists of like 17 different tags, one of which is a block element, so it gets special treatement. */
+.contentWikiView #wiki-page-controls li.wiki-page-control-subscribe span {
+	padding: 0;
+}
+.contentWikiView #wiki-page-controls li.wiki-page-control-subscribe a {
+	border: none;
+}
+/* And the star icon is just a special case altogether */
+			.contentWikiView #wiki-page-controls li.wiki-page-control-star a {
+	height: 14px;
+	width: 14px;
+	margin: 0 10px 0 0;
+	padding: 7px 0 0 0;
+}
+.contentWikiView #wiki-page-controls li.wiki-page-control-star a img {
+	display: none;
+}
+.contentWikiView #wiki-page-metadata {
+	padding: 2px 0 0 12px;
+	position: absolute;
+	left: 0;
+	width: 400px;
+}
+.contentWikiView #wiki-page-metadata p {
+	margin: 0;
+	padding: 6px 0 0 0;
+}
+.contentWikiView #wiki-page-modified {
+	color: #4a4a4a;
+	font-size: 12px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	-o-text-overflow: ellipsis; /* for Opera */
+	margin-bottom: 20px;
+	margin-top: 0px;
+}
+.contentWikiView #wiki-page-modified span {
+	white-space: nowrap;
+}
+.contentWikiView #wiki-page-modified a {
+	text-decoration: none;
+}
+.contentWikiView #wiki-page-modified a:hover {
+	text-decoration: underline;
+}
+.contentWikiView #wiki-page-tags {
+	color: #4a4a4a;
+	font-family: Verdana, Arial;
+	font-size: 12px;
+	margin: 0;
+	padding: 0;
+padding-top: 40px;
+}
+.contentWikiView #wiki-page-tags .tags {
+	display: inline;
+}
+.contentWikiView #wiki-page-tags .tags a {
+	color: #0F5491;
+	margin: 0;
+	text-decoration: none;
+}
+.contentWikiView #wiki-page-tags .tags a:hover {
+	text-decoration: underline;
+}
+.contentWikiView #wiki-page-content {
+min-height: 300px;
+	overflow: visible;
+	padding-left: 10px;
+}
+.contentWikiView #wiki-edit #wiki-page-content {
+	overflow-x: hidden;
+}
+/* The body tag inside the edit page should have the same padding as the view page. */
+.contentWikiView .ckeditor-body {
+	margin: 0;
+	padding: 36px;
+}
+.contentWikiView #wiki-page-nav {
+	width: 160px;
+min-width: 140px;
+vertical-align: top;
+padding-bottom: 20px;
+}
+.contentWikiView #wiki-page-search {
+	padding: 0px;
+	padding-right: 9px;
+}
+.contentWikiView #wiki-page-search span {
+	padding: 0px;
+	border: 0px;
+	width: 0px;
+	font-size: 0px;
+	margin: 0px;
+}
+.contentWikiView #wiki-page-search input.wiki-page-search-field {
+	background: #fff;
+	//border: 2px solid #303030;
+	border-right: 0px;
+	color: #aaa;
+	display: inline;
+	font-size: 12px;
+	margin: 0;
+	padding: 0;
+	width: 150px;
+	height: 18px;
+}
+.contentWikiView #wiki-page-search input.wiki-page-search-button {
+	background: transparent url(https://hutonggames.fogbugz.com/default.asp?pg=pgDownload&pgType=pgWikiAttachment&ixAttachment=442&sFileName=search.png) no-repeat left center;
+	border-radius: 0px;
+	border: 0px;
+	margin: 0px;
+	color: #303030;
+	padding: 0;
+	text-indent: -999px;
+	font-size: 0;
+	height: 22px;
+	width: 20px;
+	vertical-align: top;
+}
+.contentWikiView #wiki-page-search form {
+	display: block;
+	//padding: 5px 0 5px 5px;
+}
+.contentWikiView #wiki-page-seach form span {
+	display: none;
+}
+.contentWikiView #wiki-page-nav .wiki-page-browse-menu-title {
+	color: black;
+	font-family: Verdana, Arial, sans-serif;
+	font-size: 12px;
+	font-weight: 600;
+	padding: 10px 5px 5px 8px;
+	text-transform: uppercase;
+}
+.contentWikiView #wiki-page-nav .wiki-page-browse-menu {
+	font-family: Verdana, Arial, sans-serif;
+	font-size: 11px;
+	list-style: none;
+	margin: 0;
+	padding: 0 0 0 13px;
+	line-height: 150%;
+}
+.contentWikiView .wiki-page-browse-menu li a {
+	color: #4a4a4a;
+	display: block;
+	text-decoration: none;
+}
+.contentWikiView .wiki-page-browse-menu li a img {
+	width: 18px; /* Specifying the dimensions speeds up rendering client-side, as fewer things need to be shuffled around when the image loads */
+	height: 18px;
+	vertical-align: middle;
+}
+.contentWikiView .wiki-page-browse-menu .wiki-page-browse-new a {
+	line-height: 18px;
+	padding-left: 22px;
+}
+.contentWikiView .wiki-page-browse-menu li.wiki-page-browse-new a {
+	background: transparent url(https://867-static0.fogbugz.com/images/wiki/new.png) no-repeat 3px 2px;
+}
+.contentWikiView .wiki-page-browse-menu li a:hover {
+	background-color: #ddd;
+	color: #000;
+}
+.contentWikiView #wiki-page-tree {
+	font-family: Tahoma, Verdana, Helvetica, Arial, sans-serif;
+	font-size: 12px;
+	line-height: 18px;
+}
+.contentWikiView #wiki-page-tree .treeview-title-holder {
+	float: none;
+	width: 100%;
+}
+.contentWikiView #wiki-page-tree .treeview-drag-handle {
+	display: none;
+}
+.contentWikiView #wiki-page-tree .treeview-bar .treeview-clear {
+	display: none;
+}
+.contentWikiView #wiki-page-tree a {
+	display: block;
+	line-height: 18px;
+	_overflow: hidden;
+	text-decoration: none;
+	_width: 170px;
+}
+.contentWikiView #wiki-page-tree a.node img {
+	/* Make PageSpeed happy. These styles should only apply to the bullet and the plus icons in the treeview. */
+		height: 9px;
+	width: 9px;
+}
+.contentWikiView #wiki-page-tree a:hover {
+	background: #ddd;
+	color: #000;
+}
+.contentWikiView #wiki-page-tree li.treeview-child-holder span.treeview-expand-button {
+	height: auto;
+}
+.contentWikiView #wiki-page-tree li span {
+	margin: 8px 0 0 7px;
+	padding: 0;
+}
+.contentWikiView #wiki-page-tree li a span {
+	margin: 0;
+	padding: 0;
+}
+.contentWikiView #wiki-page-tree .wiki-page-current,.contentWikiView   .wiki-page-current {
+	position: relative;
+}
+.contentWikiView #wiki-page-tree li .treeview-selected a,.contentWikiView   .treeview-selected a {
+	color: #000;
+}
+.contentWikiView #wiki-page-tree li .treeview-selected a:hover,.contentWikiView   .treeview-selected a:hover {
+	background: transparent;
+	cursor: default;
+}
+.contentWikiView #wiki-page-tree li .treeview-with-children a {
+	background: url(https://867-static0.fogbugz.com/newWikiImages/hierarchy-arrow-right.png) no-repeat 6px 8px;
+}
+.contentWikiView #wiki-page-tree li .treeview-with-children a:hover {
+	background-color: #ddd;
+}
+.contentWikiView #wiki-page-tree li .treeview-show-more a {
+	background: url(https://867-static1.fogbugz.com/newWikiImages/hierarchy-plus.png) no-repeat 6px 8px;
+	font-size: 12px;
+	font-style: italic;
+	margin-bottom: 9px;
+	margin-top: 9px;
+}
+.contentWikiView #wiki-page-tree li .treeview-show-more a:hover {
+	background-color: #ddd;
+}
+.contentWikiView #wiki-page-tree .treeview-load-omitted-button img {
+	/* Make PageSpeed happy */
+		width: 9px;
+	height: 9px;
+}
+.contentWikiView #wiki-page-content #wiki-editing {
+	background: #e6edf3;
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#e6edf3), to(#D8E1E8));
+	background: -moz-linear-gradient(top, #E6EDF3, #D8E1E8);
+	box-shadow: 0px 1px 1px #ccc;
+	-moz-box-shadow: 0px 1px 1px #ccc;
+	-webkit-box-shadow: 0px 1px 1px #ccc;
+	display: block;
+	margin: 0;
+}
+.contentWikiView #wiki-editing label {
+	color: #90a2b2;
+	font-family: Tahoma, Verdana, Helvetica, Arial, sans-serif;
+	font-size: 11px;
+	line-height: 20px;
+ //text-shadow: 0 1px #fff;
+}
+.contentWikiView #wiki-editing #idDraftNote {
+	color: #393;
+	display: block;
+	font-family: Tahoma, Verdana, Helvetica, Arial, sans-serif;
+	font-size: 11px;
+	padding: 0;
+}
+.contentWikiView #wiki-editing #idDraftNote a {
+	color: #0F5491;
+	text-decoration: none;
+}
+.contentWikiView #wiki-editing #idDraftNote a:hover {
+	text-decoration: underline;
+}
+.contentWikiView #wiki-page-content #wiki-editing-top #wiki-merge-header {
+	font-weight: bold;
+	padding: 0 0 5px 2px;
+}
+.contentWikiView #wiki-page-content #wiki-editing-top #wiki-merge-header a {
+	font-weight: normal;
+}
+.contentWikiView #wiki-page-content #wiki-editing-top {
+	padding: 0 10px;
+	margin: 0;
+}
+.contentWikiView #wiki-page-content #wiki-editing-header {
+	padding-top: 3px;
+}
+.contentWikiView #wiki-editing-top table {
+	width: 100%;
+}
+.contentWikiView #wiki-editing-top table td {
+	background: none;
+	border: none;
+	max-width: 460px;
+	padding: 0;
+	text-align: left;
+	width: 50%;
+}
+.contentWikiView #wiki-editing-top table #wiki-editing-tags,.contentWikiView   #wiki-editing-top table #wiki-editing-title {
+	padding-bottom: 5px;
+	vertical-align: top;
+}
+.contentWikiView #wiki-editing-top table #wiki-editing-tags {
+ *padding-top: 1px;
+}
+.contentWikiView #wiki-editing-top table #wiki-editing-title,.contentWikiView   #wiki-editing-top table #wiki-editing-title-label {
+	padding-right: 10px;
+}
+.contentWikiView #wiki-editing-top .wiki-edit-title {
+	background: #fff url(https://867-static0.fogbugz.com/images/wiki/wiki-input-shadow.png) repeat-x top left;
+	border: 1px solid #aaa;
+	font-family: Cambria, Georgia, 'Times New Roman', Times, serif;
+	font-size: 18px;
+	font-weight: bold;
+	margin-top: 0px;
+	max-width: 460px;
+	padding: 2px 0 1px 0;
+	width: 100%;
+}
+.contentWikiView #wiki-editing-top .droplistSurround {
+	background: #fff url(https://867-static0.fogbugz.com/images/wiki/wiki-input-shadow.png) repeat-x top left;
+	border: 1px solid #aaa;
+	font-family: Tahoma, Verdana, Helvetica, Arial, sans-serif;
+	padding: 2px 0 4px 4px;
+ *margin-top: 1px;
+	max-width: 460px;
+	width: 99%;
+ *width: 310px;
+}
+.contentWikiView #wiki-page-content .tags div {
+	margin: 0;
+}
+.contentWikiView .wiki-edit-footer {
+	display: none;
+}
+.contentWikiView #wiki-edit .wiki-edit-footer {
+	background: #e6edf3;
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#e6edf3), to(#ced8e1));
+	background: -moz-linear-gradient(top, #E6EDF3, #CED8E1);
+	border-top: 1px solid #aaa;
+	display: block;
+	min-height: 15px;
+	padding: 0;
+	width: 100%;
+}
+.contentWikiView #wiki-edit .wiki-edit-footer a {
+	display: inline;
+	float: right;
+	font-family: Tahoma, Verdana, Helvetica, Arial, sans-serif;
+	font-size: 11px;
+	padding: 2px 8px 2px 0;
+	text-align: right;
+	text-decoration: none;
+ //text-shadow: 0 1px #fff;
+}
+.contentWikiView #wiki-edit .wiki-edit-footer a:hover {
+	text-decoration: underline;
+}
+.contentWikiView #wiki-edit #wiki-page-content {
+	padding: 0;
+}
+.contentWikiView #wiki-edit #wiki-page-content > h1 {
+	display: none;
+}
+.contentWikiView #wiki-page-content .clear {
+	margin: 0;
+}
+.contentWikiView #wiki-edit #idWikiMain {
+	min-width: 600px;
+}
+/* Search Results */
+.contentWikiView .wikiArticleList {
+	list-style-type: none;
+	margin: 18px 0;
+	padding: 0;
+}
+.contentWikiView .wikiArticleList li {
+	line-height: 18px;
+	margin: 0 0 18px 0;
+	padding: 0;
+}
+.contentWikiView .wikiArticleList li div {
+	margin: 0;
+	padding: 0;
+}
+.contentWikiView .wikiArticleList li a {
+	text-decoration: none;
+}
+.contentWikiView .wikiArticleList li a:hover {
+	text-decoration: underline;
+}
+.contentWikiView .wikiArticleList li div.wikiViewHeadline {
+	font-size: 16px;
+	line-height: 16px;
+	margin: 0;
+	padding: 7px 0 6px 0;
+}
+.contentWikiView .wikiArticleList li div.wikiViewHeadline span.starContainer {
+	font-size: 16px;
+	line-height: 16px;
+	margin: 0;
+	padding: 0;
+	vertical-align: bottom;
+}
+.contentWikiView .wikiArticleList li div.wikiViewHeadline span.starContainer img {
+	font-size: 16px;
+	line-height: 16px;
+	margin: 0;
+	padding: 0;
+}
+.contentWikiView .wikiArticleList li div.wikiViewHeadline a {
+	font-size: 16px;
+	line-height: 16px;
+	margin: 0;
+	padding: 0;
+}
+.contentWikiView .wikiArticleList li div.wikiPageSnippet {
+	line-height: 18px;
+font-size: 12px;
+	margin: 0;
+	padding: 0;
+}
+.contentWikiView .wikiArticleList li div.wikiChangedMeta {
+	color: #808080;
+	font-size: 12px;
+	line-height: 18px;
+	margin: 0;
+	padding: 0;
+}
+.contentWikiView .wikiArticleList li div.wikiChangedComment {
+	background: url(https://867-static0.fogbugz.com/images/wiki/changeComment.png) no-repeat top left;
+	color: #777;
+	font-size: 12px;
+	font-style: italic;
+	line-height: 18px;
+	margin-left: 80px;
+	padding-left: 13px;
+	max-width: 500px;
+}
+/* Wiki View Filter bar at the top of the page */
+.contentWikiView #wikiViewControls {
+	margin: -15px 0px 0px -10px;
+	padding: 0;
+	position: relative;
+}
+.contentWikiView #wikiViewControls #wikiViewControlsInner {
+	margin: 0;
+	height: 33px;
+	width: 100%;
+}
+.contentWikiView #wikiViewControls label {
+	color: #777;
+	font-family: Tahoma, Verdana, Helvetica, Arial, sans-serif;
+	font-size: 12px;
+	padding-right: 5px;
+}
+.contentWikiView #wikiViewControls #wikiViewFilter {
+	background: #fff url(https://867-static0.fogbugz.com/images/wiki/wiki-input-shadow.png) repeat-x top left;
+	border: 1px solid #bbb;
+	color: #999;
+	font-size: 12px;
+	margin: -2px 0 0 -2px;
+	padding: 2px;
+	width: 100%;
+}
+.contentWikiView #wikiViewControls #wikiViewLoading {
+	position: absolute;
+	right: 0;
+	top: 2px;
+ *top: 3px;
+}
+.contentWikiView #wikiViewSearch {
+	height: 18px;
+	left: 9px;
+	position: absolute;
+	top: 9px;
+	width: 45%
+}
+.contentWikiView #wikiViewShowIncomplete {
+	height: 18px;
+	position: absolute;
+	right: 9px;
+	text-align: right;
+	top: 9px;
+	width: 45%
+}
+.contentWikiView #wikiViewShowIncomplete label {
+	display: inline;
+	float: right;
+	margin-top: 0;
+	padding-right: 24px;
+}
+.contentWikiView #wikiViewShowIncompleteCheck {
+	position: absolute;
+	right: -2px;
+	top: -1px;
+}
+.contentWikiView .fullFilterBar #wikiViewControlsInner #wikiViewFilter {
+	width: 100%;
+}
+.contentWikiView .fullFilterBar #wikiViewSearch {
+	left: 0;
+	padding-left: 1%;
+	width: 97.8%;
+}
+/* Wiki View Pagination */	
+.contentWikiView #wikiViewPaging {
+	/* background: #fff url(https://867-static0.fogbugz.com/newWikiImages/paging-shadow.png) no-repeat top center; */
+	border-top: 1px dotted #aaa;
+	font-family: Tahoma, Verdana, Helvetica, Arial, sans-serif;
+	font-size: 11px;
+	list-style: none;
+	margin: 0 0px -18px 0px;
+	padding: 0 36px;
+}
+.contentWikiView #wikiViewPaging li {
+	display: inline;
+	line-height: 36px;
+	margin: 0;
+	padding: 0;
+}
+.contentWikiView #wikiViewPaging li.previousPage {
+	float: left;
+	margin-left: -20px;
+}
+.contentWikiView #wikiViewPaging li.nextPage {
+	float: right;
+	margin-right: -20px;
+}
+.contentWikiView #wikiViewPaging li a {
+	display: block;
+	padding: 3px 5px;
+	text-decoration: none;
+}
+.contentWikiView #wikiViewPaging li a:hover {
+	text-decoration: underline;
+}
+.contentWikiView .pagingPageNumber {
+	color: #777;
+	font-family: Tahoma, Verdana, Helvetica, Arial, sans-serif;
+	font-size: 11px;
+	line-height: 36px;
+	margin: -12px -36px 0 -36px;
+	text-align: center;
+	width: 100%;
+}
+ @media print {
+.contentWikiView #wiki-page-nav,.contentWikiView   #wiki-page-controls {
+	display: none;
+}
+.contentWikiView #body,.contentWikiView   #wiki-page-header,.contentWikiView   .wiki-page-root-link div {
+	border: none !important;
+}
+.contentWikiView #body {
+	box-shadow: none;
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+	margin: 0;
+	width: auto;
+}
+.contentWikiView #wiki-page-content {
+	padding: 0;
+}
+}
+.contentWikiView .wiki-page-current,.contentWikiView  .wiki-page-current a,.contentWikiView  .wiki-page-current a.wikiNew {
+	background-color: transparent !important;
+	//color: white !important;
+	text-decoration: none !important;
+	cursor: default !important;
+	//font-weight: bolder;
+	font-style: normal;
+}
+/* Force all wikiView links to be grey */
+.contentWikiView .wikiNew,.contentWikiView  .wikiNew:visited {
+	//color: #777 !important;
+	font-style: italic;
+}
+/* Palette Colors */ 	.contentWikiView span.color10 {
+	color:            rgb(255,255,255)
+}
+.contentWikiView span.color10_highlight {
+	background-color: rgb(255,255,255)
+}
+.contentWikiView span.color11 {
+	color:            rgb(0,0,0)
+}
+.contentWikiView span.color11_highlight {
+	background-color: rgb(0,0,0)
+}
+.contentWikiView span.color12 {
+	color:            rgb(250,243,232)
+}
+.contentWikiView span.color12_highlight {
+	background-color: rgb(250,243,232)
+}
+.contentWikiView span.color13 {
+	color:            rgb(31,73,125)
+}
+.contentWikiView span.color13_highlight {
+	background-color: rgb(31,73,125)
+}
+.contentWikiView span.color14 {
+	color:            rgb(92,131,180)
+}
+.contentWikiView span.color14_highlight {
+	background-color: rgb(92,131,180)
+}
+.contentWikiView span.color15 {
+	color:            rgb(192,80,77)
+}
+.contentWikiView span.color15_highlight {
+	background-color: rgb(192,80,77)
+}
+.contentWikiView span.color16 {
+	color:            rgb(157,187,97)
+}
+.contentWikiView span.color16_highlight {
+	background-color: rgb(157,187,97)
+}
+.contentWikiView span.color17 {
+	color:            rgb(128,102,160)
+}
+.contentWikiView span.color17_highlight {
+	background-color: rgb(128,102,160)
+}
+.contentWikiView span.color18 {
+	color:            rgb(75,172,198)
+}
+.contentWikiView span.color18_highlight {
+	background-color: rgb(75,172,198)
+}
+.contentWikiView span.color19 {
+	color:            rgb(245,157,86)
+}
+.contentWikiView span.color19_highlight {
+	background-color: rgb(245,157,86)
+}
+.contentWikiView span.color20 {
+	color:            rgb(216,216,216)
+}
+.contentWikiView span.color20_highlight {
+	background-color: rgb(216,216,216)
+}
+.contentWikiView span.color21 {
+	color:            rgb(127,127,127)
+}
+.contentWikiView span.color21_highlight {
+	background-color: rgb(127,127,127)
+}
+.contentWikiView span.color22 {
+	color:            rgb(187,182,174)
+}
+.contentWikiView span.color22_highlight {
+	background-color: rgb(187,182,174)
+}
+.contentWikiView span.color23 {
+	color:            rgb(199,209,222)
+}
+.contentWikiView span.color23_highlight {
+	background-color: rgb(199,209,222)
+}
+.contentWikiView span.color24 {
+	color:            rgb(214,224,236)
+}
+.contentWikiView span.color24_highlight {
+	background-color: rgb(214,224,236)
+}
+.contentWikiView span.color25 {
+	color:            rgb(239,211,210)
+}
+.contentWikiView span.color25_highlight {
+	background-color: rgb(239,211,210)
+}
+.contentWikiView span.color26 {
+	color:            rgb(230,238,215)
+}
+.contentWikiView span.color26_highlight {
+	background-color: rgb(230,238,215)
+}
+.contentWikiView span.color27 {
+	color:            rgb(223,216,231)
+}
+.contentWikiView span.color27_highlight {
+	background-color: rgb(223,216,231)
+}
+.contentWikiView span.color28 {
+	color:            rgb(210,234,240)
+}
+.contentWikiView span.color28_highlight {
+	background-color: rgb(210,234,240)
+}
+.contentWikiView span.color29 {
+	color:            rgb(252,230,212)
+}
+.contentWikiView span.color29_highlight {
+	background-color: rgb(252,230,212)
+}
+.contentWikiView span.color30 {
+	color:            rgb(191,191,191)
+}
+.contentWikiView span.color30_highlight {
+	background-color: rgb(191,191,191)
+}
+.contentWikiView span.color31 {
+	color:            rgb(114,114,114)
+}
+.contentWikiView span.color31_highlight {
+	background-color: rgb(114,114,114)
+}
+.contentWikiView span.color32 {
+	color:            rgb(162,157,150)
+}
+.contentWikiView span.color32_highlight {
+	background-color: rgb(162,157,150)
+}
+.contentWikiView span.color33 {
+	color:            rgb(143,164,190)
+}
+.contentWikiView span.color33_highlight {
+	background-color: rgb(143,164,190)
+}
+.contentWikiView span.color34 {
+	color:            rgb(173,193,217)
+}
+.contentWikiView span.color34_highlight {
+	background-color: rgb(173,193,217)
+}
+.contentWikiView span.color35 {
+	color:            rgb(223,167,166)
+}
+.contentWikiView span.color35_highlight {
+	background-color: rgb(223,167,166)
+}
+.contentWikiView span.color36 {
+	color:            rgb(206,221,176)
+}
+.contentWikiView span.color36_highlight {
+	background-color: rgb(206,221,176)
+}
+.contentWikiView span.color37 {
+	color:            rgb(191,178,207)
+}
+.contentWikiView span.color37_highlight {
+	background-color: rgb(191,178,207)
+}
+.contentWikiView span.color38 {
+	color:            rgb(165,213,226)
+}
+.contentWikiView span.color38_highlight {
+	background-color: rgb(165,213,226)
+}
+.contentWikiView span.color39 {
+	color:            rgb(250,206,170)
+}
+.contentWikiView span.color39_highlight {
+	background-color: rgb(250,206,170)
+}
+.contentWikiView span.color40 {
+	color:            rgb(165,165,165)
+}
+.contentWikiView span.color40_highlight {
+	background-color: rgb(165,165,165)
+}
+.contentWikiView span.color41 {
+	color:            rgb(89,89,89)
+}
+.contentWikiView span.color41_highlight {
+	background-color: rgb(89,89,89)
+}
+.contentWikiView span.color42 {
+	color:            rgb(125,121,116)
+}
+.contentWikiView span.color42_highlight {
+	background-color: rgb(125,121,116)
+}
+.contentWikiView span.color43 {
+	color:            rgb(87,118,157)
+}
+.contentWikiView span.color43_highlight {
+	background-color: rgb(87,118,157)
+}
+.contentWikiView span.color44 {
+	color:            rgb(132,162,198)
+}
+.contentWikiView span.color44_highlight {
+	background-color: rgb(132,162,198)
+}
+.contentWikiView span.color45 {
+	color:            rgb(207,123,121)
+}
+.contentWikiView span.color45_highlight {
+	background-color: rgb(207,123,121)
+}
+.contentWikiView span.color46 {
+	color:            rgb(181,204,136)
+}
+.contentWikiView span.color46_highlight {
+	background-color: rgb(181,204,136)
+}
+.contentWikiView span.color47 {
+	color:            rgb(159,140,183)
+}
+.contentWikiView span.color47_highlight {
+	background-color: rgb(159,140,183)
+}
+.contentWikiView span.color48 {
+	color:            rgb(120,192,212)
+}
+.contentWikiView span.color48_highlight {
+	background-color: rgb(120,192,212)
+}
+.contentWikiView span.color49 {
+	color:            rgb(247,181,128)
+}
+.contentWikiView span.color49_highlight {
+	background-color: rgb(247,181,128)
+}
+.contentWikiView span.color50 {
+	color:            rgb(140,140,140)
+}
+.contentWikiView span.color50_highlight {
+	background-color: rgb(140,140,140)
+}
+.contentWikiView span.color51 {
+	color:            rgb(63,63,63)
+}
+.contentWikiView span.color51_highlight {
+	background-color: rgb(63,63,63)
+}
+.contentWikiView span.color52 {
+	color:            rgb(87,85,81)
+}
+.contentWikiView span.color52_highlight {
+	background-color: rgb(87,85,81)
+}
+.contentWikiView span.color53 {
+	color:            rgb(23,54,93)
+}
+.contentWikiView span.color53_highlight {
+	background-color: rgb(23,54,93)
+}
+.contentWikiView span.color54 {
+	color:            rgb(69,98,135)
+}
+.contentWikiView span.color54_highlight {
+	background-color: rgb(69,98,135)
+}
+.contentWikiView span.color55 {
+	color:            rgb(144,60,57)
+}
+.contentWikiView span.color55_highlight {
+	background-color: rgb(144,60,57)
+}
+.contentWikiView span.color56 {
+	color:            rgb(117,140,72)
+}
+.contentWikiView span.color56_highlight {
+	background-color: rgb(117,140,72)
+}
+.contentWikiView span.color57 {
+	color:            rgb(96,76,120)
+}
+.contentWikiView span.color57_highlight {
+	background-color: rgb(96,76,120)
+}
+.contentWikiView span.color58 {
+	color:            rgb(56,129,148)
+}
+.contentWikiView span.color58_highlight {
+	background-color: rgb(56,129,148)
+}
+.contentWikiView span.color59 {
+	color:            rgb(183,117,64)
+}
+.contentWikiView span.color59_highlight {
+	background-color: rgb(183,117,64)
+}
+.contentWikiView span.color60 {
+	color:            rgb(127,127,127)
+}
+.contentWikiView span.color60_highlight {
+	background-color: rgb(127,127,127)
+}
+.contentWikiView span.color61 {
+	color:            rgb(38,38,38)
+}
+.contentWikiView span.color61_highlight {
+	background-color: rgb(38,38,38)
+}
+.contentWikiView span.color62 {
+	color:            rgb(62,60,58)
+}
+.contentWikiView span.color62_highlight {
+	background-color: rgb(62,60,58)
+}
+.contentWikiView span.color63 {
+	color:            rgb(15,36,62)
+}
+.contentWikiView span.color63_highlight {
+	background-color: rgb(15,36,62)
+}
+.contentWikiView span.color64 {
+	color:            rgb(46,65,90)
+}
+.contentWikiView span.color64_highlight {
+	background-color: rgb(46,65,90)
+}
+.contentWikiView span.color65 {
+	color:            rgb(96,40,38)
+}
+.contentWikiView span.color65_highlight {
+	background-color: rgb(96,40,38)
+}
+.contentWikiView span.color66 {
+	color:            rgb(78,93,48)
+}
+.contentWikiView span.color66_highlight {
+	background-color: rgb(78,93,48)
+}
+.contentWikiView span.color67 {
+	color:            rgb(64,51,80)
+}
+.contentWikiView span.color67_highlight {
+	background-color: rgb(64,51,80)
+}
+.contentWikiView span.color68 {
+	color:            rgb(37,86,99)
+}
+.contentWikiView span.color68_highlight {
+	background-color: rgb(37,86,99)
+}
+.contentWikiView span.color69 {
+	color:            rgb(122,78,43)
+}
+.contentWikiView span.color69_highlight {
+	background-color: rgb(122,78,43)
+}
+
+.contentWikiView #actionBreakdown table {
+border: 0px;
+margin: 0px;
+padding-left: 10px;
+width: 100%;
+}
+
+.contentWikiView #actionBreakdown table td {
+border: 0px;
+padding: 0px;
+margin: 0px;
+padding-right: 10px;
+vertical-align: top;
+}
+
+.contentWikiView #actionBreakdown table td p {
+line-height: 1;
+margin: 0;
+margin-top: 5px;
+
+}
+
+
+ @media print {
+/* Customize the styles of your printed articles by adding styles within this @media block. */
+	}	.contentWikiView span.color00           { color:            rgb(186,20,25) }
+	.contentWikiView span.color00_highlight { background-color: rgb(186,20,25) }
+
+	.contentWikiView span.color01           { color:            rgb(237,28,36) }
+	.contentWikiView span.color01_highlight { background-color: rgb(237,28,36) }
+
+	.contentWikiView span.color02           { color:            rgb(254,194,14) }
+	.contentWikiView span.color02_highlight { background-color: rgb(254,194,14) }
+
+	.contentWikiView span.color03           { color:            rgb(254,242,0) }
+	.contentWikiView span.color03_highlight { background-color: rgb(254,242,0) }
+
+	.contentWikiView span.color04           { color:            rgb(157,218,78) }
+	.contentWikiView span.color04_highlight { background-color: rgb(157,218,78) }
+
+	.contentWikiView span.color05           { color:            rgb(34,177,76) }
+	.contentWikiView span.color05_highlight { background-color: rgb(34,177,76) }
+
+	.contentWikiView span.color06           { color:            rgb(0,183,239) }
+	.contentWikiView span.color06_highlight { background-color: rgb(0,183,239) }
+
+	.contentWikiView span.color07           { color:            rgb(0,114,188) }
+	.contentWikiView span.color07_highlight { background-color: rgb(0,114,188) }
+
+	.contentWikiView span.color08           { color:            rgb(47,54,153) }
+	.contentWikiView span.color08_highlight { background-color: rgb(47,54,153) }
+
+	.contentWikiView span.color09           { color:            rgb(111,49,152) }
+	.contentWikiView span.color09_highlight { background-color: rgb(111,49,152) }
+
+
+	
+	.contentWikiView p.Quote {
+		margin-left: 5ex;
+		margin-right: 5ex;
+	}
+
+	.contentWikiView p.Code {
+		/* See http://cheeaun.phoenity.com/weblog/2005/06/whitespace-and-generated-content.html */
+		white-space: pre;
+		white-space: -moz-pre-wrap;
+		white-space: -hp-pre-wrap;
+		white-space: -o-pre-wrap;
+		white-space: -pre-wrap;
+		white-space: pre-wrap;
+		white-space: pre-line;
+		word-wrap: break-word;
+
+		font-family: Courier New, Courier, monospace;
+		font-size: 13px;
+	}
+
+	
+	
+	
+	
+	
+	
+	
+	
+	/* Customize the styles of an entire Wiki by editing this stylesheet. */
+
+.topicWarning {
+background-color: #ff0000;
+font-size: 16px;
+color: #ffff00;
+padding: 3px;
+margin-bottom: 10px;
+}
+
+.topicTitle {
+background-color: #333;
+font-size: 16px;
+color: #ddd;
+padding: 3px;
+margin-bottom: 10px;
+}
+
+table.Basic p
+{
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+table.gridtable {
+	font-family: verdana,arial,sans-serif;
+	font-size:11px;
+	color:#333333;
+        width: 70%;
+	border-width: 1px;
+	border-color: #666666;
+	border-collapse: collapse;
+        margin-bottom: 10px;
+}
+table.gridtable th {
+	border-width: 1px;
+	padding: 6px;
+	border-style: solid;
+	border-color: #666666;
+	background-color: #dedede;
+}
+table.gridtable td {
+	border-width: 1px;
+	padding: 6px;
+        padding-left: 8px;
+        width: 50%;
+	border-style: solid;
+	border-color: #666666;
+	background-color: #ffffff;
+}
+
+#page {
+	background-image: url(http://hutonggames.com/images/siteShadow.png);
+        background-repeat: repeat-y; 
+        background-position: center; 
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:10pt;
+	background-color:#444;
+	margin:0px;
+	padding:0px;
+        height: 100%;
+}
+
+#container {
+	font-family: Verdana, Arial, sans-serif;
+	background-color:#333;
+	margin-left:auto;
+	margin-right:auto;
+        position: relative;
+        width: 960px;
+	height: 100%;
+}
+
+#hutongHeader {
+	width:960px;
+font-family: Arial, Helvetica, sans-serif;
+	position:relative;
+	margin-left:auto;
+	margin-right:auto;
+	background-color: #2D4659;
+}
+
+#companyLogo {
+	position: absolute;
+	top: 11px;
+	right: 5px;
+}
+
+#socialLinks {
+	height: 32px;
+	position: absolute;
+	bottom: 0px;
+	right: 20px;
+	padding: 0;
+	margin: 0;
+}
+
+/* MAIN MENU */
+
+#mainMenu {
+	height:24px;
+	text-transform: uppercase;
+	background-color:#10293C;
+	font-size: 12px;
+}
+
+#mainMenu h2 {
+	font-size: 48px;
+	color:#FFF;
+	display: inline;
+	padding: 0 0 0 3px;
+	margin: 0;
+	float: left;
+}
+
+#mainMenu ul {
+	overflow: hidden;
+	margin: 0;
+	padding: 0;
+	font-size: 14px;
+	margin-left: 50px;
+}
+
+#mainMenu li {
+	list-style-type: none;
+	display: inline;
+	margin: 5px 5px 0 5px;
+	float: left;
+}
+
+#mainMenu li a {
+	color: #AAA;
+	display: block;
+	text-decoration: none;
+}
+
+#mainMenu li a:hover {
+	color: #FFFFFF;
+}
+	
+	/* Font Families */
+span.Arial {
+	font-family: Arial, Helvetica, sans-serif
+}
+span.Helvetica {
+	font-family: Helvetica, Arial, sans-serif
+}
+span.ArialBlack {
+	font-family: Arial Black, Gadget, sans-serif
+}
+span.Verdana {
+	font-family: Verdana, Geneva, sans-serif
+}
+
+/* Font Sizes */
+span.LudicrousHuge {
+	font-size: 128px
+}
+span.OutrageouslyHuge {
+	font-size: 64px
+}
+span.VeryBig {
+	font-size: 26px
+}
+span.Big {
+	font-size: 20px
+}
+span.Small {
+	font-size: 12px
+}
+span.VerySmall {
+	font-size: 10px
+}
+span.Microscopic {
+	font-size: 6px
+}
+/* Image Styles */
+
+img.FloatLeft {
+	float: left;
+}
+img.FloatRight {
+	float: right;
+}
+img.Outset {
+	border-top: 1px solid #C7C7C7;
+	border-left: 1px solid #C7C7C7;
+	border-right: 1px solid #444444;
+	border-bottom: 1px solid #444444;
+}
+
+table {
+	BORDER-COLLAPSE: collapse;
+}
+
+#actionHeader {
+clear: both;
+padding: 5px;
+}
+
+#actionImg {
+display: block;
+padding-bottom: 8px;
+}
+
+#actionDesc {
+display: block;
+vertical-align: middle;
+max-width: 700px;
+padding-bottom: 10px;
+}
+
+#paramRow {
+clear:both;
+padding: 2px;
+padding-bottom: 10px;
+padding-top: 5px;
+width: 700px;
+}
+
+#paramName {
+font-weight: 600;
+float: left;
+width: 180px;
+}
+
+#paramDesc {
+margin-left: 180px;
+max-width: 600px; 
+}
+
+#actionNotes {
+padding-top: 15px;
+}
+
+#nameDesc {
+clear:both;
+padding: 2px;
+padding-bottom: 10px;
+padding-top: 5px;
+width: 700px;
+}
+
+#name {
+font-weight: 600;
+}
+
+#desc {
+padding-top: 5px; 
+}
+
+
+h1 {
+	margin: 0;
+}
+
+.center {
+	text-align: center;
+}
+
+
+#minMaxSize {
+width: 100%;
+max-width: 960px;
+min-width: 960px;
+overflow: hidden;
+}
+
+#header {
+	background: #2d4659 url(https://hutonggames.fogbugz.com/default.asp?pg=pgDownload&pgType=pgWikiAttachment&ixAttachment=8&sFileName=playMakerLogo_noBorder.png) no-repeat left center;
+	height: 67px;
+}
+
+#main-columns {
+        background: #fff;
+        width: 100%;
+}
+
+#linkList ul {
+	list-style-type: none;
+padding-left: 10px;
+}
+
+
+#footer {
+        display: block;
+	background-color:#10293c;
+	height: 30px;
+        width: 100%;
+}
+
+#copyright {
+font-size: 10px;
+color: #aaa;
+float:right;
+padding: 5px;
+padding-top: 10px;
+}
+
+#rightPanel {
+        vertical-align: top;
+        width: 130px;
+}
+
+#body {
+        vertical-align: top;
+	padding: 0;
+padding-right: 5px;
+}
+
+#body hr {
+	border: 0;
+	color: #2d4659;
+	background-color: #2d4659;
+	height: 1px;
+	//width: 100%;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+#wiki-page-breadcrumbs-container {
+        //background-color:#10293c;
+        background-color:#ccc;
+	z-index: 1;
+	margin: 0;
+        margin-top: 5px;
+	position: relative;
+	width: 100%;
+	height: 16px;
+	vertical-align: center;
+}
+.wiki-page-breadcrumbs {
+	font-family: Verdana, Arial, sans-serif;
+	font-size: 12px;
+	margin: 0;
+	padding: 0;
+	padding-left: 6px;
+	padding-top: 4px;
+	border-spacing: 0px;
+}
+.wiki-page-breadcrumbs a {
+	//color: #ddd;
+        color: #333;
+	padding: 4px 0 4px 3px;
+	display: inline;
+	float: left;
+	text-decoration: none;
+}
+.wikinav-breadcrumbs a.last-crumb,  .wikinav-breadcrumbs a.last-crumb:hover {
+	color: #ddd;
+	font-weight: normal;
+	cursor: default;
+	text-decoration: none;
+}
+span.wikinav-breadcrumb-separator {
+	display: inline;
+	float: left;
+	padding: 4px 4px 10px;
+}
+.wiki-page-breadcrumbs a:hover {
+	color: #fff;
+	text-decoration: none;
+}
+#wiki-page-header {
+	background: #fff;
+	color: #4a4a4a;
+	font-family: Tahoma, Verdana, Helvetica, Arial, sans-serif;
+	font-size: 11px;
+	height: 23px;
+	overflow: hidden;
+	position: relative;
+}
+#wiki-page-controls {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	right: -8px;
+	width: 350px;
+}
+
+#wiki-page-content {
+padding-right: 60px;
+}
+
+
+#wiki-page-content h1 {
+ //display: block;
+	color: black;
+	font-size: 20px;
+	font-weight: 600;
+	margin-bottom: 20px;
+	margin-top: 10px;
+	text-indent: 0px;
+}
+#wiki-page-content h2 {
+	font-size: 16px;
+        font-weight: 600;
+	line-height: 20px;
+	margin: 0 0 15px 0;
+	padding: 0;
+}
+#wiki-page-content h3 {
+	line-height: 18px;
+	margin: 0 0 10px 0;
+	padding: 0;
+}
+#wiki-page-content h4 {
+	line-height: 18px;
+	margin: 0 0 10px 0;
+	padding: 0;
+}
+#wiki-page-content h5 {
+	line-height: 18px;
+	margin: 0 0 10px 0;
+	padding: 0;
+}
+#wiki-page-content h6 {
+	line-height: 18px;
+	margin: 0 0 18px 0;
+	padding: 0;
+}
+.article-content p {
+	margin: 0 0 18px 0;
+padding-right: 20px;
+	padding: 0;
+}
+#wiki-page-content ol,  #wiki-page-content ul {
+	line-height: 18px;
+	margin-bottom: 18px;
+	margin-top: 18px;
+	padding-bottom: 0;
+	padding-top: 0;
+}
+#wiki-page-content ol ol,  #wiki-page-content ul ol,  #wiki-page-content ol ul,  #wiki-page-content ul ul {
+	margin-bottom: 0;
+	margin-top: 0;
+}
+#wiki-page-content li {
+	line-height: 18px;
+}
+.article-content a {
+	color: #003399;
+	text-decoration: none;
+}
+.article-content a:hover {
+	text-decoration: underline;
+}
+.article-content hr {
+	color: #4a4a4a;
+}
+.article-content {
+	font-family: Verdana, Arial;
+	font-size: 12px;
+}
+.article-content table.Basic, .article-content table.Monochrome, .article-content table.LightBlue, .article-content table.YellowHighlight, .article-content table.DarkBold {
+	border-collapse: collapse;
+	border: 1px solid #ccc;
+	border-bottom-color: #aaa;
+	line-height: 18px;
+	margin-bottom: 17px;
+}
+.article-content table.Basic tr, .article-content table.Monochrome tr, .article-content table.LightBlue tr, .article-content table.YellowHighlight tr, .article-content table.DarkBold tr {
+	background: #fff;
+	vertical-align: top;
+}
+ .article-content table.Basic tr:nth-child(even), .article-content table.Monochrome tr:nth-child(even), .article-content table.LightBlue tr:nth-child(even), .article-content table.YellowHighlight tr:nth-child(even), .article-content table.DarkBold tr:nth-child(even) {
+ background: #eee;
+}
+.article-content table.Basic tr.even-row, .article-content table.Monochrome tr.even-row, .article-content table.LightBlue tr.even-row, .article-content table.YellowHighlight tr.even-row, .article-content table.DarkBold tr.even-row {
+	background: #eee;
+}
+ .article-content table.Basic tr:nth-child(1) th, .article-content table.Monochrome tr:nth-child(1) th, .article-content table.LightBlue tr:nth-child(1) th, .article-content table.YellowHighlight tr:nth-child(1) th, .article-content table.DarkBold tr:nth-child(1) th {
+ background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ccc), to(#bbb));
+ background: -moz-linear-gradient(top, #ccc, #bbb);
+ border: 1px solid #aaa;
+ border-bottom-color: #999;
+ border-top-color: #bbb;
+ color: #333;
+ font-size: 14px;
+ padding: 8px 18px 8px 9px;
+}
+.article-content table.Basic tr.first-row th, .article-content table.Monochrome tr.first-row th, .article-content table.LightBlue tr.first-row th, .article-content table.YellowHighlight tr.first-row th, .article-content table.DarkBold tr.first-row th {
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ccc), to(#bbb));
+	background: -moz-linear-gradient(top, #ccc, #bbb);
+	border: 1px solid #aaa;
+	border-bottom-color: #999;
+	border-top-color: #bbb;
+	box-shadow: 0px 1px 1px #ccc;
+	-moz-box-shadow: 0px 1px 1px #ccc;
+	-webkit-box-shadow: 0px 1px 1px #ccc;
+	color: #333;
+	font-size: 14px;
+	padding: 8px 18px 8px 9px;
+ //text-shadow: 0 1px #ddd;
+}
+.article-content table.Basic tr.first-row th, .article-content table.Monochrome tr.first-row th, .article-content table.LightBlue tr.first-row th, .article-content table.YellowHighlight tr.first-row th, .article-content table.DarkBold tr.first-row th {
+	background-color: #bbb;
+}
+.article-content table.Basic th, .article-content table.Monochrome th, .article-content table.LightBlue th, .article-content table.YellowHighlight th, .article-content table.DarkBold th {
+	background: #ddd;
+	border: 1px solid #bbb;
+	color: #000;
+	font-weight: normal;
+	padding: 4px 18px 4px 9px;
+	text-align: left;
+}
+ .article-content table.Basic tr:nth-child(even) th, .article-content table.Monochrome tr:nth-child(even) th, .article-content table.LightBlue tr:nth-child(even) th, .article-content table.YellowHighlight tr:nth-child(even) th, .article-content table.DarkBold tr:nth-child(even) th {
+ background: #ccc;
+}
+.article-content table.Basic tr.even-row th, .article-content table.Monochrome tr.even-row th, .article-content table.LightBlue tr.even-row th, .article-content table.YellowHighlight tr.even-row th, .article-content table.DarkBold tr.even-row th {
+	background: #ccc;
+}
+.article-content table.Basic td, .article-content table.Monochrome td, .article-content table.LightBlue td, .article-content table.YellowHighlight td, .article-content table.DarkBold td {
+	border: 1px dotted #ccc;
+	padding: 2px 18px 4px 9px;
+}
+
+.article-content table.actionInfo {
+border: 0px;
+padding: 5px;
+}
+#wiki-page-controls li {
+	display: block;
+	float: right;
+	margin: 0;
+	padding: 3px 0 0 0;
+}
+#wiki-page-controls li a,  #wiki-page-controls li strong,  #wiki-page-controls li span {
+	color: #4a4a4a;
+	display: inline-block;
+	vertical-align: top;
+	text-decoration: none;
+}
+/* The current page is not a link */
+			#wiki-page-controls li strong {
+	color: black;
+}
+/* Separate the items a little bit */
+#wiki-page-controls li a.articleBarTextLink,  #wiki-page-controls li strong,  #wiki-page-controls li span,  #wiki-page-controls li.wiki-page-control-subscribe a {
+	padding-right: 10px;
+	padding-top: 5px;
+}
+#wiki-page-controls li.wiki-page-control-rss a {
+	padding-right: 10px;
+}
+#wiki-page-controls li a.articleBarDraftLink {
+	padding-right: 0;
+}
+#wiki-page-controls li a:hover {
+	text-decoration: underline;
+}
+/* Images need to be shifted down so they line up */
+#wiki-page-controls li img {
+	padding-top: 3px;
+}
+/* And Subscribe consists of like 17 different tags, one of which is a block element, so it gets special treatement. */
+#wiki-page-controls li.wiki-page-control-subscribe span {
+	padding: 0;
+}
+#wiki-page-controls li.wiki-page-control-subscribe a {
+	border: none;
+}
+/* And the star icon is just a special case altogether */
+			#wiki-page-controls li.wiki-page-control-star a {
+	height: 14px;
+	width: 14px;
+	margin: 0 10px 0 0;
+	padding: 7px 0 0 0;
+}
+#wiki-page-controls li.wiki-page-control-star a img {
+	display: none;
+}
+#wiki-page-metadata {
+	padding: 2px 0 0 12px;
+	position: absolute;
+	left: 0;
+	width: 400px;
+}
+#wiki-page-metadata p {
+	margin: 0;
+	padding: 6px 0 0 0;
+}
+#wiki-page-modified {
+	color: #4a4a4a;
+	font-size: 12px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	-o-text-overflow: ellipsis; /* for Opera */
+	margin-bottom: 20px;
+	margin-top: 0px;
+}
+#wiki-page-modified span {
+	white-space: nowrap;
+}
+#wiki-page-modified a {
+	text-decoration: none;
+}
+#wiki-page-modified a:hover {
+	text-decoration: underline;
+}
+#wiki-page-tags {
+	color: #4a4a4a;
+	font-family: Verdana, Arial;
+	font-size: 12px;
+	margin: 0;
+	padding: 0;
+padding-top: 40px;
+}
+#wiki-page-tags .tags {
+	display: inline;
+}
+#wiki-page-tags .tags a {
+	color: #0F5491;
+	margin: 0;
+	text-decoration: none;
+}
+#wiki-page-tags .tags a:hover {
+	text-decoration: underline;
+}
+#wiki-page-content {
+min-height: 300px;
+	overflow: visible;
+	padding-left: 10px;
+}
+#wiki-edit #wiki-page-content {
+	overflow-x: hidden;
+}
+/* The body tag inside the edit page should have the same padding as the view page. */
+.ckeditor-body {
+	margin: 0;
+	padding: 36px;
+}
+#wiki-page-nav {
+	width: 160px;
+min-width: 140px;
+vertical-align: top;
+padding-bottom: 20px;
+}
+#wiki-page-search {
+	padding: 0px;
+	padding-right: 9px;
+}
+#wiki-page-search span {
+	padding: 0px;
+	border: 0px;
+	width: 0px;
+	font-size: 0px;
+	margin: 0px;
+}
+#wiki-page-search input.wiki-page-search-field {
+	background: #fff;
+	//border: 2px solid #303030;
+	border-right: 0px;
+	color: #aaa;
+	display: inline;
+	font-size: 12px;
+	margin: 0;
+	padding: 0;
+	width: 150px;
+	height: 18px;
+}
+#wiki-page-search input.wiki-page-search-button {
+	background: transparent url(https://hutonggames.fogbugz.com/default.asp?pg=pgDownload&pgType=pgWikiAttachment&ixAttachment=442&sFileName=search.png) no-repeat left center;
+	border-radius: 0px;
+	border: 0px;
+	margin: 0px;
+	color: #303030;
+	padding: 0;
+	text-indent: -999px;
+	font-size: 0;
+	height: 22px;
+	width: 20px;
+	vertical-align: top;
+}
+#wiki-page-search form {
+	display: block;
+	//padding: 5px 0 5px 5px;
+}
+#wiki-page-seach form span {
+	display: none;
+}
+#wiki-page-nav .wiki-page-browse-menu-title {
+	color: black;
+	font-family: Verdana, Arial, sans-serif;
+	font-size: 12px;
+	font-weight: 600;
+	padding: 10px 5px 5px 8px;
+	text-transform: uppercase;
+}
+#wiki-page-nav .wiki-page-browse-menu {
+	font-family: Verdana, Arial, sans-serif;
+	font-size: 11px;
+	list-style: none;
+	margin: 0;
+	padding: 0 0 0 13px;
+	line-height: 150%;
+}
+.wiki-page-browse-menu li a {
+	color: #4a4a4a;
+	display: block;
+	text-decoration: none;
+}
+.wiki-page-browse-menu li a img {
+	width: 18px; /* Specifying the dimensions speeds up rendering client-side, as fewer things need to be shuffled around when the image loads */
+	height: 18px;
+	vertical-align: middle;
+}
+.wiki-page-browse-menu .wiki-page-browse-new a {
+	line-height: 18px;
+	padding-left: 22px;
+}
+.wiki-page-browse-menu li.wiki-page-browse-new a {
+	background: transparent url(https://867-static0.fogbugz.com/images/wiki/new.png) no-repeat 3px 2px;
+}
+.wiki-page-browse-menu li a:hover {
+	background-color: #ddd;
+	color: #000;
+}
+#wiki-page-tree {
+	font-family: Tahoma, Verdana, Helvetica, Arial, sans-serif;
+	font-size: 12px;
+	line-height: 18px;
+}
+#wiki-page-tree .treeview-title-holder {
+	float: none;
+	width: 100%;
+}
+#wiki-page-tree .treeview-drag-handle {
+	display: none;
+}
+#wiki-page-tree .treeview-bar .treeview-clear {
+	display: none;
+}
+#wiki-page-tree a {
+	display: block;
+	line-height: 18px;
+	_overflow: hidden;
+	text-decoration: none;
+	_width: 170px;
+}
+#wiki-page-tree a.node img {
+	/* Make PageSpeed happy. These styles should only apply to the bullet and the plus icons in the treeview. */
+		height: 9px;
+	width: 9px;
+}
+#wiki-page-tree a:hover {
+	background: #ddd;
+	color: #000;
+}
+#wiki-page-tree li.treeview-child-holder span.treeview-expand-button {
+	height: auto;
+}
+#wiki-page-tree li span {
+	margin: 8px 0 0 7px;
+	padding: 0;
+}
+#wiki-page-tree li a span {
+	margin: 0;
+	padding: 0;
+}
+#wiki-page-tree .wiki-page-current,  .wiki-page-current {
+	position: relative;
+}
+#wiki-page-tree li .treeview-selected a,  .treeview-selected a {
+	color: #000;
+}
+#wiki-page-tree li .treeview-selected a:hover,  .treeview-selected a:hover {
+	background: transparent;
+	cursor: default;
+}
+#wiki-page-tree li .treeview-with-children a {
+	background: url(https://867-static0.fogbugz.com/newWikiImages/hierarchy-arrow-right.png) no-repeat 6px 8px;
+}
+#wiki-page-tree li .treeview-with-children a:hover {
+	background-color: #ddd;
+}
+#wiki-page-tree li .treeview-show-more a {
+	background: url(https://867-static1.fogbugz.com/newWikiImages/hierarchy-plus.png) no-repeat 6px 8px;
+	font-size: 12px;
+	font-style: italic;
+	margin-bottom: 9px;
+	margin-top: 9px;
+}
+#wiki-page-tree li .treeview-show-more a:hover {
+	background-color: #ddd;
+}
+#wiki-page-tree .treeview-load-omitted-button img {
+	/* Make PageSpeed happy */
+		width: 9px;
+	height: 9px;
+}
+#wiki-page-content #wiki-editing {
+	background: #e6edf3;
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#e6edf3), to(#D8E1E8));
+	background: -moz-linear-gradient(top, #E6EDF3, #D8E1E8);
+	box-shadow: 0px 1px 1px #ccc;
+	-moz-box-shadow: 0px 1px 1px #ccc;
+	-webkit-box-shadow: 0px 1px 1px #ccc;
+	display: block;
+	margin: 0;
+}
+#wiki-editing label {
+	color: #90a2b2;
+	font-family: Tahoma, Verdana, Helvetica, Arial, sans-serif;
+	font-size: 11px;
+	line-height: 20px;
+ //text-shadow: 0 1px #fff;
+}
+#wiki-editing #idDraftNote {
+	color: #393;
+	display: block;
+	font-family: Tahoma, Verdana, Helvetica, Arial, sans-serif;
+	font-size: 11px;
+	padding: 0;
+}
+#wiki-editing #idDraftNote a {
+	color: #0F5491;
+	text-decoration: none;
+}
+#wiki-editing #idDraftNote a:hover {
+	text-decoration: underline;
+}
+#wiki-page-content #wiki-editing-top #wiki-merge-header {
+	font-weight: bold;
+	padding: 0 0 5px 2px;
+}
+#wiki-page-content #wiki-editing-top #wiki-merge-header a {
+	font-weight: normal;
+}
+#wiki-page-content #wiki-editing-top {
+	padding: 0 10px;
+	margin: 0;
+}
+#wiki-page-content #wiki-editing-header {
+	padding-top: 3px;
+}
+#wiki-editing-top table {
+	width: 100%;
+}
+#wiki-editing-top table td {
+	background: none;
+	border: none;
+	max-width: 460px;
+	padding: 0;
+	text-align: left;
+	width: 50%;
+}
+#wiki-editing-top table #wiki-editing-tags,  #wiki-editing-top table #wiki-editing-title {
+	padding-bottom: 5px;
+	vertical-align: top;
+}
+#wiki-editing-top table #wiki-editing-tags {
+ *padding-top: 1px;
+}
+#wiki-editing-top table #wiki-editing-title,  #wiki-editing-top table #wiki-editing-title-label {
+	padding-right: 10px;
+}
+#wiki-editing-top .wiki-edit-title {
+	background: #fff url(https://867-static0.fogbugz.com/images/wiki/wiki-input-shadow.png) repeat-x top left;
+	border: 1px solid #aaa;
+	font-family: Cambria, Georgia, 'Times New Roman', Times, serif;
+	font-size: 18px;
+	font-weight: bold;
+	margin-top: 0px;
+	max-width: 460px;
+	padding: 2px 0 1px 0;
+	width: 100%;
+}
+#wiki-editing-top .droplistSurround {
+	background: #fff url(https://867-static0.fogbugz.com/images/wiki/wiki-input-shadow.png) repeat-x top left;
+	border: 1px solid #aaa;
+	font-family: Tahoma, Verdana, Helvetica, Arial, sans-serif;
+	padding: 2px 0 4px 4px;
+ *margin-top: 1px;
+	max-width: 460px;
+	width: 99%;
+ *width: 310px;
+}
+#wiki-page-content .tags div {
+	margin: 0;
+}
+.wiki-edit-footer {
+	display: none;
+}
+#wiki-edit .wiki-edit-footer {
+	background: #e6edf3;
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#e6edf3), to(#ced8e1));
+	background: -moz-linear-gradient(top, #E6EDF3, #CED8E1);
+	border-top: 1px solid #aaa;
+	display: block;
+	min-height: 15px;
+	padding: 0;
+	width: 100%;
+}
+#wiki-edit .wiki-edit-footer a {
+	display: inline;
+	float: right;
+	font-family: Tahoma, Verdana, Helvetica, Arial, sans-serif;
+	font-size: 11px;
+	padding: 2px 8px 2px 0;
+	text-align: right;
+	text-decoration: none;
+ //text-shadow: 0 1px #fff;
+}
+#wiki-edit .wiki-edit-footer a:hover {
+	text-decoration: underline;
+}
+#wiki-edit #wiki-page-content {
+	padding: 0;
+}
+#wiki-edit #wiki-page-content > h1 {
+	display: none;
+}
+#wiki-page-content .clear {
+	margin: 0;
+}
+#wiki-edit #idWikiMain {
+	min-width: 600px;
+}
+/* Search Results */
+.wikiArticleList {
+	list-style-type: none;
+	margin: 18px 0;
+	padding: 0;
+}
+.wikiArticleList li {
+	line-height: 18px;
+	margin: 0 0 18px 0;
+	padding: 0;
+}
+.wikiArticleList li div {
+	margin: 0;
+	padding: 0;
+}
+.wikiArticleList li a {
+	text-decoration: none;
+}
+.wikiArticleList li a:hover {
+	text-decoration: underline;
+}
+.wikiArticleList li div.wikiViewHeadline {
+	font-size: 16px;
+	line-height: 16px;
+	margin: 0;
+	padding: 7px 0 6px 0;
+}
+.wikiArticleList li div.wikiViewHeadline span.starContainer {
+	font-size: 16px;
+	line-height: 16px;
+	margin: 0;
+	padding: 0;
+	vertical-align: bottom;
+}
+.wikiArticleList li div.wikiViewHeadline span.starContainer img {
+	font-size: 16px;
+	line-height: 16px;
+	margin: 0;
+	padding: 0;
+}
+.wikiArticleList li div.wikiViewHeadline a {
+	font-size: 16px;
+	line-height: 16px;
+	margin: 0;
+	padding: 0;
+}
+.wikiArticleList li div.wikiPageSnippet {
+	line-height: 18px;
+font-size: 12px;
+	margin: 0;
+	padding: 0;
+}
+.wikiArticleList li div.wikiChangedMeta {
+	color: #808080;
+	font-size: 12px;
+	line-height: 18px;
+	margin: 0;
+	padding: 0;
+}
+.wikiArticleList li div.wikiChangedComment {
+	background: url(https://867-static0.fogbugz.com/images/wiki/changeComment.png) no-repeat top left;
+	color: #777;
+	font-size: 12px;
+	font-style: italic;
+	line-height: 18px;
+	margin-left: 80px;
+	padding-left: 13px;
+	max-width: 500px;
+}
+/* Wiki View Filter bar at the top of the page */
+#wikiViewControls {
+	margin: -15px 0px 0px -10px;
+	padding: 0;
+	position: relative;
+}
+#wikiViewControls #wikiViewControlsInner {
+	margin: 0;
+	height: 33px;
+	width: 100%;
+}
+#wikiViewControls label {
+	color: #777;
+	font-family: Tahoma, Verdana, Helvetica, Arial, sans-serif;
+	font-size: 12px;
+	padding-right: 5px;
+}
+#wikiViewControls #wikiViewFilter {
+	background: #fff url(https://867-static0.fogbugz.com/images/wiki/wiki-input-shadow.png) repeat-x top left;
+	border: 1px solid #bbb;
+	color: #999;
+	font-size: 12px;
+	margin: -2px 0 0 -2px;
+	padding: 2px;
+	width: 100%;
+}
+#wikiViewControls #wikiViewLoading {
+	position: absolute;
+	right: 0;
+	top: 2px;
+ *top: 3px;
+}
+#wikiViewSearch {
+	height: 18px;
+	left: 9px;
+	position: absolute;
+	top: 9px;
+	width: 45%
+}
+#wikiViewShowIncomplete {
+	height: 18px;
+	position: absolute;
+	right: 9px;
+	text-align: right;
+	top: 9px;
+	width: 45%
+}
+#wikiViewShowIncomplete label {
+	display: inline;
+	float: right;
+	margin-top: 0;
+	padding-right: 24px;
+}
+#wikiViewShowIncompleteCheck {
+	position: absolute;
+	right: -2px;
+	top: -1px;
+}
+.fullFilterBar #wikiViewControlsInner #wikiViewFilter {
+	width: 100%;
+}
+.fullFilterBar #wikiViewSearch {
+	left: 0;
+	padding-left: 1%;
+	width: 97.8%;
+}
+/* Wiki View Pagination */	
+#wikiViewPaging {
+	/* background: #fff url(https://867-static0.fogbugz.com/newWikiImages/paging-shadow.png) no-repeat top center; */
+	border-top: 1px dotted #aaa;
+	font-family: Tahoma, Verdana, Helvetica, Arial, sans-serif;
+	font-size: 11px;
+	list-style: none;
+	margin: 0 0px -18px 0px;
+	padding: 0 36px;
+}
+#wikiViewPaging li {
+	display: inline;
+	line-height: 36px;
+	margin: 0;
+	padding: 0;
+}
+#wikiViewPaging li.previousPage {
+	float: left;
+	margin-left: -20px;
+}
+#wikiViewPaging li.nextPage {
+	float: right;
+	margin-right: -20px;
+}
+#wikiViewPaging li a {
+	display: block;
+	padding: 3px 5px;
+	text-decoration: none;
+}
+#wikiViewPaging li a:hover {
+	text-decoration: underline;
+}
+.pagingPageNumber {
+	color: #777;
+	font-family: Tahoma, Verdana, Helvetica, Arial, sans-serif;
+	font-size: 11px;
+	line-height: 36px;
+	margin: -12px -36px 0 -36px;
+	text-align: center;
+	width: 100%;
+}
+ @media print {
+#wiki-page-nav,  #wiki-page-controls {
+	display: none;
+}
+#body,  #wiki-page-header,  .wiki-page-root-link div {
+	border: none !important;
+}
+#body {
+	box-shadow: none;
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+	margin: 0;
+	width: auto;
+}
+#wiki-page-content {
+	padding: 0;
+}
+}
+.wiki-page-current, .wiki-page-current a, .wiki-page-current a.wikiNew {
+	background-color: transparent !important;
+	//color: white !important;
+	text-decoration: none !important;
+	cursor: default !important;
+	//font-weight: bolder;
+	font-style: normal;
+}
+/* Force all wikiView links to be grey */
+.wikiNew, .wikiNew:visited {
+	//color: #777 !important;
+	font-style: italic;
+}
+/* Palette Colors */ 	span.color10 {
+	color:            rgb(255,255,255)
+}
+span.color10_highlight {
+	background-color: rgb(255,255,255)
+}
+span.color11 {
+	color:            rgb(0,0,0)
+}
+span.color11_highlight {
+	background-color: rgb(0,0,0)
+}
+span.color12 {
+	color:            rgb(250,243,232)
+}
+span.color12_highlight {
+	background-color: rgb(250,243,232)
+}
+span.color13 {
+	color:            rgb(31,73,125)
+}
+span.color13_highlight {
+	background-color: rgb(31,73,125)
+}
+span.color14 {
+	color:            rgb(92,131,180)
+}
+span.color14_highlight {
+	background-color: rgb(92,131,180)
+}
+span.color15 {
+	color:            rgb(192,80,77)
+}
+span.color15_highlight {
+	background-color: rgb(192,80,77)
+}
+span.color16 {
+	color:            rgb(157,187,97)
+}
+span.color16_highlight {
+	background-color: rgb(157,187,97)
+}
+span.color17 {
+	color:            rgb(128,102,160)
+}
+span.color17_highlight {
+	background-color: rgb(128,102,160)
+}
+span.color18 {
+	color:            rgb(75,172,198)
+}
+span.color18_highlight {
+	background-color: rgb(75,172,198)
+}
+span.color19 {
+	color:            rgb(245,157,86)
+}
+span.color19_highlight {
+	background-color: rgb(245,157,86)
+}
+span.color20 {
+	color:            rgb(216,216,216)
+}
+span.color20_highlight {
+	background-color: rgb(216,216,216)
+}
+span.color21 {
+	color:            rgb(127,127,127)
+}
+span.color21_highlight {
+	background-color: rgb(127,127,127)
+}
+span.color22 {
+	color:            rgb(187,182,174)
+}
+span.color22_highlight {
+	background-color: rgb(187,182,174)
+}
+span.color23 {
+	color:            rgb(199,209,222)
+}
+span.color23_highlight {
+	background-color: rgb(199,209,222)
+}
+span.color24 {
+	color:            rgb(214,224,236)
+}
+span.color24_highlight {
+	background-color: rgb(214,224,236)
+}
+span.color25 {
+	color:            rgb(239,211,210)
+}
+span.color25_highlight {
+	background-color: rgb(239,211,210)
+}
+span.color26 {
+	color:            rgb(230,238,215)
+}
+span.color26_highlight {
+	background-color: rgb(230,238,215)
+}
+span.color27 {
+	color:            rgb(223,216,231)
+}
+span.color27_highlight {
+	background-color: rgb(223,216,231)
+}
+span.color28 {
+	color:            rgb(210,234,240)
+}
+span.color28_highlight {
+	background-color: rgb(210,234,240)
+}
+span.color29 {
+	color:            rgb(252,230,212)
+}
+span.color29_highlight {
+	background-color: rgb(252,230,212)
+}
+span.color30 {
+	color:            rgb(191,191,191)
+}
+span.color30_highlight {
+	background-color: rgb(191,191,191)
+}
+span.color31 {
+	color:            rgb(114,114,114)
+}
+span.color31_highlight {
+	background-color: rgb(114,114,114)
+}
+span.color32 {
+	color:            rgb(162,157,150)
+}
+span.color32_highlight {
+	background-color: rgb(162,157,150)
+}
+span.color33 {
+	color:            rgb(143,164,190)
+}
+span.color33_highlight {
+	background-color: rgb(143,164,190)
+}
+span.color34 {
+	color:            rgb(173,193,217)
+}
+span.color34_highlight {
+	background-color: rgb(173,193,217)
+}
+span.color35 {
+	color:            rgb(223,167,166)
+}
+span.color35_highlight {
+	background-color: rgb(223,167,166)
+}
+span.color36 {
+	color:            rgb(206,221,176)
+}
+span.color36_highlight {
+	background-color: rgb(206,221,176)
+}
+span.color37 {
+	color:            rgb(191,178,207)
+}
+span.color37_highlight {
+	background-color: rgb(191,178,207)
+}
+span.color38 {
+	color:            rgb(165,213,226)
+}
+span.color38_highlight {
+	background-color: rgb(165,213,226)
+}
+span.color39 {
+	color:            rgb(250,206,170)
+}
+span.color39_highlight {
+	background-color: rgb(250,206,170)
+}
+span.color40 {
+	color:            rgb(165,165,165)
+}
+span.color40_highlight {
+	background-color: rgb(165,165,165)
+}
+span.color41 {
+	color:            rgb(89,89,89)
+}
+span.color41_highlight {
+	background-color: rgb(89,89,89)
+}
+span.color42 {
+	color:            rgb(125,121,116)
+}
+span.color42_highlight {
+	background-color: rgb(125,121,116)
+}
+span.color43 {
+	color:            rgb(87,118,157)
+}
+span.color43_highlight {
+	background-color: rgb(87,118,157)
+}
+span.color44 {
+	color:            rgb(132,162,198)
+}
+span.color44_highlight {
+	background-color: rgb(132,162,198)
+}
+span.color45 {
+	color:            rgb(207,123,121)
+}
+span.color45_highlight {
+	background-color: rgb(207,123,121)
+}
+span.color46 {
+	color:            rgb(181,204,136)
+}
+span.color46_highlight {
+	background-color: rgb(181,204,136)
+}
+span.color47 {
+	color:            rgb(159,140,183)
+}
+span.color47_highlight {
+	background-color: rgb(159,140,183)
+}
+span.color48 {
+	color:            rgb(120,192,212)
+}
+span.color48_highlight {
+	background-color: rgb(120,192,212)
+}
+span.color49 {
+	color:            rgb(247,181,128)
+}
+span.color49_highlight {
+	background-color: rgb(247,181,128)
+}
+span.color50 {
+	color:            rgb(140,140,140)
+}
+span.color50_highlight {
+	background-color: rgb(140,140,140)
+}
+span.color51 {
+	color:            rgb(63,63,63)
+}
+span.color51_highlight {
+	background-color: rgb(63,63,63)
+}
+span.color52 {
+	color:            rgb(87,85,81)
+}
+span.color52_highlight {
+	background-color: rgb(87,85,81)
+}
+span.color53 {
+	color:            rgb(23,54,93)
+}
+span.color53_highlight {
+	background-color: rgb(23,54,93)
+}
+span.color54 {
+	color:            rgb(69,98,135)
+}
+span.color54_highlight {
+	background-color: rgb(69,98,135)
+}
+span.color55 {
+	color:            rgb(144,60,57)
+}
+span.color55_highlight {
+	background-color: rgb(144,60,57)
+}
+span.color56 {
+	color:            rgb(117,140,72)
+}
+span.color56_highlight {
+	background-color: rgb(117,140,72)
+}
+span.color57 {
+	color:            rgb(96,76,120)
+}
+span.color57_highlight {
+	background-color: rgb(96,76,120)
+}
+span.color58 {
+	color:            rgb(56,129,148)
+}
+span.color58_highlight {
+	background-color: rgb(56,129,148)
+}
+span.color59 {
+	color:            rgb(183,117,64)
+}
+span.color59_highlight {
+	background-color: rgb(183,117,64)
+}
+span.color60 {
+	color:            rgb(127,127,127)
+}
+span.color60_highlight {
+	background-color: rgb(127,127,127)
+}
+span.color61 {
+	color:            rgb(38,38,38)
+}
+span.color61_highlight {
+	background-color: rgb(38,38,38)
+}
+span.color62 {
+	color:            rgb(62,60,58)
+}
+span.color62_highlight {
+	background-color: rgb(62,60,58)
+}
+span.color63 {
+	color:            rgb(15,36,62)
+}
+span.color63_highlight {
+	background-color: rgb(15,36,62)
+}
+span.color64 {
+	color:            rgb(46,65,90)
+}
+span.color64_highlight {
+	background-color: rgb(46,65,90)
+}
+span.color65 {
+	color:            rgb(96,40,38)
+}
+span.color65_highlight {
+	background-color: rgb(96,40,38)
+}
+span.color66 {
+	color:            rgb(78,93,48)
+}
+span.color66_highlight {
+	background-color: rgb(78,93,48)
+}
+span.color67 {
+	color:            rgb(64,51,80)
+}
+span.color67_highlight {
+	background-color: rgb(64,51,80)
+}
+span.color68 {
+	color:            rgb(37,86,99)
+}
+span.color68_highlight {
+	background-color: rgb(37,86,99)
+}
+span.color69 {
+	color:            rgb(122,78,43)
+}
+span.color69_highlight {
+	background-color: rgb(122,78,43)
+}
+
+#actionBreakdown table {
+border: 0px;
+margin: 0px;
+padding-left: 10px;
+width: 100%;
+}
+
+#actionBreakdown table td {
+border: 0px;
+padding: 0px;
+margin: 0px;
+padding-right: 10px;
+vertical-align: top;
+}
+
+#actionBreakdown table td p {
+line-height: 1;
+margin: 0;
+margin-top: 5px;
+
+}
+
+
+ @media print {
+/* Customize the styles of your printed articles by adding styles within this @media block. */
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	

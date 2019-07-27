@@ -1,0 +1,190 @@
+<!DOCTYPE html> 
+<html xmlns:fb>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>State Inspector</title>
+	<link href="css/main.css" rel="stylesheet" type="text/css" />
+    <script src="js/jquery.min.js"></script>
+</head>
+<body>
+	<div id="page">
+		<div id="container">
+			<div id = "hutongHeader">
+				<a href="http://hutonggames.com/index.html"><img src="http://hutonggames.com/images/playMaker.png"/></a>  
+				<a href="http://hutonggames.com/company.html"><img src="http://hutonggames.com/images/hutongGamesSmall.png" id="companyLogo"/></a>
+				<div id="socialLinks">
+					<a href="http://www.facebook.com/pages/Hutong-Games-LLC/163141367059519" target="_blank">
+					<img src="http://www.hutonggames.com/images/fb.png" width="32" height="32" alt="facebook" /></a>
+					<a href="http://twitter.com/hutonggames" target="_blank">
+					<img src="http://www.hutonggames.com/images/twitter.png" width="32" height="32" alt="twitter" /></a>
+					<a href="http://www.youtube.com/user/HutongGamesLLC" target="_blank">
+					<img src="http://www.hutonggames.com/images/youtube.png" width="32" height="32" alt="youtube" /></a>
+				</div>
+				<div id = "mainMenu">
+                    <ul>
+                        <li><a href="http://hutonggames.com/index.html">Home</a></li>
+                        <li><a href="http://hutonggames.com/store.html">Store</a></li>
+                        <li><a href="http://hutonggames.com/showcase.html">Showcase</a></li>
+                        <li><a href="http://hutonggames.com/tutorials.html">Tutorials</a></li>
+                        <li><a href="http://hutonggames.com/playmakerforum/index.php">Forums</a></li>
+                        <li><a href="playmaker-manual.html">Manual</a></li>
+                        <li><a href="https://hutonggames.fogbugz.com/default.asp?W546">Wiki</a></li>
+                        <li><a href="http://hutonggames.com/company.html">About Us</a></li>
+                    </ul>
+                </div>
+			</div>
+            <table id="wiki-page-breadcrumbs-container">
+		        <tr>
+			        <td class="wiki-page-breadcrumbs">
+				        <a href="index.html" title = "Home">Home</a>
+                        <span class="wikinav-breadcrumb-separator">»</span><a href="user-interface.html" title="User Interface" class="">User Interface</a><span class="wikinav-breadcrumb-separator">»</span><a href="inspector-panel.html" title="Inspector Panel" class="">Inspector Panel</a><span class="wikinav-breadcrumb-separator">»</span><a href="state-inspector.html" title="State Inspector" class="">State Inspector</a>
+			        </td>
+		        </tr>
+	        </table>
+		    <table id="main-columns">
+			    <tr><td id="wiki-page-nav">
+				    <div class="wiki-page-browse-menu-title">Index</div>
+				    <ul class="wiki-page-browse-menu">
+					    <li><a href="installation.html" class="">Installation</a></li>
+					    <li><a href="core-concepts.html" class="">Core Concepts</a></li>
+					    <li><a href="user-interface.html" class="">User Interface</a></li>
+					    <li><a href="keyboard-shortcuts.html" class="">Shortcuts</a></li>
+					    <li><a href="editing-basics.html" class="">Editing Basics</a></li>
+					    <li><a href="samples.html" class="">Samples</a></li>
+					    <li><a href="debugging.html" class="">Debugging</a></li>
+					    <li><a href="action-reference.html" class="">Action Reference</a></li>
+					    <li><a href="networking.html" class="">Networking</a></li>
+					    <li><a href="api-reference.html" class="">API Reference</a></li>
+					    <li><a href="online-resources.html" class="">Online Resources</a></li>
+					    <li><a href="hints-and-tips.html" class="">Hints And Tips</a></li>
+					    <li><a href="known-issues.html" class="">Known Issues</a></li>
+					    <li><a href="release-notes.html" class="">Release Notes</a></li>
+					    <li><a href="frequently-asked-questions.html" class="">FAQ</a></li>
+				    </ul>
+			    </td>
+                <td id="body">
+					<div id="wiki-page-content">
+                        <h1>State Inspector</h1>
+                        <div class="article-content">
+                        <p>The State Inspector lets you edit the properties of the selected state. Most importantly it lets you edit the&nbsp;<a href="action-reference.html" rel="nofollow noopener noreferrer">Actions&nbsp;</a>on a state.</p>
+
+<p><img border="0" src="images/manual/StateInspector.png" title=""  /></p>
+
+<ol>
+	<li><strong>State Name:</strong>&nbsp;The name of the selected state. NOTE: State names must be unique in an FSM.</li>
+	<li><strong>Settings Menu:</strong>&nbsp;Color Swatch and State Inspector settings menu. See below.</li>
+	<li><strong>Action:</strong>&nbsp;Each state has a list of actions. Each action has it&#39;s own&nbsp;<a href="action-editor.html" rel="nofollow noopener noreferrer">Action Editor</a>.</li>
+	<li><strong>Debug:&nbsp;</strong>Shows&nbsp;the value of any variables used in Actions. Useful for debugging variables at runtime.</li>
+	<li><strong>Hide Unused:</strong> Hide unused, optional parameters. This can reduce clutter in the action UI.&nbsp;</li>
+	<li><strong>Action Browser:</strong> Open the&nbsp;<a href="action-browser.html" rel="nofollow noopener noreferrer">Action Browser</a>&nbsp;so you can add actions to the state.</li>
+</ol>
+
+<h4>Settings Menu</h4>
+
+<ul>
+	<li><a href="action-sequence.html" rel="nofollow noopener noreferrer">Action Sequence</a>:&nbsp;When checked, each action is run until finished before the next one starts.</li>
+	<li>Show State Description: Use state descriptions to describe how your FSM works.</li>
+	<li>Show Action Parameters: Show/hide the action parameters.</li>
+	<li>Dim Unused Parameters:&nbsp;Dim unused, optional parameters. Can help reduce visual clutter.</li>
+	<li>Set State Color:&nbsp;Set a custom color for the state in the&nbsp;<a href="graph-view.html" rel="nofollow noopener noreferrer">Graph View</a>. See&nbsp;<a href="color-preferences.html" rel="nofollow noopener noreferrer">Color Preferences</a>.</li>
+	<li>Select All Actions:&nbsp;Select all the actions on the selected State.</li>
+	<li>Copy Selected Actions/Paste Actions: Copy/Paste actions.</li>
+	<li>Delete All Actions: A quick way to remove all actions on the State.</li>
+	<li>Action Browser: Opens the&nbsp;<a href="action-browser.html" rel="nofollow noopener noreferrer">Action Browser</a>.</li>
+	<li>Online Help: Opens this document!</li>
+</ul>
+
+<h4>Drag and Drop</h4>
+
+<ul>
+	<li>Actions can be re-ordered by dragging their title bars.</li>
+</ul>
+
+<p style="margin-left: 40px"><img height="142" src="images/manual/DragReorderActions.gif" width="345"  /></p>
+
+<ul>
+	<li>Actions can be dragged from the&nbsp;<a href="action-browser.html" rel="nofollow noopener noreferrer">Action Browser</a>&nbsp;into the State Inspector.</li>
+</ul>
+
+<p style="margin-left: 40px"><img height="234" src="images/manual/DragActionIntoStack.gif" width="552"  /></p>
+
+<ul>
+	<li>Components can be dragged from the Unity Inspector onto the State Inspector.</li>
+</ul>
+
+<p style="margin-left: 40px;"><img height="234" src="images/manual/DragCameraToState.gif" width="622"  /></p>
+
+<h4>Update Loop</h4>
+
+<ul>
+	<li>All actions are updated every frame from top to bottom.&nbsp;</li>
+	<li>Finished actions are skipped in the update loop.</li>
+	<li>When all actions on a state have finished a FINISHED event is sent.</li>
+	<li>When the game is playing, active actions have a green highlight; finished actions are dimmed.</li>
+	<li>The&nbsp;<a href="action-sequence.html" rel="nofollow noopener noreferrer">Action Sequence</a>&nbsp;setting lets you run each action in turn instead of simultaneously.&nbsp;</li>
+</ul>
+
+<p>See&nbsp;<a href="actions.html" rel="nofollow noopener noreferrer">Actions&nbsp;</a>for more details on the update loop.</p>
+
+<h4>Workflow Hints</h4>
+
+<ul>
+	<li>Use the Debug check box to show variable values while playing the game.</li>
+</ul>
+
+<h4>Shortcuts</h4>
+
+<ul>
+	<li>After selecting a State in the Graph View, hit Tab to highlight the State Name edit field.</li>
+	<li>Press ~ or Ctrl~ to open the&nbsp;<a href="action-browser.html" rel="nofollow noopener noreferrer">Action Browser</a>.</li>
+	<li>Double click any empty space in the State Inspector to open the <a href="action-browser.html" rel="nofollow noopener noreferrer">Action Browser</a>.</li>
+	<li>Ctrl click an action foldout to open/close all actions.</li>
+</ul>
+
+<p style="margin-left: 40px"><img height="250" src="images/manual/CtrlCollapseAllActions.gif" width="351"  /></p>
+
+<ul>
+	<li>Ctrl click the enable check box to enable/disable all actions.</li>
+</ul>
+
+<p style="margin-left: 40px"><img height="143" src="images/manual/CtrlEnableAllActions.gif" width="348"  /></p>
+
+<h4>See Also:</h4>
+
+<div id="linkList">
+<ul>
+	<li><a href="actions.html" rel="nofollow noopener noreferrer">Actions</a></li>
+	<li><a href="action-editor.html" rel="nofollow noopener noreferrer">Action Editor</a></li>
+	<li><a href="action-browser.html" rel="nofollow noopener noreferrer">Action Browser</a></li>
+	<li><a href="action-reference.html" rel="nofollow noopener noreferrer">Action Reference</a></li>
+</ul>
+</div>
+
+<p>&nbsp;</p>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr><td><p>&nbsp;</p></td></tr>
+        </table>       
+        <div id="footer">
+		    <div id="copyright">copyright HutongGames, LLC. All rights reserved.</div>
+	    </div>
+    </div>
+    <script type="text/javascript">
+	    document.body.style.backgroundColor = "#444";
+        document.body.style.backgroundImage = "none";
+	    document.body.style.height = "100%";
+	    $("#mainArea").css("padding", "0px");
+	    $("#mainArea").css("margin", "0px");
+	    $("#contentWikiView").css("margin", "0px");
+	    $(document).ready(function() {
+            $("#container #paramRow").filter(":even").css("background-color", "#f2f2f2");
+            $("#container #paramRow").filter(":odd").css("background-color", "#f9f9f9");
+            $("#container #nameDesc").filter(":even").css("background-color", "#f2f2f2");
+            $("#container #nameDesc").filter(":odd").css("background-color", "#f9f9f9");
+        },0)
+    </script>
+</div>
+</body>
+</html>

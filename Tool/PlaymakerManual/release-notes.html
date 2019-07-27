@@ -1,0 +1,406 @@
+<!DOCTYPE html> 
+<html xmlns:fb>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Release Notes</title>
+	<link href="css/main.css" rel="stylesheet" type="text/css" />
+    <script src="js/jquery.min.js"></script>
+</head>
+<body>
+	<div id="page">
+		<div id="container">
+			<div id = "hutongHeader">
+				<a href="http://hutonggames.com/index.html"><img src="http://hutonggames.com/images/playMaker.png"/></a>  
+				<a href="http://hutonggames.com/company.html"><img src="http://hutonggames.com/images/hutongGamesSmall.png" id="companyLogo"/></a>
+				<div id="socialLinks">
+					<a href="http://www.facebook.com/pages/Hutong-Games-LLC/163141367059519" target="_blank">
+					<img src="http://www.hutonggames.com/images/fb.png" width="32" height="32" alt="facebook" /></a>
+					<a href="http://twitter.com/hutonggames" target="_blank">
+					<img src="http://www.hutonggames.com/images/twitter.png" width="32" height="32" alt="twitter" /></a>
+					<a href="http://www.youtube.com/user/HutongGamesLLC" target="_blank">
+					<img src="http://www.hutonggames.com/images/youtube.png" width="32" height="32" alt="youtube" /></a>
+				</div>
+				<div id = "mainMenu">
+                    <ul>
+                        <li><a href="http://hutonggames.com/index.html">Home</a></li>
+                        <li><a href="http://hutonggames.com/store.html">Store</a></li>
+                        <li><a href="http://hutonggames.com/showcase.html">Showcase</a></li>
+                        <li><a href="http://hutonggames.com/tutorials.html">Tutorials</a></li>
+                        <li><a href="http://hutonggames.com/playmakerforum/index.php">Forums</a></li>
+                        <li><a href="playmaker-manual.html">Manual</a></li>
+                        <li><a href="https://hutonggames.fogbugz.com/default.asp?W546">Wiki</a></li>
+                        <li><a href="http://hutonggames.com/company.html">About Us</a></li>
+                    </ul>
+                </div>
+			</div>
+            <table id="wiki-page-breadcrumbs-container">
+		        <tr>
+			        <td class="wiki-page-breadcrumbs">
+				        <a href="index.html" title = "Home">Home</a>
+                        <span class="wikinav-breadcrumb-separator">»</span><a href="release-notes.html" title="Release Notes" class="">Release Notes</a>
+			        </td>
+		        </tr>
+	        </table>
+		    <table id="main-columns">
+			    <tr><td id="wiki-page-nav">
+				    <div class="wiki-page-browse-menu-title">Index</div>
+				    <ul class="wiki-page-browse-menu">
+					    <li><a href="installation.html" class="">Installation</a></li>
+					    <li><a href="core-concepts.html" class="">Core Concepts</a></li>
+					    <li><a href="user-interface.html" class="">User Interface</a></li>
+					    <li><a href="keyboard-shortcuts.html" class="">Shortcuts</a></li>
+					    <li><a href="editing-basics.html" class="">Editing Basics</a></li>
+					    <li><a href="samples.html" class="">Samples</a></li>
+					    <li><a href="debugging.html" class="">Debugging</a></li>
+					    <li><a href="action-reference.html" class="">Action Reference</a></li>
+					    <li><a href="networking.html" class="">Networking</a></li>
+					    <li><a href="api-reference.html" class="">API Reference</a></li>
+					    <li><a href="online-resources.html" class="">Online Resources</a></li>
+					    <li><a href="hints-and-tips.html" class="">Hints And Tips</a></li>
+					    <li><a href="known-issues.html" class="">Known Issues</a></li>
+					    <li><a href="release-notes.html" class="">Release Notes</a></li>
+					    <li><a href="frequently-asked-questions.html" class="">FAQ</a></li>
+				    </ul>
+			    </td>
+                <td id="body">
+					<div id="wiki-page-content">
+                        <h1>Release Notes</h1>
+                        <div class="article-content">
+                        <p><span style="font-size:14px; line-height:14px"><strong>NOTE: Always BACKUP Unity Projects before importing updates! Use version control!</strong></span></p>
+
+<h3>PlayMaker 1.8+ Notes:</h3>
+
+<ul>
+	<li><strong>FSMs saved with 1.8.+ cannot be opened in older versions of Playmaker!</strong></li>
+	<li>With 1.8+ some add-ons will be integrated in the main package. If you already have these add-ons in your project you might get errors from duplicate files. Simply delete the older copy of the file (the one not in Assets\PlayMaker\Actions) to fix the error.</li>
+</ul>
+
+<h3>Unity 2017.2 Patch</h3>
+
+<p>The next Playmaker update is still in beta. In the meantime, please import this patch to fix Obsolete warnings in 2017.2:</p>
+
+<p><a href="http://www.hutonggames.com/downloads/PlayMaker_2017.2_patch.unitypackage" rel="nofollow noopener noreferrer" target="_blank">Download PlayMaker 2017.2 Patch</a></p>
+
+<p>Import and install PlayMaker 1.8.5&nbsp;first, then import the patch.</p>
+
+<h3>Unity 5 Upgrade Notes:</h3>
+
+<ul>
+	<li>Unity 5 removed properties that allowed you to target common components on a GameObject (e.g., guiTexture, renderer, rigidbody...). If you targeted these properties with&nbsp;<a href="get-property.html" rel="nofollow noopener noreferrer">Get Property</a>&nbsp;or&nbsp;<a href="set-property.html" rel="nofollow noopener noreferrer">Set Property</a>&nbsp;actions&nbsp;the target no&nbsp;longer&nbsp;exists and you will need to re-target the action. Instead, you should target the component directly - drag the Component into the Target Object field NOT the GameObject.</li>
+	<li>Unity 5 changes the way assets are imported from a unitypackage. It now uses GUIDs. This can cause duplicate files if you have the same file in your project with a different GUID (e.g., you copied the file in Finder or Windows Explorer and Unity assigned it a new GUID). Please see the Troubleshooting link below to fix this.</li>
+	<li>Some Add-Ons and custom actions need to be updated. Please report any problems you run into on the forums so we can look into them asap.</li>
+</ul>
+
+<p><strong>Troubleshooting</strong>:&nbsp;<a href="troubleshooting.html" rel="nofollow noopener noreferrer">https://hutonggames.fogbugz.com/default.asp?W624</a></p>
+
+<h3>Version 1.8.5</h3>
+
+<p><strong>Bug Fixes</strong></p>
+
+<ul>
+	<li style="list-style-position: outside; list-style-type: square">Fixed missing system events in iOS builds in Unity 5.6 (#1659).</li>
+	<li style="list-style-position: outside; list-style-type: square">Fixed actions sometimes executing twice in action sequence (#1620, #1635).</li>
+	<li style="list-style-position: outside; list-style-type: square">Fixed Variables tab not showing variables for selected sub-FSM when playing (#1651).</li>
+	<li style="list-style-position: outside; list-style-type: square">Fixed new variable popup messing up variable categories (#1622).</li>
+	<li style="list-style-position: outside; list-style-type: square">Fixed ambiguous match error with new mono runtime preview in Unity 2017.1 beta.</li>
+	<li style="list-style-position: outside; list-style-type: square">Fixed some defines for Unity 2017+</li>
+</ul>
+
+<p><strong>Improvements</strong></p>
+
+<ul>
+	<li>Action Browser: Escape clears search field. Second escape closes the browser.</li>
+	<li>Action Browser:&nbsp;Added &quot;Show Used Actions Only&quot; option in Settings Menu.</li>
+	<li>Moved PlayMakerFSM.LateUpdate to optional separate component for better performance.</li>
+	<li>PlayMakerPrefs: Added preference to control logging of Performance Warnings in builds.</li>
+	<li>PlayMakerPrefs: Added preference to Show Event&nbsp;Handler Components added to GameObjects.</li>
+	<li>Updated Spanish&nbsp;translations. Thanks, Matias Ignacio!</li>
+</ul>
+
+<h3>Version 1.8.4</h3>
+
+<p><strong>Bug Fixes</strong></p>
+
+<ul>
+	<li style="list-style-position: outside; list-style-type: square">Fixed Playmaker Defines for iOS in Unity 5.4 (#1567)</li>
+	<li style="list-style-position: outside; list-style-type: square">Fixed Conditional Expression action not finding global variables.</li>
+	<li style="list-style-position: outside; list-style-type: square">Fixed Conditional Expression action not re-evaluating the expression if it changes at runtime (#1604).</li>
+	<li style="list-style-position: outside; list-style-type: square">Fixed <a href="scale-time.html" rel="nofollow noopener noreferrer">Scale Time</a> bug with Adjust Fixed Delta Time not being respected (#1603).</li>
+</ul>
+
+<p><strong>Improvements</strong></p>
+
+<ul>
+	<li>Unity 5.6 compatibility.</li>
+	<li>Fixed GC spikes in FSM Logging in editor.</li>
+	<li>Added SceneManager actions.</li>
+	<li style="list-style-position: outside; list-style-type: square">Auto-expand description in State Inspector (#1617).</li>
+	<li style="list-style-position: outside; list-style-type: square">Added Enable State Labels in Build preference setting. Defaults to false.</li>
+	<li style="list-style-position: outside; list-style-type: square">Added Themes in <em>Preferences &gt; Graph View</em> to support new Flat theme.</li>
+	<li style="list-style-position: outside; list-style-type: square">Added more filtering options to the FSM Browser: Show Disabled FSMs, Show FSMs on Prefabs, Show Prefabs when Playing.</li>
+	<li style="list-style-position: outside; list-style-type: square"><span style="background-color:#ffffff; color:#444444; float:none; font-family:Arial,Verdana,sans-serif; font-size:13.3333px; font-style:normal; font-weight:normal; letter-spacing:normal; orphans:2; text-align:left; text-indent:0px; text-transform:none; white-space:normal; widows:2; word-spacing:0px">Included Scale option in PlayMakerGUI Inspector for State Labels.</span></li>
+</ul>
+
+<h3>Version 1.8.3</h3>
+
+<p><strong>Bug Fixes</strong></p>
+
+<ul>
+	<li>Fixed type loading bugs in WSA builds.</li>
+	<li>Fixed issues with new Call Method Editor.&nbsp;</li>
+</ul>
+
+<p><strong>Improvements</strong></p>
+
+<ul>
+	<li>Added Favorites category in Action Browser. Use action context menus to Add/Remove actions from Favorites.</li>
+	<li>Added Recent category in Action Browser. Recently added actions are added to the top of this list. Set the size of the list in the settings menu.</li>
+	<li>Added option to scale State Labels in PlayMakerGUI. Useful on retina/HiDPI displays (#1540)</li>
+	<li>Debugging: Cmd/Ctrl-Alt-Click any state to jump to it while playing game in editor (there doesn&#39;t have to be a valid transition).</li>
+</ul>
+
+<h3>Version 1.8.2</h3>
+
+<p><strong>Bug Fixes</strong></p>
+
+<ul>
+	<li>Fixed FSM selection bug after maximizing/unmaximizing the Playmaker editor (#1477)</li>
+	<li>Fixed Set Property actions made from new drag and drop context menu. Temporary fix&nbsp;<a href="http://hutonggames.com/playmakerforum/index.php?topic=12975.0" rel="nofollow noopener noreferrer" target="_blank">here</a>.</li>
+	<li>Fixed array parameters in Call Method action (#1481)</li>
+	<li>Fixed Escape key in Variables Manager.</li>
+	<li>Fixed WSA build errors.</li>
+</ul>
+
+<p><strong>Improvements</strong></p>
+
+<ul>
+	<li>New custom editor for Call Method action.&nbsp;Should be a lot easier to use than old editor!</li>
+	<li>Added MOUSE UP AS BUTTON, PARTICLE COLLISION, JOINT BREAK, JOINT BREAK 2D system events.</li>
+	<li>Support OnParticleCollision in Collision Event action.</li>
+	<li>New Set Procedural Vector actions (Substance).</li>
+	<li>Save Debugger Step Mode on compile.</li>
+	<li>Updated French and Chinese localized editor text.</li>
+</ul>
+
+<h3>Version 1.8.1</h3>
+
+<p><strong>UPGRADE NOTES:</strong></p>
+
+<ul>
+	<li>Playmaker now requires Unity 4.6 or higher.</li>
+	<li>1.8.1 integrates the following Add-ons and Actions:
+	<ul>
+		<li>
+		<div>Physics2D Add-on</div>
+		</li>
+		<li>
+		<div>Mecanim Animator Add-on</div>
+		</li>
+		<li>
+		<div>Vector2, Quaternion, and Trigonometry actions</div>
+		</li>
+	</ul>
+	</li>
+	<li>
+	<div>If you already have these add-ons in your project you might get errors from duplicate files. Simply delete the older copy of the file (the one not in Assets\PlayMaker\Actions) to fix the error.</div>
+	</li>
+</ul>
+
+<div>
+<p><strong>Improvements</strong></p>
+
+<ul>
+	<li>Integrated Physics2D, Mecanim, Vector2, Quaternion, and Trigonometry actions.</li>
+	<li>Added Coroutine support to actions. See&nbsp;<a href="fsmstateaction.html" rel="nofollow noopener noreferrer">FsmStateAction API</a>&nbsp;(#1432)</li>
+	<li>Added Parameter name browsing to Get/Set Animator Float/Int/Bool/Trigger actions.</li>
+	<li>Log Missing Variables as Warnings instead of Errors so they don&#39;t stop the game from running.</li>
+	<li>Added foldout next to Name in PlayMakerFSM Inspector for more compact view.</li>
+	<li>
+	<div>Added namespace support to script popup menu (E.g., Add Script and Add Component actions).</div>
+	</li>
+	<li>
+	<div>Click on missing variable warning in the console to select the GameObject.</div>
+	</li>
+	<li>Added Every Frame option to GUILayoutToolbar action for when button content is changing.</li>
+	<li>
+	<div>Save Welcome Window &quot;Show At Startup&quot; setting per project.</div>
+	</li>
+	<li>
+	<div>Cleaned up Export/Import Globals tools. Now uses unitypackages and file save/open dialogs.</div>
+	</li>
+	<li>
+	<div>Added FsmEditor.OnFsmChanged callback. Useful for third party tool developers. Note the delegate might get called multiple times with some changes because of the way changes can chain in the editor.</div>
+	</li>
+	<li>
+	<div>Added Ctrl+Up/Down shortcuts to move selected transition up/down. Moved old shortcuts to Ctrl+Alt+Up/Down.</div>
+	</li>
+	<li>
+	<div>Rename selected action with F2 (#899).</div>
+	</li>
+	<li>
+	<div>FSM Log Window improvements:</div>
+
+	<ul>
+		<li>
+		<div>Added clickable info to collision events.</div>
+		</li>
+		<li>
+		<div>Added StateTime to Exit entry in FSM Log window.</div>
+		</li>
+		<li>
+		<div>Added option to not show Exit entries in FSM Log window settings.</div>
+		</li>
+	</ul>
+	</li>
+	<li>
+	<div>Added experimental &quot;Manual Update&quot; option in&nbsp;<a href="fsm-inspector.html" rel="nofollow noopener noreferrer">FSM Inspector</a>.</div>
+	</li>
+	<li>
+	<div>Added experimental &quot;Keep Delayed Events On State Exit&quot; option in&nbsp;<a href="fsm-inspector.html" rel="nofollow noopener noreferrer">FSM Inspector</a>.</div>
+	</li>
+</ul>
+
+<p><strong>Bug Fixes</strong></p>
+
+<ul>
+	<li>Fixed errors caused by threading problems with async loading (#1424).</li>
+	<li>Fixed null ref error and variable values not updating in DebugFlow (#1430).</li>
+	<li>Fixed false Missing Variable errors with OwnerDefault variables that previously specified a variable.</li>
+	<li>Fixed bug where active control sometimes lost focus if error status changed (e.g. when editing required field).</li>
+	<li>Put TextureExtensions in a namespace to fix conflicts with Cross Platform Native Plugin (#1434).</li>
+	<li>Fixed graph not re-sizing when editing state names and descriptions.</li>
+	<li>Fixed State context menu sometimes appearing when right clicking in other windows (e.g., FSM Log Window).</li>
+	<li>Fixed State Inspector debugging of CustomActionEditors using EditField().</li>
+	<li>Fixed empty FSM drop down in main toolbar after Maximize/Un-maximize window.</li>
+	<li>Fixed build errors and warnings with WP8.</li>
+	<li>Fixed Unity 5.4 beta warnings.</li>
+</ul>
+</div>
+
+<h3>Version 1.8.0</h3>
+
+<p><strong>UPGRADE NOTES:</strong></p>
+
+<ul>
+	<li><strong>FSMs saved with 1.8.0 cannot be opened in older versions of Playmaker!</strong></li>
+	<li>Playmaker now requires Unity 4.3 or higher.</li>
+	<li>The Run FSM action in previous versions exposed all FSM variables. In 1.8.0 only variables marked as Inspector are exposed. Make sure all variables you currently use are marked as Inspector BEFORE upgrading to 1.8.0!</li>
+	<li>1.8.0 now properly finds errors in Templates. This means you might see new errors after upgrading - but they are likely errors that were already in the templates that were just not found before!</li>
+</ul>
+
+<p><strong>Improvements</strong></p>
+
+<ul>
+	<li>Much faster loading in Unity 4.5+</li>
+	<li><a href="array-actions.html" rel="nofollow noopener noreferrer">Array&nbsp;</a>and&nbsp;<a href="enum-actions.html" rel="nofollow noopener noreferrer">Enum</a>&nbsp;variables and actions.</li>
+	<li>Added&nbsp;<a href="action-editor.html" rel="nofollow noopener noreferrer">New Variable and New Event</a>&nbsp;to selection menus to quickly add these without switching tabs.</li>
+	<li>Added Auto Update Tools to help fix upgrade problems.</li>
+	<li>Copy/Paste variables between FSMs in&nbsp;<a href="variables-manager.html" rel="nofollow noopener noreferrer">Variables Manager</a>.</li>
+	<li><a href="timeline-log.html" rel="nofollow noopener noreferrer">Timeline Log&nbsp;</a>window for more visual debugging.</li>
+	<li><a href="variables-manager.html" rel="nofollow noopener noreferrer">Variable Categories</a>&nbsp;to keep your variables organized.</li>
+	<li>Define custom editor colors in&nbsp;<a href="color-preferences.html" rel="nofollow noopener noreferrer">Preferences</a>. Can be used on states etc.</li>
+	<li>Added search categories to&nbsp;<a href="event-browser.html" rel="nofollow noopener noreferrer">Event Browser</a>&nbsp;(Filters: All, Global, Local, System).</li>
+	<li>Preserve state selection across re-compiles and playmode changes.</li>
+	<li>Only show variables marked as Inspector in&nbsp;<a href="run-fsm.html" rel="nofollow noopener noreferrer">Run FSM</a>&nbsp;action.</li>
+	<li>Improved feedback when drag/dropping project/scene assets.</li>
+	<li>Added&nbsp;<a href="graph-view-preferences.html" rel="nofollow noopener noreferrer">Preference&nbsp;</a>to draw links behind states.</li>
+	<li><a href="get-property.html" rel="nofollow noopener noreferrer">Get</a>/<a href="set-property.html" rel="nofollow noopener noreferrer">Set Property</a>&nbsp;selection menus are faster. Use &quot;More...&quot; to drill down.</li>
+	<li>Added ErrorCheck to Invoke Method and Start Coroutine actions to catch missing method names.</li>
+	<li>Added FinishEvent to&nbsp;<a href="smooth-look-at-direction.html" rel="nofollow noopener noreferrer">Smooth Look At Direction</a>&nbsp;action.</li>
+	<li>Added &quot;Clear Transition Target&quot; to transition context menu.</li>
+	<li>Added &quot;No search results&quot; to&nbsp;<a href="action-browser.html" rel="nofollow noopener noreferrer">Action Browser</a>&nbsp;when search returns no results.</li>
+	<li>Get Mouse Button actions:&nbsp;Implemented OnEnter so stored result behaves properly in stack with other actions.</li>
+	<li>Added WiiU, Playstation Vita, XBoxOne, and PS4 compile directives to incompatible actions.</li>
+	<li><a href="stop-animation.html" rel="nofollow noopener noreferrer">Stop Animation</a>&nbsp;action:&nbsp;Stops current animation if no name provided (#911)</li>
+	<li>Experimental&nbsp;<a href="action-editor.html" rel="nofollow noopener noreferrer">Auto Name</a>&nbsp;feature for actions (in&nbsp;<a href="action-editor.html" rel="nofollow noopener noreferrer">Action Editor</a>&nbsp;Settings menu)</li>
+	<li>Added Collider selection menu when auto-adding missing Colliders in Actions panel.</li>
+	<li>Log error if Get/Set FSM variable actions cannot find the specified FSM.</li>
+	<li>Improved error checking and usage counts in&nbsp;<a href="templates-browser.html" rel="nofollow noopener noreferrer">Templates</a>.</li>
+	<li><a href="templates-browser.html" rel="nofollow noopener noreferrer">Template Browser</a>&nbsp;now shows Templates with errors.</li>
+	<li>Actions now cache component access for improved performance (and Unity 5 compatibility).</li>
+	<li>Option to&nbsp;<a href="fsm-inspector.html" rel="nofollow noopener noreferrer">lock and password protect</a>&nbsp;FSMs.</li>
+	<li>Show active state in&nbsp;<a href="graph-view.html" rel="nofollow noopener noreferrer">minimap</a>.</li>
+</ul>
+
+<p><strong>New Actions</strong></p>
+
+<ul>
+	<li><a href="array-actions.html" rel="nofollow noopener noreferrer">Array&nbsp;</a>and&nbsp;<a href="enum-actions.html" rel="nofollow noopener noreferrer">Enum&nbsp;</a>actions</li>
+	<li><a href="call-static-method.html" rel="nofollow noopener noreferrer">Call Static Method</a></li>
+	<li><a href="conditional-expression.html" rel="nofollow noopener noreferrer">Conditional Expression</a></li>
+	<li><a href="raycast-all.html" rel="nofollow noopener noreferrer">Raycast All</a></li>
+	<li><a href="destroy-objects.html" rel="nofollow noopener noreferrer">Destroy Objects</a></li>
+	<li><a href="convert-seconds-to-string.html" rel="nofollow noopener noreferrer">Convert Seconds To String</a></li>
+	<li><a href="random-wait.html" rel="nofollow noopener noreferrer">Random Wait</a></li>
+	<li><a href="move-object.html" rel="nofollow noopener noreferrer">Move Object</a></li>
+	<li><a href="set-drag.html" rel="nofollow noopener noreferrer">Set Drag</a></li>
+</ul>
+
+<p><strong>Bug Fixes</strong></p>
+
+<ul>
+	<li>Fixed potential corruption of data when editing Prefab Instances.</li>
+	<li>Fixed memory leak with last selected FSM (#2166)</li>
+	<li>Fixed AnimationCurve parameters losing wrapmode in templates. (#859)</li>
+	<li>Fixed&nbsp;<a href="call-method.html" rel="nofollow noopener noreferrer">Call Method</a>&nbsp;error check when target behaviour is not known at edit time.</li>
+	<li>Fixed Ambiguous Method errors in&nbsp;<a href="call-method.html" rel="nofollow noopener noreferrer">Call Method</a>&nbsp;action with overridden methods.</li>
+	<li>Fixed save template bug when project had parent folder with &quot;Assets&quot; in the name. (#1018)</li>
+	<li>Fixed template sometimes not finding proper save directory (#2168)</li>
+	<li>Fixed &quot;Find script in action browser&quot; not auto-scrolling if already selected. (#1027)</li>
+	<li>Fixed bug with negative numbers in&nbsp;<a href="animate-variables-actions.html" rel="nofollow noopener noreferrer">Animate Variables</a>&nbsp;actions.</li>
+	<li>Fixed nullref error when renaming event then setting it to global. (#1007)</li>
+	<li>Fixed&nbsp;<a href="action-browser.html" rel="nofollow noopener noreferrer">Action Browser</a>&nbsp;shortcut conflict with OSX focus window shortcut. (#977)</li>
+	<li>Fixed&nbsp;<a href="graph-view.html" rel="nofollow noopener noreferrer">Graph View</a>&nbsp;bug where mouse clicks passed through scrollbars (#738)</li>
+	<li>Fixed starting values of Ease Actions (#1253)</li>
+	<li>Fixed&nbsp;<a href="add-force.html" rel="nofollow noopener noreferrer">Add Force</a>&nbsp;action retaining old x, y, z values (#1197)</li>
+	<li>Fixed GUI Text with custom font not rendering in Unity 5 (#1207)</li>
+	<li>Fixed templates with duplicate names not showing in Template menus (#1153)</li>
+	<li>Fixed State&nbsp;<a href="playing-fsms.html" rel="nofollow noopener noreferrer">auto-framing</a>&nbsp;in Unity 4.3 on play.</li>
+</ul>
+
+<h3>&nbsp;</h3>
+
+<h3>Older Releases:</h3>
+
+<ul>
+	<li><a href="version-1-7-x.html" rel="nofollow noopener noreferrer">Version 1.7.x</a></li>
+	<li><a href="version-1-6-x.html" rel="nofollow noopener noreferrer">Version 1.6.x</a></li>
+	<li><a href="version-1-5-x.html" rel="nofollow noopener noreferrer">Version 1.5.x</a></li>
+	<li><a href="version-1-4-x.html" rel="nofollow noopener noreferrer">Version 1.4.x</a></li>
+	<li><a href="version-1-3-3.html" rel="nofollow noopener noreferrer">Version 1.3.3</a></li>
+	<li><a href="version-1-3-2.html" rel="nofollow noopener noreferrer">Version 1.3.2</a></li>
+	<li><a href="version-1-3-1.html" rel="nofollow noopener noreferrer">Version 1.3.1</a></li>
+	<li><a href="version-1-3.html" rel="nofollow noopener noreferrer">Version 1.3</a></li>
+	<li><a href="version-1-2-1.html" rel="nofollow noopener noreferrer">Version 1.2.1</a></li>
+	<li><a href="version-1-2.html" rel="nofollow noopener noreferrer">Version 1.2</a></li>
+	<li><a href="version-1-1.html" rel="nofollow noopener noreferrer">Version 1.1</a></li>
+	<li><a href="version-1-06.html" rel="nofollow noopener noreferrer">Version 1.06</a></li>
+	<li><a href="version-1-0-beta.html" rel="nofollow noopener noreferrer">Version 1.0 Beta</a></li>
+</ul>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr><td><p>&nbsp;</p></td></tr>
+        </table>       
+        <div id="footer">
+		    <div id="copyright">copyright HutongGames, LLC. All rights reserved.</div>
+	    </div>
+    </div>
+    <script type="text/javascript">
+	    document.body.style.backgroundColor = "#444";
+        document.body.style.backgroundImage = "none";
+	    document.body.style.height = "100%";
+	    $("#mainArea").css("padding", "0px");
+	    $("#mainArea").css("margin", "0px");
+	    $("#contentWikiView").css("margin", "0px");
+	    $(document).ready(function() {
+            $("#container #paramRow").filter(":even").css("background-color", "#f2f2f2");
+            $("#container #paramRow").filter(":odd").css("background-color", "#f9f9f9");
+            $("#container #nameDesc").filter(":even").css("background-color", "#f2f2f2");
+            $("#container #nameDesc").filter(":odd").css("background-color", "#f9f9f9");
+        },0)
+    </script>
+</div>
+</body>
+</html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html> 
+<html xmlns:fb>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Action Reference</title>
+	<link href="css/main.css" rel="stylesheet" type="text/css" />
+    <script src="js/jquery.min.js"></script>
+</head>
+<body>
+	<div id="page">
+		<div id="container">
+			<div id = "hutongHeader">
+				<a href="http://hutonggames.com/index.html"><img src="http://hutonggames.com/images/playMaker.png"/></a>  
+				<a href="http://hutonggames.com/company.html"><img src="http://hutonggames.com/images/hutongGamesSmall.png" id="companyLogo"/></a>
+				<div id="socialLinks">
+					<a href="http://www.facebook.com/pages/Hutong-Games-LLC/163141367059519" target="_blank">
+					<img src="http://www.hutonggames.com/images/fb.png" width="32" height="32" alt="facebook" /></a>
+					<a href="http://twitter.com/hutonggames" target="_blank">
+					<img src="http://www.hutonggames.com/images/twitter.png" width="32" height="32" alt="twitter" /></a>
+					<a href="http://www.youtube.com/user/HutongGamesLLC" target="_blank">
+					<img src="http://www.hutonggames.com/images/youtube.png" width="32" height="32" alt="youtube" /></a>
+				</div>
+				<div id = "mainMenu">
+                    <ul>
+                        <li><a href="http://hutonggames.com/index.html">Home</a></li>
+                        <li><a href="http://hutonggames.com/store.html">Store</a></li>
+                        <li><a href="http://hutonggames.com/showcase.html">Showcase</a></li>
+                        <li><a href="http://hutonggames.com/tutorials.html">Tutorials</a></li>
+                        <li><a href="http://hutonggames.com/playmakerforum/index.php">Forums</a></li>
+                        <li><a href="playmaker-manual.html">Manual</a></li>
+                        <li><a href="https://hutonggames.fogbugz.com/default.asp?W546">Wiki</a></li>
+                        <li><a href="http://hutonggames.com/company.html">About Us</a></li>
+                    </ul>
+                </div>
+			</div>
+            <table id="wiki-page-breadcrumbs-container">
+		        <tr>
+			        <td class="wiki-page-breadcrumbs">
+				        <a href="index.html" title = "Home">Home</a>
+                        <span class="wikinav-breadcrumb-separator">»</span><a href="action-reference.html" title="Action Reference" class="">Action Reference</a>
+			        </td>
+		        </tr>
+	        </table>
+		    <table id="main-columns">
+			    <tr><td id="wiki-page-nav">
+				    <div class="wiki-page-browse-menu-title">Index</div>
+				    <ul class="wiki-page-browse-menu">
+					    <li><a href="installation.html" class="">Installation</a></li>
+					    <li><a href="core-concepts.html" class="">Core Concepts</a></li>
+					    <li><a href="user-interface.html" class="">User Interface</a></li>
+					    <li><a href="keyboard-shortcuts.html" class="">Shortcuts</a></li>
+					    <li><a href="editing-basics.html" class="">Editing Basics</a></li>
+					    <li><a href="samples.html" class="">Samples</a></li>
+					    <li><a href="debugging.html" class="">Debugging</a></li>
+					    <li><a href="action-reference.html" class="">Action Reference</a></li>
+					    <li><a href="networking.html" class="">Networking</a></li>
+					    <li><a href="api-reference.html" class="">API Reference</a></li>
+					    <li><a href="online-resources.html" class="">Online Resources</a></li>
+					    <li><a href="hints-and-tips.html" class="">Hints And Tips</a></li>
+					    <li><a href="known-issues.html" class="">Known Issues</a></li>
+					    <li><a href="release-notes.html" class="">Release Notes</a></li>
+					    <li><a href="frequently-asked-questions.html" class="">FAQ</a></li>
+				    </ul>
+			    </td>
+                <td id="body">
+					<div id="wiki-page-content">
+                        <h1>Action Reference</h1>
+                        <div class="article-content">
+                        <p>This document provides detailed reference on every Action that ships with Playmaker. Each action has a specific purpose: To play an animation, to move a game object towards a target, to test for a collision etc.</p>
+
+<p>Simple actions can be combined to create complex behaviors.</p>
+
+<h2>Action Categories</h2>
+
+<div id="linkList">
+<ul>
+	<li><a href="animate-variables-actions.html" rel="nofollow noopener noreferrer">AnimateVariables</a></li>
+	<li><a href="animation-actions.html" rel="nofollow noopener noreferrer">Animation</a></li>
+	<li><a href="animator-actions.html" rel="nofollow noopener noreferrer">Animator</a></li>
+	<li><a href="application-actions.html" rel="nofollow noopener noreferrer">Application</a></li>
+	<li><a class="uvb" href="array-actions.html" rel="nofollow noopener noreferrer">Array</a></li>
+	<li><a href="audio-actions.html" rel="nofollow noopener noreferrer">Audio</a></li>
+	<li><a href="camera-actions.html" rel="nofollow noopener noreferrer">Camera</a></li>
+	<li><a href="character-actions.html" rel="nofollow noopener noreferrer">Character</a></li>
+	<li><a href="collections.html" rel="nofollow noopener noreferrer">Collections</a></li>
+	<li><a href="color-actions.html" rel="nofollow noopener noreferrer">Color</a></li>
+	<li><a class="uvb" href="convert.html" rel="nofollow noopener noreferrer">Convert</a></li>
+	<li><a href="debug-actions.html" rel="nofollow noopener noreferrer">Debug</a></li>
+	<li><a class="uvb" href="device.html" rel="nofollow noopener noreferrer">Device</a></li>
+	<li><a href="effects-actions.html" rel="nofollow noopener noreferrer">Effects</a></li>
+	<li><a href="enum-actions.html" rel="nofollow noopener noreferrer">Enum</a></li>
+	<li><a class="uvb" href="gameobject-actions.html" rel="nofollow noopener noreferrer">GameObject</a></li>
+	<li><a href="gui-actions.html" rel="nofollow noopener noreferrer">GUI</a></li>
+	<li><a class="uvb" href="guilayout-actions.html" rel="nofollow noopener noreferrer">GUILayout</a></li>
+	<li><a href="gui-element-actions.html" rel="nofollow noopener noreferrer">GUIElement</a></li>
+	<li><a href="input-actions.html" rel="nofollow noopener noreferrer">Input</a></li>
+	<li><a href="itween.html" rel="nofollow noopener noreferrer">iTween</a></li>
+	<li><a class="uvb" href="level-actions.html" rel="nofollow noopener noreferrer">Level</a></li>
+	<li><a href="lights-actions.html" rel="nofollow noopener noreferrer">Lights</a></li>
+	<li><a href="logic-actions.html" rel="nofollow noopener noreferrer">Logic</a></li>
+	<li><a href="material-actions.html" rel="nofollow noopener noreferrer">Material</a></li>
+	<li><a class="uvb" href="math-actions.html" rel="nofollow noopener noreferrer">Math</a></li>
+	<li><a href="mesh-actions.html" rel="nofollow noopener noreferrer">Mesh</a></li>
+	<li><a href="movie-actions.html" rel="nofollow noopener noreferrer">Movie</a></li>
+	<li><a href="network-actions.html" rel="nofollow noopener noreferrer">Network</a></li>
+	<li><a class="uvb" href="physics-actions.html" rel="nofollow noopener noreferrer">Physics</a></li>
+	<li><a href="physics-2d-actions.html" rel="nofollow noopener noreferrer">Physics 2d</a></li>
+	<li><a href="playerprefs-actions.html" rel="nofollow noopener noreferrer">PlayerPrefs</a></li>
+	<li><a class="uvb" href="quaternion-actions.html" rel="nofollow noopener noreferrer">Quaternion</a></li>
+	<li><a href="rect-actions.html" rel="nofollow noopener noreferrer">Rect</a></li>
+	<li><a href="rendersettings.html" rel="nofollow noopener noreferrer">RenderSettings</a></li>
+	<li><a href="scene.html" rel="nofollow noopener noreferrer">Scene</a></li>
+	<li><a href="scriptcontrol-actions.html" rel="nofollow noopener noreferrer">ScriptControl</a></li>
+	<li><a href="statemachine-actions.html" rel="nofollow noopener noreferrer">StateMachine</a></li>
+	<li><a href="substance-actions.html" rel="nofollow noopener noreferrer">Substance</a></li>
+	<li><a class="uvb" href="string-actions.html" rel="nofollow noopener noreferrer">String</a></li>
+	<li><a href="time-actions.html" rel="nofollow noopener noreferrer">Time</a></li>
+	<li><a class="uvb" href="transform-actions.html" rel="nofollow noopener noreferrer">Transform</a></li>
+	<li><a href="trigonometry-actions.html" rel="nofollow noopener noreferrer">Trigonometry</a></li>
+	<li><a href="unityobject-actions.html" rel="nofollow noopener noreferrer">UnityObject</a></li>
+	<li><a href="vector2-actions.html" rel="nofollow noopener noreferrer">Vector2</a></li>
+	<li><a href="vector3-actions.html" rel="nofollow noopener noreferrer">Vector3</a></li>
+	<li><a href="www-actions.html" rel="nofollow noopener noreferrer">WWW</a></li>
+</ul>
+</div>
+
+<h4>Other Actions:</h4>
+
+<p>Check the&nbsp;<a href="https://hutonggames.fogbugz.com/default.asp?W546" rel="nofollow noopener noreferrer">Community Wiki</a>&nbsp;for&nbsp;<a href="https://hutonggames.fogbugz.com/default.asp?W714" rel="nofollow noopener noreferrer">Add-ons</a>&nbsp;and&nbsp;<a href="https://hutonggames.fogbugz.com/default.asp?W547" rel="nofollow noopener noreferrer">Custom Actions</a>.</p>
+
+<p>Also check <a href="http://hutonggames.com/playmakerforum/index.php?board=18.0" rel="nofollow noopener noreferrer" target="_blank">Official Action Updates and Bug Fixes</a>&nbsp;on the PlayMaker Forums.</p>
+
+<h4>See Also:</h4>
+
+<div id="linkList">
+<ul>
+	<li><a href="action-browser.html" rel="nofollow noopener noreferrer">Action Browser</a></li>
+	<li><a href="action-editor.html" rel="nofollow noopener noreferrer">Action Editor</a></li>
+	<li><a href="variables.html" rel="nofollow noopener noreferrer">Variables</a></li>
+	<li><a href="events.html" rel="nofollow noopener noreferrer">Events</a></li>
+	<li>&nbsp;</li>
+	<li>&nbsp;</li>
+</ul>
+</div>
+
+<p>&nbsp;</p>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr><td><p>&nbsp;</p></td></tr>
+        </table>       
+        <div id="footer">
+		    <div id="copyright">copyright HutongGames, LLC. All rights reserved.</div>
+	    </div>
+    </div>
+    <script type="text/javascript">
+	    document.body.style.backgroundColor = "#444";
+        document.body.style.backgroundImage = "none";
+	    document.body.style.height = "100%";
+	    $("#mainArea").css("padding", "0px");
+	    $("#mainArea").css("margin", "0px");
+	    $("#contentWikiView").css("margin", "0px");
+	    $(document).ready(function() {
+            $("#container #paramRow").filter(":even").css("background-color", "#f2f2f2");
+            $("#container #paramRow").filter(":odd").css("background-color", "#f9f9f9");
+            $("#container #nameDesc").filter(":even").css("background-color", "#f2f2f2");
+            $("#container #nameDesc").filter(":odd").css("background-color", "#f9f9f9");
+        },0)
+    </script>
+</div>
+</body>
+</html>

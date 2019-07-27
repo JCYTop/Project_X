@@ -1,0 +1,194 @@
+<!DOCTYPE html> 
+<html xmlns:fb>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Core Concepts</title>
+	<link href="css/main.css" rel="stylesheet" type="text/css" />
+    <script src="js/jquery.min.js"></script>
+</head>
+<body>
+	<div id="page">
+		<div id="container">
+			<div id = "hutongHeader">
+				<a href="http://hutonggames.com/index.html"><img src="http://hutonggames.com/images/playMaker.png"/></a>  
+				<a href="http://hutonggames.com/company.html"><img src="http://hutonggames.com/images/hutongGamesSmall.png" id="companyLogo"/></a>
+				<div id="socialLinks">
+					<a href="http://www.facebook.com/pages/Hutong-Games-LLC/163141367059519" target="_blank">
+					<img src="http://www.hutonggames.com/images/fb.png" width="32" height="32" alt="facebook" /></a>
+					<a href="http://twitter.com/hutonggames" target="_blank">
+					<img src="http://www.hutonggames.com/images/twitter.png" width="32" height="32" alt="twitter" /></a>
+					<a href="http://www.youtube.com/user/HutongGamesLLC" target="_blank">
+					<img src="http://www.hutonggames.com/images/youtube.png" width="32" height="32" alt="youtube" /></a>
+				</div>
+				<div id = "mainMenu">
+                    <ul>
+                        <li><a href="http://hutonggames.com/index.html">Home</a></li>
+                        <li><a href="http://hutonggames.com/store.html">Store</a></li>
+                        <li><a href="http://hutonggames.com/showcase.html">Showcase</a></li>
+                        <li><a href="http://hutonggames.com/tutorials.html">Tutorials</a></li>
+                        <li><a href="http://hutonggames.com/playmakerforum/index.php">Forums</a></li>
+                        <li><a href="playmaker-manual.html">Manual</a></li>
+                        <li><a href="https://hutonggames.fogbugz.com/default.asp?W546">Wiki</a></li>
+                        <li><a href="http://hutonggames.com/company.html">About Us</a></li>
+                    </ul>
+                </div>
+			</div>
+            <table id="wiki-page-breadcrumbs-container">
+		        <tr>
+			        <td class="wiki-page-breadcrumbs">
+				        <a href="index.html" title = "Home">Home</a>
+                        <span class="wikinav-breadcrumb-separator">»</span><a href="core-concepts.html" title="Core Concepts" class="">Core Concepts</a>
+			        </td>
+		        </tr>
+	        </table>
+		    <table id="main-columns">
+			    <tr><td id="wiki-page-nav">
+				    <div class="wiki-page-browse-menu-title">Index</div>
+				    <ul class="wiki-page-browse-menu">
+					    <li><a href="installation.html" class="">Installation</a></li>
+					    <li><a href="core-concepts.html" class="">Core Concepts</a></li>
+					    <li><a href="user-interface.html" class="">User Interface</a></li>
+					    <li><a href="keyboard-shortcuts.html" class="">Shortcuts</a></li>
+					    <li><a href="editing-basics.html" class="">Editing Basics</a></li>
+					    <li><a href="samples.html" class="">Samples</a></li>
+					    <li><a href="debugging.html" class="">Debugging</a></li>
+					    <li><a href="action-reference.html" class="">Action Reference</a></li>
+					    <li><a href="networking.html" class="">Networking</a></li>
+					    <li><a href="api-reference.html" class="">API Reference</a></li>
+					    <li><a href="online-resources.html" class="">Online Resources</a></li>
+					    <li><a href="hints-and-tips.html" class="">Hints And Tips</a></li>
+					    <li><a href="known-issues.html" class="">Known Issues</a></li>
+					    <li><a href="release-notes.html" class="">Release Notes</a></li>
+					    <li><a href="frequently-asked-questions.html" class="">FAQ</a></li>
+				    </ul>
+			    </td>
+                <td id="body">
+					<div id="wiki-page-content">
+                        <h1>Core Concepts</h1>
+                        <div class="article-content">
+                        <h2>
+	Finite State Machines</h2>
+<p>
+	A Finite State Machine (FSM) organizes behaviors into discrete states:&nbsp;</p>
+<p>
+	On, Off, Open, Closed, Walking, Idle, Attacking, Defending...</p>
+<p>
+	Playmaker uses event-driven FSMs to control Unity:</p>
+<p style="margin-top: 0px; margin-right: 0px; margin-bottom: 18px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px">
+	<img border="0" src="images/manual/FsmDiagram.png" title=""  /></p>
+<ol>
+	<li>
+		<strong>Start Event</strong>
+		<ul>
+			<li>
+				A Start Event is sent when the FSM is enabled.</li>
+			<li>
+				The start event activates the first state, known as the Start State.</li>
+		</ul>
+	</li>
+	<li>
+		<strong>State</strong>
+		<ul>
+			<li>
+				Only one State can be active at a time.</li>
+			<li>
+				The Active State executes&nbsp;<a href="actions.html" rel="nofollow">Actions</a>&nbsp;and receives&nbsp;<a href="events.html" rel="nofollow">Events</a>.</li>
+		</ul>
+	</li>
+	<li>
+		<strong>Transition Event</strong>
+		<ul>
+			<li>
+				Events trigger transitions to another State.</li>
+			<li>
+				Events can be sent by Unity (collisions, triggers, mouse input,&nbsp;<a href="sending-animation-events-to-an-fsm.html" rel="nofollow">animation events</a>...)</li>
+			<li>
+				Or by Actions (distance checks, timeouts, game logic...)</li>
+		</ul>
+	</li>
+	<li>
+		<strong>Transition</strong>
+		<ul>
+			<li>
+				<strong>​</strong>The Active State is &quot;exited&quot; and the new state is &quot;entered.&quot;</li>
+			<li>
+				The&nbsp;<a href="graph-view.html" rel="nofollow">Graph View</a>&nbsp;makes it very easy to build and debug these transitions.</li>
+		</ul>
+	</li>
+	<li>
+		<strong>Global Transition</strong>
+		<ul>
+			<li>
+				A Global Transition can be triggered at any time, regardless of the currently active state.</li>
+			<li>
+				In the example above, the character can be hit and knocked down at any time, so we use a global transition.</li>
+			<li>
+				Global transitions can be used to simplify FSMs by reducing the number of explicit transitions you need to define.</li>
+			<li>
+				They are similar to the Any State transitions in Mecanim.</li>
+		</ul>
+	</li>
+</ol>
+<h2>
+	Actions</h2>
+<p>
+	<img border="0" src="images/manual/ActionExample.png" title=""  /></p>
+<p>
+	The currently active state executes&nbsp;<a href="actions.html" rel="nofollow">Actions</a>.&nbsp;Actions have parameters that can be edited in the&nbsp;<a href="action-editor.html" rel="nofollow">Action Editor</a>, just like script parameters are edited in the&nbsp;Unity Inspector.</p>
+<h2>
+	Variables</h2>
+<p>
+	<a href="variables.html" rel="nofollow">Variables</a>&nbsp;are named containers for a value.&nbsp;The Action Editor allows you to hook Action parameters up to variables instead of constant values. E.g., &quot;numberOfLives&quot; instead of 3, &quot;health&quot; instead of 100.</p>
+<p>
+	<img border="0" src="images/manual/ActionVariable.png" title=""  /></p>
+<p>
+	If a value needs to change over time you should use a Variable instead of a hard-coded value.</p>
+<h2>
+	Events</h2>
+<p>
+	All transitions between states are triggered by <a href="events.html" rel="nofollow">Events</a>.</p>
+<p>
+	&nbsp;</p>
+<h2>
+	See Also:</h2>
+<div id="linkList">
+	<ul>
+		<li>
+			<a href="events.html" rel="nofollow">Events</a></li>
+		<li>
+			<a href="actions.html" rel="nofollow">Actions</a></li>
+		<li>
+			<a href="variables.html" rel="nofollow">Variables</a></li>
+		<li>
+			<a href="state-machine-examples.html" rel="nofollow">State Machine Examples</a></li>
+	</ul>
+</div>
+<p>
+	&nbsp;</p>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr><td><p>&nbsp;</p></td></tr>
+        </table>       
+        <div id="footer">
+		    <div id="copyright">copyright HutongGames, LLC. All rights reserved.</div>
+	    </div>
+    </div>
+    <script type="text/javascript">
+	    document.body.style.backgroundColor = "#444";
+        document.body.style.backgroundImage = "none";
+	    document.body.style.height = "100%";
+	    $("#mainArea").css("padding", "0px");
+	    $("#mainArea").css("margin", "0px");
+	    $("#contentWikiView").css("margin", "0px");
+	    $(document).ready(function() {
+            $("#container #paramRow").filter(":even").css("background-color", "#f2f2f2");
+            $("#container #paramRow").filter(":odd").css("background-color", "#f9f9f9");
+            $("#container #nameDesc").filter(":even").css("background-color", "#f2f2f2");
+            $("#container #nameDesc").filter(":odd").css("background-color", "#f9f9f9");
+        },0)
+    </script>
+</div>
+</body>
+</html>

@@ -1,0 +1,225 @@
+<!DOCTYPE html> 
+<html xmlns:fb>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Version 1.6.x</title>
+	<link href="css/main.css" rel="stylesheet" type="text/css" />
+    <script src="js/jquery.min.js"></script>
+</head>
+<body>
+	<div id="page">
+		<div id="container">
+			<div id = "hutongHeader">
+				<a href="http://hutonggames.com/index.html"><img src="http://hutonggames.com/images/playMaker.png"/></a>  
+				<a href="http://hutonggames.com/company.html"><img src="http://hutonggames.com/images/hutongGamesSmall.png" id="companyLogo"/></a>
+				<div id="socialLinks">
+					<a href="http://www.facebook.com/pages/Hutong-Games-LLC/163141367059519" target="_blank">
+					<img src="http://www.hutonggames.com/images/fb.png" width="32" height="32" alt="facebook" /></a>
+					<a href="http://twitter.com/hutonggames" target="_blank">
+					<img src="http://www.hutonggames.com/images/twitter.png" width="32" height="32" alt="twitter" /></a>
+					<a href="http://www.youtube.com/user/HutongGamesLLC" target="_blank">
+					<img src="http://www.hutonggames.com/images/youtube.png" width="32" height="32" alt="youtube" /></a>
+				</div>
+				<div id = "mainMenu">
+                    <ul>
+                        <li><a href="http://hutonggames.com/index.html">Home</a></li>
+                        <li><a href="http://hutonggames.com/store.html">Store</a></li>
+                        <li><a href="http://hutonggames.com/showcase.html">Showcase</a></li>
+                        <li><a href="http://hutonggames.com/tutorials.html">Tutorials</a></li>
+                        <li><a href="http://hutonggames.com/playmakerforum/index.php">Forums</a></li>
+                        <li><a href="playmaker-manual.html">Manual</a></li>
+                        <li><a href="https://hutonggames.fogbugz.com/default.asp?W546">Wiki</a></li>
+                        <li><a href="http://hutonggames.com/company.html">About Us</a></li>
+                    </ul>
+                </div>
+			</div>
+            <table id="wiki-page-breadcrumbs-container">
+		        <tr>
+			        <td class="wiki-page-breadcrumbs">
+				        <a href="index.html" title = "Home">Home</a>
+                        <span class="wikinav-breadcrumb-separator">»</span><a href="release-notes.html" title="Release Notes" class="">Release Notes</a><span class="wikinav-breadcrumb-separator">»</span><a href="version-1-6-x.html" title="Version 1.6.x" class="">Version 1.6.x</a>
+			        </td>
+		        </tr>
+	        </table>
+		    <table id="main-columns">
+			    <tr><td id="wiki-page-nav">
+				    <div class="wiki-page-browse-menu-title">Index</div>
+				    <ul class="wiki-page-browse-menu">
+					    <li><a href="installation.html" class="">Installation</a></li>
+					    <li><a href="core-concepts.html" class="">Core Concepts</a></li>
+					    <li><a href="user-interface.html" class="">User Interface</a></li>
+					    <li><a href="keyboard-shortcuts.html" class="">Shortcuts</a></li>
+					    <li><a href="editing-basics.html" class="">Editing Basics</a></li>
+					    <li><a href="samples.html" class="">Samples</a></li>
+					    <li><a href="debugging.html" class="">Debugging</a></li>
+					    <li><a href="action-reference.html" class="">Action Reference</a></li>
+					    <li><a href="networking.html" class="">Networking</a></li>
+					    <li><a href="api-reference.html" class="">API Reference</a></li>
+					    <li><a href="online-resources.html" class="">Online Resources</a></li>
+					    <li><a href="hints-and-tips.html" class="">Hints And Tips</a></li>
+					    <li><a href="known-issues.html" class="">Known Issues</a></li>
+					    <li><a href="release-notes.html" class="">Release Notes</a></li>
+					    <li><a href="frequently-asked-questions.html" class="">FAQ</a></li>
+				    </ul>
+			    </td>
+                <td id="body">
+					<div id="wiki-page-content">
+                        <h1>Version 1.6.x</h1>
+                        <div class="article-content">
+                        <h3>
+	Version 1.6.3</h3>
+<p>
+	<strong>Updgrade Notes</strong></p>
+<ul>
+	<li>
+		There was a bug in older versions where state positions could get corrupted and the FSM graph would disappear. 1.6.3 can recover these graphs, however there is no way to recover the original positions of the states, so you will have to lay those out again... sorry about that!</li>
+</ul>
+<p>
+	<strong>Improvements</strong></p>
+<ul>
+	<li style="list-style-position: outside; list-style-type: square;">
+		<span style="line-height: 16px;">Fixed obsolete warnings in Unity 4.2.</span></li>
+	<li style="list-style-position: outside; list-style-type: square;">
+		Extended Location actions to use Android.</li>
+	<li>
+		Allow runtime debugging of FSMs that use templates.</li>
+</ul>
+<div>
+	<p>
+		<strong>Bug Fixes</strong></p>
+	<ul>
+		<li>
+			Fixed global variables not resetting to default values in Unity 4.x with Global Variables or Event Browser windows open.</li>
+		<li>
+			Catch exceptions in the State Inspector so it doesn&#39;t break the editor when there is an error in an Action Editor.</li>
+		<li>
+			Hardcoded graph view zoom limits since it seemed like they could get corrupted in editor prefs and lead to an empty graph view.</li>
+	</ul>
+</div>
+<h3>
+	Version 1.6.2</h3>
+<p>
+	<strong>Updgrade Notes</strong></p>
+<ul>
+	<li>
+		In previous versions&nbsp;<a href="add-force.html" rel="nofollow">Add Force</a>&nbsp;did not use the defined Force Mode; it always used Force. 1.6.2 fixes this bug, but this will change the behaviour of Add Force actions if the Force Mode was not set to Force. For the old behavior, please set the Force Mode back to Force.</li>
+</ul>
+<p>
+	<strong>Improvements</strong></p>
+<ul>
+	<li>
+		Support custom class arrays in actions.</li>
+	<li>
+		Reduced GC Alloc calls in PlayMakerGUI and PlayMakerFSM.</li>
+	<li>
+		Added help box in Global Variables Window about PlayMakerGlobals.asset.</li>
+</ul>
+<div>
+	<p>
+		<strong>Bug Fixes</strong></p>
+	<ul>
+		<li>
+			Fixed occasional loss of global events/variables on play.</li>
+		<li>
+			Fixed Graph View updating bounds with Undo/Redo.</li>
+		<li>
+			Add Force Action: Fixed bug where Force Mode wasn&#39;t used.</li>
+		<li>
+			Vector3 Rotate Towards Action: Exposed magnitude as parameter.&nbsp;</li>
+		<li>
+			Fixed Error Check color leaking between controls in CustomActionEditors.</li>
+	</ul>
+</div>
+<h3>
+	Version 1.6.1</h3>
+<p>
+	<strong>Improvements</strong></p>
+<ul>
+	<li>
+		Optimized internal GetType() calls. (E.g., faster loading on mobile devices).</li>
+	<li>
+		Made Get/Set Property menus faster.</li>
+	<li>
+		Added OnDisable to CustomActionEditor. Called when the FSM is deselected.</li>
+	<li>
+		Made HutongGames.PlayMakerEditor.VariableEditor public so its methods can be used in CustomActionEditors.&nbsp;Example: To edit an FsmFloat use: public static FsmFloat FsmFloatField(GUIContent label, Fsm fsm, FsmFloat fsmFloat)</li>
+</ul>
+<div>
+	<p>
+		<strong>Bug Fixes</strong></p>
+	<ul>
+		<li>
+			Fixed Run FSM entering start state twice when disabled/enabled.</li>
+		<li>
+			Fixed copy/paste bug where variables were not copied.</li>
+		<li>
+			Fixed NullReferenceException with disabled FSMs and trigger/collision events.</li>
+		<li>
+			Fixed auto framing of Start State when playing.</li>
+		<li>
+			Fixed looping of animation actions derived from AnimateFsmAction. E.g. Animate Vector3, Animate Rect, Animate Color.</li>
+		<li>
+			Fixed NullReferenceException in Log View when stopping the game in the editor.</li>
+		<li>
+			Fixed NullReferenceException in 4.x with Run FSM action and edit time OnGUI preview.</li>
+		<li>
+			Catch strange Unity bug in SmoothLookAt action where the squareMagnitude of Vector3.zero is not zero!</li>
+	</ul>
+</div>
+<h3>
+	Version 1.6.0</h3>
+<p>
+	<strong>Improvements</strong></p>
+<ul>
+	<li>
+		Write&nbsp;<a href="customactioneditor.html" rel="nofollow">CustomActionEditors</a>&nbsp;for any action.</li>
+	<li>
+		Write custom&nbsp;<a href="objectpropertydrawer.html" rel="nofollow">ObjectPropertyDrawers&nbsp;</a>for any Object type.</li>
+	<li>
+		Create interactive scene gizmos to edit action parameters.</li>
+	<li>
+		Interactive scene gizmos for&nbsp;<a href="look-at.html" rel="nofollow">Look At</a>,&nbsp;<a href="move-towards.html" rel="nofollow">Move Towards</a>, and&nbsp;<a href="set-camera-fov.html" rel="nofollow">Set Camera FOV</a>&nbsp;actions.</li>
+	<li>
+		Realtime update of variable values in State and Variable Inspectors.</li>
+	<li>
+		Defined MenuRoot in PlayMakerMainMenu.cs to make it easier to move the Playmaker menu.</li>
+</ul>
+<p>
+	<strong>Bug Fixes</strong></p>
+<ul>
+	<li>
+		Fixed null ref error when sending events to an FSM that is then disabled in Start, e.g., by another FSM, most commonly on level load.</li>
+	<li>
+		Fixed&nbsp;<a href="templates-browser.html" rel="nofollow">Templates Browser</a>&nbsp;occasionally losing the list of templates.</li>
+	<li>
+		Fixed logging bug in&nbsp;<a href="goto-previous-state.html" rel="nofollow">Goto Previous State</a>&nbsp;action.</li>
+	<li>
+		Fixed Reset On Exit in&nbsp;<a href="set-visibility.html" rel="nofollow">Set Visibility</a>&nbsp;action&nbsp;</li>
+</ul>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr><td><p>&nbsp;</p></td></tr>
+        </table>       
+        <div id="footer">
+		    <div id="copyright">copyright HutongGames, LLC. All rights reserved.</div>
+	    </div>
+    </div>
+    <script type="text/javascript">
+	    document.body.style.backgroundColor = "#444";
+        document.body.style.backgroundImage = "none";
+	    document.body.style.height = "100%";
+	    $("#mainArea").css("padding", "0px");
+	    $("#mainArea").css("margin", "0px");
+	    $("#contentWikiView").css("margin", "0px");
+	    $(document).ready(function() {
+            $("#container #paramRow").filter(":even").css("background-color", "#f2f2f2");
+            $("#container #paramRow").filter(":odd").css("background-color", "#f9f9f9");
+            $("#container #nameDesc").filter(":even").css("background-color", "#f2f2f2");
+            $("#container #nameDesc").filter(":odd").css("background-color", "#f9f9f9");
+        },0)
+    </script>
+</div>
+</body>
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html> 
+<html xmlns:fb>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Simple On/Off Switch</title>
+	<link href="css/main.css" rel="stylesheet" type="text/css" />
+    <script src="js/jquery.min.js"></script>
+</head>
+<body>
+	<div id="page">
+		<div id="container">
+			<div id = "hutongHeader">
+				<a href="http://hutonggames.com/index.html"><img src="http://hutonggames.com/images/playMaker.png"/></a>  
+				<a href="http://hutonggames.com/company.html"><img src="http://hutonggames.com/images/hutongGamesSmall.png" id="companyLogo"/></a>
+				<div id="socialLinks">
+					<a href="http://www.facebook.com/pages/Hutong-Games-LLC/163141367059519" target="_blank">
+					<img src="http://www.hutonggames.com/images/fb.png" width="32" height="32" alt="facebook" /></a>
+					<a href="http://twitter.com/hutonggames" target="_blank">
+					<img src="http://www.hutonggames.com/images/twitter.png" width="32" height="32" alt="twitter" /></a>
+					<a href="http://www.youtube.com/user/HutongGamesLLC" target="_blank">
+					<img src="http://www.hutonggames.com/images/youtube.png" width="32" height="32" alt="youtube" /></a>
+				</div>
+				<div id = "mainMenu">
+                    <ul>
+                        <li><a href="http://hutonggames.com/index.html">Home</a></li>
+                        <li><a href="http://hutonggames.com/store.html">Store</a></li>
+                        <li><a href="http://hutonggames.com/showcase.html">Showcase</a></li>
+                        <li><a href="http://hutonggames.com/tutorials.html">Tutorials</a></li>
+                        <li><a href="http://hutonggames.com/playmakerforum/index.php">Forums</a></li>
+                        <li><a href="playmaker-manual.html">Manual</a></li>
+                        <li><a href="https://hutonggames.fogbugz.com/default.asp?W546">Wiki</a></li>
+                        <li><a href="http://hutonggames.com/company.html">About Us</a></li>
+                    </ul>
+                </div>
+			</div>
+            <table id="wiki-page-breadcrumbs-container">
+		        <tr>
+			        <td class="wiki-page-breadcrumbs">
+				        <a href="index.html" title = "Home">Home</a>
+                        <span class="wikinav-breadcrumb-separator">»</span><a href="state-machine-examples.html" title="State Machine Examples" class="">State Machine Examples</a><span class="wikinav-breadcrumb-separator">»</span><a href="simple-on-off-switch.html" title="Simple On/Off Switch" class="">Simple On/Off Switch</a>
+			        </td>
+		        </tr>
+	        </table>
+		    <table id="main-columns">
+			    <tr><td id="wiki-page-nav">
+				    <div class="wiki-page-browse-menu-title">Index</div>
+				    <ul class="wiki-page-browse-menu">
+					    <li><a href="installation.html" class="">Installation</a></li>
+					    <li><a href="core-concepts.html" class="">Core Concepts</a></li>
+					    <li><a href="user-interface.html" class="">User Interface</a></li>
+					    <li><a href="keyboard-shortcuts.html" class="">Shortcuts</a></li>
+					    <li><a href="editing-basics.html" class="">Editing Basics</a></li>
+					    <li><a href="samples.html" class="">Samples</a></li>
+					    <li><a href="debugging.html" class="">Debugging</a></li>
+					    <li><a href="action-reference.html" class="">Action Reference</a></li>
+					    <li><a href="networking.html" class="">Networking</a></li>
+					    <li><a href="api-reference.html" class="">API Reference</a></li>
+					    <li><a href="online-resources.html" class="">Online Resources</a></li>
+					    <li><a href="hints-and-tips.html" class="">Hints And Tips</a></li>
+					    <li><a href="known-issues.html" class="">Known Issues</a></li>
+					    <li><a href="release-notes.html" class="">Release Notes</a></li>
+					    <li><a href="frequently-asked-questions.html" class="">FAQ</a></li>
+				    </ul>
+			    </td>
+                <td id="body">
+					<div id="wiki-page-content">
+                        <h1>Simple On/Off Switch</h1>
+                        <div class="article-content">
+                        <p>
+	This example shows an FSM designed to control a simple switch.</p>
+<p>
+	We won&#39;t get into specific Actions&nbsp;yet since we&#39;re focused more on the FSM Diagram here, but&nbsp;there are&nbsp;<a href="action-reference.html" rel="nofollow">lots of actions</a>&nbsp;to look forward to!</p>
+<h3>
+	FSM Diagram:</h3>
+<p>
+	<img border="0" src="images/manual/simpleOnOffSwitch.png" title=""  /></p>
+<p>
+	<strong>Start</strong>:</p>
+<ul>
+	<li>
+		The <strong>START </strong>event activates the <strong>Off&nbsp;</strong>state<b>.</b></li>
+</ul>
+<p>
+	<strong>Off</strong>:</p>
+<ul>
+	<li>
+		The <strong>Off </strong>state performs the switch&#39;s <strong>Off Actions</strong> (E.g., turn off a light).</li>
+	<li>
+		The <strong>Off </strong>state responds to one event: <strong>switchOn</strong>.</li>
+	<li>
+		The <strong>switchOn </strong>event triggers a transition to the <strong>On </strong>state.</li>
+</ul>
+<p>
+	<strong>On</strong>:</p>
+<ul>
+	<li>
+		The <strong>On </strong>state performs the switch&#39;s <strong>On Actions</strong> (E.g., turn on a light).</li>
+	<li>
+		The <strong>On </strong>state responds to one event: <strong>switchOff</strong>.</li>
+	<li>
+		The <strong>switchOff </strong>event triggers a transition to the <strong>Off </strong>state.</li>
+</ul>
+<p>
+	This is rather long winded description of the FSM&#39;s behavior - once you learn to read FSM diagrams you&#39;ll find that a picture really is worth a thousand words!</p>
+<h3>
+	Notes:</h3>
+<p>
+	Even in this simple example you can see some cool properties of state machines:</p>
+<ul>
+	<li>
+		The states and events are plain English descriptions.</li>
+	<li>
+		At a glance you can see how many states an object has.</li>
+	<li>
+		You can quickly see all the events that control its behavior.</li>
+</ul>
+<p style="margin-top: 0px; margin-right: 0px; margin-bottom: 18px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px">
+	While this is great for a developer looking at this FSM, it&#39;s also great for other FSMs looking at this FSM!&nbsp;</p>
+<p style="margin-top: 0px; margin-right: 0px; margin-bottom: 18px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px">
+	You&#39;re not just defining object behaviors but a way for objects to understand each other.&nbsp;</p>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr><td><p>&nbsp;</p></td></tr>
+        </table>       
+        <div id="footer">
+		    <div id="copyright">copyright HutongGames, LLC. All rights reserved.</div>
+	    </div>
+    </div>
+    <script type="text/javascript">
+	    document.body.style.backgroundColor = "#444";
+        document.body.style.backgroundImage = "none";
+	    document.body.style.height = "100%";
+	    $("#mainArea").css("padding", "0px");
+	    $("#mainArea").css("margin", "0px");
+	    $("#contentWikiView").css("margin", "0px");
+	    $(document).ready(function() {
+            $("#container #paramRow").filter(":even").css("background-color", "#f2f2f2");
+            $("#container #paramRow").filter(":odd").css("background-color", "#f9f9f9");
+            $("#container #nameDesc").filter(":even").css("background-color", "#f2f2f2");
+            $("#container #nameDesc").filter(":odd").css("background-color", "#f9f9f9");
+        },0)
+    </script>
+</div>
+</body>
+</html>

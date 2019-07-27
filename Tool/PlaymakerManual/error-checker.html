@@ -1,0 +1,132 @@
+<!DOCTYPE html> 
+<html xmlns:fb>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Error Checker</title>
+	<link href="css/main.css" rel="stylesheet" type="text/css" />
+    <script src="js/jquery.min.js"></script>
+</head>
+<body>
+	<div id="page">
+		<div id="container">
+			<div id = "hutongHeader">
+				<a href="http://hutonggames.com/index.html"><img src="http://hutonggames.com/images/playMaker.png"/></a>  
+				<a href="http://hutonggames.com/company.html"><img src="http://hutonggames.com/images/hutongGamesSmall.png" id="companyLogo"/></a>
+				<div id="socialLinks">
+					<a href="http://www.facebook.com/pages/Hutong-Games-LLC/163141367059519" target="_blank">
+					<img src="http://www.hutonggames.com/images/fb.png" width="32" height="32" alt="facebook" /></a>
+					<a href="http://twitter.com/hutonggames" target="_blank">
+					<img src="http://www.hutonggames.com/images/twitter.png" width="32" height="32" alt="twitter" /></a>
+					<a href="http://www.youtube.com/user/HutongGamesLLC" target="_blank">
+					<img src="http://www.hutonggames.com/images/youtube.png" width="32" height="32" alt="youtube" /></a>
+				</div>
+				<div id = "mainMenu">
+                    <ul>
+                        <li><a href="http://hutonggames.com/index.html">Home</a></li>
+                        <li><a href="http://hutonggames.com/store.html">Store</a></li>
+                        <li><a href="http://hutonggames.com/showcase.html">Showcase</a></li>
+                        <li><a href="http://hutonggames.com/tutorials.html">Tutorials</a></li>
+                        <li><a href="http://hutonggames.com/playmakerforum/index.php">Forums</a></li>
+                        <li><a href="playmaker-manual.html">Manual</a></li>
+                        <li><a href="https://hutonggames.fogbugz.com/default.asp?W546">Wiki</a></li>
+                        <li><a href="http://hutonggames.com/company.html">About Us</a></li>
+                    </ul>
+                </div>
+			</div>
+            <table id="wiki-page-breadcrumbs-container">
+		        <tr>
+			        <td class="wiki-page-breadcrumbs">
+				        <a href="index.html" title = "Home">Home</a>
+                        <span class="wikinav-breadcrumb-separator">»</span><a href="debugging.html" title="Debugging" class="">Debugging</a><span class="wikinav-breadcrumb-separator">»</span><a href="error-checker.html" title="Error Checker" class="">Error Checker</a>
+			        </td>
+		        </tr>
+	        </table>
+		    <table id="main-columns">
+			    <tr><td id="wiki-page-nav">
+				    <div class="wiki-page-browse-menu-title">Index</div>
+				    <ul class="wiki-page-browse-menu">
+					    <li><a href="installation.html" class="">Installation</a></li>
+					    <li><a href="core-concepts.html" class="">Core Concepts</a></li>
+					    <li><a href="user-interface.html" class="">User Interface</a></li>
+					    <li><a href="keyboard-shortcuts.html" class="">Shortcuts</a></li>
+					    <li><a href="editing-basics.html" class="">Editing Basics</a></li>
+					    <li><a href="samples.html" class="">Samples</a></li>
+					    <li><a href="debugging.html" class="">Debugging</a></li>
+					    <li><a href="action-reference.html" class="">Action Reference</a></li>
+					    <li><a href="networking.html" class="">Networking</a></li>
+					    <li><a href="api-reference.html" class="">API Reference</a></li>
+					    <li><a href="online-resources.html" class="">Online Resources</a></li>
+					    <li><a href="hints-and-tips.html" class="">Hints And Tips</a></li>
+					    <li><a href="known-issues.html" class="">Known Issues</a></li>
+					    <li><a href="release-notes.html" class="">Release Notes</a></li>
+					    <li><a href="frequently-asked-questions.html" class="">FAQ</a></li>
+				    </ul>
+			    </td>
+                <td id="body">
+					<div id="wiki-page-content">
+                        <h1>Error Checker</h1>
+                        <div class="article-content">
+                        <p>The Error Checker finds&nbsp;setup errors as you edit FSMs. This allows you to catch and fix errors before you even hit play.</p>
+
+<p><img height="274" src="images/manual/ErrorCheckerGoto.png" width="719"  /></p>
+
+<p>Click on the error message in the <a href="error-check-window.html" rel="nofollow noopener noreferrer">Error Check Window</a> to jump directly to the error.</p>
+
+<p>The Error Checker shows errors at different levels in the UI:</p>
+
+<h4>1. An Error Count in the&nbsp;<a href="debugging.html" rel="nofollow noopener noreferrer">Debugging Toolbar</a>:</h4>
+
+<p><img border="0" src="images/manual/1Error.png" title=""  /></p>
+
+<p>Clicking on the Error Count opens the&nbsp;<a href="error-check-window.html" rel="nofollow noopener noreferrer">Error Check Window</a>.</p>
+
+<h4>2. Error Icons in the&nbsp;<a href="graph-view.html" rel="nofollow noopener noreferrer">Graph View</a>,&nbsp;<a href="fsm-browser.html" rel="nofollow noopener noreferrer">Fsm Browser</a>,&nbsp;<a href="templates-browser.html" rel="nofollow noopener noreferrer">Template Browser</a>&nbsp;and&nbsp;<a href="state-browser.html" rel="nofollow noopener noreferrer">State Browser</a>.</h4>
+
+<p><img border="0" src="images/manual/StateError.png" title=""  /></p>
+
+<p>This lets you see at a high level that some FSMs have errors and then drill down from there.</p>
+
+<h4>3. Error Boxes in&nbsp;<a href="action-editor.html" rel="nofollow noopener noreferrer">Action Editors</a>.</h4>
+
+<p><img border="0" src="images/manual/ActionError.png" title=""  /></p>
+
+<p>NOTE: Some error boxes are clickable, letting you automatically fix the error!</p>
+
+<p><img height="154" src="images/manual/AddForceErrorClick.gif" width="624"  /></p>
+
+<h4>Settings Menu</h4>
+
+<p>Quickly access Error Checking&nbsp;Preferences&nbsp;using the Settings Menu:</p>
+
+<p><img height="364" src="images/manual/ErrorCheckSettings.gif" width="343"  /></p>
+
+<p>See <a href="error-checking-preferences.html" target="_blank">Error Checking Preferences</a>.</p>
+
+<p>&nbsp;</p>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr><td><p>&nbsp;</p></td></tr>
+        </table>       
+        <div id="footer">
+		    <div id="copyright">copyright HutongGames, LLC. All rights reserved.</div>
+	    </div>
+    </div>
+    <script type="text/javascript">
+	    document.body.style.backgroundColor = "#444";
+        document.body.style.backgroundImage = "none";
+	    document.body.style.height = "100%";
+	    $("#mainArea").css("padding", "0px");
+	    $("#mainArea").css("margin", "0px");
+	    $("#contentWikiView").css("margin", "0px");
+	    $(document).ready(function() {
+            $("#container #paramRow").filter(":even").css("background-color", "#f2f2f2");
+            $("#container #paramRow").filter(":odd").css("background-color", "#f9f9f9");
+            $("#container #nameDesc").filter(":even").css("background-color", "#f2f2f2");
+            $("#container #nameDesc").filter(":odd").css("background-color", "#f9f9f9");
+        },0)
+    </script>
+</div>
+</body>
+</html>

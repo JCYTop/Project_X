@@ -1,0 +1,297 @@
+<!DOCTYPE html> 
+<html xmlns:fb>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Fsm</title>
+	<link href="css/main.css" rel="stylesheet" type="text/css" />
+    <script src="js/jquery.min.js"></script>
+</head>
+<body>
+	<div id="page">
+		<div id="container">
+			<div id = "hutongHeader">
+				<a href="http://hutonggames.com/index.html"><img src="http://hutonggames.com/images/playMaker.png"/></a>  
+				<a href="http://hutonggames.com/company.html"><img src="http://hutonggames.com/images/hutongGamesSmall.png" id="companyLogo"/></a>
+				<div id="socialLinks">
+					<a href="http://www.facebook.com/pages/Hutong-Games-LLC/163141367059519" target="_blank">
+					<img src="http://www.hutonggames.com/images/fb.png" width="32" height="32" alt="facebook" /></a>
+					<a href="http://twitter.com/hutonggames" target="_blank">
+					<img src="http://www.hutonggames.com/images/twitter.png" width="32" height="32" alt="twitter" /></a>
+					<a href="http://www.youtube.com/user/HutongGamesLLC" target="_blank">
+					<img src="http://www.hutonggames.com/images/youtube.png" width="32" height="32" alt="youtube" /></a>
+				</div>
+				<div id = "mainMenu">
+                    <ul>
+                        <li><a href="http://hutonggames.com/index.html">Home</a></li>
+                        <li><a href="http://hutonggames.com/store.html">Store</a></li>
+                        <li><a href="http://hutonggames.com/showcase.html">Showcase</a></li>
+                        <li><a href="http://hutonggames.com/tutorials.html">Tutorials</a></li>
+                        <li><a href="http://hutonggames.com/playmakerforum/index.php">Forums</a></li>
+                        <li><a href="playmaker-manual.html">Manual</a></li>
+                        <li><a href="https://hutonggames.fogbugz.com/default.asp?W546">Wiki</a></li>
+                        <li><a href="http://hutonggames.com/company.html">About Us</a></li>
+                    </ul>
+                </div>
+			</div>
+            <table id="wiki-page-breadcrumbs-container">
+		        <tr>
+			        <td class="wiki-page-breadcrumbs">
+				        <a href="index.html" title = "Home">Home</a>
+                        <span class="wikinav-breadcrumb-separator">»</span><a href="api-reference.html" title="API Reference" class="">API Reference</a><span class="wikinav-breadcrumb-separator">»</span><a href="fsm.html" title="Fsm" class="">Fsm</a>
+			        </td>
+		        </tr>
+	        </table>
+		    <table id="main-columns">
+			    <tr><td id="wiki-page-nav">
+				    <div class="wiki-page-browse-menu-title">Index</div>
+				    <ul class="wiki-page-browse-menu">
+					    <li><a href="installation.html" class="">Installation</a></li>
+					    <li><a href="core-concepts.html" class="">Core Concepts</a></li>
+					    <li><a href="user-interface.html" class="">User Interface</a></li>
+					    <li><a href="keyboard-shortcuts.html" class="">Shortcuts</a></li>
+					    <li><a href="editing-basics.html" class="">Editing Basics</a></li>
+					    <li><a href="samples.html" class="">Samples</a></li>
+					    <li><a href="debugging.html" class="">Debugging</a></li>
+					    <li><a href="action-reference.html" class="">Action Reference</a></li>
+					    <li><a href="networking.html" class="">Networking</a></li>
+					    <li><a href="api-reference.html" class="">API Reference</a></li>
+					    <li><a href="online-resources.html" class="">Online Resources</a></li>
+					    <li><a href="hints-and-tips.html" class="">Hints And Tips</a></li>
+					    <li><a href="known-issues.html" class="">Known Issues</a></li>
+					    <li><a href="release-notes.html" class="">Release Notes</a></li>
+					    <li><a href="frequently-asked-questions.html" class="">FAQ</a></li>
+				    </ul>
+			    </td>
+                <td id="body">
+					<div id="wiki-page-content">
+                        <h1>Fsm</h1>
+                        <div class="article-content">
+                        <p>
+	This class defines a&nbsp;<a href="core-concepts.html" rel="nofollow">Finite State Machine</a>&nbsp;(FSM).</p>
+<p>
+	FSMs break behaviours down into clearly defined&nbsp;<a href="fsmstate.html" rel="nofollow">states</a>. Each state can run&nbsp;<a href="fsmstateaction.html" rel="nofollow">actions</a>.&nbsp;</p>
+<p>
+	<a href="fsmstateaction.html" rel="nofollow">Actions</a>&nbsp;can use&nbsp;<a href="fsmvariables.html" rel="nofollow">variables&nbsp;</a>defined by the FSM or&nbsp;<a href="playmakerglobals.html" rel="nofollow">global variables</a>&nbsp;defined for the project.</p>
+<p>
+	<a href="fsmtransition.html" rel="nofollow">Transitions</a>&nbsp;between states are triggered by&nbsp;<a href="fsmevent.html" rel="nofollow">events</a>.</p>
+<h2>
+	Properties</h2>
+<table class="Basic">
+	<tbody>
+		<tr>
+			<th style="text-align: right">
+				Type</th>
+			<th>
+				Property</th>
+		</tr>
+		<tr>
+			<td style="text-align: right">
+				<strong>GameObject</strong></td>
+			<td>
+				<strong>GameObject</strong></td>
+		</tr>
+		<tr>
+			<td>
+				&nbsp;</td>
+			<td>
+				GameObject that owns the FSM.</td>
+		</tr>
+		<tr>
+			<td>
+				<strong>MonoBehaviour</strong></td>
+			<td>
+				<strong>Owner [get, set]</strong></td>
+		</tr>
+		<tr>
+			<td>
+				&nbsp;</td>
+			<td>
+				<p>
+					MonoBehaviour that owns the FSM.</p>
+				<p>
+					Can be cast to PlayMakerFSM.</p>
+			</td>
+		</tr>
+		<tr>
+			<td style="text-align: right">
+				<strong>bool</strong></td>
+			<td>
+				<strong>Active [get]</strong></td>
+		</tr>
+		<tr>
+			<td style="text-align: right">
+				&nbsp;</td>
+			<td>
+				Is the FSM active?</td>
+		</tr>
+		<tr>
+			<td style="text-align: right">
+				<strong>bool</strong></td>
+			<td>
+				<strong>Finished [get]</strong></td>
+		</tr>
+		<tr>
+			<td style="text-align: right">
+				&nbsp;</td>
+			<td>
+				Has the FSM finished running?</td>
+		</tr>
+		<tr>
+			<td style="text-align: right">
+				<strong>string</strong></td>
+			<td>
+				<strong>Name [get, set]</strong></td>
+		</tr>
+		<tr>
+			<td>
+				&nbsp;</td>
+			<td>
+				Descriptive name.</td>
+		</tr>
+		<tr>
+			<td style="text-align: right">
+				<strong>string</strong></td>
+			<td>
+				<strong>StartState [get, set]</strong></td>
+		</tr>
+		<tr>
+			<td>
+				&nbsp;</td>
+			<td>
+				Name of the start state that is entered when the FSM is enabled.</td>
+		</tr>
+		<tr>
+			<td style="text-align: right">
+				<strong><a href="fsmstate.html" rel="nofollow">FsmState</a>[]</strong></td>
+			<td>
+				<strong>States [get, set]</strong></td>
+		</tr>
+		<tr>
+			<td>
+				&nbsp;</td>
+			<td>
+				<a href="fsmstate.html" rel="nofollow">FsmStates</a>&nbsp;defined by the FSM.</td>
+		</tr>
+		<tr>
+			<td style="text-align: right">
+				<strong><a href="fsmevent.html" rel="nofollow">FsmEvent</a>[]</strong></td>
+			<td>
+				<strong>Events [get, set]</strong></td>
+		</tr>
+		<tr>
+			<td>
+				&nbsp;</td>
+			<td>
+				<a href="fsmevent.html" rel="nofollow">FsmEvents&nbsp;</a>used by the FSM.</td>
+		</tr>
+		<tr>
+			<td style="text-align: right">
+				<strong><a href="fsmtransition.html" rel="nofollow">FsmTransition</a>[]</strong></td>
+			<td>
+				<strong>GlobalTransitions [get, set]</strong></td>
+		</tr>
+		<tr>
+			<td>
+				&nbsp;</td>
+			<td>
+				Global&nbsp;<a href="fsmtransition.html" rel="nofollow">transitions&nbsp;</a>defined by the FSM.</td>
+		</tr>
+		<tr>
+			<td style="text-align: right">
+				<strong><a href="fsmvariables.html" rel="nofollow">FsmVariables</a></strong></td>
+			<td>
+				<strong>Variables [get, set]</strong></td>
+		</tr>
+		<tr>
+			<td>
+				&nbsp;</td>
+			<td>
+				<a href="fsmvariables.html" rel="nofollow">Variables&nbsp;</a>used by the FSM.</td>
+		</tr>
+		<tr>
+			<td style="text-align: right">
+				<strong><a href="fsmstate.html" rel="nofollow">FsmState</a></strong></td>
+			<td>
+				<strong>ActiveState [get]</strong></td>
+		</tr>
+		<tr>
+			<td>
+				&nbsp;</td>
+			<td>
+				<p>
+					Current active state.</p>
+			</td>
+		</tr>
+		<tr>
+			<td style="text-align: right">
+				<strong><a href="fsmstate.html" rel="nofollow">FsmState</a></strong></td>
+			<td>
+				<strong>PreviousActiveState [get]</strong></td>
+		</tr>
+		<tr>
+			<td>
+				&nbsp;</td>
+			<td>
+				State that was active before the current active state.</td>
+		</tr>
+	</tbody>
+</table>
+<h3>
+	Unity Event Handling</h3>
+<p>
+	Use these property flags to subscribe to Unity Events:</p>
+<ul>
+	<li>
+		<strong>MouseEvents</strong></li>
+	<li>
+		<strong>HandleCollisionEnter</strong></li>
+	<li>
+		<strong>HandleCollisionStay</strong></li>
+	<li>
+		<strong>HandleCollisionExit</strong></li>
+	<li>
+		<strong>HandleTriggerEnter</strong></li>
+	<li>
+		<strong>HandleTriggerStay</strong></li>
+	<li>
+		<strong>HandleTriggerExit</strong></li>
+	<li>
+		<strong>HandleOnGUI</strong></li>
+	<li>
+		<strong>HandleFixedUpdate</strong></li>
+	<li>
+		<strong>HandleApplicationEvents</strong></li>
+</ul>
+<p>
+	Setting a flag to true will add a runtime component that forwards the corresponding Unity events to the FSM.</p>
+<p>
+	For an example, look at PlayMaker/Actions/CollisionEvent.cs.</p>
+<p>
+	&nbsp;</p>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr><td><p>&nbsp;</p></td></tr>
+        </table>       
+        <div id="footer">
+		    <div id="copyright">copyright HutongGames, LLC. All rights reserved.</div>
+	    </div>
+    </div>
+    <script type="text/javascript">
+	    document.body.style.backgroundColor = "#444";
+        document.body.style.backgroundImage = "none";
+	    document.body.style.height = "100%";
+	    $("#mainArea").css("padding", "0px");
+	    $("#mainArea").css("margin", "0px");
+	    $("#contentWikiView").css("margin", "0px");
+	    $(document).ready(function() {
+            $("#container #paramRow").filter(":even").css("background-color", "#f2f2f2");
+            $("#container #paramRow").filter(":odd").css("background-color", "#f9f9f9");
+            $("#container #nameDesc").filter(":even").css("background-color", "#f2f2f2");
+            $("#container #nameDesc").filter(":odd").css("background-color", "#f9f9f9");
+        },0)
+    </script>
+</div>
+</body>
+</html>

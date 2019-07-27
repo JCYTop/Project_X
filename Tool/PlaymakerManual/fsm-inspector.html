@@ -1,0 +1,208 @@
+<!DOCTYPE html> 
+<html xmlns:fb>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>FSM Inspector</title>
+	<link href="css/main.css" rel="stylesheet" type="text/css" />
+    <script src="js/jquery.min.js"></script>
+</head>
+<body>
+	<div id="page">
+		<div id="container">
+			<div id = "hutongHeader">
+				<a href="http://hutonggames.com/index.html"><img src="http://hutonggames.com/images/playMaker.png"/></a>  
+				<a href="http://hutonggames.com/company.html"><img src="http://hutonggames.com/images/hutongGamesSmall.png" id="companyLogo"/></a>
+				<div id="socialLinks">
+					<a href="http://www.facebook.com/pages/Hutong-Games-LLC/163141367059519" target="_blank">
+					<img src="http://www.hutonggames.com/images/fb.png" width="32" height="32" alt="facebook" /></a>
+					<a href="http://twitter.com/hutonggames" target="_blank">
+					<img src="http://www.hutonggames.com/images/twitter.png" width="32" height="32" alt="twitter" /></a>
+					<a href="http://www.youtube.com/user/HutongGamesLLC" target="_blank">
+					<img src="http://www.hutonggames.com/images/youtube.png" width="32" height="32" alt="youtube" /></a>
+				</div>
+				<div id = "mainMenu">
+                    <ul>
+                        <li><a href="http://hutonggames.com/index.html">Home</a></li>
+                        <li><a href="http://hutonggames.com/store.html">Store</a></li>
+                        <li><a href="http://hutonggames.com/showcase.html">Showcase</a></li>
+                        <li><a href="http://hutonggames.com/tutorials.html">Tutorials</a></li>
+                        <li><a href="http://hutonggames.com/playmakerforum/index.php">Forums</a></li>
+                        <li><a href="playmaker-manual.html">Manual</a></li>
+                        <li><a href="https://hutonggames.fogbugz.com/default.asp?W546">Wiki</a></li>
+                        <li><a href="http://hutonggames.com/company.html">About Us</a></li>
+                    </ul>
+                </div>
+			</div>
+            <table id="wiki-page-breadcrumbs-container">
+		        <tr>
+			        <td class="wiki-page-breadcrumbs">
+				        <a href="index.html" title = "Home">Home</a>
+                        <span class="wikinav-breadcrumb-separator">»</span><a href="user-interface.html" title="User Interface" class="">User Interface</a><span class="wikinav-breadcrumb-separator">»</span><a href="inspector-panel.html" title="Inspector Panel" class="">Inspector Panel</a><span class="wikinav-breadcrumb-separator">»</span><a href="fsm-inspector.html" title="FSM Inspector" class="">FSM Inspector</a>
+			        </td>
+		        </tr>
+	        </table>
+		    <table id="main-columns">
+			    <tr><td id="wiki-page-nav">
+				    <div class="wiki-page-browse-menu-title">Index</div>
+				    <ul class="wiki-page-browse-menu">
+					    <li><a href="installation.html" class="">Installation</a></li>
+					    <li><a href="core-concepts.html" class="">Core Concepts</a></li>
+					    <li><a href="user-interface.html" class="">User Interface</a></li>
+					    <li><a href="keyboard-shortcuts.html" class="">Shortcuts</a></li>
+					    <li><a href="editing-basics.html" class="">Editing Basics</a></li>
+					    <li><a href="samples.html" class="">Samples</a></li>
+					    <li><a href="debugging.html" class="">Debugging</a></li>
+					    <li><a href="action-reference.html" class="">Action Reference</a></li>
+					    <li><a href="networking.html" class="">Networking</a></li>
+					    <li><a href="api-reference.html" class="">API Reference</a></li>
+					    <li><a href="online-resources.html" class="">Online Resources</a></li>
+					    <li><a href="hints-and-tips.html" class="">Hints And Tips</a></li>
+					    <li><a href="known-issues.html" class="">Known Issues</a></li>
+					    <li><a href="release-notes.html" class="">Release Notes</a></li>
+					    <li><a href="frequently-asked-questions.html" class="">FAQ</a></li>
+				    </ul>
+			    </td>
+                <td id="body">
+					<div id="wiki-page-content">
+                        <h1>FSM Inspector</h1>
+                        <div class="article-content">
+                        <p>The FSM Inspector lets you edit the selected FSM&#39;s properties.</p>
+
+<p><img border="0" src="images/manual/FsmInspector.png" title=""  /></p>
+
+<ol>
+	<li><strong>Name: </strong>The name of the FSM.</li>
+	<li><strong>Template:</strong> Optionally use an FSM Template.</li>
+	<li><strong>Description:</strong> A description of what the FSM does.</li>
+	<li><strong>Documentation Url: </strong>An optional url to docs for the FSM.</li>
+	<li><strong>Options: </strong>The runtime behavior of the FSM. See below.</li>
+	<li><strong>Controls: </strong>Events and Variables exposed in the Inspector.</li>
+	<li><strong>Network Sync: </strong>Lists variables flagged for network sync.</li>
+	<li><strong>Debug:</strong> Debug settings for this FSM.</li>
+	<li><strong>Password:</strong> Lock editing of the FSM with a Password.</li>
+</ol>
+
+<h3>&nbsp;</h3>
+
+<h3>1. Name</h3>
+
+<p style="margin-left: 40px">Use a name that clearly describes what the FSM&nbsp;does. The name will appear in many places, so a good name goes a long way!</p>
+
+<h3>2. Template</h3>
+
+<p style="margin-left: 40px">FSMs can be saved as&nbsp;<a href="using-fsm-templates.html" rel="nofollow noopener noreferrer">Templates&nbsp;</a>for re-use. This field lets you assign a Template to use for this FSM.</p>
+
+<p style="margin-left: 40px">Use the&nbsp;<a href="templates-browser.html" rel="nofollow noopener noreferrer">Templates Browser</a>&nbsp;to organize Templates in your project.</p>
+
+<h3>3. Description</h3>
+
+<p style="margin-left: 40px">A clear description helps you build an FSM that does exactly what you need it to do.</p>
+
+<h3>4. Documentation Url</h3>
+
+<p style="margin-left: 40px">You can create a web page to document an FSM and link to it here.</p>
+
+<h3>5. Options</h3>
+
+<p style="margin-left: 40px"><strong>Max Loop Override</strong></p>
+
+<p style="margin-left: 40px">Sometimes when linking states you can accidentally make an infinite loop. The Playmaker runtime breaks out of these loops to avoid crashing Unity. By default if states loop more than 1000 times in a single update Playmaker assumes you&#39;ve accidentally created an infinite loop. This override lets you increase the limit in the cases where you intentionally want to loop more than 1000 times through some states.</p>
+
+<p style="margin-left: 40px">Leave at 0 to use the default limit</p>
+
+<p style="margin-left: 40px"><strong>Reset On Disable</strong></p>
+
+<p style="margin-left: 40px">Normally an FSM restarts when disabled/enabled. Sometimes however, you want the FSM to remember its state when it was disabled. Uncheck this option for that behavior.</p>
+
+<h3>6. Controls</h3>
+
+<p style="margin-left: 40px">The Controls area shows any Variables or Events that you&#39;ve selected to be shown in the Inspector.</p>
+
+<p style="margin-left: 40px"><strong>Variables:&nbsp;</strong>Variables with Inspector checked in the &nbsp;<a href="variables-manager.html" rel="nofollow noopener noreferrer">Variables Manager</a>&nbsp;are shown here.</p>
+
+<p style="margin-left: 40px"><strong>Events:&nbsp;</strong>Events with Inspector checked are exposed as buttons. Press the button to send the event at runtime.</p>
+
+<p style="margin-left: 40px">NOTE: You can use Categories to organize variables in the Controls section:</p>
+
+<p style="margin-left: 40px"><img border="0" src="images/manual/VariableCategoriesFsmInspector.PNG" title=""  /></p>
+
+<h3>7. Network Sync</h3>
+
+<p style="margin-left: 40px">Shows the variables in this FSM that will sync over the network.</p>
+
+<p style="margin-left: 40px">Set Variables to network sync in the&nbsp;<a href="variables-manager.html" rel="nofollow noopener noreferrer">Variables Manager</a>.</p>
+
+<h3>8. Debug</h3>
+
+<p style="margin-left: 40px"><strong>Show State Labels in Game View</strong></p>
+
+<p style="margin-left: 40px">State Labels are GUI text boxes drawn over a GameObject showing the state of an FSM. This can be a very useful debugging tool. Uncheck this option to hide this FSM&#39;s State Labels.</p>
+
+<p style="margin-left: 40px">NOTE: State Labels require a&nbsp;<a href="playmakergui.html" rel="nofollow noopener noreferrer">PlayMakerGUI</a>&nbsp;component in the scene. You can turn State Labels off globally in&nbsp;<a href="preferences.html" rel="nofollow noopener noreferrer">Preferences&nbsp;</a>and in the&nbsp;<a href="playmakergui.html" rel="nofollow noopener noreferrer">PlayMakerGUI&nbsp;</a>component.</p>
+
+<p style="margin-left: 40px"><strong>Enable Breakpoints</strong></p>
+
+<p style="margin-left: 40px">Enable/disable Breakpoints in this FSM.</p>
+
+<p style="margin-left: 40px"><strong>Enable Debug Flow</strong></p>
+
+<p style="margin-left: 40px">Debug Flow is an advanced debugging option. It keeps a history of FSM Variable values in the FSM Log so when you pause the game you can step&nbsp;back and watch variables change. See <a href="debug-toolbar.html">Debug Toolbar</a>.</p>
+
+<p style="margin-left: 40px">However, this option can effect&nbsp;performance, so you should only enable it when you need to really dig into the FSM Log.</p>
+
+<h3>9. Password</h3>
+
+<p style="margin-left: 40px">Set a Password and hit Lock to password protect editing of an FSM.</p>
+
+<p style="margin-left: 40px">Don&#39;t forget your password!</p>
+
+<h3>Experimental</h3>
+
+<p style="margin-left: 40px">Experimental features in 1.8.1:</p>
+
+<p style="margin-left: 40px"><strong>Manual Update</strong></p>
+
+<p style="margin-left: 40px">Disables PlayMakerFSM.Update of an FSM so you can update it manually using PlayMakerFSM.Fsm.Update instead. For example, to update an FSM from a&nbsp;Coroutine.</p>
+
+<p style="margin-left: 40px"><strong>Keep Delayed Events On State Exit</strong></p>
+
+<p style="margin-left: 40px">Don&#39;t remove delayed events when exiting a state. This lets you &quot;queue up&quot; delayed events, but could be confusing. This is the way delayed events used to work pre-v1.8.</p>
+
+<p style="margin-left: 40px">&nbsp;</p>
+
+<h3>See Also:</h3>
+
+<div id="linkList">
+<ul>
+	<li><a href="variables-manager.html" rel="nofollow noopener noreferrer">Variables Manager</a></li>
+</ul>
+</div>
+
+<p>&nbsp;</p>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr><td><p>&nbsp;</p></td></tr>
+        </table>       
+        <div id="footer">
+		    <div id="copyright">copyright HutongGames, LLC. All rights reserved.</div>
+	    </div>
+    </div>
+    <script type="text/javascript">
+	    document.body.style.backgroundColor = "#444";
+        document.body.style.backgroundImage = "none";
+	    document.body.style.height = "100%";
+	    $("#mainArea").css("padding", "0px");
+	    $("#mainArea").css("margin", "0px");
+	    $("#contentWikiView").css("margin", "0px");
+	    $(document).ready(function() {
+            $("#container #paramRow").filter(":even").css("background-color", "#f2f2f2");
+            $("#container #paramRow").filter(":odd").css("background-color", "#f9f9f9");
+            $("#container #nameDesc").filter(":even").css("background-color", "#f2f2f2");
+            $("#container #nameDesc").filter(":odd").css("background-color", "#f9f9f9");
+        },0)
+    </script>
+</div>
+</body>
+</html>

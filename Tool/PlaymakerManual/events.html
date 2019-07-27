@@ -1,0 +1,321 @@
+<!DOCTYPE html> 
+<html xmlns:fb>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Events</title>
+	<link href="css/main.css" rel="stylesheet" type="text/css" />
+    <script src="js/jquery.min.js"></script>
+</head>
+<body>
+	<div id="page">
+		<div id="container">
+			<div id = "hutongHeader">
+				<a href="http://hutonggames.com/index.html"><img src="http://hutonggames.com/images/playMaker.png"/></a>  
+				<a href="http://hutonggames.com/company.html"><img src="http://hutonggames.com/images/hutongGamesSmall.png" id="companyLogo"/></a>
+				<div id="socialLinks">
+					<a href="http://www.facebook.com/pages/Hutong-Games-LLC/163141367059519" target="_blank">
+					<img src="http://www.hutonggames.com/images/fb.png" width="32" height="32" alt="facebook" /></a>
+					<a href="http://twitter.com/hutonggames" target="_blank">
+					<img src="http://www.hutonggames.com/images/twitter.png" width="32" height="32" alt="twitter" /></a>
+					<a href="http://www.youtube.com/user/HutongGamesLLC" target="_blank">
+					<img src="http://www.hutonggames.com/images/youtube.png" width="32" height="32" alt="youtube" /></a>
+				</div>
+				<div id = "mainMenu">
+                    <ul>
+                        <li><a href="http://hutonggames.com/index.html">Home</a></li>
+                        <li><a href="http://hutonggames.com/store.html">Store</a></li>
+                        <li><a href="http://hutonggames.com/showcase.html">Showcase</a></li>
+                        <li><a href="http://hutonggames.com/tutorials.html">Tutorials</a></li>
+                        <li><a href="http://hutonggames.com/playmakerforum/index.php">Forums</a></li>
+                        <li><a href="playmaker-manual.html">Manual</a></li>
+                        <li><a href="https://hutonggames.fogbugz.com/default.asp?W546">Wiki</a></li>
+                        <li><a href="http://hutonggames.com/company.html">About Us</a></li>
+                    </ul>
+                </div>
+			</div>
+            <table id="wiki-page-breadcrumbs-container">
+		        <tr>
+			        <td class="wiki-page-breadcrumbs">
+				        <a href="index.html" title = "Home">Home</a>
+                        <span class="wikinav-breadcrumb-separator">»</span><a href="core-concepts.html" title="Core Concepts" class="">Core Concepts</a><span class="wikinav-breadcrumb-separator">»</span><a href="events.html" title="Events" class="">Events</a>
+			        </td>
+		        </tr>
+	        </table>
+		    <table id="main-columns">
+			    <tr><td id="wiki-page-nav">
+				    <div class="wiki-page-browse-menu-title">Index</div>
+				    <ul class="wiki-page-browse-menu">
+					    <li><a href="installation.html" class="">Installation</a></li>
+					    <li><a href="core-concepts.html" class="">Core Concepts</a></li>
+					    <li><a href="user-interface.html" class="">User Interface</a></li>
+					    <li><a href="keyboard-shortcuts.html" class="">Shortcuts</a></li>
+					    <li><a href="editing-basics.html" class="">Editing Basics</a></li>
+					    <li><a href="samples.html" class="">Samples</a></li>
+					    <li><a href="debugging.html" class="">Debugging</a></li>
+					    <li><a href="action-reference.html" class="">Action Reference</a></li>
+					    <li><a href="networking.html" class="">Networking</a></li>
+					    <li><a href="api-reference.html" class="">API Reference</a></li>
+					    <li><a href="online-resources.html" class="">Online Resources</a></li>
+					    <li><a href="hints-and-tips.html" class="">Hints And Tips</a></li>
+					    <li><a href="known-issues.html" class="">Known Issues</a></li>
+					    <li><a href="release-notes.html" class="">Release Notes</a></li>
+					    <li><a href="frequently-asked-questions.html" class="">FAQ</a></li>
+				    </ul>
+			    </td>
+                <td id="body">
+					<div id="wiki-page-content">
+                        <h1>Events</h1>
+                        <div class="article-content">
+                        <h3>Overview</h3>
+
+<p>All transitions between States are triggered by Events.</p>
+
+<p>Use the&nbsp;<a href="events-manager.html" rel="nofollow noopener noreferrer">Event Manager</a>&nbsp;to add/edit Events.</p>
+
+<p>There are 2 basic types of Events:</p>
+
+<ol>
+	<li>System Events: Sent automatically; cannot be edited or deleted.</li>
+	<li>User Events: Custom events that you can use however you want.</li>
+</ol>
+
+<h3>System Events</h3>
+
+<p>By convention, system events are capitalized.</p>
+
+<table>
+	<tbody>
+		<tr>
+			<th>Event</th>
+			<th>Description</th>
+			<th>Unity Docs</th>
+		</tr>
+		<tr>
+			<td>START</td>
+			<td>Sent when the state machine is enabled.</td>
+			<td>N.A.</td>
+		</tr>
+		<tr>
+			<td>FINISHED</td>
+			<td>Sent when all actions on the active state have finished. See&nbsp;<a href="actions.html" rel="nofollow noopener noreferrer" style="text-decoration: none; color: rgb(153, 51, 136)">Actions</a>.</td>
+			<td>N.A.</td>
+		</tr>
+		<tr>
+			<td>LEVEL LOADED</td>
+			<td>Sent after a new level is loaded.</td>
+			<td><a href="http://unity3d.com/support/documentation/ScriptReference/MonoBehaviour.OnLevelWasLoaded.html" rel="nofollow noopener noreferrer" target="_blank">OnLevelWasLoaded</a></td>
+		</tr>
+		<tr>
+			<td>BECAME VISIBLE</td>
+			<td>Sent when the game object becomes visible by any camera.</td>
+			<td><a href="http://unity3d.com/support/documentation/ScriptReference/Renderer.OnBecameVisible.html" rel="nofollow noopener noreferrer" target="_blank">OnBecameVisible</a></td>
+		</tr>
+		<tr>
+			<td>BECAME INVISIBLE</td>
+			<td>Sent when the game object is no longer visible by any camera.</td>
+			<td><a href="http://unity3d.com/support/documentation/ScriptReference/Renderer.OnBecameInvisible.html" rel="nofollow noopener noreferrer" target="_blank">OnBecameInvisible</a></td>
+		</tr>
+		<tr>
+			<td>COLLISION ENTER</td>
+			<td>Sent when the game object first collides with another object.</td>
+			<td><a href="http://unity3d.com/support/documentation/ScriptReference/MonoBehaviour.OnCollisionEnter.html" rel="nofollow noopener noreferrer" target="_blank">OnCollisionEnter</a></td>
+		</tr>
+		<tr>
+			<td>COLLISION EXIT</td>
+			<td>Sent when the game object stops colliding with another object.</td>
+			<td><a href="http://unity3d.com/support/documentation/ScriptReference/MonoBehaviour.OnCollisionExit.html" rel="nofollow noopener noreferrer" target="_blank">OnCollisionExit</a></td>
+		</tr>
+		<tr>
+			<td>COLLISION STAY</td>
+			<td>Sent while the game object is colliding with another object.</td>
+			<td><a href="http://unity3d.com/support/documentation/ScriptReference/MonoBehaviour.OnCollisionStay.html" rel="nofollow noopener noreferrer" target="_blank">OnCollisionStay</a></td>
+		</tr>
+		<tr>
+			<td>MOUSE DOWN</td>
+			<td>Sent when the mouse clicks on the game object.</td>
+			<td><a href="http://unity3d.com/support/documentation/ScriptReference/MonoBehaviour.OnMouseDown.html" rel="nofollow noopener noreferrer" target="_blank">OnMouseDown</a></td>
+		</tr>
+		<tr>
+			<td>MOUSE DRAG</td>
+			<td>Sent while the mouse button is down and over the game object.</td>
+			<td><a href="http://unity3d.com/support/documentation/ScriptReference/MonoBehaviour.OnMouseDrag.html" rel="nofollow noopener noreferrer" target="_blank">OnMouseDrag</a></td>
+		</tr>
+		<tr>
+			<td>MOUSE ENTER</td>
+			<td>Sent when the mouse rolls over the game object.</td>
+			<td><a href="http://unity3d.com/support/documentation/ScriptReference/MonoBehaviour.OnMouseEnter.html" rel="nofollow noopener noreferrer" target="_blank">OnMouseEnter</a></td>
+		</tr>
+		<tr>
+			<td>MOUSE EXIT</td>
+			<td>Sent when the mouse rolls off the game object.</td>
+			<td><a href="http://unity3d.com/support/documentation/ScriptReference/MonoBehaviour.OnMouseExit.html" rel="nofollow noopener noreferrer" target="_blank">OnMouseExit</a></td>
+		</tr>
+		<tr>
+			<td>MOUSE OVER</td>
+			<td>Sent while the mouse is over the game object.</td>
+			<td><a href="http://unity3d.com/support/documentation/ScriptReference/MonoBehaviour.OnMouseOver.html" rel="nofollow noopener noreferrer" target="_blank">OnMouseOver</a></td>
+		</tr>
+		<tr>
+			<td>MOUSE UP</td>
+			<td>Sent when the mouse button is released over the game object.</td>
+			<td><a href="http://unity3d.com/support/documentation/ScriptReference/MonoBehaviour.OnMouseUp.html" rel="nofollow noopener noreferrer" target="_blank">OnMouseUp</a></td>
+		</tr>
+		<tr>
+			<td>MOUSE UP AS BUTTON</td>
+			<td>Sent when the mouse button is released over the same GUI Element or Collider it was pressed on.</td>
+			<td><a href="http://unity3d.com/support/documentation/ScriptReference/MonoBehaviour.OnMouseUpAsButton.html" rel="nofollow noopener noreferrer" target="_blank">OnMouseUpAsButton</a></td>
+		</tr>
+		<tr>
+			<td>TRIGGER ENTER</td>
+			<td>Sent when the game object enters a trigger volume.</td>
+			<td><a href="http://unity3d.com/support/documentation/ScriptReference/MonoBehaviour.OnTriggerEnter.html" rel="nofollow noopener noreferrer" target="_blank">OnTriggerEnter</a></td>
+		</tr>
+		<tr>
+			<td>TRIGGER EXIT</td>
+			<td>Sent when the game object exits a trigger volume.</td>
+			<td><a href="http://unity3d.com/support/documentation/ScriptReference/MonoBehaviour.OnTriggerExit.html" rel="nofollow noopener noreferrer" target="_blank">OnTriggerExit</a></td>
+		</tr>
+		<tr>
+			<td>TRIGGER STAY</td>
+			<td>Sent while the game object stays inside a trigger volume.</td>
+			<td><a href="http://unity3d.com/support/documentation/ScriptReference/MonoBehaviour.OnTriggerStay.html" rel="nofollow noopener noreferrer" target="_blank">OnTriggerStay</a></td>
+		</tr>
+		<tr>
+			<td>CONTROLLER COLLIDER HIT</td>
+			<td>Sent when the character controller on the game object collides with an object.</td>
+			<td><a href="http://unity3d.com/support/documentation/ScriptReference/MonoBehaviour.OnControllerColliderHit.html" rel="nofollow noopener noreferrer" target="_blank">OnControllerColliderHit</a></td>
+		</tr>
+		<tr>
+			<td>COLLISION ENTER 2D</td>
+			<td>Sent when the game object first collides with a 2D Collider.</td>
+			<td><a href="https://docs.unity3d.com/ScriptReference/MonoBehaviour.OnCollisionEnter2D.html" rel="nofollow noopener noreferrer" target="_blank">OnCollisionEnter2D</a></td>
+		</tr>
+		<tr>
+			<td>COLLISION EXIT 2D</td>
+			<td>Sent when the game object stops colliding with a 2D Collider.</td>
+			<td><a href="https://docs.unity3d.com/ScriptReference/MonoBehaviour.OnCollisionExit2D.html" rel="nofollow noopener noreferrer" target="_blank">OnCollisionExit2D</a></td>
+		</tr>
+		<tr>
+			<td>COLLISION STAY 2D</td>
+			<td>Sent while the game object is colliding with a 2D Collider.</td>
+			<td><a href="https://docs.unity3d.com/ScriptReference/MonoBehaviour.OnCollisionStay2D.html" rel="nofollow noopener noreferrer" target="_blank">OnCollisionStay2D</a></td>
+		</tr>
+		<tr>
+			<td>TRIGGER ENTER 2D</td>
+			<td>Sent when the game object enters a 2D Trigger.</td>
+			<td><a href="http://unity3d.com/support/documentation/ScriptReference/MonoBehaviour.OnTriggerEnter2D.html" rel="nofollow noopener noreferrer" target="_blank">OnTriggerEnter</a></td>
+		</tr>
+		<tr>
+			<td>TRIGGER EXIT 2D</td>
+			<td>Sent when the game object exits a 2D Trigger.</td>
+			<td><a href="http://unity3d.com/support/documentation/ScriptReference/MonoBehaviour.OnTriggerExit2D.html" rel="nofollow noopener noreferrer" target="_blank">OnTriggerExit</a></td>
+		</tr>
+		<tr>
+			<td>TRIGGER STAY 2D</td>
+			<td>Sent while the game object stays inside a 2D Trigger.</td>
+			<td><a href="http://unity3d.com/support/documentation/ScriptReference/MonoBehaviour.OnTriggerStay2D.html" rel="nofollow noopener noreferrer" target="_blank">OnTriggerStay</a></td>
+		</tr>
+	</tbody>
+</table>
+
+<p>&nbsp;</p>
+
+<h4>Notes</h4>
+
+<ul>
+	<li>&quot;Game object&quot; above refers to the game object that owns the FSM.</li>
+	<li>After a COLLISION or TRIGGER event you can use&nbsp;<a href="get-collision-info.html" rel="nofollow noopener noreferrer">GetCollisionInfo</a>,&nbsp;<a href="get-trigger-info.html" rel="nofollow noopener noreferrer">GetTriggerInfo</a>, or&nbsp;<a href="get-controller-hit-info.html" rel="nofollow noopener noreferrer">GetControllerHitInfo</a>&nbsp;to decide how to react to the collision.</li>
+	<li>MOUSE events are very useful in state machines that control GUIText or GUITexture components. See&nbsp;<a href="gui-element-actions.html" rel="nofollow noopener noreferrer">GUI Element Actions</a>.</li>
+</ul>
+
+<h3>User Events</h3>
+
+<p>Add any events you need to control the state machine in the&nbsp;<a href="events-manager.html" rel="nofollow noopener noreferrer">Event Manager</a>.</p>
+
+<h4>Sending Events</h4>
+
+<p>There are a few ways to send events to an FSM:</p>
+
+<ul>
+	<li>Using Actions</li>
+	<li>Using Animation Events</li>
+	<li>Sending event from scripts.</li>
+</ul>
+
+<h4>Sending Events From Actions</h4>
+
+<p>The most basic Actions to send an event:</p>
+
+<ul>
+	<li><a class="uvb" href="send-event.html" rel="nofollow noopener noreferrer">Send Event</a></li>
+	<li><a href="send-event-to-fsm.html" rel="nofollow noopener noreferrer">Send Event To FSM</a></li>
+</ul>
+
+<p>Other Actions send events based on conditions:</p>
+
+<ul>
+	<li><a href="collision-event.html" rel="nofollow noopener noreferrer">Collision Event</a></li>
+	<li><a href="trigger-event.html" rel="nofollow noopener noreferrer">Trigger Event</a></li>
+	<li><a href="mouse-pick-event.html" rel="nofollow noopener noreferrer">Mouse Pick Event</a></li>
+</ul>
+
+<p>Events are essential to the flow of an FSM, so many actions send them.</p>
+
+<p><a name="InfiniteLoops"></a></p>
+
+<h3>Infinite Loops</h3>
+
+<p>PlayMaker follows events so you can chain together multiple states/actions in a single frame. E.g., An event can trigger a state transition; the new state can run some actions and send another event and so on... all in one update.</p>
+
+<p>This is useful for doing a lot of work in a single frame, but sometimes you can accidentally create infinite loops that would crash Unity!</p>
+
+<p>As a precaution, if a loop exceeds 1000 iterations PlayMaker will break out of the loop and log this error:</p>
+
+<p><em>Loop count exceeded maximum: 1000 Default is 1000. Override in Fsm Inspector.</em></p>
+
+<p>If it&#39;s your intention to loop more than 1000 times you can override this limit in the&nbsp;<a href="fsm-inspector.html" rel="nofollow noopener noreferrer">FSM Inspector</a>.</p>
+
+<p>However, if the loop is unintentional, you can use a&nbsp;<a href="next-frame-event.html" rel="nofollow noopener noreferrer">Next Frame Event</a>&nbsp;to break out of the infinite loop. This tells PlayMaker that you&#39;ve finished work for this frame, and should continue in the next frame.</p>
+
+<p>Example:</p>
+
+<p>These states create an infinite loop:</p>
+
+<p><img border="0" src="images/manual/InfiniteLoop.png" title=""  /></p>
+
+<p>Break out of the infinite loop with a Next Frame Event:</p>
+
+<p><img border="0" src="images/manual/InfiniteLoop_FIXED.png" title=""  /></p>
+
+<h4>Animation Events</h4>
+
+<p>You can use Unity&#39;s Animation window to send events to FSMs.</p>
+
+<p>See&nbsp;<a href="sending-animation-events-to-an-fsm.html" rel="nofollow noopener noreferrer">Sending Animation Events to an FSM</a>.</p>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr><td><p>&nbsp;</p></td></tr>
+        </table>       
+        <div id="footer">
+		    <div id="copyright">copyright HutongGames, LLC. All rights reserved.</div>
+	    </div>
+    </div>
+    <script type="text/javascript">
+	    document.body.style.backgroundColor = "#444";
+        document.body.style.backgroundImage = "none";
+	    document.body.style.height = "100%";
+	    $("#mainArea").css("padding", "0px");
+	    $("#mainArea").css("margin", "0px");
+	    $("#contentWikiView").css("margin", "0px");
+	    $(document).ready(function() {
+            $("#container #paramRow").filter(":even").css("background-color", "#f2f2f2");
+            $("#container #paramRow").filter(":odd").css("background-color", "#f9f9f9");
+            $("#container #nameDesc").filter(":even").css("background-color", "#f2f2f2");
+            $("#container #nameDesc").filter(":odd").css("background-color", "#f9f9f9");
+        },0)
+    </script>
+</div>
+</body>
+</html>

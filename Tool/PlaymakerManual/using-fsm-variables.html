@@ -1,0 +1,159 @@
+<!DOCTYPE html> 
+<html xmlns:fb>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Using FSM Variables</title>
+	<link href="css/main.css" rel="stylesheet" type="text/css" />
+    <script src="js/jquery.min.js"></script>
+</head>
+<body>
+	<div id="page">
+		<div id="container">
+			<div id = "hutongHeader">
+				<a href="http://hutonggames.com/index.html"><img src="http://hutonggames.com/images/playMaker.png"/></a>  
+				<a href="http://hutonggames.com/company.html"><img src="http://hutonggames.com/images/hutongGamesSmall.png" id="companyLogo"/></a>
+				<div id="socialLinks">
+					<a href="http://www.facebook.com/pages/Hutong-Games-LLC/163141367059519" target="_blank">
+					<img src="http://www.hutonggames.com/images/fb.png" width="32" height="32" alt="facebook" /></a>
+					<a href="http://twitter.com/hutonggames" target="_blank">
+					<img src="http://www.hutonggames.com/images/twitter.png" width="32" height="32" alt="twitter" /></a>
+					<a href="http://www.youtube.com/user/HutongGamesLLC" target="_blank">
+					<img src="http://www.hutonggames.com/images/youtube.png" width="32" height="32" alt="youtube" /></a>
+				</div>
+				<div id = "mainMenu">
+                    <ul>
+                        <li><a href="http://hutonggames.com/index.html">Home</a></li>
+                        <li><a href="http://hutonggames.com/store.html">Store</a></li>
+                        <li><a href="http://hutonggames.com/showcase.html">Showcase</a></li>
+                        <li><a href="http://hutonggames.com/tutorials.html">Tutorials</a></li>
+                        <li><a href="http://hutonggames.com/playmakerforum/index.php">Forums</a></li>
+                        <li><a href="playmaker-manual.html">Manual</a></li>
+                        <li><a href="https://hutonggames.fogbugz.com/default.asp?W546">Wiki</a></li>
+                        <li><a href="http://hutonggames.com/company.html">About Us</a></li>
+                    </ul>
+                </div>
+			</div>
+            <table id="wiki-page-breadcrumbs-container">
+		        <tr>
+			        <td class="wiki-page-breadcrumbs">
+				        <a href="index.html" title = "Home">Home</a>
+                        <span class="wikinav-breadcrumb-separator">»</span><a href="api-reference.html" title="API Reference" class="">API Reference</a><span class="wikinav-breadcrumb-separator">»</span><a href="writing-custom-actions.html" title="Writing Custom Actions" class="">Writing Custom Actions</a><span class="wikinav-breadcrumb-separator">»</span><a href="using-fsm-variables.html" title="Using FSM Variables" class="">Using FSM Variables</a>
+			        </td>
+		        </tr>
+	        </table>
+		    <table id="main-columns">
+			    <tr><td id="wiki-page-nav">
+				    <div class="wiki-page-browse-menu-title">Index</div>
+				    <ul class="wiki-page-browse-menu">
+					    <li><a href="installation.html" class="">Installation</a></li>
+					    <li><a href="core-concepts.html" class="">Core Concepts</a></li>
+					    <li><a href="user-interface.html" class="">User Interface</a></li>
+					    <li><a href="keyboard-shortcuts.html" class="">Shortcuts</a></li>
+					    <li><a href="editing-basics.html" class="">Editing Basics</a></li>
+					    <li><a href="samples.html" class="">Samples</a></li>
+					    <li><a href="debugging.html" class="">Debugging</a></li>
+					    <li><a href="action-reference.html" class="">Action Reference</a></li>
+					    <li><a href="networking.html" class="">Networking</a></li>
+					    <li><a href="api-reference.html" class="">API Reference</a></li>
+					    <li><a href="online-resources.html" class="">Online Resources</a></li>
+					    <li><a href="hints-and-tips.html" class="">Hints And Tips</a></li>
+					    <li><a href="known-issues.html" class="">Known Issues</a></li>
+					    <li><a href="release-notes.html" class="">Release Notes</a></li>
+					    <li><a href="frequently-asked-questions.html" class="">FAQ</a></li>
+				    </ul>
+			    </td>
+                <td id="body">
+					<div id="wiki-page-content">
+                        <h1>Using FSM Variables</h1>
+                        <div class="article-content">
+                        <p>
+	Fsm Variables allow the use of named variables instead of hard-coded values as action parameters. See&nbsp;<a href="variables.html" rel="nofollow">Fsm Variables</a>.</p>
+<p>
+	For example:</p>
+<p>
+	Instead of:</p>
+<p>
+	<hr/>public&nbsp;float&nbsp;speed;<hr/></p>
+<p>
+	Use:</p>
+<p>
+	<input plugin_type="codesnippet" plugin_data="{&#39;Version&#39;:&#39;0&#39;, &#39;ixWikiPage&#39;:&#39;354&#39;, &#39;fOverflowScroll&#39;:&#39;False&#39;, &#39;fIncludeLineNumbers&#39;:&#39;False&#39;, &#39;nRevision&#39;:&#39;15&#39;, &#39;sContent&#39;:&#39;public FsmFloat speed;&#39;}" plugin_content="" type="hidden"  /></p>
+<p>
+	The user now has the option to enter a speed value or to choose a named Float Variable for the speed. The variable can be manipulated by other&nbsp;<a class="uvb" href="actions.html" rel="nofollow">actions</a>, exposed in the&nbsp;<a class="uvb" href="playmakerfsm-inspector.html" rel="nofollow">PlayMakerFsm Inspector</a>, or get/set by other FSMs.</p>
+<p>
+	<em>Note</em>: when using an FsmVar, make sure you update the value before using it:</p>
+<p>
+	<hr/>&nbsp;MyFsmVar.UpdateValue();<br/>&nbsp;...&nbsp;=&nbsp;MyFsmVar.GetValue());<hr/></p>
+<h4>
+	Value Property</h4>
+<p>
+	You can get/set the value of an Fsm Variable using the Value property.</p>
+<p>
+	For example:</p>
+<p>
+	<input plugin_type="codesnippet" plugin_data="{&#39;Version&#39;:&#39;0&#39;, &#39;ixWikiPage&#39;:&#39;354&#39;, &#39;fOverflowScroll&#39;:&#39;False&#39;, &#39;fIncludeLineNumbers&#39;:&#39;False&#39;, &#39;nRevision&#39;:&#39;15&#39;, &#39;sContent&#39;:&#39;speed.Value = 10;\r\n\r\nlives.Value -= 1;&#39;}" plugin_content="" type="hidden"  /></p>
+<h4>
+	Default Values</h4>
+<p>
+	You should set variables to default values in the Reset() function. The user can reset the action at any time using the Settings Menu in the&nbsp;<a class="uvb" href="action-editor.html" rel="nofollow">Action Editor</a>. Reset() should set variables to sensible default values.</p>
+<p>
+	Most Fsm Variables have assignment overrides so you can just say, for example: speed = 10;</p>
+<p>
+	NOTE: You should only use this override in the Reset function since it makes a new instance of the variable.</p>
+<h4>
+	FsmOwnerDefault</h4>
+<p>
+	The FsmOwnerDefault type is a little more complicated. It is generally used on Actions that need a Game Object target. An FsmOwnerDefault variable lets the user choose either the Owner of the FSM (the default) or another Game Object as the target.</p>
+<p>
+	To get the user&#39;s choice use Fsm.GetOwnerDefaultTarget():</p>
+<p>
+	<hr/>public&nbsp;FsmOwnerDefault&nbsp;gameObject;<br/><br/>GameObject&nbsp;go&nbsp;=&nbsp;Fsm.GetOwnerDefaultTarget(gameObject);<hr/></p>
+<p>
+	NOTE: You will need to check if go is null before&nbsp;proceeding.</p>
+<h4>
+	Variable Dropdown</h4>
+<p>
+	If an action parameter should present a dropdown to select a variable (e.g., to store a value in), use the UIHint Attribute with UIHint.Variable.</p>
+<p>
+	For example:</p>
+<p>
+	<hr/>[UIHint(UIHint.Variable)]<br/><br/>public&nbsp;FsmFloat&nbsp;storeSpeed;<hr/></p>
+<p>
+	See also:&nbsp;<a href="action-attributes.html" rel="nofollow">Action Attributes</a>.</p>
+<h4>
+	IsNone</h4>
+<p>
+	Fsm Variables are&nbsp;guaranteed&nbsp;not to be null at runtime. To check if the user selected None in the UI, use the IsNone property.</p>
+<p>
+	NOTE: The Fsm Variable is guaranteed not to be null, but its Value can be null! E.g., fsmGameObjectVariable.Value can be null.</p>
+<p>
+	&nbsp;</p>
+<p>
+	&nbsp;</p>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr><td><p>&nbsp;</p></td></tr>
+        </table>       
+        <div id="footer">
+		    <div id="copyright">copyright HutongGames, LLC. All rights reserved.</div>
+	    </div>
+    </div>
+    <script type="text/javascript">
+	    document.body.style.backgroundColor = "#444";
+        document.body.style.backgroundImage = "none";
+	    document.body.style.height = "100%";
+	    $("#mainArea").css("padding", "0px");
+	    $("#mainArea").css("margin", "0px");
+	    $("#contentWikiView").css("margin", "0px");
+	    $(document).ready(function() {
+            $("#container #paramRow").filter(":even").css("background-color", "#f2f2f2");
+            $("#container #paramRow").filter(":odd").css("background-color", "#f9f9f9");
+            $("#container #nameDesc").filter(":even").css("background-color", "#f2f2f2");
+            $("#container #nameDesc").filter(":odd").css("background-color", "#f9f9f9");
+        },0)
+    </script>
+</div>
+</body>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html> 
+<html xmlns:fb>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Enum Variables</title>
+	<link href="css/main.css" rel="stylesheet" type="text/css" />
+    <script src="js/jquery.min.js"></script>
+</head>
+<body>
+	<div id="page">
+		<div id="container">
+			<div id = "hutongHeader">
+				<a href="http://hutonggames.com/index.html"><img src="http://hutonggames.com/images/playMaker.png"/></a>  
+				<a href="http://hutonggames.com/company.html"><img src="http://hutonggames.com/images/hutongGamesSmall.png" id="companyLogo"/></a>
+				<div id="socialLinks">
+					<a href="http://www.facebook.com/pages/Hutong-Games-LLC/163141367059519" target="_blank">
+					<img src="http://www.hutonggames.com/images/fb.png" width="32" height="32" alt="facebook" /></a>
+					<a href="http://twitter.com/hutonggames" target="_blank">
+					<img src="http://www.hutonggames.com/images/twitter.png" width="32" height="32" alt="twitter" /></a>
+					<a href="http://www.youtube.com/user/HutongGamesLLC" target="_blank">
+					<img src="http://www.hutonggames.com/images/youtube.png" width="32" height="32" alt="youtube" /></a>
+				</div>
+				<div id = "mainMenu">
+                    <ul>
+                        <li><a href="http://hutonggames.com/index.html">Home</a></li>
+                        <li><a href="http://hutonggames.com/store.html">Store</a></li>
+                        <li><a href="http://hutonggames.com/showcase.html">Showcase</a></li>
+                        <li><a href="http://hutonggames.com/tutorials.html">Tutorials</a></li>
+                        <li><a href="http://hutonggames.com/playmakerforum/index.php">Forums</a></li>
+                        <li><a href="playmaker-manual.html">Manual</a></li>
+                        <li><a href="https://hutonggames.fogbugz.com/default.asp?W546">Wiki</a></li>
+                        <li><a href="http://hutonggames.com/company.html">About Us</a></li>
+                    </ul>
+                </div>
+			</div>
+            <table id="wiki-page-breadcrumbs-container">
+		        <tr>
+			        <td class="wiki-page-breadcrumbs">
+				        <a href="index.html" title = "Home">Home</a>
+                        <span class="wikinav-breadcrumb-separator">»</span><a href="core-concepts.html" title="Core Concepts" class="">Core Concepts</a><span class="wikinav-breadcrumb-separator">»</span><a href="variables.html" title="Variables" class="">Variables</a><span class="wikinav-breadcrumb-separator">»</span><a href="enum-variables.html" title="Enum Variables" class="">Enum Variables</a>
+			        </td>
+		        </tr>
+	        </table>
+		    <table id="main-columns">
+			    <tr><td id="wiki-page-nav">
+				    <div class="wiki-page-browse-menu-title">Index</div>
+				    <ul class="wiki-page-browse-menu">
+					    <li><a href="installation.html" class="">Installation</a></li>
+					    <li><a href="core-concepts.html" class="">Core Concepts</a></li>
+					    <li><a href="user-interface.html" class="">User Interface</a></li>
+					    <li><a href="keyboard-shortcuts.html" class="">Shortcuts</a></li>
+					    <li><a href="editing-basics.html" class="">Editing Basics</a></li>
+					    <li><a href="samples.html" class="">Samples</a></li>
+					    <li><a href="debugging.html" class="">Debugging</a></li>
+					    <li><a href="action-reference.html" class="">Action Reference</a></li>
+					    <li><a href="networking.html" class="">Networking</a></li>
+					    <li><a href="api-reference.html" class="">API Reference</a></li>
+					    <li><a href="online-resources.html" class="">Online Resources</a></li>
+					    <li><a href="hints-and-tips.html" class="">Hints And Tips</a></li>
+					    <li><a href="known-issues.html" class="">Known Issues</a></li>
+					    <li><a href="release-notes.html" class="">Release Notes</a></li>
+					    <li><a href="frequently-asked-questions.html" class="">FAQ</a></li>
+				    </ul>
+			    </td>
+                <td id="body">
+					<div id="wiki-page-content">
+                        <h1>Enum Variables</h1>
+                        <div class="article-content">
+                        <p>An Enum Variable can store Enum values. Enums (Enumerations) are an efficient way to define a set of named constants as a type.</p>
+
+<p>E.g., the System.DayOfWeek type defines: Friday, Saturday, Sunday, Monday, Tuesday, Wednesday, Thursday.</p>
+
+<p>This is much more convenient and legible than using 0,1,2,3,4,5,6 to represent the days of the week!</p>
+
+<p>You can define your own Enums, specific to your project. C# example:</p>
+
+<p><hr/>namespace&nbsp;Chess<br/>{<br/>&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;enum&nbsp;PlayerColor&nbsp;{&nbsp;White&nbsp;=&nbsp;1,&nbsp;Black&nbsp;=&nbsp;-1&nbsp;}<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;enum&nbsp;PieceType&nbsp;{&nbsp;King&nbsp;=&nbsp;7,&nbsp;Queen&nbsp;=&nbsp;6,&nbsp;Rook&nbsp;=&nbsp;5,&nbsp;Bishop&nbsp;=&nbsp;4,&nbsp;Knight&nbsp;=&nbsp;3,&nbsp;Pawn&nbsp;=&nbsp;2&nbsp;}<br/>}<hr/></p>
+
+<p>You can now access Chess.PieceType using an enum variable. Then, for example, you could use&nbsp;<a class="uvb" href="enum-switch.html" rel="nofollow noopener noreferrer">Enum Switch</a>&nbsp;to branch behaviour based on the piece type.</p>
+
+<p>Playmaker also provides an&nbsp;<a href="https://github.com/jeanfabre/PlayMakerCustomActions_U4/blob/master/PlayMaker/Ecosystem/Custom%20Packages/Utils/EnumCreatorWizard.unitypackage?raw=true" rel="nofollow noopener noreferrer" target="_blank">Enum Creator</a>&nbsp;wizard to generate this code for you ( beta ).</p>
+
+<p>When you&nbsp;<a class="uvb" href="variables-manager.html" rel="nofollow noopener noreferrer">create an enum variable</a>&nbsp;you have to further select the specific enum type. The enum type menu lets you explore all the types available in your project. You can poke around in this menu, but most of the time you should have some idea of what you&#39;re looking for! Many useful enums are described in the&nbsp;<a href="http://docs.unity3d.com/ScriptReference/index.html" rel="nofollow noopener noreferrer" target="_blank">Unity Scripting Reference</a>.</p>
+
+<h3>Examples</h3>
+
+<h4>Day Of Week</h4>
+
+<div id="linkList">
+<p>This example uses an Enum Variable of type System.DayOfWeek: <strong>today</strong></p>
+
+<p><img border="0" src="images/manual/EditEnumVariable.png" title=""  /></p>
+
+<p>The&nbsp;<a class="uvb" href="enum-switch.html" rel="nofollow noopener noreferrer">Enum Switch</a>&nbsp;action sends events based on what day of the week <strong>today </strong>is.</p>
+
+<p><img border="0" src="images/manual/EnumExample_DayOfWeek.png" title=""  /></p>
+
+<p>You can set <strong>today </strong>using&nbsp;<a class="uvb" href="set-enum-value.html" rel="nofollow noopener noreferrer">Set Enum Value</a>:</p>
+
+<p><img border="0" src="images/manual/EnumExample_SetDayOfWeek.png" title=""  /></p>
+
+<ul>
+	<li>&nbsp;</li>
+</ul>
+
+<p>&nbsp;</p>
+
+<h4>See Also:</h4>
+
+<ul>
+	<li><a class="uvb" href="enum-actions.html" rel="nofollow noopener noreferrer">Enum Actions</a></li>
+	<li><a class="uvb" href="variables-manager.html" rel="nofollow noopener noreferrer">Variables Manager</a></li>
+	<li><a class="uvb" href="action-editor.html" rel="nofollow noopener noreferrer">Action Editor</a></li>
+	<li><a href="https://github.com/jeanfabre/PlayMakerCustomActions_U4/blob/master/PlayMaker/Ecosystem/Custom%20Packages/Utils/EnumCreatorWizard.unitypackage?raw=true" rel="nofollow noopener noreferrer" target="_blank">Enum Creator (beta)</a></li>
+</ul>
+</div>
+
+<p>&nbsp;</p>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr><td><p>&nbsp;</p></td></tr>
+        </table>       
+        <div id="footer">
+		    <div id="copyright">copyright HutongGames, LLC. All rights reserved.</div>
+	    </div>
+    </div>
+    <script type="text/javascript">
+	    document.body.style.backgroundColor = "#444";
+        document.body.style.backgroundImage = "none";
+	    document.body.style.height = "100%";
+	    $("#mainArea").css("padding", "0px");
+	    $("#mainArea").css("margin", "0px");
+	    $("#contentWikiView").css("margin", "0px");
+	    $(document).ready(function() {
+            $("#container #paramRow").filter(":even").css("background-color", "#f2f2f2");
+            $("#container #paramRow").filter(":odd").css("background-color", "#f9f9f9");
+            $("#container #nameDesc").filter(":even").css("background-color", "#f2f2f2");
+            $("#container #nameDesc").filter(":odd").css("background-color", "#f9f9f9");
+        },0)
+    </script>
+</div>
+</body>
+</html>

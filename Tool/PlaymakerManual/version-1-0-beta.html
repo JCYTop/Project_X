@@ -1,0 +1,1204 @@
+<!DOCTYPE html> 
+<html xmlns:fb>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Version 1.0 Beta</title>
+	<link href="css/main.css" rel="stylesheet" type="text/css" />
+    <script src="js/jquery.min.js"></script>
+</head>
+<body>
+	<div id="page">
+		<div id="container">
+			<div id = "hutongHeader">
+				<a href="http://hutonggames.com/index.html"><img src="http://hutonggames.com/images/playMaker.png"/></a>  
+				<a href="http://hutonggames.com/company.html"><img src="http://hutonggames.com/images/hutongGamesSmall.png" id="companyLogo"/></a>
+				<div id="socialLinks">
+					<a href="http://www.facebook.com/pages/Hutong-Games-LLC/163141367059519" target="_blank">
+					<img src="http://www.hutonggames.com/images/fb.png" width="32" height="32" alt="facebook" /></a>
+					<a href="http://twitter.com/hutonggames" target="_blank">
+					<img src="http://www.hutonggames.com/images/twitter.png" width="32" height="32" alt="twitter" /></a>
+					<a href="http://www.youtube.com/user/HutongGamesLLC" target="_blank">
+					<img src="http://www.hutonggames.com/images/youtube.png" width="32" height="32" alt="youtube" /></a>
+				</div>
+				<div id = "mainMenu">
+                    <ul>
+                        <li><a href="http://hutonggames.com/index.html">Home</a></li>
+                        <li><a href="http://hutonggames.com/store.html">Store</a></li>
+                        <li><a href="http://hutonggames.com/showcase.html">Showcase</a></li>
+                        <li><a href="http://hutonggames.com/tutorials.html">Tutorials</a></li>
+                        <li><a href="http://hutonggames.com/playmakerforum/index.php">Forums</a></li>
+                        <li><a href="playmaker-manual.html">Manual</a></li>
+                        <li><a href="https://hutonggames.fogbugz.com/default.asp?W546">Wiki</a></li>
+                        <li><a href="http://hutonggames.com/company.html">About Us</a></li>
+                    </ul>
+                </div>
+			</div>
+            <table id="wiki-page-breadcrumbs-container">
+		        <tr>
+			        <td class="wiki-page-breadcrumbs">
+				        <a href="index.html" title = "Home">Home</a>
+                        <span class="wikinav-breadcrumb-separator">»</span><a href="release-notes.html" title="Release Notes" class="">Release Notes</a><span class="wikinav-breadcrumb-separator">»</span><a href="version-1-0-beta.html" title="Version 1.0 Beta" class="">Version 1.0 Beta</a>
+			        </td>
+		        </tr>
+	        </table>
+		    <table id="main-columns">
+			    <tr><td id="wiki-page-nav">
+				    <div class="wiki-page-browse-menu-title">Index</div>
+				    <ul class="wiki-page-browse-menu">
+					    <li><a href="installation.html" class="">Installation</a></li>
+					    <li><a href="core-concepts.html" class="">Core Concepts</a></li>
+					    <li><a href="user-interface.html" class="">User Interface</a></li>
+					    <li><a href="keyboard-shortcuts.html" class="">Shortcuts</a></li>
+					    <li><a href="editing-basics.html" class="">Editing Basics</a></li>
+					    <li><a href="samples.html" class="">Samples</a></li>
+					    <li><a href="debugging.html" class="">Debugging</a></li>
+					    <li><a href="action-reference.html" class="">Action Reference</a></li>
+					    <li><a href="networking.html" class="">Networking</a></li>
+					    <li><a href="api-reference.html" class="">API Reference</a></li>
+					    <li><a href="online-resources.html" class="">Online Resources</a></li>
+					    <li><a href="hints-and-tips.html" class="">Hints And Tips</a></li>
+					    <li><a href="known-issues.html" class="">Known Issues</a></li>
+					    <li><a href="release-notes.html" class="">Release Notes</a></li>
+					    <li><a href="frequently-asked-questions.html" class="">FAQ</a></li>
+				    </ul>
+			    </td>
+                <td id="body">
+					<div id="wiki-page-content">
+                        <h1>Version 1.0 Beta</h1>
+                        <div class="article-content">
+                        <p>
+	&nbsp;</p>
+<h3>
+	RC 5</h3>
+<p>
+	02.19.2011</p>
+<p>
+	Final pass on all Actions before 1.0 release. Mainly Tooltip and parameter cleanup.</p>
+<p>
+	<strong><em>Backup your project and check the log after loading a scene for any changes</em>.&nbsp;</strong></p>
+<p>
+	Look for errors that an action couldn&#39;t be updated. Warnings are mostly informational, but are worth scanning too.</p>
+<h4>
+	Bug Fixes</h4>
+<ul>
+	<li>
+		Fixed: MovieTexture actions wouldn&#39;t compile on iOS and had to be manually removed. Now #ifdef&#39;d out.</li>
+	<li>
+		Fixed: &quot;Game object requires XXXX component&quot; error check didn&#39;t show actual type.&nbsp;</li>
+	<li>
+		Fixed: Copy/Paste would throw a Found Old Data warning.</li>
+	<li>
+		Fixed: State labels for multiple FSMs on a Game Object would draw on top of each other.</li>
+	<li>
+		Fixed: Realtime Error Checker didn&#39;t check some parameters until the State Inspector was clicked.</li>
+</ul>
+<h4>
+	Changes</h4>
+<ul>
+	<li>
+		Expose variables in the PlayMakerFSM Inspector by checking Inspector in the Variables Manager. Also added a tooltip field.</li>
+	<li>
+		Get/Set custom Event data actions. Makes it easier for FSMs to communicate without needing to know too much about each other.</li>
+	<li>
+		Added browse buttons for FsmName, Event and Variable fields in State Machine actions. Only available if the FSM is known at edit time.</li>
+	<li>
+		Button, Label, Horizontal Slider, and Vertical Slider are gone! Replaced with GUI Button, GUI Label etc. with parameters more consistent with GUILayout actions.</li>
+	<li>
+		Renamed some other actions. Loader should convert...</li>
+	<li>
+		Made Set Mouse Cursor (was MouseCursor) persistent, so you can set the cursor texture and it sticks until you change it.</li>
+	<li>
+		Added Apply Globally option to&nbsp;<a href="scale-gui.html" rel="nofollow">Scale GUI</a>&nbsp;and&nbsp;<a href="rotate-gui.html" rel="nofollow">Rotate GUI</a>. This lets you easily scale/rotate the whole GUI.</li>
+	<li>
+		Added EveryFrame option to&nbsp;<a href="set-guitext.html" rel="nofollow">Set GUIText</a>.</li>
+	<li>
+		Added PerSecond option to&nbsp;<a href="vector3-add.html" rel="nofollow">Vector3 Add</a>.</li>
+	<li>
+		Added Vector3 position to&nbsp;<a href="move-towards.html" rel="nofollow">Move Towards</a>.</li>
+	<li>
+		Added option to turn off real-time Error Checker in Preferences. If larger projects start to slow down in the editor, turn off real-time error checking and use the manual Refresh in the&nbsp;<a href="error-check-window.html" rel="nofollow">ErrorCheck&nbsp;</a>window instead.</li>
+	<li>
+		Updated Action Reference and help links from Action Editors.</li>
+</ul>
+<h4>
+	New Actions</h4>
+<ul>
+	<li>
+		CharacterController
+		<ul>
+			<li>
+				<a href="get-controller-collision-flags.html" rel="nofollow">Get Controller Collision Flags</a></li>
+			<li>
+				<a href="get-controller-hit-info.html" rel="nofollow">Get Controller Hit Info</a>&nbsp;(moved from Physics).</li>
+			<li>
+				<a href="controller-move.html" rel="nofollow">Controller Move</a></li>
+			<li>
+				<a href="controller-simple-move.html" rel="nofollow">Controller Simple Move</a></li>
+		</ul>
+	</li>
+	<li>
+		Convert
+		<ul>
+			<li>
+				<a href="convert-bool-to-color.html" rel="nofollow">Convert Bool To Color</a></li>
+			<li>
+				<a href="convert-bool-to-float.html" rel="nofollow">Convert Bool To Float</a></li>
+			<li>
+				<a href="convert-bool-to-int.html" rel="nofollow">Convert Bool To Int</a></li>
+		</ul>
+	</li>
+	<li>
+		Debug
+		<ul>
+			<li>
+				<a href="debug-vector3.html" rel="nofollow">Debug Vector3</a></li>
+			<li>
+				<a href="draw-debug-line.html" rel="nofollow">Draw Debug Line</a></li>
+			<li>
+				<a href="draw-debug-ray.html" rel="nofollow">Draw Debug Ray</a></li>
+		</ul>
+	</li>
+	<li>
+		GUI
+		<ul>
+			<li>
+				<a href="gui-box.html" rel="nofollow">GUI Box</a></li>
+		</ul>
+	</li>
+	<li>
+		GUILayout
+		<ul>
+			<li>
+				<a href="guilayout-begin-centered.html" rel="nofollow">GUILayout Begin Centered</a></li>
+			<li>
+				<a href="guilayout-end-centered.html" rel="nofollow">GUILayout End Centered</a></li>
+			<li>
+				<a href="use-guilayout.html" rel="nofollow">Use GUILayout&nbsp;</a>(lets you turn off GUILayout for performance gain on iOS)</li>
+		</ul>
+	</li>
+	<li>
+		Logic:
+		<ul>
+			<li>
+				<a href="bool-changed.html" rel="nofollow">Bool Changed</a></li>
+			<li>
+				<a href="float-changed.html" rel="nofollow">Float Changed</a></li>
+			<li>
+				<a href="float-switch.html" rel="nofollow">Float Switch</a></li>
+			<li>
+				<a href="game-object-changed.html" rel="nofollow">Game Object Changed</a></li>
+			<li>
+				<a href="int-changed.html" rel="nofollow">Int Changed</a></li>
+			<li>
+				<a href="string-contains.html" rel="nofollow">String Contains</a></li>
+		</ul>
+	</li>
+	<li>
+		StateMachine
+		<ul>
+			<li>
+				<a href="get-event-info.html" rel="nofollow">Get Event Info</a></li>
+			<li>
+				<a href="get-fsm-color.html" rel="nofollow">Get Fsm Color</a></li>
+			<li>
+				<a href="get-fsm-vector3.html" rel="nofollow">Get Fsm Vector3</a></li>
+			<li>
+				<a href="set-event-data.html" rel="nofollow">Set Event Data</a></li>
+			<li>
+				<a href="set-fsm-color.html" rel="nofollow">Set Fsm Color</a></li>
+			<li>
+				<a href="set-fsm-vector3.html" rel="nofollow">Set Fsm Vector3</a></li>
+		</ul>
+	</li>
+</ul>
+<h3>
+	RC 4&nbsp;</h3>
+<p>
+	02.14.2011</p>
+<h4>
+	Bug Fixes</h4>
+<ul>
+	<li>
+		Fixed: Tooltips on action parameters were broken when a variable popup was used. Can now add more tooltips...</li>
+	<li>
+		Fixed: Game object references in FsmOwnerDefault variables didn&#39;t count towards the Used tally in the Variables Manager.</li>
+	<li>
+		Fixed: SetRotation was missing a Space parameter.</li>
+	<li>
+		Fixed: GetRotation didn&#39;t store to vector when set to world space.</li>
+</ul>
+<h4>
+	Changes</h4>
+<ul>
+	<li>
+		New preference: Select game objects with FSMs in Game View. Lets you click on a game object in a running game to see its FSM. If you don&#39;t want to switch, Lock the graph view, or turn off this option in Preferences.</li>
+	<li>
+		<a href="add-force.html" rel="nofollow">AddForce</a>,&nbsp;<a href="add-torque.html" rel="nofollow">AddTorque:&nbsp;</a>Added warning&nbsp;if the target has no rigid body.</li>
+	<li>
+		<a href="fsm-state-test.html" rel="nofollow">FsmStateTest</a>: FsmName and StateName are now string variables.</li>
+	<li>
+		<a href="get-button.html" rel="nofollow">GetButton</a>,&nbsp;<a href="get-button-down.html" rel="nofollow">GetButtonDown</a>,&nbsp;<a href="get-button-up.html" rel="nofollow">GetButtonUp</a>: ButtonName defaults to &quot;Fire1&quot; instead of blank.</li>
+	<li>
+		Moved Switch, Compare, and Test actions to the&nbsp;<a href="logic-actions.html" rel="nofollow">Logic&nbsp;</a>category.</li>
+	<li>
+		Made a Time category and moved&nbsp;<a href="scale-time.html" rel="nofollow">ScaleTime&nbsp;</a>and&nbsp;<a href="wait.html" rel="nofollow">Wait&nbsp;</a>as well as the new GetTimeInfo.</li>
+	<li>
+		Added a PerSecond option to&nbsp;<a href="float-add.html" rel="nofollow">FloatAdd</a>.</li>
+	<li>
+		Added an EveryFrame option to&nbsp;<a href="set-material-float.html" rel="nofollow">SetMaterialFloat</a>.</li>
+	<li>
+		Renamed some actions for more consistent naming conventions. The loader should update any saved actions automatically...</li>
+	<li>
+		Switch to State Inspector panel when selecting state in Variables Manager (from right click variable menu).</li>
+	<li>
+		Added color preferences for the debug lines used by LookAt and Raycast actions. Debug lines are visible in the Scene View or in the Game View with Gizmos enabled.</li>
+</ul>
+<h4>
+	New Actions</h4>
+<ul>
+	<li>
+		GameObject
+		<ul>
+			<li>
+				<a href="get-root.html" rel="nofollow">Get Root</a></li>
+		</ul>
+	</li>
+	<li>
+		Input
+		<ul>
+			<li>
+				<a href="reset-input-axes.html" rel="nofollow">Reset Input Axes</a></li>
+		</ul>
+	</li>
+	<li>
+		Logic
+		<ul>
+			<li>
+				<a href="fsm-state-switch.html" rel="nofollow">Fsm State Switch</a></li>
+			<li>
+				<a href="game-object-tag-switch.html" rel="nofollow">Tag Switch</a></li>
+		</ul>
+	</li>
+	<li>
+		Physics
+		<ul>
+			<li>
+				<a href="get-raycast-hit-info.html" rel="nofollow">Get Raycast Hit Info</a><br  />
+				<a href="raycast.html" rel="nofollow">Raycast</a></li>
+		</ul>
+	</li>
+	<li>
+		StateMachine
+		<ul>
+			<li>
+				<a href="broadcast-event.html" rel="nofollow">Broadcast Event</a></li>
+		</ul>
+	</li>
+	<li>
+		Transform
+		<ul>
+			<li>
+				<a href="get-angle-to-target.html" rel="nofollow">Get Angle To Target</a></li>
+		</ul>
+	</li>
+	<li>
+		Time
+		<ul>
+			<li>
+				<a href="get-time-info.html" rel="nofollow">Get Time Info</a></li>
+		</ul>
+	</li>
+</ul>
+<h3>
+	RC 3</h3>
+<p>
+	02.12.2011</p>
+<h4>
+	Bug Fixes</h4>
+<ul>
+	<li>
+		Fixed: Behaviour popup in action editor was broken by Unity 3.2 update, adding extra text that needed to be manually deleted.</li>
+</ul>
+<h4>
+	Changes</h4>
+<ul>
+	<li>
+		Added vector3 position to&nbsp;<a href="play-sound.html" rel="nofollow">Play Sound&nbsp;</a>and&nbsp;<a href="play-random-sound.html" rel="nofollow">Play Random Sound</a>.</li>
+	<li>
+		Added position, upVector, keepVertical, and debug options to&nbsp;<a href="look-at.html" rel="nofollow">Look At</a>. Also added SmoothLookAt action.</li>
+	<li>
+		Added audio to the MovieTexture sample.</li>
+</ul>
+<h4>
+	New Actions</h4>
+<ul>
+	<li>
+		Audio
+		<ul>
+			<li>
+				<a href="audio-mute.html" rel="nofollow">Audio Mute</a></li>
+			<li>
+				<a href="audio-pause.html" rel="nofollow">Audio Pause</a></li>
+			<li>
+				<a href="audio-play.html" rel="nofollow">Audio Play</a></li>
+			<li>
+				<a href="audio-stop.html" rel="nofollow">Audio Stop</a></li>
+			<li>
+				<a href="set-audio-clip.html" rel="nofollow">Set Audio Clip</a></li>
+			<li>
+				<a href="set-audio-loop.html" rel="nofollow">Set Audio Loop</a></li>
+			<li>
+				<a href="set-audio-pitch.html" rel="nofollow">Set Audio Pitch</a></li>
+			<li>
+				<a href="set-audio-volume.html" rel="nofollow">Set Audio Volume</a></li>
+		</ul>
+	</li>
+	<li>
+		Logic
+		<ul>
+			<li>
+				<a href="bool-all-true-action.html" rel="nofollow">Bool All True</a></li>
+			<li>
+				<a href="bool-any-true-action.html" rel="nofollow">Bool Any True</a></li>
+			<li>
+				<a href="bool-none-true.html" rel="nofollow">Bool None True</a></li>
+		</ul>
+	</li>
+	<li>
+		Movie
+		<ul>
+			<li>
+				<a href="movie-texture-audio-settings.html" rel="nofollow">Movie Texture Audio Settings</a></li>
+		</ul>
+	</li>
+	<li>
+		Transform
+		<ul>
+			<li>
+				<a href="smooth-look-at.html" rel="nofollow">Smooth Look At</a></li>
+			<li>
+				<a href="smooth-look-at-direction.html" rel="nofollow">Smooth Look At Direction</a></li>
+		</ul>
+	</li>
+	<li>
+		Vector3
+		<ul>
+			<li>
+				<a href="vector3-add.html" rel="nofollow">Vector3 Add</a></li>
+			<li>
+				<a href="vector3-subtract.html" rel="nofollow">Vector3 Subtract</a></li>
+		</ul>
+	</li>
+</ul>
+<h3>
+	RC 2</h3>
+<p>
+	02.12.2011</p>
+<p>
+	NOTE: Actions saved with older betas might not update correctly if the action scripts have changed since they were saved, but this should be less of a problem going forward...</p>
+<h4>
+	Bug Fixes</h4>
+<ul>
+	<li>
+		Fixed: Actions were reloaded in EditorWindow.OnFocus() even if the game was running. Bad bug - surprised this wasn&#39;t more obvious! Was probably hidden by the Unity bug where tabs didn&#39;t get OnFocus(), which was fixed in the 3.2 update (which should also fix the occasional loss of state machine views when docked).</li>
+	<li>
+		Fixed: NullReference error if PlayMakerFSM added to game object while game was running.</li>
+	<li>
+		Fixed:&nbsp;<a href="get-trigger-info.html" rel="nofollow">GetTriggerInfo&nbsp;</a>Physics Material Name was broken.</li>
+</ul>
+<h4>
+	Changes</h4>
+<ul>
+	<li>
+		Made CompoundArray attribute that lets you interleave arrays in the action editor. This lets you build nice UIs for switches, mixers, random weights etc.</li>
+	<li>
+		Added weights to&nbsp;<a href="play-random-sound.html" rel="nofollow">PlayRandomSound</a>,&nbsp;<a href="select-random-color.html" rel="nofollow">SelectRandomColor</a>,&nbsp;<a href="select-random-string.html" rel="nofollow">SelectRandomString</a>,&nbsp;<a href="select-random-game-object.html" rel="nofollow">SelectRandomGameObject</a>,&nbsp;<a href="select-random-vector3.html" rel="nofollow">SelectRandomVector3</a>.</li>
+	<li>
+		Made new Level category and moved relevant actions there.</li>
+	<li>
+		Made animName an FsmString in all animation actions.</li>
+	<li>
+		Rewrote the code to keep actions that have changed since the FSM was saved.</li>
+</ul>
+<h4>
+	New Actions</h4>
+<ul>
+	<li>
+		Animation
+		<ul>
+			<li>
+				<a href="add-animation-clip.html" rel="nofollow">AddAnimationClip</a></li>
+		</ul>
+	</li>
+	<li>
+		GameObject
+		<ul>
+			<li>
+				<a href="get-name.html" rel="nofollow">GetGameObjectName</a></li>
+		</ul>
+	</li>
+	<li>
+		Input
+		<ul>
+			<li>
+				<a href="get-axis-vector.html" rel="nofollow">GetAxisVector</a></li>
+		</ul>
+	</li>
+	<li>
+		Screen
+		<ul>
+			<li>
+				<a href="get-screen-width.html" rel="nofollow">GetScreenWidth</a></li>
+			<li>
+				<a href="get-screen-height.html" rel="nofollow">GetScreenHeight</a></li>
+		</ul>
+	</li>
+	<li>
+		Math
+		<ul>
+			<li>
+				<a href="int-switch.html" rel="nofollow">IntSwitch</a></li>
+		</ul>
+	</li>
+	<li>
+		Matrix
+		<ul>
+			<li>
+				<a href="transform-point.html" rel="nofollow">TransformPoint</a></li>
+			<li>
+				<a href="transform-direction.html" rel="nofollow">TransformDirection</a></li>
+			<li>
+				<a href="inverse-transform-point.html" rel="nofollow">InverseTransformPoint</a></li>
+			<li>
+				<a href="inverse-transform-direction.html" rel="nofollow">InverseTransformDirection</a></li>
+		</ul>
+	</li>
+	<li>
+		Movie
+		<ul>
+			<li>
+				<a href="play-movie-texture.html" rel="nofollow">PlayMovieTexture</a></li>
+			<li>
+				<a href="pause-movie-texture.html" rel="nofollow">PauseMovieTexture</a></li>
+			<li>
+				<a href="stop-movie-texture.html" rel="nofollow">StopMovieTexture</a></li>
+		</ul>
+	</li>
+	<li>
+		StateMachine
+		<ul>
+			<li>
+				<a href="get-fsm-state.html" rel="nofollow">GetFsmState</a></li>
+			<li>
+				<a href="send-random-event.html" rel="nofollow">SendRandomEvent</a></li>
+		</ul>
+	</li>
+	<li>
+		String
+		<ul>
+			<li>
+				<a href="string-switch.html" rel="nofollow">StringSwitch</a></li>
+		</ul>
+	</li>
+	<li>
+		Vector3
+		<ul>
+			<li>
+				<a href="vector3-interpolate.html" rel="nofollow">Vector3Interpolate</a></li>
+			<li>
+				<a href="vector3-invert.html" rel="nofollow">Vector3Invert</a></li>
+			<li>
+				<a href="vector3-clamp-magnitude.html" rel="nofollow">Vector3ClampMagnitude</a></li>
+		</ul>
+	</li>
+</ul>
+<h3>
+	RC 1</h3>
+<p>
+	02.07.2011</p>
+<h4>
+	Bug Fixes</h4>
+<ul>
+	<li>
+		Fixed: Sometimes remaining actions on a state were executed after an action caused a transition to a new state. NOTE: this fix has the potential to change the behavior in old projects, but it is the expected behavior...</li>
+	<li>
+		Fixed: Converting old action data from previous betas could cause lots of null reference errors. Added more safeguards.</li>
+	<li>
+		Fixed: Infinite loop threshold could be accidentally set to a low or negative number, causing false infinite loop warnings.</li>
+	<li>
+		Fixed: String function parameter in&nbsp;<a href="send-message.html" rel="nofollow">SendMessage&nbsp;</a>and&nbsp;<a href="start-coroutine.html" rel="nofollow">StartCoroutine&nbsp;</a>actions was broken.</li>
+	<li>
+		Fixed: MaterialName parameter in&nbsp;<a href="get-collision-info.html" rel="nofollow">GetCollisionInfo</a>,&nbsp;<a href="get-trigger-info.html" rel="nofollow">GetTriggerInfo</a>&nbsp;and&nbsp;<a href="get-controller-hit-info.html" rel="nofollow">GetControllerHitInfo</a>&nbsp;actions was broken.</li>
+	<li>
+		Fixed: Unity.Object parameters and enum types were lost when attempting to upgrade Action that had changed since the FSM was saved.</li>
+	<li>
+		Fixed: Deleted events weren&#39;t removed from global transitions.</li>
+	<li>
+		Fixed:&nbsp;<a href="game-object-compare-tag.html" rel="nofollow">HasTag&nbsp;</a>storeResult was broken. Also wouldn&#39;t send False event when gameObject was null.</li>
+	<li>
+		Fixed: Show Preview setting and selected action category were not saved in the Action Browser.</li>
+</ul>
+<h4>
+	Changes</h4>
+<ul>
+	<li>
+		Foldouts for actions. Allows you to &quot;put away&quot; actions you&#39;re not working on and reduce clutter.</li>
+	<li>
+		Click on action name to select action and show move up/down buttons. Makes it much quicker to reorder actions.</li>
+	<li>
+		Right-click actions in Action Browser to add action to state.</li>
+	<li>
+		<a href="camera-fade-in.html" rel="nofollow">CameraFadeIn</a>/<a href="camera-fade-out.html" rel="nofollow">FadeOut</a>&nbsp;now supports alpha in the color and has a realtime toggle to ignore time scale (e.g., when paused).</li>
+	<li>
+		Added multiplier to&nbsp;<a href="get-axis.html" rel="nofollow">GetAxis&nbsp;</a>since most of the time you want to multiply be a speed.</li>
+	<li>
+		Added Vector3 support to relevant&nbsp;<a href="transform-actions.html" rel="nofollow">Transform&nbsp;</a>and&nbsp;<a href="physics-actions.html" rel="nofollow">Physics</a>&nbsp;actions.</li>
+	<li>
+		Added Vector3 support to&nbsp;<a href="create-object.html" rel="nofollow">CreateObject</a>.</li>
+	<li>
+		Added extra contact information to&nbsp;<a href="get-collision-info.html" rel="nofollow">GetCollisionInfo</a>&nbsp;and&nbsp;<a href="get-controller-hit-info.html" rel="nofollow">GetControllerHitInfo</a>.</li>
+	<li>
+		Changed center in&nbsp;<a href="add-explosion-force.html" rel="nofollow">AddExplosionForce&nbsp;</a>and&nbsp;<a href="explosion.html" rel="nofollow">Explosion&nbsp;</a>to Vector3 variable instead of game object.</li>
+	<li>
+		Added Must Be Visible flag to Find Closest.</li>
+	<li>
+		<a href="debug-actions.html" rel="nofollow">Debug&nbsp;</a>variable actions print &quot;None&quot; if no variable selected (instead of nothing).</li>
+	<li>
+		Added Color category and moved color actions there.</li>
+	<li>
+		Added link to video tutorials in main menu.</li>
+	<li>
+		Initialize FsmColor to black.</li>
+	<li>
+		More sample scenes!</li>
+</ul>
+<h4>
+	New Actions</h4>
+<ul>
+	<li>
+		Color
+		<ul>
+			<li>
+				<a href="color-interpolate.html" rel="nofollow">ColorInterpolate</a></li>
+		</ul>
+	</li>
+	<li>
+		GameObject
+		<ul>
+			<li>
+				OnGameObjectChange</li>
+		</ul>
+	</li>
+	<li>
+		GUI
+		<ul>
+			<li>
+				<a href="draw-fullscreen-color.html" rel="nofollow">DrawFullscreenColor</a></li>
+			<li>
+				<a href="gui-tooltip.html" rel="nofollow">GUITooltip</a></li>
+		</ul>
+	</li>
+	<li>
+		GUILayout
+		<ul>
+			<li>
+				<a href="guilayout-begin-area.html" rel="nofollow">GUILayoutBeginArea</a></li>
+			<li>
+				<a href="guilayout-begin-area-follow-object.html" rel="nofollow">GUILayoutBeginAreaFollowObject</a></li>
+			<li>
+				<a href="guilayout-begin-horizontal.html" rel="nofollow">GUILayoutBeginHorizontal</a></li>
+			<li>
+				<a href="guilayout-begin-vertical.html" rel="nofollow">GUILayoutBeginVertical</a></li>
+			<li>
+				<a href="guilayout-box.html" rel="nofollow">GUILayoutBox</a></li>
+			<li>
+				<a href="guilayout-button.html" rel="nofollow">GUILayoutButton</a></li>
+			<li>
+				<a href="guilayout-end-area.html" rel="nofollow">GUILayoutEndArea</a></li>
+			<li>
+				<a href="guilayout-end-horizontal.html" rel="nofollow">GUILayoutEndHorizontal</a></li>
+			<li>
+				<a href="guilayout-end-vertical.html" rel="nofollow">GUILayoutEndVertical</a></li>
+			<li>
+				<a href="guilayout-flexible-space.html" rel="nofollow">GUILayoutFlexibleSpace</a></li>
+			<li>
+				<a href="guilayout-horizontal-slider.html" rel="nofollow">GUILayoutHorizontalSlider</a></li>
+			<li>
+				<a href="guilayout-label.html" rel="nofollow">GUILayoutLabel</a></li>
+			<li>
+				<a href="guilayout-repeat-button.html" rel="nofollow">GUILayoutRepeatButton</a></li>
+			<li>
+				<a href="guilayout-space.html" rel="nofollow">GUILayoutSpace</a></li>
+			<li>
+				<a href="guilayout-text-field.html" rel="nofollow">GUILayoutTextField</a></li>
+			<li>
+				<a href="guilayout-toggle.html" rel="nofollow">GUILayoutToggle</a></li>
+			<li>
+				<a href="guilayout-toolbar.html" rel="nofollow">GUILayoutToolbar</a></li>
+			<li>
+				<a href="guilayout-vertical-slider.html" rel="nofollow">GUILayoutVerticalSlider</a></li>
+		</ul>
+	</li>
+	<li>
+		Input
+		<ul>
+			<li>
+				<a href="mouse-pick.html" rel="nofollow">MousePick</a></li>
+		</ul>
+	</li>
+	<li>
+		Vector3
+		<ul>
+			<li>
+				<a href="vector3-multiply.html" rel="nofollow">Vector3Multiply</a></li>
+		</ul>
+	</li>
+</ul>
+<h3>
+	Beta 7</h3>
+<p>
+	02.04.2011</p>
+<h4>
+	Bug Fixes</h4>
+<ul>
+	<li>
+		Fixed: State Browser didn&#39;t repaint editor window when selecting states.</li>
+	<li>
+		Fixed: Changes to &quot;Lock&quot; toggle weren&#39;t saved.</li>
+	<li>
+		Fixed: &quot;Lock&quot; would lock an empty selection (e.g., when you pressed play).</li>
+</ul>
+<h4>
+	Changes</h4>
+<ul>
+	<li>
+		Store Start State info in FSM Template and give option to use it when pasting the template.</li>
+</ul>
+<h4>
+	New Actions</h4>
+<ul>
+	<li>
+		GUI
+		<ul>
+			<li>
+				<a href="set-gui-alpha.html" rel="nofollow">SetGUIAlpha</a></li>
+			<li>
+				<a href="set-gui-background-color.html" rel="nofollow">SetGUIBackgroundColor</a></li>
+			<li>
+				<a href="set-gui-color.html" rel="nofollow">SetGUIColor</a></li>
+			<li>
+				<a href="set-gui-content-color.html" rel="nofollow">SetGUIContentColor</a></li>
+		</ul>
+	</li>
+	<li>
+		Light
+		<ul>
+			<li>
+				<a href="set-light-color.html" rel="nofollow">SetLightColor</a></li>
+			<li>
+				<a href="set-light-cookie.html" rel="nofollow">SetLightCookie</a></li>
+			<li>
+				<a href="set-light-flare.html" rel="nofollow">SetLightFlare</a></li>
+			<li>
+				<a href="set-light-intensity.html" rel="nofollow">SetLightIntensity</a></li>
+			<li>
+				<a href="set-light-range.html" rel="nofollow">SetLightRange</a></li>
+			<li>
+				<a href="set-light-spot-angle.html" rel="nofollow">SetLightSpotAngle</a></li>
+			<li>
+				<a href="set-light-type.html" rel="nofollow">SetLightType</a></li>
+			<li>
+				<a href="set-shadow-strength.html" rel="nofollow">SetShadowStrength</a></li>
+		</ul>
+	</li>
+	<li>
+		Material
+		<ul>
+			<li>
+				<a href="set-material-texture.html" rel="nofollow">SetMaterialTexture</a></li>
+			<li>
+				<a href="set-material-float.html" rel="nofollow">SetMaterialFloat</a></li>
+		</ul>
+	</li>
+	<li>
+		RenderSettings
+		<ul>
+			<li>
+				<a href="enable-fog.html" rel="nofollow">EnableFog</a></li>
+			<li>
+				<a href="set-ambient-light.html" rel="nofollow">SetAmbientLight</a></li>
+			<li>
+				<a href="set-flare-strength.html" rel="nofollow">SetFlareStrength</a></li>
+			<li>
+				<a href="set-fog-color.html" rel="nofollow">SetFogColor</a></li>
+			<li>
+				<a href="set-fog-density.html" rel="nofollow">SetFogDensity</a></li>
+			<li>
+				<a href="set-halo-strength.html" rel="nofollow">SetHaloStrength</a></li>
+			<li>
+				<a href="set-skybox.html" rel="nofollow">SetSkybox</a></li>
+		</ul>
+	</li>
+	<li>
+		String
+		<ul>
+			<li>
+				<a href="string-compare.html" rel="nofollow">StringCompare</a></li>
+		</ul>
+	</li>
+</ul>
+<h3>
+	Beta 6</h3>
+<p>
+	01.31.2011</p>
+<h4>
+	Known Issues</h4>
+<ul>
+	<li>
+		Foreign characters in object names can crash Playmaker when you open the FSM selector.</li>
+	<li>
+		Undo/Redo doesn&#39;t work on individual action parameter changes or when setting a transition event.</li>
+</ul>
+<h4>
+	Bug Fixes</h4>
+<ul>
+	<li>
+		Fixed: Occasional loss of action parameters on Undo.</li>
+	<li>
+		Fixed: Lots of undo/redo and selection bugs.</li>
+</ul>
+<h3>
+	Beta 5&nbsp;</h3>
+<p>
+	01.30.2011</p>
+<h4>
+	Known Issues</h4>
+<ul>
+	<li>
+		Foreign characters in object names can crash Playmaker when you open the FSM selector.</li>
+	<li>
+		Undo/Redo is flaky when with actions. Will fix in next beta... should probably avoid using undo/redo on actions until then.</li>
+</ul>
+<h4>
+	Bug Fixes</h4>
+<ul>
+	<li>
+		Fixed: Crash on iOS with Script Call Optimization setting to Fast but no Exceptions.</li>
+	<li>
+		Fixed: Crash after playing for a while in Web Player.</li>
+	<li>
+		Fixed: Array data could get lost when changing an action script.</li>
+	<li>
+		Fixed: Occasional null reference error when changing an action script.</li>
+	<li>
+		Fixed: Playmaker FSM component added via component menu or drag and drop would be missing system events.</li>
+	<li>
+		Fixed: Fsm variables in&nbsp;<a href="send-message.html" rel="nofollow">SendMessage&nbsp;</a>and&nbsp;<a href="start-coroutine.html" rel="nofollow">StartCoroutine&nbsp;</a>reset to &quot;None&quot; on play.</li>
+	<li>
+		Fixed: Error Checker for RequiredField on fsm variables wouldn&#39;t catch variables set to none.&nbsp;</li>
+	<li>
+		Fixed: Beta logo was drawn once for every FSM in the scene. Now only drawn once.</li>
+	<li>
+		Fixed: &quot;Copy&quot; was always added to copied states. Should only be added to avoid naming conflict.</li>
+	<li>
+		Fixed: BoolOperator action was private.</li>
+	<li>
+		Fixed: Unity style label sliders for FsmInt and FsmFloat edit fields.</li>
+	<li>
+		Fixed: Float Compare action, equal event didn&#39;t fire if tolerance was set zero.</li>
+</ul>
+<h4>
+	Changes</h4>
+<ul>
+	<li>
+		Added Vector3 and Color variable types.</li>
+	<li>
+		Added collision and trigger system events. Makes it quicker to build collision/trigger state changes.</li>
+	<li>
+		Improved Error Checker for system events. Makes it easier to catch setup problems.</li>
+	<li>
+		Exposed Templates in right click context menu. No longer need to select template in&nbsp;<a href="templates-browser.html" rel="nofollow">Template Browser</a>.</li>
+	<li>
+		Improved strategy for keeping action parameters on Actions that have changed.</li>
+	<li>
+		Support FsmString variable in&nbsp;<a href="send-message.html" rel="nofollow">SendMessage&nbsp;</a>and&nbsp;<a href="start-coroutine.html" rel="nofollow">StartCoroutine</a>&nbsp;actions.</li>
+	<li>
+		<a href="events-manager.html" rel="nofollow">Event Manager</a>: Hide Unused Events, Delete Unused Events, right click event to select states that use it.</li>
+	<li>
+		<a href="variables-manager.html" rel="nofollow">Variable Manager</a>: Usage count, Delete Unused Events, right click variable to select states that use it.</li>
+	<li>
+		FSM selection now split between 2 dropdowns: 1. GameObjects that have FSMs 2. FSMs on selected GameObject.</li>
+	<li>
+		Take event names into account when auto-sizing state width.</li>
+	<li>
+		Added useful shortcuts to the PlayMaker menu.</li>
+	<li>
+		Playmaker logo times out after a few seconds.</li>
+	<li>
+		Made inspector panel a little wider.</li>
+	<li>
+		New sample scene: MaterialEffects demos material actions with simple FSMs.</li>
+</ul>
+<h4>
+	New Actions</h4>
+<ul>
+	<li>
+		Convert
+		<ul>
+			<li>
+				<a href="convert-bool-to-string.html" rel="nofollow">ConvertBoolToString</a></li>
+			<li>
+				<a href="convert-int-to-float.html" rel="nofollow">ConvertIntToFloat</a></li>
+			<li>
+				<a href="convert-int-to-string.html" rel="nofollow">ConvertIntToString</a></li>
+			<li>
+				<a href="convert-float-to-int.html" rel="nofollow">ConvertFloatToInt</a></li>
+			<li>
+				<a href="convert-float-to-string.html" rel="nofollow">ConvertFloatToString</a></li>
+		</ul>
+	</li>
+	<li>
+		Material
+		<ul>
+			<li>
+				<a href="color-ramp.html" rel="nofollow">ColorRamp</a></li>
+			<li>
+				<a href="get-color-rgba.html" rel="nofollow">GetColorRGBA</a></li>
+			<li>
+				<a href="select-random-color.html" rel="nofollow">SelectRandomColor</a></li>
+			<li>
+				<a href="set-color-rgba.html" rel="nofollow">SetColorRGBA</a></li>
+			<li>
+				<a href="set-color-value.html" rel="nofollow">SetColorValue</a></li>
+			<li>
+				<a href="set-material-color.html" rel="nofollow">SetMaterialColor</a></li>
+			<li>
+				<a href="set-texture-offset.html" rel="nofollow">SetTextureOffset</a></li>
+			<li>
+				<a href="set-texture-scale.html" rel="nofollow">Set Texture Scale</a></li>
+			<li>
+				<a href="set-random-material.html" rel="nofollow">SetRandomMaterial</a></li>
+		</ul>
+	</li>
+	<li>
+		Physics
+		<ul>
+			<li>
+				<a href="get-collision-info.html" rel="nofollow">GetCollisionInfo</a></li>
+			<li>
+				<a href="get-controller-hit-info.html" rel="nofollow">GetControllerHitInfo</a></li>
+			<li>
+				<a href="get-trigger-info.html" rel="nofollow">GetTriggerInfo</a></li>
+		</ul>
+	</li>
+	<li>
+		String
+		<ul>
+			<li>
+				<a href="build-string.html" rel="nofollow">BuildString</a></li>
+			<li>
+				<a href="select-random-string.html" rel="nofollow">SelectRandomString</a></li>
+		</ul>
+	</li>
+	<li>
+		Vector3
+		<ul>
+			<li>
+				<a href="get-vector3-xyz.html" rel="nofollow">GetVector3XYZ</a></li>
+			<li>
+				<a href="select-random-vector3.html" rel="nofollow">SelectRandomVector3</a></li>
+			<li>
+				<a href="set-vector3-value.html" rel="nofollow">SetVector3Value</a></li>
+			<li>
+				<a href="set-vector3-xyz.html" rel="nofollow">SetVector3XYZ</a></li>
+		</ul>
+	</li>
+</ul>
+<h3>
+	Beta 4</h3>
+<p>
+	01.21.2011</p>
+<h4>
+	Known Issues</h4>
+<ul>
+	<li>
+		On an iOS device, if you set the Script Call Optimization setting to Fast but no Exceptions, it causes a EXC_BAD_ACCESS.&nbsp;<a class="undefined" href="https://hutonggames.fogbugz.com/default.asp?playmaker.1.77.1" rel="nofollow">Bug report</a>.
+		<ul>
+			<li>
+				Workaround: don&#39;t use Fast but no Exceptions for now...</li>
+		</ul>
+	</li>
+	<li>
+		Foreign characters in object names can crash Playmaker when you open the FSM selector.</li>
+</ul>
+<h4>
+	Bug Fixes</h4>
+<ul>
+	<li>
+		Fixed: FsmString variable were set to &quot;None&quot; on play.</li>
+	<li>
+		Fixed: Breakpoints would stop FSM but not pause game if Playmaker editor wasn&#39;t open.</li>
+	<li>
+		Fixed: Runtime error in&nbsp;<a href="animate-float.html" rel="nofollow">AnimateFloat&nbsp;</a>action&nbsp;if no curve selected.</li>
+</ul>
+<h4>
+	Changes</h4>
+<ul>
+	<li>
+		Support for arrays in actions.</li>
+	<li>
+		Changed&nbsp;<a href="play-random-sound.html" rel="nofollow">PlayRandomSound&nbsp;</a>action to support array of audio clips.</li>
+	<li>
+		All editor text fields should now accept copy/paste.</li>
+	<li>
+		Added error check for prefabs referencing scene objects.</li>
+	<li>
+		Added error check for mouse events (owner requires Collider or GUIElement).</li>
+	<li>
+		Moved Playmaker to its own menu.</li>
+</ul>
+<h3>
+	Beta 3</h3>
+<p>
+	01.17.2011</p>
+<h4>
+	Known Issues</h4>
+<ul>
+	<li>
+		On an iOS device, if you set the Script Call Optimization setting to Fast but no Exceptions, it causes a EXC_BAD_ACCESS.&nbsp;<a class="undefined" href="https://hutonggames.fogbugz.com/default.asp?playmaker.1.77.1" rel="nofollow">Bug report</a>.
+		<ul>
+			<li>
+				Workaround: don&#39;t use Fast but no Exceptions for now...</li>
+		</ul>
+	</li>
+	<li>
+		FsmString variable set to &quot;None&quot; on play.&nbsp;<a class="undefined" href="https://hutonggames.fogbugz.com/default.asp?playmaker.1.81.1" rel="nofollow">Bug report</a>.</li>
+	<li>
+		Foreign characters in object names can crash Playmaker when you open the FSM selector.</li>
+</ul>
+<h4>
+	Bug Fixes</h4>
+<ul>
+	<li>
+		Fixed: Slow recompile with large FSMs.</li>
+	<li>
+		Fixed: Editor slowdown in Debug mode.</li>
+	<li>
+		Fixed: Documentation link in Preferences panel.</li>
+	<li>
+		Fixed: TriggerEvent Action: OnTriggerExit wasn&#39;t handled correctly.</li>
+</ul>
+<h4>
+	Changes</h4>
+<ul>
+	<li>
+		Added FsmString variable type.</li>
+	<li>
+		Updated actions to use FsmString: Button, DebugLog, FindChild, FindGameObject, GetAxis, GetButton, GetButtonDown, GetButtonUp, GetChild, Label, LoadLevel, SetGUIText, Get/Set Fsm Variables.</li>
+	<li>
+		<strong>Unfortunately existing instances of these actions will have their parameters reset!</strong></li>
+	<li>
+		Improved console warning when action parameters are reset to make it easier to find them.</li>
+	<li>
+		Saving more type info with actions, so in future the editor can try to keep as many settings as possible if an action changes.</li>
+	<li>
+		Made Playmaker beta logo proportional to screen size.</li>
+</ul>
+<h4>
+	New Actions</h4>
+<ul>
+	<li>
+		String
+		<ul>
+			<li>
+				<a href="get-string-length.html" rel="nofollow">GetStringLength</a></li>
+			<li>
+				<a href="get-string-left.html" rel="nofollow">GetStringLeft</a></li>
+			<li>
+				<a href="get-string-right.html" rel="nofollow">GetStringRight</a></li>
+			<li>
+				<a href="get-substring.html" rel="nofollow">GetSubstring</a></li>
+			<li>
+				<a href="set-string-value.html" rel="nofollow">SetStringValue</a></li>
+			<li>
+				<a href="string-replace.html" rel="nofollow">StringReplace</a></li>
+		</ul>
+	</li>
+	<li>
+		StateMachine
+		<ul>
+			<li>
+				<a href="get-fsm-string.html" rel="nofollow">GetFsmString</a></li>
+			<li>
+				<a href="set-fsm-string.html" rel="nofollow">SetFsmString</a></li>
+		</ul>
+	</li>
+</ul>
+<p>
+	Beta 2</p>
+<p>
+	01.14.2011</p>
+<h4>
+	Known Issues</h4>
+<ul>
+	<li>
+		If you have a large fsm selected in the editor and trigger a recompile (e.g., edit a script and return to Unity) Unity can hang for a long time. Workaround: select a smaller fsm before editing scripts (or otherwise triggering a recompile). Will be fixed in next beta (soon).</li>
+	<li>
+		One report of Undo undoing a lot of work! So save/backup often - this is beta software with bugs!</li>
+	<li>
+		Actions that have changed since they were added to states will have their parameters reset when loaded.</li>
+</ul>
+<p>
+	Bug Fixes</p>
+<ul>
+	<li>
+		Fixed: Playmaker FSMs were broken in Web Player.</li>
+	<li>
+		Fixed: Startup times got exponentially longer with more states.</li>
+	<li>
+		Fixed: Performance in editor degraded exponentially with more states. File sizes were also too big.</li>
+	<li>
+		Fixed: Copy/Paste and Templates: Parameters sometimes referenced original actions so would change in both places when edited.</li>
+	<li>
+		Fixed: Sometimes orphaned FSM would appear in FSM dropdowns after deleting a Playmaker FSM component.</li>
+	<li>
+		Fixed: Sometimes empty events would appear in Action Editors and Event Manager.</li>
+	<li>
+		Fixed: Sometimes when adding multiple FSMs to a single game object the new FSM would lack system events.</li>
+	<li>
+		Fixed:&nbsp;<a href="game-object-is-visible.html" rel="nofollow">IsVisible&nbsp;</a>Action events were broken.</li>
+	<li>
+		Fixed:&nbsp;<a href="send-message.html" rel="nofollow">SendMessage&nbsp;</a>/&nbsp;<a href="start-coroutine.html" rel="nofollow">StartCoroutine&nbsp;</a>Method Name entry was broken.</li>
+</ul>
+<h4>
+	Changes</h4>
+<ul>
+	<li>
+		Debug option in State Inspector panel only shows variable values if a variable is selected. Reduces clutter.</li>
+	<li>
+		Added OnFixedUpdate method to FsmStateAction. Useful for Physics actions.</li>
+	<li>
+		You can now use fsm variables in&nbsp;<a href="send-message.html" rel="nofollow">SendMessage&nbsp;</a>and&nbsp;<a href="start-coroutine.html" rel="nofollow">StartCoroutine</a>.</li>
+	<li>
+		Added GameLogic to ActionCategory enum. Note you can use a string for custom category names.</li>
+</ul>
+<h4>
+	New Actions</h4>
+<ul>
+	<li>
+		GameObject
+		<ul>
+			<li>
+				<a href="dont-destroy-on-load.html" rel="nofollow">DontDestroyOnLoad</a></li>
+			<li>
+				<a href="get-random-child.html" rel="nofollow">GetRandomChild</a></li>
+			<li>
+				<a href="get-random-object.html" rel="nofollow">GetRandomObject</a></li>
+		</ul>
+	</li>
+	<li>
+		GUI
+		<ul>
+			<li>
+				<a href="button.html" rel="nofollow">Button&nbsp;</a>(replaces EventButton)</li>
+			<li>
+				<a href="draw-texture.html" rel="nofollow">DrawTexture</a></li>
+			<li>
+				<a href="horizontal-slider.html" rel="nofollow">HorizontalSlider</a>&nbsp;(replaces FloatSlider)</li>
+			<li>
+				<a href="label.html" rel="nofollow">Label</a></li>
+			<li>
+				<a href="rotate-gui.html" rel="nofollow">RotateGUI</a></li>
+			<li>
+				<a href="scale-gui.html" rel="nofollow">ScaleGUI</a></li>
+			<li>
+				<a href="set-gui-depth.html" rel="nofollow">SetGUIDepth</a></li>
+			<li>
+				<a href="set-gui-skin.html" rel="nofollow">SetGUISkin</a></li>
+			<li>
+				<a href="vertical-slider.html" rel="nofollow">VerticalSlider</a></li>
+		</ul>
+	</li>
+	<li>
+		Input
+		<ul>
+			<li>
+				<a href="get-key.html" rel="nofollow">GetKey</a></li>
+		</ul>
+	</li>
+	<li>
+		Physics
+		<ul>
+			<li>
+				<a href="add-explosion-force.html" rel="nofollow">AddExplosionForce</a></li>
+			<li>
+				<a href="add-force.html" rel="nofollow">AddForce</a></li>
+			<li>
+				<a href="add-torque.html" rel="nofollow">AddTorque</a></li>
+			<li>
+				<a href="explosion.html" rel="nofollow">Explosion</a></li>
+			<li>
+				<a href="get-mass.html" rel="nofollow">GetMass</a></li>
+			<li>
+				<a href="get-speed.html" rel="nofollow">GetSpeed</a></li>
+			<li>
+				<a href="get-velocity.html" rel="nofollow">GetVelocity</a></li>
+			<li>
+				<a href="is-kinematic.html" rel="nofollow">IsKinematic</a></li>
+			<li>
+				<a href="is-sleeping.html" rel="nofollow">IsSleeping</a></li>
+			<li>
+				<a href="set-is-kinematic.html" rel="nofollow">SetIsKinematic</a></li>
+			<li>
+				<a href="set-mass.html" rel="nofollow">SetMass</a></li>
+			<li>
+				<a href="set-velocity.html" rel="nofollow">SetVelocity</a></li>
+			<li>
+				<a href="sleep.html" rel="nofollow">Sleep</a></li>
+			<li>
+				<a href="wake-up.html" rel="nofollow">WakeUp</a></li>
+		</ul>
+	</li>
+	<li>
+		StateMachine
+		<ul>
+			<li>
+				<a href="next-frame-event.html" rel="nofollow">NextFrameEvent</a></li>
+		</ul>
+	</li>
+</ul>
+<h3>
+	Beta 1</h3>
+<p>
+	12.30.2010</p>
+<h4>
+	First public beta:</h4>
+<p>
+	<a href="http://forum.unity3d.com/threads/72349-Playmaker-a-new-visual-scripting-tool-FREE-BETA!" rel="nofollow">http://forum.unity3d.com/threads/72349-Playmaker-a-new-visual-scripting-tool-FREE-BETA!</a></p>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr><td><p>&nbsp;</p></td></tr>
+        </table>       
+        <div id="footer">
+		    <div id="copyright">copyright HutongGames, LLC. All rights reserved.</div>
+	    </div>
+    </div>
+    <script type="text/javascript">
+	    document.body.style.backgroundColor = "#444";
+        document.body.style.backgroundImage = "none";
+	    document.body.style.height = "100%";
+	    $("#mainArea").css("padding", "0px");
+	    $("#mainArea").css("margin", "0px");
+	    $("#contentWikiView").css("margin", "0px");
+	    $(document).ready(function() {
+            $("#container #paramRow").filter(":even").css("background-color", "#f2f2f2");
+            $("#container #paramRow").filter(":odd").css("background-color", "#f9f9f9");
+            $("#container #nameDesc").filter(":even").css("background-color", "#f2f2f2");
+            $("#container #nameDesc").filter(":odd").css("background-color", "#f9f9f9");
+        },0)
+    </script>
+</div>
+</body>
+</html>

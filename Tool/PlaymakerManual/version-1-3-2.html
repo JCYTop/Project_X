@@ -1,0 +1,133 @@
+<!DOCTYPE html> 
+<html xmlns:fb>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Version 1.3.2</title>
+	<link href="css/main.css" rel="stylesheet" type="text/css" />
+    <script src="js/jquery.min.js"></script>
+</head>
+<body>
+	<div id="page">
+		<div id="container">
+			<div id = "hutongHeader">
+				<a href="http://hutonggames.com/index.html"><img src="http://hutonggames.com/images/playMaker.png"/></a>  
+				<a href="http://hutonggames.com/company.html"><img src="http://hutonggames.com/images/hutongGamesSmall.png" id="companyLogo"/></a>
+				<div id="socialLinks">
+					<a href="http://www.facebook.com/pages/Hutong-Games-LLC/163141367059519" target="_blank">
+					<img src="http://www.hutonggames.com/images/fb.png" width="32" height="32" alt="facebook" /></a>
+					<a href="http://twitter.com/hutonggames" target="_blank">
+					<img src="http://www.hutonggames.com/images/twitter.png" width="32" height="32" alt="twitter" /></a>
+					<a href="http://www.youtube.com/user/HutongGamesLLC" target="_blank">
+					<img src="http://www.hutonggames.com/images/youtube.png" width="32" height="32" alt="youtube" /></a>
+				</div>
+				<div id = "mainMenu">
+                    <ul>
+                        <li><a href="http://hutonggames.com/index.html">Home</a></li>
+                        <li><a href="http://hutonggames.com/store.html">Store</a></li>
+                        <li><a href="http://hutonggames.com/showcase.html">Showcase</a></li>
+                        <li><a href="http://hutonggames.com/tutorials.html">Tutorials</a></li>
+                        <li><a href="http://hutonggames.com/playmakerforum/index.php">Forums</a></li>
+                        <li><a href="playmaker-manual.html">Manual</a></li>
+                        <li><a href="https://hutonggames.fogbugz.com/default.asp?W546">Wiki</a></li>
+                        <li><a href="http://hutonggames.com/company.html">About Us</a></li>
+                    </ul>
+                </div>
+			</div>
+            <table id="wiki-page-breadcrumbs-container">
+		        <tr>
+			        <td class="wiki-page-breadcrumbs">
+				        <a href="index.html" title = "Home">Home</a>
+                        <span class="wikinav-breadcrumb-separator">»</span><a href="release-notes.html" title="Release Notes" class="">Release Notes</a><span class="wikinav-breadcrumb-separator">»</span><a href="version-1-3-2.html" title="Version 1.3.2" class="">Version 1.3.2</a>
+			        </td>
+		        </tr>
+	        </table>
+		    <table id="main-columns">
+			    <tr><td id="wiki-page-nav">
+				    <div class="wiki-page-browse-menu-title">Index</div>
+				    <ul class="wiki-page-browse-menu">
+					    <li><a href="installation.html" class="">Installation</a></li>
+					    <li><a href="core-concepts.html" class="">Core Concepts</a></li>
+					    <li><a href="user-interface.html" class="">User Interface</a></li>
+					    <li><a href="keyboard-shortcuts.html" class="">Shortcuts</a></li>
+					    <li><a href="editing-basics.html" class="">Editing Basics</a></li>
+					    <li><a href="samples.html" class="">Samples</a></li>
+					    <li><a href="debugging.html" class="">Debugging</a></li>
+					    <li><a href="action-reference.html" class="">Action Reference</a></li>
+					    <li><a href="networking.html" class="">Networking</a></li>
+					    <li><a href="api-reference.html" class="">API Reference</a></li>
+					    <li><a href="online-resources.html" class="">Online Resources</a></li>
+					    <li><a href="hints-and-tips.html" class="">Hints And Tips</a></li>
+					    <li><a href="known-issues.html" class="">Known Issues</a></li>
+					    <li><a href="release-notes.html" class="">Release Notes</a></li>
+					    <li><a href="frequently-asked-questions.html" class="">FAQ</a></li>
+				    </ul>
+			    </td>
+                <td id="body">
+					<div id="wiki-page-content">
+                        <h1>Version 1.3.2</h1>
+                        <div class="article-content">
+                        <h4>
+	Bug Fixes</h4>
+<ul>
+	<li>
+		Fixed iOS, NaCL build errors with Actions not supported on those platforms.</li>
+	<li>
+		Fixed browse button for&nbsp;Get/Set Fsm Texture/Quaternion/Rect/Object&nbsp;actions.</li>
+	<li>
+		Fixed CheckForComponent on FsmOwnerDefault GameObject variable.</li>
+</ul>
+<h4>
+	Changes</h4>
+<ul>
+	<li>
+		Tweaked Network Ping actions UI.</li>
+	<li>
+		Changes to global variables are no longer&nbsp;saved while the game is running. This is so they reset properly when the game is stopped.</li>
+	<li>
+		Global variables reset properly when stopping the game. There is still some weirdness noted in the PlayMakerGlobals inspector. Looking into a fix for this...</li>
+	<li>
+		Set Event Target:&nbsp;Added the targeted FSM name under FSM Component so you can can tell which component you assigned to the field.</li>
+	<li>
+		Dim/Hide Unused Parameters now includes FsmTexture, FsmMaterial and FsmObject variables set to null.</li>
+</ul>
+<p style="margin-left: 40px; ">
+	I have a feeling that Dim Unused Parameters and Hide Unused are not well understood, so here&#39;s a quick overview:</p>
+<ul>
+	<li style="margin-left: 40px; ">
+		<em>State Settings Menu &gt;&nbsp;Dim Unused Parameters</em>&nbsp;dims unassigned, optional&nbsp;parameters. The controls are still usable but dimmed 50%.</li>
+	<li style="margin-left: 40px; ">
+		<em>State &gt; Hide Unused</em>&nbsp;hides all&nbsp;unassigned, optional&nbsp;parameters and is set per state, typically once you&#39;re done editing that state.</li>
+	<li style="margin-left: 40px; ">
+		At any time you can uncheck Hide Unused to see if there are any useful optional parameters.</li>
+	<li style="margin-left: 40px; ">
+		The system is designed to reduce visual clutter in the Action Editor.</li>
+</ul>
+<p>
+	.</p>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr><td><p>&nbsp;</p></td></tr>
+        </table>       
+        <div id="footer">
+		    <div id="copyright">copyright HutongGames, LLC. All rights reserved.</div>
+	    </div>
+    </div>
+    <script type="text/javascript">
+	    document.body.style.backgroundColor = "#444";
+        document.body.style.backgroundImage = "none";
+	    document.body.style.height = "100%";
+	    $("#mainArea").css("padding", "0px");
+	    $("#mainArea").css("margin", "0px");
+	    $("#contentWikiView").css("margin", "0px");
+	    $(document).ready(function() {
+            $("#container #paramRow").filter(":even").css("background-color", "#f2f2f2");
+            $("#container #paramRow").filter(":odd").css("background-color", "#f9f9f9");
+            $("#container #nameDesc").filter(":even").css("background-color", "#f2f2f2");
+            $("#container #nameDesc").filter(":odd").css("background-color", "#f9f9f9");
+        },0)
+    </script>
+</div>
+</body>
+</html>

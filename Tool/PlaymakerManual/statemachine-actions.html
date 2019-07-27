@@ -1,0 +1,202 @@
+<!DOCTYPE html> 
+<html xmlns:fb>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>StateMachine Actions</title>
+	<link href="css/main.css" rel="stylesheet" type="text/css" />
+    <script src="js/jquery.min.js"></script>
+</head>
+<body>
+	<div id="page">
+		<div id="container">
+			<div id = "hutongHeader">
+				<a href="http://hutonggames.com/index.html"><img src="http://hutonggames.com/images/playMaker.png"/></a>  
+				<a href="http://hutonggames.com/company.html"><img src="http://hutonggames.com/images/hutongGamesSmall.png" id="companyLogo"/></a>
+				<div id="socialLinks">
+					<a href="http://www.facebook.com/pages/Hutong-Games-LLC/163141367059519" target="_blank">
+					<img src="http://www.hutonggames.com/images/fb.png" width="32" height="32" alt="facebook" /></a>
+					<a href="http://twitter.com/hutonggames" target="_blank">
+					<img src="http://www.hutonggames.com/images/twitter.png" width="32" height="32" alt="twitter" /></a>
+					<a href="http://www.youtube.com/user/HutongGamesLLC" target="_blank">
+					<img src="http://www.hutonggames.com/images/youtube.png" width="32" height="32" alt="youtube" /></a>
+				</div>
+				<div id = "mainMenu">
+                    <ul>
+                        <li><a href="http://hutonggames.com/index.html">Home</a></li>
+                        <li><a href="http://hutonggames.com/store.html">Store</a></li>
+                        <li><a href="http://hutonggames.com/showcase.html">Showcase</a></li>
+                        <li><a href="http://hutonggames.com/tutorials.html">Tutorials</a></li>
+                        <li><a href="http://hutonggames.com/playmakerforum/index.php">Forums</a></li>
+                        <li><a href="playmaker-manual.html">Manual</a></li>
+                        <li><a href="https://hutonggames.fogbugz.com/default.asp?W546">Wiki</a></li>
+                        <li><a href="http://hutonggames.com/company.html">About Us</a></li>
+                    </ul>
+                </div>
+			</div>
+            <table id="wiki-page-breadcrumbs-container">
+		        <tr>
+			        <td class="wiki-page-breadcrumbs">
+				        <a href="index.html" title = "Home">Home</a>
+                        <span class="wikinav-breadcrumb-separator">»</span><a href="action-reference.html" title="Action Reference" class="">Action Reference</a><span class="wikinav-breadcrumb-separator">»</span><a href="statemachine-actions.html" title="StateMachine Actions" class="">StateMachine Actions</a>
+			        </td>
+		        </tr>
+	        </table>
+		    <table id="main-columns">
+			    <tr><td id="wiki-page-nav">
+				    <div class="wiki-page-browse-menu-title">Index</div>
+				    <ul class="wiki-page-browse-menu">
+					    <li><a href="installation.html" class="">Installation</a></li>
+					    <li><a href="core-concepts.html" class="">Core Concepts</a></li>
+					    <li><a href="user-interface.html" class="">User Interface</a></li>
+					    <li><a href="keyboard-shortcuts.html" class="">Shortcuts</a></li>
+					    <li><a href="editing-basics.html" class="">Editing Basics</a></li>
+					    <li><a href="samples.html" class="">Samples</a></li>
+					    <li><a href="debugging.html" class="">Debugging</a></li>
+					    <li><a href="action-reference.html" class="">Action Reference</a></li>
+					    <li><a href="networking.html" class="">Networking</a></li>
+					    <li><a href="api-reference.html" class="">API Reference</a></li>
+					    <li><a href="online-resources.html" class="">Online Resources</a></li>
+					    <li><a href="hints-and-tips.html" class="">Hints And Tips</a></li>
+					    <li><a href="known-issues.html" class="">Known Issues</a></li>
+					    <li><a href="release-notes.html" class="">Release Notes</a></li>
+					    <li><a href="frequently-asked-questions.html" class="">FAQ</a></li>
+				    </ul>
+			    </td>
+                <td id="body">
+					<div id="wiki-page-content">
+                        <h1>StateMachine Actions</h1>
+                        <div class="article-content">
+                        <p>
+	State Machine Actions let you control state machines using&nbsp;<a href="events.html" rel="nofollow">Events&nbsp;</a>and&nbsp;<a href="variables.html" rel="nofollow">Variables</a>.</p>
+<div id="linkList">
+	<ul>
+		<li>
+			<a class="uvb" href="enable-fsm.html" rel="nofollow">Enable FSM</a></li>
+		<li>
+			<a class="uvb" href="finish-fsm.html" rel="nofollow">Finish FSM</a></li>
+		<li>
+			<a href="forward-all-events.html" rel="nofollow">Forward All Events</a></li>
+		<li>
+			<a href="forward-event.html" rel="nofollow">Forward Event</a></li>
+		<li>
+			<a href="get-event-info.html" rel="nofollow">Get Event Info</a></li>
+		<li>
+			<a href="get-fsm-bool.html" rel="nofollow">Get Fsm Bool</a></li>
+		<li>
+			<a class="uvb" href="get-fsm-color.html" rel="nofollow">Get Fsm Color</a></li>
+		<li>
+			<a class="uvb" href="get-fsm-enum.html" rel="nofollow">Get Fsm Enum</a></li>
+		<li>
+			<a class="uvb" href="get-fsm-float.html" rel="nofollow">Get Fsm Float</a></li>
+		<li>
+			<a class="uvb" href="get-fsm-game-object.html" rel="nofollow">Get Fsm Game Object</a></li>
+		<li>
+			<a class="uvb" href="get-fsm-int.html" rel="nofollow">Get Fsm Int</a></li>
+		<li>
+			<a class="uvb" href="get-fsm-material.html" rel="nofollow">Get Fsm Material</a></li>
+		<li>
+			<a class="uvb" href="get-fsm-object.html" rel="nofollow">Get Fsm Object</a></li>
+		<li>
+			<a class="uvb" href="get-fsm-quaternion.html" rel="nofollow">Get Fsm Quaternion</a></li>
+		<li>
+			<a class="uvb" href="get-fsm-rect.html" rel="nofollow">Get Fsm Rect</a></li>
+		<li>
+			<a class="uvb" href="get-fsm-state.html" rel="nofollow">Get Fsm State</a></li>
+		<li>
+			<a class="uvb" href="get-fsm-string.html" rel="nofollow">Get Fsm String</a></li>
+		<li>
+			<a class="uvb" href="get-fsm-texture.html" rel="nofollow">Get Fsm Texture</a></li>
+		<li>
+			<a href="get-fsm-variable.html">Get Fsm Variable</a></li>
+		<li>
+			<a href="get-fsm-variables.html">Get Fsm Variables</a></li>
+		<li>
+			<a class="uvb" href="get-fsm-vector2.html" rel="nofollow">Get Fsm Vector2</a></li>
+		<li>
+			<a class="uvb" href="get-fsm-vector3.html" rel="nofollow">Get Fsm Vector3</a></li>
+		<li>
+			<a class="uvb" href="get-last-event.html" rel="nofollow">Get Last Event</a></li>
+		<li>
+			<a class="uvb" href="get-previous-state-name.html" rel="nofollow">Get Previous State Name</a></li>
+		<li>
+			<a class="uvb" href="goto-previous-state.html" rel="nofollow">Goto Previous State</a></li>
+		<li>
+			<a class="uvb" href="kill-delayed-events.html" rel="nofollow">Kill Delayed Events</a></li>
+		<li>
+			<a class="uvb" href="next-frame-event.html" rel="nofollow">Next Frame Event</a></li>
+		<li>
+			<a href="random-event.html" rel="nofollow">Random Event</a></li>
+		<li>
+			<a href="run-fsm.html" rel="nofollow">Run FSM</a></li>
+		<li>
+			<a href="send-event.html" rel="nofollow">Send Event</a></li>
+		<li>
+			<a class="uvb" href="send-event-by-name.html" rel="nofollow">Send Event By Name</a></li>
+		<li>
+			<a class="uvb" href="send-random-event.html" rel="nofollow">Send Random Event</a></li>
+		<li>
+			<a class="uvb" href="sequence-event.html" rel="nofollow">Sequence Event</a></li>
+		<li>
+			<a href="set-event-data.html" rel="nofollow">Set Event Data</a><br  />
+			<a href="set-event-target.html" rel="nofollow">Set Event Target</a></li>
+		<li>
+			<a class="uvb" href="set-fsm-bool.html" rel="nofollow">Set Fsm Bool</a></li>
+		<li>
+			<a class="uvb" href="set-fsm-color.html" rel="nofollow">Set Fsm Color</a></li>
+		<li>
+			<a class="uvb" href="set-fsm-enum.html" rel="nofollow">Set Fsm Enum</a></li>
+		<li>
+			<a class="uvb" href="set-fsm-float.html" rel="nofollow">Set Fsm Float</a></li>
+		<li>
+			<a class="uvb" href="set-fsm-game-object.html" rel="nofollow">Set Fsm Game Object</a></li>
+		<li>
+			<a class="uvb" href="set-fsm-int.html" rel="nofollow">Set Fsm Int</a></li>
+		<li>
+			<a class="uvb" href="set-fsm-material.html" rel="nofollow">Set Fsm Material</a></li>
+		<li>
+			<a class="uvb" href="set-fsm-object.html" rel="nofollow">Set Fsm Object</a></li>
+		<li>
+			<a class="uvb" href="set-fsm-quaternion.html" rel="nofollow">Set Fsm Quaternion</a></li>
+		<li>
+			<a class="uvb" href="set-fsm-rect.html" rel="nofollow">Set Fsm Rect</a></li>
+		<li>
+			<a href="set-fsm-string.html" rel="nofollow">Set Fsm String</a></li>
+		<li>
+			<a class="uvb" href="set-fsm-texture.html" rel="nofollow">Set Fsm Texture</a></li>
+		<li>
+			<a class="uvb" href="set-fsm-variable.html" rel="nofollow">Set Fsm Variable</a></li>
+		<li>
+			<a class="uvb" href="set-fsm-vector2.html" rel="nofollow">Set Fsm Vector2</a></li>
+		<li>
+			<a class="uvb" href="set-fsm-vector3.html" rel="nofollow">Set Fsm Vector3</a></li>
+	</ul>
+</div>
+<h4>
+	Note: It is often better to use multiple smaller FSMs that talk to each other via events and variables instead of larger FSMs that can get hard to manage.</h4>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr><td><p>&nbsp;</p></td></tr>
+        </table>       
+        <div id="footer">
+		    <div id="copyright">copyright HutongGames, LLC. All rights reserved.</div>
+	    </div>
+    </div>
+    <script type="text/javascript">
+	    document.body.style.backgroundColor = "#444";
+        document.body.style.backgroundImage = "none";
+	    document.body.style.height = "100%";
+	    $("#mainArea").css("padding", "0px");
+	    $("#mainArea").css("margin", "0px");
+	    $("#contentWikiView").css("margin", "0px");
+	    $(document).ready(function() {
+            $("#container #paramRow").filter(":even").css("background-color", "#f2f2f2");
+            $("#container #paramRow").filter(":odd").css("background-color", "#f9f9f9");
+            $("#container #nameDesc").filter(":even").css("background-color", "#f2f2f2");
+            $("#container #nameDesc").filter(":odd").css("background-color", "#f9f9f9");
+        },0)
+    </script>
+</div>
+</body>
+</html>
