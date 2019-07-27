@@ -15,6 +15,7 @@ using UnityEngine;
 public class Manager : ILanucherTask
 {
     private GameObject gm;
+    private GameObject globalEvent;
 
     public override string Name
     {
@@ -34,7 +35,9 @@ public class Manager : ILanucherTask
 
     private void StartChildTask()
     {
-        gm = GOCommonUtil.CreateGameobject("GM");
+        gm = GOCommonUtil.CreateGameobject("GM", false);
         gm.AddComponent<GM>();
+        globalEvent = GOCommonUtil.CreateGameobject("GlobalEvent", false);
+        globalEvent.AddComponent<GlobalEvent>();
     }
 }

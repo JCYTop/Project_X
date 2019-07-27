@@ -1,8 +1,10 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿//public class UIEventName
+//{
+//}
 
-public class UIEventName 
+public class GlobalEventType
 {
- 
+    public const string OnApplicationFocus = "OnApplicationFocus";
+    public const string OnApplicationPause = "OnApplicationPause";
+    public const string OnApplicationQuit = "OnApplicationQuit";
 }

@@ -1,7 +1,5 @@
-﻿using System.Collections;
-using NaughtyAttributes;
+﻿using NaughtyAttributes;
 using UnityEngine;
-using UnityEngine.Events;
 
 
 [RequireComponent(typeof(AssetPoolItem))]

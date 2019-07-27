@@ -17,8 +17,8 @@ public enum ClearEventType
 
 public sealed class EventDispatcher : Singleton<EventDispatcher>, IEvent
 {
-    private Dictionary<string, EventItem> standingEvent = new Dictionary<string, EventItem>();//常驻事件集合
-    private Dictionary<string, EventItem> onceEvent = new Dictionary<string, EventItem>();//单次事件集合
+    private Dictionary<string, EventItem> standingEvent = new Dictionary<string, EventItem>(); //常驻事件集合
+    private Dictionary<string, EventItem> onceEvent = new Dictionary<string, EventItem>(); //单次事件集合
 
     /// <summary>
     /// 注册常驻事件
@@ -36,13 +36,13 @@ public sealed class EventDispatcher : Singleton<EventDispatcher>, IEvent
     /// <param name="eventName">事件名字</param>
     public void Off(string eventName, EventMethod fn)
     {
-        EventItem eventItem;
-        standingEvent.TryGetValue(eventName, out eventItem);
+        standingEvent.TryGetValue(eventName, out var eventItem);
         if (eventItem != null)
         {
             //这里只是清除常住事件的回调方法
             eventItem.Remove(fn);
         }
+
         onceEvent.TryGetValue(eventName, out eventItem);
         if (eventItem != null)
         {
@@ -62,12 +62,12 @@ public sealed class EventDispatcher : Singleton<EventDispatcher>, IEvent
 
     public void Emit(string eventName, params object[] args)
     {
-        EventItem eventItem;
-        standingEvent.TryGetValue(eventName, out eventItem);
+        standingEvent.TryGetValue(eventName, out var eventItem);
         if (eventItem != null)
         {
             eventItem.Call(args);
         }
+
         onceEvent.TryGetValue(eventName, out eventItem);
         if (eventItem != null)
         {
@@ -84,14 +84,14 @@ public sealed class EventDispatcher : Singleton<EventDispatcher>, IEvent
     /// <param name="eventDic">事件字典</param>
     private void AddListener(string eventName, EventMethod fn, Dictionary<string, EventItem> eventDic)
     {
-        EventItem eventItem;
-        eventDic.TryGetValue(eventName, out eventItem);
+        eventDic.TryGetValue(eventName, out var eventItem);
         //如果发现字典里面没有，则首先在字典里面添加创建
         if (eventItem == null)
         {
             eventItem = new EventItem();
             eventDic.Add(eventName, eventItem);
         }
+
         //存在的eventItem再往里面添加事件回调方法fn
         eventItem.AddEvent(fn);
     }

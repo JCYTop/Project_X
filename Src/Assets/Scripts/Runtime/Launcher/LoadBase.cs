@@ -59,15 +59,5 @@ public class LoadBase : ILanucherTask
 
             CalcTaskCount();
         });
-        
-        AssetsManager.Instance().GetPrefabAsync("GameObject", (prefab) =>
-        {
-            if (prefab != null)
-            {
-                uiRoot = GOCommonUtil.InstantiateGo(prefab, true);
-            }
-
-            CalcTaskCount();
-        });
     }
 }

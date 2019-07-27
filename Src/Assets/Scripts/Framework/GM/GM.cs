@@ -7,7 +7,6 @@ public class GM : MonoBehaviour
 
     private void Start()
     {
-        DontDestroyOnLoad(this.gameObject);
     }
 
     private void Update()
