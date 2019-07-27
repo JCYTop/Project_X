@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class UICommonUtil
 {
@@ -18,6 +19,21 @@ public class UICommonUtil
         }
 
         return tmp;
+    }
+
+    /// <summary>
+    /// 清理父物体下的所有子物体
+    /// </summary>
+    /// <param name="go"></param>
+    /// <param name="callback"></param>
+    public static void CleanAllChild(GameObject parent, UnityAction callback = null)
+    {
+        for (int i = parent.transform.childCount - 1; i >= 0; i--)
+        {
+            Object.Destroy(parent.transform.GetChild(i).gameObject);
+        }
+
+        if (callback != null) callback();
     }
 
     /// <summary>
@@ -41,6 +57,66 @@ public class UICommonUtil
         child.transform.SetParent(parent.transform);
         child.transform.localPosition = Vector3.zero;
         child.transform.localScale = Vector3.one;
+    }
+
+    /// <summary>
+    /// 在一个父物体下创建一个子物体
+    /// </summary>
+    /// <param name="child">子物体</param>
+    /// <param name="parent">父物体</param>
+    /// <param name="count">创建次数，默认为0</param>
+    public static GameObject CreateChildGameObject(GameObject child, GameObject parent)
+    {
+        var tmpGO = Object.Instantiate(child);
+        tmpGO.transform.SetParent(parent.transform);
+        tmpGO.transform.localPosition = Vector3.zero;
+        tmpGO.transform.localScale = Vector3.one;
+        tmpGO.SetActive(true);
+        return tmpGO;
+    }
+
+    /// <summary>
+    /// 在一个父物体下创建一个子物体
+    /// </summary>
+    /// <param name="child">子物体</param>
+    /// <param name="parent">父物体</param>
+    /// <param name="count">创建次数，默认为0</param>
+    public static GameObject[] CreateChildGameObject(GameObject child, GameObject parent, int count = 1)
+    {
+        GameObject[] tmp = new GameObject[count];
+        for (int i = 0; i < count; i++)
+        {
+            var tmpGO = Object.Instantiate(child);
+            tmpGO.transform.SetParent(parent.transform);
+            tmpGO.transform.localPosition = Vector3.zero;
+            tmpGO.transform.localScale = Vector3.one;
+            tmpGO.SetActive(true);
+            tmp[i] = tmpGO;
+        }
+
+        return tmp;
+    }
+
+    /// <summary>
+    /// 在一个父物体下创建一个子物体
+    /// </summary>
+    /// <param name="child">子物体</param>
+    /// <param name="parent">父物体</param>
+    /// <param name="count">创建次数，默认为0</param>
+    public static GameObject[] CreateChildGameObject(GameObject child, GameObject parent, Vector3 scale, int count = 1)
+    {
+        GameObject[] tmp = new GameObject[count];
+        for (int i = 0; i < count; i++)
+        {
+            var tmpGO = Object.Instantiate(child);
+            tmpGO.transform.SetParent(parent.transform);
+            tmpGO.transform.localPosition = Vector3.zero;
+            tmpGO.transform.localScale = scale;
+            tmpGO.SetActive(true);
+            tmp[i] = tmpGO;
+        }
+
+        return tmp;
     }
 
     #region 删除物体
