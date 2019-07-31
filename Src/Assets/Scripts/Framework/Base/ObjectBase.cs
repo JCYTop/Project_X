@@ -1,4 +1,5 @@
-﻿using NaughtyAttributes;
+﻿using System;
+using NaughtyAttributes;
 using UnityEngine;
 
 
@@ -24,7 +25,9 @@ public abstract class ObjectBase : MonoEventEmitter
     private long resID;
 
     [BoxGroup("自动设置")] [Header("运行时场景唯一标识ID")] [SerializeField]
-    public int globalID;
+    protected int globalID;
+
+    [Header("可挂载物体节点")] [SerializeField] private PointTrans[] PointTrans = new PointTrans[] { };
 
     protected GameObject go;
 
@@ -112,4 +115,18 @@ public abstract class ObjectBase : MonoEventEmitter
     public virtual void Disable()
     {
     }
+}
+
+public enum ActPosType
+{
+    None = 0,
+    Effect,
+    Tip,
+}
+
+[Serializable]
+public class PointTrans
+{
+    public ActPosType ActPosType;
+    public Transform Trans;
 }

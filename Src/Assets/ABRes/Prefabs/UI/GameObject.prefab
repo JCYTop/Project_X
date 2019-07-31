@@ -79,8 +79,14 @@ MonoBehaviour:
   objectLayer: 5
   objectTag: UI
   Des: "\u6D4B\u8BD5UI"
-  id: 50008001
+  IsPreLoad: 0
+  resID: 0
+  globalID: 0
+  PointTrans:
+  - ActPosType: 0
+    Trans: {fileID: 0}
   ShowType: 2
+  IsRepeat: 0
 --- !u!1 &8387179247059613923
 GameObject:
   m_ObjectHideFlags: 0
