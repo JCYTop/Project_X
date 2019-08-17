@@ -13,25 +13,19 @@ MonoBehaviour:
   m_Name: ABInfo
   m_EditorClassIdentifier: 
   ABDatas:
-  - ID: 15001
+  - ID: 13000
     name: LangSetting
     Path: Assets\ABRes\Prefabs\Lang\LangSetting
     Des: "\u591A\u8BED\u8A00"
     Layer: Default
-    Tag: Util
-  - ID: 16000
-    name: GameObject
-    Path: Assets\ABRes\Prefabs\GameObject
-    Des: 
-    Layer: Default
-    Tag: 
-  - ID: 50008002
+    Tag: DevTool
+  - ID: 15001
     name: GameObject
     Path: Assets\ABRes\Prefabs\UI\GameObject
     Des: "\u6D4B\u8BD5UI"
-    Layer: UI
-    Tag: UI
-  - ID: 50008003
+    Layer: Default
+    Tag: Util
+  - ID: 50008002
     name: UIRoot
     Path: Assets\ABRes\Prefabs\UI\UIRoot
     Des: UIRoot

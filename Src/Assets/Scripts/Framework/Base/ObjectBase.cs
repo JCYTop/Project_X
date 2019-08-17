@@ -1,7 +1,6 @@
 ﻿using System;
-using NaughtyAttributes;
+using Sirenix.OdinInspector;
 using UnityEngine;
-
 
 [RequireComponent(typeof(AssetPoolItem))]
 public abstract class ObjectBase : MonoEventEmitter
@@ -10,25 +9,22 @@ public abstract class ObjectBase : MonoEventEmitter
 
     [BoxGroup("基本属性手动设置")] private string name = string.Empty;
 
-    [BoxGroup("基本属性手动设置")] [SerializeField]
-    private int objectLayer = 0;
+    [BoxGroup("基本属性手动设置"), SerializeField, EnumPaging, OnValueChanged("SetCurrentLayer")]
+    private Layer objectLayer = Layer.Default;
 
-    [BoxGroup("基本属性手动设置")] [SerializeField] [Tag]
-    private string objectTag = string.Empty;
+    [BoxGroup("基本属性手动设置"), SerializeField, EnumPaging, OnValueChanged("SetCurrentTag")]
+    private Tag objectTag = Tag.None;
 
     [BoxGroup("基本属性手动设置")] public string Des = string.Empty;
+    [BoxGroup("基本属性手动设置")] public bool IsPreLoad = false;
 
-    [BoxGroup("基本属性手动设置")] [Header("是否预加载")]
-    public bool IsPreLoad = false;
-
-    [BoxGroup("自动设置")] [Header("唯一资源标识ID")] [SerializeField]
+    [BoxGroup("自动设置"), InfoBox("唯一资源标识ID"), SerializeField]
     private long resID;
 
-    [BoxGroup("自动设置")] [Header("运行时场景唯一标识ID")] [SerializeField]
+    [BoxGroup("自动设置"), InfoBox("运行时场景唯一标识ID"), SerializeField]
     protected int globalID;
 
-    [Header("可挂载物体节点")] [SerializeField] private PointTrans[] PointTrans = new PointTrans[] { };
-
+    [SerializeField] private PointTrans[] PointTrans = new PointTrans[] { };
     protected GameObject go;
 
     #endregion
@@ -37,17 +33,18 @@ public abstract class ObjectBase : MonoEventEmitter
 
     public int ObjectLayer
     {
-        get => objectLayer;
+        get => (int) objectLayer;
     }
 
     public string ObjectTag
     {
-        get => objectTag;
+        get => Enum.GetName(typeof(Tag), objectTag);
     }
 
     public string Name
     {
         get => name;
+        set { name = value; }
     }
 
     public long ResID
@@ -61,31 +58,26 @@ public abstract class ObjectBase : MonoEventEmitter
     void Awake()
     {
         globalID = ScenesMgr.GlobalID;
-        name = gameObject.name;
-        gameObject.tag = objectTag;
-        gameObject.layer = objectLayer;
+        gameObject.tag = ObjectTag;
+        gameObject.layer = ObjectLayer;
         go = gameObject;
-        UnityActionMgr.Instance().RunUnityAction(globalID, RunTimeUnityAction.Before);
         Init();
     }
 
     void OnEnable()
     {
-        UnityActionMgr.Instance().RunUnityAction(globalID, RunTimeUnityAction.Enable);
         On(globalID.ToString(), Refresh);
         Enable();
     }
 
     void OnDisable()
     {
-        UnityActionMgr.Instance().RunUnityAction(globalID, RunTimeUnityAction.DisEnable);
         Off(globalID.ToString(), Refresh);
         Disable();
     }
 
     void OnDestroy()
     {
-        UnityActionMgr.Instance().RunUnityAction(globalID, RunTimeUnityAction.After);
         Release();
     }
 
@@ -100,7 +92,7 @@ public abstract class ObjectBase : MonoEventEmitter
     public abstract void Release();
 
     /// <summary>
-    /// 刷新    
+    /// 刷新   
     /// </summary>
     /// <param name="args">数据</param>
     public virtual void Refresh(params object[] args)
@@ -114,6 +106,16 @@ public abstract class ObjectBase : MonoEventEmitter
 
     public virtual void Disable()
     {
+    }
+
+    private void SetCurrentTag()
+    {
+        gameObject.tag = ObjectTag;
+    }
+
+    private void SetCurrentLayer()
+    {
+        gameObject.layer = ObjectLayer;
     }
 }
 
@@ -129,4 +131,25 @@ public class PointTrans
 {
     public ActPosType ActPosType;
     public Transform Trans;
+}
+
+public enum Tag
+{
+    None,
+    UI,
+    Character,
+    Camera,
+    Trigger,
+    GameObject,
+    DevTool,
+    Manager,
+    Util,
+}
+
+public enum Layer
+{
+    Default = 0,
+    UI = 5,
+    PostProcessing = 8,
+    Scene = 9,
 }

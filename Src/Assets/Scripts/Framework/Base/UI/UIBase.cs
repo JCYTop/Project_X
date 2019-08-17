@@ -1,13 +1,12 @@
 ﻿using System;
-using NaughtyAttributes;
+using Sirenix.OdinInspector;
 using UnityEngine;
 
 public class UIBase : ObjectBase
 {
-    [BoxGroup("UI属性设置")] [Header("UI显示层级")]
-    public UIType ShowType = UIType.UIStack;
+    [BoxGroup("UI属性设置"), EnumPaging] public UIType ShowType = UIType.UIStack;
 
-    [BoxGroup("UI属性设置")] [Header("是否可以重复")]
+    [BoxGroup("UI属性设置"), InfoBox("是否可以重复")]
     public bool IsRepeat = false;
 
     public override void Init()

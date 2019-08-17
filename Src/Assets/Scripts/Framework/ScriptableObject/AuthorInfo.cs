@@ -15,13 +15,14 @@
 
 using System.Collections;
 using System.Collections.Generic;
+using Sirenix.OdinInspector;
 using UnityEngine;
 
 public class AuthorInfo : ScriptableObject
 {
-    [Header("作者名字")]  public string AuthorName = "@JCY";
-    [Header("版本号")]  public string Version = "";
-    [Header("作者邮箱")]  public string AuthorEmail = "jcyemail@qq.com";
-    [Header("Unity开发版本")]  public string UnityVersion = "jcyemail@qq.com";
-    [Header("留言")] public string Description = "";
+    [InfoBox("作者名字")]  public string AuthorName = "@JCY";
+    [InfoBox("版本号")]  public string Version = "";
+    [InfoBox("作者邮箱")]  public string AuthorEmail = "jcyemail@qq.com";
+    [InfoBox("Unity开发版本")]  public string UnityVersion = "jcyemail@qq.com";
+    [InfoBox("留言")] public string Description = "";
 }

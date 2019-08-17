@@ -13,10 +13,9 @@
  ----------------------------------
 */
 
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using NaughtyAttributes;
+using Sirenix.OdinInspector;
 using UnityEngine;
 
 public class UIRootMgr : MonoBehaviour
@@ -36,16 +35,15 @@ public class UIRootMgr : MonoBehaviour
     private Stack<UIBase> topUI;
     private DbLinkedList<UIBase> UILinkedList;
 
-    [BoxGroup("RootUI Lists")] [ReorderableList]
-    public List<UIBase> rootUIShow = new List<UIBase>(1 << 4);
+    [BoxGroup("RootUI Lists")] [TableList] public List<UIBase> rootUIShow = new List<UIBase>(1 << 4);
 
-    [BoxGroup("StackUI Lists")] [ReorderableList]
+    [BoxGroup("StackUI Lists")] [TableList]
     public List<UIBase> stackUIShow = new List<UIBase>(1 << 4);
 
-    [BoxGroup("TopUI Lists")] [ReorderableList]
+    [BoxGroup("TopUI Lists")] [TableList]
     public List<UIBase> topUIShow = new List<UIBase>(1 << 2);
 
-    [BoxGroup("UILinkedList Lists")] [ReorderableList]
+    [BoxGroup("UILinkedList Lists")] [TableList]
     public List<UIBase> UILinkedListShow = new List<UIBase>(1 << 2);
 
     #endregion

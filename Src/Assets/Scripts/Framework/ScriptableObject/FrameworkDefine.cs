@@ -9,6 +9,7 @@
 //======================================================
 
 using System;
+using Sirenix.OdinInspector;
 using UnityEngine;
 
 /// <summary>
@@ -16,5 +17,5 @@ using UnityEngine;
 /// </summary>
 public class FrameworkDefine : ScriptableObject
 {
-    [Header("源码网址")] public string FrameworkWebsite = String.Empty;
+    [InfoBox("源码网址")] public string FrameworkWebsite = String.Empty;
 }

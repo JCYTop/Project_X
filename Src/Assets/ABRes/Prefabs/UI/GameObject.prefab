@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 2275162090067332577}
   - component: {fileID: -66617973668558459}
   - component: {fileID: 4534574302098655288}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: GameObject
-  m_TagString: Untagged
+  m_TagString: Util
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -76,15 +76,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4a67f2e3cce811448b1edcc383ab997, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectLayer: 5
-  objectTag: UI
+  objectLayer: 0
+  objectTag: 8
   Des: "\u6D4B\u8BD5UI"
   IsPreLoad: 0
   resID: 0
   globalID: 0
-  PointTrans:
-  - ActPosType: 0
-    Trans: {fileID: 0}
+  PointTrans: []
   ShowType: 2
   IsRepeat: 0
 --- !u!1 &8387179247059613923

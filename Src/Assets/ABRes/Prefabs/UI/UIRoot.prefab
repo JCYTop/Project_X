@@ -284,7 +284,7 @@ GameObject:
   - component: {fileID: 5124980737728070941}
   m_Layer: 5
   m_Name: UIRoot
-  m_TagString: Untagged
+  m_TagString: UI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -334,10 +334,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectLayer: 5
-  objectTag: UI
+  objectTag: 1
   Des: UIRoot
-  id: 0
+  IsPreLoad: 0
+  resID: 0
+  globalID: 0
+  PointTrans: []
   ShowType: 0
+  IsRepeat: 0
 --- !u!114 &5124980737728070941
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -359,7 +363,8 @@ MonoBehaviour:
   toolCanvas:
   - {fileID: 1186083012631581945}
   rootUIShow: []
-  stackUIShow: []
+  stackUIShow:
+  - {fileID: 0}
   topUIShow: []
   UILinkedListShow: []
 --- !u!1 &8790702951996840613

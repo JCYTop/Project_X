@@ -14,12 +14,12 @@
 */
 
 using System;
-using NaughtyAttributes;
+using Sirenix.OdinInspector;
 using UnityEngine;
 
 public class CharacterBase : ObjectBase
 {
-    [BoxGroup("角色属性设置")] [EnumMixed] [Header("角色注册类型")] [SerializeField]
+    [BoxGroup("角色属性设置"), InfoBox("角色注册类型"), SerializeField]
     private Character Options = Character.Player;
 
     public override void Init()
@@ -33,10 +33,13 @@ public class CharacterBase : ObjectBase
     }
 }
 
+[Flags]
 public enum Character
 {
-    Player,
-    Enemy,
-    Boss,
-    NPC,
+    None = 0,
+    Player = 1,
+    Enemy = 1 << 1,
+    Boss = 1 << 2,
+    NPC = 1 << 3,
+    ALL = Player | Enemy | Boss | NPC
 }
