@@ -13,10 +13,6 @@
  ----------------------------------
 */
 
-using System.Collections;
-using System.Collections.Generic;
-using Unity.Entities;
-using UnityEngine;
 
 /// <summary>
 /// 设计标签类
