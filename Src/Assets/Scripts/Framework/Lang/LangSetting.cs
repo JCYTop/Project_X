@@ -8,6 +8,7 @@
 // -  独立游戏开发
 //======================================================
 
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -15,10 +16,12 @@ using UnityEngine;
 public class LangSetting : MonoBehaviour
 {
     //TODO 后期取消手动拖拽
-    [SerializeField] private TextAsset wordText; //语言配置
+    [SerializeField] private Language wordText; //语言配置
     private static LangSetting instance;
-    private Dictionary<string, Hashtable> wordMap = new Dictionary<string, Hashtable>(); //语言索引表
-    private string currLanguage = string.Empty;
+    private Dictionary<int, Hashtable> wordMap = new Dictionary<int, Hashtable>(); //语言索引表
+    private LanguageType currLanguage = LanguageType.ChineseSimplified;
+
+    #region Private
 
     public static LangSetting Instance()
     {
@@ -36,8 +39,6 @@ public class LangSetting : MonoBehaviour
         Instance();
     }
 
-    #region Private
-
     /// <summary>
     /// 初始化操作
     /// </summary>
@@ -51,47 +52,49 @@ public class LangSetting : MonoBehaviour
     {
         if (wordText != null)
         {
-            var json = wordText.text;
-            var datas = FileUtils.ReadJsonData<List<LangItem>>(json, JSonUtilType.JsonConvert);
-            foreach (LangItem langItem in datas)
+            var datas = wordText.dataArray;
+            foreach (var item in datas)
             {
                 var tmp = new Hashtable();
-                tmp.Add("ChineseSimplified", langItem.ChineseSimplified);
-                tmp.Add("ChineseTraditional", langItem.ChineseTraditional);
-                tmp.Add("English", langItem.English);
-                wordMap.Add(langItem.LanguageKey, tmp);
+                tmp.Add(LanguageType.ChineseSimplified, item.Chinesesimplified);
+                tmp.Add(LanguageType.ChineseTraditional, item.Chinesetraditional);
+                tmp.Add(LanguageType.English, item.English);
+                wordMap.Add(item.Languagekey, tmp);
             }
         }
     }
 
-    private string GetCurLang()
+    private LanguageType GetCurLang()
     {
         //TODO 更换存储方式
-        currLanguage = PlayerPrefs.GetString("language");
-        if (string.IsNullOrEmpty(currLanguage))
+        var language = PlayerPrefs.GetString("Language");
+        if (string.IsNullOrEmpty(language))
         {
-            //currLanguage = Application.systemLanguage.ToString();
-            currLanguage = "ChineseSimplified";
+            currLanguage = LanguageType.ChineseSimplified;
             SetCurLang(currLanguage);
+        }
+        else
+        {
+            currLanguage = (LanguageType) Enum.Parse(typeof(LanguageType), language);
         }
 
         return currLanguage;
     }
 
-    private void SetCurLang(string language)
+    private void SetCurLang(LanguageType Language)
     {
         //TODO 更换存储方式
-        PlayerPrefs.SetString("language", language);
+        PlayerPrefs.SetString("Language", Enum.GetName(typeof(LanguageType), Language));
     }
 
-    private string _GetWord(string key)
+    private string _GetWord(int key)
     {
         if (key != null)
         {
             var word = wordMap[key][currLanguage] as string;
             if (string.IsNullOrEmpty(word))
             {
-                word = key;
+                word = key.ToString();
             }
 
             return word;
@@ -109,7 +112,7 @@ public class LangSetting : MonoBehaviour
     /// </summary>
     /// <param name="key"></param>
     /// <returns></returns>
-    public string GetWord(string key)
+    public string GetWord(int key)
     {
         return instance._GetWord(key);
     }
@@ -117,13 +120,9 @@ public class LangSetting : MonoBehaviour
     #endregion
 }
 
-/// <summary>
-/// 使用Newtonsoft.Json解析
-/// </summary>
-public class LangItem
+public enum LanguageType
 {
-    public string LanguageKey;
-    public string ChineseSimplified;
-    public string ChineseTraditional;
-    public string English;
+    ChineseSimplified,
+    ChineseTraditional,
+    English,
 }

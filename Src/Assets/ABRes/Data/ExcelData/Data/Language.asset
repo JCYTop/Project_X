@@ -1,0 +1,101 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48afe1ab8265e9d42a857d90d80457ec, type: 3}
+  m_Name: Language
+  m_EditorClassIdentifier: 
+  SheetName: Assets/ExcelData/Excel/LanguageSheet.xlsx
+  WorksheetName: Language
+  dataArray:
+  - languagekey: 100000
+    chinesesimplified: "\u5F00\u59CB"
+    chinesetraditional: "\u958B\u59CB"
+    english: Start
+  - languagekey: 100001
+    chinesesimplified: "\u5F00\u59CB"
+    chinesetraditional: "\u958B\u59CB"
+    english: Start
+  - languagekey: 100002
+    chinesesimplified: "\u5F00\u59CB"
+    chinesetraditional: "\u958B\u59CB"
+    english: Start
+  - languagekey: 100003
+    chinesesimplified: "\u5F00\u59CB"
+    chinesetraditional: "\u958B\u59CB"
+    english: Start
+  - languagekey: 100004
+    chinesesimplified: "\u5F00\u59CB"
+    chinesetraditional: "\u958B\u59CB"
+    english: Start
+  - languagekey: 100005
+    chinesesimplified: "\u5F00\u59CB"
+    chinesetraditional: "\u958B\u59CB"
+    english: Start
+  - languagekey: 100006
+    chinesesimplified: "\u5F00\u59CB"
+    chinesetraditional: "\u958B\u59CB"
+    english: Start
+  - languagekey: 100007
+    chinesesimplified: "\u5F00\u59CB"
+    chinesetraditional: "\u958B\u59CB"
+    english: Start
+  - languagekey: 100008
+    chinesesimplified: "\u5F00\u59CB"
+    chinesetraditional: "\u958B\u59CB"
+    english: Start
+  - languagekey: 100009
+    chinesesimplified: "\u5F00\u59CB"
+    chinesetraditional: "\u958B\u59CB"
+    english: Start
+  - languagekey: 100010
+    chinesesimplified: "\u5F00\u59CB"
+    chinesetraditional: "\u958B\u59CB"
+    english: Start
+  - languagekey: 100011
+    chinesesimplified: "\u5F00\u59CB"
+    chinesetraditional: "\u958B\u59CB"
+    english: Start
+  - languagekey: 100012
+    chinesesimplified: "\u5F00\u59CB"
+    chinesetraditional: "\u958B\u59CB"
+    english: Start
+  - languagekey: 100013
+    chinesesimplified: "\u5F00\u59CB"
+    chinesetraditional: "\u958B\u59CB"
+    english: Start
+  - languagekey: 100014
+    chinesesimplified: "\u5F00\u59CB"
+    chinesetraditional: "\u958B\u59CB"
+    english: Start
+  - languagekey: 100015
+    chinesesimplified: "\u5F00\u59CB"
+    chinesetraditional: "\u958B\u59CB"
+    english: Start
+  - languagekey: 100016
+    chinesesimplified: "\u5F00\u59CB"
+    chinesetraditional: "\u958B\u59CB"
+    english: Start
+  - languagekey: 100017
+    chinesesimplified: "\u5F00\u59CB"
+    chinesetraditional: "\u958B\u59CB"
+    english: Start
+  - languagekey: 100018
+    chinesesimplified: "\u5F00\u59CB"
+    chinesetraditional: "\u958B\u59CB"
+    english: Start
+  - languagekey: 100019
+    chinesesimplified: "\u5F00\u59CB"
+    chinesetraditional: "\u958B\u59CB"
+    english: Start
+  - languagekey: 100020
+    chinesesimplified: "\u5F00\u59CB"
+    chinesetraditional: "\u958B\u59CB"
+    english: Start

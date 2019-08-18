@@ -77,4 +77,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96740733c05710a4188eec3a1c7e82db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wordText: {fileID: 4900000, guid: 26ffc20639849f94282dac1c70a4e794, type: 3}
+  wordText: {fileID: 11400000, guid: edede97c278f3c6489aa8f1175bff89e, type: 2}
