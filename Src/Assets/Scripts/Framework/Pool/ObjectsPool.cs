@@ -13,13 +13,7 @@
  ----------------------------------
 */
 
-using System;
-using System.CodeDom;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class ObjectPool<T> : ObjectPoolBase<T> where T : new()
+public class ObjectsPool<T> : ObjectsPoolBase<T> where T : new()
 {
     protected override IPoolable CreateObj()
     {

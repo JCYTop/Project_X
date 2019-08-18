@@ -8,15 +8,11 @@
 // -  独立游戏开发
 //======================================================
 
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public abstract class ObjectPoolBase<T> : IPool where T : new()
+public abstract class ObjectsPoolBase<T> : IPool where T : new()
 {
     private IPoolable[] objPool;
 
-    public ObjectPoolBase()
+    public ObjectsPoolBase()
     {
         objPool = new IPoolable[Count];
     }
