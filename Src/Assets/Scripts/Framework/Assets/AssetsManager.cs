@@ -170,6 +170,11 @@ public class AssetsManager : MonoEventEmitter
         }
     }
 
+    /// <summary>
+    /// ID加载唯一确定
+    /// </summary>
+    /// <param name="id"></param>
+    /// <param name="callback"></param>
     public void GetPrefabAsync(long id, Action<GameObject> callback)
     {
         if (IDABInfo.TryGetValue(id, out var data))
@@ -177,7 +182,6 @@ public class AssetsManager : MonoEventEmitter
             GetPrefabAsync(data.Path, callback);
         }
     }
-
 
     /// <summary>
     /// 清空资源列表

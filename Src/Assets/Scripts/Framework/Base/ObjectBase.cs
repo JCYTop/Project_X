@@ -18,10 +18,10 @@ public abstract class ObjectBase : MonoEventEmitter
     [BoxGroup("基本属性手动设置")] public string Des = string.Empty;
     [BoxGroup("基本属性手动设置")] public bool IsPreLoad = false;
 
-    [BoxGroup("自动设置"), InfoBox("唯一资源标识ID"), SerializeField]
+    [BoxGroup("自动设置"), Header("唯一资源标识ID"), SerializeField, ReadOnly]
     private long resID;
 
-    [BoxGroup("自动设置"), InfoBox("运行时场景唯一标识ID"), SerializeField]
+    [BoxGroup("自动设置"), Header("运行时场景唯一标识ID"), SerializeField, ReadOnly]
     protected int globalID;
 
     [SerializeField] private PointTrans[] PointTrans = new PointTrans[] { };

@@ -44,7 +44,8 @@ public static class FrameworkToolsMenu
         public const string FindConfig_FrameworkDefine = "Framework/关于配置文件/配置文件/FrameworkDefine";
         public const string FindConfig_LogConfig = "Framework/关于配置文件/配置文件/LogConfig";
         public const string CreateScriptableObject = "Framework/关于配置文件/创建配置文件";
-        public const string RefreshConfig = "Framework/关于配置文件/刷新配置文件 _F11";
+        public const string RefreshConfig = "Framework/关于配置文件/刷新资源配置文件 _F11";
+        public const string CleanRefreshConfig = "Framework/关于配置文件/清除资源配置文件 #_F11";
         public const string GetObjectPath = "Framework/快捷键/获取路径 %q";
     }
 
@@ -60,6 +61,7 @@ public static class FrameworkToolsMenu
         FindConfig_LogConfig,
         CreateScriptableObject,
         RefreshConfig,
+        CleanRefreshConfig,
         GetObjectPath
     }
 
@@ -140,6 +142,12 @@ public static class FrameworkToolsMenu
         public static void ResGOConfig()
         {
             RefreshConfig.ResGOConfig();
+        }
+
+        [MenuItem(ToolsList.CleanRefreshConfig, false, (int) ToolsListPriorities.CleanRefreshConfig)]
+        public static void CleanResGOConfig()
+        {
+            RefreshConfig.CleanResGOConfig();
         }
 
         [MenuItem(ToolsList.GetObjectPath, false, (int) ToolsListPriorities.GetObjectPath)]

@@ -10,6 +10,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.IO;
 using UnityEditor;
 using UnityEngine;
@@ -23,14 +24,32 @@ public class RefreshConfig : MonoBehaviour
         //获取编辑器下所有的Tag
         var tags = UnityEditorInternal.InternalEditorUtility.tags;
         var layers = UnityEditorInternal.InternalEditorUtility.layers;
-        var goIndex = 0;
         var abInfo = Define.ABInfo;
         var uiDatas = new Dictionary<long, ABData>();
         var genPath = Application.dataPath + "/ABRes/";
         var filesPath = Directory.GetFiles(genPath, "*.prefab", SearchOption.AllDirectories);
         var info = "";
+        var presenceResID = new HashSet<long>();
         for (int i = 0; i < filesPath.Length; i++)
         {
+            filesPath[i] = filesPath[i].Substring(filesPath[i].IndexOf("Assets", StringComparison.Ordinal));
+            var prefab = AssetDatabase.LoadAssetAtPath(filesPath[i], typeof(GameObject)) as GameObject;
+            var progress = (float) i / filesPath.Length;
+            EditorUtility.DisplayProgressBar("UI记录已知ResID进度...", info, progress);
+            if (prefab != null)
+            {
+                var goBase = prefab.GetComponent<ObjectBase>();
+                if (goBase != null)
+                {
+                    if (goBase.ResID > 0)
+                        presenceResID.Add(goBase.ResID);
+                }
+            }
+        }
+
+        for (int i = 0; i < filesPath.Length; i++)
+        {
+            var goIndex = 0;
             filesPath[i] = filesPath[i].Substring(filesPath[i].IndexOf("Assets", StringComparison.Ordinal));
             var prefab = AssetDatabase.LoadAssetAtPath(filesPath[i], typeof(GameObject)) as GameObject;
             var progress = (float) i / filesPath.Length;
@@ -59,7 +78,35 @@ public class RefreshConfig : MonoBehaviour
                         tmpLayer = layers[j];
                     }
 
-                    goBase.ResID = indexLayer * 10000000 + indexTag * 1000 + goIndex;
+                    var resID = 0L;
+                    if (presenceResID.Contains(goBase.ResID))
+                    {
+                        resID = goBase.ResID;
+                    }
+                    else
+                    {
+                        resID = indexLayer * 100000000L + indexTag * 1000000L + goIndex;
+                        var reCreateIndex = true;
+                        while (reCreateIndex)
+                        {
+                            if (goIndex > 1000000)
+                            {
+                                throw new Exception("超过判断");
+                            }
+
+                            if (!presenceResID.Contains(resID))
+                            {
+                                reCreateIndex = false;
+                            }
+                            else
+                            {
+                                goIndex++;
+                                resID = indexLayer * 100000000L + indexTag * 1000000L + goIndex;
+                            }
+                        }
+                    }
+
+                    goBase.ResID = resID;
                     AssetDatabase.SaveAssets();
                     var path = filesPath[i];
                     path = filesPath[i].Substring(filesPath[i].IndexOf("ABRes", StringComparison.Ordinal));
@@ -92,5 +139,32 @@ public class RefreshConfig : MonoBehaviour
 
         EditorUtility.ClearProgressBar();
         LogUtil.Log(string.Format("共 {0} 个GO", uiDatas.Count), LogType.Editor);
+    }
+
+    public static void CleanResGOConfig()
+    {
+        var genPath = Application.dataPath + "/ABRes/";
+        var filesPath = Directory.GetFiles(genPath, "*.prefab", SearchOption.AllDirectories);
+        var info = "";
+        var index = 0;
+        for (int i = 0; i < filesPath.Length; i++)
+        {
+            filesPath[i] = filesPath[i].Substring(filesPath[i].IndexOf("Assets", StringComparison.Ordinal));
+            var prefab = AssetDatabase.LoadAssetAtPath(filesPath[i], typeof(GameObject)) as GameObject;
+            var progress = (float) i / filesPath.Length;
+            EditorUtility.DisplayProgressBar("UI配置清除进度...", info, progress);
+            if (prefab != null)
+            {
+                var goBase = prefab.GetComponent<ObjectBase>();
+                if (goBase != null)
+                {
+                    goBase.ResID = 0;
+                    index++;
+                }
+            }
+        }
+
+        EditorUtility.ClearProgressBar();
+        LogUtil.Log(string.Format("共 {0} 个GO", index), LogType.Editor);
     }
 }

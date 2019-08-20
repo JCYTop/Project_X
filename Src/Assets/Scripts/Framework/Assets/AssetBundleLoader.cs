@@ -64,7 +64,6 @@ public class AssetBundleLoader : MonoEventEmitter
         if (request == null)
             yield break;
         yield return StartCoroutine(request);
-
         var obj = request.GetAsset<UnityEngine.Object>();
         if (callback != null) callback(obj);
     }
