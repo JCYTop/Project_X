@@ -41,8 +41,14 @@ public class RefreshConfig : MonoBehaviour
                 var goBase = prefab.GetComponent<ObjectBase>();
                 if (goBase != null)
                 {
-                    if (goBase.ResID > 0)
+                    if (goBase.ResID > 0 && goBase.ResID / 10000000 <= 0)
+                    {
                         presenceResID.Add(goBase.ResID);
+                    }
+                    else
+                    {
+                        goBase.ResID = 0;
+                    }
                 }
             }
         }
@@ -78,30 +84,30 @@ public class RefreshConfig : MonoBehaviour
                         tmpLayer = layers[j];
                     }
 
-                    var resID = 0L;
+                    var resID = 0;
                     if (presenceResID.Contains(goBase.ResID))
                     {
                         resID = goBase.ResID;
                     }
                     else
                     {
-                        resID = indexLayer * 100000000L + indexTag * 1000000L + goIndex;
+                        resID = +indexTag * 100000 + goIndex;
                         var reCreateIndex = true;
                         while (reCreateIndex)
                         {
-                            if (goIndex > 1000000)
+                            if (goIndex > 100000)
                             {
                                 throw new Exception("超过判断");
                             }
 
-                            if (!presenceResID.Contains(resID))
+                            if (presenceResID.Add(resID))
                             {
                                 reCreateIndex = false;
                             }
                             else
                             {
                                 goIndex++;
-                                resID = indexLayer * 100000000L + indexTag * 1000000L + goIndex;
+                                resID = +indexTag * 100000 + goIndex;
                             }
                         }
                     }

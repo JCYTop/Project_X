@@ -19,7 +19,7 @@ public abstract class ObjectBase : MonoEventEmitter
     [BoxGroup("基本属性手动设置")] public bool IsPreLoad = false;
 
     [BoxGroup("自动设置"), Header("唯一资源标识ID"), SerializeField, ReadOnly]
-    private long resID;
+    private int resID;
 
     [BoxGroup("自动设置"), Header("运行时场景唯一标识ID"), SerializeField, ReadOnly]
     protected int globalID;
@@ -47,7 +47,7 @@ public abstract class ObjectBase : MonoEventEmitter
         set { name = value; }
     }
 
-    public long ResID
+    public int ResID
     {
         get => resID;
         set => resID = value;
@@ -116,6 +116,12 @@ public abstract class ObjectBase : MonoEventEmitter
     private void SetCurrentLayer()
     {
         gameObject.layer = ObjectLayer;
+    }
+
+    [Button(ButtonSizes.Small), GUIColor(1, 0, 0)]
+    private void ResetResID()
+    {
+        resID = 0;
     }
 }
 
