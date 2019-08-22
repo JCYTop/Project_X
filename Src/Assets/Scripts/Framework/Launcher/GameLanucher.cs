@@ -27,8 +27,9 @@ public class GameLanucher : MonoBehaviour
         appLanucher.AddTask<SystemCheck>();
         appLanucher.AddTask<CheckMemory>();
         appLanucher.AddTask<Assets>();
-        appLanucher.AddTask<Manager>();
         appLanucher.AddTask<LoadBase>();
+        appLanucher.AddTask<Manager>();
+        appLanucher.AddTask<Util>();
         appLanucher.AddTask<CheckLoadMode>();
         appLanucher.AddTask<SDK>();
         appLanucher.AddTask<Update>();

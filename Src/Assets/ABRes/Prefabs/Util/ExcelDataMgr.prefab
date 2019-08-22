@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 5834672036963611575}
   - component: {fileID: 1527100429836616126}
   - component: {fileID: 1746918870457274471}
-  - component: {fileID: 5471783834159423587}
+  - component: {fileID: 6524474057141994584}
   m_Layer: 0
-  m_Name: LangSetting
+  m_Name: ExcelData
   m_TagString: Util
   m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -60,12 +60,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectLayer: 0
   objectTag: 8
-  Des: "\u591A\u8BED\u8A00"
+  Des: "\u6570\u636E\u8868\u6570\u636E"
   IsPreLoad: 0
   resID: 0
   globalID: 0
   PointTrans: []
---- !u!114 &5471783834159423587
+--- !u!114 &6524474057141994584
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -74,7 +74,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 652732097153272055}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 96740733c05710a4188eec3a1c7e82db, type: 3}
+  m_Script: {fileID: 11500000, guid: c838c1d3953bbae4abe561b01a2b672d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wordText: {fileID: 0}
+  language: {fileID: 11400000, guid: b1050395ced67cf4e9708186993a4108, type: 2}

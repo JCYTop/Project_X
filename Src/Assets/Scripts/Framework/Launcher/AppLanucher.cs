@@ -19,8 +19,9 @@ public enum TaskType
     SystemCheck = 0, //检查程序运行
     CheckMemory, //检查内存是否够用
     Assets, //资源管理启动
-    Manager, //基础Manager启动
     LoadBase, //载入基础信息
+    Manager, //基础Manager启动
+    Util, //载入工具类
     CheckLoadMode, //检测登陆模式
     SDK, //SDK处理
     Update, //资源更新处理

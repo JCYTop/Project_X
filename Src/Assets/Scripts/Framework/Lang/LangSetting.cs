@@ -15,8 +15,6 @@ using UnityEngine;
 
 public class LangSetting : MonoBehaviour
 {
-    //TODO 后期取消手动拖拽
-    [SerializeField] private Language wordText; //语言配置
     private static LangSetting instance;
     private Dictionary<int, Hashtable> wordMap = new Dictionary<int, Hashtable>(); //语言索引表
     private LanguageType currLanguage = LanguageType.ChineseSimplified;
@@ -50,9 +48,9 @@ public class LangSetting : MonoBehaviour
 
     private void ParseWord()
     {
-        if (wordText != null)
+        if (ExcelDataMgr.Instance().Language != null)
         {
-            var datas = wordText.dataArray;
+            var datas = ExcelDataMgr.Instance().Language.dataArray;
             foreach (var item in datas)
             {
                 var tmp = new Hashtable();

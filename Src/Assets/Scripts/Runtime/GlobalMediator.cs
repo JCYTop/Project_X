@@ -13,10 +13,6 @@
  ----------------------------------
 */
 
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
 public class GlobalMediator
 {
     public static bool TaskIsFinish = false;

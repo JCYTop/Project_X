@@ -199,28 +199,28 @@ public class ExcelToolMenu : EditorMenu<ExcelToolMenu>
             if (indexOfFormat == 0)
             {
                 output = excelPath.Replace(".xlsx", ".json");
-                output = output.Replace(Application.dataPath + "/ExcelData/", "");
+                output = output.Replace(Application.dataPath + "/ExcelDataMgr/", "");
                 output = outPath + output;
                 excel.ConvertToJson(output, encoding);
             }
             else if (indexOfFormat == 1)
             {
                 output = excelPath.Replace(".xlsx", ".csv");
-                output = output.Replace(Application.dataPath + "/ExcelData/", "");
+                output = output.Replace(Application.dataPath + "/ExcelDataMgr/", "");
                 output = outPath + output;
                 excel.ConvertToCSV(output, encoding);
             }
             else if (indexOfFormat == 2)
             {
                 output = excelPath.Replace(".xlsx", ".xml");
-                output = output.Replace(Application.dataPath + "/ExcelData/", "");
+                output = output.Replace(Application.dataPath + "/ExcelDataMgr/", "");
                 output = outPath + output;
                 excel.ConvertToXml(output);
             }
             else if (indexOfFormat == 3)
             {
                 output = excelPath.Replace(".xlsx", ".lua");
-                output = output.Replace(Application.dataPath + "/ExcelData/", "");
+                output = output.Replace(Application.dataPath + "/ExcelDataMgr/", "");
                 output = outPath + output;
                 excel.ConvertToLua(output, encoding);
             }

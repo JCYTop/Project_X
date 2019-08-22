@@ -13,12 +13,10 @@
  ----------------------------------
 */
 
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// 全局声明
+/// 全局声明,基础配置序列化文件
 /// </summary>
 public class Define
 {
