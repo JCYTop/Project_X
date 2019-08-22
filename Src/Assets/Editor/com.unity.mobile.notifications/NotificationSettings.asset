@@ -21,14 +21,12 @@ MonoBehaviour:
     - UnityNotificationRequestAuthorizationForRemoteNotificationsOnAppLaunch
     - UnityRemoteNotificationForegroundPresentationOptions
     - UnityUseLocationNotificationTrigger
-    - UnityAddRemoteNotificationCapability
     values:
     - True
     - -1
     - False
     - False
     - -1
-    - False
     - False
   AndroidNotificationEditorSettingsValues:
     keys:
