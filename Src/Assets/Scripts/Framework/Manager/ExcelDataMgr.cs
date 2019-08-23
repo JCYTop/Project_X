@@ -12,10 +12,10 @@ using UnityEngine;
 
 public class ExcelDataMgr : MonoSingleton<ExcelDataMgr>
 {
-//    [SerializeField, Header("语言配置表")] private LanguageSheet language;
-//
-//    public LanguageSheet Language
-//    {
-//        get { return language; }
-//    }
+    [SerializeField, Header("语言配置表")] private LanguageSheet language;
+
+    public LanguageSheet Language
+    {
+        get { return language; }
+    }
 }

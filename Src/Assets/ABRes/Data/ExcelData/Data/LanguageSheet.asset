@@ -14,4 +14,124 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SheetName: Assets/ABRes/Data/ExcelData/Excel/Language.xlsx
   WorksheetName: LanguageSheet
-  dataArray: []
+  dataArray:
+  - languagekey: 100000
+    chinesesimplified: "\u4F60\u597D"
+    chinesetraditional: "\u59B3\u597D"
+    english: Hello
+  - languagekey: 100001
+    chinesesimplified: "\u4F60\u597D"
+    chinesetraditional: "\u59B3\u597D"
+    english: Hello
+  - languagekey: 100002
+    chinesesimplified: "\u4F60\u597D"
+    chinesetraditional: "\u59B3\u597D"
+    english: Hello
+  - languagekey: 100003
+    chinesesimplified: "\u4F60\u597D"
+    chinesetraditional: "\u59B3\u597D"
+    english: Hello
+  - languagekey: 100004
+    chinesesimplified: "\u4F60\u597D"
+    chinesetraditional: "\u59B3\u597D"
+    english: Hello
+  - languagekey: 100005
+    chinesesimplified: "\u4F60\u597D"
+    chinesetraditional: "\u59B3\u597D"
+    english: Hello
+  - languagekey: 100006
+    chinesesimplified: "\u4F60\u597D"
+    chinesetraditional: "\u59B3\u597D"
+    english: Hello
+  - languagekey: 100007
+    chinesesimplified: "\u4F60\u597D"
+    chinesetraditional: "\u59B3\u597D"
+    english: Hello
+  - languagekey: 100008
+    chinesesimplified: "\u4F60\u597D"
+    chinesetraditional: "\u59B3\u597D"
+    english: Hello
+  - languagekey: 100009
+    chinesesimplified: "\u4F60\u597D"
+    chinesetraditional: "\u59B3\u597D"
+    english: Hello
+  - languagekey: 100010
+    chinesesimplified: "\u4F60\u597D"
+    chinesetraditional: "\u59B3\u597D"
+    english: Hello
+  - languagekey: 100011
+    chinesesimplified: "\u4F60\u597D"
+    chinesetraditional: "\u59B3\u597D"
+    english: Hello
+  - languagekey: 100012
+    chinesesimplified: "\u4F60\u597D"
+    chinesetraditional: "\u59B3\u597D"
+    english: Hello
+  - languagekey: 100013
+    chinesesimplified: "\u4F60\u597D"
+    chinesetraditional: "\u59B3\u597D"
+    english: Hello
+  - languagekey: 100014
+    chinesesimplified: "\u4F60\u597D"
+    chinesetraditional: "\u59B3\u597D"
+    english: Hello
+  - languagekey: 100015
+    chinesesimplified: "\u4F60\u597D"
+    chinesetraditional: "\u59B3\u597D"
+    english: Hello
+  - languagekey: 100016
+    chinesesimplified: "\u4F60\u597D"
+    chinesetraditional: "\u59B3\u597D"
+    english: Hello
+  - languagekey: 100017
+    chinesesimplified: "\u4F60\u597D"
+    chinesetraditional: "\u59B3\u597D"
+    english: Hello
+  - languagekey: 100018
+    chinesesimplified: "\u4F60\u597D"
+    chinesetraditional: "\u59B3\u597D"
+    english: Hello
+  - languagekey: 100019
+    chinesesimplified: "\u4F60\u597D"
+    chinesetraditional: "\u59B3\u597D"
+    english: Hello
+  - languagekey: 100020
+    chinesesimplified: "\u4F60\u597D"
+    chinesetraditional: "\u59B3\u597D"
+    english: Hello
+  - languagekey: 100021
+    chinesesimplified: "\u4F60\u597D"
+    chinesetraditional: "\u59B3\u597D"
+    english: Hello
+  - languagekey: 100022
+    chinesesimplified: "\u4F60\u597D"
+    chinesetraditional: "\u59B3\u597D"
+    english: Hello
+  - languagekey: 100023
+    chinesesimplified: "\u4F60\u597D"
+    chinesetraditional: "\u59B3\u597D"
+    english: Hello
+  - languagekey: 100024
+    chinesesimplified: "\u4F60\u597D"
+    chinesetraditional: "\u59B3\u597D"
+    english: Hello
+  - languagekey: 100025
+    chinesesimplified: "\u4F60\u597D"
+    chinesetraditional: "\u59B3\u597D"
+    english: Hello
+  - languagekey: 100026
+    chinesesimplified: "\u4F60\u597D"
+    chinesetraditional: "\u59B3\u597D"
+    english: Hello
+  - languagekey: 100027
+    chinesesimplified: "\u4F60\u597D"
+    chinesetraditional: "\u59B3\u597D"
+    english: Hello
+  - languagekey: 100028
+    chinesesimplified: "\u4F60\u597D"
+    chinesetraditional: "\u59B3\u597D"
+    english: Hello
+  - languagekey: 100029
+    chinesesimplified: "\u4F60\u597D"
+    chinesetraditional: "\u59B3\u597D"
+    english: Hello
