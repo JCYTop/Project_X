@@ -48,18 +48,18 @@ public class LangSetting : MonoBehaviour
 
     private void ParseWord()
     {
-        if (ExcelDataMgr.Instance().Language != null)
-        {
-            var datas = ExcelDataMgr.Instance().Language.dataArray;
-            foreach (var item in datas)
-            {
-                var tmp = new Hashtable();
-                tmp.Add(LanguageType.ChineseSimplified, item.Chinesesimplified);
-                tmp.Add(LanguageType.ChineseTraditional, item.Chinesetraditional);
-                tmp.Add(LanguageType.English, item.English);
-                wordMap.Add(item.Languagekey, tmp);
-            }
-        }
+//        if (ExcelDataMgr.Instance().Language != null)
+//        {
+//            var datas = ExcelDataMgr.Instance().Language.dataArray;
+//            foreach (var item in datas)
+//            {
+//                var tmp = new Hashtable();
+//                tmp.Add(LanguageType.ChineseSimplified, item.Chinesesimplified);
+//                tmp.Add(LanguageType.ChineseTraditional, item.Chinesetraditional);
+//                tmp.Add(LanguageType.English, item.English);
+//                wordMap.Add(item.Languagekey, tmp);
+//            }
+//        }
     }
 
     private LanguageType GetCurLang()
