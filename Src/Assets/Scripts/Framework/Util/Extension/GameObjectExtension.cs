@@ -5,6 +5,7 @@ using UnityEngine;
 public static class GameObjectExtension
 {
     #region  Show
+
     public static GameObject Show(this GameObject selfObj)
     {
         selfObj.SetActive(true);
@@ -16,9 +17,11 @@ public static class GameObjectExtension
         selfComponent.gameObject.Show();
         return selfComponent;
     }
+
     #endregion
 
     #region  Hide
+
     public static GameObject Hide(this GameObject selfObj)
     {
         selfObj.SetActive(false);
@@ -30,16 +33,20 @@ public static class GameObjectExtension
         selfComponent.gameObject.Hide();
         return selfComponent;
     }
+
     #endregion
 
     #region  DestroyGameObj
+
     public static void DestroyGameObj<T>(this T selfBehaviour) where T : Component
     {
         selfBehaviour.gameObject.DestroySelf();
     }
+
     #endregion
 
     #region  DestroyGameObjGracefully
+
     public static void DestroyGameObjGracefully<T>(this T selfBehaviour) where T : Component
     {
         if (selfBehaviour && selfBehaviour.gameObject)
@@ -47,9 +54,11 @@ public static class GameObjectExtension
             selfBehaviour.gameObject.DestroySelfGracefully();
         }
     }
+
     #endregion
 
     #region  DestroyGameObjGracefully
+
     public static T DestroyGameObjAfterDelay<T>(this T selfBehaviour, float delay) where T : Component
     {
         selfBehaviour.gameObject.DestroySelfAfterDelay(delay);
@@ -62,11 +71,14 @@ public static class GameObjectExtension
         {
             selfBehaviour.gameObject.DestroySelfAfterDelay(delay);
         }
+
         return selfBehaviour;
     }
+
     #endregion
 
-    #region  Layer
+    #region Layer
+
     public static GameObject Layer(this GameObject selfObj, int layer)
     {
         selfObj.layer = layer;
@@ -90,14 +102,17 @@ public static class GameObjectExtension
         selfComponent.gameObject.layer = LayerMask.NameToLayer(layerName);
         return selfComponent;
     }
+
     #endregion
 
-    #region  Component
+    #region Component
+
     public static T GetOrAddComponent<T>(this GameObject selfComponent) where T : Component
     {
         var comp = selfComponent.gameObject.GetComponent<T>();
         return comp ? comp : selfComponent.gameObject.AddComponent<T>();
     }
+
     #endregion
 
     public static Vector3 WorldToScreenPoint(this GameObject selfComponent, Camera camera)

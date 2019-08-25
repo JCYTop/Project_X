@@ -19,6 +19,7 @@ public static class IOExtension
         {
             Directory.CreateDirectory(dirFullPath);
         }
+
         return dirFullPath;
     }
 
@@ -44,6 +45,7 @@ public static class IOExtension
         {
             Directory.Delete(dirFullPath, true);
         }
+
         Directory.CreateDirectory(dirFullPath);
     }
 
@@ -59,6 +61,7 @@ public static class IOExtension
             File.Delete(fileFullPath);
             return true;
         }
+
         return false;
     }
 

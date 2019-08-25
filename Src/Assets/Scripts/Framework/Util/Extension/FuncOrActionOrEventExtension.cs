@@ -3,6 +3,7 @@
 public static class FuncOrActionOrEventExtension
 {
     #region Func Extension
+
     /// <summary>
     /// 通知所有Func
     /// </summary>
@@ -13,9 +14,11 @@ public static class FuncOrActionOrEventExtension
     {
         return null != selfFunc ? selfFunc() : default(T);
     }
+
     #endregion
 
     #region Action
+
     /// <summary>
     /// 通知所有Action
     /// </summary>
@@ -28,6 +31,7 @@ public static class FuncOrActionOrEventExtension
             selfAction();
             return true;
         }
+
         return false;
     }
 
@@ -44,6 +48,7 @@ public static class FuncOrActionOrEventExtension
             selfAction(t);
             return true;
         }
+
         return false;
     }
 
@@ -59,6 +64,7 @@ public static class FuncOrActionOrEventExtension
             selfAction(t, k);
             return true;
         }
+
         return false;
     }
 
@@ -74,7 +80,9 @@ public static class FuncOrActionOrEventExtension
             selfAction.DynamicInvoke(args);
             return true;
         }
+
         return false;
     }
+
     #endregion
 }

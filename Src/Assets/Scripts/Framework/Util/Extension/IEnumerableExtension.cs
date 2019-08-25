@@ -7,6 +7,7 @@ using UnityEngine;
 public static class IEnumerableExtension
 {
     #region Array
+
     /// <summary>
     /// 循环遍历数组
     /// </summary>
@@ -34,11 +35,14 @@ public static class IEnumerableExtension
         {
             action(item);
         }
+
         return selfArray;
     }
+
     #endregion
 
     #region List
+
     /// <summary>
     /// Fors the each reverse.
     /// </summary>
@@ -123,9 +127,11 @@ public static class IEnumerableExtension
     {
         return selfList.Count > index ? selfList[index] : default(T);
     }
+
     #endregion
 
     #region Dictionary 
+
     /// <summary>
     /// Merge the specified dictionary and dictionaries.
     /// </summary>
@@ -138,7 +144,6 @@ public static class IEnumerableExtension
     {
         return dictionaries.Aggregate(dictionary, (current, dict) => current.Union(dict).ToDictionary(kv => kv.Key, kv => kv.Value));
     }
-
 
     /// <summary>
     /// 遍历
@@ -155,6 +160,7 @@ public static class IEnumerableExtension
             var current = dictE.Current;
             action(current.Key, current.Value);
         }
+
         dictE.Dispose();
     }
 
@@ -178,9 +184,12 @@ public static class IEnumerableExtension
                     dict[current.Key] = current.Value;
                 continue;
             }
+
             dict.Add(current.Key, current.Value);
         }
+
         dictE.Dispose();
     }
+
     #endregion
 }

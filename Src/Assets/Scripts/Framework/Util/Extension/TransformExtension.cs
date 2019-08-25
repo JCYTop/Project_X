@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using System.Text;
 using UnityEngine;
-using UnityEngine.UI;
 
 public static class TransformExtension
 {
@@ -11,18 +8,22 @@ public static class TransformExtension
     /// 免每次声明
     /// </summary>
     private static Vector3 mLocalPos;
+
     private static Vector3 mScale;
     private static Vector3 mPos;
 
     #region  Parent
+
     public static T Parent<T>(this T selfComponent, Transform parent) where T : Component
     {
         selfComponent.transform.SetParent(parent);
         return selfComponent;
     }
+
     #endregion
 
     #region  LocalIdentity
+
     /// <summary>
     /// 本地坐标重置化
     /// </summary>
@@ -36,9 +37,11 @@ public static class TransformExtension
         selfComponent.transform.localScale = Vector3.one;
         return selfComponent;
     }
+
     #endregion
 
     #region  LocalPosition
+
     public static T LocalPosition<T>(this T selfComponent, Vector3 localPos) where T : Component
     {
         selfComponent.transform.localPosition = localPos;
@@ -94,9 +97,11 @@ public static class TransformExtension
         selfComponent.transform.localPosition = Vector3.zero;
         return selfComponent;
     }
+
     #endregion
 
     #region  LocalRotation
+
     public static Quaternion GetLocalRotation<T>(this T selfComponent) where T : Component
     {
         return selfComponent.transform.localRotation;
@@ -113,9 +118,11 @@ public static class TransformExtension
         selfComponent.transform.localRotation = Quaternion.identity;
         return selfComponent;
     }
+
     #endregion
 
     #region  LocalScale
+
     public static T LocalScale<T>(this T selfComponent, Vector3 scale) where T : Component
     {
         selfComponent.transform.localScale = scale;
@@ -151,6 +158,7 @@ public static class TransformExtension
         selfComponent.transform.localScale = mScale;
         return selfComponent;
     }
+
     public static T LocalScaleX<T>(this T selfComponent, float x) where T : Component
     {
         mScale = selfComponent.transform.localScale;
@@ -158,6 +166,7 @@ public static class TransformExtension
         selfComponent.transform.localScale = mScale;
         return selfComponent;
     }
+
     public static T LocalScaleY<T>(this T selfComponent, float y) where T : Component
     {
         mScale = selfComponent.transform.localScale;
@@ -179,9 +188,11 @@ public static class TransformExtension
         selfComponent.transform.localScale = Vector3.one;
         return selfComponent;
     }
+
     #endregion
 
     #region  Position
+
     public static T Position<T>(this T selfComponent, Vector3 position) where T : Component
     {
         selfComponent.transform.position = position;
@@ -261,9 +272,11 @@ public static class TransformExtension
         selfComponent.transform.position = mPos;
         return selfComponent;
     }
+
     #endregion
 
     #region  Rotation
+
     public static T RotationIdentity<T>(this T selfComponent) where T : Component
     {
         selfComponent.transform.rotation = Quaternion.identity;
@@ -280,9 +293,11 @@ public static class TransformExtension
     {
         return selfComponent.transform.rotation;
     }
+
     #endregion
 
     #region  WorldScale/LossyScale/GlobalScale/Scale
+
     public static Vector3 GetGlobalScale<T>(this T selfComponent) where T : Component
     {
         return selfComponent.transform.lossyScale;
@@ -302,9 +317,11 @@ public static class TransformExtension
     {
         return selfComponent.transform.lossyScale;
     }
+
     #endregion
 
     #region  Destroy All Child
+
     public static T DestroyAllChild<T>(this T selfComponent) where T : Component
     {
         var childCount = selfComponent.transform.childCount;
@@ -312,6 +329,7 @@ public static class TransformExtension
         {
             selfComponent.transform.GetChild(i).DestroyGameObjGracefully();
         }
+
         return selfComponent;
     }
 
@@ -322,11 +340,14 @@ public static class TransformExtension
         {
             selfGameObj.transform.GetChild(i).DestroyGameObjGracefully();
         }
+
         return selfGameObj;
     }
+
     #endregion
 
     #region  改变层级渲染
+
     public static T AsLastSibling<T>(this T selfComponent) where T : Component
     {
         selfComponent.transform.SetAsLastSibling();
@@ -344,6 +365,7 @@ public static class TransformExtension
         selfComponent.transform.SetSiblingIndex(index);
         return selfComponent;
     }
+
     #endregion
 
     /// <summary>
@@ -354,7 +376,7 @@ public static class TransformExtension
     /// <returns></returns>
     public static Transform SeekTrans(this Transform selfTransform, string uniqueName)
     {
-        Transform childTrans = selfTransform.Find(uniqueName);
+        var childTrans = selfTransform.Find(uniqueName);
         if (null != childTrans)
             return childTrans;
         foreach (Transform trans in selfTransform)
@@ -363,6 +385,7 @@ public static class TransformExtension
             if (null != childTrans)
                 return childTrans;
         }
+
         return null;
     }
 
@@ -386,8 +409,8 @@ public static class TransformExtension
     /// <returns></returns>
     public static string GetPath(this Transform transform)
     {
-        StringBuilder sb = new StringBuilder();
-        Transform trans = transform;
+        var sb = new StringBuilder();
+        var trans = transform;
         while (true)
         {
             sb.Insert(0, trans.name);
@@ -428,7 +451,7 @@ public static class TransformExtension
     public static Vector3 SetScreenToWorldPoint(this Transform transform, Camera camera, Vector3 input)
     {
         transform.position = camera.ScreenToWorldPoint(input);
-        return transform.position; 
+        return transform.position;
     }
 
     public static Vector3 SetViewportToWorldPoint(this Transform transform, Camera camera, Vector3 input)

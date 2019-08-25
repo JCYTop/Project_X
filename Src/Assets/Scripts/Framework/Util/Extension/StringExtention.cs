@@ -55,7 +55,7 @@ public static class StringExtention
     /// <returns></returns>
     public static bool ParseColor(string _inputString, out Color result, char colorSpriter = ',')
     {
-        string str = _inputString.Trim();
+        var str = _inputString.Trim();
         str = str.Replace("(".ToString(), "");
         str = str.Replace(")".ToString(), "");
         result = Color.clear;
@@ -63,6 +63,7 @@ public static class StringExtention
         {
             return false;
         }
+
         try
         {
             var strArray = str.Split(colorSpriter);
@@ -71,7 +72,8 @@ public static class StringExtention
                 return false;
             }
 
-            result = new Color(float.Parse(strArray[0]) / 255f, float.Parse(strArray[1]) / 255f, float.Parse(strArray[2]) / 255f, float.Parse(strArray[3]) / 255f);
+            result = new Color(float.Parse(strArray[0]) / 255f, float.Parse(strArray[1]) / 255f, float.Parse(strArray[2]) / 255f,
+                float.Parse(strArray[3]) / 255f);
             return true;
         }
         catch (Exception)
@@ -105,6 +107,7 @@ public static class StringExtention
                 }
             }
         }
+
         return dictionary;
     }
 
@@ -210,6 +213,7 @@ public static class StringExtention
             {
                 return false;
             }
+
             result.x = float.Parse(strArray[0]);
             result.y = float.Parse(strArray[1]);
             return true;
