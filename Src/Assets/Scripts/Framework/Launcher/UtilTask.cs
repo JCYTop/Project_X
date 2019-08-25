@@ -1,5 +1,5 @@
 //=====================================================
-// - FileName:      LoadScence.cs
+// - FileName:      LoadScenceTask.cs
 // - Created:       @JCY
 // - CreateTime:    2019/08/22 22:56:57
 // - Email:         jcyemail@qq.com
@@ -10,7 +10,7 @@
 
 using UnityEngine;
 
-public class Util : ILanucherTask
+public class UtilTask : ILanucherTask
 {
     private GameObject langSetting;
 
@@ -21,7 +21,7 @@ public class Util : ILanucherTask
 
     public override TaskType TaskType
     {
-        get => TaskType.Util;
+        get => TaskType.UtilTask;
     }
 
     public override void AddTaskChild()
@@ -36,7 +36,7 @@ public class Util : ILanucherTask
         {
             if (prefab != null)
             {
-                langSetting = GOCommonUtil.InstantiateGo(prefab, true);
+                langSetting = EntityUtil.InstantiateGo(prefab, true);
             }
 
             CalcTaskCount();

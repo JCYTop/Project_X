@@ -227,36 +227,36 @@ namespace UnityQuickSheet
         }
 
         /// <summary>
-        /// e.g. "Assets/Script/Data/Runtime/Item.cs"
+        /// e.g. "AssetsTask/Script/Data/Runtime/Item.cs"
         /// </summary>
         protected string TargetPathForClassScript(string worksheetName)
         {
-            return Path.Combine("Assets/" + machine.RuntimeClassPath, worksheetName + "." + "cs");
+            return Path.Combine("AssetsTask/" + machine.RuntimeClassPath, worksheetName + "." + "cs");
         }
 
         /// <summary>
-        /// e.g. "Assets/Script/Data/Editor/ItemEditor.cs"
+        /// e.g. "AssetsTask/Script/Data/Editor/ItemEditor.cs"
         /// </summary>
         protected string TargetPathForEditorScript(string worksheetName)
         {
-            return Path.Combine("Assets/" + machine.EditorClassPath, worksheetName + "Editor" + "." + "cs");
+            return Path.Combine("AssetsTask/" + machine.EditorClassPath, worksheetName + "Editor" + "." + "cs");
         }
 
         /// <summary>
         /// data class script file has 'WorkSheetNameData' for its filename.
-        /// e.g. "Assets/Script/Data/Runtime/ItemData.cs"
+        /// e.g. "AssetsTask/Script/Data/Runtime/ItemData.cs"
         /// </summary>
         protected string TargetPathForData(string worksheetName)
         {
-            return Path.Combine("Assets/" + machine.RuntimeClassPath, worksheetName + "Data" + "." + "cs");
+            return Path.Combine("AssetsTask/" + machine.RuntimeClassPath, worksheetName + "Data" + "." + "cs");
         }
 
         /// <summary>
-        /// e.g. "Assets/Script/Data/Editor/ItemAssetCreator.cs"
+        /// e.g. "AssetsTask/Script/Data/Editor/ItemAssetCreator.cs"
         /// </summary>
         protected string TargetPathForAssetFileCreateFunc(string worksheetName)
         {
-            return Path.Combine("Assets/" + machine.EditorClassPath, worksheetName + "AssetCreator" + "." + "cs");
+            return Path.Combine("AssetsTask/" + machine.EditorClassPath, worksheetName + "AssetCreator" + "." + "cs");
         }
 
         /// <summary>
@@ -264,7 +264,7 @@ namespace UnityQuickSheet
         /// </summary>
         protected string TargetPathForAssetPostProcessorFile(string worksheetName)
         {
-            return Path.Combine("Assets/" + machine.EditorClassPath, worksheetName + "AssetPostProcessor" + "." + "cs");
+            return Path.Combine("AssetsTask/" + machine.EditorClassPath, worksheetName + "AssetPostProcessor" + "." + "cs");
         }
 
         /// <summary>
@@ -284,7 +284,7 @@ namespace UnityQuickSheet
         }
 
         /// <summary>
-        /// e.g. "Assets/QuickSheet/Templates"
+        /// e.g. "AssetsTask/QuickSheet/Templates"
         /// </summary>
         protected string GetAbsoluteCustomTemplatePath()
         {

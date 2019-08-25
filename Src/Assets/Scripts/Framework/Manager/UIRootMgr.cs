@@ -162,7 +162,7 @@ public class UIRootMgr : MonoBehaviour
                 return;
         }
 
-        UICommonUtil.SetParent(ui.gameObject, go.gameObject);
+        UIUtil.SetParent(ui.gameObject, go.gameObject);
         //可根据当前的数量进行场景中UI删除（UI原则不删除只是隐藏，但如果UI过多可以删除。原则LRU策略），此处相当于标记垃圾UI等待处理
         if (UILinkedList.Contains(ui))
         {
@@ -177,7 +177,7 @@ public class UIRootMgr : MonoBehaviour
 
         if (UILinkedList.IsHandlebyCapacity)
         {
-            UICommonUtil.DestroyGO(UILinkedList.LRUSortRemove());
+            UIUtil.DestroyGO(UILinkedList.LRUSortRemove());
         }
 
         UILinkedListShow = UILinkedList.ToList();

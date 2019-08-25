@@ -61,7 +61,7 @@ namespace BehaviorDesigner.Runtime.Tasks
         {
             // Assume all of the children have finished executing. Loop through the execution status of every child and check to see if any tasks are currently running
             // or succeeded. If a task is still running then all of the children are not done executing and the parallel selector task should continue to return a task status of running.
-            // If a task succeeded then return success. The Behavior Manager will stop all of the children tasks. If no child task is running or has succeeded then the parallel selector
+            // If a task succeeded then return success. The Behavior ManagerTask will stop all of the children tasks. If no child task is running or has succeeded then the parallel selector
             // task failed and it will return failure.
             bool childrenComplete = true;
             for (int i = 0; i < executionStatus.Length; ++i) {

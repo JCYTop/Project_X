@@ -138,7 +138,7 @@ public class UniqueSaveManager : MonoBehaviour
 		{
 			// Auto-assigning Load is the best way to load Components.
 			ES2.Load<Transform>(file+"?tag=transform"+i, t);
-			// Now we'll get the parent object, if any.
+			// LocalNow we'll get the parent object, if any.
 			int parentuID = ES2.Load<int>(file+"?tag=parentID"+i);
 			Transform parent = ES2UniqueID.FindTransform(parentuID);
 			if(parent != null)

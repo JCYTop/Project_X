@@ -95,7 +95,7 @@ namespace HutongGames.PlayMakerEditor
 
 	    private static void DoThirdPartyAddons()
 	    {
-	        DoSectionTitle("Third Party Assets");
+	        DoSectionTitle("Third Party AssetsTask");
 	        EditorGUILayout.HelpBox("The best assets with PlayMaker support!" +
 	                                "\nPlease direct any questions to the developer of the asset.", MessageType.Info);
 

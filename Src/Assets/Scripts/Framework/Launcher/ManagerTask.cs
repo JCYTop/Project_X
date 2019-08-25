@@ -1,7 +1,7 @@
 //=====================================================
-// - FileName:      CheckLoadMode.cs
+// - FileName:      ManagerTask.cs
 // - Created:       @JCY
-// - CreateTime:    2019/03/24 11:32:14
+// - CreateTime:    2019/03/24 11:31:17
 // - Email:         jcyemail@qq.com
 // - Description:   
 // -  (C) Copyright 2019 - 2019.
@@ -12,21 +12,32 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CheckLoadMode : ILanucherTask
+public class ManagerTask : ILanucherTask
 {
+    private GameObject gm;
+    private GameObject globalEvent;
+
     public override string Name
     {
-        get => "检查登陆模式";
+        get => "基础Manager启动";
     }
 
     public override TaskType TaskType
     {
-        get => TaskType.CheckLoadMode;
+        get => TaskType.ManagerTask;
     }
 
     public override void AddTaskChild()
     {
         LogUtil.Log(string.Format(Name), LogType.TaskLog);
-        CalcTaskCount();
+        StartChildTask();
+    }
+
+    private void StartChildTask()
+    {
+        gm = EntityUtil.CreateGameobject("GM", false);
+        gm.AddComponent<GM>();
+        globalEvent = EntityUtil.CreateGameobject("GlobalEvent", false);
+        globalEvent.AddComponent<GlobalEvent>();
     }
 }

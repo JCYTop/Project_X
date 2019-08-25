@@ -19,13 +19,13 @@ namespace BehaviorDesigner.Runtime.Tasks
 
         public override void OnChildExecuted(TaskStatus childStatus)
         {
-            // Update the execution status after a child has finished running.
+            // UpdateTask the execution status after a child has finished running.
             executionStatus = childStatus;
         }
 
         public void DoInterrupt(TaskStatus status)
         {
-            // An interruption has occurred. Update the interrupt status and notify the Behavior Manager. The Behavior Manager will stop all
+            // An interruption has occurred. UpdateTask the interrupt status and notify the Behavior ManagerTask. The Behavior ManagerTask will stop all
             // child tasks from running.
             interruptStatus = status;
 

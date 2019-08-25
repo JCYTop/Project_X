@@ -5,11 +5,11 @@ using UnityEngine;
 namespace HutongGames.PlayMaker.Actions
 {
 	[ActionCategory(ActionCategory.Input)]
-	[Tooltip("Gets the value of the specified Input Axis and stores it in a Float Variable. See Unity Input Manager docs.")]
+	[Tooltip("Gets the value of the specified Input Axis and stores it in a Float Variable. See Unity Input ManagerTask docs.")]
 	public class GetAxis : FsmStateAction
 	{
 		[RequiredField]
-        [Tooltip("The name of the axis. Set in the Unity Input Manager.")]
+        [Tooltip("The name of the axis. Set in the Unity Input ManagerTask.")]
         public FsmString axisName;
 
         [Tooltip("Axis values are in the range -1 to 1. Use the multiplier to set a larger range.")]

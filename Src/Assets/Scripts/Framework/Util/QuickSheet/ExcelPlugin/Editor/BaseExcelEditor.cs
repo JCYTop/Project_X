@@ -31,10 +31,10 @@ namespace UnityQuickSheet
             if (target == null)
                 return;
 
-            // Update SerializedObject
+            // UpdateTask SerializedObject
             targetObject.Update();
 
-            if (GUILayout.Button("Update"))
+            if (GUILayout.Button("UpdateTask"))
             {
                 if (!Load())
                 {

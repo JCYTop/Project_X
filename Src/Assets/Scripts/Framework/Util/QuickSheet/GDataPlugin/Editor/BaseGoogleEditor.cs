@@ -73,7 +73,7 @@ namespace UnityQuickSheet
             if (target == null)
                 return;
 
-            // Update SerializedObject
+            // UpdateTask SerializedObject
             targetObject.Update();
 
             if (GUILayout.Button("Download"))

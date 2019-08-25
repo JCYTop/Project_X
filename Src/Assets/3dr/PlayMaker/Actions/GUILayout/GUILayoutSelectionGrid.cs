@@ -10,8 +10,8 @@ public class GUILayoutSelectionGrid : MonoBehaviour
 		
 	}
 
-	// Update is called once per frame
-	void Update ()
+	// UpdateTask is called once per frame
+	void UpdateTask ()
 	{
 		
 	}

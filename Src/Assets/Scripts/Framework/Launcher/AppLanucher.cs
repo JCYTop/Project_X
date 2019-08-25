@@ -16,17 +16,16 @@ using System.Collections.Generic;
 /// </summary>
 public enum TaskType
 {
-    SystemCheck = 0, //检查程序运行
-    CheckMemory, //检查内存是否够用
-    Assets, //资源管理启动
-    LoadBase, //载入基础信息
-    Manager, //基础Manager启动
-    Util, //载入工具类
-    CheckLoadMode, //检测登陆模式
-    SDK, //SDK处理
-    Update, //资源更新处理
-    Preloading, //预加载资源（一般通用）
-    LoadScence, //进入游戏场景
+    SystemCheckTask = 0, //检查程序运行
+    CheckMemoryTask, //检查内存是否够用
+    AssetsTask, //资源管理启动
+    LoadBaseTask, //载入基础信息
+    ManagerTask, //基础Manager启动
+    UtilTask, //载入工具类
+    CheckLoadModeTask, //检测登陆模式
+    SDKTask, //SDK处理
+    UpdateTask, //资源更新处理
+    PreloadingTask, //预加载资源（一般通用）
 }
 
 /// <summary>

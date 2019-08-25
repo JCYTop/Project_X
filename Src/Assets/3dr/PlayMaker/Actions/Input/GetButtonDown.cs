@@ -9,7 +9,7 @@ namespace HutongGames.PlayMaker.Actions
 	public class GetButtonDown : FsmStateAction
 	{
 		[RequiredField]
-        [Tooltip("The name of the button. Set in the Unity Input Manager.")]
+        [Tooltip("The name of the button. Set in the Unity Input ManagerTask.")]
 		public FsmString buttonName;
 
         [Tooltip("Event to send if the button is pressed.")]

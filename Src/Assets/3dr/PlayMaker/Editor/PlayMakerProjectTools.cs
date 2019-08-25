@@ -39,13 +39,13 @@ namespace HutongGames.PlayMakerEditor
         // E.g., MenuRoot = "Plugins/PlayMaker/"
         private const string MenuRoot = "PlayMaker/";
 
-        [MenuItem(MenuRoot + "Tools/Update All Loaded FSMs", false, 25)]
+        [MenuItem(MenuRoot + "Tools/UpdateTask All Loaded FSMs", false, 25)]
         public static void UpdateAllLoadedFSMs()
         {
             ReSaveAllLoadedFSMs();
         }
 
-        [MenuItem(MenuRoot + "Tools/Update All FSMs in Build", false, 26)]
+        [MenuItem(MenuRoot + "Tools/UpdateTask All FSMs in Build", false, 26)]
         public static void UpdateAllFSMsInBuild()
         {
             UpdateScenesInBuild();
@@ -159,7 +159,7 @@ namespace HutongGames.PlayMakerEditor
 
             foreach (var file in prefabFiles)
             {
-                var filePath = file.FullName.Replace(@"\", "/").Replace(Application.dataPath, "Assets");
+                var filePath = file.FullName.Replace(@"\", "/").Replace(Application.dataPath, "AssetsTask");
                 //Debug.Log(filePath + "\n" + Application.dataPath);
 
                 var dependencies = AssetDatabase.GetDependencies(new[] { filePath });
@@ -301,7 +301,7 @@ namespace HutongGames.PlayMakerEditor
 
             foreach (var file in assetFiles)
             {
-                var filePath = file.FullName.Replace(@"\", "/").Replace(Application.dataPath, "Assets");
+                var filePath = file.FullName.Replace(@"\", "/").Replace(Application.dataPath, "AssetsTask");
                 var obj = AssetDatabase.LoadAssetAtPath(filePath, typeof(Object));
                 if (obj == null)
                 {

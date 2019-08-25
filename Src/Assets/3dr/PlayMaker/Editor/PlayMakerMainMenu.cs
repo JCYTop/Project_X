@@ -228,13 +228,13 @@ internal static class PlayMakerMainMenu
     }
 
     /* In PlayMakerProjectTools.cs
-    [MenuItem(toolsRoot + "Update All Loaded FSMs", false, iTools + 24)]
+    [MenuItem(toolsRoot + "UpdateTask All Loaded FSMs", false, iTools + 24)]
     public static void UpdateAllLoadedFSMs()
     {
         ProjectTools.ReSaveAllLoadedFSMs();
     }
 
-    [MenuItem(toolsRoot + "Update All FSMs in Build", false, iTools + 25)]
+    [MenuItem(toolsRoot + "UpdateTask All FSMs in Build", false, iTools + 25)]
     public static void UpdateAllFSMsInBuild()
     {
         ProjectTools.UpdateScenesInBuild();
@@ -262,7 +262,7 @@ internal static class PlayMakerMainMenu
     }
 
 #if UNITY_5_0 || UNITY_5
-    [MenuItem(toolsRoot + "Post-Update Check", false, 67)]
+    [MenuItem(toolsRoot + "Post-UpdateTask Check", false, 67)]
     public static void RunAutoUpdater()
     {
         PlayMakerAutoUpdater.OpenAutoUpdater();

@@ -2,7 +2,7 @@
 
 namespace HutongGames.PlayMaker.Actions
 {
-    // Base class for actions that need to select Update, LateUpdate, or FixedUpdate
+    // Base class for actions that need to select UpdateTask, LateUpdate, or FixedUpdate
 	public abstract class BaseUpdateAction : FsmStateAction
 	{
 	    public enum UpdateType
@@ -12,7 +12,7 @@ namespace HutongGames.PlayMaker.Actions
 	        OnFixedUpdate
 	    }
 
-		[ActionSection("Update type")]
+		[ActionSection("UpdateTask type")]
 
 		[Tooltip("Repeat every frame.")]
 		public bool everyFrame;

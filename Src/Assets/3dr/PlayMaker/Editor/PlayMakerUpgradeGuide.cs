@@ -60,7 +60,7 @@ namespace HutongGames.PlayMakerEditor
             FsmEditorGUILayout.Divider();
 
             EditorGUI.BeginChangeCheck();
-            var dontShowAgain = GUILayout.Toggle(!showOnLoad, "Don't Show Again Until Next Update");
+            var dontShowAgain = GUILayout.Toggle(!showOnLoad, "Don't Show Again Until Next UpdateTask");
             if (EditorGUI.EndChangeCheck())
             {
                 showOnLoad = !dontShowAgain;

@@ -23,7 +23,7 @@ public class DisplacementControl : MonoBehaviour
         m_Samples = new float[m_NumSamples];
     }
 
-    // Update is called once per frame
+    // UpdateTask is called once per frame
     void Update()
     {
 

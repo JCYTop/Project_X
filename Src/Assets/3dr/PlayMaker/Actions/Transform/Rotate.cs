@@ -37,7 +37,7 @@ namespace HutongGames.PlayMaker.Actions
 		[Tooltip("Repeat every frame.")]
 		public bool everyFrame;
 		
-		[Tooltip("Perform the rotation in LateUpdate. This is useful if you want to override the rotation of objects that are animated or otherwise rotated in Update.")]
+		[Tooltip("Perform the rotation in LateUpdate. This is useful if you want to override the rotation of objects that are animated or otherwise rotated in UpdateTask.")]
 		public bool lateUpdate;
 
         [Tooltip("Perform the rotation in FixedUpdate. This is useful when working with rigid bodies and physics.")]

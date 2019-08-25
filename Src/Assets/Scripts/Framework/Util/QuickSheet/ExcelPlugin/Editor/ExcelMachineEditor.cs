@@ -65,7 +65,7 @@ namespace UnityQuickSheet
                     machine.SpreadSheetName = Path.GetFileName(path);
 
                     // the path should be relative not absolute one to make it work on any platform.
-                    int index = path.IndexOf("Assets");
+                    int index = path.IndexOf("AssetsTask");
                     if (index >= 0)
                     {
                         // set relative path
@@ -78,8 +78,8 @@ namespace UnityQuickSheet
                     {
                         EditorUtility.DisplayDialog("Error",
                             @"Wrong folder is selected.
-                        Set a folder under the 'Assets' folder! \n
-                        The excel file should be anywhere under  the 'Assets' folder", "OK");
+                        Set a folder under the 'AssetsTask' folder! \n
+                        The excel file should be anywhere under  the 'AssetsTask' folder", "OK");
                         return;
                     }
                 }
@@ -118,7 +118,7 @@ namespace UnityQuickSheet
                     {
                         machine.CurrentSheetIndex = 0;
 
-                        string message = "Worksheet was changed. Check the 'Worksheet' and 'Update' it again if it is necessary.";
+                        string message = "Worksheet was changed. Check the 'Worksheet' and 'UpdateTask' it again if it is necessary.";
                         EditorUtility.DisplayDialog("Info", message, "OK");
                     }
                 }
@@ -130,7 +130,7 @@ namespace UnityQuickSheet
 
             if (machine.HasColumnHeader())
             {
-                if (GUILayout.Button("Update"))
+                if (GUILayout.Button("UpdateTask"))
                     Import();
                 if (GUILayout.Button("Reimport"))
                     Import(true);

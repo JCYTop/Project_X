@@ -11,7 +11,7 @@ namespace HutongGames.PlayMaker.Actions
 	public class DevicePlayFullScreenMovie : FsmStateAction
 	{
         [RequiredField]
-		[Tooltip("Note that player will stream movie directly from the iPhone disc, therefore you have to provide movie as a separate files and not as an usual asset.\nYou will have to create a folder named StreamingAssets inside your Unity project (inside your Assets folder). Store your movies inside that folder. Unity will automatically copy contents of that folder into the iPhone application bundle.")]
+		[Tooltip("Note that player will stream movie directly from the iPhone disc, therefore you have to provide movie as a separate files and not as an usual asset.\nYou will have to create a folder named StreamingAssets inside your Unity project (inside your AssetsTask folder). Store your movies inside that folder. Unity will automatically copy contents of that folder into the iPhone application bundle.")]
 		public FsmString moviePath;
 
 		[RequiredField]

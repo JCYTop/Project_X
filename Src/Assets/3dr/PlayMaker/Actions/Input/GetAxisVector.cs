@@ -16,10 +16,10 @@ namespace HutongGames.PlayMaker.Actions
 			YZ
 		}
 		
-		[Tooltip("The name of the horizontal input axis. See Unity Input Manager.")]
+		[Tooltip("The name of the horizontal input axis. See Unity Input ManagerTask.")]
 		public FsmString horizontalAxis;
 		
-		[Tooltip("The name of the vertical input axis. See Unity Input Manager.")]
+		[Tooltip("The name of the vertical input axis. See Unity Input ManagerTask.")]
 		public FsmString verticalAxis;
 		
 		[Tooltip("Input axis are reported in the range -1 to 1, this multiplier lets you set a new range.")]

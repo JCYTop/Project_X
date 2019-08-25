@@ -1,7 +1,7 @@
 //=====================================================
-// - FileName:      Preloading.cs
+// - FileName:      AssetsTask.cs
 // - Created:       @JCY
-// - CreateTime:    2019/03/24 11:33:49
+// - CreateTime:    2019/03/24 11:31:00
 // - Email:         jcyemail@qq.com
 // - Description:   
 // -  (C) Copyright 2019 - 2019.
@@ -12,21 +12,29 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Preloading : ILanucherTask
+public class AssetsTask : ILanucherTask
 {
     public override string Name
     {
-        get => "进行预加载";
+        get => "资源管理启动";
     }
 
     public override TaskType TaskType
     {
-        get => TaskType.Preloading;
+        get => TaskType.AssetsTask;
     }
 
     public override void AddTaskChild()
     {
+        StartAsset();
+    }
+
+    private void StartAsset()
+    {
         LogUtil.Log(string.Format(Name), LogType.TaskLog);
+        AssetsManager.Instance();
+        AssetBundleManager.Instance();
+        AssetBundleLoader.Instance();
         CalcTaskCount();
     }
 }

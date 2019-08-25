@@ -54,7 +54,7 @@ namespace HutongGames.PlayMaker.Actions
 
 		public override void OnUpdate()
 		{
-			//delayedEvent.Update();
+			//delayedEvent.UpdateTask();
 		}
 
 	}

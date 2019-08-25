@@ -68,7 +68,7 @@ namespace Sirenix.OdinInspector.Demos
 
         private static IEnumerable GetAllSirenixAssets()
         {
-            var root = "Assets/Plugins/Sirenix/";
+            var root = "AssetsTask/Plugins/Sirenix/";
 
             return UnityEditor.AssetDatabase.GetAllAssetPaths()
                 .Where(x => x.StartsWith(root))

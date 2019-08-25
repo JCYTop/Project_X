@@ -97,9 +97,9 @@
             <para>Initializes a new instance of the <see cref="T:Sirenix.OdinInspector.AssetListAttribute"/> class.</para>
             </summary>
         </member>
-        <member name="T:Sirenix.OdinInspector.AssetsOnlyAttribute">
+        <member name="T:Sirenix.OdinInspector.AssetsTaskTaskOnlyAttribute">
             <summary>
-            <para>AssetsOnly is used on object properties, and restricts the property to project assets, and not scene objects.</para>
+            <para>AssetsTaskTaskOnly is used on object properties, and restricts the property to project assets, and not scene objects.</para>
             <para>Use this when you want to ensure an object is from the project, and not from the scene.</para>
             </summary>
             <example>
@@ -107,7 +107,7 @@
             <code>
             public MyComponent : MonoBehaviour
             {
-            	[AssetsOnly]
+            	[AssetsTaskTaskOnly]
             	public GameObject MyPrefab;
             }
             </code>
@@ -522,7 +522,7 @@
             Disables a property if it is drawn from a non-prefab asset or instance.
             </summary>
         </member>
-        <member name="T:Sirenix.OdinInspector.DisableInPrefabAssetsAttribute">
+        <member name="T:Sirenix.OdinInspector.DisableInPrefabAssetsTaskTaskAttribute">
             <summary>
             Disables a property if it is drawn from a prefab asset.
             </summary>
@@ -593,11 +593,11 @@
             	public string UnityProjectPath;
             
             	// It is possible to provide custom parent path. Parent paths can be relative to the Unity project, or absolute.
-            	[FilePath(ParentFolder = "Assets/Plugins/Sirenix")]
+            	[FilePath(ParentFolder = "AssetsTaskTask/Plugins/Sirenix")]
             	public string RelativeToParentPath;
             
             	// Using parent path, FilePath can also provide a path relative to a resources folder.
-            	[FilePath(ParentFolder = "Assets/Resources")]
+            	[FilePath(ParentFolder = "AssetsTaskTask/Resources")]
             	public string ResourcePath;
             
             	// Provide a comma seperated list of allowed extensions. Dots are optional.
@@ -621,7 +621,7 @@
             	[FilePath(ParentFolder = "$DynamicParent", Extensions = "$DynamicExtensions")]
             	public string DynamicFilePath;
             
-            	public string DynamicParent = "Assets/Plugin/Sirenix";
+            	public string DynamicParent = "AssetsTaskTask/Plugin/Sirenix";
             
             	public string DynamicExtensions = "cs, unity, jpg";
             }
@@ -681,11 +681,11 @@
             	public string UnityProjectPath;
             
             	// It is possible to provide custom parent patn. ParentFolder paths can be relative to the Unity project, or absolute.
-            	[FolderPath(ParentFolder = "Assets/Plugins/Sirenix")]
+            	[FolderPath(ParentFolder = "AssetsTaskTask/Plugins/Sirenix")]
             	public string RelativeToParentPath;
             
             	// Using ParentFolder, FolderPath can also provide a path relative to a resources folder.
-            	[FolderPath(ParentFolder = "Assets/Resources")]
+            	[FolderPath(ParentFolder = "AssetsTaskTask/Resources")]
             	public string ResourcePath;
             
             	// By setting AbsolutePath to true, the FolderPath will provide an absolute path instead.
@@ -704,7 +704,7 @@
             	[FolderPath(ParentFolder = "$DynamicParent")]
             	public string DynamicFolderPath;
             
-            	public string DynamicParent = "Assets/Plugins/Sirenix";
+            	public string DynamicParent = "AssetsTaskTask/Plugins/Sirenix";
             }
             </code>
             </example>
@@ -753,7 +753,7 @@
             Hides a property if it is drawn from a non prefab instance or asset.
             </summary>
         </member>
-        <member name="T:Sirenix.OdinInspector.HideInPrefabAssetsAttribute">
+        <member name="T:Sirenix.OdinInspector.HideInPrefabAssetsTaskTaskAttribute">
             <summary>
             Hides a property if it is drawn from a prefab asset.
             </summary>
@@ -957,8 +957,8 @@
             			// Blends between red, and yellow color for when the health is below 30,
             			// and blends between yellow and green color for when the health is above 30.
             			return Color.Lerp(Color.Lerp(
-            				Color.red, Color.yellow, MathUtilities.LinearStep(0f, 30f, value)),
-            				Color.green, MathUtilities.LinearStep(0f, 100f, value));
+            				Color.red, Color.yellow, MathUtilTaskities.LinearStep(0f, 30f, value)),
+            				Color.green, MathUtilTaskities.LinearStep(0f, 100f, value));
             		}
             
             		// Stacked health bar.
@@ -4180,7 +4180,7 @@
             }
             </code>
             </example>
-            <seealso cref="T:Sirenix.OdinInspector.AssetsOnlyAttribute"/>
+            <seealso cref="T:Sirenix.OdinInspector.AssetsTaskTaskOnlyAttribute"/>
         </member>
         <member name="T:Sirenix.OdinInspector.ValueDropdownAttribute">
              <summary>

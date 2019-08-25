@@ -2,7 +2,7 @@
 ----------------------------------
  *Copyright(C) 2019 by IndieGame
  *All rights reserved.
- *FileName:     CommonUtil
+ *FileName:     UtilTask
  *Author:       @JCY
  *Version:      0.0.1
  *AuthorEmail:  jcyemail@qq.com
@@ -15,8 +15,10 @@
 
 using System;
 using System.Collections.Generic;
+using System.Text;
+using UnityEngine;
 
-public class CommonUtil
+public static class Util
 {
     #region Common
 
@@ -97,4 +99,33 @@ public class CommonUtil
     }
 
     #endregion
+
+    /// <summary>
+    /// 获取UTF-8
+    /// </summary>
+    /// <param name="unicodeString"></param>
+    /// <returns></returns>
+    public static string GetUtf8(string unicodeString)
+    {
+        UTF8Encoding utf8 = new UTF8Encoding();
+        Byte[] encodedBytes = utf8.GetBytes(unicodeString);
+        String decodedString = utf8.GetString(encodedBytes);
+        return decodedString;
+    }
+
+    public static float AngleSigned(Vector3 v1, Vector3 v2, Vector3 n)
+    {
+        float angle = Vector3.Angle(v1, v2); //求出两向量之间的夹角
+        Vector3 normal = Vector3.Cross(v1, v2); //叉乘求出法线向量
+        angle *= Mathf.Sign(Vector3.Dot(normal, n)); //求法线向量与物体上方向向量点乘，结果为1或-1，修正旋转方向
+        return angle;
+    }
+
+    public static float VectorAngle(Vector2 from, Vector2 to)
+    {
+        float angle;
+        Vector3 cross = Vector3.Cross(from, to);
+        angle = Vector2.Angle(from, to);
+        return cross.z > 0 ? -angle : angle;
+    }
 }

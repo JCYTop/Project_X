@@ -30,7 +30,7 @@ namespace HutongGames.PlayMaker.Actions
         [Tooltip("A named GUIStyle to use for the toolbar buttons. Default is Button.")]
 		public FsmString style;
 
-        [Tooltip("Update the content of the buttons every frame. Useful if the buttons are using variables that change.")]
+        [Tooltip("UpdateTask the content of the buttons every frame. Useful if the buttons are using variables that change.")]
 	    public bool everyFrame;
 
 	    private GUIContent[] contents;

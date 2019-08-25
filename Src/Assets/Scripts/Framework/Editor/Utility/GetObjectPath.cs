@@ -24,7 +24,7 @@ public class GetObjectPath : Editor
     {
         var arr = Selection.GetFiltered(typeof(UnityEngine.Object), SelectionMode.TopLevel);
         var path = AssetDatabase.GetAssetPath(arr[0])+"/";
-        path = path.Replace("Assets/", "");
+        path = path.Replace("AssetsTask/", "");
         SaveToClipBoard(path);
         //下面是绝对路径
         //Debug.LogError(Application.dataPath.Substring(0, Application.dataPath.LastIndexOf('/')) + "/" + AssetDatabase.GetAssetPath(arr[0]));

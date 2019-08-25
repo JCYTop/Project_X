@@ -1,7 +1,7 @@
 //=====================================================
-// - FileName:      SDK.cs
+// - FileName:      PreloadingTask.cs
 // - Created:       @JCY
-// - CreateTime:    2019/03/24 11:32:48
+// - CreateTime:    2019/03/24 11:33:49
 // - Email:         jcyemail@qq.com
 // - Description:   
 // -  (C) Copyright 2019 - 2019.
@@ -12,16 +12,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SDK : ILanucherTask
+public class PreloadingTask : ILanucherTask
 {
     public override string Name
     {
-        get => "SDK处理";
+        get => "进行预加载";
     }
 
     public override TaskType TaskType
     {
-        get => TaskType.SDK;
+        get => TaskType.PreloadingTask;
     }
 
     public override void AddTaskChild()

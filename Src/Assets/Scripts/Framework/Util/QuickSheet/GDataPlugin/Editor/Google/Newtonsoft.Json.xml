@@ -2056,75 +2056,75 @@
             HTML (&lt;, &gt;, &amp;, &apos;, &quot;) and control characters (e.g. newline) are escaped.
             </summary>
         </member>
-        <member name="T:Newtonsoft.Json.Utilities.LinqBridge.Enumerable">
+        <member name="T:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable">
             <summary>
             Provides a set of static (Shared in Visual Basic) methods for 
             querying objects that implement <see cref="T:System.Collections.Generic.IEnumerable`1"/>.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.AsEnumerable``1(System.Collections.Generic.IEnumerable{``0})">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.AsEnumerable``1(System.Collections.Generic.IEnumerable{``0})">
             <summary>
             Returns the input typed as <see cref="T:System.Collections.Generic.IEnumerable`1"/>.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.Empty``1">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.Empty``1">
             <summary>
             Returns an empty <see cref="T:System.Collections.Generic.IEnumerable`1"/> that has the 
             specified type argument.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.Cast``1(System.Collections.IEnumerable)">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.Cast``1(System.Collections.IEnumerable)">
             <summary>
             Converts the elements of an <see cref="T:System.Collections.IEnumerable"/> to the 
             specified type.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.OfType``1(System.Collections.IEnumerable)">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.OfType``1(System.Collections.IEnumerable)">
             <summary>
             Filters the elements of an <see cref="T:System.Collections.IEnumerable"/> based on a specified type.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.Range(System.Int32,System.Int32)">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.Range(System.Int32,System.Int32)">
             <summary>
             Generates a sequence of integral numbers within a specified range.
             </summary>
             <param name="start">The value of the first integer in the sequence.</param>
             <param name="count">The number of sequential integers to generate.</param>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.Repeat``1(``0,System.Int32)">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.Repeat``1(``0,System.Int32)">
             <summary>
             Generates a sequence that contains one repeated value.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.Where``1(System.Collections.Generic.IEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,System.Boolean})">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.Where``1(System.Collections.Generic.IEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,System.Boolean})">
             <summary>
             Filters a sequence of values based on a predicate.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.Where``1(System.Collections.Generic.IEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,System.Int32,System.Boolean})">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.Where``1(System.Collections.Generic.IEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,System.Int32,System.Boolean})">
             <summary>
             Filters a sequence of values based on a predicate. 
             Each element's index is used in the logic of the predicate function.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.Select``2(System.Collections.Generic.IEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,``1})">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.Select``2(System.Collections.Generic.IEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,``1})">
             <summary>
             Projects each element of a sequence into a new form.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.Select``2(System.Collections.Generic.IEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,System.Int32,``1})">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.Select``2(System.Collections.Generic.IEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,System.Int32,``1})">
             <summary>
             Projects each element of a sequence into a new form by 
             incorporating the element's index.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.SelectMany``2(System.Collections.Generic.IEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,System.Collections.Generic.IEnumerable{``1}})">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.SelectMany``2(System.Collections.Generic.IEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,System.Collections.Generic.IEnumerable{``1}})">
             <summary>
             Projects each element of a sequence to an <see cref="T:System.Collections.Generic.IEnumerable`1"/> 
             and flattens the resulting sequences into one sequence.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.SelectMany``2(System.Collections.Generic.IEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,System.Int32,System.Collections.Generic.IEnumerable{``1}})">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.SelectMany``2(System.Collections.Generic.IEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,System.Int32,System.Collections.Generic.IEnumerable{``1}})">
             <summary>
             Projects each element of a sequence to an <see cref="T:System.Collections.Generic.IEnumerable`1"/>, 
             and flattens the resulting sequences into one sequence. The 
@@ -2132,14 +2132,14 @@
             that element.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.SelectMany``3(System.Collections.Generic.IEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,System.Collections.Generic.IEnumerable{``1}},Newtonsoft.Json.Serialization.Func{``0,``1,``2})">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.SelectMany``3(System.Collections.Generic.IEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,System.Collections.Generic.IEnumerable{``1}},Newtonsoft.Json.Serialization.Func{``0,``1,``2})">
             <summary>
             Projects each element of a sequence to an <see cref="T:System.Collections.Generic.IEnumerable`1"/>, 
             flattens the resulting sequences into one sequence, and invokes 
             a result selector function on each element therein.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.SelectMany``3(System.Collections.Generic.IEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,System.Int32,System.Collections.Generic.IEnumerable{``1}},Newtonsoft.Json.Serialization.Func{``0,``1,``2})">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.SelectMany``3(System.Collections.Generic.IEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,System.Int32,System.Collections.Generic.IEnumerable{``1}},Newtonsoft.Json.Serialization.Func{``0,``1,``2})">
             <summary>
             Projects each element of a sequence to an <see cref="T:System.Collections.Generic.IEnumerable`1"/>, 
             flattens the resulting sequences into one sequence, and invokes 
@@ -2148,98 +2148,98 @@
             of that element.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.TakeWhile``1(System.Collections.Generic.IEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,System.Boolean})">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.TakeWhile``1(System.Collections.Generic.IEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,System.Boolean})">
             <summary>
             Returns elements from a sequence as long as a specified condition is true.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.TakeWhile``1(System.Collections.Generic.IEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,System.Int32,System.Boolean})">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.TakeWhile``1(System.Collections.Generic.IEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,System.Int32,System.Boolean})">
             <summary>
             Returns elements from a sequence as long as a specified condition is true.
             The element's index is used in the logic of the predicate function.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.FirstImpl``1(System.Collections.Generic.IEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0})">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.FirstImpl``1(System.Collections.Generic.IEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0})">
             <summary>
             Base implementation of First operator.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.First``1(System.Collections.Generic.IEnumerable{``0})">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.First``1(System.Collections.Generic.IEnumerable{``0})">
             <summary>
             Returns the first element of a sequence.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.First``1(System.Collections.Generic.IEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,System.Boolean})">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.First``1(System.Collections.Generic.IEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,System.Boolean})">
             <summary>
             Returns the first element in a sequence that satisfies a specified condition.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.FirstOrDefault``1(System.Collections.Generic.IEnumerable{``0})">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.FirstOrDefault``1(System.Collections.Generic.IEnumerable{``0})">
             <summary>
             Returns the first element of a sequence, or a default value if 
             the sequence contains no elements.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.FirstOrDefault``1(System.Collections.Generic.IEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,System.Boolean})">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.FirstOrDefault``1(System.Collections.Generic.IEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,System.Boolean})">
             <summary>
             Returns the first element of the sequence that satisfies a 
             condition or a default value if no such element is found.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.LastImpl``1(System.Collections.Generic.IEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0})">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.LastImpl``1(System.Collections.Generic.IEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0})">
             <summary>
             Base implementation of Last operator.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.Last``1(System.Collections.Generic.IEnumerable{``0})">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.Last``1(System.Collections.Generic.IEnumerable{``0})">
             <summary>
             Returns the last element of a sequence.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.Last``1(System.Collections.Generic.IEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,System.Boolean})">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.Last``1(System.Collections.Generic.IEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,System.Boolean})">
             <summary>
             Returns the last element of a sequence that satisfies a 
             specified condition.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.LastOrDefault``1(System.Collections.Generic.IEnumerable{``0})">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.LastOrDefault``1(System.Collections.Generic.IEnumerable{``0})">
             <summary>
             Returns the last element of a sequence, or a default value if 
             the sequence contains no elements.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.LastOrDefault``1(System.Collections.Generic.IEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,System.Boolean})">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.LastOrDefault``1(System.Collections.Generic.IEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,System.Boolean})">
             <summary>
             Returns the last element of a sequence that satisfies a 
             condition or a default value if no such element is found.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.SingleImpl``1(System.Collections.Generic.IEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0})">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.SingleImpl``1(System.Collections.Generic.IEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0})">
             <summary>
             Base implementation of Single operator.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.Single``1(System.Collections.Generic.IEnumerable{``0})">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.Single``1(System.Collections.Generic.IEnumerable{``0})">
             <summary>
             Returns the only element of a sequence, and throws an exception 
             if there is not exactly one element in the sequence.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.Single``1(System.Collections.Generic.IEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,System.Boolean})">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.Single``1(System.Collections.Generic.IEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,System.Boolean})">
             <summary>
             Returns the only element of a sequence that satisfies a 
             specified condition, and throws an exception if more than one 
             such element exists.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.SingleOrDefault``1(System.Collections.Generic.IEnumerable{``0})">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.SingleOrDefault``1(System.Collections.Generic.IEnumerable{``0})">
             <summary>
             Returns the only element of a sequence, or a default value if 
             the sequence is empty; this method throws an exception if there 
             is more than one element in the sequence.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.SingleOrDefault``1(System.Collections.Generic.IEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,System.Boolean})">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.SingleOrDefault``1(System.Collections.Generic.IEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,System.Boolean})">
             <summary>
             Returns the only element of a sequence that satisfies a 
             specified condition or a default value if no such element 
@@ -2247,160 +2247,160 @@
             satisfies the condition.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.ElementAt``1(System.Collections.Generic.IEnumerable{``0},System.Int32)">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.ElementAt``1(System.Collections.Generic.IEnumerable{``0},System.Int32)">
             <summary>
             Returns the element at a specified index in a sequence.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.ElementAtOrDefault``1(System.Collections.Generic.IEnumerable{``0},System.Int32)">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.ElementAtOrDefault``1(System.Collections.Generic.IEnumerable{``0},System.Int32)">
             <summary>
             Returns the element at a specified index in a sequence or a 
             default value if the index is out of range.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.Reverse``1(System.Collections.Generic.IEnumerable{``0})">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.Reverse``1(System.Collections.Generic.IEnumerable{``0})">
             <summary>
             Inverts the order of the elements in a sequence.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.Take``1(System.Collections.Generic.IEnumerable{``0},System.Int32)">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.Take``1(System.Collections.Generic.IEnumerable{``0},System.Int32)">
             <summary>
             Returns a specified number of contiguous elements from the start 
             of a sequence.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.Skip``1(System.Collections.Generic.IEnumerable{``0},System.Int32)">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.Skip``1(System.Collections.Generic.IEnumerable{``0},System.Int32)">
             <summary>
             Bypasses a specified number of elements in a sequence and then 
             returns the remaining elements.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.SkipWhile``1(System.Collections.Generic.IEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,System.Boolean})">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.SkipWhile``1(System.Collections.Generic.IEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,System.Boolean})">
             <summary>
             Bypasses elements in a sequence as long as a specified condition 
             is true and then returns the remaining elements.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.SkipWhile``1(System.Collections.Generic.IEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,System.Int32,System.Boolean})">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.SkipWhile``1(System.Collections.Generic.IEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,System.Int32,System.Boolean})">
             <summary>
             Bypasses elements in a sequence as long as a specified condition 
             is true and then returns the remaining elements. The element's 
             index is used in the logic of the predicate function.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.Count``1(System.Collections.Generic.IEnumerable{``0})">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.Count``1(System.Collections.Generic.IEnumerable{``0})">
             <summary>
             Returns the number of elements in a sequence.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.Count``1(System.Collections.Generic.IEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,System.Boolean})">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.Count``1(System.Collections.Generic.IEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,System.Boolean})">
             <summary>
             Returns a number that represents how many elements in the 
             specified sequence satisfy a condition.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.LongCount``1(System.Collections.Generic.IEnumerable{``0})">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.LongCount``1(System.Collections.Generic.IEnumerable{``0})">
             <summary>
             Returns an <see cref="T:System.Int64"/> that represents the total number 
             of elements in a sequence.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.LongCount``1(System.Collections.Generic.IEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,System.Boolean})">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.LongCount``1(System.Collections.Generic.IEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,System.Boolean})">
             <summary>
             Returns an <see cref="T:System.Int64"/> that represents how many elements 
             in a sequence satisfy a condition.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.Concat``1(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEnumerable{``0})">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.Concat``1(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEnumerable{``0})">
             <summary>
             Concatenates two sequences.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.ToList``1(System.Collections.Generic.IEnumerable{``0})">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.ToList``1(System.Collections.Generic.IEnumerable{``0})">
             <summary>
             Creates a <see cref="T:System.Collections.Generic.List`1"/> from an <see cref="T:System.Collections.Generic.IEnumerable`1"/>.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.ToArray``1(System.Collections.Generic.IEnumerable{``0})">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.ToArray``1(System.Collections.Generic.IEnumerable{``0})">
             <summary>
             Creates an array from an <see cref="T:System.Collections.Generic.IEnumerable`1"/>.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.Distinct``1(System.Collections.Generic.IEnumerable{``0})">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.Distinct``1(System.Collections.Generic.IEnumerable{``0})">
             <summary>
             Returns distinct elements from a sequence by using the default 
             equality comparer to compare values.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.Distinct``1(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEqualityComparer{``0})">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.Distinct``1(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEqualityComparer{``0})">
             <summary>
             Returns distinct elements from a sequence by using a specified 
             <see cref="T:System.Collections.Generic.IEqualityComparer`1"/> to compare values.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.ToLookup``2(System.Collections.Generic.IEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,``1})">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.ToLookup``2(System.Collections.Generic.IEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,``1})">
             <summary>
-            Creates a <see cref="T:Newtonsoft.Json.Utilities.LinqBridge.Lookup`2"/> from an 
+            Creates a <see cref="T:Newtonsoft.Json.UtilTaskities.LinqBridge.Lookup`2"/> from an 
             <see cref="T:System.Collections.Generic.IEnumerable`1"/> according to a specified key 
             selector function.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.ToLookup``2(System.Collections.Generic.IEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,``1},System.Collections.Generic.IEqualityComparer{``1})">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.ToLookup``2(System.Collections.Generic.IEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,``1},System.Collections.Generic.IEqualityComparer{``1})">
             <summary>
-            Creates a <see cref="T:Newtonsoft.Json.Utilities.LinqBridge.Lookup`2"/> from an 
+            Creates a <see cref="T:Newtonsoft.Json.UtilTaskities.LinqBridge.Lookup`2"/> from an 
             <see cref="T:System.Collections.Generic.IEnumerable`1"/> according to a specified key 
             selector function and a key comparer.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.ToLookup``3(System.Collections.Generic.IEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,``1},Newtonsoft.Json.Serialization.Func{``0,``2})">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.ToLookup``3(System.Collections.Generic.IEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,``1},Newtonsoft.Json.Serialization.Func{``0,``2})">
             <summary>
-            Creates a <see cref="T:Newtonsoft.Json.Utilities.LinqBridge.Lookup`2"/> from an 
+            Creates a <see cref="T:Newtonsoft.Json.UtilTaskities.LinqBridge.Lookup`2"/> from an 
             <see cref="T:System.Collections.Generic.IEnumerable`1"/> according to specified key 
             and element selector functions.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.ToLookup``3(System.Collections.Generic.IEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,``1},Newtonsoft.Json.Serialization.Func{``0,``2},System.Collections.Generic.IEqualityComparer{``1})">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.ToLookup``3(System.Collections.Generic.IEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,``1},Newtonsoft.Json.Serialization.Func{``0,``2},System.Collections.Generic.IEqualityComparer{``1})">
             <summary>
-            Creates a <see cref="T:Newtonsoft.Json.Utilities.LinqBridge.Lookup`2"/> from an 
+            Creates a <see cref="T:Newtonsoft.Json.UtilTaskities.LinqBridge.Lookup`2"/> from an 
             <see cref="T:System.Collections.Generic.IEnumerable`1"/> according to a specified key 
             selector function, a comparer and an element selector function.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.GroupBy``2(System.Collections.Generic.IEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,``1})">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.GroupBy``2(System.Collections.Generic.IEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,``1})">
             <summary>
             Groups the elements of a sequence according to a specified key 
             selector function.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.GroupBy``2(System.Collections.Generic.IEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,``1},System.Collections.Generic.IEqualityComparer{``1})">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.GroupBy``2(System.Collections.Generic.IEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,``1},System.Collections.Generic.IEqualityComparer{``1})">
             <summary>
             Groups the elements of a sequence according to a specified key 
             selector function and compares the keys by using a specified 
             comparer.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.GroupBy``3(System.Collections.Generic.IEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,``1},Newtonsoft.Json.Serialization.Func{``0,``2})">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.GroupBy``3(System.Collections.Generic.IEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,``1},Newtonsoft.Json.Serialization.Func{``0,``2})">
             <summary>
             Groups the elements of a sequence according to a specified key 
             selector function and projects the elements for each group by 
             using a specified function.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.GroupBy``3(System.Collections.Generic.IEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,``1},Newtonsoft.Json.Serialization.Func{``0,``2},System.Collections.Generic.IEqualityComparer{``1})">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.GroupBy``3(System.Collections.Generic.IEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,``1},Newtonsoft.Json.Serialization.Func{``0,``2},System.Collections.Generic.IEqualityComparer{``1})">
             <summary>
             Groups the elements of a sequence according to a specified key 
             selector function and creates a result value from each group and 
             its key.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.GroupBy``3(System.Collections.Generic.IEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,``1},Newtonsoft.Json.Serialization.Func{``1,System.Collections.Generic.IEnumerable{``0},``2})">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.GroupBy``3(System.Collections.Generic.IEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,``1},Newtonsoft.Json.Serialization.Func{``1,System.Collections.Generic.IEnumerable{``0},``2})">
             <summary>
             Groups the elements of a sequence according to a key selector 
             function. The keys are compared by using a comparer and each 
             group's elements are projected by using a specified function.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.GroupBy``3(System.Collections.Generic.IEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,``1},Newtonsoft.Json.Serialization.Func{``1,System.Collections.Generic.IEnumerable{``0},``2},System.Collections.Generic.IEqualityComparer{``1})">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.GroupBy``3(System.Collections.Generic.IEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,``1},Newtonsoft.Json.Serialization.Func{``1,System.Collections.Generic.IEnumerable{``0},``2},System.Collections.Generic.IEqualityComparer{``1})">
             <summary>
             Groups the elements of a sequence according to a specified key 
             selector function and creates a result value from each group and 
@@ -2408,14 +2408,14 @@
             specified function.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.GroupBy``4(System.Collections.Generic.IEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,``1},Newtonsoft.Json.Serialization.Func{``0,``2},Newtonsoft.Json.Serialization.Func{``1,System.Collections.Generic.IEnumerable{``2},``3})">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.GroupBy``4(System.Collections.Generic.IEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,``1},Newtonsoft.Json.Serialization.Func{``0,``2},Newtonsoft.Json.Serialization.Func{``1,System.Collections.Generic.IEnumerable{``2},``3})">
             <summary>
             Groups the elements of a sequence according to a specified key 
             selector function and creates a result value from each group and 
             its key. The keys are compared by using a specified comparer.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.GroupBy``4(System.Collections.Generic.IEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,``1},Newtonsoft.Json.Serialization.Func{``0,``2},Newtonsoft.Json.Serialization.Func{``1,System.Collections.Generic.IEnumerable{``2},``3},System.Collections.Generic.IEqualityComparer{``1})">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.GroupBy``4(System.Collections.Generic.IEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,``1},Newtonsoft.Json.Serialization.Func{``0,``2},Newtonsoft.Json.Serialization.Func{``1,System.Collections.Generic.IEnumerable{``2},``3},System.Collections.Generic.IEqualityComparer{``1})">
             <summary>
             Groups the elements of a sequence according to a specified key 
             selector function and creates a result value from each group and 
@@ -2424,122 +2424,122 @@
             specified function.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.Aggregate``1(System.Collections.Generic.IEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,``0,``0})">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.Aggregate``1(System.Collections.Generic.IEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,``0,``0})">
             <summary>
             Applies an accumulator function over a sequence.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.Aggregate``2(System.Collections.Generic.IEnumerable{``0},``1,Newtonsoft.Json.Serialization.Func{``1,``0,``1})">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.Aggregate``2(System.Collections.Generic.IEnumerable{``0},``1,Newtonsoft.Json.Serialization.Func{``1,``0,``1})">
             <summary>
             Applies an accumulator function over a sequence. The specified 
             seed value is used as the initial accumulator value.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.Aggregate``3(System.Collections.Generic.IEnumerable{``0},``1,Newtonsoft.Json.Serialization.Func{``1,``0,``1},Newtonsoft.Json.Serialization.Func{``1,``2})">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.Aggregate``3(System.Collections.Generic.IEnumerable{``0},``1,Newtonsoft.Json.Serialization.Func{``1,``0,``1},Newtonsoft.Json.Serialization.Func{``1,``2})">
             <summary>
             Applies an accumulator function over a sequence. The specified 
             seed value is used as the initial accumulator value, and the 
             specified function is used to select the result value.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.Union``1(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEnumerable{``0})">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.Union``1(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEnumerable{``0})">
             <summary>
             Produces the set union of two sequences by using the default 
             equality comparer.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.Union``1(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEqualityComparer{``0})">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.Union``1(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEqualityComparer{``0})">
             <summary>
             Produces the set union of two sequences by using a specified 
             <see cref="T:System.Collections.Generic.IEqualityComparer`1"/>.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.DefaultIfEmpty``1(System.Collections.Generic.IEnumerable{``0})">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.DefaultIfEmpty``1(System.Collections.Generic.IEnumerable{``0})">
             <summary>
             Returns the elements of the specified sequence or the type 
             parameter's default value in a singleton collection if the 
             sequence is empty.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.DefaultIfEmpty``1(System.Collections.Generic.IEnumerable{``0},``0)">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.DefaultIfEmpty``1(System.Collections.Generic.IEnumerable{``0},``0)">
             <summary>
             Returns the elements of the specified sequence or the specified 
             value in a singleton collection if the sequence is empty.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.All``1(System.Collections.Generic.IEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,System.Boolean})">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.All``1(System.Collections.Generic.IEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,System.Boolean})">
             <summary>
             Determines whether all elements of a sequence satisfy a condition.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.Any``1(System.Collections.Generic.IEnumerable{``0})">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.Any``1(System.Collections.Generic.IEnumerable{``0})">
             <summary>
             Determines whether a sequence contains any elements.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.Any``1(System.Collections.Generic.IEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,System.Boolean})">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.Any``1(System.Collections.Generic.IEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,System.Boolean})">
             <summary>
             Determines whether any element of a sequence satisfies a 
             condition.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.Contains``1(System.Collections.Generic.IEnumerable{``0},``0)">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.Contains``1(System.Collections.Generic.IEnumerable{``0},``0)">
             <summary>
             Determines whether a sequence contains a specified element by 
             using the default equality comparer.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.Contains``1(System.Collections.Generic.IEnumerable{``0},``0,System.Collections.Generic.IEqualityComparer{``0})">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.Contains``1(System.Collections.Generic.IEnumerable{``0},``0,System.Collections.Generic.IEqualityComparer{``0})">
             <summary>
             Determines whether a sequence contains a specified element by 
             using a specified <see cref="T:System.Collections.Generic.IEqualityComparer`1"/>.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.SequenceEqual``1(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEnumerable{``0})">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.SequenceEqual``1(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEnumerable{``0})">
             <summary>
             Determines whether two sequences are equal by comparing the 
             elements by using the default equality comparer for their type.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.SequenceEqual``1(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEqualityComparer{``0})">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.SequenceEqual``1(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEqualityComparer{``0})">
             <summary>
             Determines whether two sequences are equal by comparing their 
             elements by using a specified <see cref="T:System.Collections.Generic.IEqualityComparer`1"/>.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.MinMaxImpl``1(System.Collections.Generic.IEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,``0,System.Boolean})">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.MinMaxImpl``1(System.Collections.Generic.IEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,``0,System.Boolean})">
             <summary>
             Base implementation for Min/Max operator.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.MinMaxImpl``1(System.Collections.Generic.IEnumerable{System.Nullable{``0}},System.Nullable{``0},Newtonsoft.Json.Serialization.Func{System.Nullable{``0},System.Nullable{``0},System.Boolean})">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.MinMaxImpl``1(System.Collections.Generic.IEnumerable{System.Nullable{``0}},System.Nullable{``0},Newtonsoft.Json.Serialization.Func{System.Nullable{``0},System.Nullable{``0},System.Boolean})">
             <summary>
             Base implementation for Min/Max operator for nullable types.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.Min``1(System.Collections.Generic.IEnumerable{``0})">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.Min``1(System.Collections.Generic.IEnumerable{``0})">
             <summary>
             Returns the minimum value in a generic sequence.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.Min``2(System.Collections.Generic.IEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,``1})">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.Min``2(System.Collections.Generic.IEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,``1})">
             <summary>
             Invokes a transform function on each element of a generic 
             sequence and returns the minimum resulting value.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.Max``1(System.Collections.Generic.IEnumerable{``0})">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.Max``1(System.Collections.Generic.IEnumerable{``0})">
             <summary>
             Returns the maximum value in a generic sequence.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.Max``2(System.Collections.Generic.IEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,``1})">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.Max``2(System.Collections.Generic.IEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,``1})">
             <summary>
             Invokes a transform function on each element of a generic 
             sequence and returns the maximum resulting value.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.Renumerable``1(System.Collections.Generic.IEnumerator{``0})">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.Renumerable``1(System.Collections.Generic.IEnumerator{``0})">
             <summary>
             Makes an enumerator seen as enumerable once more.
             </summary>
@@ -2550,130 +2550,130 @@
             mostly safe among aggregate operations.
             </remarks>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.OrderBy``2(System.Collections.Generic.IEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,``1})">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.OrderBy``2(System.Collections.Generic.IEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,``1})">
             <summary>
             Sorts the elements of a sequence in ascending order according to a key.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.OrderBy``2(System.Collections.Generic.IEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,``1},System.Collections.Generic.IComparer{``1})">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.OrderBy``2(System.Collections.Generic.IEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,``1},System.Collections.Generic.IComparer{``1})">
             <summary>
             Sorts the elements of a sequence in ascending order by using a 
             specified comparer.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.OrderByDescending``2(System.Collections.Generic.IEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,``1})">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.OrderByDescending``2(System.Collections.Generic.IEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,``1})">
             <summary>
             Sorts the elements of a sequence in descending order according to a key.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.OrderByDescending``2(System.Collections.Generic.IEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,``1},System.Collections.Generic.IComparer{``1})">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.OrderByDescending``2(System.Collections.Generic.IEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,``1},System.Collections.Generic.IComparer{``1})">
             <summary>
              Sorts the elements of a sequence in descending order by using a 
             specified comparer. 
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.ThenBy``2(Newtonsoft.Json.Utilities.LinqBridge.IOrderedEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,``1})">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.ThenBy``2(Newtonsoft.Json.UtilTaskities.LinqBridge.IOrderedEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,``1})">
             <summary>
             Performs a subsequent ordering of the elements in a sequence in 
             ascending order according to a key.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.ThenBy``2(Newtonsoft.Json.Utilities.LinqBridge.IOrderedEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,``1},System.Collections.Generic.IComparer{``1})">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.ThenBy``2(Newtonsoft.Json.UtilTaskities.LinqBridge.IOrderedEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,``1},System.Collections.Generic.IComparer{``1})">
             <summary>
             Performs a subsequent ordering of the elements in a sequence in 
             ascending order by using a specified comparer.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.ThenByDescending``2(Newtonsoft.Json.Utilities.LinqBridge.IOrderedEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,``1})">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.ThenByDescending``2(Newtonsoft.Json.UtilTaskities.LinqBridge.IOrderedEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,``1})">
             <summary>
             Performs a subsequent ordering of the elements in a sequence in 
             descending order, according to a key.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.ThenByDescending``2(Newtonsoft.Json.Utilities.LinqBridge.IOrderedEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,``1},System.Collections.Generic.IComparer{``1})">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.ThenByDescending``2(Newtonsoft.Json.UtilTaskities.LinqBridge.IOrderedEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,``1},System.Collections.Generic.IComparer{``1})">
             <summary>
             Performs a subsequent ordering of the elements in a sequence in 
             descending order by using a specified comparer.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.IntersectExceptImpl``1(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEqualityComparer{``0},System.Boolean)">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.IntersectExceptImpl``1(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEqualityComparer{``0},System.Boolean)">
             <summary>
             Base implementation for Intersect and Except operators.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.Intersect``1(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEnumerable{``0})">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.Intersect``1(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEnumerable{``0})">
             <summary>
             Produces the set intersection of two sequences by using the 
             default equality comparer to compare values.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.Intersect``1(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEqualityComparer{``0})">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.Intersect``1(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEqualityComparer{``0})">
             <summary>
             Produces the set intersection of two sequences by using the 
             specified <see cref="T:System.Collections.Generic.IEqualityComparer`1"/> to compare values.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.Except``1(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEnumerable{``0})">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.Except``1(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEnumerable{``0})">
             <summary>
             Produces the set difference of two sequences by using the 
             default equality comparer to compare values.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.Except``1(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEqualityComparer{``0})">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.Except``1(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEqualityComparer{``0})">
             <summary>
             Produces the set difference of two sequences by using the 
             specified <see cref="T:System.Collections.Generic.IEqualityComparer`1"/> to compare values.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.ToDictionary``2(System.Collections.Generic.IEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,``1})">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.ToDictionary``2(System.Collections.Generic.IEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,``1})">
             <summary>
             Creates a <see cref="T:System.Collections.Generic.Dictionary`2"/> from an 
             <see cref="T:System.Collections.Generic.IEnumerable`1"/> according to a specified key 
             selector function.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.ToDictionary``2(System.Collections.Generic.IEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,``1},System.Collections.Generic.IEqualityComparer{``1})">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.ToDictionary``2(System.Collections.Generic.IEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,``1},System.Collections.Generic.IEqualityComparer{``1})">
             <summary>
             Creates a <see cref="T:System.Collections.Generic.Dictionary`2"/> from an 
             <see cref="T:System.Collections.Generic.IEnumerable`1"/> according to a specified key 
             selector function and key comparer.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.ToDictionary``3(System.Collections.Generic.IEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,``1},Newtonsoft.Json.Serialization.Func{``0,``2})">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.ToDictionary``3(System.Collections.Generic.IEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,``1},Newtonsoft.Json.Serialization.Func{``0,``2})">
             <summary>
             Creates a <see cref="T:System.Collections.Generic.Dictionary`2"/> from an 
             <see cref="T:System.Collections.Generic.IEnumerable`1"/> according to specified key 
             selector and element selector functions.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.ToDictionary``3(System.Collections.Generic.IEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,``1},Newtonsoft.Json.Serialization.Func{``0,``2},System.Collections.Generic.IEqualityComparer{``1})">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.ToDictionary``3(System.Collections.Generic.IEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,``1},Newtonsoft.Json.Serialization.Func{``0,``2},System.Collections.Generic.IEqualityComparer{``1})">
             <summary>
             Creates a <see cref="T:System.Collections.Generic.Dictionary`2"/> from an 
             <see cref="T:System.Collections.Generic.IEnumerable`1"/> according to a specified key 
             selector function, a comparer, and an element selector function.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.Join``4(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEnumerable{``1},Newtonsoft.Json.Serialization.Func{``0,``2},Newtonsoft.Json.Serialization.Func{``1,``2},Newtonsoft.Json.Serialization.Func{``0,``1,``3})">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.Join``4(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEnumerable{``1},Newtonsoft.Json.Serialization.Func{``0,``2},Newtonsoft.Json.Serialization.Func{``1,``2},Newtonsoft.Json.Serialization.Func{``0,``1,``3})">
             <summary>
             Correlates the elements of two sequences based on matching keys. 
             The default equality comparer is used to compare keys.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.Join``4(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEnumerable{``1},Newtonsoft.Json.Serialization.Func{``0,``2},Newtonsoft.Json.Serialization.Func{``1,``2},Newtonsoft.Json.Serialization.Func{``0,``1,``3},System.Collections.Generic.IEqualityComparer{``2})">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.Join``4(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEnumerable{``1},Newtonsoft.Json.Serialization.Func{``0,``2},Newtonsoft.Json.Serialization.Func{``1,``2},Newtonsoft.Json.Serialization.Func{``0,``1,``3},System.Collections.Generic.IEqualityComparer{``2})">
             <summary>
             Correlates the elements of two sequences based on matching keys. 
             The default equality comparer is used to compare keys. A 
             specified <see cref="T:System.Collections.Generic.IEqualityComparer`1"/> is used to compare keys.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.GroupJoin``4(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEnumerable{``1},Newtonsoft.Json.Serialization.Func{``0,``2},Newtonsoft.Json.Serialization.Func{``1,``2},Newtonsoft.Json.Serialization.Func{``0,System.Collections.Generic.IEnumerable{``1},``3})">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.GroupJoin``4(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEnumerable{``1},Newtonsoft.Json.Serialization.Func{``0,``2},Newtonsoft.Json.Serialization.Func{``1,``2},Newtonsoft.Json.Serialization.Func{``0,System.Collections.Generic.IEnumerable{``1},``3})">
             <summary>
             Correlates the elements of two sequences based on equality of 
             keys and groups the results. The default equality comparer is 
             used to compare keys.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.GroupJoin``4(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEnumerable{``1},Newtonsoft.Json.Serialization.Func{``0,``2},Newtonsoft.Json.Serialization.Func{``1,``2},Newtonsoft.Json.Serialization.Func{``0,System.Collections.Generic.IEnumerable{``1},``3},System.Collections.Generic.IEqualityComparer{``2})">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.GroupJoin``4(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEnumerable{``1},Newtonsoft.Json.Serialization.Func{``0,``2},Newtonsoft.Json.Serialization.Func{``1,``2},Newtonsoft.Json.Serialization.Func{``0,System.Collections.Generic.IEnumerable{``1},``3},System.Collections.Generic.IEqualityComparer{``2})">
             <summary>
             Correlates the elements of two sequences based on equality of 
             keys and groups the results. The default equality comparer is 
@@ -2681,433 +2681,433 @@
             is used to compare keys.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.Sum(System.Collections.Generic.IEnumerable{System.Int32})">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.Sum(System.Collections.Generic.IEnumerable{System.Int32})">
             <summary>
             Computes the sum of a sequence of nullable <see cref="T:System.Int32"/> values.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.Sum``1(System.Collections.Generic.IEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,System.Int32})">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.Sum``1(System.Collections.Generic.IEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,System.Int32})">
             <summary>
             Computes the sum of a sequence of nullable <see cref="T:System.Int32"/> 
             values that are obtained by invoking a transform function on 
             each element of the input sequence.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.Average(System.Collections.Generic.IEnumerable{System.Int32})">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.Average(System.Collections.Generic.IEnumerable{System.Int32})">
             <summary>
             Computes the average of a sequence of nullable <see cref="T:System.Int32"/> values.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.Average``1(System.Collections.Generic.IEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,System.Int32})">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.Average``1(System.Collections.Generic.IEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,System.Int32})">
             <summary>
             Computes the average of a sequence of nullable <see cref="T:System.Int32"/> values 
             that are obtained by invoking a transform function on each 
             element of the input sequence.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.Sum(System.Collections.Generic.IEnumerable{System.Nullable{System.Int32}})">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.Sum(System.Collections.Generic.IEnumerable{System.Nullable{System.Int32}})">
             <summary>
             Computes the sum of a sequence of <see cref="T:System.Int32"/> values.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.Sum``1(System.Collections.Generic.IEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,System.Nullable{System.Int32}})">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.Sum``1(System.Collections.Generic.IEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,System.Nullable{System.Int32}})">
             <summary>
             Computes the sum of a sequence of <see cref="T:System.Int32"/> 
             values that are obtained by invoking a transform function on 
             each element of the input sequence.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.Average(System.Collections.Generic.IEnumerable{System.Nullable{System.Int32}})">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.Average(System.Collections.Generic.IEnumerable{System.Nullable{System.Int32}})">
             <summary>
             Computes the average of a sequence of <see cref="T:System.Int32"/> values.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.Average``1(System.Collections.Generic.IEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,System.Nullable{System.Int32}})">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.Average``1(System.Collections.Generic.IEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,System.Nullable{System.Int32}})">
             <summary>
             Computes the average of a sequence of <see cref="T:System.Int32"/> values 
             that are obtained by invoking a transform function on each 
             element of the input sequence.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.Min(System.Collections.Generic.IEnumerable{System.Nullable{System.Int32}})">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.Min(System.Collections.Generic.IEnumerable{System.Nullable{System.Int32}})">
             <summary>
             Returns the minimum value in a sequence of nullable 
             <see cref="T:System.Int32"/> values.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.Min``1(System.Collections.Generic.IEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,System.Nullable{System.Int32}})">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.Min``1(System.Collections.Generic.IEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,System.Nullable{System.Int32}})">
             <summary>
             Invokes a transform function on each element of a sequence and 
             returns the minimum nullable <see cref="T:System.Int32"/> value.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.Max(System.Collections.Generic.IEnumerable{System.Nullable{System.Int32}})">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.Max(System.Collections.Generic.IEnumerable{System.Nullable{System.Int32}})">
             <summary>
             Returns the maximum value in a sequence of nullable 
             <see cref="T:System.Int32"/> values.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.Max``1(System.Collections.Generic.IEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,System.Nullable{System.Int32}})">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.Max``1(System.Collections.Generic.IEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,System.Nullable{System.Int32}})">
             <summary>
             Invokes a transform function on each element of a sequence and 
             returns the maximum nullable <see cref="T:System.Int32"/> value.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.Sum(System.Collections.Generic.IEnumerable{System.Int64})">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.Sum(System.Collections.Generic.IEnumerable{System.Int64})">
             <summary>
             Computes the sum of a sequence of nullable <see cref="T:System.Int64"/> values.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.Sum``1(System.Collections.Generic.IEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,System.Int64})">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.Sum``1(System.Collections.Generic.IEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,System.Int64})">
             <summary>
             Computes the sum of a sequence of nullable <see cref="T:System.Int64"/> 
             values that are obtained by invoking a transform function on 
             each element of the input sequence.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.Average(System.Collections.Generic.IEnumerable{System.Int64})">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.Average(System.Collections.Generic.IEnumerable{System.Int64})">
             <summary>
             Computes the average of a sequence of nullable <see cref="T:System.Int64"/> values.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.Average``1(System.Collections.Generic.IEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,System.Int64})">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.Average``1(System.Collections.Generic.IEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,System.Int64})">
             <summary>
             Computes the average of a sequence of nullable <see cref="T:System.Int64"/> values 
             that are obtained by invoking a transform function on each 
             element of the input sequence.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.Sum(System.Collections.Generic.IEnumerable{System.Nullable{System.Int64}})">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.Sum(System.Collections.Generic.IEnumerable{System.Nullable{System.Int64}})">
             <summary>
             Computes the sum of a sequence of <see cref="T:System.Int64"/> values.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.Sum``1(System.Collections.Generic.IEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,System.Nullable{System.Int64}})">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.Sum``1(System.Collections.Generic.IEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,System.Nullable{System.Int64}})">
             <summary>
             Computes the sum of a sequence of <see cref="T:System.Int64"/> 
             values that are obtained by invoking a transform function on 
             each element of the input sequence.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.Average(System.Collections.Generic.IEnumerable{System.Nullable{System.Int64}})">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.Average(System.Collections.Generic.IEnumerable{System.Nullable{System.Int64}})">
             <summary>
             Computes the average of a sequence of <see cref="T:System.Int64"/> values.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.Average``1(System.Collections.Generic.IEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,System.Nullable{System.Int64}})">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.Average``1(System.Collections.Generic.IEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,System.Nullable{System.Int64}})">
             <summary>
             Computes the average of a sequence of <see cref="T:System.Int64"/> values 
             that are obtained by invoking a transform function on each 
             element of the input sequence.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.Min(System.Collections.Generic.IEnumerable{System.Nullable{System.Int64}})">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.Min(System.Collections.Generic.IEnumerable{System.Nullable{System.Int64}})">
             <summary>
             Returns the minimum value in a sequence of nullable 
             <see cref="T:System.Int64"/> values.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.Min``1(System.Collections.Generic.IEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,System.Nullable{System.Int64}})">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.Min``1(System.Collections.Generic.IEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,System.Nullable{System.Int64}})">
             <summary>
             Invokes a transform function on each element of a sequence and 
             returns the minimum nullable <see cref="T:System.Int64"/> value.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.Max(System.Collections.Generic.IEnumerable{System.Nullable{System.Int64}})">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.Max(System.Collections.Generic.IEnumerable{System.Nullable{System.Int64}})">
             <summary>
             Returns the maximum value in a sequence of nullable 
             <see cref="T:System.Int64"/> values.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.Max``1(System.Collections.Generic.IEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,System.Nullable{System.Int64}})">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.Max``1(System.Collections.Generic.IEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,System.Nullable{System.Int64}})">
             <summary>
             Invokes a transform function on each element of a sequence and 
             returns the maximum nullable <see cref="T:System.Int64"/> value.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.Sum(System.Collections.Generic.IEnumerable{System.Single})">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.Sum(System.Collections.Generic.IEnumerable{System.Single})">
             <summary>
             Computes the sum of a sequence of nullable <see cref="T:System.Single"/> values.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.Sum``1(System.Collections.Generic.IEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,System.Single})">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.Sum``1(System.Collections.Generic.IEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,System.Single})">
             <summary>
             Computes the sum of a sequence of nullable <see cref="T:System.Single"/> 
             values that are obtained by invoking a transform function on 
             each element of the input sequence.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.Average(System.Collections.Generic.IEnumerable{System.Single})">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.Average(System.Collections.Generic.IEnumerable{System.Single})">
             <summary>
             Computes the average of a sequence of nullable <see cref="T:System.Single"/> values.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.Average``1(System.Collections.Generic.IEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,System.Single})">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.Average``1(System.Collections.Generic.IEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,System.Single})">
             <summary>
             Computes the average of a sequence of nullable <see cref="T:System.Single"/> values 
             that are obtained by invoking a transform function on each 
             element of the input sequence.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.Sum(System.Collections.Generic.IEnumerable{System.Nullable{System.Single}})">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.Sum(System.Collections.Generic.IEnumerable{System.Nullable{System.Single}})">
             <summary>
             Computes the sum of a sequence of <see cref="T:System.Single"/> values.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.Sum``1(System.Collections.Generic.IEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,System.Nullable{System.Single}})">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.Sum``1(System.Collections.Generic.IEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,System.Nullable{System.Single}})">
             <summary>
             Computes the sum of a sequence of <see cref="T:System.Single"/> 
             values that are obtained by invoking a transform function on 
             each element of the input sequence.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.Average(System.Collections.Generic.IEnumerable{System.Nullable{System.Single}})">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.Average(System.Collections.Generic.IEnumerable{System.Nullable{System.Single}})">
             <summary>
             Computes the average of a sequence of <see cref="T:System.Single"/> values.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.Average``1(System.Collections.Generic.IEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,System.Nullable{System.Single}})">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.Average``1(System.Collections.Generic.IEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,System.Nullable{System.Single}})">
             <summary>
             Computes the average of a sequence of <see cref="T:System.Single"/> values 
             that are obtained by invoking a transform function on each 
             element of the input sequence.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.Min(System.Collections.Generic.IEnumerable{System.Nullable{System.Single}})">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.Min(System.Collections.Generic.IEnumerable{System.Nullable{System.Single}})">
             <summary>
             Returns the minimum value in a sequence of nullable 
             <see cref="T:System.Single"/> values.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.Min``1(System.Collections.Generic.IEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,System.Nullable{System.Single}})">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.Min``1(System.Collections.Generic.IEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,System.Nullable{System.Single}})">
             <summary>
             Invokes a transform function on each element of a sequence and 
             returns the minimum nullable <see cref="T:System.Single"/> value.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.Max(System.Collections.Generic.IEnumerable{System.Nullable{System.Single}})">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.Max(System.Collections.Generic.IEnumerable{System.Nullable{System.Single}})">
             <summary>
             Returns the maximum value in a sequence of nullable 
             <see cref="T:System.Single"/> values.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.Max``1(System.Collections.Generic.IEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,System.Nullable{System.Single}})">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.Max``1(System.Collections.Generic.IEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,System.Nullable{System.Single}})">
             <summary>
             Invokes a transform function on each element of a sequence and 
             returns the maximum nullable <see cref="T:System.Single"/> value.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.Sum(System.Collections.Generic.IEnumerable{System.Double})">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.Sum(System.Collections.Generic.IEnumerable{System.Double})">
             <summary>
             Computes the sum of a sequence of nullable <see cref="T:System.Double"/> values.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.Sum``1(System.Collections.Generic.IEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,System.Double})">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.Sum``1(System.Collections.Generic.IEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,System.Double})">
             <summary>
             Computes the sum of a sequence of nullable <see cref="T:System.Double"/> 
             values that are obtained by invoking a transform function on 
             each element of the input sequence.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.Average(System.Collections.Generic.IEnumerable{System.Double})">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.Average(System.Collections.Generic.IEnumerable{System.Double})">
             <summary>
             Computes the average of a sequence of nullable <see cref="T:System.Double"/> values.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.Average``1(System.Collections.Generic.IEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,System.Double})">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.Average``1(System.Collections.Generic.IEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,System.Double})">
             <summary>
             Computes the average of a sequence of nullable <see cref="T:System.Double"/> values 
             that are obtained by invoking a transform function on each 
             element of the input sequence.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.Sum(System.Collections.Generic.IEnumerable{System.Nullable{System.Double}})">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.Sum(System.Collections.Generic.IEnumerable{System.Nullable{System.Double}})">
             <summary>
             Computes the sum of a sequence of <see cref="T:System.Double"/> values.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.Sum``1(System.Collections.Generic.IEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,System.Nullable{System.Double}})">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.Sum``1(System.Collections.Generic.IEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,System.Nullable{System.Double}})">
             <summary>
             Computes the sum of a sequence of <see cref="T:System.Double"/> 
             values that are obtained by invoking a transform function on 
             each element of the input sequence.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.Average(System.Collections.Generic.IEnumerable{System.Nullable{System.Double}})">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.Average(System.Collections.Generic.IEnumerable{System.Nullable{System.Double}})">
             <summary>
             Computes the average of a sequence of <see cref="T:System.Double"/> values.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.Average``1(System.Collections.Generic.IEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,System.Nullable{System.Double}})">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.Average``1(System.Collections.Generic.IEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,System.Nullable{System.Double}})">
             <summary>
             Computes the average of a sequence of <see cref="T:System.Double"/> values 
             that are obtained by invoking a transform function on each 
             element of the input sequence.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.Min(System.Collections.Generic.IEnumerable{System.Nullable{System.Double}})">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.Min(System.Collections.Generic.IEnumerable{System.Nullable{System.Double}})">
             <summary>
             Returns the minimum value in a sequence of nullable 
             <see cref="T:System.Double"/> values.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.Min``1(System.Collections.Generic.IEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,System.Nullable{System.Double}})">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.Min``1(System.Collections.Generic.IEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,System.Nullable{System.Double}})">
             <summary>
             Invokes a transform function on each element of a sequence and 
             returns the minimum nullable <see cref="T:System.Double"/> value.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.Max(System.Collections.Generic.IEnumerable{System.Nullable{System.Double}})">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.Max(System.Collections.Generic.IEnumerable{System.Nullable{System.Double}})">
             <summary>
             Returns the maximum value in a sequence of nullable 
             <see cref="T:System.Double"/> values.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.Max``1(System.Collections.Generic.IEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,System.Nullable{System.Double}})">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.Max``1(System.Collections.Generic.IEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,System.Nullable{System.Double}})">
             <summary>
             Invokes a transform function on each element of a sequence and 
             returns the maximum nullable <see cref="T:System.Double"/> value.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.Sum(System.Collections.Generic.IEnumerable{System.Decimal})">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.Sum(System.Collections.Generic.IEnumerable{System.Decimal})">
             <summary>
             Computes the sum of a sequence of nullable <see cref="T:System.Decimal"/> values.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.Sum``1(System.Collections.Generic.IEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,System.Decimal})">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.Sum``1(System.Collections.Generic.IEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,System.Decimal})">
             <summary>
             Computes the sum of a sequence of nullable <see cref="T:System.Decimal"/> 
             values that are obtained by invoking a transform function on 
             each element of the input sequence.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.Average(System.Collections.Generic.IEnumerable{System.Decimal})">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.Average(System.Collections.Generic.IEnumerable{System.Decimal})">
             <summary>
             Computes the average of a sequence of nullable <see cref="T:System.Decimal"/> values.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.Average``1(System.Collections.Generic.IEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,System.Decimal})">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.Average``1(System.Collections.Generic.IEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,System.Decimal})">
             <summary>
             Computes the average of a sequence of nullable <see cref="T:System.Decimal"/> values 
             that are obtained by invoking a transform function on each 
             element of the input sequence.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.Sum(System.Collections.Generic.IEnumerable{System.Nullable{System.Decimal}})">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.Sum(System.Collections.Generic.IEnumerable{System.Nullable{System.Decimal}})">
             <summary>
             Computes the sum of a sequence of <see cref="T:System.Decimal"/> values.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.Sum``1(System.Collections.Generic.IEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,System.Nullable{System.Decimal}})">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.Sum``1(System.Collections.Generic.IEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,System.Nullable{System.Decimal}})">
             <summary>
             Computes the sum of a sequence of <see cref="T:System.Decimal"/> 
             values that are obtained by invoking a transform function on 
             each element of the input sequence.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.Average(System.Collections.Generic.IEnumerable{System.Nullable{System.Decimal}})">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.Average(System.Collections.Generic.IEnumerable{System.Nullable{System.Decimal}})">
             <summary>
             Computes the average of a sequence of <see cref="T:System.Decimal"/> values.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.Average``1(System.Collections.Generic.IEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,System.Nullable{System.Decimal}})">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.Average``1(System.Collections.Generic.IEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,System.Nullable{System.Decimal}})">
             <summary>
             Computes the average of a sequence of <see cref="T:System.Decimal"/> values 
             that are obtained by invoking a transform function on each 
             element of the input sequence.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.Min(System.Collections.Generic.IEnumerable{System.Nullable{System.Decimal}})">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.Min(System.Collections.Generic.IEnumerable{System.Nullable{System.Decimal}})">
             <summary>
             Returns the minimum value in a sequence of nullable 
             <see cref="T:System.Decimal"/> values.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.Min``1(System.Collections.Generic.IEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,System.Nullable{System.Decimal}})">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.Min``1(System.Collections.Generic.IEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,System.Nullable{System.Decimal}})">
             <summary>
             Invokes a transform function on each element of a sequence and 
             returns the minimum nullable <see cref="T:System.Decimal"/> value.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.Max(System.Collections.Generic.IEnumerable{System.Nullable{System.Decimal}})">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.Max(System.Collections.Generic.IEnumerable{System.Nullable{System.Decimal}})">
             <summary>
             Returns the maximum value in a sequence of nullable 
             <see cref="T:System.Decimal"/> values.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Enumerable.Max``1(System.Collections.Generic.IEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,System.Nullable{System.Decimal}})">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Enumerable.Max``1(System.Collections.Generic.IEnumerable{``0},Newtonsoft.Json.Serialization.Func{``0,System.Nullable{System.Decimal}})">
             <summary>
             Invokes a transform function on each element of a sequence and 
             returns the maximum nullable <see cref="T:System.Decimal"/> value.
             </summary>
         </member>
-        <member name="T:Newtonsoft.Json.Utilities.LinqBridge.IGrouping`2">
+        <member name="T:Newtonsoft.Json.UtilTaskities.LinqBridge.IGrouping`2">
             <summary>
             Represents a collection of objects that have a common key.
             </summary>
         </member>
-        <member name="P:Newtonsoft.Json.Utilities.LinqBridge.IGrouping`2.Key">
+        <member name="P:Newtonsoft.Json.UtilTaskities.LinqBridge.IGrouping`2.Key">
             <summary>
-            Gets the key of the <see cref="T:Newtonsoft.Json.Utilities.LinqBridge.IGrouping`2"/>.
+            Gets the key of the <see cref="T:Newtonsoft.Json.UtilTaskities.LinqBridge.IGrouping`2"/>.
             </summary>
         </member>
-        <member name="T:Newtonsoft.Json.Utilities.LinqBridge.ILookup`2">
+        <member name="T:Newtonsoft.Json.UtilTaskities.LinqBridge.ILookup`2">
             <summary>
             Defines an indexer, size property, and Boolean search method for 
             data structures that map keys to <see cref="T:System.Collections.Generic.IEnumerable`1"/> 
             sequences of values.
             </summary>
         </member>
-        <member name="T:Newtonsoft.Json.Utilities.LinqBridge.IOrderedEnumerable`1">
+        <member name="T:Newtonsoft.Json.UtilTaskities.LinqBridge.IOrderedEnumerable`1">
             <summary>
             Represents a sorted sequence.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.IOrderedEnumerable`1.CreateOrderedEnumerable``1(Newtonsoft.Json.Serialization.Func{`0,``0},System.Collections.Generic.IComparer{``0},System.Boolean)">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.IOrderedEnumerable`1.CreateOrderedEnumerable``1(Newtonsoft.Json.Serialization.Func{`0,``0},System.Collections.Generic.IComparer{``0},System.Boolean)">
             <summary>
             Performs a subsequent ordering on the elements of an 
-            <see cref="T:Newtonsoft.Json.Utilities.LinqBridge.IOrderedEnumerable`1"/> according to a key.
+            <see cref="T:Newtonsoft.Json.UtilTaskities.LinqBridge.IOrderedEnumerable`1"/> according to a key.
             </summary>
         </member>
-        <member name="T:Newtonsoft.Json.Utilities.LinqBridge.Lookup`2">
+        <member name="T:Newtonsoft.Json.UtilTaskities.LinqBridge.Lookup`2">
             <summary>
             Represents a collection of keys each mapped to one or more values.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Lookup`2.Contains(`0)">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Lookup`2.Contains(`0)">
             <summary>
-            Determines whether a specified key is in the <see cref="T:Newtonsoft.Json.Utilities.LinqBridge.Lookup`2"/>.
+            Determines whether a specified key is in the <see cref="T:Newtonsoft.Json.UtilTaskities.LinqBridge.Lookup`2"/>.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Lookup`2.ApplyResultSelector``1(Newtonsoft.Json.Serialization.Func{`0,System.Collections.Generic.IEnumerable{`1},``0})">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Lookup`2.ApplyResultSelector``1(Newtonsoft.Json.Serialization.Func{`0,System.Collections.Generic.IEnumerable{`1},``0})">
             <summary>
             Applies a transform function to each key and its associated 
             values and returns the results.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.Lookup`2.GetEnumerator">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.Lookup`2.GetEnumerator">
             <summary>
-            Returns a generic enumerator that iterates through the <see cref="T:Newtonsoft.Json.Utilities.LinqBridge.Lookup`2"/>.
+            Returns a generic enumerator that iterates through the <see cref="T:Newtonsoft.Json.UtilTaskities.LinqBridge.Lookup`2"/>.
             </summary>
         </member>
-        <member name="P:Newtonsoft.Json.Utilities.LinqBridge.Lookup`2.Count">
+        <member name="P:Newtonsoft.Json.UtilTaskities.LinqBridge.Lookup`2.Count">
             <summary>
-            Gets the number of key/value collection pairs in the <see cref="T:Newtonsoft.Json.Utilities.LinqBridge.Lookup`2"/>.
+            Gets the number of key/value collection pairs in the <see cref="T:Newtonsoft.Json.UtilTaskities.LinqBridge.Lookup`2"/>.
             </summary>
         </member>
-        <member name="P:Newtonsoft.Json.Utilities.LinqBridge.Lookup`2.Item(`0)">
+        <member name="P:Newtonsoft.Json.UtilTaskities.LinqBridge.Lookup`2.Item(`0)">
             <summary>
             Gets the collection of values indexed by the specified key.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.OrderedEnumerable`2.TagPosition(`0,System.Int32)">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.OrderedEnumerable`2.TagPosition(`0,System.Int32)">
             <remarks>
             See <a href="http://code.google.com/p/linqbridge/issues/detail?id=11">issue #11</a>
             for why this method is needed and cannot be expressed as a 
             lambda at the call site.
             </remarks>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.LinqBridge.OrderedEnumerable`2.GetFirst(Newtonsoft.Json.Utilities.LinqBridge.Tuple{`0,System.Int32})">
+        <member name="M:Newtonsoft.Json.UtilTaskities.LinqBridge.OrderedEnumerable`2.GetFirst(Newtonsoft.Json.UtilTaskities.LinqBridge.Tuple{`0,System.Int32})">
             <remarks>
             See <a href="http://code.google.com/p/linqbridge/issues/detail?id=11">issue #11</a>
             for why this method is needed and cannot be expressed as a 
@@ -9044,7 +9044,7 @@
             Include the .NET type name when the type of the object being serialized is not the same as its declared type.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.ConvertUtils.ConvertOrCast(System.Object,System.Globalization.CultureInfo,System.Type)">
+        <member name="M:Newtonsoft.Json.UtilTaskities.ConvertUtilTasks.ConvertOrCast(System.Object,System.Globalization.CultureInfo,System.Type)">
             <summary>
             Converts the value to the specified type. If the value is unable to be converted, the
             value is checked whether it assignable to the specified type.
@@ -9057,13 +9057,13 @@
             is returned if assignable to the target type.
             </returns>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.EnumUtils.GetNamesAndValues``1">
+        <member name="M:Newtonsoft.Json.UtilTaskities.EnumUtilTasks.GetNamesAndValues``1">
             <summary>
             Gets a dictionary of the names and values of an Enum type.
             </summary>
             <returns></returns>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.EnumUtils.GetNamesAndValues``1(System.Type)">
+        <member name="M:Newtonsoft.Json.UtilTaskities.EnumUtilTasks.GetNamesAndValues``1(System.Type)">
             <summary>
             Gets a dictionary of the names and values of an Enum type.
             </summary>
@@ -9165,12 +9165,12 @@
             Byte data.
             </summary>
         </member>
-        <member name="T:Newtonsoft.Json.Utilities.StringBuffer">
+        <member name="T:Newtonsoft.Json.UtilTaskities.StringBuffer">
             <summary>
             Builds a string. Unlike StringBuilder this class lets you reuse it's internal buffer.
             </summary>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.CollectionUtils.IsNullOrEmpty``1(System.Collections.Generic.ICollection{``0})">
+        <member name="M:Newtonsoft.Json.UtilTaskities.CollectionUtilTasks.IsNullOrEmpty``1(System.Collections.Generic.ICollection{``0})">
             <summary>
             Determines whether the collection is null or empty.
             </summary>
@@ -9179,14 +9179,14 @@
             	<c>true</c> if the collection is null or empty; otherwise, <c>false</c>.
             </returns>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.CollectionUtils.AddRange``1(System.Collections.Generic.IList{``0},System.Collections.Generic.IEnumerable{``0})">
+        <member name="M:Newtonsoft.Json.UtilTaskities.CollectionUtilTasks.AddRange``1(System.Collections.Generic.IList{``0},System.Collections.Generic.IEnumerable{``0})">
             <summary>
             Adds the elements of the specified collection to the specified generic IList.
             </summary>
             <param name="initial">The list to add to.</param>
             <param name="collection">The collection of elements to add.</param>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.CollectionUtils.IndexOf``1(System.Collections.Generic.IEnumerable{``0},``0,System.Collections.Generic.IEqualityComparer{``0})">
+        <member name="M:Newtonsoft.Json.UtilTaskities.CollectionUtilTasks.IndexOf``1(System.Collections.Generic.IEnumerable{``0},``0,System.Collections.Generic.IEqualityComparer{``0})">
             <summary>
             Returns the index of the first occurrence in a sequence by using a specified IEqualityComparer.
             </summary>
@@ -9196,21 +9196,21 @@
             <param name="comparer">An equality comparer to compare values.</param>
             <returns>The zero-based index of the first occurrence of value within the entire sequence, if found; otherwise, –1.</returns>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.ReflectionUtils.GetCollectionItemType(System.Type)">
+        <member name="M:Newtonsoft.Json.UtilTaskities.ReflectionUtilTasks.GetCollectionItemType(System.Type)">
             <summary>
             Gets the type of the typed collection's items.
             </summary>
             <param name="type">The type.</param>
             <returns>The type of the typed collection's items.</returns>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.ReflectionUtils.GetMemberUnderlyingType(System.Reflection.MemberInfo)">
+        <member name="M:Newtonsoft.Json.UtilTaskities.ReflectionUtilTasks.GetMemberUnderlyingType(System.Reflection.MemberInfo)">
             <summary>
             Gets the member's underlying type.
             </summary>
             <param name="member">The member.</param>
             <returns>The underlying type of the member.</returns>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.ReflectionUtils.IsIndexedProperty(System.Reflection.MemberInfo)">
+        <member name="M:Newtonsoft.Json.UtilTaskities.ReflectionUtilTasks.IsIndexedProperty(System.Reflection.MemberInfo)">
             <summary>
             Determines whether the member is an indexed property.
             </summary>
@@ -9219,7 +9219,7 @@
             	<c>true</c> if the member is an indexed property; otherwise, <c>false</c>.
             </returns>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.ReflectionUtils.IsIndexedProperty(System.Reflection.PropertyInfo)">
+        <member name="M:Newtonsoft.Json.UtilTaskities.ReflectionUtilTasks.IsIndexedProperty(System.Reflection.PropertyInfo)">
             <summary>
             Determines whether the property is an indexed property.
             </summary>
@@ -9228,7 +9228,7 @@
             	<c>true</c> if the property is an indexed property; otherwise, <c>false</c>.
             </returns>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.ReflectionUtils.GetMemberValue(System.Reflection.MemberInfo,System.Object)">
+        <member name="M:Newtonsoft.Json.UtilTaskities.ReflectionUtilTasks.GetMemberValue(System.Reflection.MemberInfo,System.Object)">
             <summary>
             Gets the member's value on the object.
             </summary>
@@ -9236,7 +9236,7 @@
             <param name="target">The target object.</param>
             <returns>The member's value on the object.</returns>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.ReflectionUtils.SetMemberValue(System.Reflection.MemberInfo,System.Object,System.Object)">
+        <member name="M:Newtonsoft.Json.UtilTaskities.ReflectionUtilTasks.SetMemberValue(System.Reflection.MemberInfo,System.Object,System.Object)">
             <summary>
             Sets the member's value on the target object.
             </summary>
@@ -9244,7 +9244,7 @@
             <param name="target">The target.</param>
             <param name="value">The value.</param>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.ReflectionUtils.CanReadMemberValue(System.Reflection.MemberInfo,System.Boolean)">
+        <member name="M:Newtonsoft.Json.UtilTaskities.ReflectionUtilTasks.CanReadMemberValue(System.Reflection.MemberInfo,System.Boolean)">
             <summary>
             Determines whether the specified MemberInfo can be read.
             </summary>
@@ -9254,7 +9254,7 @@
             	<c>true</c> if the specified MemberInfo can be read; otherwise, <c>false</c>.
             </returns>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.ReflectionUtils.CanSetMemberValue(System.Reflection.MemberInfo,System.Boolean,System.Boolean)">
+        <member name="M:Newtonsoft.Json.UtilTaskities.ReflectionUtilTasks.CanSetMemberValue(System.Reflection.MemberInfo,System.Boolean,System.Boolean)">
             <summary>
             Determines whether the specified MemberInfo can be set.
             </summary>
@@ -9265,7 +9265,7 @@
             	<c>true</c> if the specified MemberInfo can be set; otherwise, <c>false</c>.
             </returns>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.StringUtils.IsWhiteSpace(System.String)">
+        <member name="M:Newtonsoft.Json.UtilTaskities.StringUtilTasks.IsWhiteSpace(System.String)">
             <summary>
             Determines whether the string is all white space. Empty string will return false.
             </summary>
@@ -9274,7 +9274,7 @@
             	<c>true</c> if the string is all white space; otherwise, <c>false</c>.
             </returns>
         </member>
-        <member name="M:Newtonsoft.Json.Utilities.StringUtils.NullEmptyString(System.String)">
+        <member name="M:Newtonsoft.Json.UtilTaskities.StringUtilTasks.NullEmptyString(System.String)">
             <summary>
             Nulls an empty string.
             </summary>

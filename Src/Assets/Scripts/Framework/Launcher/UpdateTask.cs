@@ -1,7 +1,7 @@
 //=====================================================
-// - FileName:      Assets.cs
+// - FileName:      UpdateTask.cs
 // - Created:       @JCY
-// - CreateTime:    2019/03/24 11:31:00
+// - CreateTime:    2019/03/24 11:33:40
 // - Email:         jcyemail@qq.com
 // - Description:   
 // -  (C) Copyright 2019 - 2019.
@@ -12,29 +12,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Assets : ILanucherTask
+public class UpdateTask : ILanucherTask
 {
     public override string Name
     {
-        get => "资源管理启动";
+        get => "更新资源";
     }
 
     public override TaskType TaskType
     {
-        get => TaskType.Assets;
+        get => TaskType.UpdateTask;
     }
 
     public override void AddTaskChild()
     {
-        StartAsset();
-    }
-
-    private void StartAsset()
-    {
         LogUtil.Log(string.Format(Name), LogType.TaskLog);
-        AssetsManager.Instance();
-        AssetBundleManager.Instance();
-        AssetBundleLoader.Instance();
         CalcTaskCount();
     }
 }

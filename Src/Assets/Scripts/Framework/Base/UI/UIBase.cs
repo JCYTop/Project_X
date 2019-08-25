@@ -1,6 +1,5 @@
 ﻿using System;
 using Sirenix.OdinInspector;
-using UnityEngine;
 
 public class UIBase : ObjectBase
 {
@@ -12,6 +11,20 @@ public class UIBase : ObjectBase
     public override void Init()
     {
         ScenesMgr.AddUIInfo<UIType>(globalID, (int) ShowType, this);
+    }
+
+    public override void Enable()
+    {
+        base.Enable();
+        //LRU策略自动清理
+        UIRootMgr.Instance().OpenUIBase(this);
+    }
+
+    public override void Disable()
+    {
+        base.Disable();
+        //LRU策略自动清理
+        UIRootMgr.Instance().CloseUIBase(this);
     }
 
     public override void Release()
@@ -30,20 +43,6 @@ public class UIBase : ObjectBase
         }
 
         ScenesMgr.RemoveUIInfo<UIType>(globalID, (int) ShowType);
-    }
-
-    public override void Enable()
-    {
-        base.Enable();
-        //LRU策略自动清理
-        UIRootMgr.Instance().OpenUIBase(this);
-    }
-
-    public override void Disable()
-    {
-        base.Disable();
-        //LRU策略自动清理
-        UIRootMgr.Instance().CloseUIBase(this);
     }
 
     public override void Refresh(params object[] args)

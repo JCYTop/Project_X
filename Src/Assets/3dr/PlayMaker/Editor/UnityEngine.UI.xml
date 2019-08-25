@@ -247,9 +247,9 @@
         <para>Should the module be activated.</para>
       </returns>
     </member>
-    <member name="M:UnityEngine.EventSystems.BaseInputModule.UpdateModule">
+    <member name="M:UnityEngine.EventSystems.BaseInputModule.UpdateTaskTaskModule">
       <summary>
-        <para>Update the internal state of the Module.</para>
+        <para>UpdateTaskTask the internal state of the Module.</para>
       </summary>
     </member>
     <member name="T:UnityEngine.EventSystems.BaseRaycaster">
@@ -380,7 +380,7 @@
       <param name="selected">GameObject to select.</param>
       <param name="pointer">Associated EventData.</param>
     </member>
-    <member name="M:UnityEngine.EventSystems.EventSystem.UpdateModules">
+    <member name="M:UnityEngine.EventSystems.EventSystem.UpdateTaskTaskModules">
       <summary>
         <para>Recalculate the internal list of BaseInputModules.</para>
       </summary>
@@ -511,7 +511,7 @@
       </summary>
       <param name="eventData">Current event data.</param>
     </member>
-    <member name="M:UnityEngine.EventSystems.EventTrigger.OnUpdateSelected(UnityEngine.EventSystems.BaseEventData)">
+    <member name="M:UnityEngine.EventSystems.EventTrigger.OnUpdateTaskTaskSelected(UnityEngine.EventSystems.BaseEventData)">
       <summary>
         <para>Called by the EventSystem when the object associated with this EventTrigger is updated.</para>
       </summary>
@@ -607,9 +607,9 @@
         <para>Intercepts ISubmitHandler.Submit.</para>
       </summary>
     </member>
-    <member name="F:UnityEngine.EventSystems.EventTriggerType.UpdateSelected">
+    <member name="F:UnityEngine.EventSystems.EventTriggerType.UpdateTaskTaskSelected">
       <summary>
-        <para>Intercepts a IUpdateSelectedHandler.OnUpdateSelected.</para>
+        <para>Intercepts a IUpdateTaskTaskSelectedHandler.OnUpdateTaskTaskSelected.</para>
       </summary>
     </member>
     <member name="T:UnityEngine.EventSystems.ExecuteEvents">
@@ -699,7 +699,7 @@
     </member>
     <member name="P:UnityEngine.EventSystems.ExecuteEvents.updateSelectedHandler">
       <summary>
-        <para>IUpdateSelectedHandler execute helper function.</para>
+        <para>IUpdateTaskTaskSelectedHandler execute helper function.</para>
       </summary>
     </member>
     <member name="M:UnityEngine.EventSystems.ExecuteEvents.CanHandleEvent(UnityEngine.GameObject)">
@@ -939,12 +939,12 @@
       </summary>
       <param name="eventData">Current event data.</param>
     </member>
-    <member name="?:UnityEngine.EventSystems.IUpdateSelectedHandler">
+    <member name="?:UnityEngine.EventSystems.IUpdateTaskTaskSelectedHandler">
       <summary>
-        <para>Interface to implement if you wish to receive OnUpdateSelected callbacks.</para>
+        <para>Interface to implement if you wish to receive OnUpdateTaskTaskSelected callbacks.</para>
       </summary>
     </member>
-    <member name="M:UnityEngine.EventSystems.IUpdateSelectedHandler.OnUpdateSelected(UnityEngine.EventSystems.BaseEventData)">
+    <member name="M:UnityEngine.EventSystems.IUpdateTaskTaskSelectedHandler.OnUpdateTaskTaskSelected(UnityEngine.EventSystems.BaseEventData)">
       <summary>
         <para>Called by the EventSystem when the object associated with this EventTrigger is updated.</para>
       </summary>
@@ -1503,7 +1503,7 @@
         <para>If the submit event was used by the selected object.</para>
       </returns>
     </member>
-    <member name="M:UnityEngine.EventSystems.StandaloneInputModule.SendUpdateEventToSelectedObject">
+    <member name="M:UnityEngine.EventSystems.StandaloneInputModule.SendUpdateTaskTaskEventToSelectedObject">
       <summary>
         <para>Send a update event to the currently selected object.</para>
       </summary>
@@ -1519,7 +1519,7 @@
         <para>Should activate.</para>
       </returns>
     </member>
-    <member name="M:UnityEngine.EventSystems.StandaloneInputModule.UpdateModule">
+    <member name="M:UnityEngine.EventSystems.StandaloneInputModule.UpdateTaskTaskModule">
       <summary>
         <para>See BaseInputModule.</para>
       </summary>
@@ -1565,7 +1565,7 @@
         <para>Should activate.</para>
       </returns>
     </member>
-    <member name="M:UnityEngine.EventSystems.TouchInputModule.UpdateModule">
+    <member name="M:UnityEngine.EventSystems.TouchInputModule.UpdateTaskTaskModule">
       <summary>
         <para>See BaseInputModule.</para>
       </summary>
@@ -1972,57 +1972,57 @@ One pica is 1/6 of an inch.</para>
 One point is 112 of a pica, and 172 of an inch.</para>
       </summary>
     </member>
-    <member name="M:UnityEngine.UI.CanvasScaler.Update">
+    <member name="M:UnityEngine.UI.CanvasScaler.UpdateTaskTask">
       <summary>
         <para>Handles per-frame checking if the canvas scaling needs to be updated.</para>
       </summary>
     </member>
-    <member name="T:UnityEngine.UI.CanvasUpdate">
+    <member name="T:UnityEngine.UI.CanvasUpdateTaskTask">
       <summary>
         <para>Values of 'update' called on a Canvas update.</para>
       </summary>
     </member>
-    <member name="F:UnityEngine.UI.CanvasUpdate.LatePreRender">
+    <member name="F:UnityEngine.UI.CanvasUpdateTaskTask.LatePreRender">
       <summary>
         <para>Called late, before render.</para>
       </summary>
     </member>
-    <member name="F:UnityEngine.UI.CanvasUpdate.Layout">
+    <member name="F:UnityEngine.UI.CanvasUpdateTaskTask.Layout">
       <summary>
         <para>Called for layout.</para>
       </summary>
     </member>
-    <member name="F:UnityEngine.UI.CanvasUpdate.MaxUpdateValue">
+    <member name="F:UnityEngine.UI.CanvasUpdateTaskTask.MaxUpdateTaskTaskValue">
       <summary>
         <para>Max enum value.</para>
       </summary>
     </member>
-    <member name="F:UnityEngine.UI.CanvasUpdate.PostLayout">
+    <member name="F:UnityEngine.UI.CanvasUpdateTaskTask.PostLayout">
       <summary>
         <para>Called after layout.</para>
       </summary>
     </member>
-    <member name="F:UnityEngine.UI.CanvasUpdate.Prelayout">
+    <member name="F:UnityEngine.UI.CanvasUpdateTaskTask.Prelayout">
       <summary>
         <para>Called before layout.</para>
       </summary>
     </member>
-    <member name="F:UnityEngine.UI.CanvasUpdate.PreRender">
+    <member name="F:UnityEngine.UI.CanvasUpdateTaskTask.PreRender">
       <summary>
         <para>Called before rendering.</para>
       </summary>
     </member>
-    <member name="T:UnityEngine.UI.CanvasUpdateRegistry">
+    <member name="T:UnityEngine.UI.CanvasUpdateTaskTaskRegistry">
       <summary>
         <para>A place where CanvasElements can register themselves for rebuilding.</para>
       </summary>
     </member>
-    <member name="P:UnityEngine.UI.CanvasUpdateRegistry.instance">
+    <member name="P:UnityEngine.UI.CanvasUpdateTaskTaskRegistry.instance">
       <summary>
         <para>Get the singleton registry.</para>
       </summary>
     </member>
-    <member name="M:UnityEngine.UI.CanvasUpdateRegistry.IsRebuildingGraphics">
+    <member name="M:UnityEngine.UI.CanvasUpdateTaskTaskRegistry.IsRebuildingGraphics">
       <summary>
         <para>Are graphics being rebuild.</para>
       </summary>
@@ -2030,7 +2030,7 @@ One point is 112 of a pica, and 172 of an inch.</para>
         <para>Rebuilding graphics.</para>
       </returns>
     </member>
-    <member name="M:UnityEngine.UI.CanvasUpdateRegistry.IsRebuildingLayout">
+    <member name="M:UnityEngine.UI.CanvasUpdateTaskTaskRegistry.IsRebuildingLayout">
       <summary>
         <para>Is layout being rebuilt?</para>
       </summary>
@@ -2038,19 +2038,19 @@ One point is 112 of a pica, and 172 of an inch.</para>
         <para>Rebuilding layout.</para>
       </returns>
     </member>
-    <member name="M:UnityEngine.UI.CanvasUpdateRegistry.RegisterCanvasElementForGraphicRebuild(UnityEngine.UI.ICanvasElement)">
+    <member name="M:UnityEngine.UI.CanvasUpdateTaskTaskRegistry.RegisterCanvasElementForGraphicRebuild(UnityEngine.UI.ICanvasElement)">
       <summary>
         <para>Rebuild the graphics of the given element.</para>
       </summary>
       <param name="element">Element to rebuild.</param>
     </member>
-    <member name="M:UnityEngine.UI.CanvasUpdateRegistry.RegisterCanvasElementForLayoutRebuild(UnityEngine.UI.ICanvasElement)">
+    <member name="M:UnityEngine.UI.CanvasUpdateTaskTaskRegistry.RegisterCanvasElementForLayoutRebuild(UnityEngine.UI.ICanvasElement)">
       <summary>
         <para>Rebuild the layout of the given element.</para>
       </summary>
       <param name="element">Element to rebuild.</param>
     </member>
-    <member name="M:UnityEngine.UI.CanvasUpdateRegistry.TryRegisterCanvasElementForGraphicRebuild(UnityEngine.UI.ICanvasElement)">
+    <member name="M:UnityEngine.UI.CanvasUpdateTaskTaskRegistry.TryRegisterCanvasElementForGraphicRebuild(UnityEngine.UI.ICanvasElement)">
       <summary>
         <para>Rebuild the layout of the given element.</para>
       </summary>
@@ -2059,7 +2059,7 @@ One point is 112 of a pica, and 172 of an inch.</para>
         <para>Was the element scheduled.</para>
       </returns>
     </member>
-    <member name="M:UnityEngine.UI.CanvasUpdateRegistry.TryRegisterCanvasElementForLayoutRebuild(UnityEngine.UI.ICanvasElement)">
+    <member name="M:UnityEngine.UI.CanvasUpdateTaskTaskRegistry.TryRegisterCanvasElementForLayoutRebuild(UnityEngine.UI.ICanvasElement)">
       <summary>
         <para>Was the element scheduled.</para>
       </summary>
@@ -2068,7 +2068,7 @@ One point is 112 of a pica, and 172 of an inch.</para>
         <para>Was the element scheduled.</para>
       </returns>
     </member>
-    <member name="M:UnityEngine.UI.CanvasUpdateRegistry.UnRegisterCanvasElementForRebuild(UnityEngine.UI.ICanvasElement)">
+    <member name="M:UnityEngine.UI.CanvasUpdateTaskTaskRegistry.UnRegisterCanvasElementForRebuild(UnityEngine.UI.ICanvasElement)">
       <summary>
         <para>Remove the given element from rebuild.</para>
       </summary>
@@ -2103,7 +2103,7 @@ One point is 112 of a pica, and 172 of an inch.</para>
     </member>
     <member name="T:UnityEngine.UI.Clipping">
       <summary>
-        <para>Utility class to help when clipping using IClipper.</para>
+        <para>UtilTaskity class to help when clipping using IClipper.</para>
       </summary>
     </member>
     <member name="M:UnityEngine.UI.Clipping.FindCullAndClipWorldRect(System.Collections.Generic.List`1&lt;UnityEngine.UI.RectMask2D&gt;,System.Boolean&amp;)">
@@ -2213,7 +2213,7 @@ One point is 112 of a pica, and 172 of an inch.</para>
     </member>
     <member name="T:UnityEngine.UI.DefaultControls">
       <summary>
-        <para>Utility class for creating default implementations of builtin UI controls.</para>
+        <para>UtilTaskity class for creating default implementations of builtin UI controls.</para>
       </summary>
     </member>
     <member name="M:UnityEngine.UI.DefaultControls.CreateButton(UnityEngine.UI.DefaultControls/Resources)">
@@ -2631,18 +2631,18 @@ If you have modified the list of options, you should call this method afterwards
         <para>Vertical overflow mode.</para>
       </summary>
     </member>
-    <member name="T:UnityEngine.UI.FontUpdateTracker">
+    <member name="T:UnityEngine.UI.FontUpdateTaskTaskTracker">
       <summary>
-        <para>Utility class that is used to help with Text update.</para>
+        <para>UtilTaskity class that is used to help with Text update.</para>
       </summary>
     </member>
-    <member name="M:UnityEngine.UI.FontUpdateTracker.TrackText(UnityEngine.UI.Text)">
+    <member name="M:UnityEngine.UI.FontUpdateTaskTaskTracker.TrackText(UnityEngine.UI.Text)">
       <summary>
         <para>Register a Text element for receiving texture atlas rebuild calls.</para>
       </summary>
       <param name="t"></param>
     </member>
-    <member name="M:UnityEngine.UI.FontUpdateTracker.UntrackText(UnityEngine.UI.Text)">
+    <member name="M:UnityEngine.UI.FontUpdateTaskTaskTracker.UntrackText(UnityEngine.UI.Text)">
       <summary>
         <para>Deregister a Text element from receiving texture atlas rebuild calls.</para>
       </summary>
@@ -2733,9 +2733,9 @@ If you have modified the list of options, you should call this method afterwards
         <para>Pixel perfect Rect.</para>
       </returns>
     </member>
-    <member name="M:UnityEngine.UI.Graphic.GraphicUpdateComplete">
+    <member name="M:UnityEngine.UI.Graphic.GraphicUpdateTaskTaskComplete">
       <summary>
-        <para>See ICanvasElement.GraphicUpdateComplete.</para>
+        <para>See ICanvasElement.GraphicUpdateTaskTaskComplete.</para>
       </summary>
     </member>
     <member name="M:UnityEngine.UI.Graphic.LayoutComplete">
@@ -2786,11 +2786,11 @@ If you have modified the list of options, you should call this method afterwards
         <para>True if the provided point is a valid location for GraphicRaycaster raycasts.</para>
       </returns>
     </member>
-    <member name="M:UnityEngine.UI.Graphic.Rebuild(UnityEngine.UI.CanvasUpdate)">
+    <member name="M:UnityEngine.UI.Graphic.Rebuild(UnityEngine.UI.CanvasUpdateTaskTask)">
       <summary>
         <para>Rebuilds the graphic geometry and its material on the PreRender cycle.</para>
       </summary>
-      <param name="update">The current step of the rendering CanvasUpdate cycle.</param>
+      <param name="update">The current step of the rendering CanvasUpdateTaskTask cycle.</param>
     </member>
     <member name="M:UnityEngine.UI.Graphic.RegisterDirtyLayoutCallback(UnityEngine.Events.UnityAction)">
       <summary>
@@ -2853,12 +2853,12 @@ If you have modified the list of options, you should call this method afterwards
       </summary>
       <param name="action">The delegate function to remove.</param>
     </member>
-    <member name="M:UnityEngine.UI.Graphic.UpdateGeometry">
+    <member name="M:UnityEngine.UI.Graphic.UpdateTaskTaskGeometry">
       <summary>
         <para>Call to update the geometry of the Graphic onto the CanvasRenderer.</para>
       </summary>
     </member>
-    <member name="M:UnityEngine.UI.Graphic.UpdateMaterial">
+    <member name="M:UnityEngine.UI.Graphic.UpdateTaskTaskMaterial">
       <summary>
         <para>Call to update the Material of the graphic onto the CanvasRenderer.</para>
       </summary>
@@ -3159,7 +3159,7 @@ If you have modified the list of options, you should call this method afterwards
         <para>Get the transform associated with the ICanvasElement.</para>
       </summary>
     </member>
-    <member name="M:UnityEngine.UI.ICanvasElement.GraphicUpdateComplete">
+    <member name="M:UnityEngine.UI.ICanvasElement.GraphicUpdateTaskTaskComplete">
       <summary>
         <para>Callback sent when this ICanvasElement has completed Graphic rebuild.</para>
       </summary>
@@ -3175,7 +3175,7 @@ Used if the native representation has been destroyed.</para>
         <para>Callback sent when this ICanvasElement has completed layout.</para>
       </summary>
     </member>
-    <member name="M:UnityEngine.UI.ICanvasElement.Rebuild(UnityEngine.UI.CanvasUpdate)">
+    <member name="M:UnityEngine.UI.ICanvasElement.Rebuild(UnityEngine.UI.CanvasUpdateTaskTask)">
       <summary>
         <para>Rebuild the element for the given stage.</para>
       </summary>
@@ -3933,7 +3933,7 @@ Characters 0-9, . (dot), and - (dash / minus sign) are allowed. The dash is only
         <para>Function to deactivate the InputField to stop the processing of Events and send OnSubmit if not canceled.</para>
       </summary>
     </member>
-    <member name="M:UnityEngine.UI.InputField.ForceLabelUpdate">
+    <member name="M:UnityEngine.UI.InputField.ForceLabelUpdateTaskTask">
       <summary>
         <para>Force the label to update immediatly. This will recalculate the positioning of the caret and the visible text.</para>
       </summary>
@@ -3947,9 +3947,9 @@ Characters 0-9, . (dot), and - (dash / minus sign) are allowed. The dash is only
         <para>Character index with in value.</para>
       </returns>
     </member>
-    <member name="M:UnityEngine.UI.InputField.GraphicUpdateComplete">
+    <member name="M:UnityEngine.UI.InputField.GraphicUpdateTaskTaskComplete">
       <summary>
-        <para>See ICanvasElement.GraphicUpdateComplete.</para>
+        <para>See ICanvasElement.GraphicUpdateTaskTaskComplete.</para>
       </summary>
     </member>
     <member name="T:UnityEngine.UI.InputField.InputType">
@@ -4075,9 +4075,9 @@ Characters 0-9, . (dot), and - (dash / minus sign) are allowed. The dash is only
       </summary>
       <param name="eventData"></param>
     </member>
-    <member name="M:UnityEngine.UI.InputField.OnUpdateSelected(UnityEngine.EventSystems.BaseEventData)">
+    <member name="M:UnityEngine.UI.InputField.OnUpdateTaskTaskSelected(UnityEngine.EventSystems.BaseEventData)">
       <summary>
-        <para>What to do when the event system sends a Update selected Event.</para>
+        <para>What to do when the event system sends a UpdateTaskTask selected Event.</para>
       </summary>
       <param name="eventData"></param>
     </member>
@@ -4095,7 +4095,7 @@ Characters 0-9, . (dot), and - (dash / minus sign) are allowed. The dash is only
       </summary>
       <param name="e">The Event to be processed.</param>
     </member>
-    <member name="M:UnityEngine.UI.InputField.Rebuild(UnityEngine.UI.CanvasUpdate)">
+    <member name="M:UnityEngine.UI.InputField.Rebuild(UnityEngine.UI.CanvasUpdateTaskTask)">
       <summary>
         <para>Rebuild the input fields geometry. (caret and highlight).</para>
       </summary>
@@ -4122,9 +4122,9 @@ Characters 0-9, . (dot), and - (dash / minus sign) are allowed. The dash is only
         <para>Unity Event with a inputfield as a param.</para>
       </summary>
     </member>
-    <member name="M:UnityEngine.UI.InputField.UpdateLabel">
+    <member name="M:UnityEngine.UI.InputField.UpdateTaskTaskLabel">
       <summary>
-        <para>Update the Text associated with this input field.</para>
+        <para>UpdateTaskTask the Text associated with this input field.</para>
       </summary>
     </member>
     <member name="M:UnityEngine.UI.InputField.Validate(System.String,System.Int32,System.Char)">
@@ -4395,9 +4395,9 @@ Characters 0-9, . (dot), and - (dash / minus sign) are allowed. The dash is only
       </summary>
       <param name="layoutRoot">The layout element to perform the layout rebuild on.</param>
     </member>
-    <member name="M:UnityEngine.UI.LayoutRebuilder.GraphicUpdateComplete">
+    <member name="M:UnityEngine.UI.LayoutRebuilder.GraphicUpdateTaskTaskComplete">
       <summary>
-        <para>See ICanvasElement.GraphicUpdateComplete.</para>
+        <para>See ICanvasElement.GraphicUpdateTaskTaskComplete.</para>
       </summary>
     </member>
     <member name="M:UnityEngine.UI.LayoutRebuilder.IsDestroyed">
@@ -4416,37 +4416,37 @@ Characters 0-9, . (dot), and - (dash / minus sign) are allowed. The dash is only
       </summary>
       <param name="rect">Rect to rebuild.</param>
     </member>
-    <member name="M:UnityEngine.UI.LayoutRebuilder.Rebuild(UnityEngine.UI.CanvasUpdate)">
+    <member name="M:UnityEngine.UI.LayoutRebuilder.Rebuild(UnityEngine.UI.CanvasUpdateTaskTask)">
       <summary>
         <para>See ICanvasElement.Rebuild.</para>
       </summary>
       <param name="executing"></param>
     </member>
-    <member name="T:UnityEngine.UI.LayoutUtility">
+    <member name="T:UnityEngine.UI.LayoutUtilTaskity">
       <summary>
-        <para>Utility functions for querying layout elements for their minimum, preferred, and flexible sizes.</para>
+        <para>UtilTaskity functions for querying layout elements for their minimum, preferred, and flexible sizes.</para>
       </summary>
     </member>
-    <member name="M:UnityEngine.UI.LayoutUtility.GetFlexibleHeight(UnityEngine.RectTransform)">
+    <member name="M:UnityEngine.UI.LayoutUtilTaskity.GetFlexibleHeight(UnityEngine.RectTransform)">
       <summary>
         <para>Returns the flexible height of the layout element.</para>
       </summary>
       <param name="rect">The RectTransform of the layout element to query.</param>
     </member>
-    <member name="M:UnityEngine.UI.LayoutUtility.GetFlexibleSize(UnityEngine.RectTransform,System.Int32)">
+    <member name="M:UnityEngine.UI.LayoutUtilTaskity.GetFlexibleSize(UnityEngine.RectTransform,System.Int32)">
       <summary>
         <para>Returns the flexible size of the layout element.</para>
       </summary>
       <param name="rect">The RectTransform of the layout element to query.</param>
       <param name="axis">The axis to query. This can be 0 or 1.</param>
     </member>
-    <member name="M:UnityEngine.UI.LayoutUtility.GetFlexibleWidth(UnityEngine.RectTransform)">
+    <member name="M:UnityEngine.UI.LayoutUtilTaskity.GetFlexibleWidth(UnityEngine.RectTransform)">
       <summary>
         <para>Returns the flexible width of the layout element.</para>
       </summary>
       <param name="rect">The RectTransform of the layout element to query.</param>
     </member>
-    <member name="M:UnityEngine.UI.LayoutUtility.GetLayoutProperty(UnityEngine.RectTransform,System.Func`2&lt;UnityEngine.UI.ILayoutElement,System.Single&gt;,System.Single)">
+    <member name="M:UnityEngine.UI.LayoutUtilTaskity.GetLayoutProperty(UnityEngine.RectTransform,System.Func`2&lt;UnityEngine.UI.ILayoutElement,System.Single&gt;,System.Single)">
       <summary>
         <para>Gets a calculated layout property for the layout element with the given RectTransform.</para>
       </summary>
@@ -4458,7 +4458,7 @@ Characters 0-9, . (dot), and - (dash / minus sign) are allowed. The dash is only
         <para>The calculated value of the layout property.</para>
       </returns>
     </member>
-    <member name="M:UnityEngine.UI.LayoutUtility.GetLayoutProperty(UnityEngine.RectTransform,System.Func`2&lt;UnityEngine.UI.ILayoutElement,System.Single&gt;,System.Single,UnityEngine.UI.ILayoutElement&amp;)">
+    <member name="M:UnityEngine.UI.LayoutUtilTaskity.GetLayoutProperty(UnityEngine.RectTransform,System.Func`2&lt;UnityEngine.UI.ILayoutElement,System.Single&gt;,System.Single,UnityEngine.UI.ILayoutElement&amp;)">
       <summary>
         <para>Gets a calculated layout property for the layout element with the given RectTransform.</para>
       </summary>
@@ -4470,39 +4470,39 @@ Characters 0-9, . (dot), and - (dash / minus sign) are allowed. The dash is only
         <para>The calculated value of the layout property.</para>
       </returns>
     </member>
-    <member name="M:UnityEngine.UI.LayoutUtility.GetMinHeight(UnityEngine.RectTransform)">
+    <member name="M:UnityEngine.UI.LayoutUtilTaskity.GetMinHeight(UnityEngine.RectTransform)">
       <summary>
         <para>Returns the minimum height of the layout element.</para>
       </summary>
       <param name="rect">The RectTransform of the layout element to query.</param>
     </member>
-    <member name="M:UnityEngine.UI.LayoutUtility.GetMinSize(UnityEngine.RectTransform,System.Int32)">
+    <member name="M:UnityEngine.UI.LayoutUtilTaskity.GetMinSize(UnityEngine.RectTransform,System.Int32)">
       <summary>
         <para>Returns the minimum size of the layout element.</para>
       </summary>
       <param name="rect">The RectTransform of the layout element to query.</param>
       <param name="axis">The axis to query. This can be 0 or 1.</param>
     </member>
-    <member name="M:UnityEngine.UI.LayoutUtility.GetMinWidth(UnityEngine.RectTransform)">
+    <member name="M:UnityEngine.UI.LayoutUtilTaskity.GetMinWidth(UnityEngine.RectTransform)">
       <summary>
         <para>Returns the minimum width of the layout element.</para>
       </summary>
       <param name="rect">The RectTransform of the layout element to query.</param>
     </member>
-    <member name="M:UnityEngine.UI.LayoutUtility.GetPreferredHeight(UnityEngine.RectTransform)">
+    <member name="M:UnityEngine.UI.LayoutUtilTaskity.GetPreferredHeight(UnityEngine.RectTransform)">
       <summary>
         <para>Returns the preferred height of the layout element.</para>
       </summary>
       <param name="rect">The RectTransform of the layout element to query.</param>
     </member>
-    <member name="M:UnityEngine.UI.LayoutUtility.GetPreferredSize(UnityEngine.RectTransform,System.Int32)">
+    <member name="M:UnityEngine.UI.LayoutUtilTaskity.GetPreferredSize(UnityEngine.RectTransform,System.Int32)">
       <summary>
         <para>Returns the preferred size of the layout element.</para>
       </summary>
       <param name="rect">The RectTransform of the layout element to query.</param>
       <param name="axis">The axis to query. This can be 0 or 1.</param>
     </member>
-    <member name="M:UnityEngine.UI.LayoutUtility.GetPreferredWidth(UnityEngine.RectTransform)">
+    <member name="M:UnityEngine.UI.LayoutUtilTaskity.GetPreferredWidth(UnityEngine.RectTransform)">
       <summary>
         <para>Returns the preferred width of the layout element.</para>
       </summary>
@@ -4611,12 +4611,12 @@ Characters 0-9, . (dot), and - (dash / minus sign) are allowed. The dash is only
       <param name="clipRect"></param>
       <param name="validRect"></param>
     </member>
-    <member name="T:UnityEngine.UI.MaskUtilities">
+    <member name="T:UnityEngine.UI.MaskUtilTaskities">
       <summary>
         <para>Mask related utility class.</para>
       </summary>
     </member>
-    <member name="M:UnityEngine.UI.MaskUtilities.FindRootSortOverrideCanvas(UnityEngine.Transform)">
+    <member name="M:UnityEngine.UI.MaskUtilTaskities.FindRootSortOverrideCanvas(UnityEngine.Transform)">
       <summary>
         <para>Find a root Canvas.</para>
       </summary>
@@ -4625,28 +4625,28 @@ Characters 0-9, . (dot), and - (dash / minus sign) are allowed. The dash is only
         <para>Canvas transform.</para>
       </returns>
     </member>
-    <member name="M:UnityEngine.UI.MaskUtilities.GetRectMaskForClippable(UnityEngine.UI.IClippable)">
+    <member name="M:UnityEngine.UI.MaskUtilTaskities.GetRectMaskForClippable(UnityEngine.UI.IClippable)">
       <summary>
         <para>Find the correct RectMask2D for a given IClippable.</para>
       </summary>
       <param name="transform">Clippable to search from.</param>
       <param name="clippable"></param>
     </member>
-    <member name="M:UnityEngine.UI.MaskUtilities.GetRectMasksForClip(UnityEngine.UI.RectMask2D,System.Collections.Generic.List`1&lt;UnityEngine.UI.RectMask2D&gt;)">
+    <member name="M:UnityEngine.UI.MaskUtilTaskities.GetRectMasksForClip(UnityEngine.UI.RectMask2D,System.Collections.Generic.List`1&lt;UnityEngine.UI.RectMask2D&gt;)">
       <summary>
         <para>Search for all RectMask2D that apply to the given RectMask2D (includes self).</para>
       </summary>
       <param name="clipper"></param>
       <param name="masks"></param>
     </member>
-    <member name="M:UnityEngine.UI.MaskUtilities.GetStencilDepth(UnityEngine.Transform,UnityEngine.Transform)">
+    <member name="M:UnityEngine.UI.MaskUtilTaskities.GetStencilDepth(UnityEngine.Transform,UnityEngine.Transform)">
       <summary>
         <para>Find the stencil depth for a given element.</para>
       </summary>
       <param name="transform"></param>
       <param name="stopAfter"></param>
     </member>
-    <member name="M:UnityEngine.UI.MaskUtilities.IsDescendantOrSelf(UnityEngine.Transform,UnityEngine.Transform)">
+    <member name="M:UnityEngine.UI.MaskUtilTaskities.IsDescendantOrSelf(UnityEngine.Transform,UnityEngine.Transform)">
       <summary>
         <para>Helper function to determine if the child is a descendant of father or is father.</para>
       </summary>
@@ -4656,13 +4656,13 @@ Characters 0-9, . (dot), and - (dash / minus sign) are allowed. The dash is only
         <para>Is child equal to father or is a descendant.</para>
       </returns>
     </member>
-    <member name="M:UnityEngine.UI.MaskUtilities.Notify2DMaskStateChanged(UnityEngine.Component)">
+    <member name="M:UnityEngine.UI.MaskUtilTaskities.Notify2DMaskStateChanged(UnityEngine.Component)">
       <summary>
         <para>Notify all IClippables under the given component that they need to recalculate clipping.</para>
       </summary>
       <param name="mask"></param>
     </member>
-    <member name="M:UnityEngine.UI.MaskUtilities.NotifyStencilStateChanged(UnityEngine.Component)">
+    <member name="M:UnityEngine.UI.MaskUtilTaskities.NotifyStencilStateChanged(UnityEngine.Component)">
       <summary>
         <para>Notify all IMaskable under the given component that they need to recalculate masking.</para>
       </summary>
@@ -4893,9 +4893,9 @@ Characters 0-9, . (dot), and - (dash / minus sign) are allowed. The dash is only
         <para>See member in base class.</para>
       </summary>
     </member>
-    <member name="M:UnityEngine.UI.Scrollbar.GraphicUpdateComplete">
+    <member name="M:UnityEngine.UI.Scrollbar.GraphicUpdateTaskTaskComplete">
       <summary>
-        <para>See ICanvasElement.GraphicUpdateComplete.</para>
+        <para>See ICanvasElement.GraphicUpdateTaskTaskComplete.</para>
       </summary>
     </member>
     <member name="M:UnityEngine.UI.Scrollbar.LayoutComplete">
@@ -4944,7 +4944,7 @@ Characters 0-9, . (dot), and - (dash / minus sign) are allowed. The dash is only
       </summary>
       <param name="eventData"></param>
     </member>
-    <member name="M:UnityEngine.UI.Scrollbar.Rebuild(UnityEngine.UI.CanvasUpdate)">
+    <member name="M:UnityEngine.UI.Scrollbar.Rebuild(UnityEngine.UI.CanvasUpdateTaskTask)">
       <summary>
         <para>Handling for when the canvas is rebuilt.</para>
       </summary>
@@ -5112,9 +5112,9 @@ Characters 0-9, . (dot), and - (dash / minus sign) are allowed. The dash is only
         <para>Called by the layout system.</para>
       </summary>
     </member>
-    <member name="M:UnityEngine.UI.ScrollRect.GraphicUpdateComplete">
+    <member name="M:UnityEngine.UI.ScrollRect.GraphicUpdateTaskTaskComplete">
       <summary>
-        <para>See ICanvasElement.GraphicUpdateComplete.</para>
+        <para>See ICanvasElement.GraphicUpdateTaskTaskComplete.</para>
       </summary>
     </member>
     <member name="M:UnityEngine.UI.ScrollRect.IsActive">
@@ -5182,11 +5182,11 @@ Characters 0-9, . (dot), and - (dash / minus sign) are allowed. The dash is only
       </summary>
       <param name="data"></param>
     </member>
-    <member name="M:UnityEngine.UI.ScrollRect.Rebuild(UnityEngine.UI.CanvasUpdate)">
+    <member name="M:UnityEngine.UI.ScrollRect.Rebuild(UnityEngine.UI.CanvasUpdateTaskTask)">
       <summary>
         <para>Rebuilds the scroll rect data after initialization.</para>
       </summary>
-      <param name="executing">The current step of the rendering CanvasUpdate cycle.</param>
+      <param name="executing">The current step of the rendering CanvasUpdateTaskTask cycle.</param>
     </member>
     <member name="T:UnityEngine.UI.ScrollRect.ScrollbarVisibility">
       <summary>
@@ -5251,12 +5251,12 @@ Characters 0-9, . (dot), and - (dash / minus sign) are allowed. The dash is only
         <para>Sets the velocity to zero on both axes so the content stops moving.</para>
       </summary>
     </member>
-    <member name="M:UnityEngine.UI.ScrollRect.UpdateBounds">
+    <member name="M:UnityEngine.UI.ScrollRect.UpdateTaskTaskBounds">
       <summary>
         <para>Calculate the bounds the ScrollRect should be using.</para>
       </summary>
     </member>
-    <member name="M:UnityEngine.UI.ScrollRect.UpdatePrevData">
+    <member name="M:UnityEngine.UI.ScrollRect.UpdateTaskTaskPrevData">
       <summary>
         <para>Helper function to update the previous data fields on a ScrollRect. Call this before you change data in the ScrollRect.</para>
       </summary>
@@ -5494,7 +5494,7 @@ Characters 0-9, . (dot), and - (dash / minus sign) are allowed. The dash is only
         <para>Use a sprite swap transition.</para>
       </summary>
     </member>
-    <member name="M:UnityEngine.UI.Selectable.UpdateSelectionState(UnityEngine.EventSystems.BaseEventData)">
+    <member name="M:UnityEngine.UI.Selectable.UpdateTaskTaskSelectionState(UnityEngine.EventSystems.BaseEventData)">
       <summary>
         <para>Internally update the selection state of the Selectable.</para>
       </summary>
@@ -5631,9 +5631,9 @@ Characters 0-9, . (dot), and - (dash / minus sign) are allowed. The dash is only
         <para>See member in base class.</para>
       </summary>
     </member>
-    <member name="M:UnityEngine.UI.Slider.GraphicUpdateComplete">
+    <member name="M:UnityEngine.UI.Slider.GraphicUpdateTaskTaskComplete">
       <summary>
-        <para>See ICanvasElement.GraphicUpdateComplete.</para>
+        <para>See ICanvasElement.GraphicUpdateTaskTaskComplete.</para>
       </summary>
     </member>
     <member name="M:UnityEngine.UI.Slider.LayoutComplete">
@@ -5664,7 +5664,7 @@ Characters 0-9, . (dot), and - (dash / minus sign) are allowed. The dash is only
       </summary>
       <param name="eventData"></param>
     </member>
-    <member name="M:UnityEngine.UI.Slider.Rebuild(UnityEngine.UI.CanvasUpdate)">
+    <member name="M:UnityEngine.UI.Slider.Rebuild(UnityEngine.UI.CanvasUpdateTaskTask)">
       <summary>
         <para>Handling for when the canvas is rebuilt.</para>
       </summary>
@@ -5846,7 +5846,7 @@ Characters 0-9, . (dot), and - (dash / minus sign) are allowed. The dash is only
     </member>
     <member name="M:UnityEngine.UI.Text.FontTextureChanged">
       <summary>
-        <para>Called by the [FontUpdateTracker] when the texture associated with a font is modified.</para>
+        <para>Called by the [FontUpdateTaskTaskTracker] when the texture associated with a font is modified.</para>
       </summary>
     </member>
     <member name="M:UnityEngine.UI.Text.GetGenerationSettings(UnityEngine.Vector2)">
@@ -5899,9 +5899,9 @@ Characters 0-9, . (dot), and - (dash / minus sign) are allowed. The dash is only
         <para>Transition mode for the toggle.</para>
       </summary>
     </member>
-    <member name="M:UnityEngine.UI.Toggle.GraphicUpdateComplete">
+    <member name="M:UnityEngine.UI.Toggle.GraphicUpdateTaskTaskComplete">
       <summary>
-        <para>See ICanvasElement.GraphicUpdateComplete.</para>
+        <para>See ICanvasElement.GraphicUpdateTaskTaskComplete.</para>
       </summary>
     </member>
     <member name="M:UnityEngine.UI.Toggle.LayoutComplete">
@@ -5926,7 +5926,7 @@ Characters 0-9, . (dot), and - (dash / minus sign) are allowed. The dash is only
       </summary>
       <param name="eventData">Current event.</param>
     </member>
-    <member name="M:UnityEngine.UI.Toggle.Rebuild(UnityEngine.UI.CanvasUpdate)">
+    <member name="M:UnityEngine.UI.Toggle.Rebuild(UnityEngine.UI.CanvasUpdateTaskTask)">
       <summary>
         <para>Handling for when the canvas is rebuilt.</para>
       </summary>

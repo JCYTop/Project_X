@@ -237,7 +237,7 @@ public class ScenesMgr
     /// <param name="regist"></param>
     private static void RegiestID<T>(int globalID, int selectEnum, bool isAdd) where T : Enum
     {
-        var strSet = CommonUtil.GetEnumStringSet<T>(selectEnum);
+        var strSet = Util.GetEnumStringSet<T>(selectEnum);
         foreach (var str in strSet)
         {
             switch (str)

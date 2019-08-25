@@ -85,7 +85,7 @@ namespace UnityQuickSheet
         }
 
         /// <summary>
-        /// Called when 'Update'(or 'Download' for google data) button is pressed. 
+        /// Called when 'UpdateTask'(or 'Download' for google data) button is pressed. 
         /// It should be reimplemented in the derived class.
         /// </summary>
         public virtual bool Load()

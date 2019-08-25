@@ -39,7 +39,7 @@ public class Packager
         {
             var filePath = fileSystemEntries[i];
             var ext = Path.GetExtension(filePath).ToLower();
-            var assetPath = filePath.Replace(Application.dataPath, "Assets");
+            var assetPath = filePath.Replace(Application.dataPath, "AssetsTask");
             var import = AssetImporter.GetAtPath(assetPath);
             if (import != null)
             {
@@ -89,7 +89,7 @@ public class Packager
         {
             var filePath = fileSystemEntries[i];
             var ext = Path.GetExtension(filePath).ToLower();
-            var assetPath = filePath.Replace(Application.dataPath, "Assets");
+            var assetPath = filePath.Replace(Application.dataPath, "AssetsTask");
             var import = AssetImporter.GetAtPath(assetPath);
             if (import != null)
             {

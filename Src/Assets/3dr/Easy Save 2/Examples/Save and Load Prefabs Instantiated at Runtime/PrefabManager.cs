@@ -55,7 +55,7 @@ public class PrefabManager : MonoBehaviour
 		// Note: this takes a Transform as the second parameter.
 		ES2.Load<Transform>(filename+"?tag="+tag, newPrefab.transform);
 		
-		// Now add the newly created prefab to our createdPrefabs list.
+		// LocalNow add the newly created prefab to our createdPrefabs list.
 		createdPrefabs.Add(newPrefab);
 	}
 	
@@ -68,7 +68,7 @@ public class PrefabManager : MonoBehaviour
 		// Create a new prefab at a random position with random rotation.
 		GameObject newPrefab = Instantiate (prefab, Random.insideUnitSphere*5, Random.rotation) as GameObject;
 		
-		// Now add the newly created prefab to our createdPrefabs list.
+		// LocalNow add the newly created prefab to our createdPrefabs list.
 		createdPrefabs.Add(newPrefab);
 	}
 	
@@ -86,7 +86,7 @@ public class PrefabManager : MonoBehaviour
 		// many prefabs we need to load when we restart the application.
 		ES2.Save(createdPrefabs.Count, filename+"?tag=prefabCount");
 		
-		// Now we iterate through our prefab list and save each one seperately,
+		// LocalNow we iterate through our prefab list and save each one seperately,
 		// using it's position in the array as the tag.
 		for(int i=0; i < createdPrefabs.Count; i++)
 			SavePrefab( createdPrefabs[i], i );

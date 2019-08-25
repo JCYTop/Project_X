@@ -1,21 +1,17 @@
 //=====================================================
-// - FileName:      IOnDestory.cs
+// - FileName:      ICount.cs
 // - Created:       @JCY
-// - CreateTime:    2019/03/31 23:47:44
+// - CreateTime:    2019/03/31 23:45:36
 // - Email:         jcyemail@qq.com
 // - Description:   
 // -  (C) Copyright 2019 - 2019.
 // -  独立游戏开发
 //======================================================
 
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
 /// <summary>
-/// 调用销毁接口
+/// 数量存储接口
 /// </summary>
-public interface IOnDestory
+public interface ICount
 {
-    void OnDestory();
+    int Count { set; get; }
 }

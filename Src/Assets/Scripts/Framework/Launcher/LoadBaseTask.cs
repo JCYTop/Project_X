@@ -10,7 +10,7 @@
 
 using UnityEngine;
 
-public class LoadBase : ILanucherTask
+public class LoadBaseTask : ILanucherTask
 {
     private GameObject excelDataMgr;
     private GameObject uiRoot;
@@ -23,7 +23,7 @@ public class LoadBase : ILanucherTask
 
     public override TaskType TaskType
     {
-        get => TaskType.LoadBase;
+        get => TaskType.LoadBaseTask;
     }
 
     public override void AddTaskChild()
@@ -39,7 +39,7 @@ public class LoadBase : ILanucherTask
         {
             if (prefab != null)
             {
-                excelDataMgr = GOCommonUtil.InstantiateGo(prefab, true);
+                excelDataMgr = EntityUtil.InstantiateGo(prefab, true);
             }
 
             CalcTaskCount();
@@ -52,7 +52,7 @@ public class LoadBase : ILanucherTask
         {
             if (prefab != null)
             {
-                uiRoot = GOCommonUtil.InstantiateGo(prefab, true);
+                uiRoot = EntityUtil.InstantiateGo(prefab, true);
             }
 
             CalcTaskCount();

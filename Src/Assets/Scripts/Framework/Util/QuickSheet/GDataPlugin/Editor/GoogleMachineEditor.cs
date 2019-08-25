@@ -85,7 +85,7 @@ namespace UnityQuickSheet
 
             if (machine.HasColumnHeader())
             {
-                if (GUILayout.Button("Update"))
+                if (GUILayout.Button("UpdateTask"))
                     Import();
 
                 if (GUILayout.Button("Reimport"))

@@ -32,7 +32,7 @@ public class RefreshConfig : MonoBehaviour
         var presenceResID = new HashSet<long>();
         for (int i = 0; i < filesPath.Length; i++)
         {
-            filesPath[i] = filesPath[i].Substring(filesPath[i].IndexOf("Assets", StringComparison.Ordinal));
+            filesPath[i] = filesPath[i].Substring(filesPath[i].IndexOf("AssetsTask", StringComparison.Ordinal));
             var prefab = AssetDatabase.LoadAssetAtPath(filesPath[i], typeof(GameObject)) as GameObject;
             var progress = (float) i / filesPath.Length;
             EditorUtility.DisplayProgressBar("UI记录已知ResID进度...", info, progress);
@@ -56,7 +56,7 @@ public class RefreshConfig : MonoBehaviour
         for (int i = 0; i < filesPath.Length; i++)
         {
             var goIndex = 0;
-            filesPath[i] = filesPath[i].Substring(filesPath[i].IndexOf("Assets", StringComparison.Ordinal));
+            filesPath[i] = filesPath[i].Substring(filesPath[i].IndexOf("AssetsTask", StringComparison.Ordinal));
             var prefab = AssetDatabase.LoadAssetAtPath(filesPath[i], typeof(GameObject)) as GameObject;
             var progress = (float) i / filesPath.Length;
             EditorUtility.DisplayProgressBar("UI配置刷新进度...", info, progress);
@@ -120,7 +120,7 @@ public class RefreshConfig : MonoBehaviour
                     var index1 = path.IndexOf("/", StringComparison.Ordinal);
                     var index2 = path.IndexOf(".", StringComparison.Ordinal) - 1;
                     path = path.Substring(index1 + 1, index2 - index1);
-                    path = @"Assets\ABRes\" + path;
+                    path = @"AssetsTask\ABRes\" + path;
                     uiDatas.Add(goBase.ResID, new ABData()
                     {
                         ID = goBase.ResID,
@@ -155,7 +155,7 @@ public class RefreshConfig : MonoBehaviour
         var index = 0;
         for (int i = 0; i < filesPath.Length; i++)
         {
-            filesPath[i] = filesPath[i].Substring(filesPath[i].IndexOf("Assets", StringComparison.Ordinal));
+            filesPath[i] = filesPath[i].Substring(filesPath[i].IndexOf("AssetsTask", StringComparison.Ordinal));
             var prefab = AssetDatabase.LoadAssetAtPath(filesPath[i], typeof(GameObject)) as GameObject;
             var progress = (float) i / filesPath.Length;
             EditorUtility.DisplayProgressBar("UI配置清除进度...", info, progress);

@@ -115,8 +115,8 @@ namespace HutongGames.PlayMakerEditor
             var inspector = AddTopic(root, "Inspector Panel", "Context editing of properties.", 
                 "<a href=\"W960\">FSM Inspector</a>\nEdit the high level behaviour of the FSM.\n\n" +
                 "<a href=\"W151\">State Inspector</a>\nEdit the Actions run by the selected State.\n\n" +
-                "<a href=\"W148\">Events Manager</a>\nManage the Events used by the FSM.\n\n" +
-                "<a href=\"W50\">Variables Manager</a>\nManage the Variables used by the FSM.\n\n", 
+                "<a href=\"W148\">Events ManagerTask</a>\nManage the Events used by the FSM.\n\n" +
+                "<a href=\"W50\">Variables ManagerTask</a>\nManage the Variables used by the FSM.\n\n", 
                 "", GetUrl(WikiPages.InspectorPanel));
 
             var fsmInspector = AddTopic(inspector, "FSM Inspector", 
@@ -132,15 +132,15 @@ namespace HutongGames.PlayMakerEditor
             stateInspector.Validate = () => FsmEditor.Inspector.Mode == InspectorMode.StateInspector;        
             AddTopic(stateInspector, "Settings Menu");
 
-            var eventManager = AddTopic(inspector, "Event Manager", 
+            var eventManager = AddTopic(inspector, "Event ManagerTask", 
                 "Manage the Events used by the FSM.", 
-                "See also: <a href=\"W148\">Events Manager</a>", "", GetUrl(WikiPages.EventManager));
+                "See also: <a href=\"W148\">Events ManagerTask</a>", "", GetUrl(WikiPages.EventManager));
             eventManager.OnClick = () => FsmEditor.Inspector.SetMode(InspectorMode.EventManager);
             eventManager.Validate = () => FsmEditor.Inspector.Mode == InspectorMode.EventManager;
 
-            var variablesManager = AddTopic(inspector, "Variable Manager", 
+            var variablesManager = AddTopic(inspector, "Variable ManagerTask", 
                 "Manage the Variables used by the FSM.", 
-                "See also: <a href=\"W50\">Variables Manager</a>", "", GetUrl(WikiPages.VariableManager));
+                "See also: <a href=\"W50\">Variables ManagerTask</a>", "", GetUrl(WikiPages.VariableManager));
             variablesManager.OnClick = () => FsmEditor.Inspector.SetMode(InspectorMode.VariableManager);
             variablesManager.Validate = () => FsmEditor.Inspector.Mode == InspectorMode.VariableManager;
 
@@ -203,8 +203,8 @@ namespace HutongGames.PlayMakerEditor
             var root = AddWindow(typeof(FsmGlobalsWindow), "Global Variables", 
                 "Manage the global variables used in the project.", 
                 "NOTE: Global variables are stored in:" +
-                "\n<a href=\"Assets/PlayMaker/Resources/PlayMakerGlobals.asset\">" +
-                "Assets/PlayMaker/Resources/PlayMakerGlobals.asset</a>\n\n" +
+                "\n<a href=\"AssetsTask/PlayMaker/Resources/PlayMakerGlobals.asset\">" +
+                "AssetsTask/PlayMaker/Resources/PlayMakerGlobals.asset</a>\n\n" +
                 "<b>DO NOT DELETE OR OVERWRITE THIS ASSET!</b>\n\n" +
                 "Use PlayMaker/Tools/Export Globals and Import Globals to transfer and merge globals between projects.", 
                 "Window", GetUrl(WikiPages.GlobalVariablesBrowser));
@@ -214,7 +214,7 @@ namespace HutongGames.PlayMakerEditor
             AddTopic(root, "Variables List", "A list of all global variables used in the project.", 
                 "Add or select a global variable to edit.\n\nClick column headers to sort the list.");
             AddTopic(root, "Variable Editor", "Add/Edit a variable.");
-            AddTopic(root, "Refresh Used Count", "Update the used count for this scene.");
+            AddTopic(root, "Refresh Used Count", "UpdateTask the used count for this scene.");
         }
 
         private void BuildFsmBrowserGuide()
@@ -279,7 +279,7 @@ namespace HutongGames.PlayMakerEditor
             AddTopic(root, "Description", "User defined description of what the Template does.", 
                 "Use this to document your project. Since Templates can be re-used a good description is important.");
             AddTopic(root, "New Template", "Save a new Template asset", 
-                "NOTE: Template assets must be saved under the projects Assets folder. " +
+                "NOTE: Template assets must be saved under the projects AssetsTask folder. " +
                 "To transfer templates to another project export it in a unitypackage.");
             AddTopic(root, "Load Add Templates", "Refresh the list of Templates.");
         }

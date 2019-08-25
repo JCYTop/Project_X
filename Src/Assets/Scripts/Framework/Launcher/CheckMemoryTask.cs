@@ -1,5 +1,5 @@
 //=====================================================
-// - FileName:      CheckMemory.cs
+// - FileName:      CheckMemoryTask.cs
 // - Created:       @JCY
 // - CreateTime:    2019/03/24 11:31:32
 // - Email:         jcyemail@qq.com
@@ -12,7 +12,7 @@ using System;
 using System.Runtime.InteropServices;
 using UnityEngine;
 
-public class CheckMemory : ILanucherTask
+public class CheckMemoryTask : ILanucherTask
 {
 #if UNITY_EDITOR || UNITY_STANDALONE
     [DllImport("kernel32")]
@@ -27,7 +27,7 @@ public class CheckMemory : ILanucherTask
 
     public override TaskType TaskType
     {
-        get => TaskType.CheckMemory;
+        get => TaskType.CheckMemoryTask;
     }
 
     public override void AddTaskChild()

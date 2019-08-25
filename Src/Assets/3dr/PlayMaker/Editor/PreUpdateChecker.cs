@@ -69,7 +69,7 @@ namespace HutongGames.PlayMakerEditor
 	    
         private Vector2 scrollPosition;
 
-        [MenuItem("PlayMaker/Tools/Pre-Update Check", false, 66)]
+        [MenuItem("PlayMaker/Tools/Pre-UpdateTask Check", false, 66)]
         public static void Open()
         {
             GetWindow<PreUpdateChecker>(true);
@@ -77,7 +77,7 @@ namespace HutongGames.PlayMakerEditor
 
         private void OnEnable()
         {
-            var titleText = string.Format("Pre-Update Check: PlayMaker {0}", PlayMakerWelcomeWindow.InstallCurrentVersion);
+            var titleText = string.Format("Pre-UpdateTask Check: PlayMaker {0}", PlayMakerWelcomeWindow.InstallCurrentVersion);
 
 #if UNITY_PRE_5_1
             title = titleText;
@@ -109,7 +109,7 @@ namespace HutongGames.PlayMakerEditor
                 {
                     output += "\n- " + category;
                 }
-                output += "\n\nThese add-ons are now included in the main install. See Update Notes below for more info.\n";
+                output += "\n\nThese add-ons are now included in the main install. See UpdateTask Notes below for more info.\n";
 
                 ConsoleTextArea(output);
             }
@@ -182,7 +182,7 @@ namespace HutongGames.PlayMakerEditor
             }
             else
             {
-                notes181 += "\nThe Update Check did not find any of these files in your project. " +
+                notes181 += "\nThe UpdateTask Check did not find any of these files in your project. " +
                             "\n\nIf you think you have some of these actions in your project, " +
                             "you can either remove them before updating, " +
                             "or remove duplicate files to fix any errors after updating.\n";
@@ -197,7 +197,7 @@ namespace HutongGames.PlayMakerEditor
             GUILayout.EndScrollView();
 	        
 	        GUILayout.BeginHorizontal();
-            if (GUILayout.Button("Run Pre-Update Check Again"))
+            if (GUILayout.Button("Run Pre-UpdateTask Check Again"))
             {
                 DoCheck();
             }
@@ -364,7 +364,7 @@ namespace HutongGames.PlayMakerEditor
                     var assetPath = FindFile(files[j]);
                     if (!string.IsNullOrEmpty(assetPath))
                     {
-                        if (assetPath.Contains("Assets/PlayMaker/Actions/"))
+                        if (assetPath.Contains("AssetsTask/PlayMaker/Actions/"))
                         {
                             output += AssetDatabase.AssetPathToGUID(assetPath) + ",";
                         }

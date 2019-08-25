@@ -79,7 +79,7 @@ namespace HutongGames.PlayMakerEditor
 #if PLAYMAKER_1_9_0
         [MenuItem("PlayMaker/Welcome Screen", false, 500)]
 #elif PLAYMAKER
-        [MenuItem("PlayMaker/Update PlayMaker", false, 500)]
+        [MenuItem("PlayMaker/UpdateTask PlayMaker", false, 500)]
 #else
         [MenuItem("PlayMaker/Install PlayMaker", false, 500)]
 #endif
@@ -395,7 +395,7 @@ namespace HutongGames.PlayMakerEditor
             GUILayout.Space(30);
 
             DrawLink(checkIcon,
-                     "Pre-Update Check",
+                     "Pre-UpdateTask Check",
                      "Check for potential update issues.",
                      PreUpdateCheck, null);
 
@@ -495,8 +495,8 @@ namespace HutongGames.PlayMakerEditor
                                     "\n- Physics2D Add-on" +
                                     "\n- Mecanim Animator Add-on" +
                                     "\n- Vector2, Quaternion, and Trigonometry actions"+
-                                    "\n\nThe new versions of these files are under \"Assets/PlayMaker/Actions\""+
-                                    "\n\nIf you imported these add-ons, the old versions are likely under \"Assets/PlayMaker Custom Actions\". "+
+                                    "\n\nThe new versions of these files are under \"AssetsTask/PlayMaker/Actions\""+
+                                    "\n\nIf you imported these add-ons, the old versions are likely under \"AssetsTask/PlayMaker Custom Actions\". "+
                                     "If you get errors from duplicate files after updating please delete the old files!" +
                                     "\n", 
                                     MessageType.Warning);

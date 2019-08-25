@@ -48,7 +48,7 @@ public class ButtonSet
     /// <typeparam name="T">获取Refresh()</typeparam>
     public void SetData<T>(object data) where T : UIActionBase
     {
-        var go = UICommonUtil.CreateChildGameObject(item, grid);
+        var go = UIUtil.CreateChildGameObject(item, grid);
         go.GetComponent<T>().Refresh(data);
     }
 
@@ -58,7 +58,7 @@ public class ButtonSet
     /// <param name="callBack"></param>
     public void CleanGridChild(UnityAction callBack = null)
     {
-        UICommonUtil.CleanAllChild(grid, callBack);
+        UIUtil.CleanAllChild(grid, callBack);
     }
 
     /// <summary>

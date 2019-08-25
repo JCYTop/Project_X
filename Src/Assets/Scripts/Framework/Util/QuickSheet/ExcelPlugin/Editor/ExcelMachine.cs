@@ -17,7 +17,7 @@ namespace UnityQuickSheet
     internal class ExcelMachine : BaseMachine
     {
         /// <summary>
-        /// where the .xls or .xlsx file is. The path should start with "Assets/".
+        /// where the .xls or .xlsx file is. The path should start with "AssetsTask/".
         /// </summary>
         public string excelFilePath;
 
@@ -49,7 +49,7 @@ namespace UnityQuickSheet
         /// <summary>
         /// A menu item which create a 'ExcelMachine' asset file.
         /// </summary>
-        [MenuItem("Assets/Create/QuickSheet/Tools/Excel")]
+        [MenuItem("AssetsTask/Create/QuickSheet/Tools/Excel")]
         public static void CreateScriptMachineAsset()
         {
             ExcelMachine inst = ScriptableObject.CreateInstance<ExcelMachine>();

@@ -116,7 +116,7 @@ public static class FrameworkToolsMenu
         {
             if (EditorSceneManager.SaveCurrentModifiedScenesIfUserWantsTo() == true)
             {
-                EditorSceneManager.OpenScene("Assets/ABRes/Scenes/GameScenes/Start.unity");
+                EditorSceneManager.OpenScene("AssetsTask/ABRes/Scenes/GameScenes/Start.unity");
             }
         }
 
@@ -186,7 +186,7 @@ public static class FrameworkToolsMenu
             Selection.activeObject = Define.LogConfig;
         }
 
-        [MenuItem("Assets/开始游戏", false, 0)]
+        [MenuItem("AssetsTask/开始游戏", false, 0)]
         public static void StartGame()
         {
             //TODO 换成通用接口
@@ -196,7 +196,7 @@ public static class FrameworkToolsMenu
                 File.WriteAllText("_lastScene", currentSceneName);
                 EditorApplication.SaveScene(EditorApplication.currentScene);
                 //TODO
-                EditorApplication.OpenScene("Assets/ABRes/Scenes/GameScenes/Awake.unity");
+                EditorApplication.OpenScene("AssetsTask/ABRes/Scenes/GameScenes/Awake.unity");
                 EditorApplication.isPlaying = true;
             }
 

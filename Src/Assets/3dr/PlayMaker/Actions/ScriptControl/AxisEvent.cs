@@ -8,10 +8,10 @@ namespace HutongGames.PlayMaker.Actions
 	[Tooltip("Sends events based on the direction of Input Axis (Left/Right/Up/Down...).")]
 	public class AxisEvent : FsmStateAction
 	{
-		[Tooltip("Horizontal axis as defined in the Input Manager")]
+		[Tooltip("Horizontal axis as defined in the Input ManagerTask")]
 		public FsmString horizontalAxis;
 		
-		[Tooltip("Vertical axis as defined in the Input Manager")]
+		[Tooltip("Vertical axis as defined in the Input ManagerTask")]
 		public FsmString verticalAxis;
 		
 		[Tooltip("Event to send if input is to the left.")]

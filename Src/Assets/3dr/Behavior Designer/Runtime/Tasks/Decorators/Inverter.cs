@@ -16,7 +16,7 @@ namespace BehaviorDesigner.Runtime.Tasks
 
         public override void OnChildExecuted(TaskStatus childStatus)
         {
-            // Update the execution status after a child has finished running.
+            // UpdateTask the execution status after a child has finished running.
             executionStatus = childStatus;
         }
 

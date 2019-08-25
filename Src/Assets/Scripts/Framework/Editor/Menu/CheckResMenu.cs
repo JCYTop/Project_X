@@ -59,7 +59,7 @@ public class CheckResMenu : EditorMenu<CheckResMenu>
             if (suffix == "prefab")
             {
                 string realFile = file.Replace("\\", "/");
-                realFile = realFile.Replace(Application.dataPath, "Assets");
+                realFile = realFile.Replace(Application.dataPath, "AssetsTask");
                 mResources.Add(realFile);
             }
         }
@@ -104,7 +104,7 @@ public class CheckResMenu : EditorMenu<CheckResMenu>
             }
         }
 
-        // Now recurse through each child GO (if there are any):
+        // LocalNow recurse through each child GO (if there are any):
         foreach (Transform childT in g.transform)
         {
             FindInGO(childT.gameObject);
@@ -146,7 +146,7 @@ public class CheckResMenu : EditorMenu<CheckResMenu>
             if (suffix == "prefab")
             {
                 string realFile = file.Replace("\\", "/");
-                realFile = realFile.Replace(Application.dataPath, "Assets");
+                realFile = realFile.Replace(Application.dataPath, "AssetsTask");
                 mResources.Add(realFile);
             }
         }
@@ -186,7 +186,7 @@ public class CheckResMenu : EditorMenu<CheckResMenu>
             if (suffix == "prefab")
             {
                 string realFile = file.Replace("\\", "/");
-                realFile = realFile.Replace(Application.dataPath, "Assets");
+                realFile = realFile.Replace(Application.dataPath, "AssetsTask");
                 mEffectResources.Add(realFile);
             }
         }

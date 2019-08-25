@@ -34,7 +34,7 @@ namespace HutongGames.PlayMaker.Actions
 		[Tooltip("Repeat every frame.")]
 		public bool everyFrame;
 
-		[Tooltip("Perform the translate in LateUpdate. This is useful if you want to override the position of objects that are animated or otherwise positioned in Update.")]
+		[Tooltip("Perform the translate in LateUpdate. This is useful if you want to override the position of objects that are animated or otherwise positioned in UpdateTask.")]
 		public bool lateUpdate;
 
         [Tooltip("Perform the translate in FixedUpdate. This is useful when working with rigid bodies and physics.")]

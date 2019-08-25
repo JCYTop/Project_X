@@ -1,27 +1,10 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class Bezier
+public static class Bezier
 {
-    enum BezierStyle
-    {
-        Square = 0,
-        Cubic,
-        FourthPower,
-    }
+    private static int segmentNum = 15;
 
-    private static Bezier _instance;
-    private int segmentNum = 15;
-
-    public static Bezier Instance()
-    {
-        if (_instance == null)
-            _instance = new Bezier();
-        return _instance;
-    }
-
-    public int SegmentNum
+    public static int SegmentNum
     {
         get { return segmentNum; }
         set
@@ -31,11 +14,11 @@ public class Bezier
         }
     }
 
-    public Vector3[] DrawCurve(Vector3 cardPosition, Vector3 mousePositon)
+    public static Vector3[] DrawCurve(Vector3 cardPosition, Vector3 mousePositon)
     {
-        Vector3[] point = new Vector3[segmentNum];
-        Vector3 position1 = new Vector3();
-        Vector3 position2 = new Vector3();
+        var point = new Vector3[segmentNum];
+        var position1 = new Vector3();
+        var position2 = new Vector3();
         position1.y = mousePositon.y * .2f;
         position1.x = cardPosition.x - (mousePositon.x - cardPosition.x) / 2f;
         position2.x = mousePositon.x * .35f;
@@ -56,10 +39,10 @@ public class Bezier
     /// <param name="p0"></param>
     /// <param name="p1"></param>
     /// <returns></returns>
-    private Vector3 CalculateBezierPoint(float t, Vector3 p0, Vector3 p1)
+    private static Vector3 CalculateBezierPoint(float t, Vector3 p0, Vector3 p1)
     {
-        float u = 1 - t;
-        Vector3 p = u * p0 + t * p1;
+        var u = 1 - t;
+        var p = u * p0 + t * p1;
         return p;
     }
 
@@ -71,12 +54,12 @@ public class Bezier
     /// <param name="p1"></param>
     /// <param name="p2"></param>
     /// <returns></returns>
-    private Vector3 CalculateBezierPoint(float t, Vector3 p0, Vector3 p1, Vector3 p2)
+    private static Vector3 CalculateBezierPoint(float t, Vector3 p0, Vector3 p1, Vector3 p2)
     {
-        float u = 1 - t;
-        float tt = t * t;
-        float uu = u * u;
-        Vector3 p = uu * p0;
+        var u = 1 - t;
+        var tt = t * t;
+        var uu = u * u;
+        var p = uu * p0;
         p += 2 * u * t * p1;
         p += tt * p2;
         return p;
@@ -91,27 +74,27 @@ public class Bezier
     /// <param name="p2"></param>
     /// <param name="p3"></param>
     /// <returns></returns>
-    private Vector3 CalculateBezierPoint(float t, Vector3 p0, Vector3 p1, Vector3 p2, Vector3 p3)
+    private static Vector3 CalculateBezierPoint(float t, Vector3 p0, Vector3 p1, Vector3 p2, Vector3 p3)
     {
-        float u = 1 - t;
-        float uu = u * u;
-        float uuu = u * u * u;
-        float tt = t * t;
-        float ttt = t * t * t;
-        Vector3 p = uuu * p0;
+        var u = 1 - t;
+        var uu = u * u;
+        var uuu = u * u * u;
+        var tt = t * t;
+        var ttt = t * t * t;
+        var p = uuu * p0;
         p += 3 * p1 * t * uu;
         p += 3 * p2 * tt * u;
         p += p3 * ttt;
         return p;
     }
 
-    public Vector3[] GetBeizerList(int segmentNum, params Vector3[] points)
+    public static Vector3[] GetBeizerList(int segmentNum, params Vector3[] points)
     {
-        Vector3[] path = new Vector3[segmentNum];
+        var path = new Vector3[segmentNum];
         for (int i = 1; i <= segmentNum; i++)
         {
-            float t = i / (float) segmentNum;
-            Vector3 pixel = new Vector3();
+            var t = i / (float) segmentNum;
+            var pixel = new Vector3();
             switch (points.Length)
             {
                 case 2:
@@ -131,4 +114,11 @@ public class Bezier
 
         return path;
     }
+}
+
+public enum BezierStyle
+{
+    Square = 0,
+    Cubic,
+    FourthPower,
 }

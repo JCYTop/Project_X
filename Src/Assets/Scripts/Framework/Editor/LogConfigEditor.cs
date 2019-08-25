@@ -14,7 +14,6 @@
 */
 
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
@@ -45,7 +44,7 @@ public class LogConfigEditor : Editor
 
     private void ShowLogData(LogConfig config)
     {
-        if (config.LogDatas == null || (config.LogDatas.Count != CommonUtil.GetFieldCount<LogType>()))
+        if (config.LogDatas == null || (config.LogDatas.Count != Util.GetFieldCount<LogType>()))
         {
             config.LogDatas = new List<LogData>(GetNewLogDataList(config));
         }
@@ -63,10 +62,8 @@ public class LogConfigEditor : Editor
     private List<LogData> GetNewLogDataList(LogConfig config)
     {
         List<LogData> datas = new List<LogData>(config.LogDatas);
-        Array enums = CommonUtil.GetEnumFields(typeof(LogType));
-
-
-        if (config.LogDatas.Count < CommonUtil.GetFieldCount<LogType>())
+        Array enums = Util.GetEnumFields(typeof(LogType));
+        if (config.LogDatas.Count < Util.GetFieldCount<LogType>())
         {
             foreach (LogType e in enums)
             {

@@ -11,7 +11,7 @@
 using System.Text;
 using UnityEngine;
 
-public class SystemCheck : ILanucherTask
+public class SystemCheckTask : ILanucherTask
 {
     public override string Name
     {
@@ -20,7 +20,7 @@ public class SystemCheck : ILanucherTask
 
     public override TaskType TaskType
     {
-        get => TaskType.SystemCheck;
+        get => TaskType.SystemCheckTask;
     }
 
     public override void AddTaskChild()

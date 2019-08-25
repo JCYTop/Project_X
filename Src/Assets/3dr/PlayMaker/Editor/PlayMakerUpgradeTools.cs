@@ -71,7 +71,7 @@ public class PlayMakerUpgradeTools
 
         foreach (var file in prefabFiles)
         {
-            var filePath = file.FullName.Replace(@"\", "/").Replace(Application.dataPath, "Assets");
+            var filePath = file.FullName.Replace(@"\", "/").Replace(Application.dataPath, "AssetsTask");
             //Debug.Log(filePath + "\n" + Application.dataPath);
 
             var dependencies = AssetDatabase.GetDependencies(new[] { filePath });

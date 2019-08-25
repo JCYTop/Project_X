@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-public class UICommonUtil
+public class UIUtil
 {
     /// <summary>
     /// 清除父节点下的所有子物体
@@ -135,4 +135,18 @@ public class UICommonUtil
     }
 
     #endregion
+
+    /// <summary>
+    /// 计算UI之间的距离
+    /// </summary>
+    /// <param name="originalPos"></param>
+    /// <param name="goalPos"></param>
+    /// <returns></returns>
+    public static float CalculateUIDistance(Vector3 originalPos, Vector3 goalPos)
+    {
+        //计算总距离
+        var totalOffset = goalPos - originalPos;
+        totalOffset.Scale(new Vector3(1, 1, 0));
+        return totalOffset.magnitude;
+    }
 }
