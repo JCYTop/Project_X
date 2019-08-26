@@ -27,7 +27,13 @@ public class ButtonSet
     private GameObject panel;
     private GameObject grid;
     private GameObject item;
-    public bool IsActive { private set; get; }
+    private bool isActive = false;
+
+    public bool IsActive
+    {
+        private set { isActive = value; }
+        get { return isActive; }
+    }
 
     public ButtonSet(Button btn, GameObject selectImg, GameObject noSelectImg, GameObject panel, GameObject grid,
         GameObject item)
@@ -41,15 +47,38 @@ public class ButtonSet
     }
 
     /// <summary>
+    /// 初始化
+    /// </summary>
+    /// <param name="btn"></param>
+    /// <param name="selectImg"></param>
+    /// <param name="noSelectImg"></param>
+    public ButtonSet(Button btn, GameObject selectImg, GameObject noSelectImg)
+    {
+        this.btn = btn;
+        this.selectImg = selectImg;
+        this.noSelectImg = noSelectImg;
+    }
+
+    /// <summary>
     /// 设置数据
     /// </summary>
     /// <param name="script"></param>
     /// <param name="data"></param>
     /// <typeparam name="T">获取Refresh()</typeparam>
-    public void SetData<T>(object data) where T : UIActionBase
+    public T SetData<T>(object data) where T : UIActionBase
     {
         var go = UIUtil.CreateChildGameObject(item, grid);
-        go.GetComponent<T>().Refresh(data);
+        var type = go.GetComponent<T>();
+        type.Refresh(data);
+        return type;
+    }
+
+    public T SetData<T>(object[] data) where T : UIActionBase
+    {
+        var go = UIUtil.CreateChildGameObject(item, grid);
+        var type = go.GetComponent<T>();
+        type.Refresh(data);
+        return type;
     }
 
     /// <summary>
@@ -68,9 +97,9 @@ public class ButtonSet
     public void SetActiveSet(bool isActive)
     {
         IsActive = isActive;
-        selectImg.SetActive(isActive);
-        noSelectImg.SetActive(!isActive);
-        panel.SetActive(isActive);
+        if (selectImg != null) selectImg.SetActive(isActive);
+        if (noSelectImg != null) noSelectImg.SetActive(!isActive);
+        if (panel != null) panel.SetActive(isActive);
     }
 
     /// <summary>
