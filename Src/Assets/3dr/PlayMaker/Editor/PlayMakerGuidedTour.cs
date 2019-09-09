@@ -203,8 +203,8 @@ namespace HutongGames.PlayMakerEditor
             var root = AddWindow(typeof(FsmGlobalsWindow), "Global Variables", 
                 "Manage the global variables used in the project.", 
                 "NOTE: Global variables are stored in:" +
-                "\n<a href=\"AssetsTask/PlayMaker/Resources/PlayMakerGlobals.asset\">" +
-                "AssetsTask/PlayMaker/Resources/PlayMakerGlobals.asset</a>\n\n" +
+                "\n<a href=\"Assets/PlayMaker/Resources/PlayMakerGlobals.asset\">" +
+                "Assets/PlayMaker/Resources/PlayMakerGlobals.asset</a>\n\n" +
                 "<b>DO NOT DELETE OR OVERWRITE THIS ASSET!</b>\n\n" +
                 "Use PlayMaker/Tools/Export Globals and Import Globals to transfer and merge globals between projects.", 
                 "Window", GetUrl(WikiPages.GlobalVariablesBrowser));
@@ -279,7 +279,7 @@ namespace HutongGames.PlayMakerEditor
             AddTopic(root, "Description", "User defined description of what the Template does.", 
                 "Use this to document your project. Since Templates can be re-used a good description is important.");
             AddTopic(root, "New Template", "Save a new Template asset", 
-                "NOTE: Template assets must be saved under the projects AssetsTask folder. " +
+                "NOTE: Template assets must be saved under the projects Assets folder. " +
                 "To transfer templates to another project export it in a unitypackage.");
             AddTopic(root, "Load Add Templates", "Refresh the list of Templates.");
         }

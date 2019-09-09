@@ -59,7 +59,7 @@ public class CheckResMenu : EditorMenu<CheckResMenu>
             if (suffix == "prefab")
             {
                 string realFile = file.Replace("\\", "/");
-                realFile = realFile.Replace(Application.dataPath, "AssetsTask");
+                realFile = realFile.Replace(Application.dataPath, "Assets");
                 mResources.Add(realFile);
             }
         }
@@ -146,7 +146,7 @@ public class CheckResMenu : EditorMenu<CheckResMenu>
             if (suffix == "prefab")
             {
                 string realFile = file.Replace("\\", "/");
-                realFile = realFile.Replace(Application.dataPath, "AssetsTask");
+                realFile = realFile.Replace(Application.dataPath, "Assets");
                 mResources.Add(realFile);
             }
         }
@@ -186,7 +186,7 @@ public class CheckResMenu : EditorMenu<CheckResMenu>
             if (suffix == "prefab")
             {
                 string realFile = file.Replace("\\", "/");
-                realFile = realFile.Replace(Application.dataPath, "AssetsTask");
+                realFile = realFile.Replace(Application.dataPath, "Assets");
                 mEffectResources.Add(realFile);
             }
         }

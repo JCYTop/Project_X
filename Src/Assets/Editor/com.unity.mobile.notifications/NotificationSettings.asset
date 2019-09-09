@@ -21,6 +21,8 @@ MonoBehaviour:
     - UnityNotificationRequestAuthorizationForRemoteNotificationsOnAppLaunch
     - UnityRemoteNotificationForegroundPresentationOptions
     - UnityUseLocationNotificationTrigger
+    - UnityAddRemoteNotificationCapability
+    - UnityUseAPSReleaseEnvironment
     values:
     - True
     - -1
@@ -28,9 +30,15 @@ MonoBehaviour:
     - False
     - -1
     - False
+    - False
+    - False
   AndroidNotificationEditorSettingsValues:
     keys:
     - UnityNotificationAndroidRescheduleOnDeviceRestart
+    - UnityNotificationAndroidUseCustomActivity
+    - UnityNotificationAndroidCustomActivityString
     values:
     - False
+    - False
+    - com.unity3d.player.UnityPlayerActivity
   TrackedResourceAssets: []

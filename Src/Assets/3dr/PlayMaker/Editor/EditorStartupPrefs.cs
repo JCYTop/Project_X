@@ -23,7 +23,7 @@ namespace HutongGames.PlayMakerEditor
         /// then the EditorStartupPrefs is reset and the unity version is lost (e.g. if importing a 2018.3 package in 5.3).
         /// So instead we store the info in a plain text file for maximum compatibility.
         /// </summary>
-        private const string versionInfoPath = "AssetsTask/PlayMaker/Editor/Resources/VersionInfo.txt";
+        private const string versionInfoPath = "Assets/PlayMaker/Editor/Resources/VersionInfo.txt";
         private const string versionInfoFile = "VersionInfo";
 
         private static EditorStartupPrefs instance;
@@ -200,7 +200,7 @@ namespace HutongGames.PlayMakerEditor
                 instance = Resources.Load<EditorStartupPrefs>("EditorStartupPrefs");
                 if (instance == null)
                 {
-                    AssetDatabase.CreateAsset(copy, "AssetsTask/PlayMaker/Editor/Resources/EditorStartupPrefs.asset");
+                    AssetDatabase.CreateAsset(copy, "Assets/PlayMaker/Editor/Resources/EditorStartupPrefs.asset");
                     AssetDatabase.Refresh();
                     instance = copy;
 

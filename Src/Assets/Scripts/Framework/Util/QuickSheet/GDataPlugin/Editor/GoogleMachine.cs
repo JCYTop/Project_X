@@ -19,7 +19,7 @@ namespace UnityQuickSheet
     internal class GoogleMachine : BaseMachine
     {
         [SerializeField]
-        public static string generatorAssetPath = "AssetsTask/QuickSheet/GDataPlugin/Tool/";
+        public static string generatorAssetPath = "Assets/QuickSheet/GDataPlugin/Tool/";
         [SerializeField]
         public static string assetFileName = "GoogleMachine.asset";
 
@@ -39,7 +39,7 @@ namespace UnityQuickSheet
         /// <summary>
         /// A menu item which create a 'GoogleMachine' asset file.
         /// </summary>
-        [MenuItem("AssetsTask/Create/QuickSheet/Tools/Google")]
+        [MenuItem("Assets/Create/QuickSheet/Tools/Google")]
         public static void CreateGoogleMachineAsset()
         {
             GoogleMachine inst = ScriptableObject.CreateInstance<GoogleMachine>();

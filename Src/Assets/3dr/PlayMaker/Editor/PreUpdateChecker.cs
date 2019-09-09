@@ -364,7 +364,7 @@ namespace HutongGames.PlayMakerEditor
                     var assetPath = FindFile(files[j]);
                     if (!string.IsNullOrEmpty(assetPath))
                     {
-                        if (assetPath.Contains("AssetsTask/PlayMaker/Actions/"))
+                        if (assetPath.Contains("Assets/PlayMaker/Actions/"))
                         {
                             output += AssetDatabase.AssetPathToGUID(assetPath) + ",";
                         }

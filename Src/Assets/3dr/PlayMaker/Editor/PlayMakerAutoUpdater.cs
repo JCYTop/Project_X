@@ -19,14 +19,14 @@ namespace HutongGames.PlayMakerEditor
     /// <summary>
     /// Try to fix common update problems automatically
     /// UpdateTask Tasks:
-    /// -- Move Playmaker.dll from AssetsTask\PlayMaker to AssetsTask\Plugins\PlayMaker
+    /// -- Move Playmaker.dll from Assets\PlayMaker to Assets\Plugins\PlayMaker
     /// -- Set plugin import settings
     /// </summary>
     [InitializeOnLoad]
     public class PlayMakerAutoUpdater
     {
         public const string PlaymakerGUID = "e743331561ef77147ae48cda9bcb8209";
-        public const string PlaymakerPluginDirectory = "AssetsTask/Plugins/PlayMaker";
+        public const string PlaymakerPluginDirectory = "Assets/Plugins/PlayMaker";
         public const string PlaymakerPluginPath = PlaymakerPluginDirectory + "/PlayMaker.dll";
         public const string PlaymakerMetroPluginPath = PlaymakerPluginDirectory + "/Metro/PlayMaker.dll";
 
@@ -160,7 +160,7 @@ namespace HutongGames.PlayMakerEditor
         }
 
         /// <summary>
-        /// Check if PlayMaker.dll is not it AssetsTask/Plugins/PlayMaker
+        /// Check if PlayMaker.dll is not it Assets/Plugins/PlayMaker
         /// </summary>
         static bool PlaymakerDllsNeedMoving()
         {
@@ -291,7 +291,7 @@ namespace HutongGames.PlayMakerEditor
 
         static void MovePlayMakerMetroPlugin()
         {
-            MoveAsset("AssetsTask/Plugins/Metro/PlayMaker.dll", PlaymakerMetroPluginPath);
+            MoveAsset("Assets/Plugins/Metro/PlayMaker.dll", PlaymakerMetroPluginPath);
         }
 
         static void MoveAsset(string from, string to)

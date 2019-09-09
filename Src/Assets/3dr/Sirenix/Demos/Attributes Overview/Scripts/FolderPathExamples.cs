@@ -13,11 +13,11 @@ namespace Sirenix.OdinInspector.Demos
 		public string UnityProjectPath;
 
 		// It is possible to provide custom parent path. Parent paths can be relative to the Unity project, or absolute.
-		[FolderPath(ParentFolder = "AssetsTask/Plugins/Sirenix")]
+		[FolderPath(ParentFolder = "Assets/Plugins/Sirenix")]
 		public string RelativeToParentPath;
 
 		// Using parent path, FolderPath can also provide a path relative to a resources folder.
-		[FolderPath(ParentFolder = "AssetsTask/Resources")]
+		[FolderPath(ParentFolder = "Assets/Resources")]
 		public string ResourcePath;
 
 		// By setting AbsolutePath to true, the FolderPath will provide an absolute path instead.
@@ -41,10 +41,10 @@ namespace Sirenix.OdinInspector.Demos
 		public string DynamicFolderPath;
 
 		[BoxGroup("Member referencing")]
-		public string DynamicParent = "AssetsTask/Plugins/Sirenix";
+		public string DynamicParent = "Assets/Plugins/Sirenix";
 
 		// FolderPath also supports lists and arrays.
-		[FolderPath(ParentFolder = "AssetsTask/Plugins/Sirenix")]
+		[FolderPath(ParentFolder = "Assets/Plugins/Sirenix")]
 		[BoxGroup("Lists")]
 		public string[] ListOfFolders;
 	}

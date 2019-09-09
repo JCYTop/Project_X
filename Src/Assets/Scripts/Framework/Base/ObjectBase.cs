@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using Sirenix.OdinInspector;
+using Sirenix.Utilities;
 using UnityEngine;
 
 [RequireComponent(typeof(AssetPoolItem))]
@@ -24,8 +26,8 @@ public abstract class ObjectBase : MonoEventEmitter
     [BoxGroup("自动设置"), Header("运行时场景唯一标识ID"), SerializeField, ReadOnly]
     protected int globalID;
 
-    [SerializeField] private PointTrans[] PointTrans = new PointTrans[] { };
-    protected GameObject go;
+    [SerializeField] private List<PointTrans> PointTrans = new List<PointTrans>();
+    [SerializeField] private List<ConfigInfo> Config = new List<ConfigInfo>();
 
     #endregion
 
@@ -57,10 +59,7 @@ public abstract class ObjectBase : MonoEventEmitter
 
     void Awake()
     {
-        globalID = ScenesMgr.GlobalID;
-        gameObject.tag = ObjectTag;
-        gameObject.layer = ObjectLayer;
-        go = gameObject;
+        BaseInit();
         Init();
     }
 
@@ -79,6 +78,20 @@ public abstract class ObjectBase : MonoEventEmitter
     void OnDestroy()
     {
         Release();
+    }
+
+    private void BaseInit()
+    {
+        globalID = ScenesMgr.GlobalID;
+        gameObject.tag = ObjectTag;
+        gameObject.layer = ObjectLayer;
+        Config.ForEach((config) =>
+        {
+            switch (config.Type)
+            {
+                //TODO 根据不同的表进行加载。道具表；技能表。。。要保证全局只有唯一配置表ID
+            }
+        });
     }
 
     /// <summary>
@@ -121,7 +134,7 @@ public abstract class ObjectBase : MonoEventEmitter
     [Button(ButtonSizes.Small), GUIColor(1, 0, 0)]
     private void ResetResID()
     {
-        resID = 0;
+        resID = -1;
     }
 }
 
@@ -137,6 +150,18 @@ public class PointTrans
 {
     public ActPosType ActPosType;
     public Transform Trans;
+}
+
+[Serializable]
+public class ConfigInfo
+{
+    public ConfigType Type;
+    [Header("配置ID")] public int ConfigID;
+}
+
+public enum ConfigType
+{
+    None,
 }
 
 public enum Tag

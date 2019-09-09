@@ -5,7 +5,7 @@ using UnityEditor;
 
 public class InstallES3Beta : Editor 
 {
-	[MenuItem("AssetsTask/Install or UpdateTask Easy Save 3 Beta", false, 1100)]
+	[MenuItem("Assets/Install or UpdateTask Easy Save 3 Beta", false, 1100)]
 	public static void Install()
 	{
 		AssetDatabase.ImportPackage(Application.dataPath + "/Easy Save 2/Easy Save 3 Beta.unitypackage", false);

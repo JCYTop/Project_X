@@ -159,7 +159,7 @@ namespace HutongGames.PlayMakerEditor
 
             foreach (var file in prefabFiles)
             {
-                var filePath = file.FullName.Replace(@"\", "/").Replace(Application.dataPath, "AssetsTask");
+                var filePath = file.FullName.Replace(@"\", "/").Replace(Application.dataPath, "Assets");
                 //Debug.Log(filePath + "\n" + Application.dataPath);
 
                 var dependencies = AssetDatabase.GetDependencies(new[] { filePath });
@@ -301,7 +301,7 @@ namespace HutongGames.PlayMakerEditor
 
             foreach (var file in assetFiles)
             {
-                var filePath = file.FullName.Replace(@"\", "/").Replace(Application.dataPath, "AssetsTask");
+                var filePath = file.FullName.Replace(@"\", "/").Replace(Application.dataPath, "Assets");
                 var obj = AssetDatabase.LoadAssetAtPath(filePath, typeof(Object));
                 if (obj == null)
                 {

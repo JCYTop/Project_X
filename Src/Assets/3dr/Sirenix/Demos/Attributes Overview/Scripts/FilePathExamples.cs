@@ -13,11 +13,11 @@ namespace Sirenix.OdinInspector.Demos
 		public string UnityProjectPath;
 
 		// It is possible to provide custom parent path. Parent paths can be relative to the Unity project, or absolute.
-		[FilePath(ParentFolder = "AssetsTask/Plugins/Sirenix")]
+		[FilePath(ParentFolder = "Assets/Plugins/Sirenix")]
 		public string RelativeToParentPath;
 
 		// Using parent path, FilePath can also provide a path relative to a resources folder.
-		[FilePath(ParentFolder = "AssetsTask/Resources")]
+		[FilePath(ParentFolder = "Assets/Resources")]
 		public string ResourcePath;
 
 		// Provide a comma seperated list of allowed extensions. Dots are optional.
@@ -46,13 +46,13 @@ namespace Sirenix.OdinInspector.Demos
 		public string DynamicFilePath;
 
 		[BoxGroup("Member referencing")]
-		public string DynamicParent = "AssetsTask/Plugin/Sirenix";
+		public string DynamicParent = "Assets/Plugin/Sirenix";
 
 		[BoxGroup("Member referencing")]
 		public string DynamicExtensions = "cs, unity, jpg";
 
 		// FilePath also supports lists and arrays.
-		[FilePath(ParentFolder = "AssetsTask/Plugins/Sirenix/Demos/Odin Inspector")]
+		[FilePath(ParentFolder = "Assets/Plugins/Sirenix/Demos/Odin Inspector")]
 		[BoxGroup("Lists")]
 		public string[] ListOfFiles;
 	}

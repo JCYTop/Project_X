@@ -18,7 +18,7 @@ public static class CustomAssetUtility
         string path = AssetDatabase.GetAssetPath (Selection.activeObject);
         if (path == "")
         {
-            path = "AssetsTask";
+            path = "Assets";
         }
         else if (Path.GetExtension (path) != "")
         {
@@ -49,7 +49,7 @@ public static class CustomAssetUtility
         catch
         {
             // Protection against implementation changes.
-            path = UnityEditor.AssetDatabase.GenerateUniqueAssetPath("AssetsTask/" + filename);
+            path = UnityEditor.AssetDatabase.GenerateUniqueAssetPath("Assets/" + filename);
         }
         return path;
     }

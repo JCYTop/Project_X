@@ -26,8 +26,8 @@ namespace UnityQuickSheet
         public string assetFileCreateFuncName = string.Empty;
         public string template                = string.Empty;
 
-        public string importedFilePath        = string.Empty; // should start with "AssetsTask" not full path
-        public string assetFilepath           = string.Empty; // should start with "AssetsTask" not full path
+        public string importedFilePath        = string.Empty; // should start with "Assets" not full path
+        public string assetFilepath           = string.Empty; // should start with "Assets" not full path
         public string assetPostprocessorClass = string.Empty;
 
         public MemberFieldData[] memberFields;

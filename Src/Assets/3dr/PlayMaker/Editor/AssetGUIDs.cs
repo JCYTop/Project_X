@@ -79,7 +79,7 @@ namespace HutongGames.PlayMakerEditor
             var path = AssetDatabase.GUIDToAssetPath(assetGUID);
             if (!string.IsNullOrEmpty(path))
             {
-                // strip AssetsTask from asset path since it's in dataPath
+                // strip Assets from asset path since it's in dataPath
                 path = Application.dataPath + path.Substring(6); 
             }
             return path;

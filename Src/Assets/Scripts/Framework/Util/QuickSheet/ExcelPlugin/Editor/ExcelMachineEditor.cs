@@ -65,7 +65,7 @@ namespace UnityQuickSheet
                     machine.SpreadSheetName = Path.GetFileName(path);
 
                     // the path should be relative not absolute one to make it work on any platform.
-                    int index = path.IndexOf("AssetsTask");
+                    int index = path.IndexOf("Assets");
                     if (index >= 0)
                     {
                         // set relative path
@@ -78,8 +78,8 @@ namespace UnityQuickSheet
                     {
                         EditorUtility.DisplayDialog("Error",
                             @"Wrong folder is selected.
-                        Set a folder under the 'AssetsTask' folder! \n
-                        The excel file should be anywhere under  the 'AssetsTask' folder", "OK");
+                        Set a folder under the 'Assets' folder! \n
+                        The excel file should be anywhere under  the 'Assets' folder", "OK");
                         return;
                     }
                 }

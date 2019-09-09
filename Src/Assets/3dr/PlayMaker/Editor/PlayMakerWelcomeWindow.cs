@@ -495,8 +495,8 @@ namespace HutongGames.PlayMakerEditor
                                     "\n- Physics2D Add-on" +
                                     "\n- Mecanim Animator Add-on" +
                                     "\n- Vector2, Quaternion, and Trigonometry actions"+
-                                    "\n\nThe new versions of these files are under \"AssetsTask/PlayMaker/Actions\""+
-                                    "\n\nIf you imported these add-ons, the old versions are likely under \"AssetsTask/PlayMaker Custom Actions\". "+
+                                    "\n\nThe new versions of these files are under \"Assets/PlayMaker/Actions\""+
+                                    "\n\nIf you imported these add-ons, the old versions are likely under \"Assets/PlayMaker Custom Actions\". "+
                                     "If you get errors from duplicate files after updating please delete the old files!" +
                                     "\n", 
                                     MessageType.Warning);

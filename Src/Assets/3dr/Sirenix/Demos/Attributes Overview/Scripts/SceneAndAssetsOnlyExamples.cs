@@ -6,7 +6,7 @@ namespace Sirenix.OdinInspector.Demos
 
     public class SceneAndAssetsOnlyExamples : MonoBehaviour
     {
-        [Title("AssetsTask only")]
+        [Title("Assets only")]
         [AssetsOnly]
         public List<GameObject> OnlyPrefabs;
 
