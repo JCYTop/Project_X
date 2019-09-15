@@ -14,12 +14,13 @@
 */
 
 using System;
+using System.Collections.Generic;
 
 /// <summary>
 /// C#实现跳表
 /// </summary>
 /// <typeparam name="T"></typeparam>
-public class SkipList<T> where T : IComparable<T>
+public abstract class SkipList<T> : IComparer<T>
 {
     private int maxLevel = 1 << 5;
 
@@ -38,13 +39,13 @@ public class SkipList<T> where T : IComparable<T>
         var p = head;
         for (int i = levelCount - 1; i >= 0; i--)
         {
-            while (p.Forwards[i] != null && CompareGeneric(p.Forwards[i].Data, value) == -1) //小于
+            while (p.Forwards[i] != null && Compare(p.Forwards[i].Data, value) == -1) //小于
             {
                 p = p.Forwards[i];
             }
         }
 
-        if (p.Forwards[0] != null && CompareGeneric(p.Forwards[0].Data, value) == 0) //等于
+        if (p.Forwards[0] != null && Compare(p.Forwards[0].Data, value) == 0) //等于
         {
             return p.Forwards[0];
         }
@@ -70,12 +71,12 @@ public class SkipList<T> where T : IComparable<T>
         var ptr = head;
         for (int i = level - 1; i >= 0; i--)
         {
-            while (ptr.Forwards[i] != null && CompareGeneric(ptr.Forwards[i].Data, value) == -1)
+            while (ptr.Forwards[i] != null && Compare(ptr.Forwards[i].Data, value) == -1)
             {
                 ptr = ptr.Forwards[i];
             }
 
-            update[i] = ptr;//这里替换了初始化节点
+            update[i] = ptr; //这里替换了初始化节点
         }
 
         //链接上之后的节点,链表常规操作
@@ -98,19 +99,19 @@ public class SkipList<T> where T : IComparable<T>
         var ptr = head;
         for (int i = levelCount - 1; i >= 0; i--)
         {
-            while (ptr.Forwards[i] != null && CompareGeneric(ptr.Forwards[i].Data, value) == -1)
+            while (ptr.Forwards[i] != null && Compare(ptr.Forwards[i].Data, value) == -1)
             {
                 ptr = ptr.Forwards[i];
             }
 
-            update[i] = ptr;//这里替换了初始化节点
+            update[i] = ptr; //这里替换了初始化节点
         }
 
-        if (ptr.Forwards[0] != null && CompareGeneric(ptr.Forwards[0].Data, value) == 0)
+        if (ptr.Forwards[0] != null && Compare(ptr.Forwards[0].Data, value) == 0)
         {
             for (int i = levelCount - 1; i >= 0; --i)
             {
-                if (update[i].Forwards[i] != null && CompareGeneric(ptr.Forwards[0].Data, value) == 0)
+                if (update[i].Forwards[i] != null && Compare(ptr.Forwards[0].Data, value) == 0)
                 {
                     update[i].Forwards[i] = update[i].Forwards[i].Forwards[i];
                 }
@@ -123,7 +124,7 @@ public class SkipList<T> where T : IComparable<T>
         var ptr = head;
         while (ptr.Forwards[0] != null)
         {
-            LogUtil.Log(ptr.Forwards[0] + " ");
+            LogUtil.Log(ptr.Forwards[0].Data + " ");
             ptr = ptr.Forwards[0];
         }
     }
@@ -143,27 +144,7 @@ public class SkipList<T> where T : IComparable<T>
         return level;
     }
 
-    /// <summary>
-    /// 使用泛型实现的比较方法
-    /// </summary>
-    /// <param name="t1"></param>
-    /// <param name="t2"></param>
-    /// <returns></returns>
-    public int CompareGeneric(T t1, T t2)
-    {
-        if (t1.CompareTo(t2) > 0)
-        {
-            return 1;
-        }
-        else if (t1.CompareTo(t2) == 0)
-        {
-            return 0;
-        }
-        else
-        {
-            return -1;
-        }
-    }
+    public abstract int Compare(T x, T y);
 }
 
 public class SkipNode<T>
