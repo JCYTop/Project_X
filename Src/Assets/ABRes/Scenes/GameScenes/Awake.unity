@@ -235,13 +235,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 766233687}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0.13052616, z: 0, w: 0.9914449}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 15, z: 0}
 --- !u!1 &804125677
 GameObject:
   m_ObjectHideFlags: 0
@@ -308,15 +308,15 @@ MonoBehaviour:
   openReferences: 0
   openPrefabs: 0
   idRef:
-    _Keys: 3702a296d99df938885d4021abbca75f648f8f80fdb18549ce764021b73c7931c8ff5c0c1a5c0b62e10650dffe864b5fbc66a58410770d1787ebc7635dd7814c1df01754e64c85067cd360099e5ab5547d9e2d37e72d1e1fcab3bbaa56bc0833e2cd8f77fb991160af30c6456eb11d4061ed9cf820efff45142a8292e90eef1e8c0ae2d3ec98ba01d48d25717926c17cd0fc0b435901530d32b674dae45cb543b4dc5654c4413e36aaf2457b6d167043
+    _Keys: 3702a296d99df938885d4021abbca75f648f8f80fdb18549ce764021b73c7931c8ff5c0c1a5c0b62e10650dffe864b5fbc66a58410770d1787ebc7635dd7814c1df01754e64c85067cd360099e5ab5547d9e2d37e72d1e1fcab3bbaa56bc0833e2cd8f77fb991160af30c6456eb11d4061ed9cf820efff45142a8292e90eef1e8c0ae2d3ec98ba01d48d25717926c17cd0fc0b435901530d32b674dae45cb543b4dc5654c4413e36aaf2457b6d167043d6bdda35bd5f46023779c6f8f587400fe1f1380eb7c2c12508c7fe37bbe8de155c4efd490987fe08c7a5fe1c75c231222c487635a3c7a14c611f863c50bf9a25d26bc78e8a8f8812801a104761c0c97b91962b1e4749c22410b555d6f1c5a7784024ede18ac0ad63c063b6bdd8e9ae20ea02cee6ebb86c1ad213802ac64ddf453f77f8c22d180e2e18372254008002250834edeef6c08c076ff7f088c07d630dbc04809e0e140c2e
     _Values:
     - {fileID: 11500000, guid: 75d418429cd06b34cb9c9d857619df3e, type: 3}
     - {fileID: 306484151}
     - {fileID: 306484152}
-    - {fileID: 830913139}
-    - {fileID: 830913142}
-    - {fileID: 830913141}
-    - {fileID: 830913140}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
     - {fileID: 1236637468}
     - {fileID: 1236637470}
     - {fileID: 1236637469}
@@ -332,6 +332,27 @@ MonoBehaviour:
     - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
     - {fileID: 4800000, guid: 04843408d664137429d5b68ea685ea2e, type: 3}
     - {fileID: 2100000, guid: 305a0add82c865b479fd039e15eab2ef, type: 2}
+    - {fileID: 11500000, guid: 8b21ac3b50bd3a040a68537ece80c35f, type: 3}
+    - {fileID: 0}
+    - {fileID: 11500000, guid: a0e2a1e91f065dc4bbeeb2dcc762595d, type: 3}
+    - {fileID: 0}
+    - {fileID: 11500000, guid: 3e81a0163e9f4bd180817d9e590605e7, type: 3}
+    - {fileID: 11500000, guid: d005f11f1b5f61540aa260bd99ec33a8, type: 3}
+    - {fileID: 308418087955758347, guid: 69a679404106d03458824969f24a5778, type: 3}
+    - {fileID: 308418087955758346, guid: 69a679404106d03458824969f24a5778, type: 3}
+    - {fileID: 4508809278791534790, guid: 69a679404106d03458824969f24a5778, type: 3}
+    - {fileID: 8400000, guid: 3660a9e50829ab74a8be7fe4d4b96ce5, type: 2}
+    - {fileID: 308418087955758350, guid: 69a679404106d03458824969f24a5778, type: 3}
+    - {fileID: 308418087955758345, guid: 69a679404106d03458824969f24a5778, type: 3}
+    - {fileID: 4534970035058445838, guid: 69a679404106d03458824969f24a5778, type: 3}
+    - {fileID: 308418087955758344, guid: 69a679404106d03458824969f24a5778, type: 3}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
   prefabs: []
 --- !u!114 &804125680
 MonoBehaviour:
@@ -363,90 +384,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &830913139
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 830913142}
-  - component: {fileID: 830913141}
-  - component: {fileID: 830913140}
-  m_Layer: 0
-  m_Name: Main Camera
-  m_TagString: MainCamera
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!81 &830913140
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 830913139}
-  m_Enabled: 1
---- !u!20 &830913141
-Camera:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 830913139}
-  m_Enabled: 1
-  serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 1, g: 1, b: 1, a: 0}
-  m_projectionMatrixMode: 1
-  m_GateFitMode: 2
-  m_FOVAxisMode: 0
-  m_SensorSize: {x: 99.5, y: 40.8}
-  m_LensShift: {x: 0, y: 0}
-  m_FocalLength: 50
-  m_NormalizedViewPortRect:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 1
-    height: 1
-  near clip plane: 0.3
-  far clip plane: 1000
-  field of view: 60
-  orthographic: 0
-  orthographic size: 5
-  m_Depth: 0
-  m_CullingMask:
-    serializedVersion: 2
-    m_Bits: 791
-  m_RenderingPath: -1
-  m_TargetTexture: {fileID: 8400000, guid: c0091b59ea4f30d41970a6007e7b0510, type: 2}
-  m_TargetDisplay: 0
-  m_TargetEye: 3
-  m_HDR: 1
-  m_AllowMSAA: 1
-  m_AllowDynamicResolution: 0
-  m_ForceIntoRT: 0
-  m_OcclusionCulling: 1
-  m_StereoConvergence: 10
-  m_StereoSeparation: 0.022
---- !u!4 &830913142
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 830913139}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1236637468
 GameObject:
@@ -489,5 +427,5 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

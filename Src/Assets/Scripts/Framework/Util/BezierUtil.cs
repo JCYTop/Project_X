@@ -1,6 +1,21 @@
-﻿using UnityEngine;
+/** 
+----------------------------------
+ *Copyright(C) 2019 by IndieGame
+ *All rights reserved.
+ *FileName:     BezierUtil
+ *Author:       @JCY
+ *Version:      0.0.1
+ *AuthorEmail:  jcyemail@qq.com
+ *UnityVersion：2019.1.0f2
+ *CreateTime:   2019/09/28 18:07:46
+ *Description:  IndieGame 
+ *History:
+ ----------------------------------
+*/
 
-public static class Bezier
+using UnityEngine;
+
+public static class BezierUtil
 {
     private static int segmentNum = 15;
 

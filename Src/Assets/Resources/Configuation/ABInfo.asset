@@ -19,21 +19,15 @@ MonoBehaviour:
     Des: UIRoot
     Layer: UI
     Tag: UI
+  - ID: 1000000
+    name: Main Camera
+    Path: Assets\ABRes\Prefabs\Camera\Main Camera
+    Des: "\u4E3B\u6444\u50CF\u673A"
+    Layer: Default
+    Tag: Camera
   - ID: 1500000
     name: GameObject
     Path: Assets\ABRes\Prefabs\UI\GameObject
     Des: "\u6D4B\u8BD5UI"
-    Layer: Default
-    Tag: Util
-  - ID: 1500001
-    name: ExcelDataMgr
-    Path: Assets\ABRes\Prefabs\Util\ExcelDataMgr
-    Des: "\u6570\u636E\u8868\u6570\u636E"
-    Layer: Default
-    Tag: Util
-  - ID: 1500002
-    name: LangSetting
-    Path: Assets\ABRes\Prefabs\Util\LangSetting
-    Des: "\u591A\u8BED\u8A00"
     Layer: Default
     Tag: Util

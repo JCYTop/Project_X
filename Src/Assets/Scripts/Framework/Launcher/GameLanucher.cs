@@ -48,14 +48,14 @@ public class GameLanucher : MonoBehaviour
         GlobalMediator.TaskIsFinish = true;
         isShowLog = false;
     }
-
-    private void OnGUI()
-    {
-        if (isShowLog)
-        {
-            int width = Screen.width;
-            int height = Screen.height;
-            GUI.TextField(new Rect(width / 2, height / 2, 800, 200), onGUIStr, new GUIStyle {fontSize = 24});
-        }
-    }
+//
+//    private void OnGUI()
+//    {
+//        if (isShowLog)
+//        {
+//            int width = Screen.width;
+//            int height = Screen.height;
+//            GUI.TextField(new Rect(width / 2, height / 2, 800, 200), onGUIStr, new GUIStyle {fontSize = 24});
+//        }
+//    }
 }

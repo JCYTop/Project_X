@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-public class UIUtil
+public static class UIUtil
 {
     /// <summary>
     /// 清除父节点下的所有子物体
@@ -43,7 +43,7 @@ public class UIUtil
     /// <returns>返回清除物体的组合</returns>
     public static GameObject[] CleanAllChild(int ID)
     {
-        return CleanAllChild(ScenesMgr.GetGOInfo(ID).gameObject);
+        return CleanAllChild(ScenesCenter.GetGOInfo(ID).gameObject);
     }
 
     /// <summary>

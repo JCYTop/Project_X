@@ -8,6 +8,7 @@
 // -  独立游戏开发
 //======================================================
 
+using System;
 using System.Text;
 using UnityEngine;
 
@@ -33,7 +34,7 @@ public class SystemCheckTask : ILanucherTask
     /// </summary>
     private void GetBaseInfo()
     {
-        string[] info = new string[]
+        var info = new string[]
         {
             "设备模型 : " + SystemInfo.deviceModel,
             "设备名称 : " + SystemInfo.deviceName,
@@ -50,14 +51,38 @@ public class SystemCheckTask : ILanucherTask
             "显存大小MB(int) : " + SystemInfo.graphicsMemorySize,
             "显卡是否支持多线程渲染(bool) : " + SystemInfo.graphicsMultiThreaded,
             "支持的渲染目标数量(int) : " + SystemInfo.supportedRenderTargetCount,
+            "显示器分辨率：" + string.Format("{0} * {1}", Screen.width, Screen.height),
         };
-        StringBuilder sb = new StringBuilder();
+        var sb = new StringBuilder();
         foreach (var data in info)
         {
             sb.Append(data + " || ");
         }
 
         LogUtil.Log(sb.ToString(), LogType.TaskLog);
+        //TODO 后面插件保存，暂时方案，以设备默认分辨率为1 
+        try
+        {
+            var with = SettingDataMgr.Instance().GetSettingInt(SettingDataMgr.ResolutionWidth);
+            var height = SettingDataMgr.Instance().GetSettingInt(SettingDataMgr.ResolutionHeight);
+            var frame = SettingDataMgr.Instance().GetSettingInt(SettingDataMgr.FrameRate);
+            var full = SettingDataMgr.Instance().GetSettingInt(SettingDataMgr.Fullscreen);
+            //TODO 根据内置设置设定来
+            if (false)
+            {
+                MachineUtil.Resolution(with, height, Convert.ToBoolean(full), frame);
+            }
+            else
+            {
+                MachineUtil.Resolution((int) MachineUtil.ScreenWH.x, (int) MachineUtil.ScreenWH.y, Convert.ToBoolean(full), frame);
+            }
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            throw;
+        }
+
         CalcTaskCount();
     }
 }

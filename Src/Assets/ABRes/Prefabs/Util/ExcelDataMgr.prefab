@@ -65,6 +65,7 @@ MonoBehaviour:
   resID: 0
   globalID: 0
   PointTrans: []
+  Config: []
 --- !u!114 &6524474057141994584
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -78,3 +79,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   language: {fileID: 11400000, guid: 2edd3f4ef91ab5641a57077d3847b2b5, type: 2}
+  machine: {fileID: 11400000, guid: 43a0d98e386ebfc429a645b05fd736bc, type: 2}

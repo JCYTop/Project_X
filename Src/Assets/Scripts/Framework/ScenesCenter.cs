@@ -2,7 +2,7 @@
 ----------------------------------
  *Copyright(C) 2019 by IndieGame
  *All rights reserved.
- *FileName:     ScenesMgr
+ *FileName:     ScenesCenter
  *Author:       @JCY
  *Version:      0.0.1
  *AuthorEmail:  jcyemail@qq.com
@@ -20,7 +20,7 @@ using UnityEngine;
 /// <summary>
 /// 场景实例化出物体的管理
 /// </summary>
-public class ScenesMgr
+public static class ScenesCenter
 {
     #region 字段
 
@@ -61,6 +61,8 @@ public class ScenesMgr
 
     #region 属性
 
+    public static Camera MainCamera { set; get; }
+
     public static int GlobalID
     {
         get
@@ -69,10 +71,6 @@ public class ScenesMgr
             return globalIDLibrary;
         }
     }
-
-    #endregion
-
-    #region  GameObject物体 
 
     public static Dictionary<int, ObjectBase> GameObjectDic
     {
@@ -87,7 +85,22 @@ public class ScenesMgr
         get => objectDic.Count;
     }
 
-    /// <summary>p
+    public static Dictionary<int, UIBase> UIDic
+    {
+        get => uiDic;
+    }
+
+    /// <summary>
+    /// 包含数量
+    /// </summary>
+    public static int UIDicCount
+    {
+        get => uiDic.Count;
+    }
+
+    #endregion
+
+    /// <summary>
     /// 添加GO信息
     /// </summary>
     /// <param name="globalID">ResID</param>
@@ -150,22 +163,6 @@ public class ScenesMgr
         return default;
     }
 
-    #endregion
-
-    #region  UI
-
-    public static Dictionary<int, UIBase> UIDic
-    {
-        get => uiDic;
-    }
-
-    /// <summary>
-    /// 包含数量
-    /// </summary>
-    public static int UIDicCount
-    {
-        get => uiDic.Count;
-    }
 
     /// <summary>
     /// 添加UI信息
@@ -228,8 +225,6 @@ public class ScenesMgr
         LogUtil.LogError("没有存在相应的ID");
         return default;
     }
-
-    #endregion
 
     /// <summary>
     /// 调用注册

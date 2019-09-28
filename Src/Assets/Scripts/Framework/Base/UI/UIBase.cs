@@ -10,7 +10,7 @@ public class UIBase : ObjectBase
 
     public override void Init()
     {
-        ScenesMgr.AddUIInfo<UIType>(globalID, (int) ShowType, this);
+        ScenesCenter.AddUIInfo<UIType>(globalID, (int) ShowType, this);
     }
 
     public override void Enable()
@@ -42,7 +42,7 @@ public class UIBase : ObjectBase
             }
         }
 
-        ScenesMgr.RemoveUIInfo<UIType>(globalID, (int) ShowType);
+        ScenesCenter.RemoveUIInfo<UIType>(globalID, (int) ShowType);
     }
 
     public override void Refresh(params object[] args)

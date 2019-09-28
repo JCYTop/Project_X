@@ -13,9 +13,15 @@ using UnityEngine;
 public class ExcelDataMgr : MonoSingleton<ExcelDataMgr>
 {
     [SerializeField, Header("语言配置表")] private LanguageSheet language;
+    [SerializeField, Header("机器配置表")] private MachineSheet machine;
 
     public LanguageSheet Language
     {
-        get { return language; }
+        get => language;
+    }
+
+    public MachineSheet Machine
+    {
+        get => machine;
     }
 }
