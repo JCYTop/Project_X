@@ -31,3 +31,15 @@ MonoBehaviour:
     Des: "\u6D4B\u8BD5UI"
     Layer: Default
     Tag: Util
+  - ID: 1500001
+    name: ExcelDataMgr
+    Path: Assets\ABRes\Prefabs\Util\ExcelDataMgr
+    Des: ExcelDataMgr
+    Layer: Default
+    Tag: Util
+  - ID: 1500002
+    name: LangSetting
+    Path: Assets\ABRes\Prefabs\Util\LangSetting
+    Des: LangSetting
+    Layer: Default
+    Tag: Util

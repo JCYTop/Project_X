@@ -471,6 +471,175 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!1 &1361548937
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1361548941}
+  - component: {fileID: 1361548940}
+  - component: {fileID: 1361548939}
+  - component: {fileID: 1361548938}
+  m_Layer: 0
+  m_Name: Easy Save 3 Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1361548938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1361548937}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9107aee0ced90422da95f0b31680501f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: 7f6bb1c5-f074-4374-8eb3-e38eb4a49366
+  saveEvent: 1
+  loadEvent: 1
+  settings:
+    _location: 0
+    path: SaveData.es3
+    encryptionType: 0
+    encryptionPassword: password
+    directory: 0
+    format: 0
+    bufferSize: 2048
+    typeChecking: 1
+    safeReflection: 1
+    memberReferenceMode: 0
+    referenceMode: 2
+    assemblyNames:
+    - Assembly-CSharp
+    - Assembly-CSharp-firstpass
+    showAdvancedSettings: 0
+  autoSaves: []
+--- !u!114 &1361548939
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1361548937}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a83408fcc9044c4fbc7e5d09a369ab6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  openReferences: 0
+  openPrefabs: 0
+  idRef:
+    _Keys: 670ab89eb222eb58ad91772361fce451ac7d458c5b0ba91d7c47324fcea768082312b536e90623047887491397fe1f0797a4befe67c99a5b619b1af9553b27530580feb0b952975ba6bffb1daa424a7ed9d4198c9a989058785ad64eeb29ae4cae9d0d17ff6f4e16c3e55bd93b48f95ce6992180219ab961f0a8d7ecd71ab82f93b890f2cbcc8147dccfaf800b966c3fabcd97adf7d2d548a990f857b8c511226274940c2613d819e826a20fb5c59379151797a5b16627648ed94a3ad3298f5e1f2e1e7fd58799405a4f3a2ed03a6c6edc8dbc5ed2938f04b3d081b33661ba11b5012de4e4124e727e564b622bf994539324e99e1911ce4d41dccd5af6b288440a4ce3d167515236c2b523d6210dcf539c2bdfed88e4075cce205df8ba0b8330e09059de15c2eb1b762060cf35a56f4f54de0ade6d893224ba78fbb80ca6844acd0d096f4b0ec12740c364a844d7917290ada5db01a5c3555e34998dbea4282f64eafed76300fc62a1319ea9248ae06d0a6e47b94b5f4b73d05ecc80a84fe56564cabba52746f1704fbcc430f9e6cf2dabd467d3131e853cc98d573d3383f50f18040def4585953b8428957064e485168f9fd4d4e7125146bb812366114bc234c6b448fdf4be7231975ca8c34c0a5e51ed92526c50ded729565434c4612e2a37676137192c820a2e2ca26a44ba15924f23d2797ff855e35a748eacb70dc86c6833705cead244246a882499f3491ce46be783a28fb4aa3e117fdda69ed552210a
+    _Values:
+    - {fileID: 3300000, guid: 4e6ba3c65f7c842c8a02e74fd881892e, type: 3}
+    - {fileID: 3300000, guid: 5ee4dfe4400a04694b3cfbccb1197140, type: 3}
+    - {fileID: 2048071830}
+    - {fileID: 2048071831}
+    - {fileID: 3300000, guid: 4e947329c18ae4fa3bb60de4776da91e, type: 3}
+    - {fileID: 1976946062}
+    - {fileID: 6, guid: 0000000000000000f000000000000000, type: 0}
+    - {fileID: 7, guid: 0000000000000000f000000000000000, type: 0}
+    - {fileID: 11500000, guid: 6545aad0035a344548ddb07a79fe86e1, type: 3}
+    - {fileID: 11500000, guid: fe125b6677a78429aadfceed9154db9a, type: 3}
+    - {fileID: 2100000, guid: 5f0c44107d58c4038993770b8842dfd9, type: 2}
+    - {fileID: 2100000, guid: e90019e8cc8554d82b65f68e28fb006d, type: 2}
+    - {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+    - {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+    - {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+    - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
+    - {fileID: 2100000, guid: b9df93c7d0cb44561989035cfdbef13d, type: 2}
+    - {fileID: 11500000, guid: c2c4e29bb87244f5898a5cc750fe568a, type: 3}
+    - {fileID: 11500000, guid: 8de2c46c96a0d43459d9adbaacf7f885, type: 3}
+    - {fileID: 576780881}
+    - {fileID: 1976946060}
+    - {fileID: 665129121}
+    - {fileID: 665129122}
+    - {fileID: 665129123}
+    - {fileID: 871934394}
+    - {fileID: 871934395}
+    - {fileID: 871934398}
+    - {fileID: 871934396}
+    - {fileID: 576780876}
+    - {fileID: 576780877}
+    - {fileID: 576780880}
+    - {fileID: 576780878}
+    - {fileID: 1618494687}
+    - {fileID: 1976946059}
+    - {fileID: 100000, guid: 5ee4dfe4400a04694b3cfbccb1197140, type: 3}
+    - {fileID: 100000, guid: 4e6ba3c65f7c842c8a02e74fd881892e, type: 3}
+    - {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+    - {fileID: 2048071828}
+    - {fileID: 6500000, guid: 5ee4dfe4400a04694b3cfbccb1197140, type: 3}
+    - {fileID: 400000, guid: 4e6ba3c65f7c842c8a02e74fd881892e, type: 3}
+    - {fileID: 1976946061}
+    - {fileID: 1976946064}
+    - {fileID: 2048071826}
+    - {fileID: 2048071829}
+    - {fileID: 400000, guid: 5ee4dfe4400a04694b3cfbccb1197140, type: 3}
+    - {fileID: 100000, guid: 4e947329c18ae4fa3bb60de4776da91e, type: 3}
+    - {fileID: 1877287383}
+    - {fileID: 1877287384}
+    - {fileID: 1877287385}
+    - {fileID: 871934400}
+    - {fileID: 1030674254}
+    - {fileID: 1030674255}
+    - {fileID: 1030674256}
+    - {fileID: 2048071827}
+    - {fileID: 1618494685}
+    - {fileID: 1618494686}
+    - {fileID: 1976946063}
+    - {fileID: 13600000, guid: 4e6ba3c65f7c842c8a02e74fd881892e, type: 3}
+    - {fileID: 2300000, guid: 5ee4dfe4400a04694b3cfbccb1197140, type: 3}
+    - {fileID: 11400000, guid: 5ee4dfe4400a04694b3cfbccb1197140, type: 3}
+    - {fileID: 2300000, guid: 4e6ba3c65f7c842c8a02e74fd881892e, type: 3}
+    - {fileID: 11400000, guid: 4e6ba3c65f7c842c8a02e74fd881892e, type: 3}
+    - {fileID: 400000, guid: 4e947329c18ae4fa3bb60de4776da91e, type: 3}
+    - {fileID: 13500000, guid: 4e947329c18ae4fa3bb60de4776da91e, type: 3}
+    - {fileID: 11400000, guid: 4e947329c18ae4fa3bb60de4776da91e, type: 3}
+    - {fileID: 2300000, guid: 4e947329c18ae4fa3bb60de4776da91e, type: 3}
+    - {fileID: 871934397}
+    - {fileID: 576780879}
+  prefabs: []
+--- !u!114 &1361548940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1361548937}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8714d999c5ae749538494c1347e5a3ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  message: 'The Easy Save 3 Manager is required in any scenes which use Easy Save,
+    and is automatically added to your scene when you enter Play mode.
+
+
+    To stop this from automatically being added to your scene, go to ''Window > Easy
+    Save 3 > Settings'' and deselect the ''Auto Add Manager to Scene'' checkbox.'
+--- !u!4 &1361548941
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1361548937}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1618494685
 GameObject:
   m_ObjectHideFlags: 0

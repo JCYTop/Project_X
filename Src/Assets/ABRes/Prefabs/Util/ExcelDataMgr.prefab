@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5834672036963611575}
   - component: {fileID: 1527100429836616126}
-  - component: {fileID: 1746918870457274471}
+  - component: {fileID: 8750331309921104885}
   - component: {fileID: 6524474057141994584}
   m_Layer: 0
   m_Name: ExcelDataMgr
@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AssetName: 
---- !u!114 &1746918870457274471
+--- !u!114 &8750331309921104885
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -55,12 +55,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 652732097153272055}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 358bf112abad8754b8b321520bef8ad9, type: 3}
+  m_Script: {fileID: 11500000, guid: 3e81a0163e9f4bd180817d9e590605e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   objectLayer: 0
   objectTag: 8
-  Des: "\u6570\u636E\u8868\u6570\u636E"
+  Des: ExcelDataMgr
   IsPreLoad: 0
   resID: 0
   globalID: 0

@@ -98,11 +98,11 @@ public static class LogUtil
 
         if (isError)
         {
-            Debug.LogError(str + "                                " + TimeUtil.LocalNow);
+            Debug.LogError(str + "                                |||--->" + TimeUtil.LocalNow);
         }
         else
         {
-            Debug.Log(str + "                                " + TimeUtil.LocalNow);
+            Debug.Log(str + "                                |||--->" + TimeUtil.LocalNow);
         }
     }
 }

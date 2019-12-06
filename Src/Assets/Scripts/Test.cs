@@ -22,17 +22,12 @@ public class Test : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        intli.Insert(1);
-        intli.Insert(10);
-        intli.Insert(2);
-        intli.Insert(5);
-        intli.Insert(17);
-        intli.PrintAll();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
+//        intli.Insert(1);
+//        intli.Insert(10);
+//        intli.Insert(2);
+//        intli.Insert(5);
+//        intli.Insert(17);
+//        intli.PrintAll();
     }
 }
 

@@ -63,10 +63,10 @@ public class SystemCheckTask : ILanucherTask
         //TODO 后面插件保存，暂时方案，以设备默认分辨率为1 
         try
         {
-            var with = SettingDataMgr.Instance().GetSettingInt(SettingDataMgr.ResolutionWidth);
-            var height = SettingDataMgr.Instance().GetSettingInt(SettingDataMgr.ResolutionHeight);
-            var frame = SettingDataMgr.Instance().GetSettingInt(SettingDataMgr.FrameRate);
-            var full = SettingDataMgr.Instance().GetSettingInt(SettingDataMgr.Fullscreen);
+            var with = SaveDataMgr.Instance().GetSaveData<int>(SaveEnum.ResolutionWidth);
+            var height = SaveDataMgr.Instance().GetSaveData<int>(SaveEnum.ResolutionHeight);
+            var frame = SaveDataMgr.Instance().GetSaveData<int>(SaveEnum.FrameRate);
+            var full = SaveDataMgr.Instance().GetSaveData<int>(SaveEnum.Fullscreen);
             //TODO 根据内置设置设定来
             if (false)
             {

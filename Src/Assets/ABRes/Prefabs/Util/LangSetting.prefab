@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5834672036963611575}
   - component: {fileID: 1527100429836616126}
-  - component: {fileID: 1746918870457274471}
+  - component: {fileID: 7079792757962630141}
   - component: {fileID: 5471783834159423587}
   m_Layer: 0
   m_Name: LangSetting
@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AssetName: 
---- !u!114 &1746918870457274471
+--- !u!114 &7079792757962630141
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -55,16 +55,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 652732097153272055}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 358bf112abad8754b8b321520bef8ad9, type: 3}
+  m_Script: {fileID: 11500000, guid: 3e81a0163e9f4bd180817d9e590605e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   objectLayer: 0
   objectTag: 8
-  Des: "\u591A\u8BED\u8A00"
+  Des: LangSetting
   IsPreLoad: 0
   resID: 0
   globalID: 0
   PointTrans: []
+  Config: []
 --- !u!114 &5471783834159423587
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -77,4 +78,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96740733c05710a4188eec3a1c7e82db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wordText: {fileID: 0}
