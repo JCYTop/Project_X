@@ -81,13 +81,13 @@ public class DBLinkedList<T>
     }
 
     /// <summary>
-    /// LRU根据1.75被来进行删除
+    /// LRU根据条件删除
     /// </summary>
     public bool IsLRUbyCapacity
     {
         get
         {
-            if (Math.Ceiling(capacity * 1.75f) < Count)
+            if (Math.Ceiling(capacity * 1.25f) < Count)
             {
                 return true;
             }
@@ -97,13 +97,13 @@ public class DBLinkedList<T>
     }
 
     /// <summary>
-    /// LFU根据1：1来删除
+    /// LFU根据条件删除
     /// </summary>
     public bool IsLFUbyCapacity
     {
         get
         {
-            if (capacity <= Count)
+            if (capacity < Count)
             {
                 return true;
             }
@@ -614,13 +614,12 @@ public class DBLinkedList<T>
         var index = IndexOf(value);
         if (index > 0)
         {
-            //直接索引添加
             var node = this[index];
             AddUseCount(node);
         }
         else if (index == -1)
         {
-            if (IsLFUbyCapacity)
+            if (!IsLFUbyCapacity)
             {
                 AddBefore(value, 0);
             }
