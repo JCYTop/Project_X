@@ -33,15 +33,14 @@ public class UIRootMgr : MonoBehaviour
     private List<UIBase> rootUI;
     private Stack<UIBase> stackUI;
     private Stack<UIBase> topUI;
-    private DbLinkedList<UIBase> UILinkedList;
+    private DBLinkedList<UIBase> UILinkedList;
 
     [BoxGroup("RootUI Lists")] [TableList] public List<UIBase> rootUIShow = new List<UIBase>(1 << 4);
 
     [BoxGroup("StackUI Lists")] [TableList]
     public List<UIBase> stackUIShow = new List<UIBase>(1 << 4);
 
-    [BoxGroup("TopUI Lists")] [TableList]
-    public List<UIBase> topUIShow = new List<UIBase>(1 << 2);
+    [BoxGroup("TopUI Lists")] [TableList] public List<UIBase> topUIShow = new List<UIBase>(1 << 2);
 
     [BoxGroup("UILinkedList Lists")] [TableList]
     public List<UIBase> UILinkedListShow = new List<UIBase>(1 << 2);
@@ -127,7 +126,7 @@ public class UIRootMgr : MonoBehaviour
         rootUI = new List<UIBase>(1 << 4);
         stackUI = new Stack<UIBase>(1 << 4);
         topUI = new Stack<UIBase>(1 << 2);
-        UILinkedList = new DbLinkedList<UIBase>(new DbNode<UIBase>(MainUIBase), 1 << 2);
+        UILinkedList = new DBLinkedList<UIBase>(new DBNode<UIBase>(MainUIBase), 1 << 3);
     }
 
     private void Start()
@@ -164,43 +163,14 @@ public class UIRootMgr : MonoBehaviour
 
         UIUtil.SetParent(ui.gameObject, go.gameObject);
         //可根据当前的数量进行场景中UI删除（UI原则不删除只是隐藏，但如果UI过多可以删除。原则LRU策略），此处相当于标记垃圾UI等待处理
-        if (UILinkedList.Contains(ui))
-        {
-            UILinkedList.LRUSort(ui);
-        }
-        else
-        {
-            UILinkedList.AddBefore(ui, 0);
-        }
-
+        UILinkedList.LRUSort(ui);
+        //Main永远置于优先
         UILinkedList.LRUSort(MainUIBase);
-
-        if (UILinkedList.IsHandlebyCapacity)
+        if (UILinkedList.IsLRUbyCapacity)
         {
             UIUtil.DestroyGO(UILinkedList.LRUSortRemove());
         }
 
         UILinkedListShow = UILinkedList.ToList();
-    }
-
-    public UIBase CloseUIBase(UIBase ui)
-    {
-        UIBase tmp = null;
-        switch (ui.ShowType)
-        {
-            case UIType.UIRoot:
-                tmp = ui;
-                rootUI.Remove(ui);
-                break;
-            case UIType.UIStack:
-                tmp = stackUI.Pop();
-                break;
-            case UIType.UITop:
-                tmp = topUI.Pop();
-                break;
-        }
-
-
-        return tmp;
     }
 }

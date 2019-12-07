@@ -2,7 +2,7 @@
 ----------------------------------
  *Copyright(C) 2019 by IndieGame
  *All rights reserved.
- *FileName:     DbLinkList
+ *FileName:     DBLinkList
  *Author:       @JCY
  *Version:      0.0.1
  *AuthorEmail:  jcyemail@qq.com
@@ -20,12 +20,30 @@ using System.Text;
 /// <summary>
 /// 双向链表
 /// </summary>
-public class DbLinkedList<T>
+public class DBLinkedList<T>
 {
-    private DbNode<T> head;
+    private DBNode<T> head;
+
+    /// <summary>
+    /// 记录最小使用值
+    /// </summary>
+    private int minUseCount = int.MaxValue;
+
+    private DBNode<T> minUseNode = null;
+
+    /// <summary>
+    /// 记录最大使用值
+    /// </summary>
+    private int maxUseCount = int.MinValue;
+
+    private DBNode<T> maxUseNode = null;
+
+    /// <summary>
+    /// 容量
+    /// </summary>
     private int capacity;
 
-    public DbNode<T> Head
+    public DBNode<T> Head
     {
         get { return head; }
         set { head = value; }
@@ -45,13 +63,27 @@ public class DbLinkedList<T>
             {
                 length++;
                 ptr = ptr.Next;
+                if (ptr.UseCount > maxUseCount)
+                {
+                    maxUseCount = ptr.UseCount;
+                    maxUseNode = ptr;
+                }
+
+                if (ptr.UseCount < minUseCount)
+                {
+                    minUseCount = ptr.UseCount;
+                    minUseNode = ptr;
+                }
             }
 
             return length;
         }
     }
 
-    public bool IsHandlebyCapacity
+    /// <summary>
+    /// LRU根据1.75被来进行删除
+    /// </summary>
+    public bool IsLRUbyCapacity
     {
         get
         {
@@ -64,19 +96,35 @@ public class DbLinkedList<T>
         }
     }
 
+    /// <summary>
+    /// LFU根据1：1来删除
+    /// </summary>
+    public bool IsLFUbyCapacity
+    {
+        get
+        {
+            if (capacity <= Count)
+            {
+                return true;
+            }
+
+            return false;
+        }
+    }
+
     #region 构造函数
 
-    public DbLinkedList()
+    public DBLinkedList()
     {
         Head = null;
     }
 
-    public DbLinkedList(DbNode<T> node)
+    public DBLinkedList(DBNode<T> node)
     {
         Head = node;
     }
 
-    public DbLinkedList(DbNode<T> node, int capacity)
+    public DBLinkedList(DBNode<T> node, int capacity)
     {
         Head = node;
         this.capacity = capacity;
@@ -89,27 +137,27 @@ public class DbLinkedList<T>
     /// </summary>
     /// <param name="index"></param>
     /// <returns></returns>
-    public T this[int index]
+    public DBNode<T> this[int index]
     {
         get { return GetItemAt(index); }
     }
 
-    private T GetItemAt(int index)
+    private DBNode<T> GetItemAt(int index)
     {
         //判空
         if (IsEmpty())
         {
             LogUtil.Log(string.Format("链表为空"), LogType.NormalLog);
-            return default(T);
+            return null;
         }
 
-        var ptr = new DbNode<T>();
+        var ptr = new DBNode<T>();
         ptr = Head;
 
         // 如果是第一个node
         if (0 == index)
         {
-            return ptr.Data;
+            return ptr;
         }
 
         var j = 0;
@@ -119,12 +167,12 @@ public class DbLinkedList<T>
             ptr = ptr.Next;
             if (j == index)
             {
-                return ptr.Data;
+                return ptr;
             }
         }
 
         LogUtil.Log(string.Format("节点并不存在"), LogType.NormalLog);
-        return default(T);
+        return null;
     }
 
     /// <summary>
@@ -149,22 +197,23 @@ public class DbLinkedList<T>
     /// </summary>
     /// <param name="item"></param>
     /// <param name="index"></param>
-    public void AddAfter(T item, int index)
+    public DBNode<T> AddAfter(T item, int index)
     {
         if (IsEmpty() || index < 0)
         {
             LogUtil.Log(string.Format("链表为空或者此节点不能进行连接"), LogType.NormalLog);
-            return;
+            return default(DBNode<T>);
         }
 
+        DBNode<T> newNode = default(DBNode<T>);
         if (index == 0) //在头之后插入元素
         {
-            var newNode = new DbNode<T>(item);
+            newNode = new DBNode<T>(item);
             newNode.Next = Head.Next;
             Head.Next.Prev = newNode;
             Head.Next = newNode;
             newNode.Prev = Head;
-            return;
+            return newNode;
         }
 
         var ptr = Head; //p指向head
@@ -176,7 +225,7 @@ public class DbLinkedList<T>
             j++;
             if (j == index)
             {
-                var newNode = new DbNode<T>(item);
+                newNode = new DBNode<T>(item);
                 newNode.Next = null;
                 if (ptr.Next != null)
                 {
@@ -186,14 +235,14 @@ public class DbLinkedList<T>
 
                 newNode.Prev = ptr;
                 ptr.Next = newNode;
-                return;
             }
             else
             {
                 LogUtil.Log(string.Format("此节点不能进行连接"), LogType.NormalLog);
-                return;
             }
         }
+
+        return newNode;
     }
 
     /// <summary>
@@ -201,25 +250,26 @@ public class DbLinkedList<T>
     /// </summary>
     /// <param name="item"></param>
     /// <param name="index"></param>
-    public void AddBefore(T item, int index)
+    public DBNode<T> AddBefore(T item, int index)
     {
         if (IsEmpty() || index < 0)
         {
             LogUtil.Log(string.Format("链表为空或者此节点不能进行连接", LogType.NormalLog));
-            return;
+            return default(DBNode<T>);
         }
 
+        DBNode<T> newNode = default(DBNode<T>);
         if (index == 0) //在头之前插入元素
         {
-            var newNode = new DbNode<T>(item);
+            newNode = new DBNode<T>(item);
             newNode.Next = Head; //把头改成第二个元素
             Head.Prev = newNode;
             Head = newNode; //把新元素设置为头
-            return;
+            return newNode;
         }
 
         var ptr = Head;
-        var d = new DbNode<T>();
+        var d = new DBNode<T>();
         var j = 0;
 
         while (ptr.Next != null && j < index)
@@ -229,35 +279,37 @@ public class DbLinkedList<T>
             j++;
             if (ptr.Next == null) //在最后节点后插入，即AddLast
             {
-                var newNode = new DbNode<T>(item);
+                newNode = new DBNode<T>(item);
                 ptr.Next = newNode;
                 newNode.Prev = ptr;
                 newNode.Next = null; //尾节点指向空
             }
             else if (j == index) //插到中间
             {
-                var newNode = new DbNode<T>(item);
+                newNode = new DBNode<T>(item);
                 d.Next = newNode;
                 newNode.Prev = d;
                 newNode.Next = ptr;
                 ptr.Prev = newNode;
             }
         }
+
+        return newNode;
     }
 
     /// <summary>
     /// 在链表最后插入node
     /// </summary>
     /// <param name="item"></param>
-    public void AddLast(T item)
+    public DBNode<T> AddLast(T item)
     {
-        var newNode = new DbNode<T>(item);
-        var ptr = new DbNode<T>();
+        var newNode = new DBNode<T>(item);
+        var ptr = new DBNode<T>();
 
         if (Head == null)
         {
             Head = newNode;
-            return;
+            return newNode;
         }
 
         ptr = Head; //如果head不为空，head就赋值给第一个节点
@@ -268,6 +320,7 @@ public class DbLinkedList<T>
 
         ptr.Next = newNode;
         newNode.Prev = ptr;
+        return newNode;
     }
 
     /// <summary>
@@ -283,7 +336,7 @@ public class DbLinkedList<T>
             return default(T);
         }
 
-        var q = new DbNode<T>();
+        var q = new DBNode<T>();
         if (0 == index)
         {
             q = Head;
@@ -337,7 +390,7 @@ public class DbLinkedList<T>
             return -1;
         }
 
-        var ptr = new DbNode<T>();
+        var ptr = new DBNode<T>();
         ptr = Head;
         var index = 0;
         while (ptr.Next != null && !ptr.Data.Equals(value)) //查找value相同的item
@@ -366,9 +419,9 @@ public class DbLinkedList<T>
     /// </summary>
     public void Reverse()
     {
-        var tmpList = new DbLinkedList<T>();
+        var tmpList = new DBLinkedList<T>();
         var ptr = this.Head;
-        tmpList.Head = new DbNode<T>(ptr.Data);
+        tmpList.Head = new DBNode<T>(ptr.Data);
         ptr = ptr.Next;
 
         while (ptr != null)
@@ -405,7 +458,7 @@ public class DbLinkedList<T>
     /// </summary>
     /// <param name="index"></param>
     /// <returns></returns>
-    private DbNode<T> GetNodeAt(int index)
+    private DBNode<T> GetNodeAt(int index)
     {
         if (IsEmpty())
         {
@@ -413,7 +466,7 @@ public class DbLinkedList<T>
             return null;
         }
 
-        var ptr = new DbNode<T>();
+        var ptr = new DBNode<T>();
         ptr = this.Head;
 
         if (0 == index)
@@ -443,18 +496,18 @@ public class DbLinkedList<T>
     /// 最先节点数据
     /// </summary>
     /// <returns></returns>
-    public T FirstData()
+    public DBNode<T> FirstData()
     {
-        return GetItemAt(0);
+        return this[0];
     }
 
     /// <summary>
     /// 最后节点数据
     /// </summary>
     /// <returns></returns>
-    public T LastData()
+    public DBNode<T> LastData()
     {
-        return GetItemAt(Count - 1);
+        return this[Count - 1];
     }
 
     /// <summary>
@@ -462,7 +515,7 @@ public class DbLinkedList<T>
     /// </summary>
     public void Print()
     {
-        var current = new DbNode<T>();
+        var current = new DBNode<T>();
         current = Head;
         LogUtil.Log(string.Format(current.Data + ","), LogType.NormalLog);
         while (current.Next != null)
@@ -475,7 +528,7 @@ public class DbLinkedList<T>
     public List<T> ToList()
     {
         var list = new List<T>();
-        var current = new DbNode<T>();
+        var current = new DBNode<T>();
         current = Head;
         list.Add(current.Data);
         while (current.Next != null)
@@ -506,7 +559,7 @@ public class DbLinkedList<T>
     /// </summary>
     /// <param name="tmp"></param>
     /// <exception cref="NotImplementedException"></exception>
-    public DbNode<T> LRUSort(T value)
+    public DBNode<T> LRUSort(T value)
     {
         var index = IndexOf(value);
         if (index > 0)
@@ -516,7 +569,7 @@ public class DbLinkedList<T>
         }
         else if (index == -1)
         {
-            LogUtil.LogError(String.Format("请检查是否存在节点"));
+            AddBefore(value, 0);
         }
 
         return head;
@@ -540,49 +593,102 @@ public class DbLinkedList<T>
         startNode.Next = null;
         return tmp;
     }
+
+    /// <summary>
+    /// 增加使用次数
+    /// </summary>
+    /// <param name="count"></param>
+    private int AddUseCount(DBNode<T> node, int count = 1)
+    {
+        node.UseCount += 1;
+        return node.UseCount;
+    }
+
+    /// <summary>
+    /// 最近不经常使用(使用次数删除)策略  
+    /// </summary>
+    /// <param name="value"></param>
+    /// <returns></returns>
+    public DBNode<T> LFUSort(T value)
+    {
+        var index = IndexOf(value);
+        if (index > 0)
+        {
+            //直接索引添加
+            var node = this[index];
+            AddUseCount(node);
+        }
+        else if (index == -1)
+        {
+            if (IsLFUbyCapacity)
+            {
+                AddBefore(value, 0);
+            }
+            else
+            {
+                //先删除最低引用个数点，在添加最新的点
+                index = IndexOf(minUseNode.Data);
+                RemoveAt(index);
+                AddBefore(value, 0);
+            }
+        }
+
+        return head;
+    }
 }
 
 /// <summary>
 /// 双向链表的节点
 /// </summary>
 /// <typeparam name="T">类型</typeparam>
-public class DbNode<T>
+public class DBNode<T>
 {
     #region 字段
 
     private T data;
-    private DbNode<T> preData;
-    private DbNode<T> nextData;
+    private DBNode<T> preData;
+    private DBNode<T> nextData;
+
+    /// <summary>
+    /// 使用的次数，默认为0开始
+    /// </summary>
+    private int useCount;
 
     #endregion
 
     #region 属性
+
+    public int UseCount
+    {
+        set => useCount = value;
+        get => useCount;
+    }
 
     /// <summary>
     /// 节点的值
     /// </summary>
     public T Data
     {
-        get { return data; }
-        set { data = value; }
+        get => data;
+        set => data = value;
     }
 
     /// <summary>
     /// 前驱节点
     /// </summary>
-    public DbNode<T> Prev
+    public DBNode<T> Prev
     {
-        get { return preData; }
-        set { preData = value; }
+        get => preData;
+        set => preData = value;
     }
 
     /// <summary>
     /// 后继结点
     /// </summary>
-    public DbNode<T> Next
+    public DBNode<T> Next
     {
-        get { return nextData; }
-        set { nextData = value; }
+        get => nextData;
+        set => nextData = value;
     }
 
     #endregion
@@ -595,11 +701,12 @@ public class DbNode<T>
     /// <param name="data"></param>
     /// <param name="preData"></param>
     /// <param name="nextData"></param>
-    public DbNode(T data, DbNode<T> preData, DbNode<T> nextData)
+    public DBNode(T data, DBNode<T> preData, DBNode<T> nextData)
     {
         this.data = data;
         this.preData = preData;
         this.nextData = nextData;
+        useCount = 0;
     }
 
     /// <summary>
@@ -607,34 +714,38 @@ public class DbNode<T>
     /// </summary>
     /// <param name="data"></param>
     /// <param name="preData"></param>
-    public DbNode(T data, DbNode<T> preData)
+    public DBNode(T data, DBNode<T> preData)
     {
         this.data = data;
         this.preData = preData;
         this.nextData = null; //结尾处的node
+        useCount = 0;
     }
 
-    public DbNode(DbNode<T> nextData)
+    public DBNode(DBNode<T> nextData)
     {
         //哨兵
         this.data = default(T);
         this.nextData = nextData;
         this.preData = null;
+        useCount = 0;
     }
 
-    public DbNode(T data)
+    public DBNode(T data)
     {
         this.data = data;
         this.preData = null;
         this.nextData = null;
+        useCount = 0;
     }
 
-    public DbNode()
+    public DBNode()
     {
         //哨兵
         this.data = default(T);
         this.preData = null;
         this.nextData = null;
+        useCount = 0;
     }
 
     #endregion

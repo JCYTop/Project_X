@@ -3,14 +3,64 @@ using Sirenix.OdinInspector;
 
 public class UIBase : ObjectBase
 {
-    [BoxGroup("UI属性设置"), EnumPaging] public UIType ShowType = UIType.UIStack;
+    [BoxGroup("UI属性设置"), EnumPaging] private UIType showType = UIType.UIStack;
+    [BoxGroup("UI属性设置"), EnumPaging] private UIState uiState = UIState.None;
 
     [BoxGroup("UI属性设置"), InfoBox("是否可以重复")]
     public bool IsRepeat = false;
 
+    private UIActionBase[] actions;
+
+    public UIType ShowType
+    {
+        get => showType;
+    }
+
+    public UIState UIState
+    {
+        get => uiState;
+    }
+
+    /// <summary>
+    /// 外部处理UI状态显示
+    /// </summary>
+    /// <param name="state"></param>
+    public void HandleUIState(UIState state)
+    {
+        switch (state)
+        {
+            case UIState.Init:
+                Init();
+                break;
+            case UIState.Enable:
+                Enable();
+                break;
+            case UIState.Disable:
+                Disable();
+                break;
+            case UIState.Release:
+                Release();
+                break;
+        }
+    }
+
+    #region 底层自动调用
+
     public override void Init()
     {
-        ScenesCenter.AddUIInfo<UIType>(globalID, (int) ShowType, this);
+        actions = GetComponentsInChildren<UIActionBase>();
+        uiState = UIState.Init;
+        foreach (var action in actions)
+        {
+            try
+            {
+                action.Init();
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+        }
     }
 
     public override void Enable()
@@ -18,18 +68,40 @@ public class UIBase : ObjectBase
         base.Enable();
         //LRU策略自动清理
         UIRootMgr.Instance().OpenUIBase(this);
+        uiState = UIState.Enable;
+        foreach (var action in actions)
+        {
+            try
+            {
+                action.Enable();
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+        }
     }
 
     public override void Disable()
     {
         base.Disable();
-        //LRU策略自动清理
-        UIRootMgr.Instance().CloseUIBase(this);
+        uiState = UIState.Disable;
+        foreach (var action in actions)
+        {
+            try
+            {
+                action.Disable();
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+        }
     }
 
     public override void Release()
     {
-        UIActionBase[] actions = GetComponentsInChildren<UIActionBase>();
+        uiState = UIState.Release;
         foreach (var action in actions)
         {
             try
@@ -41,18 +113,15 @@ public class UIBase : ObjectBase
                 throw new Exception(e.Message);
             }
         }
-
-        ScenesCenter.RemoveUIInfo<UIType>(globalID, (int) ShowType);
     }
 
     public override void Refresh(params object[] args)
     {
-        UIActionBase[] actions = GetComponentsInChildren<UIActionBase>();
         foreach (var action in actions)
         {
             try
             {
-                action.Refresh();
+                action.Refresh(args);
             }
             catch (Exception e)
             {
@@ -60,6 +129,8 @@ public class UIBase : ObjectBase
             }
         }
     }
+
+    #endregion
 }
 
 public enum UIType
@@ -68,4 +139,13 @@ public enum UIType
     UIRoot,
     UIStack,
     UITop,
+}
+
+public enum UIState
+{
+    None,
+    Init, //初始化
+    Enable, //显示
+    Disable, //隐藏
+    Release, //关闭
 }

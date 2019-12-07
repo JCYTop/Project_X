@@ -116,7 +116,6 @@ public abstract class ObjectBase : MonoEventEmitter
     {
     }
 
-
     public virtual void Disable()
     {
     }
@@ -134,7 +133,10 @@ public abstract class ObjectBase : MonoEventEmitter
     [Button(ButtonSizes.Small), GUIColor(1, 0, 0)]
     private void ResetResID()
     {
-        resID = -1;
+        if (!Application.isPlaying)
+        {
+            resID = -1;
+        }
     }
 }
 
