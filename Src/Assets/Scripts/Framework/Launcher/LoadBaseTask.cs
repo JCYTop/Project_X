@@ -66,7 +66,7 @@ public class LoadBaseTask : ILanucherTask
         {
             if (prefab != null)
             {
-                uiRoot = EntityUtil.InstantiateGo(prefab, false);
+                EntityUtil.InstantiateGo(prefab, false);
             }
 
             CalcTaskCount();

@@ -25,7 +25,6 @@ public static class ScenesCenter
     #region 字段
 
     private static Dictionary<int, ObjectBase> objectDic = new Dictionary<int, ObjectBase>(1 << 8);
-    private static Dictionary<int, UIBase> uiDic = new Dictionary<int, UIBase>(1 << 4);
     private static int globalIDLibrary = int.MaxValue;
 
     #region 场景数据管理ID***
@@ -83,19 +82,6 @@ public static class ScenesCenter
     public static int GameObjectDicCount
     {
         get => objectDic.Count;
-    }
-
-    public static Dictionary<int, UIBase> UIDic
-    {
-        get => uiDic;
-    }
-
-    /// <summary>
-    /// 包含数量
-    /// </summary>
-    public static int UIDicCount
-    {
-        get => uiDic.Count;
     }
 
     #endregion
@@ -156,69 +142,6 @@ public static class ScenesCenter
         if (objectDic.ContainsKey(globalID))
         {
             objectDic.TryGetValue(globalID, out var Info);
-            return Info;
-        }
-
-        LogUtil.LogError("没有存在相应的ID");
-        return default;
-    }
-
-
-    /// <summary>
-    /// 添加UI信息
-    /// </summary>
-    /// <param name="globalID">ResID</param>
-    /// <param name="info">信息</param>
-    /// <param name="callback">回调</param>
-    /// <returns>UI数据</returns>
-    public static Dictionary<int, UIBase> AddUIInfo<T>(int globalID, int selectEnum, UIBase info) where T : Enum
-    {
-        if (!uiDic.ContainsKey(globalID))
-        {
-            uiDic.Add(globalID, info);
-            RegiestID<T>(globalID, selectEnum, true);
-        }
-        else
-        {
-            LogUtil.LogError(string.Format("发现了重复ID：{0}", globalID));
-        }
-
-        return uiDic;
-    }
-
-    /// <summary>
-    /// 删除UI信息
-    /// </summary>
-    /// <param name="globalID">ResID</param>
-    /// <param name="callback">回调</param>
-    /// <returns>删除的UI数据</returns>
-    public static (int globalID, UIBase info) RemoveUIInfo<T>(int globalID, int selectEnum) where T : Enum
-    {
-        UIBase tmp = null;
-        if (uiDic.ContainsKey(globalID))
-        {
-            uiDic.TryGetValue(globalID, out tmp);
-            uiDic.Remove(globalID);
-            RegiestID<T>(globalID, selectEnum, true);
-        }
-        else
-        {
-            LogUtil.LogError(string.Format("并未发现相对应的ID：{0}", globalID));
-        }
-
-        return (globalID, tmp);
-    }
-
-    /// <summary>
-    /// 获取UI信息
-    /// </summary>
-    /// <param name="globalID">ResID</param>
-    /// <returns>具体的UI信息</returns>
-    public static UIBase GetUIInfo(int globalID)
-    {
-        if (uiDic.ContainsKey(globalID))
-        {
-            uiDic.TryGetValue(globalID, out var Info);
             return Info;
         }
 

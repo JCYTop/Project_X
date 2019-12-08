@@ -35,6 +35,7 @@ public class DBLinkedList<T>
     /// 记录最大使用值
     /// </summary>
     private int maxUseCount = int.MinValue;
+        
 
     private DBNode<T> maxUseNode = null;
 

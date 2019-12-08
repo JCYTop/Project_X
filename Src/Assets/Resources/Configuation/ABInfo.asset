@@ -14,30 +14,36 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ABDatas:
   - ID: 800000
+    name: GameObject
+    Path: Assets\ABRes\Prefabs\UI\GameObject
+    Des: "\u6D4B\u8BD5UI"
+    Layer: UI
+    Tag: UI
+  - ID: 800001
     name: UIRoot
     Path: Assets\ABRes\Prefabs\UI\UIRoot
     Des: UIRoot
     Layer: UI
     Tag: UI
+  - ID: 800002
+    name: GraphyProfiler
+    Path: Assets\ABRes\Prefabs\UI\Tool\GraphyProfiler
+    Des: GraphyProfiler
+    Layer: UI
+    Tag: UI
   - ID: 1000000
     name: Main Camera
     Path: Assets\ABRes\Prefabs\Camera\Main Camera
-    Des: "\u4E3B\u6444\u50CF\u673A"
+    Des: MainCamera
     Layer: Default
     Tag: Camera
   - ID: 1500000
-    name: GameObject
-    Path: Assets\ABRes\Prefabs\UI\GameObject
-    Des: "\u6D4B\u8BD5UI"
-    Layer: Default
-    Tag: Util
-  - ID: 1500001
     name: ExcelDataMgr
     Path: Assets\ABRes\Prefabs\Util\ExcelDataMgr
     Des: ExcelDataMgr
     Layer: Default
     Tag: Util
-  - ID: 1500002
+  - ID: 1500001
     name: LangSetting
     Path: Assets\ABRes\Prefabs\Util\LangSetting
     Des: LangSetting

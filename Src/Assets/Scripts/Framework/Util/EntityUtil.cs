@@ -51,15 +51,6 @@ public static class EntityUtil
     }
 
     /// <summary>
-    /// 删除物体
-    /// </summary>
-    /// <param name="go"></param>
-    public static void DestroyGO(GameObject go)
-    {
-        Object.Destroy(go);
-    }
-
-    /// <summary>
     /// 实例化物体
     /// </summary>
     /// <param name="go"></param>

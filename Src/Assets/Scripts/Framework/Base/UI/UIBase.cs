@@ -1,9 +1,12 @@
 ﻿using System;
 using Sirenix.OdinInspector;
+using UnityEngine;
 
 public class UIBase : ObjectBase
 {
-    [BoxGroup("UI属性设置"), EnumPaging] private UIType showType = UIType.UIStack;
+    [BoxGroup("UI属性设置"), EnumPaging, SerializeField, Header("UI所在层级")]
+    private UIType showType = UIType.UINone;
+
     [BoxGroup("UI属性设置"), EnumPaging] private UIState uiState = UIState.None;
 
     [BoxGroup("UI属性设置"), InfoBox("是否可以重复")]
@@ -66,8 +69,7 @@ public class UIBase : ObjectBase
     public override void Enable()
     {
         base.Enable();
-        //LRU策略自动清理
-        UIRootMgr.Instance().OpenUIBase(this);
+        UIRootMgr.Instance().InsertUIBase(this);
         uiState = UIState.Enable;
         foreach (var action in actions)
         {
@@ -85,6 +87,7 @@ public class UIBase : ObjectBase
     public override void Disable()
     {
         base.Disable();
+        UIRootMgr.Instance().ReleaseUIBase(this);
         uiState = UIState.Disable;
         foreach (var action in actions)
         {
@@ -131,6 +134,9 @@ public class UIBase : ObjectBase
     }
 
     #endregion
+
+    //TODO Stack执行隐藏
+    //TODO　其他执行关闭
 }
 
 public enum UIType

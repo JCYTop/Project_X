@@ -2,6 +2,9 @@
 using UnityEngine;
 using UnityEngine.Events;
 
+/// <summary>
+/// 工具类
+/// </summary>
 public static class UIUtil
 {
     /// <summary>
@@ -121,16 +124,11 @@ public static class UIUtil
 
     #region 删除物体
 
-    public static void DestroyGO(GameObject go)
-    {
-        Object.Destroy(go);
-    }
-
     public static void DestroyGO<T>(List<T> list) where T : MonoBehaviour
     {
         foreach (var unit in list)
         {
-            DestroyGO(unit.gameObject);
+            Object.Destroy(unit.gameObject);
         }
     }
 

@@ -46,6 +46,6 @@ public class AwakeState : FSMState
 
     public override void OnExit()
     {
-        EntityUtil.DestroyGO(go);
+        Object.Destroy(go);
     }
 }

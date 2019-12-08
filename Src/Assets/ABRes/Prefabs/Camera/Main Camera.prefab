@@ -126,7 +126,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectLayer: 0
   objectTag: 3
-  Des: "\u4E3B\u6444\u50CF\u673A"
+  Des: MainCamera
   IsPreLoad: 0
   resID: 0
   globalID: 0

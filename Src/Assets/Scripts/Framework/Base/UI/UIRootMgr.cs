@@ -13,6 +13,7 @@
  ----------------------------------
 */
 
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Sirenix.OdinInspector;
@@ -22,28 +23,28 @@ public class UIRootMgr : MonoBehaviour
 {
     #region 字段
 
-    public UIBase MainUIBase;
     private static UIRootMgr instance;
-    [SerializeField] private Camera UICamera;
     [SerializeField] private Canvas[] canvas;
     [SerializeField] private Canvas[] toolCanvas;
     private Canvas rootCanvas;
     private Canvas stackCanvas;
     private Canvas topCanvas;
-    private List<UIBase> rootUI;
-    private Stack<UIBase> stackUI;
-    private Stack<UIBase> topUI;
-    private DBLinkedList<UIBase> UILinkedList;
+    private List<UIBase> rootUI = new List<UIBase>(1 << 2);
+    private Stack<UIBase> stackUI = new Stack<UIBase>(1 << 3);
+    private Stack<UIBase> topUI = new Stack<UIBase>(1 << 3);
+    private DBLinkedList<UIBase> uiLinkedList;
 
-    [BoxGroup("RootUI Lists")] [TableList] public List<UIBase> rootUIShow = new List<UIBase>(1 << 4);
+    [BoxGroup("RootUI Lists"), TableList, SerializeField]
+    private List<UIBase> rootUIShow = new List<UIBase>(1 << 2);
 
-    [BoxGroup("StackUI Lists")] [TableList]
-    public List<UIBase> stackUIShow = new List<UIBase>(1 << 4);
+    [BoxGroup("StackUI Lists"), TableList, SerializeField]
+    private List<UIBase> stackUIShow = new List<UIBase>(1 << 3);
 
-    [BoxGroup("TopUI Lists")] [TableList] public List<UIBase> topUIShow = new List<UIBase>(1 << 2);
+    [BoxGroup("TopUI Lists"), TableList, SerializeField]
+    private List<UIBase> topUIShow = new List<UIBase>(1 << 3);
 
-    [BoxGroup("UILinkedList Lists")] [TableList]
-    public List<UIBase> UILinkedListShow = new List<UIBase>(1 << 2);
+    [BoxGroup("UILinkedList Lists"), TableList, SerializeField]
+    private List<UIBase> UILinkedListShow = new List<UIBase>(1 << 3);
 
     #endregion
 
@@ -121,23 +122,15 @@ public class UIRootMgr : MonoBehaviour
         return instance;
     }
 
-    private void Awake()
-    {
-        rootUI = new List<UIBase>(1 << 4);
-        stackUI = new Stack<UIBase>(1 << 4);
-        topUI = new Stack<UIBase>(1 << 2);
-        UILinkedList = new DBLinkedList<UIBase>(new DBNode<UIBase>(MainUIBase), 1 << 3);
-    }
-
     private void Start()
     {
-        foreach (var toolCanvas in toolCanvas)
-        {
-            toolCanvas.gameObject.SetActive(false);
-        }
+//        foreach (var toolCanvas in toolCanvas)
+//        {
+//            toolCanvas.gameObject.SetActive(false);
+//        }
     }
 
-    public void OpenUIBase(UIBase ui)
+    public void InsertUIBase(UIBase ui)
     {
         GameObject go = default;
         switch (ui.ShowType)
@@ -162,15 +155,71 @@ public class UIRootMgr : MonoBehaviour
         }
 
         UIUtil.SetParent(ui.gameObject, go.gameObject);
-        //可根据当前的数量进行场景中UI删除（UI原则不删除只是隐藏，但如果UI过多可以删除。原则LRU策略），此处相当于标记垃圾UI等待处理
-        UILinkedList.LRUSort(ui);
-        //Main永远置于优先
-        UILinkedList.LRUSort(MainUIBase);
-        if (UILinkedList.IsLRUbyCapacity)
+    }
+
+    public void ReleaseUIBase(UIBase ui)
+    {
+        UIBase tmpUI = null;
+        switch (ui.ShowType)
         {
-            UIUtil.DestroyGO(UILinkedList.LRUSortRemove());
+            case UIType.UIRoot:
+                if (rootUI.Contains(ui))
+                {
+                    tmpUI = ui;
+                    rootUI.Remove(ui);
+                }
+
+                rootUIShow = rootUI.ToList();
+                break;
+            case UIType.UITop:
+                topUI.Pop();
+                topUIShow = topUI.ToList();
+                break;
+            case UIType.UIStack:
+                tmpUI = stackUI.Pop();
+                stackUIShow = stackUI.ToList();
+                break;
+            default:
+                return;
         }
 
-        UILinkedListShow = UILinkedList.ToList();
+        if (tmpUI != null)
+        {
+            //可根据当前的数量进行场景中UI删除（UI原则不删除只是隐藏，但如果UI过多可以删除。原则LRU策略），此处相当于标记垃圾UI等待处理
+            if (uiLinkedList == null)
+            {
+                uiLinkedList = new DBLinkedList<UIBase>(new DBNode<UIBase>(ui), 1 << 3);
+            }
+
+            uiLinkedList.LRUSort(ui);
+            if (uiLinkedList.IsLRUbyCapacity)
+            {
+                UIUtil.DestroyGO(uiLinkedList.LRUSortRemove());
+            }
+
+            UILinkedListShow = uiLinkedList.ToList();
+        }
+    }
+
+    /// <summary>
+    /// UIRootMgr生成相关的子UI界面
+    /// </summary>
+    /// <param name="name"></param>
+    /// <param name="callback"></param>
+    public void SpawnUI(string name, Action<GameObject> callback)
+    {
+        if (uiLinkedList != null)
+        {
+            var lruList = uiLinkedList.ToList();
+            foreach (var uiBase in lruList)
+            {
+                if (uiBase.Des == name)
+                {
+                    uiBase.gameObject.SetActive(true);
+                }
+            }
+        }
+
+        AssetsManager.Instance().GetPrefabAsync(name, callback);
     }
 }

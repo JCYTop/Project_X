@@ -18,6 +18,9 @@ using System.Collections.Generic;
 using System.Text;
 using UnityEngine;
 
+/// <summary>
+/// 工具类
+/// </summary>
 public static class Util
 {
     #region Common
