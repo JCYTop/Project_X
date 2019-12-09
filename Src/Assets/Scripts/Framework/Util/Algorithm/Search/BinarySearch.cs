@@ -1,10 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class BinarySearch : Singleton<BinarySearch>, ISearch
+﻿public class BinarySearch : ISearch
 {
-    public int Search(int[] nums, int target, bool isSort = true)
+    public static int Search(int[] nums, int target, bool isSort = true)
     {
         if (isSort)
             QuickSort.Instance().Sort(ref nums, SortType.UP);
@@ -15,7 +11,7 @@ public class BinarySearch : Singleton<BinarySearch>, ISearch
             int middle = (low + high) / 2;
             if (target == nums[middle])
             {
-                return middle;//如果找到了就直接返回这个元素的索引
+                return middle; //如果找到了就直接返回这个元素的索引
             }
             else if (target > nums[middle])
             {
@@ -26,6 +22,7 @@ public class BinarySearch : Singleton<BinarySearch>, ISearch
                 high = middle - 1;
             }
         }
-        return -1;//如果找不到就返回-1；
+
+        return -1; //如果找不到就返回-1；
     }
 }

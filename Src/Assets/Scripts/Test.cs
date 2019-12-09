@@ -61,7 +61,10 @@ public class Test : MonoBehaviour
 //        a.Dispose();
 //        b.Dispose();
 //        result.Dispose();
-
+        var str = "ababcabcacabab";
+        var target = "cab";
+        var list = StringSearch.StringBM(str, target);
+        Debug.Log(list);
         Invoke("Tesss", 3f);
     }
 

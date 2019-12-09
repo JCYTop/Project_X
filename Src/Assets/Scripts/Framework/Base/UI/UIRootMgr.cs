@@ -174,6 +174,7 @@ public class UIRootMgr : MonoBehaviour
             case UIType.UITop:
                 topUI.Pop();
                 topUIShow = topUI.ToList();
+                //TODO 最新的栈口进行显示操作
                 break;
             case UIType.UIStack:
                 tmpUI = stackUI.Pop();
