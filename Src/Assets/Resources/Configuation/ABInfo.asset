@@ -14,18 +14,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ABDatas:
   - ID: 800000
-    name: GameObject
-    Path: Assets\ABRes\Prefabs\UI\GameObject
-    Des: "\u6D4B\u8BD5UI"
+    name: Test1
+    Path: Assets\ABRes\Prefabs\UI\Test1
+    Des: Test1
     Layer: UI
     Tag: UI
   - ID: 800001
+    name: Test2
+    Path: Assets\ABRes\Prefabs\UI\Test2
+    Des: Test2
+    Layer: UI
+    Tag: UI
+  - ID: 800002
     name: UIRoot
     Path: Assets\ABRes\Prefabs\UI\UIRoot
     Des: UIRoot
     Layer: UI
     Tag: UI
-  - ID: 800002
+  - ID: 800003
     name: GraphyProfiler
     Path: Assets\ABRes\Prefabs\UI\Tool\GraphyProfiler
     Des: GraphyProfiler

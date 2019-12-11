@@ -24,12 +24,12 @@ public class CharacterBase : ObjectBase
 
     public override void Init()
     {
-        ScenesCenter.AddGameObjectInfo<Character>(globalID, (int) Options, this);
+        ScenesCenterMgr.AddGameObjectInfo<Character>(globalID, (int) Options, this);
     }
 
     public override void Release()
     {
-        ScenesCenter.RemoveGameObjectInfo<Character>(globalID, (int) Options);
+        ScenesCenterMgr.RemoveGameObjectInfo<Character>(globalID, (int) Options);
     }
 }
 

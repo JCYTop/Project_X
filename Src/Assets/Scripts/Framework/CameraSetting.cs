@@ -26,11 +26,11 @@ public class CameraSetting : MonoBehaviour
 
     private void OnEnable()
     {
-        ScenesCenter.MainCamera = this.camera;
+        ScenesCenterMgr.MainCamera = this.camera;
     }
 
     private void OnDisable()
     {
-        ScenesCenter.MainCamera = null;
+        ScenesCenterMgr.MainCamera = null;
     }
 }

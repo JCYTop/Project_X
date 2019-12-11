@@ -82,7 +82,7 @@ public abstract class ObjectBase : MonoEventEmitter
 
     private void BaseInit()
     {
-        globalID = ScenesCenter.GlobalID;
+        globalID = ScenesCenterMgr.GlobalID;
         gameObject.tag = ObjectTag;
         gameObject.layer = ObjectLayer;
         Config.ForEach((config) =>

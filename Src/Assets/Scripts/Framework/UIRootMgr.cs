@@ -155,6 +155,19 @@ public class UIRootMgr : MonoBehaviour
         }
 
         UIUtil.SetParent(ui.gameObject, go.gameObject);
+        if (uiLinkedList != null && uiLinkedList.Contains(ui))
+        {
+            uiLinkedList.RemoveAt(uiLinkedList.IndexOf(ui));
+            if (uiLinkedList.Count > 0)
+            {
+                UILinkedListShow = uiLinkedList.ToList();
+            }
+            else
+            {
+                UILinkedListShow = null;
+                uiLinkedList = null;
+            }
+        }
     }
 
     public void ReleaseUIBase(UIBase ui)

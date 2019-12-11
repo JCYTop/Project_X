@@ -94,7 +94,7 @@ public static class MachineUtil
         ResolutionWidth = width;
         ResolutionHeight = height;
         var tmp = true;
-        UtilMgr.Instance().AddFixedUpdate(() =>
+        FixedUpdateMgr.Instance().AddFixedUpdate(() =>
         {
             if (tmp)
             {
@@ -122,7 +122,7 @@ public static class MachineUtil
         ResolutionHeight = height;
         RefreshFrameRate = frame;
         var tmp = true;
-        UtilMgr.Instance().AddFixedUpdate(() =>
+        FixedUpdateMgr.Instance().AddFixedUpdate(() =>
         {
             if (tmp)
             {

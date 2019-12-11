@@ -15,7 +15,7 @@
 
 using UnityEngine.Events;
 
-public class UtilMgr : MonoSingleton<UtilMgr>
+public class FixedUpdateMgr : MonoSingleton<FixedUpdateMgr>
 {
     private UnityAction fixedUpdate;
 

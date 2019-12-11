@@ -35,7 +35,7 @@ public class DBLinkedList<T>
     /// 记录最大使用值
     /// </summary>
     private int maxUseCount = int.MinValue;
-        
+
 
     private DBNode<T> maxUseNode = null;
 
@@ -62,8 +62,6 @@ public class DBLinkedList<T>
             var length = 0;
             while (ptr != null)
             {
-                length++;
-                ptr = ptr.Next;
                 if (ptr.UseCount > maxUseCount)
                 {
                     maxUseCount = ptr.UseCount;
@@ -75,6 +73,9 @@ public class DBLinkedList<T>
                     minUseCount = ptr.UseCount;
                     minUseNode = ptr;
                 }
+
+                length++;
+                ptr = ptr.Next;
             }
 
             return length;
@@ -88,7 +89,7 @@ public class DBLinkedList<T>
     {
         get
         {
-            if (Math.Ceiling(capacity * 1.25f) < Count)
+            if (Math.Ceiling(capacity * 1.5f) < Count)
             {
                 return true;
             }
@@ -341,8 +342,8 @@ public class DBLinkedList<T>
         if (0 == index)
         {
             q = Head;
-            Head = Head.Next;
             Head.Prev = null; //删除掉了第一个元素
+            Head = Head.Next;
             return q.Data;
         }
 

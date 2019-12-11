@@ -46,7 +46,7 @@ public static class UIUtil
     /// <returns>返回清除物体的组合</returns>
     public static GameObject[] CleanAllChild(int ID)
     {
-        return CleanAllChild(ScenesCenter.GetGOInfo(ID).gameObject);
+        return CleanAllChild(ScenesCenterMgr.GetGOInfo(ID).gameObject);
     }
 
     /// <summary>

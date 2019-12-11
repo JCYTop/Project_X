@@ -13,6 +13,8 @@
  ----------------------------------
 */
 
+using System;
+using System.Threading.Tasks;
 using UnityEngine;
 
 public class Test : MonoBehaviour
@@ -65,12 +67,18 @@ public class Test : MonoBehaviour
         var target = "cab";
         var list = StringSearch.StringBM(str, target);
         Debug.Log(list);
-        Invoke("Tesss", 3f);
+        Tesss();
+//        Invoke("Tesss", 3f);
     }
 
-    public void Tesss()
+    public async void Tesss()
     {
+        await Task.Delay(TimeSpan.FromSeconds(2));
         UIRootMgr.Instance().SpawnUI("GraphyProfiler", (prefab) => { EntityUtil.InstantiateGo(prefab); });
+        await Task.Delay(TimeSpan.FromSeconds(2));
+        UIRootMgr.Instance().SpawnUI("Test1", (prefab) => { EntityUtil.InstantiateGo(prefab); });
+        await Task.Delay(TimeSpan.FromSeconds(2));
+        UIRootMgr.Instance().SpawnUI("Test2", (prefab) => { EntityUtil.InstantiateGo(prefab); });
     }
 
 //    async Task<int> CountCharsAsync(string url)
