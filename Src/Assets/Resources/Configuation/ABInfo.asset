@@ -16,13 +16,13 @@ MonoBehaviour:
   - ID: 800000
     name: Test1
     Path: Assets\ABRes\Prefabs\UI\Test1
-    Des: Test1
+    Des: "\u6D4B\u8BD5UI1"
     Layer: UI
     Tag: UI
   - ID: 800001
     name: Test2
     Path: Assets\ABRes\Prefabs\UI\Test2
-    Des: Test2
+    Des: "\u6D4B\u8BD5UI2"
     Layer: UI
     Tag: UI
   - ID: 800002
@@ -35,12 +35,6 @@ MonoBehaviour:
     name: GraphyProfiler
     Path: Assets\ABRes\Prefabs\UI\Tool\GraphyProfiler
     Des: GraphyProfiler
-    Layer: UI
-    Tag: UI
-  - ID: 800004
-    name: Test2
-    Path: Assets\ABRes\Prefabs\Util\Test2
-    Des: Test2
     Layer: UI
     Tag: UI
   - ID: 1000000

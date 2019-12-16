@@ -53,6 +53,8 @@ public class UIBase : ObjectBase
     {
         actions = GetComponentsInChildren<UIActionBase>();
         uiState = UIState.Init;
+        UIRootMgr.Instance().SetUICanvers(this);
+        UIRootMgr.Instance().InsertUIBase(this);
         foreach (var action in actions)
         {
             try
@@ -69,7 +71,6 @@ public class UIBase : ObjectBase
     public override void Enable()
     {
         base.Enable();
-        UIRootMgr.Instance().InsertUIBase(this);
         uiState = UIState.Enable;
         foreach (var action in actions)
         {
@@ -87,29 +88,12 @@ public class UIBase : ObjectBase
     public override void Disable()
     {
         base.Disable();
-        UIRootMgr.Instance().ReleaseUIBase(this);
         uiState = UIState.Disable;
         foreach (var action in actions)
         {
             try
             {
                 action.Disable();
-            }
-            catch (Exception e)
-            {
-                throw new Exception(e.Message);
-            }
-        }
-    }
-
-    public override void Release()
-    {
-        uiState = UIState.Release;
-        foreach (var action in actions)
-        {
-            try
-            {
-                action.Release();
             }
             catch (Exception e)
             {
@@ -133,10 +117,34 @@ public class UIBase : ObjectBase
         }
     }
 
-    #endregion
+    public override void Release()
+    {
+        Close();
+        UIRootMgr.Instance().DelUIBase.Remove(this);
+        uiState = UIState.Release;
+        foreach (var action in actions)
+        {
+            try
+            {
+                action.Release();
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+        }
+    }
 
-    //TODO Stack执行隐藏
-    //TODO　其他执行关闭
+    /// <summary>
+    /// 原则只隐藏不删除
+    /// </summary>
+    public void Close()
+    {
+        UIRootMgr.Instance().ReleaseUIBase(this);
+        this.gameObject.SetActive(false);
+    }
+
+    #endregion
 }
 
 public enum UIType

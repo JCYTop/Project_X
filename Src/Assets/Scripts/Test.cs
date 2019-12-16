@@ -78,7 +78,20 @@ public class Test : MonoBehaviour
         await Task.Delay(TimeSpan.FromSeconds(2));
         UIRootMgr.Instance().SpawnUI("Test1", (prefab) => { EntityUtil.InstantiateGo(prefab); });
         await Task.Delay(TimeSpan.FromSeconds(2));
-        UIRootMgr.Instance().SpawnUI("Test2", (prefab) => { EntityUtil.InstantiateGo(prefab); });
+        UIRootMgr.Instance().SpawnUI("Test2", (prefab) =>
+        {
+            var go = EntityUtil.InstantiateGo(prefab);
+            go.GetComponent<UIBase>().Close();
+            Invoke("NextGo", 5f);
+        });
+    }
+
+    private void NextGo()
+    {
+        UIRootMgr.Instance().SpawnUI("Test2", (prefab) =>
+        {
+            var go = EntityUtil.InstantiateGo(prefab);
+        });
     }
 
 //    async Task<int> CountCharsAsync(string url)

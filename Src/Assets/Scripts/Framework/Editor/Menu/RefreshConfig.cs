@@ -114,6 +114,7 @@ public class RefreshConfig : MonoBehaviour
                     }
 
                     goBase.ResID = resID;
+                    goBase.BaseName = goBase.gameObject.name;
                     AssetDatabase.SaveAssets();
                     var path = filesPath[i];
                     path = filesPath[i].Substring(filesPath[i].IndexOf("ABRes", StringComparison.Ordinal));
@@ -126,7 +127,7 @@ public class RefreshConfig : MonoBehaviour
                     {
                         ID = goBase.ResID,
                         Path = path,
-                        name = goBase.gameObject.name,
+                        name = goBase.BaseName,
                         Des = goBase.Des,
                         Layer = tmpLayer,
                         Tag = goBase.ObjectTag,

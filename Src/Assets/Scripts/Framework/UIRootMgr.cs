@@ -25,16 +25,16 @@ public class UIRootMgr : MonoBehaviour
 
     private static UIRootMgr instance;
     [SerializeField] private Canvas[] canvas;
-    [SerializeField] private Canvas[] toolCanvas;
+    [SerializeField] private GameObject recycleTrash;
     private Canvas rootCanvas;
     private Canvas stackCanvas;
     private Canvas topCanvas;
     private List<UIBase> rootUI = new List<UIBase>(1 << 2);
     private Stack<UIBase> stackUI = new Stack<UIBase>(1 << 3);
     private Stack<UIBase> topUI = new Stack<UIBase>(1 << 3);
-    private LinkedList<UIBase> uiLinkedList = new LinkedList<UIBase>();
-    private int lruCapacity = 1 << 3;
-    private float lruCapacityMultiple = 1.5f;
+    public Dictionary<int, UIBase> UIResIDDic = new Dictionary<int, UIBase>(1 << 4);
+    public Dictionary<string, UIBase> UINameDic = new Dictionary<string, UIBase>(1 << 4);
+    [BoxGroup("Close Lists")] public List<UIBase> DelUIBase = new List<UIBase>(1 << 4);
 
     [BoxGroup("RootUI Lists"), SerializeField]
     private List<UIBase> rootUIShow = new List<UIBase>(1 << 2);
@@ -44,9 +44,6 @@ public class UIRootMgr : MonoBehaviour
 
     [BoxGroup("TopUI Lists"), SerializeField]
     private List<UIBase> topUIShow = new List<UIBase>(1 << 3);
-
-    [BoxGroup("UILinkedList Lists"), SerializeField]
-    private List<UIBase> UILinkedListShow = new List<UIBase>(1 << 3);
 
     #endregion
 
@@ -124,99 +121,162 @@ public class UIRootMgr : MonoBehaviour
         return instance;
     }
 
-    public void InsertUIBase(UIBase ui)
+    #region UI管理
+
+    /// <summary>
+    /// 设置UI的Canvas
+    /// </summary>
+    /// <param name="ui"></param>
+    public void SetUICanvers(UIBase ui)
     {
-        GameObject go = default;
+        GameObject go = default(GameObject);
         switch (ui.ShowType)
         {
             case UIType.UIRoot:
-                rootUI.Add(ui);
                 go = RootCanvas.gameObject;
-                rootUIShow = rootUI.ToList();
-                break;
-            case UIType.UIStack:
-                stackUI.Push(ui);
-                go = StackCanvas.gameObject;
-                stackUIShow = stackUI.ToList();
                 break;
             case UIType.UITop:
-                topUI.Push(ui);
                 go = TopCanvas.gameObject;
-                topUIShow = topUI.ToList();
+                break;
+            case UIType.UIStack:
+                go = StackCanvas.gameObject;
                 break;
             default:
                 return;
         }
 
         UIUtil.SetParent(ui.gameObject, go.gameObject);
-        if (uiLinkedList.Contains(ui))
+    }
+
+    /// <summary>
+    /// 插入UI管理
+    /// </summary>
+    /// <param name="ui"></param>
+    public void InsertUIBase(UIBase ui)
+    {
+        if (DelUIBase.Contains(ui))
         {
-            uiLinkedList.Remove(ui);
-            if (uiLinkedList.Count > 0)
-            {
-                UILinkedListShow = uiLinkedList.ToList();
-            }
-            else
-            {
-                UILinkedListShow.Clear();
-                uiLinkedList.Clear();
-            }
+            DelUIBase.Remove(ui);
+        }
+
+        UIResIDDic.Add(ui.ResID, ui);
+        UINameDic.Add(ui.BaseName, ui);
+        switch (ui.ShowType)
+        {
+            case UIType.UIRoot:
+                rootUI.Add(ui);
+                rootUIShow = rootUI.ToList();
+                break;
+            case UIType.UITop:
+                if (topUI.Count > 0)
+                {
+                    var beforeUI = topUI.Peek();
+                    beforeUI.gameObject.SetActive(false);
+                }
+
+                topUI.Push(ui);
+                topUIShow = topUI.ToList();
+                break;
+            case UIType.UIStack:
+                if (stackUI.Count > 0)
+                {
+                    var beforeUI = stackUI.Peek();
+                    beforeUI.gameObject.SetActive(false);
+                }
+
+                stackUI.Push(ui);
+                stackUIShow = stackUI.ToList();
+                break;
+            default:
+                return;
         }
     }
 
+    /// <summary>
+    /// 移除UI管理
+    /// </summary>
+    /// <param name="ui"></param>
     public void ReleaseUIBase(UIBase ui)
     {
-        UIBase tmpUI = null;
+        UIResIDDic.Remove(ui.ResID);
+        UINameDic.Remove(ui.BaseName);
+        if (DelUIBase.Contains(ui))
+        {
+            DelUIBase.Remove(ui);
+        }
+
+        DelUIBase.Add(ui);
         switch (ui.ShowType)
         {
             case UIType.UIRoot:
                 if (rootUI.Contains(ui))
                 {
-                    tmpUI = ui;
                     rootUI.Remove(ui);
                 }
 
                 rootUIShow = rootUI.ToList();
                 break;
             case UIType.UITop:
-                topUI.Pop();
+                if (topUI.Count > 0)
+                {
+                    topUI.Pop();
+                    if (topUI.Count > 0)
+                    {
+                        var currUI = topUI.Peek();
+                        currUI.gameObject.SetActive(true);
+                    }
+                }
+
+
                 topUIShow = topUI.ToList();
                 break;
             case UIType.UIStack:
-                tmpUI = stackUI.Pop();
+                if (stackUI.Count > 0)
+                {
+                    var closeUI = stackUI.Pop();
+                    closeUI.transform.SetParent(recycleTrash.transform);
+                    if (stackUI.Count > 0)
+                    {
+                        var currUI = stackUI.Peek();
+                        currUI.gameObject.SetActive(true);
+                    }
+                }
+
+
                 stackUIShow = stackUI.ToList();
                 break;
             default:
                 return;
         }
-
-        if (tmpUI != null)
-        {
-            //可根据当前的数量进行场景中UI删除（UI原则不删除只是隐藏，但如果UI过多可以删除。原则LRU策略），此处相当于标记垃圾UI等待处理
-            var value = uiLinkedList.LRUSort(ui, lruCapacity, lruCapacityMultiple);
-            UILinkedListShow = value.Item1.ToList();
-            Util.DestroyGo(value.Item2);
-        }
     }
 
+    //TODO 需要添加一个时间监听，当游戏关闭时候 清空俩个俩个堆栈，以防关闭报错
+
+    #endregion
+
+
+    #region 生成UI
+
     /// <summary>
-    /// UIRootMgr生成相关的子UI界面
+    /// UIRootMgr生成相关的UI界面
     /// </summary>
     /// <param name="name"></param>
     /// <param name="callback"></param>
     public void SpawnUI(string name, Action<GameObject> callback)
     {
-        var lruList = uiLinkedList.ToList();
-        foreach (var uiBase in lruList)
+        foreach (var ui in DelUIBase)
         {
-            var uiName = uiBase.gameObject.name.Replace("(Clone)", "");
-            if (uiName == name)
+            if (ui.BaseName == name)
             {
-                uiBase.gameObject.SetActive(true);
+                ui.gameObject.SetActive(true);
+                SetUICanvers(ui);
+                InsertUIBase(ui);
                 return;
             }
         }
 
         AssetsManager.Instance().GetPrefabAsync(name, callback);
     }
+
+    #endregion
 }

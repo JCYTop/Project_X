@@ -26,12 +26,21 @@ public abstract class ObjectBase : MonoEventEmitter
     [BoxGroup("自动设置"), Header("运行时场景唯一标识ID"), SerializeField, ReadOnly]
     protected int globalID;
 
+    [BoxGroup("自动设置"), Header("基础命名"), SerializeField, ReadOnly]
+    private string baseName;
+
     [SerializeField] private List<PointTrans> PointTrans = new List<PointTrans>();
     [SerializeField] private List<ConfigInfo> Config = new List<ConfigInfo>();
 
     #endregion
 
     #region 属性
+
+    public string BaseName
+    {
+        get => baseName;
+        set => baseName = value;
+    }
 
     public int ObjectLayer
     {
@@ -41,12 +50,6 @@ public abstract class ObjectBase : MonoEventEmitter
     public string ObjectTag
     {
         get => Enum.GetName(typeof(Tag), objectTag);
-    }
-
-    public string Name
-    {
-        get => name;
-        set { name = value; }
     }
 
     public int ResID

@@ -109,10 +109,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectLayer: 5
   objectTag: 1
-  Des: Test2
+  Des: "\u6D4B\u8BD5UI2"
   IsPreLoad: 0
   resID: 800001
   globalID: 0
+  baseName: Test2
   PointTrans: []
   Config: []
   showType: 2
