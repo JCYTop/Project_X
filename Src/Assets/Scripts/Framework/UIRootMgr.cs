@@ -200,11 +200,6 @@ public class UIRootMgr : MonoBehaviour
     {
         UIResIDDic.Remove(ui.ResID);
         UINameDic.Remove(ui.BaseName);
-        if (DelUIBase.Contains(ui))
-        {
-            DelUIBase.Remove(ui);
-        }
-
         DelUIBase.Add(ui);
         switch (ui.ShowType)
         {
@@ -251,6 +246,7 @@ public class UIRootMgr : MonoBehaviour
     }
 
     //TODO 需要添加一个时间监听，当游戏关闭时候 清空俩个俩个堆栈，以防关闭报错
+    //TODO 对DelUIBase进行LRU管理
 
     #endregion
 

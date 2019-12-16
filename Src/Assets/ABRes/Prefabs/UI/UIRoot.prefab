@@ -555,6 +555,7 @@ MonoBehaviour:
   IsPreLoad: 0
   resID: 0
   globalID: 0
+  baseName: 
   PointTrans: []
   Config: []
   showType: 0
@@ -575,9 +576,8 @@ MonoBehaviour:
   - {fileID: 3084850502398484143}
   - {fileID: 1362508389070363806}
   - {fileID: 5728743447849800823}
-  toolCanvas:
-  - {fileID: 0}
-  RecycleTrash: {fileID: 1882909967451438420}
+  recycleTrash: {fileID: 1882909967451438420}
+  DelUIBase: []
   rootUIShow: []
   stackUIShow:
   - {fileID: 0}
