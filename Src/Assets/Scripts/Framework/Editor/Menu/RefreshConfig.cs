@@ -30,6 +30,7 @@ public class RefreshConfig : MonoBehaviour
         var filesPath = Directory.GetFiles(genPath, "*.prefab", SearchOption.AllDirectories);
         var info = "";
         var presenceResID = new HashSet<long>();
+        var presenceResName = new HashSet<string>();
         for (int i = 0; i < filesPath.Length; i++)
         {
             filesPath[i] = filesPath[i].Substring(filesPath[i].IndexOf("Assets", StringComparison.Ordinal));
@@ -131,6 +132,16 @@ public class RefreshConfig : MonoBehaviour
                         Tag = goBase.ObjectTag,
                     });
                     goIndex++;
+                    if (presenceResName.Contains(goBase.gameObject.name))
+                    {
+                        EditorUtility.ClearProgressBar();
+                        LogUtil.LogError(string.Format("资源命名重复:重复名---> {0}", goBase.gameObject.name), LogType.AssetLog);
+                        return;
+                    }
+                    else
+                    {
+                        presenceResName.Add(goBase.gameObject.name);
+                    }
                 }
             }
         }

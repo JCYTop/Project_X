@@ -206,16 +206,14 @@ public class UIRootMgr : MonoBehaviour
     /// <param name="callback"></param>
     public void SpawnUI(string name, Action<GameObject> callback)
     {
-        if (uiLinkedList != null)
+        var lruList = uiLinkedList.ToList();
+        foreach (var uiBase in lruList)
         {
-            var lruList = uiLinkedList.ToList();
-            foreach (var uiBase in lruList)
+            var uiName = uiBase.gameObject.name.Replace("(Clone)", "");
+            if (uiName == name)
             {
-                if (uiBase.Des == name)
-                {
-                    uiBase.gameObject.SetActive(true);
-                    return;
-                }
+                uiBase.gameObject.SetActive(true);
+                return;
             }
         }
 
