@@ -34,16 +34,16 @@ public class UIRootMgr : MonoBehaviour
     private Stack<UIBase> topUI = new Stack<UIBase>(1 << 3);
     private DBLinkedList<UIBase> uiLinkedList;
 
-    [BoxGroup("RootUI Lists"), TableList, SerializeField]
+    [BoxGroup("RootUI Lists"), SerializeField]
     private List<UIBase> rootUIShow = new List<UIBase>(1 << 2);
 
-    [BoxGroup("StackUI Lists"), TableList, SerializeField]
+    [BoxGroup("StackUI Lists"), SerializeField]
     private List<UIBase> stackUIShow = new List<UIBase>(1 << 3);
 
-    [BoxGroup("TopUI Lists"), TableList, SerializeField]
+    [BoxGroup("TopUI Lists"), SerializeField]
     private List<UIBase> topUIShow = new List<UIBase>(1 << 3);
 
-    [BoxGroup("UILinkedList Lists"), TableList, SerializeField]
+    [BoxGroup("UILinkedList Lists"), SerializeField]
     private List<UIBase> UILinkedListShow = new List<UIBase>(1 << 3);
 
     #endregion
@@ -120,14 +120,6 @@ public class UIRootMgr : MonoBehaviour
         }
 
         return instance;
-    }
-
-    private void Start()
-    {
-//        foreach (var toolCanvas in toolCanvas)
-//        {
-//            toolCanvas.gameObject.SetActive(false);
-//        }
     }
 
     public void InsertUIBase(UIBase ui)
