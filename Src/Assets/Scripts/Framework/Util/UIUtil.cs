@@ -122,18 +122,6 @@ public static class UIUtil
         return tmp;
     }
 
-    #region 删除物体
-
-    public static void DestroyGO<T>(List<T> list) where T : MonoBehaviour
-    {
-        foreach (var unit in list)
-        {
-            Object.Destroy(unit.gameObject);
-        }
-    }
-
-    #endregion
-
     /// <summary>
     /// 计算UI之间的距离
     /// </summary>

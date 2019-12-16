@@ -17,6 +17,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using UnityEngine;
+using Object = UnityEngine.Object;
 
 /// <summary>
 /// 工具类
@@ -131,4 +132,21 @@ public static class Util
         angle = Vector2.Angle(from, to);
         return cross.z > 0 ? -angle : angle;
     }
+
+    #region 删除物体
+
+    public static void DestroyGo<T>(List<T> list) where T : MonoBehaviour
+    {
+        foreach (var unit in list)
+        {
+            Object.Destroy(unit.gameObject);
+        }
+    }
+
+    public static void DestroyGo<T>(T go) where T : Object
+    {
+        Object.Destroy(go);
+    }
+
+    #endregion
 }

@@ -32,7 +32,9 @@ public class UIRootMgr : MonoBehaviour
     private List<UIBase> rootUI = new List<UIBase>(1 << 2);
     private Stack<UIBase> stackUI = new Stack<UIBase>(1 << 3);
     private Stack<UIBase> topUI = new Stack<UIBase>(1 << 3);
-    private DBLinkedList<UIBase> uiLinkedList;
+    private LinkedList<UIBase> uiLinkedList = new LinkedList<UIBase>();
+    private int lruCapacity = 1 << 3;
+    private float lruCapacityMultiple = 1.5f;
 
     [BoxGroup("RootUI Lists"), SerializeField]
     private List<UIBase> rootUIShow = new List<UIBase>(1 << 2);
@@ -147,17 +149,17 @@ public class UIRootMgr : MonoBehaviour
         }
 
         UIUtil.SetParent(ui.gameObject, go.gameObject);
-        if (uiLinkedList != null && uiLinkedList.Contains(ui))
+        if (uiLinkedList.Contains(ui))
         {
-            uiLinkedList.RemoveAt(uiLinkedList.IndexOf(ui));
+            uiLinkedList.Remove(ui);
             if (uiLinkedList.Count > 0)
             {
                 UILinkedListShow = uiLinkedList.ToList();
             }
             else
             {
-                UILinkedListShow = null;
-                uiLinkedList = null;
+                UILinkedListShow.Clear();
+                uiLinkedList.Clear();
             }
         }
     }
@@ -179,7 +181,6 @@ public class UIRootMgr : MonoBehaviour
             case UIType.UITop:
                 topUI.Pop();
                 topUIShow = topUI.ToList();
-                //TODO 最新的栈口进行显示操作
                 break;
             case UIType.UIStack:
                 tmpUI = stackUI.Pop();
@@ -192,18 +193,9 @@ public class UIRootMgr : MonoBehaviour
         if (tmpUI != null)
         {
             //可根据当前的数量进行场景中UI删除（UI原则不删除只是隐藏，但如果UI过多可以删除。原则LRU策略），此处相当于标记垃圾UI等待处理
-            if (uiLinkedList == null)
-            {
-                uiLinkedList = new DBLinkedList<UIBase>(new DBNode<UIBase>(ui), 1 << 3);
-            }
-
-            uiLinkedList.LRUSort(ui);
-            if (uiLinkedList.IsLRUbyCapacity)
-            {
-                UIUtil.DestroyGO(uiLinkedList.LRUSortRemove());
-            }
-
-            UILinkedListShow = uiLinkedList.ToList();
+            var value = uiLinkedList.LRUSort(ui, lruCapacity, lruCapacityMultiple);
+            UILinkedListShow = value.Item1.ToList();
+            Util.DestroyGo(value.Item2);
         }
     }
 
@@ -222,6 +214,7 @@ public class UIRootMgr : MonoBehaviour
                 if (uiBase.Des == name)
                 {
                     uiBase.gameObject.SetActive(true);
+                    return;
                 }
             }
         }
