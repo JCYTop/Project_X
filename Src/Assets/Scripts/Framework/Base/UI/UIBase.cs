@@ -117,10 +117,14 @@ public class UIBase : ObjectBase
         }
     }
 
+    /// <summary>
+    /// 彻底关闭UI
+    /// </summary>
+    /// <exception cref="Exception"></exception>
     public override void Release()
     {
         Close();
-        UIRootMgr.Instance().DelUIBase.Remove(this);
+        UIRootMgr.Instance().RemoveCloseUIDic(this);
         uiState = UIState.Release;
         foreach (var action in actions)
         {
@@ -140,7 +144,7 @@ public class UIBase : ObjectBase
     /// </summary>
     public void Close()
     {
-        UIRootMgr.Instance().ReleaseUIBase(this);
+        UIRootMgr.Instance().CloseUIBase(this);
         this.gameObject.SetActive(false);
     }
 
