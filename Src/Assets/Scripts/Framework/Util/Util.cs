@@ -143,10 +143,5 @@ public static class Util
         }
     }
 
-    public static void DestroyGo<T>(T go) where T : Object
-    {
-        Object.Destroy(go);
-    }
-
     #endregion
 }

@@ -34,7 +34,9 @@ public class UIRootMgr : MonoBehaviour
     private Stack<UIBase> topUI = new Stack<UIBase>(1 << 3);
     public Dictionary<int, UIBase> UIResIDDic = new Dictionary<int, UIBase>(1 << 4);
     public Dictionary<string, UIBase> UINameDic = new Dictionary<string, UIBase>(1 << 4);
-    [BoxGroup("Close Lists")] public List<UIBase> DelUIBase = new List<UIBase>(1 << 4);
+    private int capacity = 1 << 3;
+    private float multiple = 1.5f;
+    [BoxGroup("Close Lists")] private LinkedList<UIBase> closeUIStroe = new LinkedList<UIBase>();
 
     [BoxGroup("RootUI Lists"), SerializeField]
     private List<UIBase> rootUIShow = new List<UIBase>(1 << 2);
@@ -154,11 +156,7 @@ public class UIRootMgr : MonoBehaviour
     /// <param name="ui"></param>
     public void InsertUIBase(UIBase ui)
     {
-        if (DelUIBase.Contains(ui))
-        {
-            DelUIBase.Remove(ui);
-        }
-
+        closeUIStroe.Remove(ui);
         UIResIDDic.Add(ui.ResID, ui);
         UINameDic.Add(ui.BaseName, ui);
         switch (ui.ShowType)
@@ -193,14 +191,22 @@ public class UIRootMgr : MonoBehaviour
     }
 
     /// <summary>
-    /// 移除UI管理
+    /// 关闭UI管理
     /// </summary>
     /// <param name="ui"></param>
-    public void ReleaseUIBase(UIBase ui)
+    public void CloseUIBase(UIBase ui)
     {
         UIResIDDic.Remove(ui.ResID);
         UINameDic.Remove(ui.BaseName);
-        DelUIBase.Add(ui);
+        closeUIStroe.AddFirst(ui);
+        //进行LRU尾部删除
+        closeUIStroe.LRUSort(capacity, multiple, (list) =>
+        {
+            if (list.Count > 0)
+            {
+                Util.DestroyGo(list);
+            }
+        });
         switch (ui.ShowType)
         {
             case UIType.UIRoot:
@@ -221,7 +227,6 @@ public class UIRootMgr : MonoBehaviour
                         currUI.gameObject.SetActive(true);
                     }
                 }
-
 
                 topUIShow = topUI.ToList();
                 break;
@@ -246,7 +251,11 @@ public class UIRootMgr : MonoBehaviour
     }
 
     //TODO 需要添加一个时间监听，当游戏关闭时候 清空俩个俩个堆栈，以防关闭报错
-    //TODO 对DelUIBase进行LRU管理
+
+    public void RemoveCloseUIDic(UIBase ui)
+    {
+        closeUIStroe.Remove(ui);
+    }
 
     #endregion
 
@@ -260,7 +269,7 @@ public class UIRootMgr : MonoBehaviour
     /// <param name="callback"></param>
     public void SpawnUI(string name, Action<GameObject> callback)
     {
-        foreach (var ui in DelUIBase)
+        foreach (var ui in closeUIStroe)
         {
             if (ui.BaseName == name)
             {
