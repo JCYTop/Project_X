@@ -19,7 +19,7 @@ using System.Linq;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
-public class UIRootMgr : MonoBehaviour
+public sealed class UIRootMgr : MonoBehaviour
 {
     #region 字段
 
@@ -36,6 +36,7 @@ public class UIRootMgr : MonoBehaviour
     public Dictionary<string, UIBase> UINameDic = new Dictionary<string, UIBase>(1 << 4);
     private int capacity = 1 << 3;
     private float multiple = 1.5f;
+    private bool applicationQuit = false;
     [BoxGroup("Close Lists")] private LinkedList<UIBase> closeUIStroe = new LinkedList<UIBase>();
 
     [BoxGroup("RootUI Lists"), SerializeField]
@@ -123,6 +124,24 @@ public class UIRootMgr : MonoBehaviour
         return instance;
     }
 
+    private void OnEnable()
+    {
+        EventDispatcher.Instance().On(GlobalEventType.OnApplicationQuit, ApplicationQuit);
+    }
+
+    private void OnDisable()
+    {
+        EventDispatcher.Instance().Off(GlobalEventType.OnApplicationQuit, ApplicationQuit);
+    }
+
+    private void ApplicationQuit(params object[] args)
+    {
+        applicationQuit = true;
+        UIResIDDic.Clear();
+        UINameDic.Clear();
+        closeUIStroe.Clear();
+    }
+
     #region UI管理
 
     /// <summary>
@@ -131,6 +150,7 @@ public class UIRootMgr : MonoBehaviour
     /// <param name="ui"></param>
     public void SetUICanvers(UIBase ui)
     {
+        if (applicationQuit) return;
         GameObject go = default(GameObject);
         switch (ui.ShowType)
         {
@@ -156,6 +176,7 @@ public class UIRootMgr : MonoBehaviour
     /// <param name="ui"></param>
     public void InsertUIBase(UIBase ui)
     {
+        if (applicationQuit) return;
         closeUIStroe.Remove(ui);
         UIResIDDic.Add(ui.ResID, ui);
         UINameDic.Add(ui.BaseName, ui);
@@ -196,6 +217,7 @@ public class UIRootMgr : MonoBehaviour
     /// <param name="ui"></param>
     public void CloseUIBase(UIBase ui)
     {
+        if (applicationQuit) return;
         UIResIDDic.Remove(ui.ResID);
         UINameDic.Remove(ui.BaseName);
         closeUIStroe.AddFirst(ui);
@@ -258,7 +280,6 @@ public class UIRootMgr : MonoBehaviour
     }
 
     #endregion
-
 
     #region 生成UI
 

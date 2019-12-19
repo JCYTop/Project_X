@@ -34,7 +34,7 @@ public class GlobalEvent : MonoEventEmitter
     }
 
     /// <summary>
-    /// 推出程序
+    /// 退出程序
     /// </summary>
     private void OnApplicationQuit()
     {
