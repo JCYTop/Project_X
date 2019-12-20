@@ -12,12 +12,12 @@ public class HeapSort : SortMethod
         return SingletonProperty<HeapSort>.Instance();
     }
 
-    protected override void SortDOWN(ref int[] nums)
+    protected override void SortDown(ref int[] nums)
     {
 
     }
 
-    protected override void SortUP(ref int[] nums)
+    protected override void SortUp(ref int[] nums)
     {
         Heap_Sort(nums);
     }

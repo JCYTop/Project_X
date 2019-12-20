@@ -12,7 +12,7 @@ public class ShellSort : SortMethod
         return SingletonProperty<ShellSort>.Instance();
     }
 
-    protected override void SortUP(ref int[] nums)
+    protected override void SortUp(ref int[] nums)
     {
         int i, j, temp;
         for (int group = nums.Length / 2; group > 0; group /= 2)//创建增量，nums1长度为8所以会创建出4,2,1的增量因子，并且最小的为1
@@ -36,7 +36,7 @@ public class ShellSort : SortMethod
         }
     }
 
-    protected override void SortDOWN(ref int[] nums)
+    protected override void SortDown(ref int[] nums)
     {
         int i, j, temp;
         for (int group = nums.Length / 2; group > 0; group /= 2)//创建增量，nums1长度为8所以会创建出4,2,1的增量因子，并且最小的为1

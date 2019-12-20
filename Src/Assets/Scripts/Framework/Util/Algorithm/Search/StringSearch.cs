@@ -16,7 +16,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StringSearch : ISearch
+public static class StringSearch
 {
     private const int size = 256; // 全局变量或成员变量
 
@@ -126,7 +126,7 @@ public class StringSearch : ISearch
             return target.Length;
         }
 
-        //内部方法
+        //生成好字符关系表
         void generateGS()
         {
             for (int i = 0; i < target.Length; ++i)
@@ -154,7 +154,7 @@ public class StringSearch : ISearch
             }
         }
 
-        //内部方法
+        //生成坏字符关系表
         void generateBC()
         {
             for (int i = 0; i < size; i++)
@@ -166,6 +166,57 @@ public class StringSearch : ISearch
             {
                 var ascii = (int) target[i];
                 bc[ascii] = i;
+            }
+        }
+    }
+
+    public static List<int> KMP(string str, string target)
+    {
+        var list = new List<int>();
+        int[] next;
+        getNexts();
+        var j = 0;
+        for (int i = 0; i < str.Length; i++)
+        {
+            while (j > 0 && str[i] != target[j]) //找到模式串中断位置
+            {
+                j = next[j - 1] + 1; //KMP跳跃
+            }
+
+            if (str[i] == target[j]) //主串与模式串每个字符相匹配
+            {
+                j++;
+            }
+
+            if (j == target.Length) //完成一次匹配 TODO 改成多匹配
+            {
+                list.Add(i + 1 - target.Length);
+                j = 0;
+            }
+        }
+
+        return list;
+
+        //构建失效指针
+        void getNexts()
+        {
+            //b, m
+            next = new int [target.Length];
+            next[0] = -1;
+            var k = -1;
+            for (int i = 1; i < target.Length; i++)
+            {
+                while (k != -1 && target[k + 1] != target[i])
+                {
+                    k = next[k];
+                }
+
+                if (target[k + 1] == target[i])
+                {
+                    k++;
+                }
+
+                next[i] = k;
             }
         }
     }

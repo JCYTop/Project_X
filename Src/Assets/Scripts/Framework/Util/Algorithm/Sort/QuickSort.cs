@@ -12,12 +12,12 @@ public class QuickSort : SortMethod
         return SingletonProperty<QuickSort>.Instance();
     }
 
-    protected override void SortUP(ref int[] nums)
+    protected override void SortUp(ref int[] nums)
     {
         QSortUP(nums, 0, nums.Length - 1);
     }
 
-    protected override void SortDOWN(ref int[] nums)
+    protected override void SortDown(ref int[] nums)
     {
         QSortDOWN(nums, 0, nums.Length - 1);
     }

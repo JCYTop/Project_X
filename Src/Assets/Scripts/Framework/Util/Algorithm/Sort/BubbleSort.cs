@@ -12,7 +12,7 @@ public class BubbleSort : SortMethod
         return SingletonProperty<BubbleSort>.Instance();
     }
 
-    protected override void SortUP(ref int[] nums)
+    protected override void SortUp(ref int[] nums)
     {
         int i, j, temp;
         for (j = 0; j < nums.Length - 1; j++)
@@ -29,7 +29,7 @@ public class BubbleSort : SortMethod
         }
     }
 
-    protected override void SortDOWN(ref int[] nums)
+    protected override void SortDown(ref int[] nums)
     {
         int i, j, temp;
         for (j = 0; j < nums.Length - 1; j++)

@@ -13,7 +13,7 @@ public class InsertionSort : SortMethod
         return SingletonProperty<InsertionSort>.Instance();
     }
 
-    protected override void SortUP(ref int[] nums)
+    protected override void SortUp(ref int[] nums)
     {
         int temp, j = 0;
         for (int i = 0; i < nums.Length; i++)
@@ -27,7 +27,7 @@ public class InsertionSort : SortMethod
         }
     }
 
-    protected override void SortDOWN(ref int[] nums)
+    protected override void SortDown(ref int[] nums)
     {
         int temp, j = 0;
         for (int i = 0; i < nums.Length; i++)

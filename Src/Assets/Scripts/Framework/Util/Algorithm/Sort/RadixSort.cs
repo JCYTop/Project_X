@@ -12,12 +12,12 @@ public class RadixSort : SortMethod
         return SingletonProperty<RadixSort>.Instance();
     }
 
-    protected override void SortUP(ref int[] nums)
+    protected override void SortUp(ref int[] nums)
     {
         Radix_SortUP(nums, 3);
     }
 
-    protected override void SortDOWN(ref int[] nums)
+    protected override void SortDown(ref int[] nums)
     {
         Radix_SortDOWN(nums, 3);
     }

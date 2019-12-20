@@ -12,7 +12,7 @@ public class SelectionSort : SortMethod
         return SingletonProperty<SelectionSort>.Instance();
     }
 
-    protected override void SortUP(ref int[] nums)
+    protected override void SortUp(ref int[] nums)
     {
         int tmp, minVal, minIndex = 0;
         for (int i = 0; i < nums.Length - 1; i++)
@@ -33,7 +33,7 @@ public class SelectionSort : SortMethod
         }
     }
 
-    protected override void SortDOWN(ref int[] nums)
+    protected override void SortDown(ref int[] nums)
     {
         int tmp, minVal, minIndex = 0;
         for (int i = 0; i < nums.Length - 1; i++)

@@ -1,9 +1,9 @@
-﻿public class BinarySearch : ISearch
+﻿public static class BinarySearch
 {
     public static int Search(int[] nums, int target, bool isSort = true)
     {
         if (isSort)
-            QuickSort.Instance().Sort(ref nums, SortType.UP);
+            QuickSort.Instance().Sort(ref nums, SortType.Up);
         int low = 0;
         int high = nums.Length - 1;
         while (low <= high)

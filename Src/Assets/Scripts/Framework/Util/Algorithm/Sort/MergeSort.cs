@@ -12,12 +12,12 @@ public class MergeSort : SortMethod
         return SingletonProperty<MergeSort>.Instance();
     }
 
-    protected override void SortUP(ref int[] nums)
+    protected override void SortUp(ref int[] nums)
     {
         nums = CreateSort(nums);
     }
 
-    protected override void SortDOWN(ref int[] nums)
+    protected override void SortDown(ref int[] nums)
     {
         nums = CreateSort(nums);
     }
@@ -53,10 +53,10 @@ public class MergeSort : SortMethod
         right = CreateSort(right);
         switch (sortType)
         {
-            case SortType.UP:
+            case SortType.Up:
                 result = Merge_SortUP(left, right);//合并数组
                 break;
-            case SortType.DOWN:
+            case SortType.Down:
                 result = Merge_SortDOWN(left, right);//合并数组
                 break;
         }

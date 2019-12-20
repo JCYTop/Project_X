@@ -63,12 +63,19 @@ public class Test : MonoBehaviour
 //        a.Dispose();
 //        b.Dispose();
 //        result.Dispose();
-        var str = "ababcabcacabab";
-        var target = "cab";
-        var list = StringSearch.StringBM(str, target);
-        Debug.Log(list);
-        Tesss();
+//
+//        var str = "ababcabcacabab";
+//        var target = "cab";
+//        var list = StringSearch.StringBM(str, target);
+//        Debug.Log(list);
+//        Tesss();
 //        Invoke("Tesss", 3f);
+//
+
+        string c1 = "ababacd";
+        string c2 = "ababacababb";
+        string c3 = "ababacababac";
+        Debug.Log(StringSearch.KMP(c2, "ba"));
     }
 
     public async void Tesss()
