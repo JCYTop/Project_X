@@ -8,4 +8,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/ABRes/Scenes/GameScenes/Awake.unity
     guid: 7d62afb4ae7ab764e909c448bf589a81
+  - enabled: 1
+    path: Assets/ABRes/Scenes/GameScenes/Start.unity
+    guid: 4bb00f0201b5b8140908c8db3e675f8d
   m_configObjects: {}

@@ -1,4 +1,19 @@
-﻿/// <summary>
+/** 
+----------------------------------
+ *Copyright(C) 2019 by IndieGame
+ *All rights reserved.
+ *FileName:     UIActionBase
+ *Author:       @JCY
+ *Version:      0.0.1
+ *AuthorEmail:  jcyemail@qq.com
+ *UnityVersion：2019.1.0f2
+ *CreateTime:   2019/12/21 22:20:56
+ *Description:  IndieGame 
+ *History:
+ ----------------------------------
+*/
+
+/// <summary>
 /// 父物体需要必定有一个UIBase
 /// </summary>
 public abstract class UIActionBase : MonoEventEmitter

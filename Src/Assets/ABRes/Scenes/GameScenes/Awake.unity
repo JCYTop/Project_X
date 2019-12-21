@@ -216,7 +216,7 @@ MonoBehaviour:
   openReferences: 0
   openPrefabs: 0
   idRef:
-    _Keys: f3741f0f852b25454294c729514e3f705d1dd716b7fba95ea3bd5f45fc5282018810f48d0ee3180d54b8377fb662fa16dc4eed54a7450f08353f9337331fb60f12c6a04159b2617904c9c1fec329a8403eb7dfb5bf2856321ffdc14e775040746f476cefc1b9bd72b0665971060ecc5e5270f5df79bba14aa34d31aae4c6733f07b16a00d35bd527de4891d4c9af2a4433317a393744fc7da68a298e934a3567d45d4f529d6e2a06f1e092d04dbc7756a3aa23f274d9201e
+    _Keys: f3741f0f852b25454294c729514e3f705d1dd716b7fba95ea3bd5f45fc5282018810f48d0ee3180d54b8377fb662fa16dc4eed54a7450f08353f9337331fb60f12c6a04159b2617904c9c1fec329a8403eb7dfb5bf2856321ffdc14e775040746f476cefc1b9bd72b0665971060ecc5e5270f5df79bba14aa34d31aae4c6733f07b16a00d35bd527de4891d4c9af2a4433317a393744fc7da68a298e934a3567d45d4f529d6e2a06f1e092d04dbc7756a3aa23f274d9201e22f0021bfb45c16da095c1f3adf69c3fc465aff557f5b632e6180506d24f851c03c020ae51f87b5d184b6c52489b445ef45f4b79f8004f372d66bb318dda601ab014a368bf8d501af0246b7d4705e265c78327deb687f42d5e1c43daebfaa317e79bd060f6ad187ab1c21dded330d311a3a42851a5a54541dc358c74360ede47520f86097043db196bad2df369165972
     _Values:
     - {fileID: 766233690}
     - {fileID: 4800000, guid: 04843408d664137429d5b68ea685ea2e, type: 3}
@@ -229,7 +229,7 @@ MonoBehaviour:
     - {fileID: 766233689}
     - {fileID: 1236637468}
     - {fileID: 1236637470}
-    - {fileID: 1236637469}
+    - {fileID: 0}
     - {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
     - {fileID: 2100000, guid: 305a0add82c865b479fd039e15eab2ef, type: 2}
     - {fileID: 11500000, guid: 8b21ac3b50bd3a040a68537ece80c35f, type: 3}
@@ -241,6 +241,24 @@ MonoBehaviour:
     - {fileID: 0}
     - {fileID: 0}
     - {fileID: 0}
+    - {fileID: 11500000, guid: a57416275ba171842a772653cb967615, type: 3}
+    - {fileID: 1384774831, guid: e743331561ef77147ae48cda9bcb8209, type: 3}
+    - {fileID: 1236637469}
+    - {fileID: 1236637471}
+    - {fileID: 1219815696, guid: e743331561ef77147ae48cda9bcb8209, type: 3}
+    - {fileID: -73581967, guid: e743331561ef77147ae48cda9bcb8209, type: 3}
+    - {fileID: 425272974}
+    - {fileID: 425272972}
+    - {fileID: 11400000, guid: 6d1c8000286c1ef40a8dd85ab367ea24, type: 2}
+    - {fileID: 425272973}
+    - {fileID: 11500000, guid: 9107aee0ced90422da95f0b31680501f, type: 3}
+    - {fileID: 11500000, guid: 8714d999c5ae749538494c1347e5a3ca, type: 3}
+    - {fileID: 11500000, guid: 9a83408fcc9044c4fbc7e5d09a369ab6, type: 3}
+    - {fileID: 337569718}
+    - {fileID: 337569722}
+    - {fileID: 337569721}
+    - {fileID: 337569720}
+    - {fileID: 337569719}
   prefabs: []
 --- !u!114 &337569721
 MonoBehaviour:
@@ -267,12 +285,65 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 337569718}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_Father: {fileID: 1236637470}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &425272972
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 425272974}
+  - component: {fileID: 425272973}
+  m_Layer: 0
+  m_Name: PlayMakerGUI
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &425272973
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 425272972}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -73581967, guid: e743331561ef77147ae48cda9bcb8209, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  previewOnGUI: 1
+  enableGUILayout: 1
+  drawStateLabels: 1
+  enableStateLabelsInBuilds: 0
+  GUITextureStateLabels: 0
+  GUITextStateLabels: 0
+  filterLabelsWithDistance: 0
+  maxLabelDistance: 10
+  controlMouseCursor: 1
+  labelScale: 1
+--- !u!4 &425272974
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 425272972}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1236637470}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &766233687
 GameObject:
@@ -364,7 +435,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 15, z: 0}
 --- !u!1 &1236637468
 GameObject:
@@ -375,6 +446,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1236637470}
+  - component: {fileID: 1236637471}
   - component: {fileID: 1236637469}
   m_Layer: 0
   m_Name: GlobalState
@@ -392,9 +464,132 @@ MonoBehaviour:
   m_GameObject: {fileID: 1236637468}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 75d418429cd06b34cb9c9d857619df3e, type: 3}
+  m_Script: {fileID: 1384774831, guid: e743331561ef77147ae48cda9bcb8209, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fsm:
+    dataVersion: 2
+    usedInTemplate: {fileID: 0}
+    name: FSM
+    startState: State 1
+    states:
+    - name: State 1
+      description: 
+      colorIndex: 0
+      position:
+        serializedVersion: 2
+        x: 50
+        y: 100
+        width: 100
+        height: 16
+      isBreakpoint: 0
+      isSequence: 0
+      hideUnused: 0
+      transitions: []
+      actionData:
+        actionNames: []
+        customNames: []
+        actionEnabled: 
+        actionIsOpen: 
+        actionStartIndex: 
+        actionHashCodes: 
+        unityObjectParams: []
+        fsmGameObjectParams: []
+        fsmOwnerDefaultParams: []
+        animationCurveParams: []
+        functionCallParams: []
+        fsmTemplateControlParams: []
+        fsmEventTargetParams: []
+        fsmPropertyParams: []
+        layoutOptionParams: []
+        fsmStringParams: []
+        fsmObjectParams: []
+        fsmVarParams: []
+        fsmArrayParams: []
+        fsmEnumParams: []
+        fsmFloatParams: []
+        fsmIntParams: []
+        fsmBoolParams: []
+        fsmVector2Params: []
+        fsmVector3Params: []
+        fsmColorParams: []
+        fsmRectParams: []
+        fsmQuaternionParams: []
+        stringParams: []
+        byteData: 
+        arrayParamSizes: 
+        arrayParamTypes: []
+        customTypeSizes: 
+        customTypeNames: []
+        paramDataType: 
+        paramName: []
+        paramDataPos: 
+        paramByteDataSize: 
+    events: []
+    globalTransitions: []
+    variables:
+      floatVariables: []
+      intVariables: []
+      boolVariables: []
+      stringVariables: []
+      vector2Variables: []
+      vector3Variables: []
+      colorVariables: []
+      rectVariables: []
+      quaternionVariables: []
+      gameObjectVariables: []
+      objectVariables: []
+      materialVariables: []
+      textureVariables: []
+      arrayVariables: []
+      enumVariables: []
+      categories:
+      - 
+      variableCategoryIDs: 
+    description: 
+    docUrl: 
+    showStateLabel: 0
+    maxLoopCount: 0
+    watermark: 
+    password: 
+    locked: 0
+    manualUpdate: 0
+    keepDelayedEventsOnStateExit: 0
+    preprocessed: 1
+    ExposedEvents: []
+    RestartOnEnable: 1
+    EnableDebugFlow: 0
+    EnableBreakpoints: 1
+    editorFlags: 1
+    activeStateName: 
+    mouseEvents: 0
+    handleLevelLoaded: 0
+    handleTriggerEnter2D: 0
+    handleTriggerExit2D: 0
+    handleTriggerStay2D: 0
+    handleCollisionEnter2D: 0
+    handleCollisionExit2D: 0
+    handleCollisionStay2D: 0
+    handleTriggerEnter: 0
+    handleTriggerExit: 0
+    handleTriggerStay: 0
+    handleCollisionEnter: 0
+    handleCollisionExit: 0
+    handleCollisionStay: 0
+    handleParticleCollision: 0
+    handleControllerColliderHit: 0
+    handleJointBreak: 0
+    handleJointBreak2D: 0
+    handleOnGUI: 0
+    handleFixedUpdate: 0
+    handleLateUpdate: 0
+    handleApplicationEvents: 0
+    handleUiEvents: 0
+    handleLegacyNetworking: 0
+    handleAnimatorMove: 0
+    handleAnimatorIK: 0
+  fsmTemplate: {fileID: 11400000, guid: 6d1c8000286c1ef40a8dd85ab367ea24, type: 2}
+  eventHandlerComponentsAdded: 1
 --- !u!4 &1236637470
 Transform:
   m_ObjectHideFlags: 0
@@ -405,10 +600,24 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 425272974}
+  - {fileID: 337569722}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1236637471
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1236637468}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a57416275ba171842a772653cb967615, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1822523807
 GameObject:
   m_ObjectHideFlags: 0

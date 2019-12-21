@@ -17,8 +17,8 @@ public class GameLanucher : MonoBehaviour
     /// </summary>
     private bool isShowLog = false;
 
-    private string onGUIStr = string.Empty;
     private AppLanucher appLanucher = new AppLanucher();
+    public bool IsFinish { set; get; } = false;
 
     private void Start()
     {
@@ -39,13 +39,13 @@ public class GameLanucher : MonoBehaviour
 
     private void OnStart()
     {
-        GlobalMediator.TaskIsFinish = false;
+        IsFinish = false;
         isShowLog = true;
     }
 
     private void OnFinish()
     {
-        GlobalMediator.TaskIsFinish = true;
+        IsFinish = true;
         isShowLog = false;
     }
 }

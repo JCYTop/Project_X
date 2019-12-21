@@ -13,7 +13,7 @@ public static class EntityUtil
         return CreateGameobject(name, Vector3.one, IsDestroy);
     }
 
-    public static GameObject CreateGameobject<T>(string name, bool IsDestroy = true) where T : Component
+    public static (GameObject, T ) CreateGameobject<T>(string name, bool IsDestroy = true) where T : Component
     {
         return CreateGameobject<T>(name, Vector3.one, IsDestroy);
     }
@@ -37,7 +37,7 @@ public static class EntityUtil
         return gameObject;
     }
 
-    public static GameObject CreateGameobject<T>(string name, Vector3 pos, bool IsDestroy) where T : Component
+    public static (GameObject, T ) CreateGameobject<T>(string name, Vector3 pos, bool IsDestroy) where T : Component
     {
         var gameObject = new GameObject(name);
         gameObject.transform.position = pos;
@@ -47,7 +47,7 @@ public static class EntityUtil
         }
 
         var type = gameObject.GetComponent<T>() ?? gameObject.AddComponent<T>();
-        return gameObject;
+        return (gameObject, type);
     }
 
     /// <summary>

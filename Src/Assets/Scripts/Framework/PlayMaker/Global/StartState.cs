@@ -13,31 +13,23 @@
  ----------------------------------
 */
 
-public class StartState : FSMState
+using HutongGames.PlayMaker;
+using UnityEngine.SceneManagement;
+
+[ActionCategory("GlobalState")]
+public class StartState : GlobalState
 {
-    public StartState(string name) : base(name)
-    {
-    }
-
-    public StartState()
-    {
-        Name = typeof(StartState).Name;
-    }
-
-    public override void InitTranslation()
-    {
-    }
-
     public override void OnEnter()
     {
+        base.OnEnter();
         LogUtil.Log(string.Format("StartState"), LogType.State);
-    }
-
-    public override void OnUpdate()
-    {
-    }
-
-    public override void OnExit()
-    {
+        SceneManager.LoadScene("Start");
+        AssetsManager.Instance().GetPrefabAsync("Main Camera", (prefab) =>
+        {
+            if (prefab != null)
+            {
+                EntityUtil.InstantiateGo(prefab, false);
+            }
+        });
     }
 }

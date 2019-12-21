@@ -31,7 +31,6 @@ public class LoadBaseTask : ILanucherTask
         LogUtil.Log(string.Format(Name), LogType.TaskLog);
         StartChildTask1();
         StartChildTask2();
-        StartChildTask3();
     }
 
     private void StartChildTask1()
@@ -54,19 +53,6 @@ public class LoadBaseTask : ILanucherTask
             if (prefab != null)
             {
                 uiRoot = EntityUtil.InstantiateGo(prefab, true);
-            }
-
-            CalcTaskCount();
-        });
-    }
-
-    private void StartChildTask3()
-    {
-        AssetsManager.Instance().GetPrefabAsync("Main Camera", (prefab) =>
-        {
-            if (prefab != null)
-            {
-                EntityUtil.InstantiateGo(prefab, false);
             }
 
             CalcTaskCount();

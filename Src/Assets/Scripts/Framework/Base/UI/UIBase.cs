@@ -1,4 +1,19 @@
-﻿using System;
+﻿/** 
+----------------------------------
+ *Copyright(C) 2019 by IndieGame
+ *All rights reserved.
+ *FileName:     UIActionBase
+ *Author:       @JCY
+ *Version:      0.0.1
+ *AuthorEmail:  jcyemail@qq.com
+ *UnityVersion：2019.1.0f2
+ *CreateTime:   2019/12/21 22:18:50
+ *Description:  IndieGame 
+ *History:
+ ----------------------------------
+*/
+
+using System;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
