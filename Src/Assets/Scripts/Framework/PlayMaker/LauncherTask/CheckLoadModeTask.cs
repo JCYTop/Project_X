@@ -8,25 +8,18 @@
 // -  独立游戏开发
 //======================================================
 
+
 using System.Collections;
-using System.Collections.Generic;
+using HutongGames.PlayMaker;
 using UnityEngine;
 
-public class CheckLoadModeTask : ILanucherTask
+[ActionCategory("GameLanucherTask")]
+public class CheckLoadModeTask : GameLanucherTask
 {
-    public override string Name
+    protected override IEnumerator Task()
     {
-        get => "检查登陆模式";
-    }
-
-    public override TaskType TaskType
-    {
-        get => TaskType.CheckLoadModeTask;
-    }
-
-    public override void AddTaskChild()
-    {
-        LogUtil.Log(string.Format(Name), LogType.TaskLog);
-        CalcTaskCount();
+        LogUtil.Log(string.Format(TaskName.Value), LogType.TaskLog);
+        yield return new WaitForFixedUpdate();
+        IsFinish = true;
     }
 }

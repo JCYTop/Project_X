@@ -9,10 +9,13 @@
 //======================================================
 
 using System;
+using System.Collections;
 using System.Runtime.InteropServices;
+using HutongGames.PlayMaker;
 using UnityEngine;
 
-public class CheckMemoryTask : ILanucherTask
+[ActionCategory("GameLanucherTask")]
+public class CheckMemoryTask : GameLanucherTask
 {
 #if UNITY_EDITOR || UNITY_STANDALONE
     [DllImport("kernel32")]
@@ -20,24 +23,10 @@ public class CheckMemoryTask : ILanucherTask
 #endif
     private int memoryDefault = 1200;
 
-    public override string Name
+    protected override IEnumerator Task()
     {
-        get => "检查内存";
-    }
-
-    public override TaskType TaskType
-    {
-        get => TaskType.CheckMemoryTask;
-    }
-
-    public override void AddTaskChild()
-    {
-        LogUtil.Log(string.Format(Name), LogType.TaskLog);
-        list.Add(GetMemoryStatus);
-    }
-
-    private void GetMemoryStatus()
-    {
+        LogUtil.Log(string.Format(TaskName.Value), LogType.TaskLog);
+        yield return new WaitForFixedUpdate();
         var memory = 0L;
         if (Platform.IsEditor || Platform.IsPC)
         {
@@ -126,7 +115,7 @@ public class CheckMemoryTask : ILanucherTask
             }
         }
 
-        CalcTaskCount();
+        IsFinish = true;
     }
 
     public struct MemoryInfo

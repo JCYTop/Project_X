@@ -9,24 +9,16 @@
 //======================================================
 
 using System.Collections;
-using System.Collections.Generic;
+using HutongGames.PlayMaker;
 using UnityEngine;
 
-public class UpdateTask : ILanucherTask
+[ActionCategory("GameLanucherTask")]
+public class UpdateTask : GameLanucherTask
 {
-    public override string Name
+    protected override IEnumerator Task()
     {
-        get => "更新资源";
-    }
-
-    public override TaskType TaskType
-    {
-        get => TaskType.UpdateTask;
-    }
-
-    public override void AddTaskChild()
-    {
-        LogUtil.Log(string.Format(Name), LogType.TaskLog);
-        CalcTaskCount();
+        LogUtil.Log(string.Format(TaskName.Value), LogType.TaskLog);
+        yield return new WaitForFixedUpdate();
+        IsFinish = true;
     }
 }

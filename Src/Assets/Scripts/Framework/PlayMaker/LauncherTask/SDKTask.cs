@@ -8,25 +8,18 @@
 // -  独立游戏开发
 //======================================================
 
+
 using System.Collections;
-using System.Collections.Generic;
+using HutongGames.PlayMaker;
 using UnityEngine;
 
-public class SDKTask : ILanucherTask
+[ActionCategory("GameLanucherTask")]
+public class SDKTask : GameLanucherTask
 {
-    public override string Name
+    protected override IEnumerator Task()
     {
-        get => "SDK处理";
-    }
-
-    public override TaskType TaskType
-    {
-        get => TaskType.SDKTask;
-    }
-
-    public override void AddTaskChild()
-    {
-        LogUtil.Log(string.Format(Name), LogType.TaskLog);
-        CalcTaskCount();
+        LogUtil.Log(string.Format(TaskName.Value), LogType.TaskLog);
+        yield return new WaitForFixedUpdate();
+        IsFinish = true;
     }
 }

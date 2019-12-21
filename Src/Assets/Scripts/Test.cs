@@ -72,10 +72,10 @@ public class Test : MonoBehaviour
 //        Invoke("Tesss", 3f);
 //
 
-        string c1 = "ababacd";
-        string c2 = "ababacababb";
-        string c3 = "ababacababac";
-        Debug.Log(StringSearch.KMP(c2, "ba"));
+//        string c1 = "ababacd";
+//        string c2 = "ababacababb";
+//        string c3 = "ababacababac";
+//        Debug.Log(StringSearch.KMP(c2, "ba"));
     }
 
     public async void Tesss()

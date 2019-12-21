@@ -19,22 +19,12 @@ using UnityEngine;
 [ActionCategory("GlobalState")]
 public class AwakeState : GlobalState
 {
-    private (GameObject, GameLanucher ) tuple;
     public FsmEvent FsmNextEvent;
 
     public override void OnEnter()
     {
         base.OnEnter();
         LogUtil.Log(string.Format("AwakeState"), LogType.State);
-        tuple = EntityUtil.CreateGameobject<GameLanucher>("GameLanucher");
-    }
-
-    public override void OnUpdate()
-    {
-        base.OnUpdate();
-        if (tuple.Item2.IsFinish)
-        {
-            Fsm.Event(FsmNextEvent);
-        }
+        Fsm.Event(FsmNextEvent);
     }
 }

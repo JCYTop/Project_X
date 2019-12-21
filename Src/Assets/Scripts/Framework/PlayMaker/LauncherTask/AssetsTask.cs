@@ -8,29 +8,20 @@
 // -  独立游戏开发
 //======================================================
 
-public class AssetsTask : ILanucherTask
+using System.Collections;
+using HutongGames.PlayMaker;
+using UnityEngine;
+
+[ActionCategory("GameLanucherTask")]
+public class AssetsTask : GameLanucherTask
 {
-    public override string Name
+    protected override IEnumerator Task()
     {
-        get => "资源管理启动";
-    }
-
-    public override TaskType TaskType
-    {
-        get => TaskType.AssetsTask;
-    }
-
-    public override void AddTaskChild()
-    {
-        StartAsset();
-    }
-
-    private void StartAsset()
-    {
-        LogUtil.Log(string.Format(Name), LogType.TaskLog);
+        LogUtil.Log(string.Format(TaskName.Value), LogType.TaskLog);
+        yield return new WaitForFixedUpdate();
         AssetsManager.Instance();
         AssetBundleManager.Instance();
         AssetBundleLoader.Instance();
-        CalcTaskCount();
+        IsFinish = true;
     }
 }

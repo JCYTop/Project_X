@@ -9,31 +9,18 @@
 //======================================================
 
 using System;
+using System.Collections;
 using System.Text;
+using HutongGames.PlayMaker;
 using UnityEngine;
 
-public class SystemCheckTask : ILanucherTask
+[ActionCategory("GameLanucherTask")]
+public class SystemCheckTask : GameLanucherTask
 {
-    public override string Name
+    protected override IEnumerator Task()
     {
-        get => "系统检查";
-    }
-
-    public override TaskType TaskType
-    {
-        get => TaskType.SystemCheckTask;
-    }
-
-    public override void AddTaskChild()
-    {
-        list.Add(GetBaseInfo);
-    }
-
-    /// <summary>
-    /// 子任务1
-    /// </summary>
-    private void GetBaseInfo()
-    {
+        LogUtil.Log(string.Format(TaskName.Value), LogType.TaskLog);
+        yield return new WaitForFixedUpdate();
         var info = new string[]
         {
             "设备模型 : " + SystemInfo.deviceModel,
@@ -83,6 +70,6 @@ public class SystemCheckTask : ILanucherTask
             throw;
         }
 
-        CalcTaskCount();
+        IsFinish = true;
     }
 }

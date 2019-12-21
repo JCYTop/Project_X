@@ -5,7 +5,7 @@ public class AddAuthor : UnityEditor.AssetModificationProcessor
     private const string AuthorName = "@JCY";
     private const string Version = "";
     private const string AuthorEmail = "jcyemail@qq.com";
-    private const string UnityVersion = "2019.1.0f2";
+    private const string UnityVersion = "2019.2.1f1";
     private const string CreateTime = "yyyy/MM/dd HH:mm:ss";
     private const string Description = "";
 

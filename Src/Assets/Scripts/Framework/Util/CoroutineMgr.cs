@@ -31,6 +31,16 @@ public class CoroutineMgr : MonoSingleton<CoroutineMgr>
     /// <summary>
     /// 启用一个协程
     /// </summary>
+    /// <param name="coroutine"></param>
+    /// <returns></returns>
+    public Coroutine StartUpCoroutine(IEnumerator coroutine)
+    {
+        return StartCoroutine(coroutine);
+    }
+
+    /// <summary>
+    /// 启用一个协程
+    /// </summary>
     /// <param name="ima"></param>
     /// <returns></returns>
     public Coroutine StartUpCoroutine(CoroutineTask task)
