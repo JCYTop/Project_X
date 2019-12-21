@@ -31,7 +31,7 @@ public class Packager
     /// </summary>
     public static void BuildAssetMarks()
     {
-        var sourcePath = Application.dataPath + "/" + Define.AssetsConfig.GameResourceRootDir;
+        var sourcePath = Application.dataPath + "/" + GlobalDefine.AssetsConfig.GameResourceRootDir;
         var fileSystemEntries = new List<string>();
         fileSystemEntries.AddRange(Directory.GetDirectories(sourcePath, "*", SearchOption.AllDirectories).Select(d => d + "\\"));
         fileSystemEntries.AddRange(Directory.GetFiles(sourcePath, "*", SearchOption.AllDirectories));
@@ -80,7 +80,7 @@ public class Packager
     /// </summary>
     public static void WritePreloadFile()
     {
-        var sourcePath = Application.dataPath + "/" + Define.AssetsConfig.GameResourceRootDir;
+        var sourcePath = Application.dataPath + "/" + GlobalDefine.AssetsConfig.GameResourceRootDir;
         var fileSystemEntries = new List<string>();
         fileSystemEntries.AddRange(Directory.GetDirectories(sourcePath, "*", SearchOption.AllDirectories).Select(d => d + "\\"));
         fileSystemEntries.AddRange(Directory.GetFiles(sourcePath, "*", SearchOption.AllDirectories));

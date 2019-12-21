@@ -43,7 +43,7 @@ public class AssetsManager : MonoEventEmitter
             if (strABInfo == null)
             {
                 strABInfo = new Dictionary<string, List<long>>();
-                foreach (var ab in Define.ABInfo.ABDatas)
+                foreach (var ab in GlobalDefine.ABInfo.ABDatas)
                 {
                     if (!strABInfo.ContainsKey(ab.name))
                     {
@@ -70,7 +70,7 @@ public class AssetsManager : MonoEventEmitter
             if (idABInfo == null)
             {
                 idABInfo = new Dictionary<long, ABData>();
-                foreach (var ab in Define.ABInfo.ABDatas)
+                foreach (var ab in GlobalDefine.ABInfo.ABDatas)
                 {
                     if (!idABInfo.ContainsKey(ab.ID))
                     {

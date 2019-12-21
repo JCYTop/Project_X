@@ -24,7 +24,7 @@ public class RefreshConfig : MonoBehaviour
         //获取编辑器下所有的Tag
         var tags = UnityEditorInternal.InternalEditorUtility.tags;
         var layers = UnityEditorInternal.InternalEditorUtility.layers;
-        var abInfo = Define.ABInfo;
+        var abInfo = GlobalDefine.ABInfo;
         var uiDatas = new Dictionary<long, ABData>();
         var genPath = Application.dataPath + "/ABRes/";
         var filesPath = Directory.GetFiles(genPath, "*.prefab", SearchOption.AllDirectories);

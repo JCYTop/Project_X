@@ -16,19 +16,17 @@
 using UnityEngine;
 
 /// <summary>
-/// 全局声明,基础配置序列化文件
+/// 全局声明
 /// </summary>
-public static class Define
+public static class GlobalDefine
 {
-    #region 字段
-
     private static AssetsConfig assetsConfig;
     private static AuthorInfo authorInfo;
     private static FrameworkDefine frameworkDefine;
     private static LogConfig logConfig;
     private static ABInfo abInfo;
-
-    #endregion
+    public const string AwakeScene = "AwakeScene";
+    public const string StartScene = "StartScene";
 
     #region 属性
 

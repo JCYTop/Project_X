@@ -27,7 +27,7 @@ public static class LogUtil
         {
             if (config == null)
             {
-                config = Define.LogConfig;
+                config = GlobalDefine.LogConfig;
             }
 
             return config;

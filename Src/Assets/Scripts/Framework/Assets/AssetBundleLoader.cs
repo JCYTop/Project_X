@@ -50,7 +50,7 @@ public class AssetBundleLoader : MonoEventEmitter
         //      }
         //      return url;
         //#endif
-        return Define.LoadResRootPath + fileName;
+        return GlobalDefine.LoadResRootPath + fileName;
     }
 
     public void LoadAssetAsync(string bundleName, string assetName, Action<object> action)
@@ -86,7 +86,7 @@ public class AssetBundleLoader : MonoEventEmitter
 
     public void LoadLevelAsset(string name, Action fn = null)
     {
-        var bundle = Define.AssetsConfig.ScencePath + "/" + name;
+        var bundle = GlobalDefine.AssetsConfig.ScencePath + "/" + name;
         StartCoroutine(LoadLevel(bundle.ToLower(), name, fn));
     }
 

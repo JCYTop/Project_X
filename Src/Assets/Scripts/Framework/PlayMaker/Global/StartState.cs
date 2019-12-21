@@ -23,7 +23,7 @@ public class StartState : GlobalState
     {
         base.OnEnter();
         LogUtil.Log(string.Format("StartState"), LogType.State);
-        SceneManager.LoadScene("Start");
+        SceneManager.LoadScene(GlobalDefine.StartScene);
         AssetsManager.Instance().GetPrefabAsync("Main Camera", (prefab) =>
         {
             if (prefab != null)

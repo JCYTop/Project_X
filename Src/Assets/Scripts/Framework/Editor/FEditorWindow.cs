@@ -76,7 +76,7 @@ public static class FrameworkToolsMenu
         private static void OpenCodeWebsite()
         {
             //直接打开网页
-            Application.OpenURL(Define.FrameworkDefine.FrameworkWebsite);
+            Application.OpenURL(GlobalDefine.FrameworkDefine.FrameworkWebsite);
         }
 
         private static void DownloadLatestVersion()
@@ -159,31 +159,31 @@ public static class FrameworkToolsMenu
         [MenuItem(ToolsList.FindConfig_ABInfo, false, (int) ToolsListPriorities.FindConfig_ABInfo)]
         public static void FindConfig_ABInfo()
         {
-            Selection.activeObject = Define.ABInfo;
+            Selection.activeObject = GlobalDefine.ABInfo;
         }
 
         [MenuItem(ToolsList.FindConfig_AssetsConfig, false, (int) ToolsListPriorities.FindConfig_AssetsConfig)]
         public static void FindConfig_AssetsConfig()
         {
-            Selection.activeObject = Define.AssetsConfig;
+            Selection.activeObject = GlobalDefine.AssetsConfig;
         }
 
         [MenuItem(ToolsList.FindConfig_AuthorInfo, false, (int) ToolsListPriorities.FindConfig_AuthorInfo)]
         public static void FindConfig_AuthorInfo()
         {
-            Selection.activeObject = Define.AuthorInfo;
+            Selection.activeObject = GlobalDefine.AuthorInfo;
         }
 
         [MenuItem(ToolsList.FindConfig_FrameworkDefine, false, (int) ToolsListPriorities.FindConfig_FrameworkDefine)]
         public static void FindConfig_FrameworkDefine()
         {
-            Selection.activeObject = Define.FrameworkDefine;
+            Selection.activeObject = GlobalDefine.FrameworkDefine;
         }
 
         [MenuItem(ToolsList.FindConfig_LogConfig, false, (int) ToolsListPriorities.FindConfig_LogConfig)]
         public static void FindConfig_LogConfig()
         {
-            Selection.activeObject = Define.LogConfig;
+            Selection.activeObject = GlobalDefine.LogConfig;
         }
 
         [MenuItem("Assets/开始游戏", false, 0)]
