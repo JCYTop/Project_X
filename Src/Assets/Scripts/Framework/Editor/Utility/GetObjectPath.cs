@@ -8,38 +8,36 @@
 // -  独立游戏开发
 //======================================================
 
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.IO;
 using UnityEditor;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class GetObjectPath : Editor
+namespace Framework.Editor
 {
-    private static TextEditor textEditor;
-
-    public static void GetAssetsPath()
+    public class GetObjectPath : UnityEditor.Editor
     {
-        var arr = Selection.GetFiltered(typeof(UnityEngine.Object), SelectionMode.TopLevel);
-        var path = AssetDatabase.GetAssetPath(arr[0])+"/";
-        path = path.Replace("Assets/", "");
-        SaveToClipBoard(path);
-        //下面是绝对路径
-        //Debug.LogError(Application.dataPath.Substring(0, Application.dataPath.LastIndexOf('/')) + "/" + AssetDatabase.GetAssetPath(arr[0]));
-    }
+        private static TextEditor textEditor;
 
-
-    public static void SaveToClipBoard(string content)
-    {
-        if (textEditor == null)
+        public static void GetAssetsPath()
         {
-            textEditor = new TextEditor();
+            var arr = Selection.GetFiltered(typeof(UnityEngine.Object), SelectionMode.TopLevel);
+            var path = AssetDatabase.GetAssetPath(arr[0]) + "/";
+            path = path.Replace("Assets/", "");
+            SaveToClipBoard(path);
+            //下面是绝对路径
+            //Debug.LogError(Application.dataPath.Substring(0, Application.dataPath.LastIndexOf('/')) + "/" + AssetDatabase.GetAssetPath(arr[0]));
         }
 
-        textEditor.text = content;
-        textEditor.OnFocus();
-        textEditor.Copy();
+
+        public static void SaveToClipBoard(string content)
+        {
+            if (textEditor == null)
+            {
+                textEditor = new TextEditor();
+            }
+
+            textEditor.text = content;
+            textEditor.OnFocus();
+            textEditor.Copy();
+        }
     }
 }

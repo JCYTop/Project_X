@@ -12,79 +12,86 @@ using System.Diagnostics;
 using System.IO;
 using UnityEngine;
 
-public class OpenInFileBrowserMenu : EditorMenu<OpenInFileBrowserMenu>
+namespace Framework.Editor
 {
-    public override void CreatWindow()
+    public class OpenInFileBrowserMenu : EditorMenu<OpenInFileBrowserMenu>
     {
-        if (SystemInfo.operatingSystem.IndexOf("Windows") != -1)//Win平台
+        public override void CreatWindow()
         {
-            OpenInWin(Application.dataPath);
+            if (SystemInfo.operatingSystem.IndexOf("Windows") != -1) //Win平台
+            {
+                OpenInWin(Application.dataPath);
+            }
+            else if (SystemInfo.operatingSystem.IndexOf("Mac OS") != -1) //Mac平台
+            {
+                OpenInMac(Application.dataPath);
+            }
+            else
+            {
+                OpenInWin(Application.dataPath);
+                OpenInMac(Application.dataPath);
+            }
         }
-        else if (SystemInfo.operatingSystem.IndexOf("Mac OS") != -1)//Mac平台
-        {
-            OpenInMac(Application.dataPath);
-        }
-        else
-        {
-            OpenInWin(Application.dataPath);
-            OpenInMac(Application.dataPath);
-        }
-    }
 
-    private void OpenInMac(string path)
-    {
-        bool openInsidesOfFolder = false;
-        string macPath = path.Replace("\\", "/");
-        if (System.IO.Directory.Exists(macPath))
+        private void OpenInMac(string path)
         {
-            openInsidesOfFolder = true;
-        }
-        if (!macPath.StartsWith("\""))
-        {
-            macPath = "\"" + macPath;
-        }
-        if (!macPath.EndsWith("\""))
-        {
-            macPath = macPath + "\"";
-        }
-        string arguments = (openInsidesOfFolder ? "" : "-R ") + macPath;
-        try
-        {
-            System.Diagnostics.Process.Start("open", arguments);
-        }
-        catch (System.ComponentModel.Win32Exception e)
-        {
-            e.HelpLink = "";
-        }
-    }
+            bool openInsidesOfFolder = false;
+            string macPath = path.Replace("\\", "/");
+            if (System.IO.Directory.Exists(macPath))
+            {
+                openInsidesOfFolder = true;
+            }
 
-    private void OpenInWin(string path)
-    {
-        bool openInsidesOfFolder = false;
-        string winPath = path.Replace("/", "\\");
-        if (Directory.Exists(winPath))
-        {
-            openInsidesOfFolder = true;
-        }
-        try
-        {
-            Process.Start("explorer.exe", (openInsidesOfFolder ? "/root," : "/select,") + winPath);
-        }
-        catch (System.ComponentModel.Win32Exception e)
-        {
-            e.HelpLink = "";
-        }
-    }
+            if (!macPath.StartsWith("\""))
+            {
+                macPath = "\"" + macPath;
+            }
 
-    public override void OnDisable()
-    {
-    }
+            if (!macPath.EndsWith("\""))
+            {
+                macPath = macPath + "\"";
+            }
 
-    public override void OnEnable()
-    {
-    }
+            string arguments = (openInsidesOfFolder ? "" : "-R ") + macPath;
+            try
+            {
+                System.Diagnostics.Process.Start("open", arguments);
+            }
+            catch (System.ComponentModel.Win32Exception e)
+            {
+                e.HelpLink = "";
+            }
+        }
 
-    public override void OnGUI()
-    {
+        private void OpenInWin(string path)
+        {
+            bool openInsidesOfFolder = false;
+            string winPath = path.Replace("/", "\\");
+            if (Directory.Exists(winPath))
+            {
+                openInsidesOfFolder = true;
+            }
+
+            try
+            {
+                Process.Start("explorer.exe", (openInsidesOfFolder ? "/root," : "/select,") + winPath);
+            }
+            catch (System.ComponentModel.Win32Exception e)
+            {
+                e.HelpLink = "";
+            }
+        }
+
+        public override void OnDisable()
+        {
+        }
+
+        public override void OnEnable()
+        {
+        }
+
+        public override void OnGUI()
+        {
+        }
     }
 }

@@ -11,38 +11,41 @@
 using UnityEditor;
 using UnityEngine;
 
-public abstract class EditorMenu<T> : EditorWindow where T : class
+namespace Framework.Editor
 {
-    public static T EditorWindow;
-
-    public static T Instance()
+    public abstract class EditorMenu<T> : EditorWindow where T : class
     {
-        return SingletonProperty<T>.Instance();
+        public static T EditorWindow;
+
+        public static T Instance()
+        {
+            return SingletonProperty<T>.Instance();
+        }
+
+        public virtual void ShowMenu()
+        {
+            CreatWindow();
+        }
+
+        /// <summary>
+        /// 绘制窗口基本信息
+        /// </summary>
+        [HideInInspector]
+        public abstract void CreatWindow();
+
+        /// <summary>
+        /// 打开时操作
+        /// </summary>
+        public abstract void OnEnable();
+
+        /// <summary>
+        /// 关闭时操作
+        /// </summary>
+        public abstract void OnDisable();
+
+        /// <summary>
+        /// 绘制界面
+        /// </summary>
+        public abstract void OnGUI();
     }
-
-    public virtual void ShowMenu()
-    {
-        CreatWindow();
-    }
-
-    /// <summary>
-    /// 绘制窗口基本信息
-    /// </summary>
-    [HideInInspector]
-    public abstract void CreatWindow();
-
-    /// <summary>
-    /// 打开时操作
-    /// </summary>
-    public abstract void OnEnable();
-
-    /// <summary>
-    /// 关闭时操作
-    /// </summary>
-    public abstract void OnDisable();
-
-    /// <summary>
-    /// 绘制界面
-    /// </summary>
-    public abstract void OnGUI();
 }
