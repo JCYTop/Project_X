@@ -13,6 +13,8 @@
  ----------------------------------
 */
 
+using Framework.EventDispatcher;
+
 public class GlobalEvent : MonoEventEmitter
 {
     /// <summary>

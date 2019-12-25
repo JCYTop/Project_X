@@ -12,6 +12,9 @@
  *History:
  ----------------------------------
 */
+
+using Framework.EventDispatcher;
+
 namespace Framework.Base
 {
     /// <summary>

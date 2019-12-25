@@ -2,9 +2,12 @@
 //{
 //}
 
-public class GlobalEventType
+namespace Framework.EventDispatcher
 {
-    public const string OnApplicationFocus = "OnApplicationFocus";
-    public const string OnApplicationPause = "OnApplicationPause";
-    public const string OnApplicationQuit = "OnApplicationQuit";
+    public class GlobalEventType
+    {
+        public const string OnApplicationFocus = "OnApplicationFocus";
+        public const string OnApplicationPause = "OnApplicationPause";
+        public const string OnApplicationQuit = "OnApplicationQuit";
+    }
 }

@@ -9,6 +9,7 @@
 //======================================================
 
 using System.Collections;
+using Framework.GM;
 using HutongGames.PlayMaker;
 using UnityEngine;
 
