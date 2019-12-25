@@ -14,7 +14,6 @@
 */
 
 using HutongGames.PlayMaker;
-using UnityEngine;
 
 [ActionCategory("GlobalState")]
 public class AwakeState : GlobalState

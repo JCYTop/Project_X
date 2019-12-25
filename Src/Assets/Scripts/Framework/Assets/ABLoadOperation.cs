@@ -17,26 +17,29 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-/// <summary>
-/// AB资源读取操作
-/// </summary>
-public abstract class ABLoadOperation : IEnumerator
+namespace Framework.Assets
 {
-    public bool MoveNext()
+    /// <summary>
+    /// AB资源读取操作
+    /// </summary>
+    public abstract class ABLoadOperation : IEnumerator
     {
-        return !IsDone();
+        public bool MoveNext()
+        {
+            return !IsDone();
+        }
+
+        public void Reset()
+        {
+        }
+
+        public object Current
+        {
+            get { return null; }
+        }
+
+        abstract public bool Update();
+
+        abstract public bool IsDone();
     }
-
-    public void Reset()
-    {
-    }
-
-    public object Current
-    {
-        get { return null; }
-    }
-
-    abstract public bool Update();
-
-    abstract public bool IsDone();
 }

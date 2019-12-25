@@ -13,22 +13,25 @@
  ----------------------------------
 */
 
-public class UpdateFileInfo
+namespace Framework.Assets
 {
-    public string FilePath { private set; get; }
-    public string MD5 { private set; get; }
-    public float FileSize { private set; get; }
-
-    public UpdateFileInfo(string content)
+    public class UpdateFileInfo
     {
-        var info = content.Split(new string[] {"|"}, System.StringSplitOptions.RemoveEmptyEntries);
-        FilePath = info[0];
-        MD5 = info[1];
-        FileSize = float.Parse(info[2]);
-    }
+        public string FilePath { private set; get; }
+        public string MD5 { private set; get; }
+        public float FileSize { private set; get; }
 
-    public bool Equal(UpdateFileInfo other)
-    {
-        return MD5.Equals(other.MD5);
+        public UpdateFileInfo(string content)
+        {
+            var info = content.Split(new string[] {"|"}, System.StringSplitOptions.RemoveEmptyEntries);
+            FilePath = info[0];
+            MD5 = info[1];
+            FileSize = float.Parse(info[2]);
+        }
+
+        public bool Equal(UpdateFileInfo other)
+        {
+            return MD5.Equals(other.MD5);
+        }
     }
 }

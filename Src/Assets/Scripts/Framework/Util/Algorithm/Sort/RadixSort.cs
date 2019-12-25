@@ -1,33 +1,14 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-/// <summary>
+﻿/// <summary>
 /// 平均时间复杂度：快速排序（o(d(n+r))）；最好情况：快速排序（o(d(n+rd))）；最坏情况：快速排序（o(d(n+r))）；辅助空间：快速排序（o(rd+n)）；稳定
 /// </summary>
-public class RadixSort : SortMethod
+public static class RadixSort
 {
-    public static RadixSort Instance()
-    {
-        return SingletonProperty<RadixSort>.Instance();
-    }
-
-    protected override void SortUp(ref int[] nums)
-    {
-        Radix_SortUP(nums, 3);
-    }
-
-    protected override void SortDown(ref int[] nums)
-    {
-        Radix_SortDOWN(nums, 3);
-    }
-
     /// <summary>
     /// 默认长度3
     /// </summary>
     /// <param name="nums"></param>
     /// <param name="d"></param>
-    public void Radix_SortDOWN(int[] nums, int d)
+    public static void Radix_SortDOWN(int[] nums, int d)
     {
         int k = nums.Length - 1;
         int n = 1;
@@ -42,6 +23,7 @@ public class RadixSort : SortMethod
                 temp[lsd, order[lsd]] = nums[i];
                 order[lsd]++;
             }
+
             for (int i = 0; i < 10; i++)
             {
                 if (order[i] != 0)
@@ -50,8 +32,10 @@ public class RadixSort : SortMethod
                         nums[k] = temp[i, j];
                         k--;
                     }
+
                 order[i] = 0;
             }
+
             n *= 10;
             k = nums.Length - 1;
             m++;
@@ -63,7 +47,7 @@ public class RadixSort : SortMethod
     /// </summary>
     /// <param name="nums"></param>
     /// <param name="d"></param>
-    public void Radix_SortUP(int[] nums, int d)
+    public static void Radix_SortUP(int[] nums, int d)
     {
         int k = 0;
         int n = 1;
@@ -78,6 +62,7 @@ public class RadixSort : SortMethod
                 temp[lsd, order[lsd]] = nums[i];
                 order[lsd]++;
             }
+
             for (int i = 0; i < 10; i++)
             {
                 if (order[i] != 0)
@@ -86,8 +71,10 @@ public class RadixSort : SortMethod
                         nums[k] = temp[i, j];
                         k++;
                     }
+
                 order[i] = 0;
             }
+
             n *= 10;
             k = 0;
             m++;

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using Framework.Assets;
 using Sirenix.OdinInspector;
-using Sirenix.Utilities;
 using UnityEngine;
 
 [RequireComponent(typeof(AssetPoolItem))]

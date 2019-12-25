@@ -16,21 +16,24 @@
 
 using UnityEngine;
 
-/// <summary>
-/// 加载的资源包记录信息
-/// </summary>
-public class LoadedAssetBundle
+namespace Framework.Assets
 {
-    public AssetBundle AssetBundle;
-
     /// <summary>
-    /// 相关引用
+    /// 加载的资源包记录信息
     /// </summary>
-    public int ReferencedCount;
-
-    public LoadedAssetBundle(AssetBundle assetBundle)
+    public class LoadedAssetBundle
     {
-        AssetBundle = assetBundle;
-        ReferencedCount = 1;
+        public AssetBundle AssetBundle;
+
+        /// <summary>
+        /// 相关引用
+        /// </summary>
+        public int ReferencedCount;
+
+        public LoadedAssetBundle(AssetBundle assetBundle)
+        {
+            AssetBundle = assetBundle;
+            ReferencedCount = 1;
+        }
     }
 }

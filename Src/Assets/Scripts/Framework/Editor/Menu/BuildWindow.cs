@@ -13,6 +13,7 @@
  ----------------------------------
 */
 
+using Framework.Assets;
 using UnityEditor;
 using UnityEngine;
 

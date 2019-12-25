@@ -13,22 +13,23 @@
  ----------------------------------
 */
 
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class AssetPoolItem : MonoBehaviour
+namespace Framework.Assets
 {
-    public string AssetName;
-
-    void Awake()
+    public class AssetPoolItem : MonoBehaviour
     {
-        AssetName = this.name;
-    }
+        public string AssetName;
 
-    public void Drop()
-    {
-        gameObject.SetActive(false);
-        AssetsManager.Instance().PutGoToPool(this);
+        void Awake()
+        {
+            AssetName = this.name;
+        }
+
+        public void Drop()
+        {
+            gameObject.SetActive(false);
+            AssetsManager.Instance().PutGoToPool(this);
+        }
     }
 }
