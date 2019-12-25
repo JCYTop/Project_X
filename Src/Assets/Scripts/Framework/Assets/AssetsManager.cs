@@ -12,6 +12,7 @@ using System;
 using System.Collections.Generic;
 using Framework.EventDispatcher;
 using Framework.ScriptableObject;
+using Framework.Singleton;
 using UnityEngine;
 
 namespace Framework.Assets

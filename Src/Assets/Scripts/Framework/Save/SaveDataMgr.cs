@@ -13,6 +13,7 @@
  ----------------------------------
 */
 
+using Framework.Singleton;
 using UnityEngine;
 
 namespace Framework.Save

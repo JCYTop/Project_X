@@ -21,6 +21,7 @@ using Framework.Base;
 using Framework.EventDispatcher;
 using Sirenix.OdinInspector;
 using UnityEngine;
+using Framework.Singleton;
 
 public sealed class UIRootMgr : MonoBehaviour
 {

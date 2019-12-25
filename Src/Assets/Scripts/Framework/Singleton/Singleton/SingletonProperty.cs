@@ -3,28 +3,32 @@
  * 描述：创建单例方法类，应用于父类本身就是单例情况
  */
 
-public static class SingletonProperty<T> where T : class
+namespace Framework.Singleton
 {
-    private static T instance = null;
-    private static object mLock = new object();//添加线程锁
-
-    public static T Instance()
+    public static class SingletonProperty<T> where T : class
     {
-        lock (mLock)
+        private static T instance = null;
+        private static object mLock = new object(); //添加线程锁
+
+        public static T Instance()
         {
-            if (instance == null)
+            lock (mLock)
             {
-                instance = SingletonCreator.Create<T>();
+                if (instance == null)
+                {
+                    instance = SingletonCreator.Create<T>();
+                }
             }
-        }
-        return instance;
-    }
 
-    /// <summary>
-    /// 销毁方法
-    /// </summary>
-    public static void Dispose()
-    {
-        instance = null;
+            return instance;
+        }
+
+        /// <summary>
+        /// 销毁方法
+        /// </summary>
+        public static void Dispose()
+        {
+            instance = null;
+        }
     }
 }

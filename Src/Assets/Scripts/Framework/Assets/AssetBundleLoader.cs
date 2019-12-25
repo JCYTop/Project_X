@@ -16,6 +16,7 @@
 using System;
 using System.Collections;
 using Framework.EventDispatcher;
+using Framework.Singleton;
 
 namespace Framework.Assets
 {

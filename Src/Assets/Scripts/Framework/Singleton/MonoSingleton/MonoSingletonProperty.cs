@@ -1,23 +1,27 @@
 ﻿using UnityEngine;
 
-public class MonoSingletonProperty<T> where T : MonoBehaviour
+namespace Framework.Singleton
 {
-    private static T instance = null;
-
-    public static T Instance(bool isDefault = true, string parentName = "ManagerSet")
+    public class MonoSingletonProperty<T> where T : MonoBehaviour
     {
-        if (null == instance)
+        private static T instance = null;
+
+        public static T Instance(bool isDefault = true, string parentName = "ManagerSet")
         {
-            instance = MonoSingletonCreator.Create<T>(isDefault, parentName);
-        }
-        return instance;
-    }
+            if (null == instance)
+            {
+                instance = MonoSingletonCreator.Create<T>(isDefault, parentName);
+            }
 
-    /// <summary>
-    /// 销毁方法
-    /// </summary>
-    public static void OnDestory()
-    {
-        instance = null;
+            return instance;
+        }
+
+        /// <summary>
+        /// 销毁方法
+        /// </summary>
+        public static void OnDestory()
+        {
+            instance = null;
+        }
     }
 }

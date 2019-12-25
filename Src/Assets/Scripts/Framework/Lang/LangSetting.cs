@@ -11,6 +11,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Framework.Singleton;
 using UnityEngine;
 
 namespace Framework.Lang

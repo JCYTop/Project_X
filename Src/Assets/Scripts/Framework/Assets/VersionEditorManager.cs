@@ -1,4 +1,5 @@
 using UnityEngine;
+using Framework.Singleton;
 
 namespace Framework.Assets
 {

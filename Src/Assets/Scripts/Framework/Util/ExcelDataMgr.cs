@@ -8,6 +8,7 @@
 // -  独立游戏开发
 //======================================================
 
+using Framework.Singleton;
 using UnityEngine;
 
 public class ExcelDataMgr : MonoSingleton<ExcelDataMgr>

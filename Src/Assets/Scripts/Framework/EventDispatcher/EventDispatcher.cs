@@ -4,6 +4,7 @@
  */
 
 using System.Collections.Generic;
+using Framework.Singleton;
 
 namespace Framework.EventDispatcher
 {

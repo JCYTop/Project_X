@@ -8,6 +8,7 @@
 // -  独立游戏开发
 //======================================================
 
+using Framework.Singleton;
 using UnityEditor;
 using UnityEngine;
 

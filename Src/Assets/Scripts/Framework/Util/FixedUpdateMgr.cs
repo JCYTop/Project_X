@@ -13,6 +13,7 @@
  ----------------------------------
 */
 
+using Framework.Singleton;
 using UnityEngine.Events;
 
 public class FixedUpdateMgr : MonoSingleton<FixedUpdateMgr>

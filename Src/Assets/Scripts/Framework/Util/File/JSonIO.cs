@@ -8,9 +8,8 @@
 // -  独立游戏开发
 //======================================================
 
-using System.Collections;
-using System.Collections.Generic;
 using System.IO;
+using Framework.Singleton;
 using Newtonsoft.Json;
 using UnityEngine;
 
