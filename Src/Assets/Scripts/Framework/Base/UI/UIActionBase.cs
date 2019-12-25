@@ -12,35 +12,37 @@
  *History:
  ----------------------------------
 */
-
-/// <summary>
-/// 父物体需要必定有一个UIBase
-/// </summary>
-public abstract class UIActionBase : MonoEventEmitter
+namespace Framework.Base
 {
     /// <summary>
-    /// 初始化
+    /// 父物体需要必定有一个UIBase
     /// </summary>
-    public abstract void Init();
+    public abstract class UIActionBase : MonoEventEmitter
+    {
+        /// <summary>
+        /// 初始化
+        /// </summary>
+        public abstract void Init();
 
-    /// <summary>
-    /// 显示
-    /// </summary>
-    public abstract void Enable();
+        /// <summary>
+        /// 显示
+        /// </summary>
+        public abstract void Enable();
 
-    /// <summary>
-    /// 隐藏
-    /// </summary>
-    public abstract void Disable();
+        /// <summary>
+        /// 隐藏
+        /// </summary>
+        public abstract void Disable();
 
-    /// <summary>
-    /// 刷新，自判断过滤
-    /// </summary>
-    /// <param name="args"></param>
-    public abstract void Refresh(params object[] args);
+        /// <summary>
+        /// 刷新，自判断过滤
+        /// </summary>
+        /// <param name="args"></param>
+        public abstract void Refresh(params object[] args);
 
-    /// <summary>
-    /// 释放=Destroy
-    /// </summary>
-    public abstract void Release();
+        /// <summary>
+        /// 释放=Destroy
+        /// </summary>
+        public abstract void Release();
+    }
 }

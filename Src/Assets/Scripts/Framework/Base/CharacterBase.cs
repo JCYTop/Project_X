@@ -17,29 +17,32 @@ using System;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
-public class CharacterBase : ObjectBase
+namespace Framework.Base
 {
-    [BoxGroup("角色属性设置"), InfoBox("角色注册类型"), SerializeField]
-    private Character Options = Character.Player;
-
-    public override void Init()
+    public class CharacterBase : ObjectBase
     {
-        ScenesCenterMgr.AddGameObjectInfo<Character>(globalID, (int) Options, this);
+        [BoxGroup("角色属性设置"), InfoBox("角色注册类型"), SerializeField]
+        private Character Options = Character.Player;
+
+        public override void Init()
+        {
+            ScenesCenterMgr.AddGameObjectInfo<Character>(globalID, (int) Options, this);
+        }
+
+        public override void Release()
+        {
+            ScenesCenterMgr.RemoveGameObjectInfo<Character>(globalID, (int) Options);
+        }
     }
 
-    public override void Release()
+    [Flags]
+    public enum Character
     {
-        ScenesCenterMgr.RemoveGameObjectInfo<Character>(globalID, (int) Options);
+        None = 0,
+        Player = 1,
+        Enemy = 1 << 1,
+        Boss = 1 << 2,
+        NPC = 1 << 3,
+        ALL = Player | Enemy | Boss | NPC
     }
-}
-
-[Flags]
-public enum Character
-{
-    None = 0,
-    Player = 1,
-    Enemy = 1 << 1,
-    Boss = 1 << 2,
-    NPC = 1 << 3,
-    ALL = Player | Enemy | Boss | NPC
 }

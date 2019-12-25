@@ -13,17 +13,16 @@
  ----------------------------------
 */
 
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class GameObjectBase : ObjectBase
+namespace Framework.Base
 {
-    public override void Init()
+    public class GameObjectBase : ObjectBase
     {
-    }
+        public override void Init()
+        {
+        }
 
-    public override void Release()
-    {
+        public override void Release()
+        {
+        }
     }
 }

@@ -4,188 +4,191 @@ using Framework.Assets;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
-[RequireComponent(typeof(AssetPoolItem))]
-public abstract class ObjectBase : MonoEventEmitter
+namespace Framework.Base
 {
-    #region 字段
-
-    [BoxGroup("基本属性手动设置")] private string name = string.Empty;
-
-    [BoxGroup("基本属性手动设置"), SerializeField, EnumPaging, OnValueChanged("SetCurrentLayer")]
-    private Layer objectLayer = Layer.Default;
-
-    [BoxGroup("基本属性手动设置"), SerializeField, EnumPaging, OnValueChanged("SetCurrentTag")]
-    private Tag objectTag = Tag.None;
-
-    [BoxGroup("基本属性手动设置")] public string Des = string.Empty;
-    [BoxGroup("基本属性手动设置")] public bool IsPreLoad = false;
-
-    [BoxGroup("自动设置"), Header("唯一资源标识ID"), SerializeField, ReadOnly]
-    private int resID;
-
-    [BoxGroup("自动设置"), Header("运行时场景唯一标识ID"), SerializeField, ReadOnly]
-    protected int globalID;
-
-    [BoxGroup("自动设置"), Header("基础命名"), SerializeField, ReadOnly]
-    private string baseName;
-
-    [SerializeField] private List<PointTrans> PointTrans = new List<PointTrans>();
-    [SerializeField] private List<ConfigInfo> Config = new List<ConfigInfo>();
-
-    #endregion
-
-    #region 属性
-
-    public string BaseName
+    [RequireComponent(typeof(AssetPoolItem))]
+    public abstract class ObjectBase : MonoEventEmitter
     {
-        get => baseName;
-        set => baseName = value;
-    }
+        #region 字段
 
-    public int ObjectLayer
-    {
-        get => (int) objectLayer;
-    }
+        [BoxGroup("基本属性手动设置")] private string name = string.Empty;
 
-    public string ObjectTag
-    {
-        get => Enum.GetName(typeof(Tag), objectTag);
-    }
+        [BoxGroup("基本属性手动设置"), SerializeField, EnumPaging, OnValueChanged("SetCurrentLayer")]
+        private Layer objectLayer = Layer.Default;
 
-    public int ResID
-    {
-        get => resID;
-        set => resID = value;
-    }
+        [BoxGroup("基本属性手动设置"), SerializeField, EnumPaging, OnValueChanged("SetCurrentTag")]
+        private Tag objectTag = Tag.None;
 
-    #endregion
+        [BoxGroup("基本属性手动设置")] public string Des = string.Empty;
+        [BoxGroup("基本属性手动设置")] public bool IsPreLoad = false;
 
-    void Awake()
-    {
-        BaseInit();
-        Init();
-    }
+        [BoxGroup("自动设置"), Header("唯一资源标识ID"), SerializeField, ReadOnly]
+        private int resID;
 
-    void OnEnable()
-    {
-        On(globalID.ToString(), Refresh);
-        Enable();
-    }
+        [BoxGroup("自动设置"), Header("运行时场景唯一标识ID"), SerializeField, ReadOnly]
+        protected int globalID;
 
-    void OnDisable()
-    {
-        Off(globalID.ToString(), Refresh);
-        Disable();
-    }
+        [BoxGroup("自动设置"), Header("基础命名"), SerializeField, ReadOnly]
+        private string baseName;
 
-    void OnDestroy()
-    {
-        Release();
-    }
+        [SerializeField] private List<PointTrans> PointTrans = new List<PointTrans>();
+        [SerializeField] private List<ConfigInfo> Config = new List<ConfigInfo>();
 
-    private void BaseInit()
-    {
-        globalID = ScenesCenterMgr.GlobalID;
-        gameObject.tag = ObjectTag;
-        gameObject.layer = ObjectLayer;
-        Config.ForEach((config) =>
+        #endregion
+
+        #region 属性
+
+        public string BaseName
         {
-            switch (config.Type)
+            get => baseName;
+            set => baseName = value;
+        }
+
+        public int ObjectLayer
+        {
+            get => (int) objectLayer;
+        }
+
+        public string ObjectTag
+        {
+            get => Enum.GetName(typeof(Tag), objectTag);
+        }
+
+        public int ResID
+        {
+            get => resID;
+            set => resID = value;
+        }
+
+        #endregion
+
+        void Awake()
+        {
+            BaseInit();
+            Init();
+        }
+
+        void OnEnable()
+        {
+            On(globalID.ToString(), Refresh);
+            Enable();
+        }
+
+        void OnDisable()
+        {
+            Off(globalID.ToString(), Refresh);
+            Disable();
+        }
+
+        void OnDestroy()
+        {
+            Release();
+        }
+
+        private void BaseInit()
+        {
+            globalID = ScenesCenterMgr.GlobalID;
+            gameObject.tag = ObjectTag;
+            gameObject.layer = ObjectLayer;
+            Config.ForEach((config) =>
             {
-                //TODO 根据不同的表进行加载。道具表；技能表。。。要保证全局只有唯一配置表ID
-            }
-        });
-    }
+                switch (config.Type)
+                {
+                    //TODO 根据不同的表进行加载。道具表；技能表。。。要保证全局只有唯一配置表ID
+                }
+            });
+        }
 
-    /// <summary>
-    /// 初始化
-    /// </summary>
-    public abstract void Init();
+        /// <summary>
+        /// 初始化
+        /// </summary>
+        public abstract void Init();
 
-    /// <summary>
-    /// 释放
-    /// </summary>
-    public abstract void Release();
+        /// <summary>
+        /// 释放
+        /// </summary>
+        public abstract void Release();
 
-    /// <summary>
-    /// 刷新   
-    /// </summary>
-    /// <param name="args">数据</param>
-    public virtual void Refresh(params object[] args)
-    {
-    }
-
-    public virtual void Enable()
-    {
-    }
-
-    public virtual void Disable()
-    {
-    }
-
-    private void SetCurrentTag()
-    {
-        gameObject.tag = ObjectTag;
-    }
-
-    private void SetCurrentLayer()
-    {
-        gameObject.layer = ObjectLayer;
-    }
-
-    [Button(ButtonSizes.Small), GUIColor(1, 0, 0)]
-    private void ResetResID()
-    {
-        if (!Application.isPlaying)
+        /// <summary>
+        /// 刷新   
+        /// </summary>
+        /// <param name="args">数据</param>
+        public virtual void Refresh(params object[] args)
         {
-            resID = -1;
+        }
+
+        public virtual void Enable()
+        {
+        }
+
+        public virtual void Disable()
+        {
+        }
+
+        private void SetCurrentTag()
+        {
+            gameObject.tag = ObjectTag;
+        }
+
+        private void SetCurrentLayer()
+        {
+            gameObject.layer = ObjectLayer;
+        }
+
+        [Button(ButtonSizes.Small), GUIColor(1, 0, 0)]
+        private void ResetResID()
+        {
+            if (!Application.isPlaying)
+            {
+                resID = -1;
+            }
         }
     }
-}
 
-public enum ActPosType
-{
-    None = 0,
-    Effect,
-    Tip,
-}
+    public enum ActPosType
+    {
+        None = 0,
+        Effect,
+        Tip,
+    }
 
-[Serializable]
-public class PointTrans
-{
-    public ActPosType ActPosType;
-    public Transform Trans;
-}
+    [Serializable]
+    public class PointTrans
+    {
+        public ActPosType ActPosType;
+        public Transform Trans;
+    }
 
-[Serializable]
-public class ConfigInfo
-{
-    public ConfigType Type;
-    [Header("配置ID")] public int ConfigID;
-}
+    [Serializable]
+    public class ConfigInfo
+    {
+        public ConfigType Type;
+        [Header("配置ID")] public int ConfigID;
+    }
 
-public enum ConfigType
-{
-    None,
-}
+    public enum ConfigType
+    {
+        None,
+    }
 
-public enum Tag
-{
-    None,
-    UI,
-    Character,
-    Camera,
-    Trigger,
-    GameObject,
-    DevTool,
-    Manager,
-    Util,
-}
+    public enum Tag
+    {
+        None,
+        UI,
+        Character,
+        Camera,
+        Trigger,
+        GameObject,
+        DevTool,
+        Manager,
+        Util,
+    }
 
-public enum Layer
-{
-    Default = 0,
-    UI = 5,
-    PostProcessing = 8,
-    Scene = 9,
+    public enum Layer
+    {
+        Default = 0,
+        UI = 5,
+        PostProcessing = 8,
+        Scene = 9,
+    }
 }

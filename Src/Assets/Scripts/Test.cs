@@ -15,6 +15,7 @@
 
 using System;
 using System.Threading.Tasks;
+using Framework.Base;
 using UnityEngine;
 
 public class Test : MonoBehaviour

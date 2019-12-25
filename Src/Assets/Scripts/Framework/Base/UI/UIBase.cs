@@ -17,168 +17,171 @@ using System;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
-public class UIBase : ObjectBase
+namespace Framework.Base
 {
-    [BoxGroup("UI属性设置"), EnumPaging, SerializeField, Header("UI所在层级")]
-    private UIType showType = UIType.UINone;
-
-    [BoxGroup("UI属性设置"), EnumPaging] private UIState uiState = UIState.None;
-
-    [BoxGroup("UI属性设置"), InfoBox("是否可以重复")]
-    public bool IsRepeat = false;
-
-    private UIActionBase[] actions;
-
-    public UIType ShowType
+    public class UIBase : ObjectBase
     {
-        get => showType;
-    }
+        [BoxGroup("UI属性设置"), EnumPaging, SerializeField, Header("UI所在层级")]
+        private UIType showType = UIType.UINone;
 
-    public UIState UIState
-    {
-        get => uiState;
-    }
+        [BoxGroup("UI属性设置"), EnumPaging] private UIState uiState = UIState.None;
 
-    /// <summary>
-    /// 外部处理UI状态显示
-    /// </summary>
-    /// <param name="state"></param>
-    public void HandleUIState(UIState state)
-    {
-        switch (state)
+        [BoxGroup("UI属性设置"), InfoBox("是否可以重复")]
+        public bool IsRepeat = false;
+
+        private UIActionBase[] actions;
+
+        public UIType ShowType
         {
-            case UIState.Init:
-                Init();
-                break;
-            case UIState.Enable:
-                Enable();
-                break;
-            case UIState.Disable:
-                Disable();
-                break;
-            case UIState.Release:
-                Release();
-                break;
+            get => showType;
         }
-    }
 
-    #region 底层自动调用
-
-    public override void Init()
-    {
-        actions = GetComponentsInChildren<UIActionBase>();
-        uiState = UIState.Init;
-        UIRootMgr.Instance().SetUICanvers(this);
-        UIRootMgr.Instance().InsertUIBase(this);
-        foreach (var action in actions)
+        public UIState UIState
         {
-            try
+            get => uiState;
+        }
+
+        /// <summary>
+        /// 外部处理UI状态显示
+        /// </summary>
+        /// <param name="state"></param>
+        public void HandleUIState(UIState state)
+        {
+            switch (state)
             {
-                action.Init();
-            }
-            catch (Exception e)
-            {
-                throw new Exception(e.Message);
+                case UIState.Init:
+                    Init();
+                    break;
+                case UIState.Enable:
+                    Enable();
+                    break;
+                case UIState.Disable:
+                    Disable();
+                    break;
+                case UIState.Release:
+                    Release();
+                    break;
             }
         }
-    }
 
-    public override void Enable()
-    {
-        base.Enable();
-        uiState = UIState.Enable;
-        foreach (var action in actions)
+        #region 底层自动调用
+
+        public override void Init()
         {
-            try
+            actions = GetComponentsInChildren<UIActionBase>();
+            uiState = UIState.Init;
+            UIRootMgr.Instance().SetUICanvers(this);
+            UIRootMgr.Instance().InsertUIBase(this);
+            foreach (var action in actions)
             {
-                action.Enable();
-            }
-            catch (Exception e)
-            {
-                throw new Exception(e.Message);
+                try
+                {
+                    action.Init();
+                }
+                catch (Exception e)
+                {
+                    throw new Exception(e.Message);
+                }
             }
         }
-    }
 
-    public override void Disable()
-    {
-        base.Disable();
-        uiState = UIState.Disable;
-        foreach (var action in actions)
+        public override void Enable()
         {
-            try
+            base.Enable();
+            uiState = UIState.Enable;
+            foreach (var action in actions)
             {
-                action.Disable();
-            }
-            catch (Exception e)
-            {
-                throw new Exception(e.Message);
+                try
+                {
+                    action.Enable();
+                }
+                catch (Exception e)
+                {
+                    throw new Exception(e.Message);
+                }
             }
         }
-    }
 
-    public override void Refresh(params object[] args)
-    {
-        foreach (var action in actions)
+        public override void Disable()
         {
-            try
+            base.Disable();
+            uiState = UIState.Disable;
+            foreach (var action in actions)
             {
-                action.Refresh(args);
-            }
-            catch (Exception e)
-            {
-                throw new Exception(e.Message);
+                try
+                {
+                    action.Disable();
+                }
+                catch (Exception e)
+                {
+                    throw new Exception(e.Message);
+                }
             }
         }
-    }
 
-    /// <summary>
-    /// 彻底关闭UI
-    /// </summary>
-    /// <exception cref="Exception"></exception>
-    public override void Release()
-    {
-        Close();
-        UIRootMgr.Instance().RemoveCloseUIDic(this);
-        uiState = UIState.Release;
-        foreach (var action in actions)
+        public override void Refresh(params object[] args)
         {
-            try
+            foreach (var action in actions)
             {
-                action.Release();
-            }
-            catch (Exception e)
-            {
-                throw new Exception(e.Message);
+                try
+                {
+                    action.Refresh(args);
+                }
+                catch (Exception e)
+                {
+                    throw new Exception(e.Message);
+                }
             }
         }
+
+        /// <summary>
+        /// 彻底关闭UI
+        /// </summary>
+        /// <exception cref="Exception"></exception>
+        public override void Release()
+        {
+            Close();
+            UIRootMgr.Instance().RemoveCloseUIDic(this);
+            uiState = UIState.Release;
+            foreach (var action in actions)
+            {
+                try
+                {
+                    action.Release();
+                }
+                catch (Exception e)
+                {
+                    throw new Exception(e.Message);
+                }
+            }
+        }
+
+        /// <summary>
+        /// 原则只隐藏不删除
+        /// </summary>
+        public void Close()
+        {
+            UIRootMgr.Instance().CloseUIBase(this);
+            this.gameObject.SetActive(false);
+        }
+
+        #endregion
     }
 
-    /// <summary>
-    /// 原则只隐藏不删除
-    /// </summary>
-    public void Close()
+    public enum UIType
     {
-        UIRootMgr.Instance().CloseUIBase(this);
-        this.gameObject.SetActive(false);
+        UINone,
+        UIRoot,
+        UIStack,
+        UITop,
     }
 
-    #endregion
-}
-
-public enum UIType
-{
-    UINone,
-    UIRoot,
-    UIStack,
-    UITop,
-}
-
-public enum UIState
-{
-    None,
-    Init, //初始化
-    Enable, //显示
-    Disable, //隐藏
-    Release, //关闭
+    public enum UIState
+    {
+        None,
+        Init, //初始化
+        Enable, //显示
+        Disable, //隐藏
+        Release, //关闭
+    }
 }

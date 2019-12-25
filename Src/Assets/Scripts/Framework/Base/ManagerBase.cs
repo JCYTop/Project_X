@@ -1,3 +1,6 @@
-﻿public class ManagerBase
+﻿namespace Framework.Base
 {
+    public class ManagerBase
+    {
+    }
 }
