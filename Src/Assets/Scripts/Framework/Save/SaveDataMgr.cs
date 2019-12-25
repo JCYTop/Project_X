@@ -15,46 +15,49 @@
 
 using UnityEngine;
 
-/// <summary>
-/// 一些基础数据存储使用
-/// </summary>
-public class SaveDataMgr : MonoSingleton<SaveDataMgr>
+namespace Framework.Save
 {
-    //TODO 不同的存储文件
-    public T GetSaveData<T>(SaveEnum key)
+    /// <summary>
+    /// 一些基础数据存储使用
+    /// </summary>
+    public class SaveDataMgr : MonoSingleton<SaveDataMgr>
     {
-        if (ES3.KeyExists(key.ToString()))
-            return ES3.Load<T>(key.ToString());
-        return ES3.Load<T>(key.ToString(), default(T));
+        //TODO 不同的存储文件
+        public T GetSaveData<T>(SaveEnum key)
+        {
+            if (ES3.KeyExists(key.ToString()))
+                return ES3.Load<T>(key.ToString());
+            return ES3.Load<T>(key.ToString(), default(T));
+        }
+
+        public void GetSaveData<T>(SaveEnum key, T obj) where T : Transform
+        {
+            if (ES3.KeyExists(key.ToString()))
+                ES3.LoadInto<T>(key.ToString(), obj);
+        }
+
+        public T SetSaveData<T>(SaveEnum key, T value)
+        {
+            ES3.Save<T>(key.ToString(), value);
+            return value;
+        }
+
+        void OnApplicationQuit()
+        {
+        }
+
+        void OnApplicationPause(bool paused)
+        {
+            if (paused)
+                OnApplicationQuit();
+        }
     }
 
-    public void GetSaveData<T>(SaveEnum key, T obj) where T : Transform
+    public enum SaveEnum
     {
-        if (ES3.KeyExists(key.ToString()))
-            ES3.LoadInto<T>(key.ToString(), obj);
+        ResolutionWidth,
+        ResolutionHeight,
+        FrameRate,
+        Fullscreen,
     }
-
-    public T SetSaveData<T>(SaveEnum key, T value)
-    {
-        ES3.Save<T>(key.ToString(), value);
-        return value;
-    }
-
-    void OnApplicationQuit()
-    {
-    }
-
-    void OnApplicationPause(bool paused)
-    {
-        if (paused)
-            OnApplicationQuit();
-    }
-}
-
-public enum SaveEnum
-{
-    ResolutionWidth,
-    ResolutionHeight,
-    FrameRate,
-    Fullscreen,
 }

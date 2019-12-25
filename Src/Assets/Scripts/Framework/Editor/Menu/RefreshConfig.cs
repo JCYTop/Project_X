@@ -13,6 +13,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.IO;
 using Framework.Base;
+using Framework.ScriptableObject;
 using UnityEditor;
 using UnityEngine;
 

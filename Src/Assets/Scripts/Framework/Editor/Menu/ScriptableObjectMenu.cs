@@ -61,7 +61,8 @@ namespace Framework.Editor
         {
             Assembly assembly = GetAssembly();
             // Get all classes derived from ScriptableObject
-            Type[] allScriptableObjects = (from t in assembly.GetTypes() where t.IsSubclassOf(typeof(ScriptableObject)) select t).ToArray();
+            Type[] allScriptableObjects =
+                (from t in assembly.GetTypes() where t.IsSubclassOf(typeof(UnityEngine.ScriptableObject)) select t).ToArray();
             Types = allScriptableObjects;
         }
 
@@ -71,8 +72,8 @@ namespace Framework.Editor
             selectedIndex = EditorGUILayout.Popup(selectedIndex, names);
             if (GUILayout.Button("Create"))
             {
-                var asset = ScriptableObject.CreateInstance(types[selectedIndex]);
-                ProjectWindowUtil.StartNameEditingIfProjectWindowExists(asset.GetInstanceID(), ScriptableObject.CreateInstance<EndNameEdit>(),
+                var asset = CreateInstance(types[selectedIndex]);
+                ProjectWindowUtil.StartNameEditingIfProjectWindowExists(asset.GetInstanceID(), CreateInstance<EndNameEdit>(),
                     string.Format("{0}.asset", names[selectedIndex]), AssetPreview.GetMiniThumbnail(asset), null);
                 Close();
             }

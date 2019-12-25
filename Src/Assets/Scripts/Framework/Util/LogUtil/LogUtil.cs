@@ -14,6 +14,7 @@
 */
 
 using System;
+using Framework.ScriptableObject;
 using UnityEngine;
 
 public static class LogUtil

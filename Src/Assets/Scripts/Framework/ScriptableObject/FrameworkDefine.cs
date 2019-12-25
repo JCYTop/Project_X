@@ -10,12 +10,14 @@
 
 using System;
 using Sirenix.OdinInspector;
-using UnityEngine;
 
-/// <summary>
-/// 框架声明定义
-/// </summary>
-public class FrameworkDefine : ScriptableObject
+namespace Framework.ScriptableObject
 {
-    [InfoBox("源码网址")] public string FrameworkWebsite = String.Empty;
+    /// <summary>
+    /// 框架声明定义
+    /// </summary>
+    public class FrameworkDefine : UnityEngine.ScriptableObject
+    {
+        [InfoBox("源码网址")] public string FrameworkWebsite = String.Empty;
+    }
 }

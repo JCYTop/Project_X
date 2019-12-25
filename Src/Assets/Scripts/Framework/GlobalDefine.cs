@@ -13,6 +13,7 @@
  ----------------------------------
 */
 
+using Framework.ScriptableObject;
 using UnityEngine;
 
 /// <summary>

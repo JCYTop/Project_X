@@ -17,25 +17,28 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LogConfig : ScriptableObject
+namespace Framework.ScriptableObject
 {
-    public bool All = true;
-    public List<LogData> LogDatas;
-}
-
-[Serializable]
-public class LogData
-{
-    public LogType LogType;
-    public bool Show;
-    public Color LogColor;
-
-    public string GetLogColorStr
+    public class LogConfig : UnityEngine.ScriptableObject
     {
-        get
+        public bool All = true;
+        public List<LogData> LogDatas;
+    }
+
+    [Serializable]
+    public class LogData
+    {
+        public LogType LogType;
+        public bool Show;
+        public Color LogColor;
+
+        public string GetLogColorStr
         {
-            string color = ColorUtility.ToHtmlStringRGB(LogColor);
-            return string.Format("<color=#{0}>[{1}] : </color>", color, LogType);
+            get
+            {
+                string color = ColorUtility.ToHtmlStringRGB(LogColor);
+                return string.Format("<color=#{0}>[{1}] : </color>", color, LogType);
+            }
         }
     }
 }
