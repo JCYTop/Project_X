@@ -2,6 +2,8 @@ namespace UtilSet
 {
     public class Sort
     {
+        #region 快速排序
+
         /// <summary>
         /// 快速排序,填坑法
         /// </summary>
@@ -254,5 +256,7 @@ namespace UtilSet
                 a1 = a1 ^ a2;
             }
         }
+
+        #endregion
     }
 }
