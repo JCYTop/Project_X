@@ -7,155 +7,389 @@
  *Version:      0.0.1
  *AuthorEmail:  jcyemail@qq.com
  *UnityVersion：2019.1.0f2
- *CreateTime:   2019/08/25 23:06:50
+ *CreateTime:   2020/01/05 14:40:57
  *Description:  IndieGame 
  *History:
  ----------------------------------
 */
 
 using System;
+using System.Collections;
 using System.Collections.Generic;
 
-/// <summary>
-/// C#实现跳表
-/// </summary>
-/// <typeparam name="T"></typeparam>
-public abstract class SkipList<T> : IComparer<T>
+public class SkipList<TKey, TValue> : IDictionary<TKey, TValue> where TKey : IComparable
 {
-    private int maxLevel = 1 << 5;
+    private SkipListNode<TKey, TValue> head;
+    private int count;
 
-    /// <summary>
-    /// 带头链表
-    /// </summary>
-    private SkipNode<T> head = new SkipNode<T>();
-
-    /// <summary>
-    /// 高度
-    /// </summary>
-    private int levelCount = 1;
-
-    public SkipNode<T> Find(T value)
+    public int Count
     {
-        var p = head;
-        for (int i = levelCount - 1; i >= 0; i--)
-        {
-            while (p.Forwards[i] != null && Compare(p.Forwards[i].Data, value) == -1) //小于
-            {
-                p = p.Forwards[i];
-            }
-        }
+        get => count;
+    }
 
-        if (p.Forwards[0] != null && Compare(p.Forwards[0].Data, value) == 0) //等于
+    public bool IsReadOnly { get; }
+
+    public bool IsReadOnley
+    {
+        get => false;
+    }
+
+    public TValue this[TKey key]
+    {
+        get => get(key);
+        set => Add(key, value);
+    }
+
+    public ICollection<TKey> Keys
+    {
+        get
         {
-            return p.Forwards[0];
+            var keys = new List<TKey>(count);
+            walkEntries(n => keys.Add(n.Key));
+            return keys;
+        }
+    }
+
+    public ICollection<TValue> Values
+    {
+        get
+        {
+            var values = new List<TValue>(count);
+            walkEntries(n => values.Add(n.Value));
+            return values;
+        }
+    }
+
+    public SkipList()
+    {
+        this.head = new SkipListNode<TKey, TValue>();
+        count = 0;
+    }
+
+    public void Add(KeyValuePair<TKey, TValue> keyValue)
+    {
+        Add(keyValue.Key, keyValue.Value);
+    }
+
+    public void Add(TKey key, TValue value)
+    {
+        var found = Search(key, out var position);
+        if (found)
+        {
+            position.Value = value;
         }
         else
         {
-            return null;
+            count++;
+            var newEntry = new SkipListNode<TKey, TValue>(key, value);
+            //插入节点
+            newEntry.Back = position;
+            if (position.Forword != null)
+            {
+                newEntry.Forword = position.Forword;
+            }
+
+            position.Forword = newEntry;
+            Promote(newEntry);
         }
     }
 
-    public void Insert(T value)
+    public void Clear()
     {
-        var level = RandomLevel();
-        var newNode = new SkipNode<T>();
-        newNode.Data = value;
-        newNode.MaxLevel = level;
-        var update = new SkipNode<T>[level];
-        for (int i = 0; i < level; i++)
-        {
-            update[i] = head;
-        }
+        head = new SkipListNode<TKey, TValue>();
+        count = 0;
+    }
 
-        //找到与目标节点最小最相邻的节点
-        var ptr = head;
-        for (int i = level - 1; i >= 0; i--)
+    public bool ContainsKey(TKey key)
+    {
+        return Search(key, out var notused);
+    }
+
+    public bool Contains(KeyValuePair<TKey, TValue> keyValue)
+    {
+        return ContainsKey(keyValue.Key);
+    }
+
+    public bool Remove(TKey key)
+    {
+        bool found = Search(key, out var position);
+        if (!found)
         {
-            while (ptr.Forwards[i] != null && Compare(ptr.Forwards[i].Data, value) == -1)
+            return false;
+        }
+        else
+        {
+            var old = position;
+            do
             {
-                ptr = ptr.Forwards[i];
+                old.Back.Forword = old.Forword;
+                if (old.Forword != null)
+                {
+                    old.Forword.Back = old.Back;
+                }
+
+                //找一下上面是否进行了删除
+                old = old.Up;
+            } while (old != null);
+
+            count--;
+            while (head.Forword == null)
+            {
+                head = head.Down;
             }
 
-            update[i] = ptr; //这里替换了初始化节点
+            return true;
         }
+    }
 
-        //链接上之后的节点,链表常规操作
-        for (int i = 0; i < level; i++)
+    public bool Remove(KeyValuePair<TKey, TValue> keyValue)
+    {
+        return Remove(keyValue.Key);
+    }
+
+    public bool TryGetValue(TKey key, out TValue value)
+    {
+        try
         {
-            newNode.Forwards[i] = update[i].Forwards[i];
-            update[i].Forwards[i] = newNode;
+            value = get(key);
+            return true;
+        }
+        catch (KeyNotFoundException)
+        {
+            value = default(TValue);
+            return false;
+        }
+    }
+
+    public void CopyTo(KeyValuePair<TKey, TValue>[] array, int index)
+    {
+        if (array == null)
+            throw new ArgumentNullException("array");
+        if (index < 0)
+            throw new ArgumentOutOfRangeException("index");
+        if (array.IsReadOnly)
+            throw new ArgumentException("The array argument is Read Only and new items cannot be added to it.");
+        if (array.IsFixedSize && array.Length < count + index)
+            throw new ArgumentException("The array argument does not have sufficient space for the SkipList entries.");
+
+        int i = index;
+        walkEntries(n => array[i++] = new KeyValuePair<TKey, TValue>(n.Key, n.Value));
+    }
+
+    public IEnumerator<KeyValuePair<TKey, TValue>> GetEnumerator()
+    {
+        var position = head;
+        while (position.Down != null)
+            position = position.Down;
+        while (position.Forword != null)
+        {
+            position = position.Forword;
+            yield return new KeyValuePair<TKey, TValue>(position.Key, position.Value);
+        }
+    }
+
+    IEnumerator IEnumerable.GetEnumerator()
+    {
+        return GetEnumerator();
+    }
+
+    private TValue get(TKey key)
+    {
+        var found = Search(key, out var position);
+        if (!found)
+        {
+            throw new KeyNotFoundException("Unable to find entry with key \"" + key.ToString() + "\"");
         }
 
-        if (levelCount < level) levelCount = level;
+        return position.Value;
     }
 
     /// <summary>
-    /// 删除节点
+    /// 遍历节点
     /// </summary>
-    /// <param name="value"></param>
-    public void Delete(T value)
+    /// <param name="lambda"></param>
+    private void walkEntries(Action<SkipListNode<TKey, TValue>> lambda)
     {
-        var update = new SkipNode<T> [levelCount];
-        var ptr = head;
-        for (int i = levelCount - 1; i >= 0; i--)
+        var node = head;
+        //下沉到最低层
+        while (node.Down != null)
         {
-            while (ptr.Forwards[i] != null && Compare(ptr.Forwards[i].Data, value) == -1)
-            {
-                ptr = ptr.Forwards[i];
-            }
-
-            update[i] = ptr; //这里替换了初始化节点
+            node = node.Down;
         }
 
-        if (ptr.Forwards[0] != null && Compare(ptr.Forwards[0].Data, value) == 0)
+        //遍历最底层
+        while (node.Forword != null)
         {
-            for (int i = levelCount - 1; i >= 0; --i)
+            node = node.Forword;
+            lambda(node);
+        }
+    }
+
+    /// <summary>
+    /// 内部搜索
+    /// </summary>
+    /// <param name="key"></param>
+    /// <param name="position"></param>
+    /// <returns></returns>
+    /// <exception cref="ArgumentNullException"></exception>
+    private bool Search(TKey key, out SkipListNode<TKey, TValue> position)
+    {
+        if (key == null)
+            throw new ArgumentNullException("key");
+        SkipListNode<TKey, TValue> current;
+        position = current = head;
+
+        while ((current.isFront || key.CompareTo(current.Key) >= 0) && (current.Forword != null || current.Down != null))
+        {
+            position = current;
+            if (key.CompareTo(current.Key) == 0)
             {
-                if (update[i].Forwards[i] != null && Compare(ptr.Forwards[0].Data, value) == 0)
+                return true;
+            }
+
+            if (current.Forword == null || key.CompareTo(current.Forword.Key) < 0)
+            {
+                //该往下了
+                if (current.Down == null)
                 {
-                    update[i].Forwards[i] = update[i].Forwards[i].Forwards[i];
+                    return false;
+                }
+                else
+                {
+                    current = current.Down;
                 }
             }
-        }
-    }
-
-    public void PrintAll()
-    {
-        var ptr = head;
-        while (ptr.Forwards[0] != null)
-        {
-            LogUtil.Log(ptr.Forwards[0].Data + " ");
-            ptr = ptr.Forwards[0];
-        }
-    }
-
-    private int RandomLevel()
-    {
-        var random = new Random();
-        var level = 1;
-        for (int i = 1; i < maxLevel; ++i)
-        {
-            if (random.Next() % 2 == 1)
+            else
             {
-                level++;
+                //继续往前
+                current = current.Forword;
             }
         }
 
-        return level;
+        //是寻找点或者最近点
+        position = current;
+        if (key.CompareTo(position.Key) == 0)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 
-    public abstract int Compare(T x, T y);
-}
+    private void Promote(SkipListNode<TKey, TValue> node)
+    {
+        var up = node.Back;
+        var last = node;
+        //添加了几层
+        for (var levels = this.levels(); levels > 0; levels--)
+        {
+            while (up.Up == null && !up.isFront)
+            {
+                up = up.Back;
+            }
 
-public class SkipNode<T>
-{
-    public T Data;
-    public int MaxLevel = 0;
+            if (up.isFront && up.Up == null)
+            {
+                up.Up = new SkipListNode<TKey, TValue>();
+                head = up.Up;
+            }
+
+            up = up.Up;
+            var newNode = new SkipListNode<TKey, TValue>(node.KeyValue);
+            newNode.Forword = up.Forword;
+            up.Forword = newNode;
+            newNode.Down = last;
+            newNode.Down.Up = newNode;
+            last = newNode;
+        }
+    }
 
     /// <summary>
-    /// 与高度结合使用
-    /// 不同的index
-    /// 代表不同的层之后的引用关联
+    /// The random number of level to promote a newly added node.
     /// </summary>
-    public SkipNode<T>[] Forwards = new SkipNode<T>[1 << 5];
+    /// <returns>the number of levels of promotion</returns>
+    private int levels()
+    {
+        var generator = new Random();
+        int levels = 0;
+        while (generator.NextDouble() < 0.5)
+            levels++;
+        return levels;
+    }
+}
+
+public class SkipListNode<TKey, TValue>
+{
+    /// <summary>
+    /// 跳表节点指向
+    /// </summary>
+    public SkipListNode<TKey, TValue> Forword, Back, Up, Down;
+
+    /// <summary>
+    /// 节点内容值
+    /// </summary>
+    public SkipListKVPair<TKey, TValue> KeyValue;
+
+    public bool isFront = false;
+
+    #region 属性
+
+    public TKey Key
+    {
+        get => KeyValue.Key;
+    }
+
+    public TValue Value
+    {
+        get => KeyValue.Value;
+        set => KeyValue.Value = value;
+    }
+
+    #endregion
+
+    public SkipListNode()
+    {
+        this.KeyValue = new SkipListKVPair<TKey, TValue>(default, default);
+        this.isFront = true;
+    }
+
+    public SkipListNode(SkipListKVPair<TKey, TValue> keyValue)
+    {
+        this.KeyValue = keyValue;
+    }
+
+    public SkipListNode(TKey key, TValue value)
+    {
+        this.KeyValue = new SkipListKVPair<TKey, TValue>(key, value);
+    }
+}
+
+/// <summary>
+/// 跳表节点内容节点
+/// </summary>
+/// <typeparam name="Tkey"></typeparam>
+/// <typeparam name="TValue"></typeparam>
+public class SkipListKVPair<TKey, TValue>
+{
+    private TKey key;
+    private TValue value;
+
+    public TKey Key
+    {
+        get => key;
+    }
+
+    public TValue Value
+    {
+        get => value;
+        set => this.value = value;
+    }
+
+    public SkipListKVPair(TKey key, TValue value)
+    {
+        this.key = key;
+        this.value = value;
+    }
 }
