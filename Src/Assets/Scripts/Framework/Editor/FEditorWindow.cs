@@ -198,7 +198,7 @@ namespace Framework.Editor
                     File.WriteAllText("_lastScene", currentSceneName);
                     EditorApplication.SaveScene(EditorApplication.currentScene);
                     //TODO
-                    EditorApplication.OpenScene("Assets/ABRes/Scenes/GameScenes/Awake.unity");
+                    EditorApplication.OpenScene("Assets/ABRes/Scenes/GameScenes/AwakeScene.unity");
                     EditorApplication.isPlaying = true;
                 }
 

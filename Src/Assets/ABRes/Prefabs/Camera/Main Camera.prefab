@@ -130,5 +130,6 @@ MonoBehaviour:
   IsPreLoad: 0
   resID: 0
   globalID: 0
+  baseName: 
   PointTrans: []
   Config: []
