@@ -20,7 +20,7 @@ public class ManagerTask : GameLanucherTask
     {
         LogUtil.Log(string.Format(TaskName.Value), LogType.TaskLog);
         yield return new WaitForFixedUpdate();
-#if Dev
+#if COMMON_DEV
         EntityUtil.CreateGameobject<GM>("GM", false);
 #endif
         EntityUtil.CreateGameobject<GlobalEvent>("GlobalEvent", false);
