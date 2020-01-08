@@ -75,6 +75,25 @@ public class Test : MonoBehaviour
 //        string c2 = "ababacababb";
 //        string c3 = "ababacababac";
 //        Debug.Log(StringSearch.KMP(c2, "ba"));
+
+        CreateCorner();
+    }
+
+    void CreateCorner()
+    {
+        MeshFilter mesh = GetComponent<MeshFilter>();
+
+        for (int i = 0; i < 8; i++)
+        {
+            GameObject obj = GameObject.CreatePrimitive(PrimitiveType.Cube);
+            obj.GetComponent<MeshRenderer>().material = default(Material);
+            obj.name = "conner" + i.ToString();
+            obj.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
+            obj.transform.parent = transform;
+            //设置物体的位置Vector3三个参数分别代表x,y,z的坐标数
+            obj.transform.position =
+                transform.TransformPoint(mesh.sharedMesh.vertices[i]);
+        }
     }
 
     public async void Tesss()
