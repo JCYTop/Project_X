@@ -12,5 +12,1205 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee4bc21567f434b598a3c96ba4946372, type: 3}
   m_Name: AssetReferenceDB
   m_EditorClassIdentifier: 
-  m_assets: []
+  m_assets:
+  - m_assetDatabaseId: 00000000000000006100000000000000
+    m_importFrom: ProjectSettings/GraphicsSettings.asset
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: afa6102003448e2479911d80f360879b
+    m_importFrom: Packages/com.unity.memoryprofiler/Package Resources/Icons/Editor.png
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 9a259220d60894045a0dfd2b92c0779c
+    m_importFrom: Assets/ABRes/Shader/Swim.shadergraph
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: c897082077d358d40982be41e2617717
+    m_importFrom: Packages/com.unity.memoryprofiler/Package Resources/UXML/SnapshotListItem.uxml
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: b62f8a2008c30ef49994f9b5258be925
+    m_importFrom: Packages/com.unity.memoryprofiler/Package Resources/Icons/StandaloneWindows@2x.png
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: a13fed205b1fa3942abfab7ba21463ec
+    m_importFrom: Assets/3dr/AstarPathfindingProject/ExampleScenes/Prefabs/MineBot/mine_bot@back.FBX
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: a8fb8b30e4d6f6640859c9bcaef4bd88
+    m_importFrom: Packages/com.unity.cinemachine/license.txt
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 000c16408e03249d19c040b494c9d2dd
+    m_importFrom: Packages/com.unity.ai.planner/Editor/Templates/EnumTemplate.txt
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 725376400a443004c968c87a08adcf06
+    m_importFrom: Packages/com.unity.memoryprofiler/Package Resources/UXML/OpenSnapshotsWindow.uxml
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 69a679404106d03458824969f24a5778
+    m_importFrom: Assets/ABRes/Prefabs/Camera/Main Camera.prefab
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 0e9d5a909a1f7e84882a534d0d11e49f
+    m_importFrom: Packages/com.unity.render-pipelines.universal/Shaders/Autodesk
+      Interactive/Autodesk Interactive.shadergraph
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 0a26af90335153243ad2a0edc6f17d58
+    m_importFrom: Packages/com.unity.memoryprofiler/Package Resources/Icons/WebGL@2x.png
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 709397a0e5348b848a8c297d596c7e62
+    m_importFrom: Packages/com.unity.ai.planner/CHANGELOG.md
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 7e212db0aa2c00b448aa511ece336f20
+    m_importFrom: Assets/3dr/AstarPathfindingProject/ExampleScenes/Prefabs/MineBot/mine_bot@awake.FBX
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 987cd8c0474b72f429605dac1cea3627
+    m_importFrom: Packages/com.unity.render-pipelines.lightweight/Shaders/Nature/SpeedTree8Input.hlsl
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: a7f45ef0d813e9f46979db81c07886f3
+    m_importFrom: Packages/com.unity.memoryprofiler/Package Resources/ViewSample/Tutorial.xml
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: a973b4010e9757c4da3022ee41de534f
+    m_importFrom: Packages/com.unity.render-pipelines.lightweight/Shaders/BakedLitInput.hlsl
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 9d24b90158d644873a4d488182380074
+    m_importFrom: Packages/com.unity.ai.planner/Runtime/Location.asset
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 249bbb113e72b1f4ba7024cb4cc33fe9
+    m_importFrom: Packages/com.unity.memoryprofiler/Package Resources/MemView.xml
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 7d4fd3415ea7dd64bbcfe13fb48a730b
+    m_importFrom: Packages/com.unity.render-pipelines.core/Runtime/Debugging/Prefabs/Widgets/DebugUI
+      FloatField.prefab
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: d691174143fd3774ba63d7c493633b99
+    m_importFrom: Packages/com.unity.test-framework/CHANGELOG.md
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 436b69414b04047fca3929c70df57c4f
+    m_importFrom: Assets/3dr/AstarPathfindingProject/ExampleScenes/Example12_Procedural/cylinder.fbx
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: b1636a4195873ba4d919b6a67bc97133
+    m_importFrom: Packages/com.unity.render-pipelines.lightweight/Shaders/Utils/Lightweight2D.hlsl
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: d6988a41ed40667478cf3063febc81e8
+    m_importFrom: Assets/ABRes/Prefabs/Util/ExcelDataMgr.prefab
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 805e4f51eb4fab64c8e4a41ec7182a9e
+    m_importFrom: Packages/com.unity.render-pipelines.lightweight/Shaders/Terrain/TerrainLitInput.hlsl
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: b159a47131aacac4cbc30388877504a6
+    m_importFrom: Packages/com.unity.memoryprofiler/Package Resources/Icons/StandaloneWindows.png
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 60c6d781ecbc440e3b78e2551bfc2353
+    m_importFrom: Packages/com.unity.rendering.hybrid/LICENSE
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: bb39a791cd4b6354d8a30e56c38efa83
+    m_importFrom: Packages/com.unity.entities/Unity.Entities/UnsafeList.tt
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: df2342a101fc54b44811414aaee023ba
+    m_importFrom: Assets/3dr/AstarPathfindingProject/ExampleScenes/Example12_Procedural/ProceduralPrefab4.prefab
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: ce347ad101f41ee4ab5c3fbc0ea447db
+    m_importFrom: Packages/com.unity.render-pipelines.core/Runtime/Debugging/Prefabs/Widgets/DebugUI
+      Toggle.prefab
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 595b7dd1e44bedc4798b6a00c2068fea
+    m_importFrom: Packages/com.unity.memoryprofiler/Package Resources/Icons/Memory
+      Profiler.png
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 6548c3f1835d08a41b9f3d82af4991ba
+    m_importFrom: Packages/com.unity.render-pipelines.lightweight/Shaders/UnlitInput.hlsl
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 9bbdf5f1e17cb9047b80bb68796d36cb
+    m_importFrom: Packages/com.unity.memoryprofiler/Package Resources/StyleSheets/MemoryProfilerWindow_style_newTheming.uss
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: ef9e4af12f451784da720b822fa156ca
+    m_importFrom: Packages/com.unity.render-pipelines.lightweight/Shaders/Nature/SpeedTree7BillboardInput.hlsl
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 1bcbc312d72d17547a55e600f7d411bc
+    m_importFrom: Packages/com.unity.memoryprofiler/CHANGELOG.md
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 1f3ebc12f82319e48bcd41e6fc7dab96
+    m_importFrom: Packages/com.unity.render-pipelines.lightweight/Shaders/Nature/SpeedTree8Passes.hlsl
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 5088d0220f0c4df439cf06c5c270eacb
+    m_importFrom: Packages/com.unity.render-pipelines.core/Runtime/Debugging/Prefabs/Widgets/DebugUI
+      ToggleHistory.prefab
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 122a9c42bc462ff40ab673d26c30e0e7
+    m_importFrom: Assets/3dr/Sirenix/Demos/Attributes Overview/Assets/Prefab Related
+      Attributes.prefab
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: d38d5a5256466c349a81338d02621916
+    m_importFrom: Packages/com.unity.scriptablebuildpipeline/package.json
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 4a5489720b8cc694790dc6a2ab292aca
+    m_importFrom: Packages/com.unity.memoryprofiler/Package Resources/Icons/d_Memory
+      Profiler@2x.png
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 1da85f72a7a82bc4eabdbd8f0683bde2
+    m_importFrom: Assets/3dr/AstarPathfindingProject/ExampleScenes/Prefabs/MineBot/mine_bot@forward.FBX
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 77c185820dd1a464eac89cae3abccddf
+    m_importFrom: Packages/com.unity.render-pipelines.core/Runtime/Debugging/Prefabs/Widgets/DebugUI
+      Color.prefab
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: f43814c2d05a6e14886a10140b08aa92
+    m_importFrom: Packages/com.unity.render-pipelines.lightweight/package.json
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 2a49d7e2792cdbe4c92e4d23032d891b
+    m_importFrom: Packages/com.unity.memoryprofiler/Package Resources/StyleSheets/OpenSnapshotsWindow_style.uss
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 4774b2f29b63d2844915d86afff02b47
+    m_importFrom: Packages/com.unity.settings-manager/CHANGELOG.md
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 89eb4003a9db2ee46a7a8549160bf68a
+    m_importFrom: Packages/com.unity.addressables/license.md
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: e336021355088bc40bd7ac3d3c8c8787
+    m_importFrom: Packages/com.unity.render-pipelines.lightweight/ShaderLibrary/UnityInput.hlsl
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 4dcd2713efcbe6a4aa9691b124c808b2
+    m_importFrom: Packages/com.unity.memoryprofiler/Package Resources/MemoryMap/MemoryMap.shader
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 3f868a33bb551d843b09978b3de63695
+    m_importFrom: Packages/com.unity.render-pipelines.lightweight/Shaders/Terrain/WavingGrassInput.hlsl
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 93c1484372a5f5448ab6371fdb212c20
+    m_importFrom: Packages/com.unity.scriptablebuildpipeline/license.md
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 99eedf533d6358a4e8f2f4bb7ce062bc
+    m_importFrom: Packages/com.unity.render-pipelines.lightweight/Shaders/Particles/ParticlesSimpleLitForwardPass.hlsl
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 3eaa0563fc0ba44faae08db3e076afd4
+    m_importFrom: Packages/com.unity.entities/package.json
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: bcf6df7306fa822409032b052e1854c0
+    m_importFrom: Packages/com.unity.memoryprofiler/Package Resources/StyleSheets/MemoryProfilerWindow_style.uss
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 0db2e1930ecffa147be3db83c5aa6a88
+    m_importFrom: Packages/com.unity.quicksearch/Editor/StyleSheets/Extensions/common.uss
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: b69919937ff6b43dc82720add064ec3f
+    m_importFrom: Packages/com.unity.entities/Unity.Entities.Hybrid.Tests/Conversion_Prefab_Reference_Prefab.prefab
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 7fdfb9a3e0fdf4df880ebc7fa5f56398
+    m_importFrom: Assets/3dr/AstarPathfindingProject/ExampleScenes/Example6_Navmesh/example6.fbx
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 627003b3ffd46784082d468cd01f2537
+    m_importFrom: Packages/com.unity.memoryprofiler/README.md
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 81d0f2e301e584c2094ed9a85ef8a3dd
+    m_importFrom: Packages/com.unity.entities/Unity.Entities.Hybrid.Tests/Conversion_Prefab_Hierarchy.prefab
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: dd1f79449e827b643bc786b747ca5fa3
+    m_importFrom: Packages/com.unity.entities/Unity.Entities/IJobForEach.tt
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: b524356484bab4157836d71fc67632da
+    m_importFrom: Packages/com.unity.entities/Unity.Entities.Hybrid.Tests/Conversion_Prefab_Reference_Self.prefab
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 3ec7596410385054a9e0bc90377fbe63
+    m_importFrom: Packages/com.unity.test-framework/LICENSE.md
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: a6e6a384d2cf9ed48b66193f1f60e70a
+    m_importFrom: Packages/com.unity.memoryprofiler/Package Resources/UXML/MemoryProfilerWindow.uxml
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: f22bcc84a5f4a1944b075a2c4ac71493
+    m_importFrom: Packages/com.unity.render-pipelines.core/Runtime/Debugging/Prefabs/Widgets/DebugUI
+      UIntField.prefab
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: d47f009476100f545971a81ede14c750
+    m_importFrom: Packages/com.unity.render-pipelines.core/Runtime/Debugging/Prefabs/Widgets/DebugUI
+      Vector4.prefab
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 8c1a72948ea95ac4c81b36b7def23d2f
+    m_importFrom: Packages/com.unity.render-pipelines.lightweight/LICENSE.md
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 441e67a4721e749f0bca9581956f2729
+    m_importFrom: Assets/3dr/AstarPathfindingProject/ExampleScenes/Prefabs/TargetReachedEffect.prefab
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 13a9c1b4df2e489e8eb9cacca7429596
+    m_importFrom: Packages/com.unity.timeline/package.json
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 7f22aeb4593a444b7a3c783dd2b58e8c
+    m_importFrom: Assets/3dr/Easy Save 2/Auto Save/ES2 Auto Save Manager.prefab
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 1d3f74e4710534643a1b4eace9909bd9
+    m_importFrom: Packages/com.unity.render-pipelines.lightweight/ShaderLibrary/Shadows.hlsl
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: d6a2e6e4803de7b43baacdc355fc144d
+    m_importFrom: Packages/com.unity.test-framework/package.json
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 5ee4dfe4400a04694b3cfbccb1197140
+    m_importFrom: Assets/3dr/Easy Save 2/Examples/Creating an Automatic Save Structure/Prefabs/Cube.prefab
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 7c92bd05c9fe3b14496a0c814790af93
+    m_importFrom: Packages/com.unity.memoryprofiler/Package Resources/Icons/WSAPlayer@2x.png
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 92b1d31510147524c8eaf2a2517ecee1
+    m_importFrom: Packages/com.unity.render-pipelines.lightweight/Shaders/Terrain/TerrainLitPasses.hlsl
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: ce949e15b369542f1991c23589a224fc
+    m_importFrom: Packages/com.unity.jobs/CHANGELOG.md
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 75138e256bdb81847a470aae46010540
+    m_importFrom: Packages/com.unity.render-pipelines.lightweight/ShaderLibrary/Lighting.hlsl
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 71b11355001648444b41d17fd36c150d
+    m_importFrom: Packages/com.unity.analytics/DataPrivacy/DataPrivacyButton.prefab
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 1a9173555795045f5916faefe47662e5
+    m_importFrom: Assets/3dr/Easy Save 2/Examples/Shared Assets/Prefabs/Sphere Prefab.prefab
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: ae00bb75e0cd5b04b8fe7fb4ab662629
+    m_importFrom: Packages/com.unity.render-pipelines.core/Runtime/Debugging/Prefabs/Widgets/DebugUI
+      IntField.prefab
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: f59e90858f9ecd74387d9a259fb8cdc4
+    m_importFrom: Packages/com.unity.properties/CHANGELOG.md
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: f8136785e54fd1d459d2a3a0849fe770
+    m_importFrom: Assets/3dr/AstarPathfindingProject/ExampleScenes/Prefabs/MineBot/mine_bot@right.FBX
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 63796fa53cb9419449bc3d4a8c5186e0
+    m_importFrom: Packages/com.unity.render-pipelines.lightweight/Shaders/Particles/ParticlesSimpleLitInput.hlsl
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: c23855b58255c9647b7426a6fb96d468
+    m_importFrom: Assets/ABRes/Shader/TangentToWorld.shadersubgraph
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: ce5408c5347e9fc47ad9eedf2477bed4
+    m_importFrom: Packages/com.unity.render-pipelines.lightweight/Shaders/Terrain/WavingGrassPasses.hlsl
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: d7d17dc56881e5e49a2906420f28d19f
+    m_importFrom: Packages/com.unity.render-pipelines.lightweight/Shaders/Nature/SpeedTree7BillboardPasses.hlsl
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 831d26d5db4d8b344996422cf3bc5a0a
+    m_importFrom: Assets/3dr/Tayx/Graphy - Ultimate Stats Monitor/Scene/Prefab/[Graphy]
+      - Customizer.prefab
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: b4e49ed589509434ebcf0c2ff649208a
+    m_importFrom: Packages/com.unity.render-pipelines.lightweight/ShaderLibrary/Particles.hlsl
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: d3bc41e5ffe2d3349baf4f84548d873a
+    m_importFrom: Packages/com.unity.memoryprofiler/Package Resources/StyleSheets/MemoryProfilerWindow_style_light.uss
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: b11992e5e8afb4e63a1ccab9daf6f07c
+    m_importFrom: Assets/3dr/AstarPathfindingProject/ExampleScenes/Example12_Procedural/ProceduralPrefab1.prefab
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 637e68f5c5c23a349b5088a48b480bcc
+    m_importFrom: Packages/com.unity.memoryprofiler/Package Resources/Icons/PS4@2x.png
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 6ffe0ef5f86c0dd45a0750e85513a58d
+    m_importFrom: Packages/com.unity.memoryprofiler/Package Resources/Icons/iOS.png
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 0af06406521e4cb478cddb9c3737f2e2
+    m_importFrom: Packages/com.unity.memoryprofiler/Package Resources/Icons/XboxOne.png
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 733091268b220f646a6c513591bb8db1
+    m_importFrom: Packages/com.unity.properties/package.json
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 10897f26657e0e24c89f2f821f745751
+    m_importFrom: Packages/com.unity.render-pipelines.lightweight/ShaderLibrary/Input.hlsl
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 83259136bd5f59e4b8a17b2122ce998e
+    m_importFrom: Packages/com.unity.memoryprofiler/Package Resources/Icons/StandaloneOSX@2x.png
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 90004236cdadf6140b232ccaa0ec8f28
+    m_importFrom: Packages/com.unity.memoryprofiler/Package Resources/Icons/Android.png
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: fc383c3633a96004b8984f07fdd982ae
+    m_importFrom: Packages/com.unity.memoryprofiler/Package Resources/Icons/d_Memory
+      Profiler.png
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: ca3e294656861a64b8aeeb9f916da0a9
+    m_importFrom: Packages/com.unity.render-pipelines.core/Runtime/Debugging/Prefabs/Widgets/DebugUI
+      VBox.prefab
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 988db55689193434fb0b3b89538f978f
+    m_importFrom: Packages/com.unity.render-pipelines.core/Runtime/Debugging/Prefabs/Widgets/DebugUI
+      EnumField.prefab
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 6a3743663b0087840a6ec342a89dcb1d
+    m_importFrom: Packages/com.unity.memoryprofiler/Package Resources/Icons/Switch.png
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 58457d66bf1484f9aadea3b9d6eb1dda
+    m_importFrom: Packages/com.unity.ai.planner/Editor/Templates/ConditionalAssemblyTemplate.txt
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 1b0fea764e13e6c42b1bec98480fc444
+    m_importFrom: Packages/com.unity.memoryprofiler/Package Resources/MemoryMap/MemoryMapDiff.shader
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: a5d815866ec304e56b03ec5cfc5f8b0a
+    m_importFrom: Packages/com.unity.collections/CHANGELOG.md
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 7029b296497c8564b9c1446e96d3998f
+    m_importFrom: Packages/com.unity.render-pipelines.lightweight/Shaders/Nature/SpeedTree7CommonPasses.hlsl
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 2ea01d96496f087439fcc027f0335530
+    m_importFrom: Assets/ABRes/Shader/ZeldaShader.shadergraph
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 93b064b6b2aa646da883318d22836a52
+    m_importFrom: Assets/3dr/Easy Save 2/Resources/ES2/ES2BlankObject.prefab
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 4e6ba3c65f7c842c8a02e74fd881892e
+    m_importFrom: Assets/3dr/Easy Save 2/Examples/Creating an Automatic Save Structure/Prefabs/Cylinder.prefab
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: cf6cbdd672089a84796e55a21fed1cbe
+    m_importFrom: Packages/com.unity.render-pipelines.core/Runtime/Debugging/Prefabs/Resources/DebugUI
+      Canvas.prefab
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 3c7ee5f6c84a4c341bfbda446d8d1a90
+    m_importFrom: Packages/com.unity.render-pipelines.lightweight/Shaders/LitInput.hlsl
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: b51b1107593c0d94288ccdaa607689ea
+    m_importFrom: Assets/3dr/Tayx/Graphy - Ultimate Stats Monitor/Scene/Color Picker/CUIColorPicker.prefab
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 6ecb9e17e44feb84cb80451fa27b09fe
+    m_importFrom: Packages/com.unity.timeline/LICENSE.md
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: b2da6b27df236b144b3516ed8e7d36ac
+    m_importFrom: Packages/com.unity.render-pipelines.core/Runtime/Debugging/Prefabs/Widgets/DebugUI
+      EnumHistory.prefab
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: c03a0557b0e11824f8477adbeaf91a4d
+    m_importFrom: Packages/com.unity.quicksearch/CHANGELOG.md
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: da468557aca93344fbe2ac026f637537
+    m_importFrom: Assets/ABRes/Shader/Hologram.shadergraph
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: f7f5e36797cf0c1408561665c67b179b
+    m_importFrom: Packages/com.unity.render-pipelines.core/Runtime/Debugging/Prefabs/Widgets/DebugUI
+      HBox.prefab
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 0086ed7776461324086c40be63add707
+    m_importFrom: Packages/com.unity.render-pipelines.lightweight/Shaders/Particles/ParticlesLitForwardPass.hlsl
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 7d93e7b7399fbe64790358e67fc94b18
+    m_importFrom: Packages/com.unity.cinemachine/package.json
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 7579d7d7a3eb17746a4d3ec89e4638ea
+    m_importFrom: Packages/com.unity.quicksearch/LICENSE.md
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 220530e73a0fbfb4b858d98226130543
+    m_importFrom: Packages/com.unity.render-pipelines.lightweight/Shaders/SimpleLitForwardPass.hlsl
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 669b41f77e807f64a8be499c3c5a0570
+    m_importFrom: Packages/com.unity.memoryprofiler/Package Resources/Icons/Android@2x.png
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 4267c4f7628024c018e8bd0acd298526
+    m_importFrom: Assets/3dr/AstarPathfindingProject/ExampleScenes/Prefabs/DynamicObstacle.prefab
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 04843408d664137429d5b68ea685ea2e
+    m_importFrom: Assets/ABRes/Shader/VertDisplacement_min.shadergraph
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 3b3de4080fe0c4f41be5089a4606734c
+    m_importFrom: Assets/3dr/Easy Save 2/GUI/ES2 Window Styles.prefab
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 5cb0d418e2eda6f4a8ebfe6910c17dd4
+    m_importFrom: Packages/com.unity.test-framework.performance/CHANGELOG.md
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 18678a28cef624aeb89c5717c46be35b
+    m_importFrom: Packages/com.unity.assetgraph/Editor/SettingTemplate/setting.fbx
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 763e0838db8c44b4d982618c68a87cbf
+    m_importFrom: Packages/com.unity.render-pipelines.lightweight/Shaders/Particles/ParticlesLitInput.hlsl
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: a2963d3875aa64f57a25391305f4bc29
+    m_importFrom: Packages/com.unity.entities/Unity.Entities.Hybrid.Tests/Conversion_Prefab.prefab
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 61432558c555740a38a88fa99d358883
+    m_importFrom: Assets/3dr/AstarPathfindingProject/ExampleScenes/Example12_Procedural/ProceduralGround.prefab
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: daa46a58178a6ad41ae1ddc2dc7f856d
+    m_importFrom: Packages/com.unity.render-pipelines.core/Runtime/Debugging/Prefabs/Widgets/DebugUI
+      Panel.prefab
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 326f7c58aed965d41bf7805a782d1e44
+    m_importFrom: Packages/com.unity.render-pipelines.core/Runtime/Debugging/Prefabs/Widgets/DebugUI
+      Vector2.prefab
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 4d029e684dfe8c142b2a4503dc7a55a6
+    m_importFrom: Packages/com.unity.render-pipelines.lightweight/ShaderLibrary/Core.hlsl
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 7c78b588b2e1f7c4a86ca4a985cf6e4a
+    m_importFrom: Packages/com.unity.render-pipelines.core/Runtime/Debugging/Prefabs/Widgets/DebugUI
+      BitField.prefab
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: bd605698a338c4de88bb5b3c4632af68
+    m_importFrom: Packages/com.unity.collections/package.json
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: dc0f88987826e6e48b1fe9c7c2b53a53
+    m_importFrom: Packages/com.unity.render-pipelines.core/Runtime/Debugging/Prefabs/Widgets/DebugUI
+      Value.prefab
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 628002c8b187748888c751e2cf657330
+    m_importFrom: Packages/com.unity.entities/Unity.Entities.Hybrid.Tests/Prefab_With_DynamicBufferDataProxy.prefab
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 3ca977c8d237644e29fdd926ca266d44
+    m_importFrom: Packages/com.unity.ai.planner/Editor/Templates/DomainTemplate.txt
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: b030b7e8a4c531241b496403efc884ab
+    m_importFrom: Packages/com.unity.test-framework.performance/package.json
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 18cb121974c6b4be387c66d4e1ce5bf8
+    m_importFrom: Assets/3dr/AstarPathfindingProject/ExampleScenes/Example12_Procedural/ProceduralPrefab3.prefab
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: b8afc919d531d7b41acc0aca4337bb44
+    m_importFrom: Packages/com.unity.render-pipelines.lightweight/Shaders/Nature/SpeedTree7CommonInput.hlsl
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 4e947329c18ae4fa3bb60de4776da91e
+    m_importFrom: Assets/3dr/Easy Save 2/Examples/Creating an Automatic Save Structure/Prefabs/Sphere.prefab
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: b7891529d6f5a4a74a838cd9f91bdc11
+    m_importFrom: Packages/com.unity.entities/Unity.Entities.Hybrid.Tests/Prefab_With_SharedComponentDataProxy.prefab
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: b526f529a8c9147ff9f63024e8ef2144
+    m_importFrom: Assets/3dr/Easy Save 2/Auto Save/ES2 Auto Save Global Manager.prefab
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 4709723973a65b94c9ede4e6f0eef259
+    m_importFrom: Packages/com.unity.render-pipelines.lightweight/Shaders/Terrain/TerrainLitMetaPass.hlsl
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 3001f7491ac66e34a9694543d9f8b1ee
+    m_importFrom: Packages/com.unity.settings-manager/package.json
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 28d0bf497f0b57e44b6e3d15a4d86d14
+    m_importFrom: Packages/com.unity.ai.planner/package.json
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: c8af1559457412b49aa6f110c627e227
+    m_importFrom: Packages/com.unity.render-pipelines.lightweight/ShaderLibrary/SurfaceInput.hlsl
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: d0dee46928c485e48adcc49b94fb461b
+    m_importFrom: Packages/com.unity.quicksearch/package.json
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: f9f7d079587235a4fbec21268834168d
+    m_importFrom: Packages/com.unity.ai.planner/Editor/Templates/ActionSchedulerTemplate.txt
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 99ea3c7915e5f4dec83fb17e36b19a34
+    m_importFrom: Assets/3dr/Easy Save 2/Resources/ES2/ES2Init.prefab
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 38a07789c9e87004dad98c2909f58369
+    m_importFrom: Packages/com.unity.render-pipelines.core/Runtime/Debugging/Prefabs/Widgets/DebugUI
+      Group.prefab
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 2151f399abc87b5469f5c779dcd3195e
+    m_importFrom: Packages/com.unity.render-pipelines.lightweight/Shaders/Particles/ParticlesUnlitInput.hlsl
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: c499a2a91e3095b4c8e10d8f7de9bbb5
+    m_importFrom: Packages/com.unity.addressables/package.json
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: bc624ca947c7c42a4b14e1e08c4fd495
+    m_importFrom: Packages/com.unity.entities/Unity.Entities.Hybrid.Tests/Conversion_Prefab_MissingMB.prefab
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: a29ef1b9db48941b59a8f44224bffd6d
+    m_importFrom: Packages/com.unity.rendering.hybrid/CHANGELOG.md
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: f6ce33b91f6ffe54cadacbf4bb112440
+    m_importFrom: Packages/com.unity.render-pipelines.core/Runtime/Debugging/Prefabs/Widgets/DebugUI
+      Button.prefab
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 63e41cb9bb756e044bf1b37ab2250ed1
+    m_importFrom: Packages/com.unity.render-pipelines.lightweight/ShaderLibrary/MetaInput.hlsl
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 2f96f0c93e6cece4e8752303bd5340bb
+    m_importFrom: Packages/com.unity.render-pipelines.lightweight/Shaders/2D/Include/CombinedShapeLightShared.hlsl
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: c88644c95abe05d40818d5a79278d2ae
+    m_importFrom: Packages/com.unity.ai.planner/Editor/Templates/TerminationTemplate.txt
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: f9474ce91ede643258663ff3c5392424
+    m_importFrom: Packages/com.unity.jobs/LICENSE
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: b232da4a3360d5f47813c15438c84220
+    m_importFrom: Packages/com.unity.render-pipelines.lightweight/Shaders/2D/Include/NormalsRenderingShared.hlsl
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 0066965aec1acce4789131ba44168e93
+    m_importFrom: Packages/com.unity.memoryprofiler/Package Resources/Icons/Switch@2x.png
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 25974e6a4251444c3bb4c55ca48ebd20
+    m_importFrom: Assets/ABRes/Shader/VertDisplacement.shadergraph
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 80aa867ac363ac043847b06ad71604cd
+    m_importFrom: Packages/com.unity.render-pipelines.universal/Shaders/Autodesk
+      Interactive/Autodesk Interactive Masked.shadergraph
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: a401f18a03996e94bba3d115d87f03a5
+    m_importFrom: Packages/com.unity.memoryprofiler/Package Resources/Icons/StandaloneOSX.png
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: d137839ad756170429a40876ff0b3f16
+    m_importFrom: Assets/ABRes/Prefabs/UI/Tool/GraphyProfiler.prefab
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 4b0cb2aad4a917040a03a97b72c4ccce
+    m_importFrom: Packages/com.unity.memoryprofiler/Package Resources/Icons/XboxOne@2x.png
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 46431bbad56b14fb4a1ef7da8e8f9ff6
+    m_importFrom: Packages/com.unity.entities/Unity.Entities.Hybrid.Tests/Prefab_With_ComponentDataProxy.prefab
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: b137bfcaa31b75048835cd54084bf77b
+    m_importFrom: Packages/com.unity.memoryprofiler/Package Resources/Icons/StandaloneLinux64@2x.png
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: d19de4dae93704c57abd2f4b4f001ca1
+    m_importFrom: Assets/3dr/Easy Save 2/Examples/Shared Assets/Prefabs/Cylinder
+      Prefab.prefab
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: b6c13cea825be6543b37598723cb626b
+    m_importFrom: Packages/com.unity.memoryprofiler/Package Resources/Icons/PS4.png
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 3558d21b6dd07614d91510a78e4fb0e0
+    m_importFrom: Assets/Settings/LightweightRenderPipelineAsset.asset
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: b667956babf1f0446a76fa8b99404ab8
+    m_importFrom: Assets/3dr/AstarPathfindingProject/ExampleScenes/Prefabs/MineBot/mine_bot@left.FBX
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: ded8a27b49dc4fe4eb1ea6654e0b0f8b
+    m_importFrom: Packages/com.unity.render-pipelines.lightweight/Shaders/DepthOnlyPass.hlsl
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 6f6c277bb5d2a164e8c95a7f0754c0f6
+    m_importFrom: Packages/com.unity.addressables/CHANGELOG.md
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: ca9c938b50bdc6b439362bf34a362b74
+    m_importFrom: Packages/com.unity.memoryprofiler/Package Resources/StyleSheets/MemoryProfilerWindow_style_dark.uss
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: b8a3fa8bbe5a86a4db4771edeb1e5e3c
+    m_importFrom: Assets/ABRes/Shader/Blackhole.shadergraph
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 102a829bb9cb888438af88c76e25f6dc
+    m_importFrom: Packages/com.unity.render-pipelines.lightweight/Shaders/BakedLitMetaPass.hlsl
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 8535559bd4c1ab241936b135dd575dae
+    m_importFrom: Assets/ABRes/Prefabs/UI/Test2.prefab
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 9865579b69a93dc40a50538d86d9cc56
+    m_importFrom: Packages/com.unity.memoryprofiler/Package Resources/Icons/StandaloneLinux64.png
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: b7b927abe80824d2a9ecc8d3f68ba37b
+    m_importFrom: Packages/com.unity.ai.planner/Editor/Templates/TraitTemplate.txt
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 3bd4caab81948dc4aafa27e5d7536720
+    m_importFrom: Packages/com.unity.memoryprofiler/Package Resources/Icons/iOS@2x.png
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 945fa4bb974741747b63c408c7f65eda
+    m_importFrom: Packages/com.unity.render-pipelines.lightweight/Shaders/LitForwardPass.hlsl
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 0abab5bb77339e4428787a870eb31bd3
+    m_importFrom: Assets/3dr/Tayx/Graphy - Ultimate Stats Monitor/Prefab/[Graphy].prefab
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: d35e8ecb18797c24d8fa8c7fb3db7a8f
+    m_importFrom: Packages/com.unity.render-pipelines.lightweight/Shaders/Utils/CopyDepthPass.hlsl
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 5cd6ecdb7d07ce4479ec8e242c816325
+    m_importFrom: Assets/ABRes/Prefabs/UI/UIRoot.prefab
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: bb7963eb31de842ada852ad3d46fdf29
+    m_importFrom: Packages/com.unity.ai.planner/Editor/Templates/ActionTemplate.txt
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 350584fb246bb434eb4122f0648dcfa5
+    m_importFrom: Packages/com.unity.memoryprofiler/Package Resources/Icons/Memory
+      Profiler@2x.png
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 1c87ab2ce8b8b304d98fbe9a734b1f74
+    m_importFrom: Packages/com.unity.render-pipelines.core/Runtime/Debugging/Prefabs/Widgets/DebugUI
+      Foldout.prefab
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 77ec343c3667943c189e1bceeff600ce
+    m_importFrom: Packages/com.unity.entities/CHANGELOG.md
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 4deb656c23f3d40328c42419d64b5ce9
+    m_importFrom: Assets/Plugins/Easy Save 3/Resources/ES3/ES3 Default Settings.prefab
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: ce0b3c6c42e2fdd4d9010210516ace55
+    m_importFrom: Packages/com.unity.memoryprofiler/Package Resources/Icons/tvOS.png
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 806a217c43cf53b4c9c731285489f52a
+    m_importFrom: Packages/com.unity.cinemachine/CHANGELOG.md
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 1c63e47cea3074ee89305fd4cefa91e8
+    m_importFrom: Assets/3dr/AstarPathfindingProject/ExampleScenes/Example12_Procedural/ProceduralPrefab2.prefab
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: c08f948ca3c42c44b9a3111e3cb3683f
+    m_importFrom: Packages/com.unity.render-pipelines.lightweight/Shaders/SimpleLitInput.hlsl
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: c1bee09c88207064ca42d6ebc274c572
+    m_importFrom: Packages/com.unity.2d.tilemap/Tests/Prefabs/Cube.prefab
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 77b0ddcc0800bb84f8ffc4456205a0d7
+    m_importFrom: Assets/ABRes/Shader/Shield_Unlit.shadergraph
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: caeffedc34d9f4161b7694ad0d84bbd3
+    m_importFrom: Assets/3dr/AstarPathfindingProject/ExampleScenes/Prefabs/MineBot/mine_bot.FBX
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 33a9d5ec16b5d51429dfb94ea1f3d492
+    m_importFrom: Packages/com.unity.memoryprofiler/Package Resources/Icons/Editor@2x.png
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: c0d6910df7c989c4abc7d5ddf0e421b2
+    m_importFrom: Packages/com.unity.cinemachine/LICENSE.md
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: f0ca902dd7dfea44d848de306b07f1cb
+    m_importFrom: Packages/com.unity.render-pipelines.lightweight/Shaders/2D/Include/LightingUtility.hlsl
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 5c81372d981403744adbdda4433c9c11
+    m_importFrom: Packages/com.unity.render-pipelines.universal/Shaders/Autodesk
+      Interactive/Autodesk Interactive Transparent.shadergraph
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: ac26593d3b8e169468fb7d7a8a4bc911
+    m_importFrom: Packages/com.unity.ai.planner/LICENSE.md
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: be6c5f3ddd065dd43afcc1bcbd63b95c
+    m_importFrom: Packages/com.unity.2d.tilemap/Tests/Palettes/Default.prefab
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 559b8f3d8bc388f4584b463e878e6576
+    m_importFrom: Packages/com.unity.entities/LICENSE
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 6ac6694dd977643948f7ae7305e370ba
+    m_importFrom: Assets/3dr/AstarPathfindingProject/ExampleScenes/Example6_Navmesh/navmesh.obj
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 389ff16d82330834188334e010bd0923
+    m_importFrom: Packages/com.unity.entities/Unity.Entities/EntityQueryBuilder_ForEach.tt
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 2cbb966dd48544296b68bb7df44c8c5d
+    m_importFrom: Packages/com.unity.jobs/package.json
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: b1a1bb6d1bcc546df826488cc72438c3
+    m_importFrom: Assets/3dr/AstarPathfindingProject/ExampleScenes/Prefabs/SomeBox.prefab
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 1887159da365e0e419cce5c53858c295
+    m_importFrom: Packages/com.unity.render-pipelines.lightweight/Shaders/Particles/ParticlesUnlitForwardPass.hlsl
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 8ae62dadd990dc048829054db61c3c46
+    m_importFrom: Assets/ABRes/Shader/Shield.shadergraph
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 31f2b5bdb52a1ee49a166e741a558152
+    m_importFrom: Packages/com.unity.memoryprofiler/LICENSE.md
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 52b97dcdde652904192eeb28287e1e4f
+    m_importFrom: Assets/ABRes/Shader/Breakdown.shadergraph
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: e42377dd3afb54d2eb677a3fd520d6f8
+    m_importFrom: Assets/3dr/Easy Save 2/Examples/Shared Assets/Prefabs/Cube Prefab.prefab
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 7e63a31e1c93538498dd8fecc4ed98ed
+    m_importFrom: Packages/com.unity.render-pipelines.lightweight/Shaders/UnlitMetaPass.hlsl
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: b4ee0b1e2d3aa014f9c2aad7d4525d07
+    m_importFrom: Packages/com.unity.memoryprofiler/Package Resources/Icons/WSAPLayer.png
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 047bf73eaf4b2d349a5556bdf70624c7
+    m_importFrom: Packages/com.unity.memoryprofiler/package.json
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 5c03bf6ee840758449c76a222e7c4b1e
+    m_importFrom: Packages/com.unity.memoryprofiler/Package Resources/Icons/WebGL.png
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 4d9be08e1057fb742b28e00aa955805f
+    m_importFrom: Packages/com.unity.render-pipelines.lightweight/Shaders/ShadowCasterPass.hlsl
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: bf83d18ec5780bf42ab780f75456cb5c
+    m_importFrom: Packages/com.unity.memoryprofiler/Package Resources/Icons/tvOS@2x.png
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: a03e1aaeaf6531942a579714c19cd994
+    m_importFrom: Packages/com.unity.memoryprofiler/Package Resources/Icons/Lumin.png
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 4562ffae45c5837409234ff0b2666ea9
+    m_importFrom: Assets/ABRes/Prefabs/Util/LangSetting.prefab
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 5e6333ce285fd894eb40dbb53b7e5956
+    m_importFrom: Packages/com.unity.render-pipelines.lightweight/Shaders/Nature/SpeedTree7Passes.hlsl
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: a32399ce774d347618afa06d4340816d
+    m_importFrom: Packages/com.unity.assetgraph/Tests/rep.prefab
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 03234ace522de9c4c87dd96799d38b37
+    m_importFrom: Packages/com.unity.ai.planner/README.md
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 7f6f31decc70b804bad84aab628e13c5
+    m_importFrom: Packages/com.unity.memoryprofiler/Package Resources/UXML/OpenSnapshotItem.uxml
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 2baf3ade7d2164540bb0eeb0f12bdab7
+    m_importFrom: Packages/com.unity.render-pipelines.lightweight/ShaderLibrary/ShaderGraphFunctions.hlsl
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: b179a4ee809a61641b5ffbcb2e6870fd
+    m_importFrom: Packages/com.unity.render-pipelines.lightweight/ShaderLibrary/Version.hlsl
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 4a0757ee0236f39489520769ae710288
+    m_importFrom: Packages/com.unity.timeline/CHANGELOG.md
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 3b4560febea4828478ed68667b737fa1
+    m_importFrom: Assets/ABRes/Prefabs/UI/Test1.prefab
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: f6b1a0fe75d5009449cf55ae76220e2b
+    m_importFrom: Packages/com.unity.render-pipelines.core/Runtime/Debugging/Prefabs/Resources/DebugUI
+      Persistent Canvas.prefab
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 568f02fe7676e4d659782d6038df91de
+    m_importFrom: Packages/com.unity.collections/LICENSE
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: a4bc86fe25c6e034ba90ecc8827ee6d4
+    m_importFrom: Assets/AssetGraph/AssetBundles/Cache/TemporalSettingFiles/AssetReferenceDB.asset
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 19a3302fae6057641b8103a6ab6882d3
+    m_importFrom: Packages/com.unity.render-pipelines.lightweight/Shaders/Nature/SpeedTree7Input.hlsl
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 48988e2f9d1659a40a89eff3067366a1
+    m_importFrom: Packages/com.unity.memoryprofiler/Package Resources/Icons/Lumin@2x.png
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 5926773f2795e814cb3941ce80c064f8
+    m_importFrom: Packages/com.unity.render-pipelines.lightweight/CHANGELOG.md
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: eb7f165f4002c4f4bb7cf6eb7f1166d9
+    m_importFrom: Packages/com.unity.scriptablebuildpipeline/CHANGELOG.md
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 94afea5f242d72547979595ba963f335
+    m_importFrom: Packages/com.unity.render-pipelines.core/Runtime/Debugging/Prefabs/Widgets/DebugUI
+      Vector3.prefab
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 93be7c5ffb034c74ab8bfbdef662deed
+    m_importFrom: Packages/com.unity.render-pipelines.lightweight/Shaders/SimpleLitMetaPass.hlsl
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 2162796fd69434828acfb9a0a1f90388
+    m_importFrom: Packages/com.unity.rendering.hybrid/package.json
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: a5e1047f27bee462089b2bc3104f90fd
+    m_importFrom: Assets/Samples/ProBuilder/4.2.1/Universal Render Pipeline Support/Shader/Standard
+      Vertex Color.shadergraph
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: ef15a3af79a3d49469afea3e35d69d6b
+    m_importFrom: Packages/com.unity.render-pipelines.lightweight/Shaders/LitMetaPass.hlsl
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 3235ecefad2a6a645aa0222aca200aeb
+    m_importFrom: Packages/com.unity.timeline/Editor/StyleSheets/res/Timeline_LightSkin.txt
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 6d701d8090d31e841abd3f3c28667c8f
+    m_importFrom: Packages/com.unity.quicksearch/Editor/QueryEngine
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: e3001ca08a31d0e439991c8be7928cbe
+    m_importFrom: Packages/com.unity.quicksearch/Editor/Providers/SettingsProvider.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 032660b033d7f2e4c8dae5b4573b446c
+    m_importFrom: Packages/com.unity.quicksearch/Editor/SearchAnalytics.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: e8118e01ef0026b4599c184c29a98343
+    m_importFrom: Packages/com.unity.quicksearch/Editor/Providers/ResourceProvider.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 2598f1316746d3f41a642c9343f2ed0f
+    m_importFrom: Packages/com.unity.quicksearch/Tests/Editor/com.unity.quicksearch.tests.asmdef
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 1ed12961be543594596f39ebc9111a55
+    m_importFrom: Packages/com.unity.quicksearch/Tests/Editor/QuickSearchToolTests.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 5efc8291d3d671942ad2d636745556ea
+    m_importFrom: Packages/com.unity.quicksearch/Editor/Providers/AssetStoreProvider.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 9fe03cb146b261b41a7af34af1af1bad
+    m_importFrom: Packages/com.unity.quicksearch/Editor/QueryEngine/QueryFilterOperations.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 0ec6e4c1cf24d604bb2076c8598c15d1
+    m_importFrom: Packages/com.unity.quicksearch/Editor/QueryEngine/DataWalkerQueryHandler.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 8c57bfd104112c9478797fb3c6c81894
+    m_importFrom: Packages/com.unity.quicksearch/Editor/SearchFilter.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 69858142804f0014bb479fcf0d222ccb
+    m_importFrom: Packages/com.unity.quicksearch/Editor/QueryEngine/QueryGraphViewer.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 11afb6f24f248fc4eb84294a594dceb8
+    m_importFrom: Packages/com.unity.quicksearch/Editor/FilterWindow.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: e9dcf07353f39f044bbfd19ed9ccf89f
+    m_importFrom: Packages/com.unity.quicksearch/Editor/Providers/SceneProvider.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: d4efcb044cdf9d74a9b5c7cf04ab417d
+    m_importFrom: Packages/com.unity.quicksearch/Editor/Providers/HelpProvider.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 0dc75b34a006d47f48c004031e6ef14d
+    m_importFrom: Packages/com.unity.settings-manager/Editor/UserSettingsProvider.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 7b6ba1948c9a80a4b8c3975b50289513
+    m_importFrom: Packages/com.unity.quicksearch/Editor/SearchService.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: c4d2eba40f052384f86298c93d90ed92
+    m_importFrom: Packages/com.unity.quicksearch/Editor/Providers/SearchIndexer.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 27dc46c487bdefb4bb0d25f1c20c0439
+    m_importFrom: Packages/com.unity.quicksearch/Editor/Providers/FileSearchIndexer.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 8ecce0b55fdb95743899cdba4a75b8b7
+    m_importFrom: Packages/com.unity.quicksearch/Editor/Providers/Eval.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: dd73b0c5d3101c14ea203702d1b4ea09
+    m_importFrom: Packages/com.unity.quicksearch/Editor/Utils.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 63de70f596b57b94a9c7b5f3a21e3823
+    m_importFrom: Packages/com.unity.quicksearch/Editor/Providers/AssetPostprocessorIndexer.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 1d301256d884f314eb72e0b81435ba5a
+    m_importFrom: Packages/com.unity.quicksearch/Editor/ResourceDescriptors.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 8ec2a7d62fb4a8941a7523644b4e54ac
+    m_importFrom: Packages/com.unity.quicksearch/Editor/Providers/AssetProvider.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 1cc570e68e180ba499263d578fd922ad
+    m_importFrom: Packages/com.unity.quicksearch/Editor/Providers/MenuProvider.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: da00e657670bf80408fcf5743394af1e
+    m_importFrom: Packages/com.unity.quicksearch/Editor/Icons.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: cc3ef85739cc0b94b9e35c014ccf82d0
+    m_importFrom: Packages/com.unity.quicksearch/Editor/SearchProvider.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 14e5737722c969f4f8158521a92ed9d0
+    m_importFrom: Packages/com.unity.quicksearch/Editor/QueryEngine/QueryFilterOperators.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: f49d82a7eb2ee1c4280e9bf0fa276127
+    m_importFrom: Packages/com.unity.quicksearch/Editor/QueryEngine/QueryNodes.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 9c471ab7c750e0d42b325b59990d08fd
+    m_importFrom: Packages/com.unity.quicksearch/Editor/AsyncSearchSession.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 3e81ad18566ba0540ad67b68346c422f
+    m_importFrom: Packages/com.unity.quicksearch/Editor/QueryEngine/QueryEngine.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 2a2ef7d80e01cef45924a49a921736ed
+    m_importFrom: Packages/com.unity.quicksearch/Editor/SearchAction.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 68e81fb926c30404e84d7345b916dacb
+    m_importFrom: Packages/com.unity.quicksearch/Editor/FuzzySearch.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: f5fa59e990814eb469411d284dc684b7
+    m_importFrom: Packages/com.unity.quicksearch/Editor/Providers/AssetIndexer.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 413b3e2a9600f67499678fe7c0bdd155
+    m_importFrom: Packages/com.unity.quicksearch/Editor/QuickSearch.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 78154c6ac86f0de42b1a0729ab3fd5d8
+    m_importFrom: Packages/com.unity.quicksearch/Editor/QueryEngine/QueryGraph.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 40f6523b157d1764d987f52f733e495f
+    m_importFrom: Packages/com.unity.quicksearch/Tests/Editor/UtilsTests.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: e587e3cb3bdb99f4d8990fb4a1f6dfae
+    m_importFrom: Packages/com.unity.quicksearch/Tests/Editor/SearchIndexerTests.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 3e62108c46760fb40b53d333a3fe27ef
+    m_importFrom: Packages/com.unity.quicksearch/Editor/Providers/LogProvider.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: f822601df53447747bdffed197fd1d97
+    m_importFrom: Packages/com.unity.quicksearch/Editor/SearchContext.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 2030b35d54dd21c48a949b3f0456e79d
+    m_importFrom: Packages/com.unity.quicksearch/Editor/Providers/UIElementsSearchProvider.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 3ebde96d7e1c07c4f96537cfb14a2114
+    m_importFrom: Packages/com.unity.quicksearch/Editor/Providers/OnlineSearchProviders.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: a61de87d5c0fbf54a91e05882ed9c249
+    m_importFrom: Packages/com.unity.quicksearch/Editor/Providers/ADBIndex.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 00e68fbe640f7114099cd17c7ad0655b
+    m_importFrom: Packages/com.unity.quicksearch/Editor/QueryEngine/QueryFilters.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 69aa75eeb74a39f41995e38259de534a
+    m_importFrom: Packages/com.unity.quicksearch/Editor/SearchUtils.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 60fdd9fed00691b4aaa6fb5805211d76
+    m_importFrom: Packages/com.unity.quicksearch/Tests/Editor/SearchServiceTests.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: ba16712fa93506a40b5ed0cbaa1cfdb1
+    m_importFrom: Packages/com.unity.quicksearch/Editor/SearchSettings.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: cc87e89f2c6016e40aa20d1a79a2ff5b
+    m_importFrom: Packages/com.unity.quicksearch/Tests/Editor/QueryEngineTests.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 40e93d78541d2664e8424875bca4e041
+    m_importFrom: Packages/com.unity.scriptablebuildpipeline/Editor/Tasks/CalculateAssetDependencyData.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 4d29a4991c6c8884aa7a81dc6d2e1cc5
+    m_importFrom: Packages/com.unity.scriptablebuildpipeline/Editor/Tasks/WriteSerializedFiles.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: db8e822ddcadee542b625284a3d0aa16
+    m_importFrom: Packages/com.unity.scriptablebuildpipeline/Editor/Tasks/StripUnusedSpriteSources.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 93c1484372a5f5448ab6371fdb212c20
+    m_importFrom: Packages/com.unity.scriptablebuildpipeline/LICENSE.md
+    m_exportTo: 
+    m_variantName: 
   m_version: 2

@@ -2,6 +2,7 @@
 
 // Unity 5.1 introduced a new networking library. 
 // Unless we define PLAYMAKER_LEGACY_NETWORK old network actions are disabled
+
 #if !(UNITY_4_3 || UNITY_4_5 || UNITY_4_6 || UNITY_4_7 || UNITY_5_0 || PLAYMAKER_LEGACY_NETWORK)
 #define UNITY_NEW_NETWORK
 #endif
@@ -19,14 +20,14 @@ namespace HutongGames.PlayMaker.Actions
     // Caches the component for performance
     public abstract class ComponentAction<T> : FsmStateAction where T : Component
     {
-		/// <summary>
-		/// The cached GameObject. Call UpdateCache() first
-		/// </summary>
+        /// <summary>
+        /// The cached GameObject. Call UpdateCache() first
+        /// </summary>
         protected GameObject cachedGameObject;
 
-		/// <summary>
-		/// The cached component. Call UpdateCache() first
-		/// </summary>
+        /// <summary>
+        /// The cached component. Call UpdateCache() first
+        /// </summary>
         protected T cachedComponent;
 
         protected Rigidbody rigidbody
@@ -59,21 +60,21 @@ namespace HutongGames.PlayMaker.Actions
             get { return cachedComponent as Camera; }
         }
 
-		#if UNITY_2017_2_OR_NEWER
-		#pragma warning disable CS0618 
-        #endif
-        protected GUIText guiText
-        {
-            get { return cachedComponent as GUIText; }
-        }
-
-        protected GUITexture guiTexture
-        {
-            get { return cachedComponent as GUITexture; }
-        }
-        #if UNITY_2017_2_OR_NEWER
-        #pragma warning restore CS0618 
-		#endif
+#if UNITY_2017_2_OR_NEWER
+#pragma warning disable CS0618 
+#endif
+//        protected GUIText guiText
+//        {
+//            get { return cachedComponent as GUIText; }
+//        }
+//
+//        protected GUITexture guiTexture
+//        {
+//            get { return cachedComponent as GUITexture; }
+//        }
+#if UNITY_2017_2_OR_NEWER
+#pragma warning restore CS0618 
+#endif
 
         protected Light light
         {
@@ -120,7 +121,7 @@ namespace HutongGames.PlayMaker.Actions
                 if (cachedComponent == null)
                 {
                     cachedComponent = go.AddComponent<T>();
-                    cachedComponent.hideFlags = HideFlags.DontSaveInEditor;                       
+                    cachedComponent.hideFlags = HideFlags.DontSaveInEditor;
                 }
             }
 
