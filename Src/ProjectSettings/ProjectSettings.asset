@@ -683,6 +683,6 @@ PlayerSettings:
   projectName: ProjectX
   organizationId: jcytop
   cloudEnabled: 0
-  enableNativePlatformBackendsForNewInputSystem: 0
+  enableNativePlatformBackendsForNewInputSystem: 1
   disableOldInputManagerSupport: 0
   legacyClampBlendShapeWeights: 0
