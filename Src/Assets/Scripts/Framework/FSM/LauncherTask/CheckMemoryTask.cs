@@ -28,64 +28,59 @@ public class CheckMemoryTask : GameLanucherTask
         LogUtil.Log(string.Format(TaskName.Value), LogType.TaskLog);
         yield return new WaitForFixedUpdate();
         var memory = 0L;
-        if (Platform.IsEditor || Platform.IsPC)
+#if UNITY_EDITOR|| UNITY_STANDALONE
+        try
         {
-            try
+            var MemInfo = new MemoryInfo();
+            GlobalMemoryStatus(ref MemInfo);
+            memory = Convert.ToInt64(MemInfo.AvailPhys.ToString()) / 1024 / 1024;
+            LogUtil.Log(string.Format("FreeMemory: {0} MB", Convert.ToString(memory)), LogType.TaskLog);
+            if (memory < memoryDefault)
             {
-                var MemInfo = new MemoryInfo();
-                GlobalMemoryStatus(ref MemInfo);
-                memory = Convert.ToInt64(MemInfo.AvailPhys.ToString()) / 1024 / 1024;
-                LogUtil.Log(string.Format("FreeMemory: {0} MB", Convert.ToString(memory)), LogType.TaskLog);
-                if (memory < memoryDefault)
-                {
-                    LogUtil.LogError(string.Format("内存不足！"), LogType.TaskLog);
-                    //弹出内存警告
-                }
-                else
-                {
-                    LogUtil.Log(string.Format("可以使用 ^_^"), LogType.TaskLog);
-                    //自动取消内存警告
-                    LogUtil.Log(Environment.WorkingSet.ToString(), LogType.TaskLog);
-                }
+                LogUtil.LogError(string.Format("内存不足！"), LogType.TaskLog);
+                //弹出内存警告
             }
-            catch (Exception e)
+            else
             {
-                Console.WriteLine(e);
-                throw;
+                LogUtil.Log(string.Format("可以使用 ^_^"), LogType.TaskLog);
+                //自动取消内存警告
+                LogUtil.Log(Environment.WorkingSet.ToString(), LogType.TaskLog);
             }
         }
-        else if (Platform.IsAndroid)
+        catch (Exception e)
         {
-            try
+            Console.WriteLine(e);
+            throw;
+        }
+#elif UNITY_ANDROID
+        try
+        {
+            AndroidJavaClass unityPlayer = new AndroidJavaClass("com.unity3d.player.UnityPlayer");
+            AndroidJavaObject currentActivity = unityPlayer.GetStatic<AndroidJavaObject>("currentActivity");
+            AndroidJavaClass unityPluginLoader = new AndroidJavaClass("java类全名");
+            float tempMemory = unityPluginLoader.CallStatic<float>("GetMemory", currentActivity);
+            memory = (int) tempMemory;
+            if (memory < memoryDefault)
             {
-                AndroidJavaClass unityPlayer = new AndroidJavaClass("com.unity3d.player.UnityPlayer");
-                AndroidJavaObject currentActivity = unityPlayer.GetStatic<AndroidJavaObject>("currentActivity");
-                AndroidJavaClass unityPluginLoader = new AndroidJavaClass("java类全名");
-                float tempMemory = unityPluginLoader.CallStatic<float>("GetMemory", currentActivity);
-                memory = (int) tempMemory;
-                if (memory < memoryDefault)
-                {
-                    LogUtil.LogError(string.Format("内存不足！"), LogType.TaskLog);
-                    //弹出内存警告
-                }
-                else
-                {
-                    LogUtil.Log(string.Format("可以使用 ^_^"), LogType.TaskLog);
-                    //自动取消内存警告
-                    LogUtil.Log(Environment.WorkingSet.ToString(), LogType.TaskLog);
-                }
+                LogUtil.LogError(string.Format("内存不足！"), LogType.TaskLog);
+                //弹出内存警告
             }
-            catch (Exception e)
+            else
             {
-                Console.WriteLine("com.moba.unityplugin.AndroidUtile GetMemory: " + e.Message);
-                throw;
+                LogUtil.Log(string.Format("可以使用 ^_^"), LogType.TaskLog);
+                //自动取消内存警告
+                LogUtil.Log(Environment.WorkingSet.ToString(), LogType.TaskLog);
             }
         }
-        else if (Platform.IsIOS)
+        catch (Exception e)
         {
-            try
-            {
-                //TODO 不知道怎么做
+            Console.WriteLine("com.moba.unityplugin.AndroidUtile GetMemory: " + e.Message);
+            throw;
+        }
+#elif UNITY_IOS
+        try
+        {
+            //TODO 不知道怎么做
 //                task_basic_info_data_t taskInfo;
 //                mach_msg_type_number_t infoCount = TASK_BASIC_INFO_COUNT;
 //                kern_return_t kernReturn = task_info(mach_task_self(),
@@ -107,14 +102,13 @@ public class CheckMemoryTask : GameLanucherTask
 //                    //自动取消内存警告
 //                    LogUtil.Log(Environment.WorkingSet.ToString(), LogType.TaskLog);
 //                }
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e);
-                throw;
-            }
         }
-
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            throw;
+        }
+#endif
         IsFinish = true;
     }
 

@@ -11,25 +11,21 @@ namespace Framework.Assets
         {
             get
             {
-                if (Platform.IsEditor)
-                {
-                    // 读取 version.txt
-                    ver = FileUtils.JsonFile<Ver>(Application.streamingAssetsPath + "/Version.json");
-                }
+#if UNITY_EDITOR
+                // 读取 version.txt
+                ver = FileUtils.JsonFile<Ver>(Application.streamingAssetsPath + "/Version.json");
+#endif
 
                 return ver.Version;
             }
             set
             {
                 ver.Version = value;
-                if (Platform.IsEditor)
-                {
-                    SaveVersion(Application.streamingAssetsPath + "/Version.txt");
-                }
-                else
-                {
-                    SaveVersion(Application.persistentDataPath + "/Version.txt");
-                }
+#if UNITY_EDITOR
+                SaveVersion(Application.streamingAssetsPath + "/Version.txt");
+#else
+                SaveVersion(Application.persistentDataPath + "/Version.txt");
+#endif
             }
         }
 
