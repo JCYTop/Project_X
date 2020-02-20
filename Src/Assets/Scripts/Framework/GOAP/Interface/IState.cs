@@ -16,43 +16,12 @@
 using System;
 using System.Collections.Generic;
 
-public interface IState
+namespace GOAP
 {
-    void SetState(string key, bool value);
-    bool GetValue(string key);
-    void AddStateChangeListener(Action onChange);
-}
-
-public class State : IState
-{
-    private Dictionary<string, bool> _dataTable;
-    private Action _onChange;
-
-    public void SetState(string key, bool value)
+    public interface IState
     {
-        if (_dataTable.ContainsKey(key) && _dataTable[key] != value)
-        {
-            ChangeValue(key, value);
-        }
-        else if (!_dataTable.ContainsKey(key))
-        {
-            ChangeValue(key, value);
-        }
-    }
-
-    public bool GetValue(string key)
-    {
-        throw new NotImplementedException();
-    }
-
-    private void ChangeValue(string key, bool value)
-    {
-        _dataTable[key] = value;
-        _onChange?.Invoke();
-    }
-
-    public void AddStateChangeListener(Action onChange)
-    {
-        _onChange = onChange;
+        void SetState(string key, bool value);
+        bool GetValue(string key);
+        void AddStateChangeListener(Action onChange);
     }
 }
