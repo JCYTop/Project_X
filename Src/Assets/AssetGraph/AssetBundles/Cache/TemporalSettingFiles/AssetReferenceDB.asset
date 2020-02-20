@@ -12,5 +12,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee4bc21567f434b598a3c96ba4946372, type: 3}
   m_Name: AssetReferenceDB
   m_EditorClassIdentifier: 
-  m_assets: []
+  m_assets:
+  - m_assetDatabaseId: 8d7cb3d9c801f244aa44adb21efa1b64
+    m_importFrom: Assets/Scripts/Framework/GOAP/Action
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 8621d73eb94941c0983468d5152cd636
+    m_importFrom: Assets/Scripts/Framework/GOAP/Agent
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: a15d94d54fee4b98a005a49daf6bc4fb
+    m_importFrom: Assets/Scripts/Framework/GOAP/FSM
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 005cf9f7de65c5f47bc3798cc5a03d47
+    m_importFrom: Assets/Scripts/Framework/GOAP/Agent/IAgent.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: cda22ffcf2d4e91408fd490ca687bc92
+    m_importFrom: Assets/Scripts/Framework/GOAP/Action/IAction.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 66ede9cfe22f84c4e91b635605c70a71
+    m_importFrom: Assets/Scripts/Framework/GOAP/Action/ActionBase.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 93e173ece675e954e94e0699ea4247d3
+    m_importFrom: Assets/Scripts/Framework/GOAP/Action/ActionHandle.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 0eec2d989a1fdf048a8195cb19b47ea9
+    m_importFrom: Assets/Scripts/Framework/GOAP/Action/IActionHandle.cs
+    m_exportTo: 
+    m_variantName: 
   m_version: 2
