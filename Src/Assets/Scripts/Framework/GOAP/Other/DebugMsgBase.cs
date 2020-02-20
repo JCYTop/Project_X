@@ -18,11 +18,8 @@ namespace GOAP
     public abstract class DebugMsgBase
     {
         public static DebugMsgBase Instance { get; set; }
-
         public abstract void Log(string msg);
-
         public abstract void LogWarning(string msg);
-
         public abstract void LogError(string msg);
     }
 }

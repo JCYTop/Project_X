@@ -20,8 +20,13 @@ namespace GOAP
 {
     public interface IState
     {
-        void SetState(string key, bool value);
-        bool GetValue(string key);
+        void Set(string key, bool value);
+        void Set(IState otherState);
+        bool Get(string key);
         void AddStateChangeListener(Action onChange);
+        ICollection<string> GetKeys();
+        bool ContainKey(string key);
+        bool ContainState(IState otherState);
+        void Clear();
     }
 }
