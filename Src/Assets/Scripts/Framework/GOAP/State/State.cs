@@ -77,6 +77,17 @@ namespace GOAP
             _dataTable.Clear();
         }
 
+        public IState InversionValue()
+        {
+            var state = new State();
+            foreach (var pair in _dataTable)
+            {
+                state.Set(pair.Key, !pair.Value);
+            }
+
+            return state;
+        }
+
         public bool Get(string key)
         {
             if (!_dataTable.ContainsKey(key))

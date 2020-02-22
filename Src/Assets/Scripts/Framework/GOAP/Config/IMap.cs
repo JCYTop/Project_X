@@ -2,12 +2,12 @@
 ----------------------------------
  *Copyright(C) 2019 by IndieGame
  *All rights reserved.
- *FileName:     ActionHandle
+ *FileName:     IMap
  *Author:       @JCY
  *Version:      0.0.1
  *AuthorEmail:  jcyemail@qq.com
  *UnityVersion：2019.1.0f2
- *CreateTime:   2020/02/21 00:12:23
+ *CreateTime:   2020/02/22 14:45:44
  *Description:  IndieGame 
  *History:
  ----------------------------------
@@ -15,7 +15,8 @@
 
 namespace GOAP
 {
-    public abstract class ActionHandle<TAction> : IActionHandle<TAction>
+    public interface IMap<TAction>
     {
+        IActionHandler<TAction> GetActionHandler(TAction actionLabel);
     }
 }

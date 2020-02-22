@@ -28,5 +28,6 @@ namespace GOAP
         bool ContainKey(string key);
         bool ContainState(IState otherState);
         void Clear();
+        IState InversionValue();
     }
 }

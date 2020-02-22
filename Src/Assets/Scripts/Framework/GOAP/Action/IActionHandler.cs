@@ -13,9 +13,16 @@
  ----------------------------------
 */
 
+using System;
+
 namespace GOAP
 {
-    public interface IActionHandle <TAction >
+    public interface IActionHandler<TAction> : IFSMState<TAction>
     {
+        IAction<TAction> Action { get; }
+        TAction Label { get; }
+        bool IsComplete { get; }
+        bool CanPerFormAction { get; }
+        void AddFinishCallBack(Action onFinishAction);
     }
 }
