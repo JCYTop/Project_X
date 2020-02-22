@@ -13,11 +13,9 @@
  ----------------------------------
 */
 
-using System;
-
 namespace GOAP
 {
-    public abstract class ActionBase<TAction> : IAction<TAction>
+    public abstract class ActionBase<TAction, TGoal> : IAction<TAction>
     {
         public abstract TAction Label { get; }
         public abstract int Cost { get; }
@@ -26,9 +24,9 @@ namespace GOAP
         public IState Preconditions { get; }
         public IState Effects { get; }
 
-        private IAgent _agent;
+        private IAgent<TAction, TGoal> _agent;
 
-        public ActionBase(IAgent agent)
+        public ActionBase(IAgent<TAction, TGoal> agent)
         {
             Preconditions = InitPreconditions();
             Effects = InitEffect();

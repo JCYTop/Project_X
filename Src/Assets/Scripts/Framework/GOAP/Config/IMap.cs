@@ -15,7 +15,7 @@
 
 namespace GOAP
 {
-    public interface IMap<TAction>
+    public interface IMap<TAction ,TGoal >
     {
         IActionHandler<TAction> GetActionHandler(TAction actionLabel);
     }

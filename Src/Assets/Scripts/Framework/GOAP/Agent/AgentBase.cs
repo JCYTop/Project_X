@@ -15,14 +15,16 @@
 
 namespace GOAP
 {
-    public abstract class AgentBase : IAgent
+    public abstract class AgentBase<TAction, TGoal> : IAgent<TAction, TGoal>
     {
         public IState AgentState { get; }
+        public IMap<TAction, TGoal> Map { get; }
 
         public AgentBase()
         {
             DebugMsgBase.Instance = InitDebugMsgBase();
             AgentState = new State();
+            Map = InitMap(); 
             AgentState.AddStateChangeListener(UdpateData);
         }
 
@@ -30,6 +32,11 @@ namespace GOAP
         {
         }
 
+        public void FrameFun()
+        {
+        }
+
         protected abstract DebugMsgBase InitDebugMsgBase();
+        protected abstract IMap<TAction, TGoal> InitMap();
     }
 }

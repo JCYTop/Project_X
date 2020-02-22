@@ -17,7 +17,7 @@ using System.Collections.Generic;
 
 namespace GOAP
 {
-    public abstract class MapBase<TAction> : IMap<TAction>
+    public abstract class MapBase<TAction, TGoal> : IMap<TAction, TGoal>
     {
         private Dictionary<TAction, IActionHandler<TAction>> _actionHandlerDic;
 

@@ -18,7 +18,7 @@ using JetBrains.Annotations;
 
 namespace GOAP
 {
-    public abstract class ActionHandlerBase<TAction> : IActionHandler<TAction>
+    public abstract class ActionHandlerBase<TAction, TGoal> : IActionHandler<TAction>
     {
         public IAction<TAction> Action { get; }
 
@@ -30,9 +30,9 @@ namespace GOAP
         public bool IsComplete { get; private set; }
         public bool CanPerFormAction { get; }
         private Action _onFinishAction;
-        private IAgent _agent;
+        private IAgent<TAction, TGoal> _agent;
 
-        public ActionHandlerBase(IAgent agent, [NotNull] IAction<TAction> action)
+        public ActionHandlerBase(IAgent<TAction, TGoal> agent, [NotNull] IAction<TAction> action)
         {
             Action = action ?? throw new ArgumentNullException(nameof(action));
             IsComplete = false;

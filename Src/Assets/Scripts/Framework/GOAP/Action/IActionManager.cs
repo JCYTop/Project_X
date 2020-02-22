@@ -19,6 +19,7 @@ namespace GOAP
 {
     public interface IActionManager<TAction>
     {
+        bool IsPerformAction { get; set; }
         void AddHandler(TAction label);
         void RemoveHandle(TAction label);
         IActionHandler<TAction> GetHandler(TAction label);
