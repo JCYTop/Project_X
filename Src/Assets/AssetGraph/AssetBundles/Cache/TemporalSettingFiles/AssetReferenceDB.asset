@@ -12,5 +12,49 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee4bc21567f434b598a3c96ba4946372, type: 3}
   m_Name: AssetReferenceDB
   m_EditorClassIdentifier: 
-  m_assets: []
+  m_assets:
+  - m_assetDatabaseId: a4bc86fe25c6e034ba90ecc8827ee6d4
+    m_importFrom: Assets/AssetGraph/AssetBundles/Cache/TemporalSettingFiles/AssetReferenceDB.asset
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: e48ae43d40d615347ba19fefee523001
+    m_importFrom: Assets/Scripts/Framework/ReGoap/ReGoap/Core/ReGoapState.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: e45a74daaa9e6644d850d2c8abff059b
+    m_importFrom: Assets/Scripts/Framework/ReGoap/ReGoap/Unity/ReGoapAction.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 8a4871f37881ae2489e62d5cc9398c36
+    m_importFrom: Assets/Scripts/Framework/ReGoap/ReGoap/Planner/AStar.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: cd1cf5a1ccf78664fa287e9dcc2fab40
+    m_importFrom: Assets/Scripts/Framework/GOAP
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: ec051e75b6ce4fd0968fa1cf99b35df6
+    m_importFrom: Assets/Scripts/Framework/GOAP/Goal
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: b54966f6205a3264ab4ca4354f6f5302
+    m_importFrom: Assets/Scripts/Framework/GOAP/Planner
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 8d7cb3d9c801f244aa44adb21efa1b64
+    m_importFrom: Assets/Scripts/Framework/GOAP/Action
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 8621d73eb94941c0983468d5152cd636
+    m_importFrom: Assets/Scripts/Framework/GOAP/Agent
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 0dc75b34a006d47f48c004031e6ef14d
+    m_importFrom: Packages/com.unity.settings-manager/Editor/UserSettingsProvider.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: a61de87d5c0fbf54a91e05882ed9c249
+    m_importFrom: Packages/com.unity.quicksearch/Editor/Providers/ADBIndex.cs
+    m_exportTo: 
+    m_variantName: 
   m_version: 2
