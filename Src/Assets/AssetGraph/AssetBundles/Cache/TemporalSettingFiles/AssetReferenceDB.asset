@@ -185,4 +185,24 @@ MonoBehaviour:
     m_importFrom: Assets/Scripts/Framework/GOAP/Action/ActionManagerBase.cs
     m_exportTo: 
     m_variantName: 
+  - m_assetDatabaseId: 00000000000000004000000000000000
+    m_importFrom: ProjectSettings/ProjectSettings.asset
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 00000000000000009000000000000000
+    m_importFrom: ProjectSettings/QualitySettings.asset
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: cdb2b908ef6cb8b45aba3615cdf5b909
+    m_importFrom: Assets/3dr/PlayMaker/Editor/Resources/EditorStartupPrefs.asset
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 26f9e719f9b367f4ba8ec5337304e674
+    m_importFrom: Assets/Editor/com.unity.mobile.notifications/NotificationSettings.asset
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: a4bc86fe25c6e034ba90ecc8827ee6d4
+    m_importFrom: Assets/AssetGraph/AssetBundles/Cache/TemporalSettingFiles/AssetReferenceDB.asset
+    m_exportTo: 
+    m_variantName: 
   m_version: 2
