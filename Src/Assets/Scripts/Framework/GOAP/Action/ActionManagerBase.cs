@@ -62,7 +62,7 @@ namespace GOAP
         }
 
         protected abstract void InitActionHandlers();
-
+        public abstract TAction GetDefaultActionLabel();
         public bool IsPerformAction { get; set; }
 
         public void AddHandler(TAction label)

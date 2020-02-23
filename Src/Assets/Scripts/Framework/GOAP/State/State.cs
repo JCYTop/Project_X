@@ -88,6 +88,34 @@ namespace GOAP
             return state;
         }
 
+        public ICollection<string> GetNotExistKeys(IState otherState)
+        {
+            var keys = new List<string>();
+            foreach (var key in otherState.GetKeys())
+            {
+                if (_dataTable.ContainsKey(key))
+                {
+                    keys.Add(key);
+                }
+            }
+
+            return keys;
+        }
+
+        public ICollection<string> GetValueDifference(IState otherState)
+        {
+            var keys = new List<string>();
+            foreach (var key in otherState.GetKeys())
+            {
+                if (_dataTable.ContainsKey(key) || otherState.Get(key) != _dataTable[key])
+                {
+                    keys.Add(key);
+                }
+            }
+
+            return keys;
+        }
+
         public bool Get(string key)
         {
             if (!_dataTable.ContainsKey(key))
@@ -146,6 +174,14 @@ namespace GOAP
         public bool ContainKey(Tkey key)
         {
             return base.ContainKey(key.ToString());
+        }
+    }
+
+    public static class IStateExtend
+    {
+        public static IState CreateState(this IState state)
+        {
+            return new State();
         }
     }
 }

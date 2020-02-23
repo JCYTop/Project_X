@@ -19,10 +19,12 @@ namespace GOAP
     /// 代理集合
     /// 各个功能模块的整合调用
     /// </summary>
-    public interface IAgent<TAction,TGoal>
+    public interface IAgent<TAction, TGoal>
     {
         IState AgentState { get; }
-        IMap<TAction,TGoal> Map { get; }
+        IMap<TAction, TGoal> Map { get; }
+        IActionManager<TAction> ActionManager { get; }
+        IGoalManager<TGoal> GoalManager { get; }
         void UdpateData();
         void FrameFun();
     }

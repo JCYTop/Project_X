@@ -15,8 +15,11 @@
 
 namespace GOAP
 {
-    public interface IMap<TAction ,TGoal >
+    public interface IMap<TAction, TGoal>
     {
         IActionHandler<TAction> GetActionHandler(TAction actionLabel);
+        IGoal<TGoal> GetGoal(TGoal label);
+        void SetGameData<Tkey>(Tkey key, object data);
+         object GetGameData<Tkey>(Tkey key);
     }
 }

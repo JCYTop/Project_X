@@ -29,5 +29,7 @@ namespace GOAP
         bool ContainState(IState otherState);
         void Clear();
         IState InversionValue();
+        ICollection<string> GetNotExistKeys(IState otherState);
+        ICollection<string> GetValueDifference(IState otherState);
     }
 }

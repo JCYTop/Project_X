@@ -16,16 +16,22 @@
 namespace GOAP
 {
     public abstract class AgentBase<TAction, TGoal> : IAgent<TAction, TGoal>
+        where TAction : struct
+        where TGoal : struct
     {
         public IState AgentState { get; }
         public IMap<TAction, TGoal> Map { get; }
+        public IActionManager<TAction> ActionManager { get; private set; }
+        public IGoalManager<TGoal> GoalManager { get; private set; }
 
         public AgentBase()
         {
             DebugMsgBase.Instance = InitDebugMsgBase();
             AgentState = new State();
-            Map = InitMap(); 
+            Map = InitMap();
             AgentState.AddStateChangeListener(UdpateData);
+            ActionManager = InitActionManager();
+            GoalManager = InitGoalManager();
         }
 
         public void UdpateData()
@@ -38,5 +44,7 @@ namespace GOAP
 
         protected abstract DebugMsgBase InitDebugMsgBase();
         protected abstract IMap<TAction, TGoal> InitMap();
+        protected abstract IActionManager<TAction> InitActionManager();
+        protected abstract IGoalManager<TGoal> InitGoalManager();
     }
 }
