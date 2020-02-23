@@ -9,7 +9,6 @@ namespace ReGoap.Core
         private Dictionary<T, W> values;
         private readonly Dictionary<T, W> bufferA;
         private readonly Dictionary<T, W> bufferB;
-
         public static int DefaultSize = 20;
 
         private ReGoapState()
@@ -41,6 +40,7 @@ namespace ReGoap.Core
             {
                 result = Instantiate(a);
             }
+
             lock (b.values)
             {
                 foreach (var pair in b.values)
@@ -51,7 +51,8 @@ namespace ReGoap.Core
 
         public void AddFromState(ReGoapState<T, W> b)
         {
-            lock (values) lock (b.values)
+            lock (values)
+            lock (b.values)
             {
                 foreach (var pair in b.values)
                     values[pair.Key] = pair.Value;
@@ -62,9 +63,11 @@ namespace ReGoap.Core
         {
             get { return values.Count; }
         }
+
         public bool HasAny(ReGoapState<T, W> other)
         {
-            lock (values) lock (other.values)
+            lock (values)
+            lock (other.values)
             {
                 foreach (var pair in other.values)
                 {
@@ -73,48 +76,54 @@ namespace ReGoap.Core
                     if (Equals(thisValue, pair.Value))
                         return true;
                 }
+
                 return false;
             }
         }
+
         public bool HasAnyConflict(ReGoapState<T, W> other) // used only in backward for now
         {
-            lock (values) lock (other.values)
+            lock (values)
+            lock (other.values)
+            {
+                foreach (var pair in other.values)
                 {
-                    foreach (var pair in other.values)
-                    {
-                        var otherValue = pair.Value;
+                    var otherValue = pair.Value;
 
-                        // not here, ignore this check
-                        W thisValue;
-                        if (!values.TryGetValue(pair.Key, out thisValue))
-                            continue;
-                        if (!Equals(otherValue, thisValue))
-                            return true;
-                    }
-                    return false;
+                    // not here, ignore this check
+                    W thisValue;
+                    if (!values.TryGetValue(pair.Key, out thisValue))
+                        continue;
+                    if (!Equals(otherValue, thisValue))
+                        return true;
                 }
+
+                return false;
+            }
         }
 
         // this method is more relaxed than the other, also accepts conflits that are fixed by "changes"
         public bool HasAnyConflict(ReGoapState<T, W> changes, ReGoapState<T, W> other)
         {
-            lock (values) lock (other.values)
+            lock (values)
+            lock (other.values)
+            {
+                foreach (var pair in other.values)
                 {
-                    foreach (var pair in other.values)
-                    {
-                        var otherValue = pair.Value;
+                    var otherValue = pair.Value;
 
-                        // not here, ignore this check
-                        W thisValue;
-                        if (!values.TryGetValue(pair.Key, out thisValue))
-                            continue;
-                        W effectValue;
-                        changes.values.TryGetValue(pair.Key, out effectValue);
-                        if (!Equals(otherValue, thisValue) && !Equals(effectValue, thisValue))
-                            return true;
-                    }
-                    return false;
+                    // not here, ignore this check
+                    W thisValue;
+                    if (!values.TryGetValue(pair.Key, out thisValue))
+                        continue;
+                    W effectValue;
+                    changes.values.TryGetValue(pair.Key, out effectValue);
+                    if (!Equals(otherValue, thisValue) && !Equals(effectValue, thisValue))
+                        return true;
                 }
+
+                return false;
+            }
         }
 
         public int MissingDifference(ReGoapState<T, W> other, int stopAt = int.MaxValue)
@@ -133,12 +142,14 @@ namespace ReGoap.Core
                             break;
                     }
                 }
+
                 return count;
             }
         }
 
         // write differences in "difference"
-        public int MissingDifference(ReGoapState<T, W> other, ref ReGoapState<T, W> difference, int stopAt = int.MaxValue, Func<KeyValuePair<T, W>, W, bool> predicate = null, bool test = false)
+        public int MissingDifference(ReGoapState<T, W> other, ref ReGoapState<T, W> difference, int stopAt = int.MaxValue,
+            Func<KeyValuePair<T, W>, W, bool> predicate = null, bool test = false)
         {
             lock (values)
             {
@@ -156,12 +167,14 @@ namespace ReGoap.Core
                             break;
                     }
                 }
+
                 return count;
             }
         }
 
         // keep only missing differences in values
-        public int ReplaceWithMissingDifference(ReGoapState<T, W> other, int stopAt = int.MaxValue, Func<KeyValuePair<T, W>, W, bool> predicate = null, bool test = false)
+        public int ReplaceWithMissingDifference(ReGoapState<T, W> other, int stopAt = int.MaxValue,
+            Func<KeyValuePair<T, W>, W, bool> predicate = null, bool test = false)
         {
             lock (values)
             {
@@ -181,6 +194,7 @@ namespace ReGoap.Core
                             break;
                     }
                 }
+
                 return count;
             }
         }
@@ -192,6 +206,7 @@ namespace ReGoap.Core
 
 
         #region StateFactory
+
         private static Stack<ReGoapState<T, W>> cachedStates;
 
         public static void Warmup(int count)
@@ -218,13 +233,16 @@ namespace ReGoap.Core
             {
                 cachedStates = new Stack<ReGoapState<T, W>>();
             }
+
             lock (cachedStates)
             {
                 state = cachedStates.Count > 0 ? cachedStates.Pop() : new ReGoapState<T, W>();
             }
+
             state.Init(old);
             return state;
         }
+
         #endregion
 
         public override string ToString()

@@ -8,19 +8,15 @@ namespace ReGoap.Unity
     public class ReGoapAction<T, W> : MonoBehaviour, IReGoapAction<T, W>
     {
         public string Name = "GoapAction";
-
         protected ReGoapState<T, W> preconditions;
         protected ReGoapState<T, W> effects;
         public float Cost = 1;
-
         protected Action<IReGoapAction<T, W>> doneCallback;
         protected Action<IReGoapAction<T, W>> failCallback;
         protected IReGoapAction<T, W> previousAction;
         protected IReGoapAction<T, W> nextAction;
-
         protected IReGoapAgent<T, W> agent;
         protected bool interruptWhenPossible;
-
         protected ReGoapState<T, W> settings = null;
 
         #region UnityFunctions

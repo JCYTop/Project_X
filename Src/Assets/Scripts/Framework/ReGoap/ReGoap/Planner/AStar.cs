@@ -94,7 +94,6 @@ namespace ReGoap.Planner
         float GetPathCost();
         INode<T> GetParent();
         bool IsGoal(T goal);
-
         int QueueIndex { get; set; }
         float Priority { get; set; }
         void Recycle();
