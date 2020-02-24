@@ -13,21 +13,39 @@
  ----------------------------------
 */
 
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class IAction : MonoBehaviour
+namespace GOAP
 {
-    // Start is called before the first frame update
-    void Start()
+    /// <summary>
+    /// 执行动作
+    /// 加载配置文件信息
+    /// </summary>
+    public interface IAction
     {
-        
-    }
+        /// <summary>
+        /// 权重等级，优先使用
+        /// </summary>
+        int Priority { get; }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        /// <summary>
+        /// 花费使用，
+        /// </summary>
+        int Cost { get; }
+
+        /// <summary>
+        /// 当前动作是否能够中断
+        /// </summary>
+        bool CanInterruptiblePlan { get; }
+
+        /// <summary>
+        /// 执行动作
+        /// 先决条件
+        /// </summary>
+        IState Preconditions { get; }
+
+        /// <summary>
+        /// 动作执行后
+        /// 影响状态结果
+        /// </summary>
+        IState Effects { get; }
     }
 }
