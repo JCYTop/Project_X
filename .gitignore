@@ -51,3 +51,4 @@ crashlytics-build.properties
 /src/ProjectX/MemoryCaptures
 Src/.idea/
 Src/AssetBundles/
+Src/Assets/Scripts/UnSync
