@@ -20,7 +20,6 @@ namespace GOAP
     /// <summary>
     /// 启动每一个单独的GOAP
     /// 附着场景物体类
-    /// 场景中物体存放数据类
     /// 场景中物体调整参数类
     /// </summary>
     public abstract class AIContextBase : MonoEventEmitter, IContext
