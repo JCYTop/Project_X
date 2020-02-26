@@ -15,7 +15,7 @@ namespace GOAP
             var Bleeds = new ValueAggregation(Bleed);
             stateConfigSet.Add(AIConfigElement.Bleed, Bleeds);
             stateConfigSet.TryGetValue(AIConfigElement.Bleed, out var data);
-            var sss = data.GetTypeStateConfigElement<ValueAggregation>();
+            var sss = data.CastStateConfigEle<ValueAggregation>();
         }
     }
 }

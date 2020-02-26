@@ -45,7 +45,13 @@ namespace GOAP
 
     public static class IStateConfigElementBaseExtend
     {
-        public static T GetTypeStateConfigElement<T>(this IStateConfigElementBase configElement)
+        /// <summary>
+        /// 转换成指定类型的IStateConfigElementBase
+        /// </summary>
+        /// <param name="configElement">IStateConfigElementBase类型</param>
+        /// <typeparam name="T">指定类型</typeparam>
+        /// <returns>返回指定类型T</returns>
+        public static T CastStateConfigEle<T>(this IStateConfigElementBase configElement)
         {
             try
             {
