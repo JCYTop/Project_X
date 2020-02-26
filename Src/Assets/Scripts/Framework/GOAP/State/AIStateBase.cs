@@ -23,20 +23,14 @@ namespace GOAP
     {
         private Action onChange;
         public IContext Context { get; }
+        public StateConfig StateConfig;
 
-        public void Clear()
-        {
-            throw new System.NotImplementedException();
-        }
+        #region FsmStateAction
 
-        public void RegiestEvent()
+        public override void Init(FsmState state)
         {
-            throw new System.NotImplementedException();
-        }
-
-        public void UnRegiestEvent()
-        {
-            throw new System.NotImplementedException();
+            base.Init(state);
+            Init();
         }
 
         public override void OnEnter()
@@ -57,10 +51,28 @@ namespace GOAP
             Exit();
         }
 
+        #endregion
+
+        public abstract void Init();
         public abstract void Enter();
         public abstract void Execute();
         public abstract void Exit();
         public abstract void SetData();
-        public abstract object GetData();
+        public abstract StateConfig GetData();
+
+        public void Clear()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void RegiestEvent()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void UnRegiestEvent()
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

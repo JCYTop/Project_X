@@ -28,6 +28,7 @@ public static class GlobalDefine
     private static ABInfo abInfo;
     public const string AwakeScene = "AwakeScene";
     public const string StartScene = "StartScene";
+    public const string TestScene = "TestScene";
 
     #region 属性
 

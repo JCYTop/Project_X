@@ -347,7 +347,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1308876279}
   - component: {fileID: 1308876280}
-  - component: {fileID: 1308876281}
   m_Layer: 0
   m_Name: GOAP AI
   m_TagString: Untagged
@@ -504,19 +503,6 @@ MonoBehaviour:
     handleAnimatorIK: 0
   fsmTemplate: {fileID: 0}
   eventHandlerComponentsAdded: 0
---- !u!114 &1308876281
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1308876278}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2661053b88274f65b5033f3743191293, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Bleed: 0
 --- !u!1 &1555094835
 GameObject:
   m_ObjectHideFlags: 0
@@ -583,7 +569,7 @@ MonoBehaviour:
   openReferences: 0
   openPrefabs: 0
   idRef:
-    _Keys: c73479e636f824061cd27a9cd3f2d013b566ce792952f03f1ee0fb8ee9a24168bb4233401f86a50c421065966cd9d97b303798bcc3a38a1a25b8c855fc951d4115e357152610333bf42443c54879544506805db20984a51749e6e49841afef53f323ab5031efa241952b37609f3a2e53409c4053e675b1627fee6313bebe8158c8601178d9f7586fb3e22b9ba93a2f126780d38fab70af11367f91f3c02b1902dc15aee9164a64370c4ffa375fb3f446
+    _Keys: c73479e636f824061cd27a9cd3f2d013b566ce792952f03f1ee0fb8ee9a24168bb4233401f86a50c421065966cd9d97b303798bcc3a38a1a25b8c855fc951d4115e357152610333bf42443c54879544506805db20984a51749e6e49841afef53f323ab5031efa241952b37609f3a2e53
     _Values:
     - {fileID: 776374429}
     - {fileID: 4800000, guid: e6e9a19c3678ded42a3bc431ebef7dbd, type: 3}
@@ -599,14 +585,6 @@ MonoBehaviour:
     - {fileID: 588926639}
     - {fileID: 776374428}
     - {fileID: 1248930164}
-    - {fileID: 1308876281}
-    - {fileID: 2800000, guid: 841830c36dbb51047991dcb4fece07a1, type: 3}
-    - {fileID: 2100000, guid: 7bca89bdeebb5904ab2eace460c04419, type: 2}
-    - {fileID: 1384774831, guid: e743331561ef77147ae48cda9bcb8209, type: 3}
-    - {fileID: 11500000, guid: 2661053b88274f65b5033f3743191293, type: 3}
-    - {fileID: 1308876278}
-    - {fileID: 1308876279}
-    - {fileID: 1308876280}
   prefabs: []
 --- !u!114 &1555094838
 MonoBehaviour:

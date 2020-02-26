@@ -46,6 +46,11 @@ namespace GOAP
         void UnRegiestEvent();
 
         /// <summary>
+        /// 初始化信息
+        /// </summary>
+        void Init();
+
+        /// <summary>
         /// 进入动作
         /// </summary>
         void Enter();
@@ -68,9 +73,7 @@ namespace GOAP
         /// <summary>
         /// 获取参数
         /// </summary>
-        object GetData();
-
-        //TODO
+        StateConfig GetData();
     }
 
     /// <summary>
@@ -80,6 +83,9 @@ namespace GOAP
     /// </summary>
     public enum StateElement
     {
-        None = 0, //默认
+        /// <summary>
+        /// 默认
+        /// </summary>
+        Default = 0, 
     }
 }
