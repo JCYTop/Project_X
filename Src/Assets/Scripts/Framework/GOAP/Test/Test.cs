@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -15,7 +14,7 @@ namespace GOAP
             var Bleeds = new ValueAggregation(Bleed);
             stateConfigSet.Add(AIConfigElement.Bleed, Bleeds);
             stateConfigSet.TryGetValue(AIConfigElement.Bleed, out var data);
-            var sss = data.CastStateConfigEle<ValueAggregation>();
+            var bleed = data.CastStateConfigEle<ValueAggregation>();
         }
     }
 }

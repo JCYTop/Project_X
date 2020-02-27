@@ -19,6 +19,9 @@ using UnityEngine;
 
 namespace GOAP
 {
+    /// <summary>
+    /// 配置文件基类
+    /// </summary>
     [Serializable]
     public abstract class StateConfig : ScriptableObject
     {
@@ -37,6 +40,7 @@ namespace GOAP
     }
 
     /// <summary>
+    /// 状态参数
     /// 状态配置文件标签
     /// 每个标签对应这当前属性的状态类
     /// 方便通过标签快速查找工具类

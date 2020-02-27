@@ -2,12 +2,12 @@
 ----------------------------------
  *Copyright(C) 2019 by IndieGame
  *All rights reserved.
- *FileName:     ValueAggregation
+ *FileName:     BoolAggregation
  *Author:       @JCY
  *Version:      0.0.1
  *AuthorEmail:  jcyemail@qq.com
  *UnityVersion：2019.1.0f2
- *CreateTime:   2020/02/26 22:49:25
+ *CreateTime:   2020/02/27 23:36:34
  *Description:  IndieGame 
  *History:
  ----------------------------------
@@ -16,27 +16,26 @@
 namespace GOAP
 {
     /// <summary>
-    /// 值计数聚合类
+    /// Bool 聚合类
     /// 单一存放
-    /// 存放简单数值
+    /// 存放简单 Bool
     /// </summary>
-    /// <typeparam name="T"></typeparam>
-    public class ValueAggregation : StateConfigElement<int>
+    public class BoolAggregation : StateConfigElement<bool>
     {
-        public override int Data { get; set; }
+        public override bool Data { get; set; }
 
-        public ValueAggregation(int value) : base(value)
+        public BoolAggregation(bool value) : base(value)
         {
-            this.TypeName = typeof(ValueAggregation).ToString();
+            this.TypeName = typeof(BoolAggregation).ToString();
             this.Data = value;
         }
 
-        public override int GetData()
+        public override bool GetData()
         {
             return Data;
         }
 
-        public override int CompareTo(int other)
+        public override int CompareTo(bool other)
         {
             return Data.CompareTo(other);
         }

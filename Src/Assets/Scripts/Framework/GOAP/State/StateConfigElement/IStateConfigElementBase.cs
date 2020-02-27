@@ -22,8 +22,14 @@ namespace GOAP
         string TypeName { set; get; }
     }
 
-    public abstract class IStateConfigElement<T> : IStateConfigElementBase, IComparable<T>
+    public abstract class StateConfigElement<T> : IStateConfigElementBase, IComparable<T>
     {
+        public abstract T Data { get; set; }
+
+        public StateConfigElement(T value)
+        {
+        }
+
         /// <summary>
         /// 子类的类型名称
         /// </summary>

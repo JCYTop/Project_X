@@ -14,7 +14,9 @@
 */
 
 using System;
+using System.Collections.Generic;
 using HutongGames.PlayMaker;
+using JetBrains.Annotations;
 
 namespace GOAP
 {
@@ -57,8 +59,27 @@ namespace GOAP
         public abstract void Enter();
         public abstract void Execute();
         public abstract void Exit();
+        public abstract void SetData(StateConfig data);
+        public abstract IState GetData();
         public abstract void SetData();
-        public abstract StateConfig GetData();
+
+        public void AddStateChangeListener([NotNull] Action callback)
+        {
+            this.onChange += callback;
+        }
+
+        public void RemoveStateChangeListener([NotNull] Action callback)
+        {
+            var delegates = this.onChange.GetInvocationList();
+            for (int i = 0; i < delegates.Length; i++)
+            {
+                if (ReferenceEquals(delegates[i], callback))
+                {
+                    this.onChange -= callback;
+                    return;
+                }
+            }
+        }
 
         public void Clear()
         {
@@ -73,6 +94,51 @@ namespace GOAP
         public void UnRegiestEvent()
         {
             throw new System.NotImplementedException();
+        }
+
+        public IState InversionValue()
+        {
+            throw new NotImplementedException();
+        }
+
+        public IStateConfigElementBase GetSingleValue(AIConfigElement key)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool CompareKey(AIConfigElement key)
+        {
+            throw new NotImplementedException();
+        }
+
+        public ICollection<AIConfigElement> GetKeys()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Copy(IState otherState)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool ContainState(IState otherState)
+        {
+            throw new NotImplementedException();
+        }
+
+        public SortedList<AIConfigElement, Dictionary<IState, IStateConfigElementBase>> GetSameData(IState otherState)
+        {
+            throw new NotImplementedException();
+        }
+
+        public ICollection<AIConfigElement> GetValueDifferences(IState otherState)
+        {
+            throw new NotImplementedException();
+        }
+
+        public ICollection<AIConfigElement> GetNotExistKeys(IState otherState)
+        {
+            throw new NotImplementedException();
         }
     }
 }

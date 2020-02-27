@@ -15,12 +15,10 @@
 
 using System;
 using System.Threading.Tasks;
-using Framework.Base;
 using UnityEngine;
 
-public class Test : MonoBehaviour
+public class UnityTest : MonoBehaviour
 {
-    // Start is called before the first frame update
     void Start()
     {
 //        intli.Insert(1);
@@ -69,7 +67,6 @@ public class Test : MonoBehaviour
 //        Debug.Log(list);
 //        Tesss();
 //        Invoke("Tesss", 3f);
-//
 
 //        string c1 = "ababacd";
 //        string c2 = "ababacababb";
@@ -96,28 +93,29 @@ public class Test : MonoBehaviour
         }
     }
 
-    public async void Tesss()
-    {
-        await Task.Delay(TimeSpan.FromSeconds(2));
-        UIRootMgr.Instance().SpawnUI("GraphyProfiler", (prefab) => { EntityUtil.InstantiateGo(prefab); });
-        await Task.Delay(TimeSpan.FromSeconds(2));
-        UIRootMgr.Instance().SpawnUI("Test1", (prefab) => { EntityUtil.InstantiateGo(prefab); });
-        await Task.Delay(TimeSpan.FromSeconds(2));
-        UIRootMgr.Instance().SpawnUI("Test2", (prefab) =>
-        {
-            var go = EntityUtil.InstantiateGo(prefab);
-            go.GetComponent<UIBase>().Close();
-            Invoke("NextGo", 5f);
-        });
-    }
-
-    private void NextGo()
-    {
-        UIRootMgr.Instance().SpawnUI("Test2", (prefab) =>
-        {
-            var go = EntityUtil.InstantiateGo(prefab);
-        });
-    }
+//    public async void Tesss()
+//    {
+//        
+//        await Task.Delay(TimeSpan.FromSeconds(2));
+//        UIRootMgr.Instance().SpawnUI("GraphyProfiler", (prefab) => { EntityUtil.InstantiateGo(prefab); });
+//        await Task.Delay(TimeSpan.FromSeconds(2));
+//        UIRootMgr.Instance().SpawnUI("Test1", (prefab) => { EntityUtil.InstantiateGo(prefab); });
+//        await Task.Delay(TimeSpan.FromSeconds(2));
+//        UIRootMgr.Instance().SpawnUI("Test2", (prefab) =>
+//        {
+//            var go = EntityUtil.InstantiateGo(prefab);
+//            go.GetComponent<UIBase>().Close();
+//            Invoke("NextGo", 5f);
+//        });
+//    }
+//
+//    private void NextGo()
+//    {
+//        UIRootMgr.Instance().SpawnUI("Test2", (prefab) =>
+//        {
+//            var go = EntityUtil.InstantiateGo(prefab);
+//        });
+//    }
 
 //    async Task<int> CountCharsAsync(string url)
 //    {

@@ -21,9 +21,9 @@ namespace GOAP
 
         public override void Init()
         {
-            var Bleeds = new ValueAggregation(Bleed);
-            stateConfigSet.Add(AIConfigElement.Bleed, Bleeds);
-            stateConfigSet.TryGetValue(AIConfigElement.Bleed, out var data);
+//            var Bleeds = new ValueAggregation(Bleed);
+//            stateConfigSet.Add(AIConfigElement.Bleed, Bleeds);
+//            stateConfigSet.TryGetValue(AIConfigElement.Bleed, out var data);
         }
     }
 }
