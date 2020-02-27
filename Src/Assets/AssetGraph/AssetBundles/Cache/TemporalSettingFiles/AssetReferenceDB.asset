@@ -149,4 +149,132 @@ MonoBehaviour:
     m_importFrom: Assets/ABRes/FsmTemplate/Global/Global.asset
     m_exportTo: 
     m_variantName: 
+  - m_assetDatabaseId: 2661053b88274f65b5033f3743191293
+    m_importFrom: Assets/Scripts/Framework/GOAP/Test/Test.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: b5417a1738d711143a070b91920c1a76
+    m_importFrom: Assets/Scripts/Framework/GOAP/State/IStateConfigElementBase.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 35af6fff1f14dd34ea08959fddfa8f38
+    m_importFrom: Assets/ABRes/Scenes/GameScenes/TestScene.unity
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 64716136fbbea404388c6534383d7b5e
+    m_importFrom: Assets/ABRes/Material/Test/PhysicsStaticMaterial.mat
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 24228c76bdb8f9f4d87f468ba127e71d
+    m_importFrom: Assets/ABRes/Textures/Test/GraphPaperTexture.png
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 35342607fbc35834abde11a825cc6e51
+    m_importFrom: Assets/ABRes/Material/Test/PhysicsKinematicMaterial.mat
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 3f19cf87e0b218c438e74077e79f165a
+    m_importFrom: Assets/ABRes/Material/Test/Colorful.mat
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 284c017caead21c4185658d8d466797c
+    m_importFrom: Assets/ABRes/Shader/Test/PhysicsStaticShaderGraph.ShaderGraph
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: f3fb613d2e20ddd40ac40dc646dca26b
+    m_importFrom: Assets/ABRes/Material/Test/PhysicsStaticTerrainMaterial.mat
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 959eccfeb940d0e4b9bff9d7d3841c5a
+    m_importFrom: Assets/ABRes/Material/Test/PhysicsDynamicMaterial.mat
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 981536dedd2f2a045abc89195dd73935
+    m_importFrom: Assets/ABRes/Material/Test
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 8af9d4a5045d1ee48b5689547f568e9c
+    m_importFrom: Assets/ABRes/Shader/Test
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 21d8d0f9bc2eaa846ab0cca5c596b8fa
+    m_importFrom: Assets/ABRes/Textures/Test
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 8ccb83eb5d009d2458a4dc01e6564efc
+    m_importFrom: Assets/ABRes/Material/checker.mat
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 6c23c2c702be21344b75950c5cca7a67
+    m_importFrom: Assets/ABRes/Textures/Test/checker.psd
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 199e2f81abea15742bd75506a17f6a18
+    m_importFrom: Assets/ABRes/Textures/Test/Rod.png
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: bd946cd384eff7c4fb7dc4e1ae64810f
+    m_importFrom: Assets/ABRes/Textures/Test/ClothPattern.png
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 84a62bb939f525141b705eb7f890b04d
+    m_importFrom: Assets/ABRes/Textures/Test/ClothPattern_SM.psd
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: d902f732240348745bad5d5155a0392a
+    m_importFrom: Assets/ABRes/Material/Materials
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 64745120d12c6b74199f69506763b6d8
+    m_importFrom: Assets/ABRes/Material/SmokeParticles.mat
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 929f0670db6e7884eb2d31150e538cd9
+    m_importFrom: Assets/ABRes/Material/RedRope.mat
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 588c0801c494add4aa911ec699cc74ec
+    m_importFrom: Assets/ABRes/Material/ChainWhite.mat
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 40b250525cf7ae44fb4cf91721d107d9
+    m_importFrom: Assets/ABRes/Material/RedHot.mat
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 33c19cf60f64d2145b293d29d8697733
+    m_importFrom: Assets/ABRes/Material/Default.mat
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 78fb8b97b5b3479469c933281fe09b19
+    m_importFrom: Assets/ABRes/Material/ChainRed.mat
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: fdf60d485180a1e4f8de0c6f94e5be40
+    m_importFrom: Assets/ABRes/Material/Shader Graphs_Hologram.mat
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 6e2c026a3337f6c40a980fa1cfe277bc
+    m_importFrom: Assets/ABRes/Material/Metal.mat
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 187e24aa48f8fa84fb757493c877af8c
+    m_importFrom: Assets/ABRes/Material/DefaultLit.mat
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: c116496c2bf136d4cb49ddf34d53611c
+    m_importFrom: Assets/ABRes/Material/GreenRope.mat
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 4ad3801d8cebf814f869c660059a5b2c
+    m_importFrom: Assets/ABRes/Material/LineRope.mat
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: d17f8c6df5bf0da45b0a678fa167b35d
+    m_importFrom: Assets/ABRes/Material/Rod.mat
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 7bca89bdeebb5904ab2eace460c04419
+    m_importFrom: Assets/ABRes/Material/Walls.mat
+    m_exportTo: 
+    m_variantName: 
   m_version: 2
