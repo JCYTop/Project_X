@@ -22,7 +22,7 @@ namespace GOAP
         string TypeName { set; get; }
     }
 
-    public abstract class StateConfigElement<T> : IStateConfigElementBase, IComparable<T>
+    public abstract class StateConfigElement<T> : IStateConfigElementBase
     {
         public abstract T Data { get; set; }
 
@@ -40,13 +40,6 @@ namespace GOAP
         /// </summary>
         /// <returns></returns>
         public abstract T GetData();
-
-        /// <summary>
-        /// 比较不同值之间的大小
-        /// </summary>
-        /// <param name="other">另外输入</param>
-        /// <returns>-1，0，1</returns>
-        public abstract int CompareTo(T other);
     }
 
     public static class IStateConfigElementBaseExtend

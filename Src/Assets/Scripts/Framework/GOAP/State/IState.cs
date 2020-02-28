@@ -74,7 +74,7 @@ namespace GOAP
         /// 设置参数
         /// 通过配置文件类进行加载
         /// </summary>
-        void SetData(StateConfig data);
+        void SetData(IState data);
 
         /// <summary>
         /// 获取参数

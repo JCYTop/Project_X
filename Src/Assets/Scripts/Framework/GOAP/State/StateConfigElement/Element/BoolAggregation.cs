@@ -13,6 +13,8 @@
  ----------------------------------
 */
 
+using System;
+
 namespace GOAP
 {
     /// <summary>
@@ -20,7 +22,7 @@ namespace GOAP
     /// 单一存放
     /// 存放简单 Bool
     /// </summary>
-    public class BoolAggregation : StateConfigElement<bool>
+    public abstract class BoolAggregation : StateConfigElement<bool>, IComparable<bool>
     {
         public override bool Data { get; set; }
 
@@ -35,7 +37,7 @@ namespace GOAP
             return Data;
         }
 
-        public override int CompareTo(bool other)
+        public int CompareTo(bool other)
         {
             return Data.CompareTo(other);
         }

@@ -13,6 +13,8 @@
  ----------------------------------
 */
 
+using System;
+
 namespace GOAP
 {
     /// <summary>
@@ -21,7 +23,7 @@ namespace GOAP
     /// 存放简单数值
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    public class ValueAggregation : StateConfigElement<int>
+    public abstract class ValueAggregation : StateConfigElement<int>, IComparable<int>
     {
         public override int Data { get; set; }
 
@@ -36,7 +38,7 @@ namespace GOAP
             return Data;
         }
 
-        public override int CompareTo(int other)
+        public int CompareTo(int other)
         {
             return Data.CompareTo(other);
         }

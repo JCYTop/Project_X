@@ -25,6 +25,11 @@ namespace GOAP
     {
         private Action onChange;
         public IContext Context { get; }
+
+        /// <summary>
+        /// 配置文件ScriptableObject
+        /// 需要预先配置并且拖拽
+        /// </summary>
         public StateConfig StateConfig;
 
         #region FsmStateAction
@@ -59,9 +64,8 @@ namespace GOAP
         public abstract void Enter();
         public abstract void Execute();
         public abstract void Exit();
-        public abstract void SetData(StateConfig data);
+        public abstract void SetData(IState data);
         public abstract IState GetData();
-        public abstract void SetData();
 
         public void AddStateChangeListener([NotNull] Action callback)
         {
