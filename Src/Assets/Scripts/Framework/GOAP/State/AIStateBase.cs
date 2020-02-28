@@ -105,17 +105,17 @@ namespace GOAP
             throw new NotImplementedException();
         }
 
-        public IStateConfigElementBase GetSingleValue(AIConfigElement key)
+        public IStateConfigElementBase GetSingleValue(AIStateConfigElement key)
         {
             throw new NotImplementedException();
         }
 
-        public bool CompareKey(AIConfigElement key)
+        public bool CompareKey(AIStateConfigElement key)
         {
             throw new NotImplementedException();
         }
 
-        public ICollection<AIConfigElement> GetKeys()
+        public ICollection<AIStateConfigElement> GetKeys()
         {
             throw new NotImplementedException();
         }
@@ -130,17 +130,17 @@ namespace GOAP
             throw new NotImplementedException();
         }
 
-        public SortedList<AIConfigElement, Dictionary<IState, IStateConfigElementBase>> GetSameData(IState otherState)
+        public SortedList<AIStateConfigElement, Dictionary<IState, IStateConfigElementBase>> GetSameData(IState otherState)
         {
             throw new NotImplementedException();
         }
 
-        public ICollection<AIConfigElement> GetValueDifferences(IState otherState)
+        public ICollection<AIStateConfigElement> GetValueDifferences(IState otherState)
         {
             throw new NotImplementedException();
         }
 
-        public ICollection<AIConfigElement> GetNotExistKeys(IState otherState)
+        public ICollection<AIStateConfigElement> GetNotExistKeys(IState otherState)
         {
             throw new NotImplementedException();
         }

@@ -21,6 +21,7 @@ namespace GOAP
     /// <summary>
     /// 存储每一个状态
     /// 如果不使用State就需要使用单独的数据关系表
+    /// 先于Action初始化完成
     /// </summary>
     public interface IState
     {
@@ -108,7 +109,7 @@ namespace GOAP
         /// </summary>
         /// <param name="key"></param>
         /// <returns></returns>
-        IStateConfigElementBase GetSingleValue(AIConfigElement key);
+        IStateConfigElementBase GetSingleValue(AIStateConfigElement key);
 
         /// <summary>
         /// 根据AIConfigElement类型
@@ -117,13 +118,13 @@ namespace GOAP
         /// </summary>
         /// <param name="key">AIConfigElement类型</param>
         /// <returns></returns>
-        bool CompareKey(AIConfigElement key);
+        bool CompareKey(AIStateConfigElement key);
 
         /// <summary>
         /// 获取当前所有配置标签AIConfigElement
         /// </summary>
         /// <returns></returns>
-        ICollection<AIConfigElement> GetKeys();
+        ICollection<AIStateConfigElement> GetKeys();
 
         /// <summary>
         /// 完全复制另一个状态的值
@@ -143,20 +144,32 @@ namespace GOAP
         /// 获取两个State
         /// 同时包含的键值及当前状态键值对应的数据
         /// </summary>
-        SortedList<AIConfigElement, Dictionary<IState, IStateConfigElementBase>> GetSameData(IState otherState);
+        SortedList<AIStateConfigElement, Dictionary<IState, IStateConfigElementBase>> GetSameData(IState otherState);
 
         /// <summary>
         /// 获取跟另外一个状态的差异键值集合
         /// </summary>
         /// <param name="otherState"></param>
         /// <returns></returns>
-        ICollection<AIConfigElement> GetValueDifferences(IState otherState);
+        ICollection<AIStateConfigElement> GetValueDifferences(IState otherState);
 
         /// <summary>
         /// 把所提供状态的所有键值进行筛选
         /// 当前状态不存在的就添加进
         /// 存在则忽略
         /// </summary>
-        ICollection<AIConfigElement> GetNotExistKeys(IState otherState);
+        ICollection<AIStateConfigElement> GetNotExistKeys(IState otherState);
+    }
+
+    /// <summary>
+    /// 标签用于状态在注册之后形成对应组注册表
+    /// 方便查找对应关系
+    /// </summary>
+    public enum StateTag
+    {
+        /// <summary>
+        /// 默认
+        /// </summary>
+        Default = 0,
     }
 }

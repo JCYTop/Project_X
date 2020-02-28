@@ -23,6 +23,12 @@ namespace GOAP
     public interface IAction<TAction>
     {
         /// <summary>
+        /// 当前动作的标签
+        /// Enum
+        /// </summary>
+        TAction Label { get; }
+
+        /// <summary>
         /// 权重等级，优先使用
         /// </summary>
         int Priority { get; }
@@ -40,13 +46,38 @@ namespace GOAP
         /// <summary>
         /// 执行动作
         /// 先决条件
+        /// 
         /// </summary>
-        IState Preconditions { get; }
+        IState PreConditions { get; }
 
         /// <summary>
         /// 动作执行后
         /// 影响状态结果
+        /// 
         /// </summary>
         IState Effects { get; }
+
+        /// <summary>
+        /// 验证先决条件
+        /// 主要使用在是否可以进行打断的上面判断
+        /// </summary>
+        /// <returns></returns>
+        bool VerifyPreconditions();
+    }
+
+    /// <summary>
+    /// 执行动作标签
+    /// 用在 IAction<TAction>
+    /// </summary>
+    public enum ActionTag
+    {
+        /// <summary>
+        /// 默认标签
+        /// </summary>
+        None = 0,
+
+        #region Common 100~199
+
+        #endregion
     }
 }
