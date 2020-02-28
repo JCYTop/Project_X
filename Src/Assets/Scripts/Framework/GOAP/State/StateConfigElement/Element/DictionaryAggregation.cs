@@ -17,7 +17,10 @@ using System.Collections.Generic;
 
 namespace GOAP
 {
-    public abstract class DictionaryAggregation<Tkey, TValue> : StateConfigElement<Dictionary<Tkey, TValue>>
+    /// <summary>
+    /// Dictionary 聚合类
+    /// </summary>
+    public class DictionaryAggregation<Tkey, TValue> : StateConfigElement<Dictionary<Tkey, TValue>>
     {
         public override Dictionary<Tkey, TValue> Data { get; set; }
 

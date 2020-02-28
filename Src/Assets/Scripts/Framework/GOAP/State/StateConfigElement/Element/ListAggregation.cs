@@ -17,7 +17,10 @@ using System.Collections.Generic;
 
 namespace GOAP
 {
-    public abstract class ListAggregation<T> : StateConfigElement<List<T>>
+    /// <summary>
+    /// List 聚合类
+    /// </summary>
+    public class ListAggregation<T> : StateConfigElement<List<T>>
     {
         public override List<T> Data { get; set; }
 
