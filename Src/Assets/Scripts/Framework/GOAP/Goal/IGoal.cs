@@ -2,7 +2,7 @@
 ----------------------------------
  *Copyright(C) 2019 by IndieGame
  *All rights reserved.
- *FileName:     IGoalBase
+ *FileName:     IGoal
  *Author:       @JCY
  *Version:      0.0.1
  *AuthorEmail:  jcyemail@qq.com
@@ -17,15 +17,11 @@ using System;
 
 namespace GOAP
 {
-    public interface IGoalBase
-    {
-    }
-
     /// <summary>
     /// GOAL接口
     /// </summary>
     /// <typeparam name="TGoal">由类传入string</typeparam>
-    public interface IGoal<TGoal> : IGoalBase
+    public interface IGoal<TGoal>
     {
         /// <summary>
         /// 目标的标签
@@ -80,14 +76,14 @@ namespace GOAP
     /// 每个标签对应这当前Goal的类
     /// 方便通过标签快速查找类
     /// </summary>
-    public class GoalBaseTag
+    public enum GoalBaseTag
     {
         #region Common 0~199
 
         /// <summary>
         /// 默认标签
         /// </summary>
-        public const string Default = "Default";
+        Default = 0,
 
         #endregion
     }

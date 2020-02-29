@@ -63,4 +63,31 @@ namespace GOAP
             }
         }
     }
+
+    /// <summary>
+    /// IConfigElementBase标签
+    /// IConfigElementBase配置文件标签
+    /// 每个标签对应这当前属性的类
+    /// 方便通过标签快速查找工具类
+    /// </summary>
+    public enum AIStateConfigElementTag
+    {
+        #region Common  0~199
+
+        /// <summary>
+        /// 默认
+        /// </summary>
+        Default = 0,
+
+        #endregion
+
+        /// <summary>
+        /// 血量标记元素
+        /// </summary>
+        Bleed = 200,
+    }
+
+    public enum GoalConfigElementTag
+    {
+    }
 }

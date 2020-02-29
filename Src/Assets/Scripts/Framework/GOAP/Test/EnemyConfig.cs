@@ -15,11 +15,11 @@
 
 namespace GOAP
 {
-    public class EnemyConfig : StateConfig<string>
+    public class EnemyConfig : StateConfig<AIStateConfigElementTag>
     {
         public int Bleed;
 
-        public override StateConfig<string> Init()
+        public override StateConfig<AIStateConfigElementTag> Init()
         {
             var Bleeds = new ValueAggregation(Bleed);
             stateConfigSet.Add(AIStateConfigElementTag.Bleed, Bleeds);

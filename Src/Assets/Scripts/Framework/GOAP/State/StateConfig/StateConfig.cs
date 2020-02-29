@@ -33,27 +33,4 @@ namespace GOAP
         /// </summary>
         public abstract StateConfig<T> Init();
     }
-
-    /// <summary>
-    /// State标签
-    /// State配置文件标签
-    /// 每个标签对应这当前属性的类
-    /// 方便通过标签快速查找工具类
-    /// </summary>
-    public class AIStateConfigElementTag
-    {
-        #region Common  0~199
-
-        /// <summary>
-        /// 默认
-        /// </summary>
-        public const string Default = "Default";
-
-        /// <summary>
-        /// 血量标记元素
-        /// </summary>
-        public const string Bleed = "Bleed";
-
-        #endregion
-    }
 }

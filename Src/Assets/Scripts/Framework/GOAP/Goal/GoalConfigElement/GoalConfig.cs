@@ -23,6 +23,7 @@ namespace GOAP
     /// 配置文件基类
     /// </summary>
     /// <typeparam name="T1">GoalBaseTag标签使用</typeparam>
+    /// <typeparam name="T2">IConfigElementBase标签使用</typeparam>
     [Serializable]
     public abstract class GoalConfig<T1, T2> : ScriptableObject
     {
