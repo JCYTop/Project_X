@@ -32,6 +32,7 @@ namespace GOAP
         public int Priority { get; }
         public int Cost { get; }
         public bool CanInterruptiblePlan { get; }
+        //TODO 出现疑惑
         public IState PreConditions { get; }
         public IState Effects { get; }
 

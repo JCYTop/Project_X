@@ -68,15 +68,15 @@ namespace GOAP
     /// <summary>
     /// 执行动作标签
     /// 用在 IAction<TAction>
-    /// </summary>
-    public enum ActionTag
+    /// </summary>i
+    public class ActionBaseTag
     {
+        #region Common  0~199
+
         /// <summary>
         /// 默认标签
         /// </summary>
-        None = 0,
-
-        #region Common 100~199
+        public const string Default = "Default";
 
         #endregion
     }

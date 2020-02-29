@@ -165,11 +165,15 @@ namespace GOAP
     /// 标签用于状态在注册之后形成对应组注册表
     /// 方便查找对应关系
     /// </summary>
-    public enum StateTag
+    public class StateBaseTag
     {
+        #region  Common 0~199
+
         /// <summary>
         /// 默认
         /// </summary>
-        Default = 0,
+        public const string Default = "Default";
+
+        #endregion
     }
 }

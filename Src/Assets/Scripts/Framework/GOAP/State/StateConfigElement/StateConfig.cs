@@ -25,7 +25,7 @@ namespace GOAP
     [Serializable]
     public abstract class StateConfig : ScriptableObject
     {
-        protected SortedList<AIStateConfigElement, IStateConfigElementBase> stateConfigSet = new SortedList<AIStateConfigElement, IStateConfigElementBase>();
+        protected SortedList<string, IStateConfigElementBase> stateConfigSet = new SortedList<string, IStateConfigElementBase>();
 
         /// <summary>
         /// 初始化数据
@@ -40,16 +40,19 @@ namespace GOAP
     /// 每个标签对应这当前属性的状态类
     /// 方便通过标签快速查找工具类
     /// </summary>
-    public enum AIStateConfigElement
+    public class AIStateConfigElement
     {
+        #region Common  0~199
+
         /// <summary>
         /// 默认
         /// </summary>
-        Default = 0,
+        public const string Default = "Default";
 
-        #region Common 100~199
-
-        Bleed = 100,
+        /// <summary>
+        /// 血量标记元素
+        /// </summary>
+        public const string Bleed = "Bleed";
 
         #endregion
     }

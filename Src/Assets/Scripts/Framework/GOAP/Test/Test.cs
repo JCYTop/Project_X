@@ -6,11 +6,11 @@ namespace GOAP
     public class Test : MonoBehaviour
     {
         public int Bleed;
-        protected SortedList<AIStateConfigElement, IStateConfigElementBase> stateConfigSet;
+        protected SortedList<string, IStateConfigElementBase> stateConfigSet;
 
         private void Start()
         {
-            stateConfigSet = new SortedList<AIStateConfigElement, IStateConfigElementBase>();
+            stateConfigSet = new SortedList<string, IStateConfigElementBase>();
             var Bleeds = new ValueAggregation(Bleed);
             stateConfigSet.Add(AIStateConfigElement.Bleed, Bleeds);
             stateConfigSet.TryGetValue(AIStateConfigElement.Bleed, out var data);
