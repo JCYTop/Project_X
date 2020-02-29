@@ -19,7 +19,10 @@ namespace GOAP
     /// 执行动作
     /// 加载配置文件信息
     /// </summary>
-    /// <typeparam name="TAction">指代不同动作类型，有标记作用</typeparam>
+    /// <typeparam name="TAction">
+    /// 由类传入string
+    /// 指代不同动作类型，有标记作用
+    /// </typeparam>
     public interface IAction<TAction>
     {
         /// <summary>

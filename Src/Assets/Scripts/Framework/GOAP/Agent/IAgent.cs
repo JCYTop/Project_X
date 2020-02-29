@@ -20,7 +20,7 @@ namespace GOAP
     /// Mono数据从这里拿取
     /// State数据从这里拿取
     /// </summary>
-    /// <typeparam name="TAction"></typeparam>
+    /// <typeparam name="TAction">由类传入string</typeparam>
     public interface IAgent<TAction>
     {
         /// <summary>

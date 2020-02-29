@@ -23,7 +23,7 @@ namespace GOAP
     /// 需要到配置文件中去配置
     /// 配置文件是预制体形式
     /// </summary>
-    /// <typeparam name="TAction"></typeparam>
+    /// <typeparam name="TAction">由类传入string</typeparam>
     [Serializable]
     public abstract class ActionBase<TAction> : ScriptableObject, IActionUnity, IAction<TAction>
     {
@@ -31,7 +31,9 @@ namespace GOAP
         public abstract TAction Label { get; }
         public int Priority { get; }
         public int Cost { get; }
+
         public bool CanInterruptiblePlan { get; }
+
         //TODO 出现疑惑
         public IState PreConditions { get; }
         public IState Effects { get; }

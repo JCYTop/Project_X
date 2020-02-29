@@ -17,6 +17,10 @@ using System;
 
 namespace GOAP
 {
+    /// <summary>
+    /// GOAL接口
+    /// </summary>
+    /// <typeparam name="TGoal">由类传入string</typeparam>
     public interface IGoal<TGoal>
     {
         /// <summary>

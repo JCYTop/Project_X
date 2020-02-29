@@ -15,6 +15,10 @@
 
 namespace GOAP
 {
+    /// <summary>
+    /// IGoalManager接口
+    /// </summary>
+    /// <typeparam name="TGoal">由类传入string</typeparam>
     public interface IGoalManager<TGoal>
     {
         /// <summary>
