@@ -23,24 +23,24 @@ namespace GOAP
     /// 配置文件基类
     /// </summary>
     [Serializable]
-    public abstract class StateConfig : ScriptableObject
+    public abstract class StateConfig<T> : ScriptableObject
     {
-        protected SortedList<string, IStateConfigElementBase> stateConfigSet = new SortedList<string, IStateConfigElementBase>();
+        protected SortedList<T, IConfigElementBase> stateConfigSet = new SortedList<T, IConfigElementBase>();
 
         /// <summary>
         /// 初始化数据
         /// 必须手动填写已经添加的数据
         /// </summary>
-        public abstract StateConfig Init();
+        public abstract StateConfig<T> Init();
     }
 
     /// <summary>
-    /// 状态参数
-    /// 状态配置文件标签
-    /// 每个标签对应这当前属性的状态类
+    /// State标签
+    /// State配置文件标签
+    /// 每个标签对应这当前属性的类
     /// 方便通过标签快速查找工具类
     /// </summary>
-    public class AIStateConfigElement
+    public class AIStateConfigElementTag
     {
         #region Common  0~199
 

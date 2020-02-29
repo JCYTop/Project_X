@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: AuthorInfo
   m_EditorClassIdentifier: 
   AuthorName: '@JCY'
-  Version: 0.0.1
+  Version: 0.1.0
   AuthorEmail: jcyemail@qq.com
   UnityVersion: Unity2019.3.0f6
   Description: IndieGame

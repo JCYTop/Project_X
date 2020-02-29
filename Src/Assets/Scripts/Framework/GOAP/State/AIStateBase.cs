@@ -21,7 +21,7 @@ using JetBrains.Annotations;
 namespace GOAP
 {
     [ActionCategory("AI/Base")]
-    public abstract class AIStateBase : FsmStateAction, IState
+    public abstract class AIStateBase<T> : FsmStateAction, IState
     {
         private Action onChange;
         public IContext Context { get; }
@@ -30,7 +30,7 @@ namespace GOAP
         /// 配置文件ScriptableObject
         /// 需要预先配置并且拖拽
         /// </summary>
-        public StateConfig StateConfig;
+        public StateConfig<T> StateConfig;
 
         #region FsmStateAction
 
@@ -105,17 +105,17 @@ namespace GOAP
             throw new NotImplementedException();
         }
 
-        public IStateConfigElementBase GetSingleValue(AIStateConfigElement key)
+        public IConfigElementBase GetSingleValue(AIStateConfigElementTag key)
         {
             throw new NotImplementedException();
         }
 
-        public bool CompareKey(AIStateConfigElement key)
+        public bool CompareKey(AIStateConfigElementTag key)
         {
             throw new NotImplementedException();
         }
 
-        public ICollection<AIStateConfigElement> GetKeys()
+        public ICollection<AIStateConfigElementTag> GetKeys()
         {
             throw new NotImplementedException();
         }
@@ -130,17 +130,17 @@ namespace GOAP
             throw new NotImplementedException();
         }
 
-        public SortedList<AIStateConfigElement, Dictionary<IState, IStateConfigElementBase>> GetSameData(IState otherState)
+        public SortedList<AIStateConfigElementTag, Dictionary<IState, IConfigElementBase>> GetSameData(IState otherState)
         {
             throw new NotImplementedException();
         }
 
-        public ICollection<AIStateConfigElement> GetValueDifferences(IState otherState)
+        public ICollection<AIStateConfigElementTag> GetValueDifferences(IState otherState)
         {
             throw new NotImplementedException();
         }
 
-        public ICollection<AIStateConfigElement> GetNotExistKeys(IState otherState)
+        public ICollection<AIStateConfigElementTag> GetNotExistKeys(IState otherState)
         {
             throw new NotImplementedException();
         }

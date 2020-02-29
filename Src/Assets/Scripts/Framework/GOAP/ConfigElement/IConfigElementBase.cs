@@ -2,7 +2,7 @@
 ----------------------------------
  *Copyright(C) 2019 by IndieGame
  *All rights reserved.
- *FileName:     IStateConfigElementBase
+ *FileName:     IConfigElementBase
  *Author:       @JCY
  *Version:      0.0.1
  *AuthorEmail:  jcyemail@qq.com
@@ -17,16 +17,16 @@ using System;
 
 namespace GOAP
 {
-    public interface IStateConfigElementBase
+    public interface IConfigElementBase
     {
         string TypeName { set; get; }
     }
 
-    public abstract class StateConfigElement<T> : IStateConfigElementBase
+    public abstract class ConfigElement<T> : IConfigElementBase
     {
         public abstract T Data { get; set; }
 
-        public StateConfigElement(T value)
+        public ConfigElement(T value)
         {
         }
 
@@ -42,7 +42,7 @@ namespace GOAP
         public abstract T GetData();
     }
 
-    public static class IStateConfigElementBaseExtend
+    public static class IConfigElementBaseExtend
     {
         /// <summary>
         /// 转换成指定类型的IStateConfigElementBase
@@ -50,7 +50,7 @@ namespace GOAP
         /// <param name="configElement">IStateConfigElementBase类型</param>
         /// <typeparam name="T">指定类型</typeparam>
         /// <returns>返回指定类型T</returns>
-        public static T CastStateConfigEle<T>(this IStateConfigElementBase configElement)
+        public static T CastStateConfigEle<T>(this IConfigElementBase configElement)
         {
             try
             {

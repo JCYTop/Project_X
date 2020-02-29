@@ -13,25 +13,37 @@
  ----------------------------------
 */
 
+using System.Collections.Generic;
+
 namespace GOAP
 {
-    public class GoalManagerBase<TAction, TGoal> : IGoalManager<TGoal>
+    public abstract class GoalManagerBase<TAction, TGoal> : IGoalManager<TGoal>
     {
         private IAgent<TAction> agent;
+        private Dictionary<TGoal, IGoal<TGoal>> goalsDic;
+        private List<IGoal<TGoal>> activeGoals;
         public IGoal<TGoal> CurrentGoal { get; }
 
         public GoalManagerBase(IAgent<TAction> agent)
         {
             this.agent = agent;
             CurrentGoal = null;
+            goalsDic = new Dictionary<TGoal, IGoal<TGoal>>();
+            activeGoals = new List<IGoal<TGoal>>();
+            InitGoals();
         }
 
-        public IGoal<TGoal> GetGoal(TGoal goalLabel)
+        /// <summary>
+        /// 初始化当前代理的目标
+        /// </summary>
+        protected abstract void InitGoals();
+
+        public void AddGoal(TGoal goalLabel)
         {
             throw new System.NotImplementedException();
         }
 
-        public void AddGoal(TGoal goalLabel)
+        public IGoal<TGoal> GetGoal(TGoal goalLabel)
         {
             throw new System.NotImplementedException();
         }
