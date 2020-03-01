@@ -13,20 +13,17 @@
  ----------------------------------
 */
 
-using System;
-
 namespace GOAP
 {
     /// <summary>
     /// 每一个具体的Action
     /// 通过读取具体的配置文件信息生成一个具体的类
+    /// 数据类
     /// </summary>
     /// <typeparam name="TAction">由类传入string</typeparam>
-    [Serializable]
-    public abstract class ActionBase<TAction, TGoal> : IAction<TAction>
+    public abstract class ActionBase<TAction, TConfigElementTag> : IAction<TAction>
     {
-        private IAgent<TAction, TGoal> agent;
-        public ActionUnityGroup ActionUnityGroup { get; }
+        public ActionConfigUnit<TConfigElementTag> ActionUnityGroup { get; private set; }
         public abstract TAction Label { get; }
         public int Priority { get; }
         public int Cost { get; }
@@ -34,11 +31,11 @@ namespace GOAP
         public IState PreConditions { get; }
         public IState Effects { get; }
 
-        public ActionBase(IAgent<TAction, TGoal> agent)
+        public ActionBase(ActionConfigUnit<TConfigElementTag> actionUnityGroup)
         {
-            this.agent = agent;
-            Effects = InitEffects();
-            PreConditions = InitPreConditions();
+            this.ActionUnityGroup = actionUnityGroup;
+            this.Effects = InitEffects();
+            this.PreConditions = InitPreConditions();
         }
 
         protected abstract IState InitEffects();

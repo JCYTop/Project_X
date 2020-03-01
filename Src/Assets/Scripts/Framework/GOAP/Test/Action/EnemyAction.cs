@@ -5,7 +5,7 @@ namespace GOAP
     /// </summary>
     public class EnemyAction : ActionBase<ActionTag, GoalTag>
     {
-        public EnemyAction(IAgent<ActionTag, GoalTag> agent) : base(agent)
+        public EnemyAction(ActionConfigUnit<GoalTag> configUnit) : base(configUnit)
         {
         }
 
