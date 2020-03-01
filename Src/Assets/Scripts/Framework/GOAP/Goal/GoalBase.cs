@@ -17,25 +17,36 @@ using System;
 
 namespace GOAP
 {
-    public abstract class GoalBase<TGoal> : IGoal<TGoal>
+    /// <summary>
+    /// 加载配置文件
+    /// 生成每一个具体的GoalBase类
+    /// GoalBase 生成一个具体的Goal类
+    /// </summary>
+    /// <typeparam name="TGoal"></typeparam>
+    public abstract class GoalBase<TAction, TGoal> : IGoal<TGoal>
     {
+        private IAgent<TAction> agent;
+        private IState effects;
+        private IState activeCondition;
         private Action<IGoal<TGoal>> onActivate;
         private Action<IGoal<TGoal>> onInactivate;
         public TGoal Label { get; }
 
-        public int GetPriority()
+        public GoalBase(IAgent<TAction> agent)
         {
-            throw new NotImplementedException();
+            this.agent = agent;
+            effects = InitEffects();
+            activeCondition = InitActiveCondition();
         }
 
         public IState GetEffects()
         {
-            throw new NotImplementedException();
+            return effects;
         }
 
         public IState GetActiveCondition()
         {
-            throw new NotImplementedException();
+            return activeCondition;
         }
 
         public bool IsGoalComplete()
@@ -45,17 +56,21 @@ namespace GOAP
 
         public void AddGoalActivateListener(Action<IGoal<TGoal>> onActivate)
         {
-            throw new NotImplementedException();
+            this.onActivate = onActivate;
         }
 
         public void AddGoalInactivateListener(Action<IGoal<TGoal>> onInactivate)
         {
-            throw new NotImplementedException();
+            this.onInactivate = onInactivate;
         }
 
         public void UpdateData()
         {
             throw new NotImplementedException();
         }
+
+        public abstract IState InitEffects();
+        public abstract IState InitActiveCondition();
+        public abstract int GetPriority();
     }
 }

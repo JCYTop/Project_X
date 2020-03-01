@@ -17,6 +17,10 @@ using System;
 
 namespace GOAP
 {
+    /// <summary>
+    /// 序列化文件配置基础接口
+    /// 所有需要配置序列化问价都继承这里
+    /// </summary>
     public interface IConfigElementBase
     {
         string TypeName { set; get; }
@@ -89,5 +93,45 @@ namespace GOAP
 
     public enum GoalConfigElementTag
     {
+        #region Common  0~199
+
+        /// <summary>
+        /// 默认
+        /// </summary>
+        Default = 0,
+
+        /// <summary>
+        /// 权重
+        /// </summary>
+        Priority = 1,
+
+        /// <summary>
+        /// 初始化影响
+        /// </summary>
+        Effects = 2,
+
+        /// <summary>
+        /// 激活条件
+        /// </summary>
+        ActiveConditon = 3,
+
+        #endregion
+    }
+
+    public enum ActionConfigElementTag
+    {
+        #region Common  0~199
+
+        /// <summary>
+        /// 默认
+        /// </summary>
+        Default = 0,
+
+        /// <summary>
+        /// 权重
+        /// </summary>
+        Priority = 1,
+
+        #endregion
     }
 }

@@ -91,12 +91,6 @@ namespace GOAP
         void AddStateChangeListener(Action callback);
 
         /// <summary>
-        /// 删除数据修改监听
-        /// </summary>
-        /// <param name="onChange"></param>
-        void RemoveStateChangeListener(Action callback);
-
-        /// <summary>
         /// 反转当前state所有的value值
         /// 能反转的进行反转
         /// 不能反转的不进行
@@ -165,7 +159,7 @@ namespace GOAP
     /// 标签用于状态在注册之后形成对应组注册表
     /// 方便查找对应关系
     /// </summary>
-    public enum StateBaseTag
+    public enum StateTag
     {
         #region Common 0~199
 

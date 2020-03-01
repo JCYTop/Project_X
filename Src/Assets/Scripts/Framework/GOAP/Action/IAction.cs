@@ -72,7 +72,7 @@ namespace GOAP
     /// 执行动作标签
     /// 用在 IAction<TAction>
     /// </summary>i
-    public enum ActionBaseTag
+    public enum ActionTag
     {
         #region Common  0~199
 

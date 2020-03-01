@@ -69,20 +69,7 @@ namespace GOAP
 
         public void AddStateChangeListener([NotNull] Action callback)
         {
-            this.onChange += callback;
-        }
-
-        public void RemoveStateChangeListener([NotNull] Action callback)
-        {
-            var delegates = this.onChange.GetInvocationList();
-            for (int i = 0; i < delegates.Length; i++)
-            {
-                if (ReferenceEquals(delegates[i], callback))
-                {
-                    this.onChange -= callback;
-                    return;
-                }
-            }
+            this.onChange = callback;
         }
 
         public void Clear()

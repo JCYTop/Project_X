@@ -76,10 +76,9 @@ namespace GOAP
     /// 每个标签对应这当前Goal的类
     /// 方便通过标签快速查找类
     /// </summary>
-    public enum GoalBaseTag
+    public enum GoalTag
     {
         #region Common 0~199
-
         /// <summary>
         /// 默认标签
         /// </summary>
