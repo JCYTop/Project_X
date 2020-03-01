@@ -25,14 +25,14 @@ namespace GOAP
     /// <typeparam name="TGoal"></typeparam>
     public abstract class GoalBase<TAction, TGoal> : IGoal<TGoal>
     {
-        private IAgent<TAction> agent;
+        private IAgent<TAction, TGoal> agent;
         private IState effects;
         private IState activeCondition;
         private Action<IGoal<TGoal>> onActivate;
         private Action<IGoal<TGoal>> onInactivate;
         public TGoal Label { get; }
 
-        public GoalBase(IAgent<TAction> agent)
+        public GoalBase(IAgent<TAction, TGoal> agent)
         {
             this.agent = agent;
             effects = InitEffects();

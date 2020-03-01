@@ -23,9 +23,9 @@ namespace GOAP
     /// </summary>
     /// <typeparam name="TAction">由类传入string</typeparam>
     [Serializable]
-    public abstract class ActionBase<TAction> : IAction<TAction>
+    public abstract class ActionBase<TAction, TGoal> : IAction<TAction>
     {
-        private IAgent<TAction> agent;
+        private IAgent<TAction, TGoal> agent;
         public ActionUnityGroup ActionUnityGroup { get; }
         public abstract TAction Label { get; }
         public int Priority { get; }
@@ -34,7 +34,7 @@ namespace GOAP
         public IState PreConditions { get; }
         public IState Effects { get; }
 
-        public ActionBase(IAgent<TAction> agent)
+        public ActionBase(IAgent<TAction, TGoal> agent)
         {
             this.agent = agent;
             Effects = InitEffects();

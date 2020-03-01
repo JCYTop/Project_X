@@ -19,12 +19,12 @@ namespace GOAP
 {
     public abstract class GoalManagerBase<TAction, TGoal> : IGoalManager<TGoal>
     {
-        private IAgent<TAction> agent;
+        private IAgent<TAction, TGoal> agent;
         private Dictionary<TGoal, IGoal<TGoal>> goalsDic;
         private List<IGoal<TGoal>> activeGoals;
         public IGoal<TGoal> CurrentGoal { get; }
 
-        public GoalManagerBase(IAgent<TAction> agent)
+        public GoalManagerBase(IAgent<TAction, TGoal> agent)
         {
             this.agent = agent;
             CurrentGoal = null;

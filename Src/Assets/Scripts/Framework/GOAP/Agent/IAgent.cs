@@ -21,7 +21,7 @@ namespace GOAP
     /// State数据从这里拿取
     /// </summary>
     /// <typeparam name="TAction">由类传入string</typeparam>
-    public interface IAgent<TAction>
+    public interface IAgent<TAction, TGoal>
     {
         /// <summary>
         /// 环境数据
@@ -34,6 +34,18 @@ namespace GOAP
         IState AgentState { get; }
 
         /// <summary>
+        /// 获取动作管理类对象
+        /// </summary>
+        /// <returns></returns>
+        IActionManager<TAction> ActionManager { get; }
+
+        /// <summary>
+        /// 获取目标管理类对象
+        /// </summary>
+        /// <returns></returns>
+        IGoalManager<TGoal> GoalManager { get; }
+
+        /// <summary>
         /// 注册事件
         /// 用于Agent事件
         /// </summary>
@@ -44,5 +56,15 @@ namespace GOAP
         /// 用于Agent事件
         /// </summary>
         void UnRegiestEvent();
+
+        /// <summary>
+        /// 更新数据函数
+        /// </summary>
+        void UpdateData();
+
+        /// <summary>
+        /// 帧函数
+        /// </summary>
+        void Update();
     }
 }
