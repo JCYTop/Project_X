@@ -1,12 +1,16 @@
 namespace GOAP
 {
-    public class EnemyAction:ActionBase <ActionTag> 
+    /// <summary>
+    /// 用在具体的生成类
+    /// </summary>
+    public class EnemyAction : ActionBase<ActionTag>
     {
         public EnemyAction(IAgent<ActionTag> agent) : base(agent)
         {
         }
 
         public override ActionTag Label { get; }
+
         protected override IState InitEffects()
         {
             throw new System.NotImplementedException();

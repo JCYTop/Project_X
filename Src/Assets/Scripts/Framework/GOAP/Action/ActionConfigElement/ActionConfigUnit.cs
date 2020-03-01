@@ -26,6 +26,7 @@ namespace GOAP
     [Serializable]
     public abstract class ActionConfigUnit<T> : ScriptableObject
     {
+        public ActionUnityGroup ActionUnityGroup;
         protected SortedList<T, IConfigElementBase> actionConfigUnitSet = new SortedList<T, IConfigElementBase>();
 
         /// <summary>
@@ -33,5 +34,17 @@ namespace GOAP
         /// 必须手动填写已经添加的数据
         /// </summary>
         public abstract ActionConfigUnit<T> Init();
+    }
+
+    /// <summary>
+    /// 关联Unity中的信息
+    /// Playable重要类
+    /// </summary>
+    [Serializable]
+    public class ActionUnityGroup
+    {
+        public AnimationClip[] Animation;
+        public AudioClip[] AudioClip;
+        public GameObject[] ParticleEffects;
     }
 }
