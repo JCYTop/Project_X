@@ -13,18 +13,20 @@
  ----------------------------------
 */
 
+using System;
 using System.Collections.Generic;
 
 namespace GOAP
 {
     /// <summary>
     /// 静态类直接返回数据
+    /// 手动注册ActionHandle类
     /// </summary>
     public static class ActionHandleMap
     {
         public static SortedList<string, IActionHandle> handleMap = new SortedList<string, IActionHandle>()
         {
-            //TODO 这第一个是举例子
+            //TODO 这是一个例子
             {ActionTag.Default.ToString(), new EmenyIdleActionHandle()},
         };
 
@@ -53,5 +55,11 @@ namespace GOAP
         {
             return (TValue) handleMap.GetDictionaryValue(type.ToString());
         }
+
+//        public static void 调用方法()
+//        {
+//            var handle = ActionHandleMap.GetHandle<ActionTag>(ActionTag.Default);
+//            handle.Init<ActionTag, GoalTag>();
+//        }
     }
 }

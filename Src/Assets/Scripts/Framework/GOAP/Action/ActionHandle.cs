@@ -25,7 +25,7 @@ namespace GOAP
         /// <summary>
         /// 执行中的状态
         /// </summary>
-        public ActionExcuteState ExcuteState { get; }
+        public abstract ActionExcuteState ExcuteState { get; }
 
         /// <summary>
         /// 需要手动填写配置
@@ -33,20 +33,16 @@ namespace GOAP
         /// </summary>
         public abstract TAction Label { get; }
 
-
         /// <summary>
         /// TODO 集成化管理
         /// TODO 手动添加注册信息了！！！
         /// </summary>
         /// <param name="agent"></param>
         /// <param name="action"></param>
-        /// <returns></returns>
-        public ActionHandle<TAction, TGoal> Init(IAgent<TAction, TGoal> agent, IAction<TAction> action)
-        {
-            this.agent = agent;
-            this.action = action;
-            return this;
-        }
+        /// <typeparam name="TAction1"></typeparam>
+        /// <typeparam name="TGoal1"></typeparam>
+        /// <exception cref="NotImplementedException"></exception>
+        public abstract void Init<TAction, TGoal>(IAgent<TAction, TGoal> agent, IAction<TAction> action);
 
         public abstract void AddFinishCallBack(Action onFinishAction);
         public abstract void Enter();

@@ -26,6 +26,8 @@ namespace GOAP
     /// </summary>
     public interface IActionHandle
     {
+        void Init<TAction, TGoal>(IAgent<TAction, TGoal> agent, IAction<TAction> action);
+
         /// <summary>
         /// 动作执行状态
         /// </summary>

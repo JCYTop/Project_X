@@ -4,7 +4,11 @@ namespace GOAP
 {
     public class EmenyIdleActionHandle : ActionHandle<ActionTag, GoalTag>
     {
-        public override ActionTag Label { get; }
+        public override void Init<TAction, TGoal>(IAgent<TAction, TGoal> agent, IAction<TAction> action)
+        {
+            throw new NotImplementedException();
+        }
+
         public override void AddFinishCallBack(Action onFinishAction)
         {
             throw new NotImplementedException();
@@ -24,5 +28,8 @@ namespace GOAP
         {
             throw new NotImplementedException();
         }
+
+        public override ActionExcuteState ExcuteState { get; }
+        public override ActionTag Label { get; }
     }
 }
