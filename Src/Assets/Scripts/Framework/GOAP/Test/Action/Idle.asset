@@ -9,9 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 848d04c1137445b4dbde7c800725dd31, type: 3}
-  m_Name: GOAP.EnemyAllGoal
+  m_Script: {fileID: 11500000, guid: d6814cc2d49a49b99b8da1fdb42391d3, type: 3}
+  m_Name: Idle
   m_EditorClassIdentifier: 
-  allGoal:
-  - Tag: 0
-    Unit: {fileID: 11400000, guid: 11c1046313037394f809fb67eac98998, type: 2}
+  ActionUnityGroup:
+    Animation: []
+    AudioClip: []
+    ParticleEffects: []
+  Priority: 23

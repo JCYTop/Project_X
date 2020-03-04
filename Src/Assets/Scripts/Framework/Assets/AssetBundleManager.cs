@@ -136,7 +136,7 @@ namespace Framework.Assets
         {
             if (assetBundleManifest == null)
             {
-                LogUtil.LogError(string.Format("Please initialize AssetBundleManifest by calling AssetBundleManager.Initialize()"), LogType.AssetLog);
+                LogTool.LogError(string.Format("Please initialize AssetBundleManifest by calling AssetBundleManager.Initialize()"), LogEnum.AssetLog);
                 return;
             }
 
@@ -338,7 +338,7 @@ namespace Framework.Assets
                 {
                     ///@TODO: The error needs to differentiate that an asset bundle name doesn't exist
                     //        from that there right scene does not exist in the asset bundle...
-                    LogUtil.LogError("There is no scene with name \"" + levelName + "\" in " + assetBundleName);
+                    LogTool.LogError("There is no scene with name \"" + levelName + "\" in " + assetBundleName);
                     return null;
                 }
 

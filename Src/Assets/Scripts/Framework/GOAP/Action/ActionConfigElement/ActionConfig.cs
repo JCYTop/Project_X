@@ -29,11 +29,12 @@ namespace GOAP
     public abstract class ActionConfig<T1, T2> : ScriptableObject
     {
         protected SortedList<T1, ActionConfigUnit<T2>> actionConfigSet = new SortedList<T1, ActionConfigUnit<T2>>();
+        private int count = 0;
 
         /// <summary>
         /// 初始化数据
         /// 必须手动填写已经添加的数据
         /// </summary>
-        public abstract ActionConfig<T1, T2> Init();
+        public abstract SortedList<T1, ActionConfigUnit<T2>> Init();
     }
 }

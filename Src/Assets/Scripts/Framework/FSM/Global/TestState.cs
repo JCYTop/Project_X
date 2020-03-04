@@ -22,7 +22,7 @@ public class TestState : GlobalState
     public override void OnEnter()
     {
         base.OnEnter();
-        LogUtil.Log(string.Format("StartState"), LogType.State);
+        LogTool.Log(string.Format("StartState"), LogEnum.State);
         SceneManager.LoadScene(GlobalDefine.TestScene);
     }
 }

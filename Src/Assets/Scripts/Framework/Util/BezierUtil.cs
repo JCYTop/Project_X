@@ -124,7 +124,7 @@ public static class BezierUtil
             }
 
             path[i - 1] = pixel;
-            LogUtil.Log(path[i - 1].ToString(), LogType.NormalLog);
+            LogTool.Log(path[i - 1].ToString(), LogEnum.NormalLog);
         }
 
         return path;

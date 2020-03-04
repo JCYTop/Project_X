@@ -14,6 +14,7 @@
 */
 
 using Framework.EventDispatcher;
+using UnityEngine;
 
 namespace GOAP
 {
@@ -22,8 +23,24 @@ namespace GOAP
     /// 附着场景物体类
     /// 场景中物体调整参数类
     /// </summary>
+    [RequireComponent(typeof(PlayMakerFSM))]
     public abstract class AIContextBase : MonoEventEmitter, IContext
     {
         public abstract AIContextBase GetReturnContext { get; }
+
+        private void Awake()
+        {
+            InitActionConfig();
+            InitGoalConfig();
+        }
+
+        private void Start()
+        {
+            InitStateConfig();
+        }
+
+        public abstract void InitActionConfig();
+        public abstract void InitGoalConfig();
+        public abstract void InitStateConfig();
     }
 }

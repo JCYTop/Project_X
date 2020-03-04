@@ -20,7 +20,7 @@ public class SystemCheckTask : GameLanucherTask
 {
     protected override IEnumerator Task()
     {
-        LogUtil.Log(string.Format(TaskName.Value), LogType.TaskLog);
+        LogTool.Log(string.Format(TaskName.Value), LogEnum.TaskLog);
         yield return new WaitForFixedUpdate();
         var info = new string[]
         {
@@ -47,7 +47,7 @@ public class SystemCheckTask : GameLanucherTask
             sb.Append(data + " || ");
         }
 
-        LogUtil.Log(sb.ToString(), LogType.TaskLog);
+        LogTool.Log(sb.ToString(), LogEnum.TaskLog);
         //TODO 后面插件保存，暂时方案，以设备默认分辨率为1 
         try
         {

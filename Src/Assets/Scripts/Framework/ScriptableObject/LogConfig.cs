@@ -16,6 +16,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Framework.ScriptableObject
 {
@@ -28,7 +29,7 @@ namespace Framework.ScriptableObject
     [Serializable]
     public class LogData
     {
-        public LogType LogType;
+        [FormerlySerializedAs("LogType")] public LogEnum logEnum;
         public bool Show;
         public Color LogColor;
 
@@ -37,7 +38,7 @@ namespace Framework.ScriptableObject
             get
             {
                 string color = ColorUtility.ToHtmlStringRGB(LogColor);
-                return string.Format("<color=#{0}>[{1}] : </color>", color, LogType);
+                return string.Format("<color=#{0}>[{1}] : </color>", color, logEnum);
             }
         }
     }

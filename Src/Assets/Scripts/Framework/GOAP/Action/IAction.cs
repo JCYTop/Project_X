@@ -81,6 +81,11 @@ namespace GOAP
         /// </summary>
         Default = 0,
 
+        /// <summary>
+        /// 待机
+        /// </summary>
+        Idle = 1,
+
         #endregion
     }
 }

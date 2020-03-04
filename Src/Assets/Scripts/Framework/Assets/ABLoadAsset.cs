@@ -196,7 +196,7 @@ namespace Framework.Assets
         {
             if (sceneRequest == null && downloadingError != null)
             {
-                LogUtil.LogError(downloadingError);
+                LogTool.LogError(downloadingError);
                 return true;
             }
 

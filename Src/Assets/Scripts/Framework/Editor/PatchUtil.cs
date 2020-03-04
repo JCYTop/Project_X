@@ -188,7 +188,7 @@ namespace Framework.Editor
             }
             catch
             {
-                LogUtil.Log(string.Format("没有找到文件 files.txt"), LogType.NormalLog);
+                LogTool.Log(string.Format("没有找到文件 files.txt"), LogEnum.NormalLog);
             }
 
             storePath = Path.GetDirectoryName(path);

@@ -34,6 +34,6 @@ namespace GOAP
         /// 初始化数据
         /// 必须手动填写已经添加的数据
         /// </summary>
-        public abstract GoalConfig<T1, T2> Init();
+        public abstract SortedList<T1, GoalConfigUnit<T2>> Init();
     }
 }

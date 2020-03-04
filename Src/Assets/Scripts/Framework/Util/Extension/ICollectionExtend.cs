@@ -22,6 +22,11 @@ public static class ICollectionExtend
     public static TValue GetDictionaryValue<Tkey, TValue>(this IDictionary<Tkey, TValue> dic, Tkey key)
     {
         dic.TryGetValue(key, out TValue value);
+        if (value == null)
+        {
+            LogTool.LogError($"没有Key对应的Value" , LogEnum.NormalLog);
+        }
+
         return value != null ? value : default(TValue);
     }
 
