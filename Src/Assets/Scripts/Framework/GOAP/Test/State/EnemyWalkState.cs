@@ -7,7 +7,7 @@ namespace GOAP
     /// Fsm子状态
     /// </summary>
     [ActionCategory("AI.Enemy")]
-    public class EnemyIdleState : AIStateBase<EnemyContext, EnemyStateConfig>
+    public class EnemyWalkState : AIStateBase<EnemyContext, EnemyStateConfig>
     {
         public override void Init()
         {
@@ -16,23 +16,27 @@ namespace GOAP
 
         public override void Enter()
         {
+            throw new System.NotImplementedException();
         }
 
         public override void Execute()
         {
+            throw new System.NotImplementedException();
         }
 
         public override void Exit()
         {
+            throw new System.NotImplementedException();
         }
 
         public override void SetData(IState data)
         {
+            throw new System.NotImplementedException();
         }
 
         public override IState GetData()
         {
-            return default;
+            throw new System.NotImplementedException();
         }
     }
 }

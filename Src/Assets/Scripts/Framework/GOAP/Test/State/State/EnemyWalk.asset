@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 734b99739af81234a98366f672a97280, type: 3}
-  m_Name: GOAP.EnemyConfig
+  m_Name: EnemyWalk
   m_EditorClassIdentifier: 
-  Tag: 1
+  Tag: 2
   Normal: 0

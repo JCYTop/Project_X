@@ -26,13 +26,6 @@ namespace GOAP
     public interface IState
     {
         /// <summary>
-        /// 环境数据
-        /// 调用环境中的基础参数来进行状态参数的基准设定
-        /// 此处使用仅此以上使用情况
-        /// </summary>
-        IContext Context { get; }
-
-        /// <summary>
         /// 清空数据
         /// </summary>
         void Clear();
@@ -159,7 +152,7 @@ namespace GOAP
     /// 标签用于状态在注册之后形成对应组注册表
     /// 方便查找对应关系
     /// </summary>
-    public enum StateTag
+    public enum StateCommonTag
     {
         #region Common 0~199
 
@@ -173,6 +166,23 @@ namespace GOAP
         /// </summary>
         Idle = 1,
 
+        /// <summary>
+        /// 行走
+        /// </summary>
+        Walk = 2,
+
         #endregion
+    }
+
+    /// <summary>
+    /// TODO 枚举继承
+    /// 演示测试代码
+    /// 后期根据这个修改
+    /// </summary>
+    public enum EnemyStateTag
+    {
+        Default = StateCommonTag.Default,
+        Idle = StateCommonTag.Idle,
+        Walk = StateCommonTag.Walk,
     }
 }

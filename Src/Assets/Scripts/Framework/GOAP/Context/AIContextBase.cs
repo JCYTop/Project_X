@@ -31,15 +31,13 @@ namespace GOAP
 
         private void Awake()
         {
+            Init();
             InitActionConfig();
             InitGoalConfig();
-        }
-
-        private void Start()
-        {
             InitStateConfig();
         }
 
+        public abstract void Init();
         public abstract void InitActionConfig();
         public abstract void InitGoalConfig();
         public abstract void InitStateConfig();

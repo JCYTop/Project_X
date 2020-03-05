@@ -24,18 +24,25 @@ namespace GOAP
     /// <summary>
     /// FSM中State的基类
     /// </summary>
-    /// <typeparam name="T">配置文件具体的类型</typeparam>
-    [ActionCategory("AI/Base")]
-    public abstract class AIStateBase<T> : FsmStateAction, IState
+    /// <typeparam name="TContext">Context具体类</typeparam>
+    /// <typeparam name="TConfig">配置文件具体的类型</typeparam>
+    [ActionCategory("AI.Base")]
+    public abstract class AIStateBase<TContext, TConfig> : FsmStateAction, IState
+        where TContext : class, IContext
     {
         private Action onChange;
-        public IContext Context { get; }
+        public FsmObject Context;
 
         /// <summary>
         /// 配置文件ScriptableObject
         /// 需要预先配置并且拖拽
         /// </summary>
-        public T StateConfig;
+        public TConfig StateConfig;
+
+        /// <summary>
+        /// 获取关联的Context环境
+        /// </summary>
+        public TContext GetContext => Context.Value as TContext;
 
         #region FSM
 

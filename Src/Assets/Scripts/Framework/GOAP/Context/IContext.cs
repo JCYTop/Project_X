@@ -25,6 +25,11 @@ namespace GOAP
     public interface IContext
     {
         /// <summary>
+        /// 基础初始化
+        /// </summary>
+        void Init();
+
+        /// <summary>
         /// 初始化动作配置信息 
         /// </summary>
         void InitActionConfig();
