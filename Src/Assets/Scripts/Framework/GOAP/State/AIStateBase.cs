@@ -17,9 +17,14 @@ using System;
 using System.Collections.Generic;
 using HutongGames.PlayMaker;
 using JetBrains.Annotations;
+using UnityEngine;
 
 namespace GOAP
 {
+    /// <summary>
+    /// FSM中State的基类
+    /// </summary>
+    /// <typeparam name="T">配置文件具体的类型</typeparam>
     [ActionCategory("AI/Base")]
     public abstract class AIStateBase<T> : FsmStateAction, IState
     {
@@ -34,9 +39,9 @@ namespace GOAP
 
         #region FSM
 
-        public override void Init(FsmState state)
+        public override void Awake()
         {
-            base.Init(state);
+            base.Awake();
             Init();
         }
 

@@ -35,11 +35,6 @@ namespace GOAP
         void InitGoalConfig();
 
         /// <summary>
-        /// 初始化状态机
-        /// </summary>
-        void InitFSM();
-
-        /// <summary>
         /// 初始化状态信息
         /// </summary>
         void InitStateConfig();

@@ -11,6 +11,7 @@ namespace GOAP
     {
         public override void Init()
         {
+            LogTool.Log(StateConfig.Tag.ToString(), LogEnum.NormalLog);
         }
 
         public override void Enter()

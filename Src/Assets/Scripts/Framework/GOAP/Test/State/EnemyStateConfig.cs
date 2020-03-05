@@ -22,6 +22,7 @@ namespace GOAP
     /// </summary>
     public class EnemyStateConfig : StateConfig<AIStateConfigElementTag>
     {
+        public StateTag Tag;
         public bool Normal;
 
         public override StateConfig<AIStateConfigElementTag> Init()

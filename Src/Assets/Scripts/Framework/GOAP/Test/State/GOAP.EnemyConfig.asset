@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 734b99739af81234a98366f672a97280, type: 3}
   m_Name: GOAP.EnemyConfig
   m_EditorClassIdentifier: 
-  Bleed: 0
-  Energy: 0
+  Tag: 1
+  Normal: 0

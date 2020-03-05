@@ -27,14 +27,12 @@ namespace GOAP
     public abstract class AIContextBase<T> : MonoEventEmitter, IContext
     {
         public abstract PlayMakerFSM StateFsm { get; }
-        public abstract FsmTemplate FsmTemplateConfig { get; }
         public abstract T GetReturnContext { get; }
 
         private void Awake()
         {
             InitActionConfig();
             InitGoalConfig();
-            InitFSM();
         }
 
         private void Start()
@@ -44,7 +42,6 @@ namespace GOAP
 
         public abstract void InitActionConfig();
         public abstract void InitGoalConfig();
-        public abstract void InitFSM();
         public abstract void InitStateConfig();
     }
 }
