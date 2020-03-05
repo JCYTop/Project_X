@@ -17,7 +17,6 @@ namespace GOAP
 
         #endregion
 
-
         public override void Init()
         {
             stateDic = new SortedList<EnemyStateTag, AIStateBase<EnemyContext, EnemyStateConfig>>();

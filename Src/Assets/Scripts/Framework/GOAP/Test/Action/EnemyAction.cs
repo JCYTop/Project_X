@@ -3,13 +3,13 @@ namespace GOAP
     /// <summary>
     /// 用在具体的生成类
     /// </summary>
-    public class EnemyAction : ActionBase<ActionTag, GoalTag>
+    public class EnemyAction : ActionBase<ActionCommonTag, GoalTag>
     {
         public EnemyAction(ActionConfigUnit<GoalTag> configUnit) : base(configUnit)
         {
         }
 
-        public override ActionTag Label { get; }
+        public override ActionCommonTag Label { get; }
 
         protected override IState InitEffects()
         {

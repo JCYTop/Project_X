@@ -27,7 +27,7 @@ namespace GOAP
         public static SortedList<string, IActionHandler> handleMap = new SortedList<string, IActionHandler>()
         {
             //TODO 这是一个例子
-            {ActionTag.Default.ToString(), new EmenyIdleActionHandler()},
+            {ActionCommonTag.Default.ToString(), new EmenyIdleActionHandler()},
         };
 
         /// <summary>
