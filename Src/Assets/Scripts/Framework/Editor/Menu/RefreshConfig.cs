@@ -140,7 +140,7 @@ namespace Framework.Editor
                         if (presenceResName.Contains(goBase.gameObject.name))
                         {
                             EditorUtility.ClearProgressBar();
-                            LogUtil.LogError(string.Format("资源命名重复:重复名---> {0}", goBase.gameObject.name), LogType.AssetLog);
+                            LogTool.LogError(string.Format("资源命名重复:重复名---> {0}", goBase.gameObject.name), LogEnum.AssetLog);
                             return;
                         }
                         else
@@ -160,7 +160,7 @@ namespace Framework.Editor
             }
 
             EditorUtility.ClearProgressBar();
-            LogUtil.Log(string.Format("共 {0} 个GO", uiDatas.Count), LogType.Editor);
+            LogTool.Log(string.Format("共 {0} 个GO", uiDatas.Count), LogEnum.Editor);
         }
 
         public static void CleanResGOConfig()
@@ -187,7 +187,7 @@ namespace Framework.Editor
             }
 
             EditorUtility.ClearProgressBar();
-            LogUtil.Log(string.Format("共 {0} 个GO", index), LogType.Editor);
+            LogTool.Log(string.Format("共 {0} 个GO", index), LogEnum.Editor);
         }
     }
 }

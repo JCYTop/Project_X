@@ -23,7 +23,7 @@ public class GlobalEvent : MonoEventEmitter
     /// <param name="focus"></param>
     private void OnApplicationFocus(bool focus)
     {
-        Emit(GlobalEventType.OnApplicationFocus, focus);
+        EmitEvent(GlobalEventType.OnApplicationFocus, focus);
     }
 
     /// <summary>
@@ -32,7 +32,7 @@ public class GlobalEvent : MonoEventEmitter
     /// <param name="pause"></param>
     private void OnApplicationPause(bool pause)
     {
-        Emit(GlobalEventType.OnApplicationPause, pause);
+        EmitEvent(GlobalEventType.OnApplicationPause, pause);
     }
 
     /// <summary>
@@ -40,6 +40,6 @@ public class GlobalEvent : MonoEventEmitter
     /// </summary>
     private void OnApplicationQuit()
     {
-        Emit(GlobalEventType.OnApplicationQuit);
+        EmitEvent(GlobalEventType.OnApplicationQuit);
     }
 }

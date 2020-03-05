@@ -25,7 +25,7 @@ public class CheckMemoryTask : GameLanucherTask
 
     protected override IEnumerator Task()
     {
-        LogUtil.Log(string.Format(TaskName.Value), LogType.TaskLog);
+        LogTool.Log(string.Format(TaskName.Value), LogEnum.TaskLog);
         yield return new WaitForFixedUpdate();
         var memory = 0L;
 #if UNITY_EDITOR|| UNITY_STANDALONE
@@ -34,17 +34,17 @@ public class CheckMemoryTask : GameLanucherTask
             var MemInfo = new MemoryInfo();
             GlobalMemoryStatus(ref MemInfo);
             memory = Convert.ToInt64(MemInfo.AvailPhys.ToString()) / 1024 / 1024;
-            LogUtil.Log(string.Format("FreeMemory: {0} MB", Convert.ToString(memory)), LogType.TaskLog);
+            LogTool.Log(string.Format("FreeMemory: {0} MB", Convert.ToString(memory)), LogEnum.TaskLog);
             if (memory < memoryDefault)
             {
-                LogUtil.LogError(string.Format("内存不足！"), LogType.TaskLog);
+                LogTool.LogError(string.Format("内存不足！"), LogEnum.TaskLog);
                 //弹出内存警告
             }
             else
             {
-                LogUtil.Log(string.Format("可以使用 ^_^"), LogType.TaskLog);
+                LogTool.Log(string.Format("可以使用 ^_^"), LogEnum.TaskLog);
                 //自动取消内存警告
-                LogUtil.Log(Environment.WorkingSet.ToString(), LogType.TaskLog);
+                LogTool.Log(Environment.WorkingSet.ToString(), LogEnum.TaskLog);
             }
         }
         catch (Exception e)

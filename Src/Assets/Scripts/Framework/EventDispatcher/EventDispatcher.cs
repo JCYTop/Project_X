@@ -28,7 +28,7 @@ namespace Framework.EventDispatcher
         /// </summary>
         /// <param name="eventName">事件名字</param>
         /// <param name="fn">回调方法</param>
-        public void On(string eventName, EventMethod fn)
+        public void OnEvent(string eventName, EventMethod fn)
         {
             AddListener(eventName, fn, standingEvent);
         }
@@ -37,7 +37,7 @@ namespace Framework.EventDispatcher
         /// 取消注册事件回调方法（常住事件）
         /// </summary>
         /// <param name="eventName">事件名字</param>
-        public void Off(string eventName, EventMethod fn)
+        public void OffEvent(string eventName, EventMethod fn)
         {
             standingEvent.TryGetValue(eventName, out var eventItem);
             if (eventItem != null)
@@ -58,12 +58,12 @@ namespace Framework.EventDispatcher
         /// </summary>
         /// <param name="eventName">事件名字</param>
         /// <param name="fn">回调方法</param>
-        public void Once(string eventName, EventMethod fn)
+        public void OnceEvent(string eventName, EventMethod fn)
         {
             AddListener(eventName, fn, onceEvent);
         }
 
-        public void Emit(string eventName, params object[] args)
+        public void EmitEvent(string eventName, params object[] args)
         {
             standingEvent.TryGetValue(eventName, out var eventItem);
             if (eventItem != null)

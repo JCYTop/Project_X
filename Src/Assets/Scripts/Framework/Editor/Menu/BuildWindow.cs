@@ -114,7 +114,7 @@ namespace Framework.Editor
                 }
 
                 PlayerSettings.SetScriptingDefineSymbolsForGroup(buildTarget, curSymbol);
-                LogUtil.Log(string.Format(curSymbol), LogType.NormalLog);
+                LogTool.Log(string.Format(curSymbol), LogEnum.NormalLog);
             }
 
             GUILayout.Space(10);

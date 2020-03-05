@@ -5,11 +5,14 @@ namespace GOAP
 {
     public class EnemyAllActionConfig : ActionConfig<ActionTag, ActionConfigElementTag>
     {
-        public List<EnemyAllActionUnit> sss = new List<EnemyAllActionUnit>();
+        public List<EnemyAllActionUnit> allAction = new List<EnemyAllActionUnit>();
 
-        public override ActionConfig<ActionTag, ActionConfigElementTag> Init()
+        public override SortedList<ActionTag, ActionConfigUnit<ActionConfigElementTag>> Init()
         {
-            throw new System.NotImplementedException();
+            var actionSort = new SortedList<ActionTag, ActionConfigUnit<ActionConfigElementTag>>();
+            allAction.ForEach((action) => { actionSort.Add(action.Tag, action.Unit.Init()); });
+            LogTool.Log($" --- {this.name} , Action数据已经加载完成 --->>> 共计${allAction.Count}个", LogEnum.AssetLog);
+            return actionSort;
         }
     }
 
@@ -20,6 +23,7 @@ namespace GOAP
         /// 具体的目标标签
         /// </summary>
         public ActionTag Tag;
+
         public EnemyActionConfigUnit Unit;
     }
 }

@@ -83,7 +83,7 @@ namespace Framework.Assets
                         }
                         else
                         {
-                            LogUtil.LogError(string.Format("发现ABInfo异常数据ID::: {0}", ab.ID), LogType.NormalLog);
+                            LogTool.LogError(string.Format("发现ABInfo异常数据ID::: {0}", ab.ID), LogEnum.NormalLog);
                             break;
                         }
                     }
@@ -227,7 +227,7 @@ namespace Framework.Assets
                         item.AssetName = assetName;
                     }
                     else
-                        LogUtil.LogError(string.Format("asset {0} is not a pool item", assetName), LogType.AssetLog);
+                        LogTool.LogError(string.Format("asset {0} is not a pool item", assetName), LogEnum.AssetLog);
                 }
             }
 
@@ -263,7 +263,7 @@ namespace Framework.Assets
                             item.AssetName = assetName;
                         }
                         else
-                            LogUtil.LogError(string.Format("asset {0} is not a pool item", assetName), LogType.AssetLog);
+                            LogTool.LogError(string.Format("asset {0} is not a pool item", assetName), LogEnum.AssetLog);
 
                         callback(obj);
                     }

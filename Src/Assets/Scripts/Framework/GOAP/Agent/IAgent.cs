@@ -34,6 +34,12 @@ namespace GOAP
         IState AgentState { get; }
 
         /// <summary>
+        /// 获取映射数据对象
+        /// </summary>
+        /// <returns></returns>
+//        IMaps<TAction, TGoal> Maps { get; }
+
+        /// <summary>
         /// 获取动作管理类对象
         /// </summary>
         /// <returns></returns>

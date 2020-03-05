@@ -72,7 +72,7 @@ public class JSonIO : FileIO
         ConfigPath = path;
         if (!File.Exists(ConfigPath))
         {
-            LogUtil.LogError(string.Format("并未读取到{0}路径", ConfigPath));
+            LogTool.LogError(string.Format("并未读取到{0}路径", ConfigPath));
             return default(T);
         }
 

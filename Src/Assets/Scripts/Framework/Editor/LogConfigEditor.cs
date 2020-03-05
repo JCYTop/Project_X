@@ -47,7 +47,7 @@ namespace Framework.Editor
 
         private void ShowLogData(LogConfig config)
         {
-            if (config.LogDatas == null || (config.LogDatas.Count != Util.GetFieldCount<LogType>()))
+            if (config.LogDatas == null || (config.LogDatas.Count != Util.GetFieldCount<LogEnum>()))
             {
                 config.LogDatas = new List<LogData>(GetNewLogDataList(config));
             }
@@ -56,7 +56,7 @@ namespace Framework.Editor
             foreach (var data in config.LogDatas)
             {
                 GUILayout.BeginHorizontal();
-                data.Show = GUILayout.Toggle(data.Show, data.LogType.ToString());
+                data.Show = GUILayout.Toggle(data.Show, data.logEnum.ToString());
                 data.LogColor = EditorGUILayout.ColorField(data.LogColor);
                 GUILayout.EndHorizontal();
             }
@@ -65,16 +65,16 @@ namespace Framework.Editor
         private List<LogData> GetNewLogDataList(LogConfig config)
         {
             List<LogData> datas = new List<LogData>(config.LogDatas);
-            Array enums = Util.GetEnumFields(typeof(LogType));
-            if (config.LogDatas.Count < Util.GetFieldCount<LogType>())
+            Array enums = Util.GetEnumFields(typeof(LogEnum));
+            if (config.LogDatas.Count < Util.GetFieldCount<LogEnum>())
             {
-                foreach (LogType e in enums)
+                foreach (LogEnum e in enums)
                 {
-                    if (datas.Find((i) => i.LogType.ToString().Equals(e.ToString())) == null)
+                    if (datas.Find((i) => i.logEnum.ToString().Equals(e.ToString())) == null)
                     {
                         datas.Add(new LogData()
                         {
-                            LogType = e,
+                            logEnum = e,
                             Show = true,
                             LogColor = Color.white
                         });
@@ -85,9 +85,9 @@ namespace Framework.Editor
             {
                 foreach (var data in config.LogDatas)
                 {
-                    if (!ArrayUtility.Contains((LogType[]) enums, data.LogType))
+                    if (!ArrayUtility.Contains((LogEnum[]) enums, data.logEnum))
                     {
-                        LogData d = datas.Find((i) => i.LogType == data.LogType);
+                        LogData d = datas.Find((i) => i.logEnum == data.logEnum);
                         datas.Remove(d);
                     }
                 }

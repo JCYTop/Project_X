@@ -73,8 +73,8 @@ namespace Framework.Editor
                 FindInGO(asset);
             }
 
-            LogUtil.Log(string.Format("Searched {0} GameObjects, {1} components, found {2} missing", go_count, components_count, missing_count),
-                LogType.Editor);
+            LogTool.Log(string.Format("Searched {0} GameObjects, {1} components, found {2} missing", go_count, components_count, missing_count),
+                LogEnum.Editor);
         }
 
         private string GetFileSuffix(string filePath)
@@ -103,7 +103,7 @@ namespace Framework.Editor
                         t = t.parent;
                     }
 
-                    LogUtil.Log(string.Format("{0} has an empty script attached in position: {1} {2}", s, i, g), LogType.Editor);
+                    LogTool.Log(string.Format("{0} has an empty script attached in position: {1} {2}", s, i, g), LogEnum.Editor);
                 }
             }
 
@@ -164,7 +164,7 @@ namespace Framework.Editor
                     //如果是材质
                     if (dep.EndsWith(".mat") && matPath == dep)
                     {
-                        LogUtil.Log(string.Format("{0} is referenced by {1}", mat.name, assetPath));
+                        LogTool.Log(string.Format("{0} is referenced by {1}", mat.name, assetPath));
                     }
                 }
             }
@@ -194,7 +194,7 @@ namespace Framework.Editor
                 }
             }
 
-            LogUtil.Log(string.Format("Check finised!"), LogType.NormalLog);
+            LogTool.Log(string.Format("Check finised!"), LogEnum.NormalLog);
         }
     }
 }

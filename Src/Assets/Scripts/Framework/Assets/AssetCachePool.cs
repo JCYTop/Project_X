@@ -52,7 +52,7 @@ namespace Framework.Assets
                 }
                 else
                 {
-                    LogUtil.LogError(string.Format("bundle ++{0}++ can't loading", bundleName), LogType.AssetLog);
+                    LogTool.LogError(string.Format("bundle ++{0}++ can't loading", bundleName), LogEnum.AssetLog);
                 }
 
                 //回调加载显示信息
@@ -109,7 +109,7 @@ namespace Framework.Assets
                 AssetBundleLoader.Instance().LoadAssetAsync(bundleName, assetName, (assetObj) =>
                 {
                     var go = abInfo.LoadedPrefab(assetObj as GameObject);
-                    LogUtil.Log(string.Format("首次加载了资源{0}", go.name), LogType.AssetLog);
+                    LogTool.Log(string.Format("首次加载了资源{0}", go.name), LogEnum.AssetLog);
                 });
             }
         }

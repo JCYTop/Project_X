@@ -149,7 +149,7 @@ public class DBLinkedList<T>
         //判空
         if (IsEmpty())
         {
-            LogUtil.Log(string.Format("链表为空"), LogType.NormalLog);
+            LogTool.Log(string.Format("链表为空"), LogEnum.NormalLog);
             return null;
         }
 
@@ -173,7 +173,7 @@ public class DBLinkedList<T>
             }
         }
 
-        LogUtil.Log(string.Format("节点并不存在"), LogType.NormalLog);
+        LogTool.Log(string.Format("节点并不存在"), LogEnum.NormalLog);
         return null;
     }
 
@@ -203,7 +203,7 @@ public class DBLinkedList<T>
     {
         if (IsEmpty() || index < 0)
         {
-            LogUtil.Log(string.Format("链表为空或者此节点不能进行连接"), LogType.NormalLog);
+            LogTool.Log(string.Format("链表为空或者此节点不能进行连接"), LogEnum.NormalLog);
             return default(DBNode<T>);
         }
 
@@ -240,7 +240,7 @@ public class DBLinkedList<T>
             }
             else
             {
-                LogUtil.Log(string.Format("此节点不能进行连接"), LogType.NormalLog);
+                LogTool.Log(string.Format("此节点不能进行连接"), LogEnum.NormalLog);
             }
         }
 
@@ -256,7 +256,7 @@ public class DBLinkedList<T>
     {
         if (IsEmpty() || index < 0)
         {
-            LogUtil.Log(string.Format("链表为空或者此节点不能进行连接", LogType.NormalLog));
+            LogTool.Log(string.Format("链表为空或者此节点不能进行连接", LogEnum.NormalLog));
             return default(DBNode<T>);
         }
 
@@ -334,7 +334,7 @@ public class DBLinkedList<T>
     {
         if (IsEmpty() || index < 0)
         {
-            LogUtil.Log(string.Format("链表为空或者此节点不能进行连接"), LogType.NormalLog);
+            LogTool.Log(string.Format("链表为空或者此节点不能进行连接"), LogEnum.NormalLog);
             return default(T);
         }
 
@@ -374,7 +374,7 @@ public class DBLinkedList<T>
         }
         else
         {
-            LogUtil.Log(string.Format("此节点不能进行连接"), LogType.NormalLog);
+            LogTool.Log(string.Format("此节点不能进行连接"), LogEnum.NormalLog);
             return default(T);
         }
     }
@@ -388,7 +388,7 @@ public class DBLinkedList<T>
     {
         if (IsEmpty())
         {
-            LogUtil.Log(string.Format("链表为空"), LogType.NormalLog);
+            LogTool.Log(string.Format("链表为空"), LogEnum.NormalLog);
             return -1;
         }
 
@@ -464,7 +464,7 @@ public class DBLinkedList<T>
     {
         if (IsEmpty())
         {
-            LogUtil.Log(string.Format("链表为空"), LogType.NormalLog);
+            LogTool.Log(string.Format("链表为空"), LogEnum.NormalLog);
             return null;
         }
 
@@ -489,7 +489,7 @@ public class DBLinkedList<T>
         }
         else
         {
-            LogUtil.Log(string.Format("节点并不存在"), LogType.NormalLog);
+            LogTool.Log(string.Format("节点并不存在"), LogEnum.NormalLog);
             return null;
         }
     }
@@ -519,10 +519,10 @@ public class DBLinkedList<T>
     {
         var current = new DBNode<T>();
         current = Head;
-        LogUtil.Log(string.Format(current.Data + ","), LogType.NormalLog);
+        LogTool.Log(string.Format(current.Data + ","), LogEnum.NormalLog);
         while (current.Next != null)
         {
-            LogUtil.Log(string.Format(current.Next.Data + ","), LogType.NormalLog);
+            LogTool.Log(string.Format(current.Next.Data + ","), LogEnum.NormalLog);
             current = current.Next;
         }
     }

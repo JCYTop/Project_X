@@ -12,24 +12,24 @@ namespace Framework.EventDispatcher
     /// </summary>
     public abstract class EventEmitter : IEvent
     {
-        public void On(string eventName, EventMethod fn)
+        public void OnEvent(string eventName, EventMethod fn)
         {
-            EventDispatcher.Instance().On(eventName, fn);
+            EventDispatcher.Instance().OnEvent(eventName, fn);
         }
 
-        public void Once(string eventName, EventMethod fn)
+        public void OnceEvent(string eventName, EventMethod fn)
         {
-            EventDispatcher.Instance().Once(eventName, fn);
+            EventDispatcher.Instance().OnceEvent(eventName, fn);
         }
 
-        public void Off(string eventName, EventMethod fn)
+        public void OffEvent(string eventName, EventMethod fn)
         {
-            EventDispatcher.Instance().Off(eventName, fn);
+            EventDispatcher.Instance().OffEvent(eventName, fn);
         }
 
-        public void Emit(string eventName, params object[] args)
+        public void EmitEvent(string eventName, params object[] args)
         {
-            EventDispatcher.Instance().Emit(eventName, args);
+            EventDispatcher.Instance().EmitEvent(eventName, args);
         }
 
         public void Clear(ClearEventType clearEventType = ClearEventType.ALL)
@@ -43,24 +43,24 @@ namespace Framework.EventDispatcher
     /// </summary>
     public abstract class MonoEventEmitter : MonoBehaviour, IEvent
     {
-        public void On(string eventName, EventMethod fn)
+        public void OnEvent(string eventName, EventMethod fn)
         {
-            EventDispatcher.Instance().On(eventName, fn);
+            EventDispatcher.Instance().OnEvent(eventName, fn);
         }
 
-        public void Once(string eventName, EventMethod fn)
+        public void OnceEvent(string eventName, EventMethod fn)
         {
-            EventDispatcher.Instance().Once(eventName, fn);
+            EventDispatcher.Instance().OnceEvent(eventName, fn);
         }
 
-        public void Off(string eventName, EventMethod fn)
+        public void OffEvent(string eventName, EventMethod fn)
         {
-            EventDispatcher.Instance().Off(eventName, fn);
+            EventDispatcher.Instance().OffEvent(eventName, fn);
         }
 
-        public void Emit(string eventName, params object[] args)
+        public void EmitEvent(string eventName, params object[] args)
         {
-            EventDispatcher.Instance().Emit(eventName, args);
+            EventDispatcher.Instance().EmitEvent(eventName, args);
         }
 
         public void Clear(ClearEventType clearEventType = ClearEventType.ALL)

@@ -76,7 +76,7 @@ public static class MachineUtil
             }
             catch (Exception e)
             {
-                LogUtil.LogException(e);
+                LogTool.LogException(e);
             }
         }
     }
@@ -159,7 +159,7 @@ public static class MachineUtil
         }
         catch (Exception e)
         {
-            LogUtil.LogException(e);
+            LogTool.LogException(e);
             throw;
         }
     }

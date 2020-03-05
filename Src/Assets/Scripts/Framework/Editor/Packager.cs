@@ -175,7 +175,7 @@ namespace Framework.Editor
             }
 
             AssetDatabase.Refresh();
-            LogUtil.Log(string.Format("新版本生成成功"), LogType.NormalLog);
+            LogTool.Log(string.Format("新版本生成成功"), LogEnum.NormalLog);
         }
 
         private static void GetFilePath(string streamPath, StreamWriter sw)
@@ -263,7 +263,7 @@ namespace Framework.Editor
                 foreach (var soureDir in dirs)
                 {
                     var desDir = soureDir.Replace(fromDir, toDir);
-                    LogUtil.Log(string.Format("path: {0}", desDir), LogType.NormalLog);
+                    LogTool.Log(string.Format("path: {0}", desDir), LogEnum.NormalLog);
                     if (!Directory.Exists(desDir))
                     {
                         Directory.CreateDirectory(desDir);
@@ -280,7 +280,7 @@ namespace Framework.Editor
                     }
                     else if (!string.IsNullOrEmpty(extName) && ignoreExts != null && ignoreExts.Contains<string>(extName))
                     {
-                        LogUtil.Log(string.Format("ignoreFile: {0}", soureFile), LogType.NormalLog);
+                        LogTool.Log(string.Format("ignoreFile: {0}", soureFile), LogEnum.NormalLog);
                     }
                     else
                     {

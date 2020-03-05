@@ -103,7 +103,7 @@ public static class ScenesCenterMgr
         }
         else
         {
-            LogUtil.LogError(string.Format("发现了重复ID：{0}", globalID));
+            LogTool.LogError(string.Format("发现了重复ID：{0}", globalID));
         }
 
         return objectDic;
@@ -127,7 +127,7 @@ public static class ScenesCenterMgr
         }
         else
         {
-            LogUtil.LogError(string.Format("并未发现相对应的ID：{0}", globalID));
+            LogTool.LogError(string.Format("并未发现相对应的ID：{0}", globalID));
         }
 
         return (globalID, tmp);
@@ -146,7 +146,7 @@ public static class ScenesCenterMgr
             return Info;
         }
 
-        LogUtil.LogError("没有存在相应的ID");
+        LogTool.LogError("没有存在相应的ID");
         return default;
     }
 

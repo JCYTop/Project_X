@@ -23,7 +23,7 @@ public class AwakeState : GlobalState
     public override void OnEnter()
     {
         base.OnEnter();
-        LogUtil.Log(string.Format("AwakeState"), LogType.State);
+        LogTool.Log(string.Format("AwakeState"), LogEnum.State);
         Fsm.Event(FsmNextEvent);
     }
 }

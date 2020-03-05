@@ -24,11 +24,14 @@ namespace GOAP
     /// </summary>
     public class EnemyAllGoal : GoalConfig<GoalTag, GoalConfigElementTag>
     {
-        public List<EnemyAllGoalUnit> sss = new List<EnemyAllGoalUnit>();
+        public List<EnemyAllGoalUnit> allGoal = new List<EnemyAllGoalUnit>();
 
-        public override GoalConfig<GoalTag, GoalConfigElementTag> Init()
+        public override SortedList<GoalTag, GoalConfigUnit<GoalConfigElementTag>> Init()
         {
-            throw new System.NotImplementedException();
+            var goalSort = new SortedList<GoalTag, GoalConfigUnit<GoalConfigElementTag>>();
+            allGoal.ForEach((goal) => { goalSort.Add(goal.Tag, goal.Unit.Init()); });
+            LogTool.Log($" --- {this.name} , Goal数据已经加载完成 --->>> 共计${allGoal.Count}个", LogEnum.AssetLog);
+            return goalSort;
         }
     }
 

@@ -26,7 +26,7 @@ public class UtilTask : GameLanucherTask
 
     protected override IEnumerator Task()
     {
-        LogUtil.Log(string.Format(TaskName.Value), LogType.TaskLog);
+        LogTool.Log(string.Format(TaskName.Value), LogEnum.TaskLog);
         for (int i = 0; i < resources.Count; i++)
         {
             AssetsManager.Instance().GetPrefabAsync(resources[i], (prefab) =>

@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 848d04c1137445b4dbde7c800725dd31, type: 3}
   m_Name: GOAP.EnemyAllGoal
   m_EditorClassIdentifier: 
-  sss:
+  allGoal:
   - Tag: 0
     Unit: {fileID: 11400000, guid: 11c1046313037394f809fb67eac98998, type: 2}

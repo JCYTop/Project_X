@@ -24,10 +24,10 @@ namespace GOAP
     /// </summary>
     public static class ActionHandleMap
     {
-        public static SortedList<string, IActionHandle> handleMap = new SortedList<string, IActionHandle>()
+        public static SortedList<string, IActionHandler> handleMap = new SortedList<string, IActionHandler>()
         {
             //TODO 这是一个例子
-            {ActionTag.Default.ToString(), new EmenyIdleActionHandle()},
+            {ActionTag.Default.ToString(), new EmenyIdleActionHandler()},
         };
 
         /// <summary>
@@ -36,7 +36,7 @@ namespace GOAP
         /// <param name="type">参数</param>
         /// <typeparam name="T">TAction的类型</typeparam>
         /// <returns>IActionHandle类型</returns>
-        public static IActionHandle GetHandle<T>(T type)
+        public static IActionHandler GetHandle<T>(T type)
             where T : struct
         {
             return handleMap.GetDictionaryValue(type.ToString());
@@ -51,11 +51,12 @@ namespace GOAP
         /// <returns>IActionHandle类型</returns>
         public static TValue GetHandle<TKey, TValue>(TKey type)
             where TKey : struct
-            where TValue : IActionHandle
+            where TValue : IActionHandler
         {
             return (TValue) handleMap.GetDictionaryValue(type.ToString());
         }
 
+//        TODO 举例使用
 //        public static void 调用方法()
 //        {
 //            var handle = ActionHandleMap.GetHandle<ActionTag>(ActionTag.Default);
