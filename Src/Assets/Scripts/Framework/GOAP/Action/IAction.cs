@@ -88,4 +88,10 @@ namespace GOAP
 
         #endregion
     }
+
+    public enum ActionEnemyTag
+    {
+        Default = ActionCommonTag.Default,
+        Idle = ActionCommonTag.Idle,
+    }
 }

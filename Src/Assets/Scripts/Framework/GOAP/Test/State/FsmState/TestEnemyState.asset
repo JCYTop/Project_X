@@ -27,30 +27,20 @@ MonoBehaviour:
         x: 50
         y: 100
         width: 100
-        height: 32
+        height: 16
       isBreakpoint: 0
       isSequence: 0
       hideUnused: 0
-      transitions:
-      - fsmEvent:
-          name: FINISHED
-          isSystemEvent: 1
-          isGlobal: 0
-        toState: Idle
-        linkStyle: 0
-        linkConstraint: 0
-        colorIndex: 0
+      transitions: []
       actionData:
         actionNames:
         - GOAP.FSMGetEnemyContext
-        - HutongGames.PlayMaker.Actions.Wait
         customNames:
         - 
-        - 
-        actionEnabled: 0101
-        actionIsOpen: 0101
-        actionStartIndex: 0000000002000000
-        actionHashCodes: fc83860048c01101
+        actionEnabled: 01
+        actionIsOpen: 01
+        actionStartIndex: 00000000
+        actionHashCodes: fc838600
         unityObjectParams: []
         fsmGameObjectParams: []
         fsmOwnerDefaultParams:
@@ -80,13 +70,7 @@ MonoBehaviour:
         fsmVarParams: []
         fsmArrayParams: []
         fsmEnumParams: []
-        fsmFloatParams:
-        - useVariable: 0
-          name: 
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: 1
+        fsmFloatParams: []
         fsmIntParams: []
         fsmBoolParams: []
         fsmVector2Params: []
@@ -94,22 +78,18 @@ MonoBehaviour:
         fsmColorParams: []
         fsmRectParams: []
         fsmQuaternionParams: []
-        stringParams:
-        - FINISHED
-        byteData: 00
+        stringParams: []
+        byteData: 
         arrayParamSizes: 
         arrayParamTypes: []
         customTypeSizes: 
         customTypeNames: []
-        paramDataType: 14000000180000000f0000001700000001000000
+        paramDataType: 1400000018000000
         paramName:
         - GameObject
         - Context
-        - time
-        - finishEvent
-        - realTime
-        paramDataPos: 0000000000000000000000000000000000000000
-        paramByteDataSize: 0000000000000000000000000000000001000000
+        paramDataPos: 0000000000000000
+        paramByteDataSize: 0000000000000000
     - name: Idle
       description: "\u9ED8\u8BA4\u72B6\u6001\r"
       colorIndex: 0
@@ -131,7 +111,7 @@ MonoBehaviour:
         actionEnabled: 01
         actionIsOpen: 01
         actionStartIndex: 00000000
-        actionHashCodes: 6fe58301
+        actionHashCodes: 45682c00
         unityObjectParams:
         - {fileID: 11400000, guid: b00340b7b5d14cdcac4bcc47f89d668f, type: 2}
         fsmGameObjectParams: []
@@ -143,7 +123,14 @@ MonoBehaviour:
         fsmPropertyParams: []
         layoutOptionParams: []
         fsmStringParams: []
-        fsmObjectParams: []
+        fsmObjectParams:
+        - useVariable: 1
+          name: Context
+          tooltip: "\u73AF\u5883\u914D\u7F6E"
+          showInInspector: 0
+          networkSync: 0
+          typeName: GOAP.AIContextBase`1
+          value: {fileID: 0}
         fsmVarParams: []
         fsmArrayParams: []
         fsmEnumParams: []
@@ -161,11 +148,12 @@ MonoBehaviour:
         arrayParamTypes: []
         customTypeSizes: 
         customTypeNames: []
-        paramDataType: 05000000
+        paramDataType: 1800000005000000
         paramName:
+        - Context
         - StateConfig
-        paramDataPos: 00000000
-        paramByteDataSize: 00000000
+        paramDataPos: 0000000000000000
+        paramByteDataSize: 0000000000000000
     - name: Walk
       description: 
       colorIndex: 0
@@ -187,7 +175,7 @@ MonoBehaviour:
         actionEnabled: 01
         actionIsOpen: 01
         actionStartIndex: 00000000
-        actionHashCodes: 6fe58301
+        actionHashCodes: 45682c00
         unityObjectParams:
         - {fileID: 11400000, guid: 6c6a1e6262ade6243aa93d9b368cbfc8, type: 2}
         fsmGameObjectParams: []
@@ -199,7 +187,14 @@ MonoBehaviour:
         fsmPropertyParams: []
         layoutOptionParams: []
         fsmStringParams: []
-        fsmObjectParams: []
+        fsmObjectParams:
+        - useVariable: 1
+          name: Context
+          tooltip: "\u73AF\u5883\u914D\u7F6E"
+          showInInspector: 0
+          networkSync: 0
+          typeName: GOAP.AIContextBase`1
+          value: {fileID: 0}
         fsmVarParams: []
         fsmArrayParams: []
         fsmEnumParams: []
@@ -217,11 +212,12 @@ MonoBehaviour:
         arrayParamTypes: []
         customTypeSizes: 
         customTypeNames: []
-        paramDataType: 05000000
+        paramDataType: 1800000005000000
         paramName:
+        - Context
         - StateConfig
-        paramDataPos: 00000000
-        paramByteDataSize: 00000000
+        paramDataPos: 0000000000000000
+        paramByteDataSize: 0000000000000000
     events:
     - name: FINISHED
       isSystemEvent: 1

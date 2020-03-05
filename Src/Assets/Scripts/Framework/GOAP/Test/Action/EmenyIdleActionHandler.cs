@@ -2,7 +2,7 @@ using System;
 
 namespace GOAP
 {
-    public class EmenyIdleActionHandler : ActionHandler<ActionCommonTag, GoalTag>
+    public class EmenyIdleActionHandler : ActionHandler<ActionCommonTag, GoalCommonTag>
     {
         public override void Init<TAction, TGoal>(IAgent<TAction, TGoal> agent, IAction<TAction> action)
         {

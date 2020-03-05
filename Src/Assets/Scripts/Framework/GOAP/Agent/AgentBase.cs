@@ -17,29 +17,40 @@ namespace GOAP
 {
     public abstract class AgentBase<TAction, TGoal> : IAgent<TAction, TGoal>
     {
-        public IContext Context { get; }
+        public IContext Context { get; private set; }
+        public abstract bool IsAgentOver { get; set; }
         public IState AgentState { get; }
         public IActionManager<TAction> ActionManager { get; }
         public IGoalManager<TGoal> GoalManager { get; }
 
-        public void RegiestEvent()
+        public AgentBase(IContext context)
         {
-            throw new System.NotImplementedException();
+            Context = context;
+            AgentState = InitAgentState();
+            ActionManager = InitActionManager();
+            GoalManager = InitGoalManager();
         }
 
-        public void UnRegiestEvent()
+        protected abstract IState InitAgentState();
+        protected abstract IActionManager<TAction> InitActionManager();
+        protected abstract IGoalManager<TGoal> InitGoalManager();
+
+        public virtual void RegiestEvent()
         {
-            throw new System.NotImplementedException();
         }
 
-        public void UpdateData()
+        public virtual void UnRegiestEvent()
         {
-            throw new System.NotImplementedException();
         }
 
-        public void Update()
+        public virtual void UpdateData()
         {
-            throw new System.NotImplementedException();
         }
+
+        public virtual void Update()
+        {
+        }
+
+        protected abstract void TargetEvent(string eventName);
     }
 }

@@ -3,9 +3,9 @@ namespace GOAP
     /// <summary>
     /// 用在具体的生成类
     /// </summary>
-    public class EnemyAction : ActionBase<ActionCommonTag, GoalTag>
+    public class EnemyAction : ActionBase<ActionCommonTag, GoalCommonTag>
     {
-        public EnemyAction(ActionConfigUnit<GoalTag> configUnit) : base(configUnit)
+        public EnemyAction(ActionConfigUnit<GoalCommonTag> configUnit) : base(configUnit)
         {
         }
 

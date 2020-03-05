@@ -43,5 +43,20 @@ namespace GOAP
         /// 初始化状态信息
         /// </summary>
         void InitStateConfig();
+
+        /// <summary>
+        /// 获取环境指定类型
+        /// </summary>
+        /// <typeparam name="TContext"></typeparam>
+        /// <returns></returns>
+        TContext GetContext<TContext>();
+
+        /// <summary>
+        /// 获取环境所代理的Agent
+        /// </summary>
+        /// <typeparam name="TAction">Action标签</typeparam>
+        /// <typeparam name="TGoal">Goal标签</typeparam>
+        /// <returns></returns>
+        IAgent<TAction, TGoal> Agent<TAction, TGoal>() where TAction : struct where TGoal : struct;
     }
 }

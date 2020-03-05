@@ -15,6 +15,7 @@
 
 using System;
 using System.Collections.Generic;
+using UnityEngine.Serialization;
 
 namespace GOAP
 {
@@ -22,14 +23,14 @@ namespace GOAP
     /// 敌人的所有的目标
     /// 每一个目标Enum对应一个目标信息设置类
     /// </summary>
-    public class EnemyAllGoal : GoalConfig<GoalTag, GoalConfigElementTag>
+    public class EnemyAllGoal : GoalConfig<GoalCommonTag, GoalConfigElementTag>
     {
         public List<EnemyAllGoalUnit> allGoal = new List<EnemyAllGoalUnit>();
 
-        public override SortedList<GoalTag, GoalConfigUnit<GoalConfigElementTag>> Init()
+        public override SortedList<GoalCommonTag, GoalConfigUnit<GoalConfigElementTag>> Init()
         {
-            var goalSort = new SortedList<GoalTag, GoalConfigUnit<GoalConfigElementTag>>();
-            allGoal.ForEach((goal) => { goalSort.Add(goal.Tag, goal.Unit.Init()); });
+            var goalSort = new SortedList<GoalCommonTag, GoalConfigUnit<GoalConfigElementTag>>();
+            allGoal.ForEach((goal) => { goalSort.Add(goal.commonTag, goal.Unit.Init()); });
             LogTool.Log($" --- {this.name} , Goal数据已经加载完成 --->>> 共计${allGoal.Count}个", LogEnum.AssetLog);
             return goalSort;
         }
@@ -41,7 +42,7 @@ namespace GOAP
         /// <summary>
         /// 具体的目标标签
         /// </summary>
-        public GoalTag Tag;
+        [FormerlySerializedAs("Tag")] public GoalCommonTag commonTag;
 
         public EnemyGoalConfigUnit Unit;
     }

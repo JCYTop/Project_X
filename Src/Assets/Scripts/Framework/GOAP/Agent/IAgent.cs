@@ -24,9 +24,9 @@ namespace GOAP
     public interface IAgent<TAction, TGoal>
     {
         /// <summary>
-        /// 环境数据
+        /// 当前代理结束
         /// </summary>
-        IContext Context { get; }
+        bool IsAgentOver { get; set; }
 
         /// <summary>
         /// 状态数据
