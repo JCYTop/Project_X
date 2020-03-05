@@ -24,14 +24,17 @@ namespace GOAP
     /// 场景中物体调整参数类
     /// </summary>
     [RequireComponent(typeof(PlayMakerFSM))]
-    public abstract class AIContextBase : MonoEventEmitter, IContext
+    public abstract class AIContextBase<T> : MonoEventEmitter, IContext
     {
-        public abstract AIContextBase GetReturnContext { get; }
+        public abstract PlayMakerFSM StateFsm { get; }
+        public abstract FsmTemplate FsmTemplateConfig { get; }
+        public abstract T GetReturnContext { get; }
 
         private void Awake()
         {
             InitActionConfig();
             InitGoalConfig();
+            InitFSM();
         }
 
         private void Start()
@@ -41,6 +44,7 @@ namespace GOAP
 
         public abstract void InitActionConfig();
         public abstract void InitGoalConfig();
+        public abstract void InitFSM();
         public abstract void InitStateConfig();
     }
 }

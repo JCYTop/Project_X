@@ -15,14 +15,19 @@
 
 namespace GOAP
 {
-    public class EnemyConfig : StateConfig<AIStateConfigElementTag>
+    /// <summary>
+    /// 测试类
+    /// 基本上和AIStateBase对应
+    /// 但是也可以进行 多对一 匹配
+    /// </summary>
+    public class EnemyStateConfig : StateConfig<AIStateConfigElementTag>
     {
-        public int Bleed;
+        public bool Normal;
 
         public override StateConfig<AIStateConfigElementTag> Init()
         {
-            var Bleeds = new ValueAggregation(Bleed);
-            stateConfigSet.Add(AIStateConfigElementTag.Bleed, Bleeds);
+            var normal = new BoolAggregation(Normal);
+            stateConfigSet.Add(AIStateConfigElementTag.Normal, normal);
             stateConfigSet.TryGetValue(AIStateConfigElementTag.Bleed, out var data);
             return this;
         }

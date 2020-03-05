@@ -25,12 +25,7 @@ namespace GOAP
     public interface IContext
     {
         /// <summary>
-        /// 返回环境本体
-        /// </summary>
-        AIContextBase GetReturnContext { get; }
-
-        /// <summary>
-        /// 初始化动作配置信息
+        /// 初始化动作配置信息 
         /// </summary>
         void InitActionConfig();
 
@@ -38,6 +33,11 @@ namespace GOAP
         /// 初始化目标配置信息
         /// </summary>
         void InitGoalConfig();
+
+        /// <summary>
+        /// 初始化状态机
+        /// </summary>
+        void InitFSM();
 
         /// <summary>
         /// 初始化状态信息

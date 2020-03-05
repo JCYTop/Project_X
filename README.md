@@ -1,2 +1,2 @@
 # Project_X
-Project_X 独立项目开发
+Project_X Indie Game

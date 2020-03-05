@@ -83,12 +83,18 @@ namespace GOAP
         /// </summary>
         Default = 0,
 
-        #endregion
-
         /// <summary>
         /// 血量标记元素
         /// </summary>
-        Bleed = 200,
+        Bleed = 1,
+
+        /// <summary>
+        /// 是否正常
+        /// 测试类 要删除
+        /// </summary>
+        Normal = Default,
+
+        #endregion
     }
 
     public enum GoalConfigElementTag

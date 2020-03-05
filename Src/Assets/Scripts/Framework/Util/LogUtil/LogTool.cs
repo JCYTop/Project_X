@@ -87,16 +87,18 @@ public static class LogTool
     public static void Log(string logStr, Color color, bool isError = false)
     {
         string c = ColorUtility.ToHtmlStringRGB(color);
-        LogStr(string.Format("<color=#{0}>[log...] : {1}</color>", c, logStr), isError);
+        LogStr($"<color=#{c}>[log...] : {logStr}</color>", isError);
+    }
+
+    public static void LogException()
+    {
+        
     }
 
     private static void LogStr(string str, bool isError)
     {
         if (Config == null || !Config.All)
-        {
             return;
-        }
-
         if (isError)
         {
             Debug.LogError((TimeUtil.LocalNow) + "-" + str);

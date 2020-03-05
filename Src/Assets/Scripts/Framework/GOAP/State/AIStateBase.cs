@@ -30,9 +30,9 @@ namespace GOAP
         /// 配置文件ScriptableObject
         /// 需要预先配置并且拖拽
         /// </summary>
-        public StateConfig<T> StateConfig;
+        public T StateConfig;
 
-        #region FsmStateAction
+        #region FSM
 
         public override void Init(FsmState state)
         {
