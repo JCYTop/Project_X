@@ -49,6 +49,7 @@ namespace GOAP
         {
             base.Awake();
             Init();
+            RegiestEvent();
         }
 
         public override void OnEnter()
@@ -66,6 +67,7 @@ namespace GOAP
         public override void OnExit()
         {
             base.OnExit();
+            UnRegiestEvent();
             Exit();
         }
 
@@ -78,22 +80,20 @@ namespace GOAP
         public abstract void SetData(IState data);
         public abstract IState GetData();
 
+        public virtual void RegiestEvent()
+        {
+        }
+
+        public virtual void UnRegiestEvent()
+        {
+        }
+
         public void AddStateChangeListener([NotNull] Action callback)
         {
             this.onChange = callback;
         }
 
         public void Clear()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public void RegiestEvent()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public void UnRegiestEvent()
         {
             throw new System.NotImplementedException();
         }

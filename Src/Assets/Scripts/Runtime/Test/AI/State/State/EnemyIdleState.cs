@@ -10,18 +10,17 @@ namespace GOAP
     [ActionCategory("AI.Enemy")]
     public class EnemyIdleState : AIStateBase<EnemyContext, EnemyStateConfig>
     {
-        private EnemyAgent enemyAgent;
         private EnemyStateManager enemyStateManager;
 
         public override void Init()
         {
             enemyStateManager = GetContext.Agent.AgentStateManager.GetStateMgr<EnemyStateManager>();
-            enemyStateManager.StateDic.AddSortListElement(StateConfig.Tag, this);
+            enemyStateManager.StateSortList.AddSortListElement(StateConfig.Tag, this);
         }
 
         public override void Enter()
         {
-            Debug.Log("老子终于进来了");
+            enemyStateManager.SetCurrActivity(StateConfig.Tag);
         }
 
         public override void Execute()

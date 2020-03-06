@@ -4,17 +4,28 @@ namespace GOAP
 {
     public class EnemyStateManager : StateManagerBase<EnemyStateTag, AIStateBase<EnemyContext, EnemyStateConfig>>
     {
-        private SortedList<EnemyStateTag, AIStateBase<EnemyContext, EnemyStateConfig>> stateDic;
-        public override SortedList<EnemyStateTag, AIStateBase<EnemyContext, EnemyStateConfig>> StateDic => stateDic;
+        private EnemyStateTag currentStateTag;
+        private AIStateBase<EnemyContext, EnemyStateConfig> currentState;
+        private SortedList<EnemyStateTag, AIStateBase<EnemyContext, EnemyStateConfig>> stateSortList;
+        public override SortedList<EnemyStateTag, AIStateBase<EnemyContext, EnemyStateConfig>> StateSortList => stateSortList;
+        public override EnemyStateTag CurrStateTag => currentStateTag;
+        public override IState CurrState => currentState;
 
         public EnemyStateManager()
         {
-            stateDic = new SortedList<EnemyStateTag, AIStateBase<EnemyContext, EnemyStateConfig>>();
+            stateSortList = new SortedList<EnemyStateTag, AIStateBase<EnemyContext, EnemyStateConfig>>();
         }
 
-        public override SortedList<TStateTag, TStateBase> GetStateList<TStateTag, TStateBase>()
+        public override void SetCurrActivity(EnemyStateTag tag)
         {
-            throw new System.NotImplementedException();
+            if (!StateSortList.ContainsKey(tag))
+            {
+                LogTool.LogError($"未发现注册 {tag} 标签");
+                return;
+            }
+
+            currentStateTag = tag;
+            currentState = stateSortList[tag];
         }
     }
 }

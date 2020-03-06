@@ -24,9 +24,13 @@ namespace GOAP
         /// </summary>
         public virtual string StartStateEvent => "Idle";
 
-        public abstract SortedList<TStateTag, TStateBase> StateDic { get; }
-        public IState CurrState { get; }
+        public abstract SortedList<TStateTag, TStateBase> StateSortList { get; }
+        public abstract TStateTag CurrStateTag { get; }
+        public abstract IState CurrState { get; }
 
-        public abstract SortedList<TStateTag, TStateBase> GetStateList<TStateTag, TStateBase>();
+        /// <summary>
+        /// 设置当前的进行状态
+        /// </summary>
+        public abstract void SetCurrActivity(TStateTag tag);
     }
 }

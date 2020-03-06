@@ -14,7 +14,7 @@ namespace GOAP
         public override void Init()
         {
             enemyStateManager = GetContext.Agent.AgentStateManager.GetStateMgr<EnemyStateManager>();
-            enemyStateManager.StateDic.AddSortListElement(StateConfig.Tag, this);
+            enemyStateManager.StateSortList.AddSortListElement(StateConfig.Tag, this);
         }
 
         public override void Enter()
