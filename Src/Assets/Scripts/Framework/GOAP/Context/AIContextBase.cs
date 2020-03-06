@@ -28,7 +28,6 @@ namespace GOAP
     {
         public abstract PlayMakerFSM StateFsm { get; }
 
-
         private void Awake()
         {
             Init();
@@ -47,8 +46,9 @@ namespace GOAP
         public abstract void InitStateConfig();
 
         public TContext GetContext<TContext>()
+            where TContext : class, IContext
         {
-            throw new System.NotImplementedException();
+            return this as TContext;
         }
 
         public abstract IAgent<TAction, TGoal> Agent<TAction, TGoal>() where TAction : struct where TGoal : struct;

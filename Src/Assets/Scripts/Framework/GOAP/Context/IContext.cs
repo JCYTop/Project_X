@@ -49,7 +49,7 @@ namespace GOAP
         /// </summary>
         /// <typeparam name="TContext"></typeparam>
         /// <returns></returns>
-        TContext GetContext<TContext>();
+        TContext GetContext<TContext>() where TContext : class, IContext;
 
         /// <summary>
         /// 获取环境所代理的Agent
