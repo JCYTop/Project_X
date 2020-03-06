@@ -9,13 +9,11 @@ namespace GOAP
     [ActionCategory("AI.Enemy")]
     public class EnemyWalkState : AIStateBase<EnemyContext, EnemyStateConfig>
     {
-        private EnemyAgent enemyAgent;
         private EnemyStateManager enemyStateManager;
 
         public override void Init()
         {
-            enemyAgent = GetContext.Agent.GetAgent<EnemyAgent>();
-            enemyStateManager = enemyAgent.AgentStateManager.GetStateMgr<EnemyStateManager>();
+            enemyStateManager = GetContext.Agent.AgentStateManager.GetStateMgr<EnemyStateManager>();
             enemyStateManager.StateDic.AddSortListElement(StateConfig.Tag, this);
         }
 

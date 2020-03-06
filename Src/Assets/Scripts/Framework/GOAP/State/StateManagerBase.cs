@@ -17,11 +17,16 @@ using System.Collections.Generic;
 
 namespace GOAP
 {
-    public abstract class StateManagerBase : IStateManager
+    public abstract class StateManagerBase<TStateTag, TStateBase> : IStateManager
     {
-        public const string StartStateEvent = "Idle";
+        /// <summary>
+        /// 静态默认载入的State的Event
+        /// </summary>
+        public virtual string StartStateEvent => "Idle";
+
+        public abstract SortedList<TStateTag, TStateBase> StateDic { get; }
         public IState CurrState { get; }
-        public abstract SortedList<TStateTag, AIStateBase<TContext, TConfig>> GetStateList<TStateTag, TContext, TConfig>()
-            where TContext : class, IContext;
+
+        public abstract SortedList<TStateTag, TStateBase> GetStateList<TStateTag, TStateBase>();
     }
 }

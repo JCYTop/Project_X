@@ -1,4 +1,5 @@
 ﻿using HutongGames.PlayMaker;
+using UnityEngine;
 
 namespace GOAP
 {
@@ -14,14 +15,13 @@ namespace GOAP
 
         public override void Init()
         {
-            enemyAgent = GetContext.Agent.GetAgent<EnemyAgent>();
-            enemyStateManager = enemyAgent.AgentStateManager.GetStateMgr<EnemyStateManager>();
+            enemyStateManager = GetContext.Agent.AgentStateManager.GetStateMgr<EnemyStateManager>();
             enemyStateManager.StateDic.AddSortListElement(StateConfig.Tag, this);
         }
 
         public override void Enter()
         {
-            //TODO 进入之后要做的事情
+            Debug.Log("老子终于进来了");
         }
 
         public override void Execute()

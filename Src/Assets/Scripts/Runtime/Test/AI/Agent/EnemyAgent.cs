@@ -29,7 +29,7 @@ namespace GOAP
 
         public override IState InitStateManager()
         {
-//            AgentStateManager . 
+            TargetEvent(AgentStateManager.StartStateEvent);
             return default;
         }
 

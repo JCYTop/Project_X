@@ -35,11 +35,14 @@ namespace GOAP
         public AgentBase(IContext context)
         {
             Context = context;
-//            AgentState = InitAgentState();
 //            ActionManager = InitActionManager();
 //            GoalManager = InitGoalManager();
         }
 
+        /// <summary>
+        /// 初始化进入指定的状态
+        /// </summary>
+        /// <returns></returns>
         public abstract IState InitStateManager();
         public abstract IActionManager<TAction> ActionManager();
         public abstract IGoalManager<TGoal> GoalManager();

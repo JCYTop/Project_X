@@ -14,7 +14,6 @@
 */
 
 using System;
-using System.Collections.Generic;
 
 namespace GOAP
 {
@@ -24,8 +23,8 @@ namespace GOAP
     /// </summary>
     public interface IStateManager
     {
+        string StartStateEvent { get; }
         IState CurrState { get; }
-        SortedList<TStateTag, AIStateBase<TContext, TConfig>> GetStateList<TStateTag, TContext, TConfig>() where TContext : class, IContext;
     }
 
     public static class IStateManagerExtend
