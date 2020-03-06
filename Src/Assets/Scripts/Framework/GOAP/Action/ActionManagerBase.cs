@@ -24,6 +24,8 @@ namespace GOAP
     /// <typeparam name="TAction"></typeparam>
     public abstract class ActionManagerBase<TAction, TGoal> : IActionManager<TAction>
     {
+        private IAgent<TAction, TGoal> agent;
+
         /// <summary>
         /// 动作字典
         /// </summary>
@@ -34,9 +36,8 @@ namespace GOAP
         /// </summary>
         private List<IActionHandler> interruptibleHandlers;
 
-        private IAgent<TAction, TGoal> agent;
         public bool IsPerformAction { get; set; }
-        public Dictionary<string, HashSet<IActionHandler>> EffectsAndActionMap { get; }
+        public Dictionary<TAction, HashSet<IActionHandler>> EffectsAndActionMap { get; }
 
         public ActionManagerBase(IAgent<TAction, TGoal> agent)
         {

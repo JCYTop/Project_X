@@ -4,12 +4,12 @@ namespace GOAP
 {
     public class EnemyStateManager : StateManagerBase<EnemyStateTag, AIStateBase<EnemyContext, EnemyStateConfig>>
     {
-        private EnemyStateTag currentStateTag;
-        private AIStateBase<EnemyContext, EnemyStateConfig> currentState;
+        private EnemyStateTag currStateTag;
+        private AIStateBase<EnemyContext, EnemyStateConfig> currState;
         private SortedList<EnemyStateTag, AIStateBase<EnemyContext, EnemyStateConfig>> stateSortList;
         public override SortedList<EnemyStateTag, AIStateBase<EnemyContext, EnemyStateConfig>> StateSortList => stateSortList;
-        public override EnemyStateTag CurrStateTag => currentStateTag;
-        public override IState CurrState => currentState;
+        public override EnemyStateTag CurrStateTag => currStateTag;
+        public override IState CurrState => currState;
 
         public EnemyStateManager()
         {
@@ -24,8 +24,8 @@ namespace GOAP
                 return;
             }
 
-            currentStateTag = tag;
-            currentState = stateSortList[tag];
+            currStateTag = tag;
+            currState = stateSortList[tag];
         }
     }
 }

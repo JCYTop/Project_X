@@ -19,7 +19,7 @@ namespace GOAP
 
         public override void Enter()
         {
-            throw new System.NotImplementedException();
+            enemyStateManager.SetCurrActivity(StateConfig.Tag);
         }
 
         public override void Execute()

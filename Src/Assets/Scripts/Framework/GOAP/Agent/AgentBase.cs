@@ -13,13 +13,13 @@
  ----------------------------------
 */
 
+using System;
 using JetBrains.Annotations;
 
 namespace GOAP
 {
     /// <summary>
     /// 代理基类
-    /// TODO 觉得很有必要添加一个StateMgr管理状态类
     /// </summary>
     /// <typeparam name="TAction"></typeparam>
     /// <typeparam name="TGoal"></typeparam>
@@ -29,13 +29,12 @@ namespace GOAP
         public abstract bool IsAgentOver { get; set; }
         public IState AgentState { get; }
         public IStateManager AgentStateManager { get; protected set; }
-        public IActionManager<TAction> AgentActionManager { get; }
-        public IGoalManager<TGoal> AgentGoalManager { get; }
+        public IActionManager<TAction> AgentActionManager { get; protected set; }
+        public IGoalManager<TGoal> AgentGoalManager { get; protected set; }
 
         public AgentBase(IContext context)
         {
             Context = context;
-//            ActionManager = InitActionManager();
 //            GoalManager = InitGoalManager();
         }
 
@@ -43,9 +42,10 @@ namespace GOAP
         /// 初始化进入指定的状态
         /// </summary>
         /// <returns></returns>
-        public abstract IState InitStateManager();
-        public abstract IActionManager<TAction> ActionManager();
-        public abstract IGoalManager<TGoal> GoalManager();
+        public abstract void InitStateManager();
+
+        public abstract void InitActionManager<TAction,>();
+        public abstract void GoalManager();
 
         public virtual void RegiestEvent()
         {
@@ -66,7 +66,15 @@ namespace GOAP
         public TAgent GetAgent<TAgent>()
             where TAgent : class, IAgent<TAction, TGoal>
         {
-            return this as TAgent;
+            try
+            {
+                return this as TAgent;
+            }
+            catch (Exception e)
+            {
+                LogTool.LogException(e);
+                throw;
+            }
         }
 
         /// <summary>

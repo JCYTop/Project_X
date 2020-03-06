@@ -25,20 +25,19 @@ namespace GOAP
             //初始化到指定 --->>> Context
             enemyContext = Context.GetContext<EnemyContext>();
             AgentStateManager = new EnemyStateManager();
+            AgentActionManager = new EnemyActionManager(this);
         }
 
-        public override IState InitStateManager()
+        public override void InitStateManager()
         {
             TargetEvent(AgentStateManager.StartStateEvent);
-            return default;
         }
 
-        public override IActionManager<ActionEnemyTag> ActionManager()
+        public override void InitActionManager< ActionEnemyTag ,>()
         {
-            throw new System.NotImplementedException();
         }
 
-        public override IGoalManager<GoalEnemyTag> GoalManager()
+        public override void GoalManager()
         {
             throw new System.NotImplementedException();
         }
