@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace GOAP
@@ -8,11 +7,10 @@ namespace GOAP
         #region variable
 
         private IAgent<ActionEnemyTag, GoalEnemyTag> agent;
-        private SortedList<EnemyStateTag, AIStateBase<EnemyContext, EnemyStateConfig>> stateDic;
         [SerializeField] private PlayMakerFSM stateFsm;
         [SerializeField] private EnemyAllActionConfig actionConfig;
         [SerializeField] private EnemyAllGoal goalConfig;
-        public SortedList<EnemyStateTag, AIStateBase<EnemyContext, EnemyStateConfig>> StateDic => stateDic;
+        public IAgent<ActionEnemyTag, GoalEnemyTag> Agent => agent;
         public override PlayMakerFSM StateFsm => stateFsm;
 
         #endregion
@@ -20,7 +18,6 @@ namespace GOAP
         public override void Init()
         {
             agent = new EnemyAgent(this);
-            stateDic = new SortedList<EnemyStateTag, AIStateBase<EnemyContext, EnemyStateConfig>>();
         }
 
         private void OnEnable()
@@ -47,12 +44,7 @@ namespace GOAP
 
         public override void InitStateConfig()
         {
-            //TODO 等待对接
-        }
-
-        public override IAgent<TAction, TGoal> Agent<TAction, TGoal>()
-        {
-            return agent as IAgent<TAction, TGoal>;
+            agent.GetAgent<EnemyAgent>().InitStateManager();
         }
     }
 }

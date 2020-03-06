@@ -57,7 +57,11 @@ public static class ICollectionExtend
         if (tmpvalue == null)
             sortList.Add(key, value);
         else
+        {
+            LogTool.Log($"出现重复！！！", LogEnum.NormalLog);
             tmpvalue = value;
+        }
+
         return sortList;
     }
 

@@ -13,6 +13,9 @@
  ----------------------------------
 */
 
+using System;
+using JetBrains.Annotations;
+
 namespace GOAP
 {
     /// <summary>
@@ -28,35 +31,31 @@ namespace GOAP
         /// 基础初始化
         /// </summary>
         void Init();
+    }
 
-        /// <summary>
-        /// 初始化动作配置信息 
-        /// </summary>
-        void InitActionConfig();
-
-        /// <summary>
-        /// 初始化目标配置信息
-        /// </summary>
-        void InitGoalConfig();
-
-        /// <summary>
-        /// 初始化状态信息
-        /// </summary>
-        void InitStateConfig();
-
+    /// <summary>
+    /// IContext扩展方法
+    /// </summary>
+    public static class IContextExtend
+    {
         /// <summary>
         /// 获取环境指定类型
         /// </summary>
+        /// <param name="context"></param>
         /// <typeparam name="TContext"></typeparam>
         /// <returns></returns>
-        TContext GetContext<TContext>() where TContext : class, IContext;
-
-        /// <summary>
-        /// 获取环境所代理的Agent
-        /// </summary>
-        /// <typeparam name="TAction">Action标签</typeparam>
-        /// <typeparam name="TGoal">Goal标签</typeparam>
-        /// <returns></returns>
-        IAgent<TAction, TGoal> Agent<TAction, TGoal>() where TAction : struct where TGoal : struct;
+        public static TContext GetContext<TContext>([NotNull] this IContext context)
+            where TContext : class, IContext
+        {
+            try
+            {
+                return (TContext) context;
+            }
+            catch (Exception e)
+            {
+                LogTool.LogException(e);
+                throw;
+            }
+        }
     }
 }

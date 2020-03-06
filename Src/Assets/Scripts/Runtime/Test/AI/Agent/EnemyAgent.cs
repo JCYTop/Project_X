@@ -13,8 +13,6 @@
  ----------------------------------
 */
 
-using JetBrains.Annotations;
-
 namespace GOAP
 {
     public class EnemyAgent : AgentBase<ActionEnemyTag, GoalEnemyTag>
@@ -24,26 +22,28 @@ namespace GOAP
 
         public EnemyAgent(IContext context) : base(context)
         {
+            //初始化到指定 --->>> Context
+            enemyContext = Context.GetContext<EnemyContext>();
+            AgentStateManager = new EnemyStateManager();
         }
 
-        protected override IState InitAgentState()
+        public override IState InitStateManager()
         {
-            //TODO 设置一个初始化的状态
-            Context.GetContext<EnemyContext>();
-            return null;
+//            AgentStateManager . 
+            return default;
         }
 
-        protected override IActionManager<ActionEnemyTag> InitActionManager()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        protected override IGoalManager<GoalEnemyTag> InitGoalManager()
+        public override IActionManager<ActionEnemyTag> ActionManager()
         {
             throw new System.NotImplementedException();
         }
 
-        protected override void TargetEvent([NotNull] string eventName)
+        public override IGoalManager<GoalEnemyTag> GoalManager()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        protected override void TargetEvent(string eventName)
         {
             enemyContext.StateFsm.Fsm.Event(eventName);
         }

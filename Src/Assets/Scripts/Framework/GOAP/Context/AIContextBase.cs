@@ -41,16 +41,20 @@ namespace GOAP
         }
 
         public abstract void Init();
+
+        /// <summary>
+        /// 初始化动作配置信息 
+        /// </summary>
         public abstract void InitActionConfig();
+
+        /// <summary>
+        /// 初始化目标配置信息
+        /// </summary>
         public abstract void InitGoalConfig();
+
+        /// <summary>
+        /// 初始化状态信息
+        /// </summary>
         public abstract void InitStateConfig();
-
-        public TContext GetContext<TContext>()
-            where TContext : class, IContext
-        {
-            return this as TContext;
-        }
-
-        public abstract IAgent<TAction, TGoal> Agent<TAction, TGoal>() where TAction : struct where TGoal : struct;
     }
 }

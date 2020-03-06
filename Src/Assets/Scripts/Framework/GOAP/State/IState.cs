@@ -151,6 +151,7 @@ namespace GOAP
     /// <summary>
     /// 标签用于状态在注册之后形成对应组注册表
     /// 方便查找对应关系
+    /// 要与State中的状态机全局标签相对应
     /// </summary>
     public enum StateCommonTag
     {

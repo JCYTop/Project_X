@@ -11,7 +11,7 @@ namespace GOAP
         {
             var priority = new ValueAggregation(Priority);
             goalConfigUnitSet.Add(GoalConfigElementTag.Priority, priority);
-            LogTool.Log($"{this.name} , GoalConfigUnit数据已经加载完成 --->>>", LogEnum.AssetLog);
+            LogTool.Log($"{this.name} , GoalConfigUnit数据已经加载完成", LogEnum.AssetLog);
             return this;
         }
     }

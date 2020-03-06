@@ -8,7 +8,7 @@ namespace GOAP
         {
             var priority = new ValueAggregation(Priority);
             ActionConfigUnitSet.Add(ActionConfigElementTag.Priority, priority);
-            LogTool.Log($"{this.name} , ActionConfigUnit数据已经加载完成 --->>>", LogEnum.AssetLog);
+            LogTool.Log($"{this.name} , ActionConfigUnit数据已经加载完成", LogEnum.AssetLog);
             return this;
         }
     }

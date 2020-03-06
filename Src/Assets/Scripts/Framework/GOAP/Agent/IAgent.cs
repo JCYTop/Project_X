@@ -24,12 +24,17 @@ namespace GOAP
     public interface IAgent<TAction, TGoal>
     {
         /// <summary>
-        /// 当前代理结束
+        /// 环境接口
+        /// </summary>
+        IContext Context { get; }
+
+        /// <summary>
+        /// 当前代理是否结束
         /// </summary>
         bool IsAgentOver { get; set; }
 
         /// <summary>
-        /// 状态数据
+        /// 当前状态
         /// </summary>
         IState AgentState { get; }
 
@@ -40,16 +45,21 @@ namespace GOAP
 //        IMaps<TAction, TGoal> Maps { get; }
 
         /// <summary>
+        /// StateMgr管理器
+        /// </summary>
+        IStateManager AgentStateManager { get; }
+
+        /// <summary>
         /// 获取动作管理类对象
         /// </summary>
         /// <returns></returns>
-        IActionManager<TAction> ActionManager { get; }
+        IActionManager<TAction> AgentActionManager { get; }
 
         /// <summary>
         /// 获取目标管理类对象
         /// </summary>
         /// <returns></returns>
-        IGoalManager<TGoal> GoalManager { get; }
+        IGoalManager<TGoal> AgentGoalManager { get; }
 
         /// <summary>
         /// 注册事件
@@ -72,5 +82,16 @@ namespace GOAP
         /// 帧函数
         /// </summary>
         void Update();
+
+        /// <summary>
+        /// 获取相对应的Agent类型
+        /// </summary>
+        /// <typeparam name="TAgent">Agent类型</typeparam>
+        /// <returns>Agent类型</returns>
+        TAgent GetAgent<TAgent>() where TAgent : class, IAgent<TAction, TGoal>;
+    }
+
+    public static class IAgentExtend
+    {
     }
 }
