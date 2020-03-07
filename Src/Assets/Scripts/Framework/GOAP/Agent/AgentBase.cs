@@ -43,8 +43,6 @@ namespace GOAP
         /// <returns></returns>
         public abstract void StartFSM();
 
-        public abstract void GoalManager();
-
         public virtual void RegiestEvent()
         {
         }

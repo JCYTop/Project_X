@@ -34,11 +34,6 @@ namespace GOAP
             TargetEvent(AgentStateManager.StartStateEvent);
         }
 
-        public override void GoalManager()
-        {
-            throw new System.NotImplementedException();
-        }
-
         protected override void TargetEvent(string eventName)
         {
             enemyContext.StateFsm.Fsm.Event(eventName);
