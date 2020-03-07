@@ -5,7 +5,6 @@ namespace GOAP
         public EnemyAgent EnemyAgent => agent.GetAgent<EnemyAgent>();
         public EnemyContext EnemyContext => EnemyAgent.Context.GetContext<EnemyContext>();
 
-
         public EnemyActionManager(IAgent<ActionEnemyTag, GoalEnemyTag> agent) : base(agent)
         {
         }

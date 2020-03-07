@@ -35,14 +35,14 @@ namespace GOAP
 
         private void Start()
         {
-            InitStateConfig();
+            StartFSM();
         }
 
         public abstract void Init();
 
         /// <summary>
-        /// 初始化状态信息
+        /// 开始正式运行状态机
         /// </summary>
-        public abstract void InitStateConfig();
+        protected abstract void StartFSM();
     }
 }

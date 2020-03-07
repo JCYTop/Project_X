@@ -74,6 +74,11 @@ namespace GOAP
         void UnRegiestEvent();
 
         /// <summary>
+        /// 开始正式运行状态机
+        /// </summary>
+        void StartFSM();
+
+        /// <summary>
         /// 更新数据函数
         /// </summary>
         void UpdateData();

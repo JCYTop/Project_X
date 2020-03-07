@@ -32,12 +32,7 @@ namespace GOAP
             agent.UnRegiestEvent();
         }
 
-//        public override void InitGoalConfig()
-//        {
-////            goalConfig.Init();
-//        }
-
-        public override void InitStateConfig()
+        protected override void StartFSM()
         {
             agent.GetAgent<EnemyAgent>().StartFSM();
         }
