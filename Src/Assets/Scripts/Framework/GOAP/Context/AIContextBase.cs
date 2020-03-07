@@ -31,8 +31,6 @@ namespace GOAP
         private void Awake()
         {
             Init();
-            InitActionConfig();
-            InitGoalConfig();
         }
 
         private void Start()
@@ -41,16 +39,6 @@ namespace GOAP
         }
 
         public abstract void Init();
-
-        /// <summary>
-        /// 初始化动作配置信息 
-        /// </summary>
-        public abstract void InitActionConfig();
-
-        /// <summary>
-        /// 初始化目标配置信息
-        /// </summary>
-        public abstract void InitGoalConfig();
 
         /// <summary>
         /// 初始化状态信息

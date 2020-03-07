@@ -28,13 +28,9 @@ namespace GOAP
             AgentActionManager = new EnemyActionManager(this);
         }
 
-        public override void InitStateManager()
+        public override void StartFSM()
         {
             TargetEvent(AgentStateManager.StartStateEvent);
-        }
-
-        public override void InitActionManager()
-        {
         }
 
         public override void GoalManager()

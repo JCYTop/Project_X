@@ -24,7 +24,7 @@ namespace GOAP
     /// <typeparam name="TAction"></typeparam>
     public abstract class ActionManagerBase<TAction, TGoal> : IActionManager<TAction>
     {
-        private IAgent<TAction, TGoal> agent;
+        protected IAgent<TAction, TGoal> agent;
 
         /// <summary>
         /// 动作字典
@@ -45,9 +45,9 @@ namespace GOAP
             actionHandlerDic = new Dictionary<TAction, IActionHandler>();
             interruptibleHandlers = new List<IActionHandler>();
             InitActionHandlers();
-            InitActionStateHandlers();
-            InitEffectsAndActionMap();
-            InitInterruptibleDic();
+//            InitActionStateHandlers();
+//            InitEffectsAndActionMap();
+//            InitInterruptibleDic();
         }
 
         /// <summary>

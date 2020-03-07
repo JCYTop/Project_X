@@ -12,6 +12,8 @@ namespace GOAP
         [SerializeField] private EnemyAllGoal goalConfig;
         public IAgent<ActionEnemyTag, GoalEnemyTag> Agent => agent;
         public override PlayMakerFSM StateFsm => stateFsm;
+        public EnemyAllActionConfig ActionConfig => actionConfig;
+        public EnemyAllGoal GoalConfig => goalConfig;
 
         #endregion
 
@@ -30,24 +32,14 @@ namespace GOAP
             agent.UnRegiestEvent();
         }
 
-        public override void InitActionConfig()
-        {
-            //TODO 等待对接
-            //TODO 应该写个额外扩展类处理这个问题
-            //TODO 应该直接处理Handle类
-            agent.GetAgent<EnemyAgent>().InitActionManager();
-            actionConfig.Init();
-        }
-
-        public override void InitGoalConfig()
-        {
-            //TODO 等待对接
-            goalConfig.Init();
-        }
+//        public override void InitGoalConfig()
+//        {
+////            goalConfig.Init();
+//        }
 
         public override void InitStateConfig()
         {
-            agent.GetAgent<EnemyAgent>().InitStateManager();
+            agent.GetAgent<EnemyAgent>().StartFSM();
         }
     }
 }

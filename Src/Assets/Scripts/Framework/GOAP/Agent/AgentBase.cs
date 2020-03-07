@@ -42,9 +42,8 @@ namespace GOAP
         /// 初始化进入指定的状态
         /// </summary>
         /// <returns></returns>
-        public abstract void InitStateManager();
+        public abstract void StartFSM();
 
-        public abstract void InitActionManager();
         public abstract void GoalManager();
 
         public virtual void RegiestEvent()

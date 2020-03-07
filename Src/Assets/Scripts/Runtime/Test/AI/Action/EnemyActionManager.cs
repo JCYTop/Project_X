@@ -2,14 +2,18 @@ namespace GOAP
 {
     public class EnemyActionManager : ActionManagerBase<ActionEnemyTag, GoalEnemyTag>
     {
+        public EnemyAgent EnemyAgent => agent.GetAgent<EnemyAgent>();
+        public EnemyContext EnemyContext => EnemyAgent.Context.GetContext<EnemyContext>();
+
+
         public EnemyActionManager(IAgent<ActionEnemyTag, GoalEnemyTag> agent) : base(agent)
         {
-            //TODO 有必要保持传值吗？？？？？？？？？？？？？？？？？？？
         }
 
         protected override void InitActionHandlers()
         {
-            throw new System.NotImplementedException();
+            //TODO 这里处理各个子Action
+            EnemyContext.ActionConfig.Init();
         }
 
         protected override void InitActionStateHandlers()
