@@ -33,7 +33,7 @@ namespace GOAP
             TargetEvent(AgentStateManager.StartStateEvent);
         }
 
-        public override void InitActionManager< ActionEnemyTag ,>()
+        public override void InitActionManager()
         {
         }
 

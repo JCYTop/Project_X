@@ -27,7 +27,7 @@ public static class ICollectionExtend
     /// <typeparam name="Tkey"></typeparam>
     /// <typeparam name="TValue"></typeparam>
     /// <returns></returns>
-    public static TValue GetDictionaryValue<Tkey, TValue>(this IDictionary<Tkey, TValue> dic, Tkey key)
+    public static TValue GetDictionaryValue<Tkey, TValue>(this Dictionary<Tkey, TValue> dic, Tkey key)
     {
         dic.TryGetValue(key, out TValue value);
         if (value == null)
@@ -41,6 +41,26 @@ public static class ICollectionExtend
     #endregion
 
     #region SortList Extend
+
+    /// <summary>
+    /// 获取SortList值
+    /// </summary>
+    /// <param name="sortList"></param>
+    /// <param name="key"></param>
+    /// <typeparam name="TKey"></typeparam>
+    /// <typeparam name="TValue"></typeparam>
+    /// <returns></returns>
+    public static TValue GetSortListValue<TKey, TValue>(this SortedList<TKey, TValue> sortList, TKey key)  
+    {
+        sortList.TryGetValue(key, out TValue value);
+        if (value == null)
+        {
+            LogTool.LogError($"没有Key对应的Value", LogEnum.NormalLog);
+        }
+
+        return value != null ? value : default(TValue);
+    }
+
 
     /// <summary>
     /// 添加SortList元素

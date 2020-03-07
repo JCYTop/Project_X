@@ -44,7 +44,7 @@ namespace GOAP
         /// <returns></returns>
         public abstract void InitStateManager();
 
-        public abstract void InitActionManager<TAction,>();
+        public abstract void InitActionManager();
         public abstract void GoalManager();
 
         public virtual void RegiestEvent()
