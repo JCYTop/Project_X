@@ -19,7 +19,7 @@ namespace GOAP
 {
     public abstract class GoalManagerBase<TAction, TGoal> : IGoalManager<TGoal>
     {
-        private IAgent<TAction, TGoal> agent;
+        protected IAgent<TAction, TGoal> agent;
         private Dictionary<TGoal, IGoal<TGoal>> goalsDic;
         private List<IGoal<TGoal>> activeGoals;
         public IGoal<TGoal> CurrentGoal { get; }

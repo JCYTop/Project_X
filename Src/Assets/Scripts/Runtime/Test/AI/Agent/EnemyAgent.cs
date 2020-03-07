@@ -22,10 +22,11 @@ namespace GOAP
 
         public EnemyAgent(IContext context) : base(context)
         {
-            //初始化到指定 --->>> Context
+            //初始化到指定 --->>> Context 方便全局调用
             enemyContext = Context.GetContext<EnemyContext>();
             AgentStateManager = new EnemyStateManager();
             AgentActionManager = new EnemyActionManager(this);
+            AgentGoalManager = new EnemyGoalManager(this);
         }
 
         public override void StartFSM()

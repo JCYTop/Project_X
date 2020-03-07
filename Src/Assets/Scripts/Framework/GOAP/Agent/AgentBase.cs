@@ -35,7 +35,6 @@ namespace GOAP
         public AgentBase(IContext context)
         {
             Context = context;
-//            GoalManager = InitGoalManager();
         }
 
         /// <summary>
