@@ -34,7 +34,7 @@ namespace GOAP
 
         protected override void StartFSM()
         {
-            agent.GetAgent<EnemyAgent>().StartFSM();
+            agent.StartFSM();
         }
     }
 }
