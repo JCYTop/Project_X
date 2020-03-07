@@ -17,23 +17,26 @@ using System;
 
 namespace GOAP
 {
-    public abstract class ActionHandler<TAction, TGoal> : IActionHandler
+    public abstract class ActionHandler<TAction> : IActionHandler<TAction>
     {
-        private IAgent<TAction, TGoal> agent;
-        public IAction<TAction> action;
+        /// <summary>
+        /// 需要手动填写配置
+        /// 需要与Action中配置数据相同
+        /// </summary>
+        public   TAction Label { get; private set; }
+
+        public IAction<TAction> Action;
 
         /// <summary>
         /// 执行中的状态
         /// </summary>
         public abstract ActionExcuteState ExcuteState { get; }
 
-        /// <summary>
-        /// 需要手动填写配置
-        /// 需要与Action中配置数据相同
-        /// </summary>
-        public abstract TAction Label { get; }
-        
-        public abstract void Init<TAction, TGoal>(IAgent<TAction, TGoal> agent, IAction<TAction> action);
+        public virtual void Init(IAction<TAction> action)
+        {
+            this.Action = action;
+            this.Label = Action.Label;
+        }
 
         public abstract void AddFinishCallBack(Action onFinishAction);
         public abstract void Enter();

@@ -29,7 +29,7 @@ namespace GOAP
         /// <summary>
         /// 效果和动作的映射关系
         /// </summary>
-        Dictionary<TAction, HashSet<IActionHandler>> EffectsAndActionMap { get; }
+        Dictionary<TAction, HashSet<IActionHandler<TAction>>> EffectsAndActionMap { get; }
 
         /// <summary>
         /// 获取默认动作的标签
@@ -52,7 +52,7 @@ namespace GOAP
         /// 获取处理类对象
         /// </summary>
         /// <param name="handler"></param>
-        IActionHandler GetHandler(TAction actionLabel);
+        IActionHandler<TAction> GetHandler(TAction actionLabel);
 
         /// <summary>
         /// 改变当前执行的动作

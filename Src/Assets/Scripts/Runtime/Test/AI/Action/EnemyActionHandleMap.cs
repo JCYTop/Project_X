@@ -22,20 +22,21 @@ namespace GOAP
     /// 静态类直接返回数据
     /// 手动注册ActionHandle类
     /// </summary>
-    public class EnemyActionHandleMap : Singleton<EnemyActionHandleMap>, IActionHandleMap<ActionEnemyTag, IActionHandler>
+    public class EnemyActionHandleMap : Singleton<EnemyActionHandleMap>, IActionHandleMap<ActionEnemyTag, IActionHandler<ActionEnemyTag>>
     {
-        private SortedList<ActionEnemyTag, IActionHandler> handleMap;
+        private SortedList<ActionEnemyTag, IActionHandler<ActionEnemyTag>> handleMap;
 
-        public SortedList<ActionEnemyTag, IActionHandler> HandleMap
+        public SortedList<ActionEnemyTag, IActionHandler<ActionEnemyTag>> HandleMap
         {
             get
             {
                 if (handleMap == null)
                 {
-                    handleMap = new SortedList<ActionEnemyTag, IActionHandler>()
+                    handleMap = new SortedList<ActionEnemyTag, IActionHandler<ActionEnemyTag>>()
                     {
                         //TODO 这是一个例子
-                        {ActionEnemyTag.Default, new EmenyIdleActionHandler()},
+                        {ActionEnemyTag.Default, new EmenyDefaultActionHandler()},
+                        {ActionEnemyTag.Idle, new EmenyIdleActionHandler()},
                     };
                 }
 
@@ -43,17 +44,9 @@ namespace GOAP
             }
         }
 
-        public IActionHandler GetHandle(ActionEnemyTag type)
+        public IActionHandler<ActionEnemyTag> GetHandle(ActionEnemyTag type)
         {
             return HandleMap.GetSortListValue(type);
         }
-
-
-//        TODO 举例使用
-//        public static void 调用方法()
-//        {
-//            var handle = ActionHandleMap.GetHandle<ActionTag>(ActionTag.Default);
-//            handle.Init<ActionTag, GoalTag>();
-//        }
     }
 }

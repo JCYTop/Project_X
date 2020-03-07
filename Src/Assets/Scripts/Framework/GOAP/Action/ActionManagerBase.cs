@@ -29,21 +29,21 @@ namespace GOAP
         /// <summary>
         /// 动作字典
         /// </summary>
-        private Dictionary<TAction, IActionHandler> actionHandlerDic;
+        private Dictionary<TAction, IActionHandler<TAction>> actionHandlerDic;
 
         /// <summary>
         /// 能够打断计划的动作
         /// </summary>
-        private List<IActionHandler> interruptibleHandlers;
+        private List<IActionHandler<TAction>> interruptibleHandlers;
 
         public bool IsPerformAction { get; set; }
-        public Dictionary<TAction, HashSet<IActionHandler>> EffectsAndActionMap { get; }
+        public Dictionary<TAction, HashSet<IActionHandler<TAction>>> EffectsAndActionMap { get; }
 
         public ActionManagerBase(IAgent<TAction, TGoal> agent)
         {
             this.agent = agent;
-            actionHandlerDic = new Dictionary<TAction, IActionHandler>();
-            interruptibleHandlers = new List<IActionHandler>();
+            actionHandlerDic = new Dictionary<TAction, IActionHandler<TAction>>();
+            interruptibleHandlers = new List<IActionHandler<TAction>>();
             InitActionHandlers();
 //            InitActionStateHandlers();
 //            InitEffectsAndActionMap();
@@ -77,7 +77,7 @@ namespace GOAP
             AddHandler(actionLabel, actionHandlerDic);
         }
 
-        private void AddHandler(TAction actionLabel, Dictionary<TAction, IActionHandler> actionHandlers)
+        private void AddHandler(TAction actionLabel, Dictionary<TAction, IActionHandler<TAction>> actionHandlers)
         {
 //            agent
         }
@@ -87,7 +87,7 @@ namespace GOAP
             actionHandlerDic.Remove(actionLabel);
         }
 
-        public IActionHandler GetHandler(TAction actionLabel)
+        public IActionHandler<TAction> GetHandler(TAction actionLabel)
         {
             return actionHandlerDic.GetDictionaryValue(actionLabel);
         }

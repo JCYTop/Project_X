@@ -23,19 +23,17 @@ namespace GOAP
     /// 都在一个单例Mono中进行注册
     /// 每个AI在拿到当前的Action数据之后并且初始化之后
     /// 再去单例Mono中查找相应配置好的label进行查找并且完成最终Action数据和Handle的合并
+    /// Handle比较特使会关联其他系统所以代码注册
+    /// Handle设计最好的目标可以让不同种类的AI公用一种Handle，增加通用性
     /// </summary>
-    public interface IActionHandler
+    public interface IActionHandler<TAction>
     {
         /// <summary>
-        /// TODO 集成化管理
-        /// TODO 手动添加注册信息了！！！
+        /// 手动添加注册信息
         /// </summary>
-        /// <param name="agent"></param>
         /// <param name="action"></param>
-        /// <typeparam name="TAction1"></typeparam>
-        /// <typeparam name="TGoal1"></typeparam>
-        /// <exception cref="NotImplementedException"></exception>
-        void Init<TAction, TGoal>(IAgent<TAction, TGoal> agent, IAction<TAction> action);
+        /// <typeparam name="TAction"></typeparam>
+        void Init(IAction<TAction> action);
 
         /// <summary>
         /// 动作执行状态

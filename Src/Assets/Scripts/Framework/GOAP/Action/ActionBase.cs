@@ -20,22 +20,23 @@ namespace GOAP
     /// 通过读取具体的配置文件信息生成一个具体的类
     /// 数据类
     /// </summary>
-    /// <typeparam name="TAction">由类传入string</typeparam>
+    /// <typeparam name="TAction"></typeparam>
     public abstract class ActionBase<TAction, TConfigElementTag> : IAction<TAction>
     {
-        public ActionConfigUnit<TConfigElementTag> ActionUnityGroup { get; private set; }
-        public abstract TAction Label { get; }
+        public ActionConfigUnit<TConfigElementTag> ActionGroup { get; private set; }
+        public TAction Label { get; private set; }
         public int Priority { get; }
         public int Cost { get; }
         public bool CanInterruptiblePlan { get; }
         public IState PreConditions { get; }
         public IState Effects { get; }
 
-        public ActionBase(ActionConfigUnit<TConfigElementTag> actionUnityGroup)
+        public ActionBase(TAction tag, ActionConfigUnit<TConfigElementTag> actionGroup)
         {
-            this.ActionUnityGroup = actionUnityGroup;
-            this.Effects = InitEffects();
-            this.PreConditions = InitPreConditions();
+            this.Label = tag;
+            this.ActionGroup = actionGroup;
+//            this.Effects = InitEffects();
+//            this.PreConditions = InitPreConditions();
         }
 
         protected abstract IState InitEffects();
