@@ -22,17 +22,8 @@ namespace GOAP
     /// </summary>
     public class DictionaryAggregation<Tkey, TValue> : ConfigElementBase<Dictionary<Tkey, TValue>>
     {
-        public override Dictionary<Tkey, TValue> Data { get; set; }
-
-        protected DictionaryAggregation(Dictionary<Tkey, TValue> value) : base(value)
+        public DictionaryAggregation(Dictionary<Tkey, TValue> value) : base(value)
         {
-            this.TypeName = typeof(DictionaryAggregation<Tkey, TValue>).ToString();
-            this.Data = value;
-        }
-
-        public override Dictionary<Tkey, TValue> GetData()
-        {
-            return Data;
         }
     }
 }

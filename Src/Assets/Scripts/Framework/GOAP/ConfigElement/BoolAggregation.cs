@@ -24,17 +24,8 @@ namespace GOAP
     /// </summary>
     public class BoolAggregation : ConfigElementBase<bool>, IComparable<bool>
     {
-        public override bool Data { get; set; }
-
         public BoolAggregation(bool value) : base(value)
         {
-            this.TypeName = typeof(BoolAggregation).ToString();
-            this.Data = value;
-        }
-
-        public override bool GetData()
-        {
-            return Data;
         }
 
         public int CompareTo(bool other)

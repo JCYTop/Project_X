@@ -23,27 +23,19 @@ namespace GOAP
     /// </summary>
     public interface IConfigElement
     {
-        string TypeName { set; get; }
     }
 
     public abstract class ConfigElementBase<T> : IConfigElement
     {
-        public abstract T Data { get; set; }
-
-        public ConfigElementBase(T value)
-        {
-        }
-
-        /// <summary>
-        /// 子类的类型名称
-        /// </summary>
-        public string TypeName { get; set; }
-
         /// <summary>
         /// 获取当前存入的值
         /// </summary>
-        /// <returns></returns>
-        public abstract T GetData();
+        public T Data { get; private set; }
+
+        public ConfigElementBase(T value)
+        {
+            this.Data = value;
+        }
     }
 
     public static class IConfigElementExtend

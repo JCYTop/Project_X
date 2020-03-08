@@ -39,6 +39,7 @@ namespace GOAP
     /// <summary>
     /// 关联Unity中的信息
     /// Playable重要类
+    /// 以后重要扩展
     /// </summary>
     [Serializable]
     public class ActionUnityGroup

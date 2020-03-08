@@ -28,8 +28,8 @@ namespace GOAP
     public abstract class ActionBase<TAction, TConfigElementTag> : IAction<TAction>
     {
         public ActionConfigUnit<TConfigElementTag> ActionGroup { get; private set; }
-        public IState PreConditions { get; }
-        public IState Effects { get; }
+        public IState PreConditions => InitPreConditions();
+        public IState Effects => InitEffects();
 
         public int Cost
         {
@@ -67,9 +67,8 @@ namespace GOAP
         {
             this.Label = tag;
             this.ActionGroup = actionGroup;
-//            this.Effects = InitEffects();
-//            this.PreConditions = InitPreConditions();
         }
+
         public T GetActionData<T>(string tag) where T : IConfigElement
         {
             try
@@ -82,14 +81,20 @@ namespace GOAP
                 throw;
             }
         }
-        protected abstract IState InitEffects();
-        protected abstract IState InitPreConditions();
+
+        protected IState InitEffects()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        protected IState InitPreConditions()
+        {
+            throw new System.NotImplementedException();
+        }
 
         public virtual bool VerifyPreconditions()
         {
             throw new System.NotImplementedException();
         }
-
-      
     }
 }

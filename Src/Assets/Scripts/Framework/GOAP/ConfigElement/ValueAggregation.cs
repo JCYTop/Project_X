@@ -25,17 +25,8 @@ namespace GOAP
     /// <typeparam name="T"></typeparam>
     public class ValueAggregation : ConfigElementBase<int>, IComparable<int>
     {
-        public override int Data { get; set; }
-
         public ValueAggregation(int value) : base(value)
         {
-            this.TypeName = typeof(ValueAggregation).ToString();
-            this.Data = value;
-        }
-
-        public override int GetData()
-        {
-            return Data;
         }
 
         public int CompareTo(int other)

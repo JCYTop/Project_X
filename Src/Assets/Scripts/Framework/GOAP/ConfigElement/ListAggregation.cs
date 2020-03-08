@@ -22,17 +22,8 @@ namespace GOAP
     /// </summary>
     public class ListAggregation<T> : ConfigElementBase<List<T>>
     {
-        public override List<T> Data { get; set; }
-
         public ListAggregation(List<T> value) : base(value)
         {
-            this.TypeName = typeof(ListAggregation<T>).ToString();
-            this.Data = value;
-        }
-
-        public override List<T> GetData()
-        {
-            return Data;
         }
     }
 }

@@ -8,15 +8,5 @@ namespace GOAP
         public EnemyAction(ActionEnemyTag tag, ActionConfigUnit<ActionCommonElementTag> actionGroup) : base(tag, actionGroup)
         {
         }
-
-        protected override IState InitEffects()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        protected override IState InitPreConditions()
-        {
-            throw new System.NotImplementedException();
-        }
     }
 }
