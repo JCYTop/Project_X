@@ -13,6 +13,7 @@
  ----------------------------------
 */
 
+using System;
 using System.Collections.Generic;
 
 public static class ICollectionExtend
@@ -50,7 +51,7 @@ public static class ICollectionExtend
     /// <typeparam name="TKey"></typeparam>
     /// <typeparam name="TValue"></typeparam>
     /// <returns></returns>
-    public static TValue GetSortListValue<TKey, TValue>(this SortedList<TKey, TValue> sortList, TKey key)  
+    public static TValue GetSortListValue<TKey, TValue>(this SortedList<TKey, TValue> sortList, TKey key)
     {
         sortList.TryGetValue(key, out TValue value);
         if (value == null)
@@ -61,6 +62,24 @@ public static class ICollectionExtend
         return value != null ? value : default(TValue);
     }
 
+    /// <summary>
+    /// 获取SortList值
+    /// </summary>
+    /// <param name="sortList"></param>
+    /// <param name="key"></param>
+    /// <typeparam name="TKey"></typeparam>
+    /// <typeparam name="TValue"></typeparam>
+    /// <returns></returns>
+    public static TValue GetSortListValue<TKey, TValue>(this SortedList<TKey, TValue> sortList, string key)
+    {
+        sortList.TryGetValue((TKey) Enum.Parse(typeof(TKey), key), out TValue value);
+        if (value == null)
+        {
+            LogTool.LogError($"没有Key对应的Value", LogEnum.NormalLog);
+        }
+
+        return value != null ? value : default(TValue);
+    }
 
     /// <summary>
     /// 添加SortList元素

@@ -46,7 +46,7 @@ namespace GOAP
         public abstract T GetData();
     }
 
-    public static class IConfigElementBaseExtend
+    public static class IConfigElementExtend
     {
         /// <summary>
         /// 转换成指定类型的IStateConfigElementBase

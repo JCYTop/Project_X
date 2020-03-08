@@ -25,11 +25,30 @@ namespace GOAP
     {
         public ActionConfigUnit<TConfigElementTag> ActionGroup { get; private set; }
         public TAction Label { get; private set; }
-        public int Priority { get; }
-        public int Cost { get; }
-        public abstract bool CanInterruptiblePlan { get; }
         public IState PreConditions { get; }
         public IState Effects { get; }
+
+        public int Cost { get; }
+
+        public int Priority
+        {
+            get
+            {
+                var interruptible = ActionGroup.ActionConfigUnitSet.GetSortListValue(ActionCommonElementTag.Priority.ToString());
+                var intValue = interruptible.CastStateConfigEle<ValueAggregation>();
+                return intValue.Data;
+            }
+        }
+
+        public bool CanInterruptiblePlan
+        {
+            get
+            {
+                var interruptible = ActionGroup.ActionConfigUnitSet.GetSortListValue(ActionCommonElementTag.Interruptible.ToString());
+                var boolValue = interruptible.CastStateConfigEle<BoolAggregation>();
+                return boolValue.Data;
+            }
+        }
 
         public ActionBase(TAction tag, ActionConfigUnit<TConfigElementTag> actionGroup)
         {
