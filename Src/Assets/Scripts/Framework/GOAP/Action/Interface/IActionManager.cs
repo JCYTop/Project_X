@@ -29,7 +29,7 @@ namespace GOAP
         /// <summary>
         /// 效果和动作的映射关系
         /// </summary>
-        Dictionary<TAction, HashSet<IActionHandler<TAction>>> EffectsAndActionMap { get; }
+        Dictionary<TAction, HashSet<IActionHandler<TAction>>> Effect_Action_Map { get; }
 
         /// <summary>
         /// 获取默认动作的标签

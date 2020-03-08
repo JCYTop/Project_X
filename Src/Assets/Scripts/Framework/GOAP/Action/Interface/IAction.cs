@@ -42,6 +42,14 @@ namespace GOAP
         int Cost { get; }
 
         /// <summary>
+        /// 获取配置信息中的标签信息
+        /// </summary>
+        /// <param name="tag"></param>
+        /// <typeparam name="T"></typeparam>
+        /// <returns></returns>
+        T GetActionData<T>(string tag) where T : IConfigElement;
+
+        /// <summary>
         /// 当前动作是否能够中断
         /// </summary>
         bool CanInterruptiblePlan { get; }
@@ -66,14 +74,6 @@ namespace GOAP
         /// </summary>
         /// <returns></returns>
         bool VerifyPreconditions();
-
-        /// <summary>
-        /// 获取配置信息中的标签信息
-        /// </summary>
-        /// <param name="tag"></param>
-        /// <typeparam name="T"></typeparam>
-        /// <returns></returns>
-        T GetActionData<T>(string tag) where T : IConfigElement;
     }
 
     /// <summary>

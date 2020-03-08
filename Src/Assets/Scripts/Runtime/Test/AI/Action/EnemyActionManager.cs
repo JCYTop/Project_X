@@ -26,17 +26,6 @@ namespace GOAP
             }
         }
 
-        protected override void InitActionStateHandlers()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        protected override void InitEffectsAndActionMap()
-        {
-            throw new System.NotImplementedException();
-        }
-
-
         public override ActionEnemyTag GetDefaultActionLabel()
         {
             throw new System.NotImplementedException();

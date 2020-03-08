@@ -70,15 +70,6 @@ namespace GOAP
 //            this.Effects = InitEffects();
 //            this.PreConditions = InitPreConditions();
         }
-
-        protected abstract IState InitEffects();
-        protected abstract IState InitPreConditions();
-
-        public virtual bool VerifyPreconditions()
-        {
-            throw new System.NotImplementedException();
-        }
-
         public T GetActionData<T>(string tag) where T : IConfigElement
         {
             try
@@ -91,5 +82,14 @@ namespace GOAP
                 throw;
             }
         }
+        protected abstract IState InitEffects();
+        protected abstract IState InitPreConditions();
+
+        public virtual bool VerifyPreconditions()
+        {
+            throw new System.NotImplementedException();
+        }
+
+      
     }
 }

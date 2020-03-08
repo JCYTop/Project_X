@@ -43,8 +43,8 @@ namespace GOAP
         private List<IActionHandler<TAction>> interruptibleHandlers;
 
         public bool IsPerformAction { get; set; }
-        public Dictionary<TAction, HashSet<IActionHandler<TAction>>> EffectsAndActionMap { get; }
         public List<IActionHandler<TAction>> InterruptibleHandlers => interruptibleHandlers;
+        public Dictionary<TAction, HashSet<IActionHandler<TAction>>> Effect_Action_Map { get; }
 
         public ActionManagerBase(IAgent<TAction, TGoal> agent)
         {
@@ -53,8 +53,7 @@ namespace GOAP
             interruptibleHandlers = new List<IActionHandler<TAction>>();
             InitActionHandlers();
             InitInterruptiblers();
-//            InitActionStateHandlers();
-//            InitEffectsAndActionMap();
+            InitEffect_Action_Map();
         }
 
         /// <summary>
@@ -79,14 +78,12 @@ namespace GOAP
         }
 
         /// <summary>
-        /// 初始化当前可叠加执行动作处理器
-        /// </summary>
-        protected abstract void InitActionStateHandlers();
-
-        /// <summary>
         /// 初始化动作和动作影响的映射
         /// </summary>
-        protected abstract void InitEffectsAndActionMap();
+        private void InitEffect_Action_Map()
+        {
+            //TODO next step 处理这里
+        }
 
         public abstract TAction GetDefaultActionLabel();
 
