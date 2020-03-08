@@ -23,7 +23,7 @@ namespace GOAP
     /// 存放简单数值
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    public class ValueAggregation : ConfigElement<int>, IComparable<int>
+    public class ValueAggregation : ConfigElementBase<int>, IComparable<int>
     {
         public override int Data { get; set; }
 

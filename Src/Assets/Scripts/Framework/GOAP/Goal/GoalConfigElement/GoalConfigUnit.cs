@@ -26,7 +26,7 @@ namespace GOAP
     [Serializable]
     public abstract class GoalConfigUnit<T> : ScriptableObject
     {
-        protected SortedList<T, IConfigElementBase> goalConfigUnitSet = new SortedList<T, IConfigElementBase>();
+        protected SortedList<T, IConfigElement> goalConfigUnitSet = new SortedList<T, IConfigElement>();
 
         /// <summary>
         /// 初始化数据

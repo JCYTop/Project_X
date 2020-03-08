@@ -25,7 +25,7 @@ namespace GOAP
     [Serializable]
     public abstract class StateConfig<T> : ScriptableObject
     {
-        protected SortedList<T, IConfigElementBase> stateConfigSet = new SortedList<T, IConfigElementBase>();
+        protected SortedList<T, IConfigElement> stateConfigSet = new SortedList<T, IConfigElement>();
 
         /// <summary>
         /// 初始化数据

@@ -27,7 +27,7 @@ namespace GOAP
     public abstract class ActionConfigUnit<T> : ScriptableObject
     {
         public ActionUnityGroup ActionUnityGroup;
-        public SortedList<T, IConfigElementBase> ActionConfigUnitSet = new SortedList<T, IConfigElementBase>();
+        public SortedList<T, IConfigElement> ActionConfigUnitSet = new SortedList<T, IConfigElement>();
 
         /// <summary>
         /// 初始化数据

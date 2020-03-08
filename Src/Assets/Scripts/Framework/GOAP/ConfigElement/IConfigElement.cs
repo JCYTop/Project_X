@@ -21,16 +21,16 @@ namespace GOAP
     /// 序列化文件配置基础接口
     /// 所有需要配置序列化问价都继承这里
     /// </summary>
-    public interface IConfigElementBase
+    public interface IConfigElement
     {
         string TypeName { set; get; }
     }
 
-    public abstract class ConfigElement<T> : IConfigElementBase
+    public abstract class ConfigElementBase<T> : IConfigElement
     {
         public abstract T Data { get; set; }
 
-        public ConfigElement(T value)
+        public ConfigElementBase(T value)
         {
         }
 
@@ -54,7 +54,7 @@ namespace GOAP
         /// <param name="configElement">IStateConfigElementBase类型</param>
         /// <typeparam name="T">指定类型</typeparam>
         /// <returns>返回指定类型T</returns>
-        public static T CastStateConfigEle<T>(this IConfigElementBase configElement)
+        public static T CastStateConfigEle<T>(this IConfigElement configElement)
         {
             try
             {

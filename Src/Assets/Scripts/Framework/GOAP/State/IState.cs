@@ -96,7 +96,7 @@ namespace GOAP
         /// </summary>
         /// <param name="key"></param>
         /// <returns></returns>
-        IConfigElementBase GetSingleValue(AIStateCommonElementTag key);
+        IConfigElement GetSingleValue(AIStateCommonElementTag key);
 
         /// <summary>
         /// 根据AIConfigElement类型
@@ -131,7 +131,7 @@ namespace GOAP
         /// 获取两个State
         /// 同时包含的键值及当前状态键值对应的数据
         /// </summary>
-        SortedList<AIStateCommonElementTag, Dictionary<IState, IConfigElementBase>> GetSameData(IState otherState);
+        SortedList<AIStateCommonElementTag, Dictionary<IState, IConfigElement>> GetSameData(IState otherState);
 
         /// <summary>
         /// 获取跟另外一个状态的差异键值集合

@@ -103,7 +103,7 @@ namespace GOAP
             throw new NotImplementedException();
         }
 
-        public IConfigElementBase GetSingleValue(AIStateCommonElementTag key)
+        public IConfigElement GetSingleValue(AIStateCommonElementTag key)
         {
             throw new NotImplementedException();
         }
@@ -128,7 +128,7 @@ namespace GOAP
             throw new NotImplementedException();
         }
 
-        public SortedList<AIStateCommonElementTag, Dictionary<IState, IConfigElementBase>> GetSameData(IState otherState)
+        public SortedList<AIStateCommonElementTag, Dictionary<IState, IConfigElement>> GetSameData(IState otherState)
         {
             throw new NotImplementedException();
         }

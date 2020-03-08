@@ -20,7 +20,7 @@ namespace GOAP
     /// <summary>
     /// Dictionary 聚合类
     /// </summary>
-    public class DictionaryAggregation<Tkey, TValue> : ConfigElement<Dictionary<Tkey, TValue>>
+    public class DictionaryAggregation<Tkey, TValue> : ConfigElementBase<Dictionary<Tkey, TValue>>
     {
         public override Dictionary<Tkey, TValue> Data { get; set; }
 

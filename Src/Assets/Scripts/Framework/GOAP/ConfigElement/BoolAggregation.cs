@@ -22,7 +22,7 @@ namespace GOAP
     /// 单一存放
     /// 存放简单 Bool
     /// </summary>
-    public class BoolAggregation : ConfigElement<bool>, IComparable<bool>
+    public class BoolAggregation : ConfigElementBase<bool>, IComparable<bool>
     {
         public override bool Data { get; set; }
 
