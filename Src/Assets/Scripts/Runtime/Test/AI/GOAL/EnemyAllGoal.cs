@@ -23,13 +23,13 @@ namespace GOAP
     /// 敌人的所有的目标
     /// 每一个目标Enum对应一个目标信息设置类
     /// </summary>
-    public class EnemyAllGoal : GoalConfig<GoalCommonTag, GoalConfigElementTag>
+    public class EnemyAllGoal : GoalConfig<GoalCommonTag, GoalCommonElementTag>
     {
         public List<EnemyAllGoalUnit> allGoal = new List<EnemyAllGoalUnit>();
 
-        public override SortedList<GoalCommonTag, GoalConfigUnit<GoalConfigElementTag>> Init()
+        public override SortedList<GoalCommonTag, GoalConfigUnit<GoalCommonElementTag>> Init()
         {
-            var goalSort = new SortedList<GoalCommonTag, GoalConfigUnit<GoalConfigElementTag>>();
+            var goalSort = new SortedList<GoalCommonTag, GoalConfigUnit<GoalCommonElementTag>>();
             allGoal.ForEach((goal) => { goalSort.Add(goal.commonTag, goal.Unit.Init()); });
             LogTool.Log($" --- {this.name} , Goal数据已经加载完成 --->>> 共计${allGoal.Count}个", LogEnum.AssetLog);
             return goalSort;

@@ -1,13 +1,18 @@
+using UnityEngine;
+
 namespace GOAP
 {
-    public class EnemyActionConfigUnit : ActionConfigUnit<ActionConfigElementTag>
+    public class EnemyActionConfigUnit : ActionConfigUnit<ActionCommonElementTag>
     {
-        public int Priority;
+        [Header("权重")] public int Priority;
+        [Header("是否可打断")] public bool IsInterruptible = false;
 
-        public override ActionConfigUnit<ActionConfigElementTag> Init()
+        public override ActionConfigUnit<ActionCommonElementTag> Init()
         {
             var priority = new ValueAggregation(Priority);
-            ActionConfigUnitSet.Add(ActionConfigElementTag.Priority, priority);
+            ActionConfigUnitSet.Add(ActionCommonElementTag.Priority, priority);
+            var interruptible = new BoolAggregation(IsInterruptible);
+            ActionConfigUnitSet.Add(ActionCommonElementTag.Interruptible, interruptible);
             LogTool.Log($"{this.name} , ActionConfigUnit数据已经加载完成", LogEnum.AssetLog);
             return this;
         }

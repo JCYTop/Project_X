@@ -108,7 +108,7 @@ MonoBehaviour:
           name: FsmNextEvent
           isSystemEvent: 0
           isGlobal: 0
-        toState: TestState
+        toState: Test_GOAP_AI_State
         linkStyle: 0
         linkConstraint: 0
         colorIndex: 0
@@ -156,14 +156,14 @@ MonoBehaviour:
         - EveryFrame
         paramDataPos: 0000000000000000
         paramByteDataSize: 0000000001000000
-    - name: StartState
-      description: "\u6E38\u620F\u5F00\u59CB"
+    - name: Start_Scene
+      description: 
       colorIndex: 2
       position:
         serializedVersion: 2
         x: 684.6172
         y: 273.8672
-        width: 100
+        width: 102
         height: 16
       isBreakpoint: 0
       isSequence: 0
@@ -921,14 +921,14 @@ MonoBehaviour:
         - FinishTask
         paramDataPos: 0000000000000000
         paramByteDataSize: 0000000000000000
-    - name: TestState
+    - name: Test_GOAP_AI_State
       description: 
       colorIndex: 2
       position:
         serializedVersion: 2
         x: 692
         y: 397
-        width: 100
+        width: 154
         height: 16
       isBreakpoint: 0
       isSequence: 0

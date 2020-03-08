@@ -26,9 +26,9 @@ public static class GlobalDefine
     private static FrameworkDefine frameworkDefine;
     private static LogConfig logConfig;
     private static ABInfo abInfo;
-    public const string AwakeScene = "AwakeScene";
-    public const string StartScene = "StartScene";
-    public const string TestScene = "TestScene";
+    public const string AwakeScene = "Awake_Scene";
+    public const string StartScene = "Start_Scene";
+    public const string TestScene = "Test_GOAP_AI_Scene";
 
     #region 属性
 

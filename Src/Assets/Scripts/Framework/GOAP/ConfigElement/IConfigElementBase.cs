@@ -73,8 +73,9 @@ namespace GOAP
     /// IConfigElementBase配置文件标签
     /// 每个标签对应这当前属性的类
     /// 方便通过标签快速查找工具类
+    /// 可以以后继承
     /// </summary>
-    public enum AIStateConfigElementTag
+    public enum AIStateCommonElementTag
     {
         #region Common  0~199
 
@@ -97,7 +98,10 @@ namespace GOAP
         #endregion
     }
 
-    public enum GoalConfigElementTag
+    /// <summary>
+    /// 可以以后继承
+    /// </summary>
+    public enum GoalCommonElementTag
     {
         #region Common  0~199
 
@@ -124,7 +128,10 @@ namespace GOAP
         #endregion
     }
 
-    public enum ActionConfigElementTag
+    /// <summary>
+    /// 可以以后继承
+    /// </summary>
+    public enum ActionCommonElementTag
     {
         #region Common  0~199
 
@@ -137,6 +144,11 @@ namespace GOAP
         /// 权重
         /// </summary>
         Priority = 1,
+
+        /// <summary>
+        /// 是否可打断
+        /// </summary>
+        Interruptible = 2,
 
         #endregion
     }

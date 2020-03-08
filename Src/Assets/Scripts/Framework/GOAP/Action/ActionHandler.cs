@@ -19,13 +19,10 @@ namespace GOAP
 {
     public abstract class ActionHandler<TAction> : IActionHandler<TAction>
     {
-        /// <summary>
-        /// 需要手动填写配置
-        /// 需要与Action中配置数据相同
-        /// </summary>
-        public   TAction Label { get; private set; }
+        protected Action onFinishAction;
+        public TAction Label { get; private set; }
 
-        public IAction<TAction> Action;
+        public IAction<TAction> Action { get; private set; }
 
         /// <summary>
         /// 执行中的状态

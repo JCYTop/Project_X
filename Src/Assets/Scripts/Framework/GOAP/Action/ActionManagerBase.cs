@@ -15,6 +15,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace GOAP
 {
@@ -24,12 +25,17 @@ namespace GOAP
     /// <typeparam name="TAction"></typeparam>
     public abstract class ActionManagerBase<TAction, TGoal> : IActionManager<TAction>
     {
+        /// <summary>
+        /// 动作完成的回调
+        /// </summary>
+        protected Action<TAction> onActionComplete;
+
         protected IAgent<TAction, TGoal> agent;
 
         /// <summary>
         /// 动作字典
         /// </summary>
-        private Dictionary<TAction, IActionHandler<TAction>> actionHandlerDic;
+        protected SortedList<TAction, IActionHandler<TAction>> handlersSort;
 
         /// <summary>
         /// 能够打断计划的动作
@@ -38,22 +44,39 @@ namespace GOAP
 
         public bool IsPerformAction { get; set; }
         public Dictionary<TAction, HashSet<IActionHandler<TAction>>> EffectsAndActionMap { get; }
+        public List<IActionHandler<TAction>> InterruptibleHandlers => interruptibleHandlers;
 
         public ActionManagerBase(IAgent<TAction, TGoal> agent)
         {
             this.agent = agent;
-            actionHandlerDic = new Dictionary<TAction, IActionHandler<TAction>>();
+            handlersSort = new SortedList<TAction, IActionHandler<TAction>>();
             interruptibleHandlers = new List<IActionHandler<TAction>>();
             InitActionHandlers();
+            InitInterruptiblers();
 //            InitActionStateHandlers();
 //            InitEffectsAndActionMap();
-//            InitInterruptibleDic();
         }
 
         /// <summary>
         /// 初始化当前代理的动作处理器
         /// </summary>
         protected abstract void InitActionHandlers();
+
+        /// <summary>
+        /// 初始化能够打断计划的动作缓存
+        /// </summary>
+        private void InitInterruptiblers()
+        {
+            foreach (var handler in handlersSort.Values)
+            {
+                if (handler.Action.CanInterruptiblePlan)
+                {
+                    interruptibleHandlers.Add(handler);
+                }
+            }
+
+            interruptibleHandlers = interruptibleHandlers.OrderByDescending(u => u.Action.Priority).ToList();
+        }
 
         /// <summary>
         /// 初始化当前可叠加执行动作处理器
@@ -65,31 +88,11 @@ namespace GOAP
         /// </summary>
         protected abstract void InitEffectsAndActionMap();
 
-        /// <summary>
-        /// 初始化能够打断计划的动作缓存
-        /// </summary>
-        protected abstract void InitInterruptibleDic();
-
         public abstract TAction GetDefaultActionLabel();
-
-        public void AddActionHandler(TAction actionLabel)
-        {
-            AddHandler(actionLabel, actionHandlerDic);
-        }
-
-        private void AddHandler(TAction actionLabel, Dictionary<TAction, IActionHandler<TAction>> actionHandlers)
-        {
-//            agent
-        }
-
-        public void RemoveHandler(TAction actionLabel)
-        {
-            actionHandlerDic.Remove(actionLabel);
-        }
 
         public IActionHandler<TAction> GetHandler(TAction actionLabel)
         {
-            return actionHandlerDic.GetDictionaryValue(actionLabel);
+            return handlersSort.GetSortListValue(actionLabel);
         }
 
         public void ExcuteNewState(TAction actionLabel)

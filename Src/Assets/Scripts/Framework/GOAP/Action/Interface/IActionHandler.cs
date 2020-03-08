@@ -28,6 +28,9 @@ namespace GOAP
     /// </summary>
     public interface IActionHandler<TAction>
     {
+        TAction Label { get; }
+        IAction<TAction> Action { get; }
+
         /// <summary>
         /// 手动添加注册信息
         /// </summary>
@@ -99,5 +102,12 @@ namespace GOAP
         /// 退出
         /// </summary>
         EXIT
+    }
+
+    public static class IActionHandlerExtend
+    {
+        public static void GetActionHand<TAction>(this IActionHandler<TAction> handler)
+        {
+        }
     }
 }

@@ -21,6 +21,7 @@ namespace GOAP
     /// <summary>
     /// 静态类直接返回数据
     /// 手动注册ActionHandle类
+    /// 没办法只能手动注册！！！
     /// </summary>
     public class EnemyActionHandleMap : Singleton<EnemyActionHandleMap>, IActionHandleMap<ActionEnemyTag, IActionHandler<ActionEnemyTag>>
     {

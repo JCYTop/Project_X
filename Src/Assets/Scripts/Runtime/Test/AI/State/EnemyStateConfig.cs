@@ -20,16 +20,16 @@ namespace GOAP
     /// 基本上和AIStateBase对应
     /// 但是也可以进行 多对一 匹配
     /// </summary>
-    public class EnemyStateConfig : StateConfig<AIStateConfigElementTag>
+    public class EnemyStateConfig : StateConfig<AIStateCommonElementTag>
     {
         public EnemyStateTag Tag;
         public bool Normal;
 
-        public override StateConfig<AIStateConfigElementTag> Init()
+        public override StateConfig<AIStateCommonElementTag> Init()
         {
             var normal = new BoolAggregation(Normal);
-            stateConfigSet.Add(AIStateConfigElementTag.Normal, normal);
-            stateConfigSet.TryGetValue(AIStateConfigElementTag.Bleed, out var data);
+            stateConfigSet.Add(AIStateCommonElementTag.Normal, normal);
+            stateConfigSet.TryGetValue(AIStateCommonElementTag.Bleed, out var data);
             return this;
         }
     }

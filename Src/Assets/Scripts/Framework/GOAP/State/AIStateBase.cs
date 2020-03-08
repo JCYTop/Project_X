@@ -103,17 +103,17 @@ namespace GOAP
             throw new NotImplementedException();
         }
 
-        public IConfigElementBase GetSingleValue(AIStateConfigElementTag key)
+        public IConfigElementBase GetSingleValue(AIStateCommonElementTag key)
         {
             throw new NotImplementedException();
         }
 
-        public bool CompareKey(AIStateConfigElementTag key)
+        public bool CompareKey(AIStateCommonElementTag key)
         {
             throw new NotImplementedException();
         }
 
-        public ICollection<AIStateConfigElementTag> GetKeys()
+        public ICollection<AIStateCommonElementTag> GetKeys()
         {
             throw new NotImplementedException();
         }
@@ -128,17 +128,17 @@ namespace GOAP
             throw new NotImplementedException();
         }
 
-        public SortedList<AIStateConfigElementTag, Dictionary<IState, IConfigElementBase>> GetSameData(IState otherState)
+        public SortedList<AIStateCommonElementTag, Dictionary<IState, IConfigElementBase>> GetSameData(IState otherState)
         {
             throw new NotImplementedException();
         }
 
-        public ICollection<AIStateConfigElementTag> GetValueDifferences(IState otherState)
+        public ICollection<AIStateCommonElementTag> GetValueDifferences(IState otherState)
         {
             throw new NotImplementedException();
         }
 
-        public ICollection<AIStateConfigElementTag> GetNotExistKeys(IState otherState)
+        public ICollection<AIStateCommonElementTag> GetNotExistKeys(IState otherState)
         {
             throw new NotImplementedException();
         }

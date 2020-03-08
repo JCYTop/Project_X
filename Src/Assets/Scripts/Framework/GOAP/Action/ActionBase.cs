@@ -27,7 +27,7 @@ namespace GOAP
         public TAction Label { get; private set; }
         public int Priority { get; }
         public int Cost { get; }
-        public bool CanInterruptiblePlan { get; }
+        public abstract bool CanInterruptiblePlan { get; }
         public IState PreConditions { get; }
         public IState Effects { get; }
 

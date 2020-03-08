@@ -96,7 +96,7 @@ namespace GOAP
         /// </summary>
         /// <param name="key"></param>
         /// <returns></returns>
-        IConfigElementBase GetSingleValue(AIStateConfigElementTag key);
+        IConfigElementBase GetSingleValue(AIStateCommonElementTag key);
 
         /// <summary>
         /// 根据AIConfigElement类型
@@ -105,13 +105,13 @@ namespace GOAP
         /// </summary>
         /// <param name="key">AIConfigElement类型</param>
         /// <returns></returns>
-        bool CompareKey(AIStateConfigElementTag key);
+        bool CompareKey(AIStateCommonElementTag key);
 
         /// <summary>
         /// 获取当前所有配置标签AIConfigElement
         /// </summary>
         /// <returns></returns>
-        ICollection<AIStateConfigElementTag> GetKeys();
+        ICollection<AIStateCommonElementTag> GetKeys();
 
         /// <summary>
         /// 完全复制另一个状态的值
@@ -131,21 +131,21 @@ namespace GOAP
         /// 获取两个State
         /// 同时包含的键值及当前状态键值对应的数据
         /// </summary>
-        SortedList<AIStateConfigElementTag, Dictionary<IState, IConfigElementBase>> GetSameData(IState otherState);
+        SortedList<AIStateCommonElementTag, Dictionary<IState, IConfigElementBase>> GetSameData(IState otherState);
 
         /// <summary>
         /// 获取跟另外一个状态的差异键值集合
         /// </summary>
         /// <param name="otherState"></param>
         /// <returns></returns>
-        ICollection<AIStateConfigElementTag> GetValueDifferences(IState otherState);
+        ICollection<AIStateCommonElementTag> GetValueDifferences(IState otherState);
 
         /// <summary>
         /// 把所提供状态的所有键值进行筛选
         /// 当前状态不存在的就添加进
         /// 存在则忽略
         /// </summary>
-        ICollection<AIStateConfigElementTag> GetNotExistKeys(IState otherState);
+        ICollection<AIStateCommonElementTag> GetNotExistKeys(IState otherState);
     }
 
     /// <summary>

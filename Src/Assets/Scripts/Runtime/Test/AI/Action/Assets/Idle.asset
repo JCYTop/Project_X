@@ -10,10 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d6814cc2d49a49b99b8da1fdb42391d3, type: 3}
-  m_Name: Default
+  m_Name: Idle
   m_EditorClassIdentifier: 
   ActionUnityGroup:
     Animation: []
     AudioClip: []
     ParticleEffects: []
-  Priority: 23
+  Priority: 1
+  IsInterruptible: 1

@@ -8,7 +8,7 @@ namespace GOAP
 
         public override void AddFinishCallBack(Action onFinishAction)
         {
-            throw new NotImplementedException();
+            this.onFinishAction = onFinishAction;
         }
 
         public override void Enter()

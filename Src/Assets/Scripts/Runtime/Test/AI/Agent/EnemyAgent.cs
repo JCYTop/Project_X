@@ -17,13 +17,12 @@ namespace GOAP
 {
     public class EnemyAgent : AgentBase<ActionEnemyTag, GoalEnemyTag>
     {
-        private EnemyContext enemyContext;
+        private EnemyContext EnemyContext => Context.GetContext<EnemyContext>();
         public override bool IsAgentOver { get; set; } = false;
 
         public EnemyAgent(IContext context) : base(context)
         {
             //初始化到指定 --->>> Context 方便全局调用
-            enemyContext = Context.GetContext<EnemyContext>();
             AgentStateManager = new EnemyStateManager();
             AgentActionManager = new EnemyActionManager(this);
             AgentGoalManager = new EnemyGoalManager(this);
@@ -36,7 +35,7 @@ namespace GOAP
 
         protected override void TargetEvent(string eventName)
         {
-            enemyContext.StateFsm.Fsm.Event(eventName);
+            EnemyContext.StateFsm.Fsm.Event(eventName);
         }
     }
 }

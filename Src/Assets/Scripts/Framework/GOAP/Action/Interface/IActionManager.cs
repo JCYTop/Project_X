@@ -38,17 +38,6 @@ namespace GOAP
         TAction GetDefaultActionLabel();
 
         /// <summary>
-        /// 添加处理类对象
-        /// </summary>
-        void AddActionHandler(TAction actionLabel);
-
-        /// <summary>
-        /// 移除处理类对象
-        /// </summary>
-        /// <param name="handler"></param>
-        void RemoveHandler(TAction actionLabel);
-
-        /// <summary>
         /// 获取处理类对象
         /// </summary>
         /// <param name="handler"></param>
