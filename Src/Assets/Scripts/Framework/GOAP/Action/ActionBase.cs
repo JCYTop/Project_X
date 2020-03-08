@@ -13,8 +13,12 @@
  ----------------------------------
 */
 
+using System;
+
 namespace GOAP
 {
+    //TODO 添加一个通用提取API
+
     /// <summary>
     /// 每一个具体的Action
     /// 通过读取具体的配置文件信息生成一个具体的类
@@ -24,7 +28,6 @@ namespace GOAP
     public abstract class ActionBase<TAction, TConfigElementTag> : IAction<TAction>
     {
         public ActionConfigUnit<TConfigElementTag> ActionGroup { get; private set; }
-        public TAction Label { get; private set; }
         public IState PreConditions { get; }
         public IState Effects { get; }
 
@@ -58,6 +61,8 @@ namespace GOAP
             }
         }
 
+        public TAction Label { get; private set; }
+
         public ActionBase(TAction tag, ActionConfigUnit<TConfigElementTag> actionGroup)
         {
             this.Label = tag;
@@ -72,6 +77,19 @@ namespace GOAP
         public virtual bool VerifyPreconditions()
         {
             throw new System.NotImplementedException();
+        }
+
+        public T GetActionData<T>(string tag) where T : IConfigElement
+        {
+            try
+            {
+                return (T) ActionGroup.ActionConfigUnitSet.GetSortListValue(tag);
+            }
+            catch (Exception e)
+            {
+                LogTool.LogException(e);
+                throw;
+            }
         }
     }
 }
