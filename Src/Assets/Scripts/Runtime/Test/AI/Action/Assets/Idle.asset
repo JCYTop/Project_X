@@ -16,5 +16,5 @@ MonoBehaviour:
     Animation: []
     AudioClip: []
     ParticleEffects: []
-  Priority: 1
-  IsInterruptible: 0
+  Priority: 100
+  IsInterruptible: 1

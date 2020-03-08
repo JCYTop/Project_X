@@ -150,6 +150,11 @@ namespace GOAP
         /// </summary>
         Interruptible = 2,
 
+        /// <summary>
+        /// 动作花费
+        /// </summary>
+        Cost = 3,
+
         #endregion
     }
 }

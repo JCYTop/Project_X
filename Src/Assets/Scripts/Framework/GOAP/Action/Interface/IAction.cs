@@ -37,7 +37,7 @@ namespace GOAP
         int Priority { get; }
 
         /// <summary>
-        /// 花费使用，
+        /// 动作花费
         /// </summary>
         int Cost { get; }
 

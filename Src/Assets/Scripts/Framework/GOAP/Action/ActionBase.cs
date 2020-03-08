@@ -28,7 +28,15 @@ namespace GOAP
         public IState PreConditions { get; }
         public IState Effects { get; }
 
-        public int Cost { get; }
+        public int Cost
+        {
+            get
+            {
+                var interruptible = ActionGroup.ActionConfigUnitSet.GetSortListValue(ActionCommonElementTag.Cost.ToString());
+                var intValue = interruptible.CastStateConfigEle<ValueAggregation>();
+                return intValue.Data;
+            }
+        }
 
         public int Priority
         {
