@@ -11,12 +11,12 @@ namespace GOAP
         private void Start()
         {
             #region State使用
-
-            stateConfigSet = new SortedList<AIStateElementTag, IConfigElement>();
-            var Bleeds = new ValueAggregation(Bleed);
-            stateConfigSet.Add(AIStateElementTag.Bleed, Bleeds);
-            stateConfigSet.TryGetValue(AIStateElementTag.Bleed, out var data);
-            var bleed = data.CastStateConfigEle<ValueAggregation>();
+//
+//            stateConfigSet = new SortedList<AIStateElementTag, IConfigElement>();
+//            var Bleeds = new ValueAggregation(Bleed);
+//            stateConfigSet.Add(AIStateElementTag.Bleed, Bleeds);
+//            stateConfigSet.TryGetValue(AIStateElementTag.Bleed, out var data);
+//            var bleed = data.CastStateConfigEle<ValueAggregation>();
 
             #endregion
 

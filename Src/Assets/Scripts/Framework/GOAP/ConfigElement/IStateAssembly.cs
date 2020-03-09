@@ -15,7 +15,17 @@
 
 namespace GOAP
 {
-    public interface IStateAssembly
+    /// <summary>
+    /// 存在进行判断
+    /// 不存在忽略判断
+    /// 应该专门写一个外部环境类保存时事计算参数 && 保存基础数值
+    /// </summary>
+    /// <typeparam name="TElementTag"></typeparam>
+    public interface IStateAssembly<TElementTag>
+    {
+    }
+
+    public enum CompareTag
     {
     }
 }

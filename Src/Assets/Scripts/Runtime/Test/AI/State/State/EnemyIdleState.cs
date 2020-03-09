@@ -1,5 +1,4 @@
 ﻿using HutongGames.PlayMaker;
-using UnityEngine;
 
 namespace GOAP
 {
@@ -10,17 +9,16 @@ namespace GOAP
     [ActionCategory("AI.Enemy")]
     public class EnemyIdleState : AIStateBase<EnemyContext, EnemyStateConfig>
     {
-        private EnemyStateManager enemyStateManager;
+        private EnemyStateManager EnemyStateManager => GetContext.Agent.AgentStateManager.GetStateMgr<EnemyStateManager>();
 
         public override void Init()
         {
-            enemyStateManager = GetContext.Agent.AgentStateManager.GetStateMgr<EnemyStateManager>();
-            enemyStateManager.StateSortList.AddSortListElement(StateConfig.Tag, this);
+            EnemyStateManager.StateSortList.AddSortListElement(StateConfig.Tag, this);
         }
 
         public override void Enter()
         {
-            enemyStateManager.SetCurrActivity(StateConfig.Tag);
+            EnemyStateManager.SetCurrActivity(StateConfig.Tag);
         }
 
         public override void Execute()

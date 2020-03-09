@@ -79,17 +79,23 @@ namespace GOAP
         Default = 0,
 
         /// <summary>
-        /// 血量标记元素
+        /// 是否存在目标
         /// </summary>
-        Bleed = 1,
+        Is_Target = 1,
 
         /// <summary>
-        /// 是否正常
-        /// 测试类 要删除
+        /// 是否离目标过远
         /// </summary>
-        Normal = Default,
+        Is_Far_Target = 2,
 
         #endregion
+    }
+
+    public enum EnemyStateElementTag
+    {
+        Default = AIStateElementTag.Default,
+        Is_Target = AIStateElementTag.Is_Target,
+        Is_Far_Target = AIStateElementTag.Is_Far_Target,
     }
 
     #endregion

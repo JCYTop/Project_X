@@ -4,13 +4,13 @@ using UnityEngine.Serialization;
 
 namespace GOAP
 {
-    public class EnemyAllActionConfig : ActionConfig<ActionEnemyTag, ActionElementTag>
+    public class EnemyAllActionConfig : ActionConfig<ActionEnemyTag, EnemyActionElementTag>
     {
         public List<EnemyAllActionUnit> allAction = new List<EnemyAllActionUnit>();
 
-        public override SortedList<ActionEnemyTag, ActionConfigUnit<ActionElementTag>> Init()
+        public override SortedList<ActionEnemyTag, ActionConfigUnit<EnemyActionElementTag>> Init()
         {
-            var actionSort = new SortedList<ActionEnemyTag, ActionConfigUnit<ActionElementTag>>();
+            var actionSort = new SortedList<ActionEnemyTag, ActionConfigUnit<EnemyActionElementTag>>();
             allAction.ForEach((action) => { actionSort.Add(action.commonTag, action.Unit.Init()); });
             LogTool.Log($" --- {this.name} , Action数据已经加载完成 --->>> 共计${allAction.Count}个", LogEnum.AssetLog);
             return actionSort;
