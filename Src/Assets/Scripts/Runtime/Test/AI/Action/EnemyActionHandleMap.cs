@@ -16,7 +16,7 @@
 using System.Collections.Generic;
 using Framework.Singleton;
 
-namespace GOAP
+namespace Framework.GOAP
 {
     /// <summary>
     /// 静态类直接返回数据

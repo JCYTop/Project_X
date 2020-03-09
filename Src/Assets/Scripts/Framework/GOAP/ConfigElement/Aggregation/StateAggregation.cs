@@ -13,7 +13,7 @@
  ----------------------------------
 */
 
-namespace GOAP
+namespace Framework.GOAP
 {
     public class StateAggregation<EnemyStateElementTag> : ConfigElementBase<IStateAssembly<EnemyStateElementTag>>
     {

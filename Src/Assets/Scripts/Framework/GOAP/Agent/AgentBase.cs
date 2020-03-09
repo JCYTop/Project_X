@@ -16,7 +16,7 @@
 using System;
 using JetBrains.Annotations;
 
-namespace GOAP
+namespace Framework.GOAP
 {
     /// <summary>
     /// 代理基类

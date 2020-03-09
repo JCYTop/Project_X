@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace GOAP
+namespace Framework.GOAP
 {
     [Serializable]
     public class EnemyState : IStateAssembly<EnemyStateElementTag>

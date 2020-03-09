@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine.Serialization;
 
-namespace GOAP
+namespace Framework.GOAP
 {
     public class EnemyAllActionConfig : ActionConfig<ActionEnemyTag, EnemyActionElementTag>
     {

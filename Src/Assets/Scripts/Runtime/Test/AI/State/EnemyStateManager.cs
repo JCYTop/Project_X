@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace GOAP
+namespace Framework.GOAP
 {
     public class EnemyStateManager : StateManagerBase<EnemyStateTag, AIStateBase<EnemyContext, EnemyStateConfig>>
     {

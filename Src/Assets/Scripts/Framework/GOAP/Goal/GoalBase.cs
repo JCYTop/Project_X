@@ -15,7 +15,7 @@
 
 using System;
 
-namespace GOAP
+namespace Framework.GOAP
 {
     /// <summary>
     /// 加载配置文件

@@ -17,13 +17,13 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace GOAP
+namespace Framework.GOAP
 {
     /// <summary>
     /// AI参数配置接口
     /// </summary>
     [Serializable]
-    public class ParameterConfig : ScriptableObject
+    public class ParameterConfig : UnityEngine.ScriptableObject
     {
         public ParameterUnit[] Array;
     }

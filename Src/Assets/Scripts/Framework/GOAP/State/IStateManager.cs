@@ -15,7 +15,7 @@
 
 using System;
 
-namespace GOAP
+namespace Framework.GOAP
 {
     /// <summary>
     /// 主要用于Agent中存储信息使用

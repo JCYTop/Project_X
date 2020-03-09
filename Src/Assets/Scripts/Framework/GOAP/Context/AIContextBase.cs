@@ -16,7 +16,7 @@
 using Framework.EventDispatcher;
 using UnityEngine;
 
-namespace GOAP
+namespace Framework.GOAP
 {
     /// <summary>
     /// 启动每一个单独的GOAP
@@ -30,6 +30,7 @@ namespace GOAP
         private PlayMakerFSM stateFsm;
         private AIParameter parameter;
         public PlayMakerFSM StateFsm => stateFsm;
+        public AIParameter Parameter => parameter;
 
         private void Awake()
         {

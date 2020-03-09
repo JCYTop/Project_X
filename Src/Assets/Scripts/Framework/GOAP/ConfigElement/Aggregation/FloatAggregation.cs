@@ -15,7 +15,7 @@
 
 using System;
 
-namespace GOAP
+namespace Framework.GOAP
 {
     public class FloatAggregation : ConfigElementBase<float >, IComparable<float>
     {

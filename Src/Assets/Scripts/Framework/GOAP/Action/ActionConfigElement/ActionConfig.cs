@@ -17,7 +17,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace GOAP
+namespace Framework.GOAP
 {
     /// <summary>
     /// 配置文件基类
@@ -26,7 +26,7 @@ namespace GOAP
     /// <typeparam name="T1">ActionTag 标签</typeparam>
     /// <typeparam name="T2">ActionConfigElementTag 标签</typeparam>
     [Serializable]
-    public abstract class ActionConfig<T1, T2> : ScriptableObject
+    public abstract class ActionConfig<T1, T2> : UnityEngine.ScriptableObject
     {
         protected SortedList<T1, ActionConfigUnit<T2>> actionConfigSet = new SortedList<T1, ActionConfigUnit<T2>>();
         private int count = 0;

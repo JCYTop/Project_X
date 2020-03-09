@@ -17,14 +17,14 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace GOAP
+namespace Framework.GOAP
 {
     /// <summary>
     /// 配置文件元素基类
     /// </summary>
     /// <typeparam name="T">ActionConfigElementTag 标签</typeparam>
     [Serializable]
-    public abstract class ActionConfigUnit<T> : ScriptableObject
+    public abstract class ActionConfigUnit<T> : UnityEngine.ScriptableObject
     {
         public ActionUnityGroup ActionUnityGroup;
         public SortedList<T, IConfigElement> ActionConfigUnitSet = new SortedList<T, IConfigElement>();

@@ -15,7 +15,7 @@
 
 using System;
 
-namespace GOAP
+namespace Framework.GOAP
 {
     /// <summary>
     /// GOAL接口

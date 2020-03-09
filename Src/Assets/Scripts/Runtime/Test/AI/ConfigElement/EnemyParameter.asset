@@ -17,3 +17,5 @@ MonoBehaviour:
     Value: 100
   - Tag: 2
     Value: 50
+  - Tag: 3
+    Value: 0

@@ -15,7 +15,7 @@
 
 using System;
 
-namespace GOAP
+namespace Framework.GOAP
 {
     //TODO 添加一个通用提取API
 

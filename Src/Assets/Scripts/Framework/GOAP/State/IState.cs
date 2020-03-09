@@ -16,7 +16,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace GOAP
+namespace Framework.GOAP
 {
     /// <summary>
     /// 存储每一个状态

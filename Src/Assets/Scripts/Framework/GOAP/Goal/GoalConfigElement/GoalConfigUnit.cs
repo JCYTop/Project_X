@@ -17,14 +17,14 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace GOAP
+namespace Framework.GOAP
 {
     /// <summary>
     /// 配置文件元素基类
     /// </summary>
     /// <typeparam name="T">GoalConfigElementTag标签使用</typeparam>
     [Serializable]
-    public abstract class GoalConfigUnit<T> : ScriptableObject
+    public abstract class GoalConfigUnit<T> : UnityEngine.ScriptableObject
     {
         protected SortedList<T, IConfigElement> goalConfigUnitSet = new SortedList<T, IConfigElement>();
 

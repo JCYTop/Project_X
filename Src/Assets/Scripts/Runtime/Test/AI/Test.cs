@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace GOAP
+namespace Framework.GOAP
 {
     public class Test : MonoBehaviour
     {

@@ -15,7 +15,7 @@
 
 using System;
 
-namespace GOAP
+namespace Framework.GOAP
 {
     public abstract class ActionHandler<TAction> : IActionHandler<TAction>
     {

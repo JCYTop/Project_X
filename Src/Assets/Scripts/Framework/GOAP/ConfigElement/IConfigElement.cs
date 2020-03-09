@@ -15,7 +15,7 @@
 
 using System;
 
-namespace GOAP
+namespace Framework.GOAP
 {
     /// <summary>
     /// 序列化文件配置基础接口

@@ -1,4 +1,4 @@
-namespace GOAP
+namespace Framework.GOAP
 {
     /// <summary>
     /// 用在具体的生成类

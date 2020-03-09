@@ -15,7 +15,7 @@
 
 using System.Collections.Generic;
 
-namespace GOAP
+namespace Framework.GOAP
 {
     /// <summary>
     /// Dictionary 聚合类

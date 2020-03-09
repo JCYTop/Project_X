@@ -15,7 +15,7 @@
 
 using System.Collections.Generic;
 
-namespace GOAP
+namespace Framework.GOAP
 {
     public abstract class StateManagerBase<TStateTag, TStateBase> : IStateManager
     {

@@ -34,7 +34,7 @@ MonoBehaviour:
       transitions: []
       actionData:
         actionNames:
-        - GOAP.FSMGetEnemyContext
+        - Framework.GOAP.FSMGetEnemyContext
         customNames:
         - 
         actionEnabled: 01
@@ -46,7 +46,7 @@ MonoBehaviour:
         fsmOwnerDefaultParams:
         - ownerOption: 0
           gameObject:
-            useVariable: 0
+            useVariable: 1
             name: 
             tooltip: 
             showInInspector: 0
@@ -65,7 +65,7 @@ MonoBehaviour:
           tooltip: "\u73AF\u5883\u914D\u7F6E"
           showInInspector: 0
           networkSync: 0
-          typeName: GOAP.AIContextBase`1
+          typeName: UnityEngine.Object
           value: {fileID: 0}
         fsmVarParams: []
         fsmArrayParams: []
@@ -105,13 +105,13 @@ MonoBehaviour:
       transitions: []
       actionData:
         actionNames:
-        - GOAP.EnemyIdleState
+        - Framework.GOAP.EnemyIdleState
         customNames:
         - 
         actionEnabled: 01
         actionIsOpen: 01
         actionStartIndex: 00000000
-        actionHashCodes: 45682c00
+        actionHashCodes: 6cc1fc01
         unityObjectParams:
         - {fileID: 11400000, guid: b00340b7b5d14cdcac4bcc47f89d668f, type: 2}
         fsmGameObjectParams: []
@@ -129,7 +129,7 @@ MonoBehaviour:
           tooltip: "\u73AF\u5883\u914D\u7F6E"
           showInInspector: 0
           networkSync: 0
-          typeName: GOAP.AIContextBase`1
+          typeName: UnityEngine.Object
           value: {fileID: 0}
         fsmVarParams: []
         fsmArrayParams: []
@@ -169,13 +169,13 @@ MonoBehaviour:
       transitions: []
       actionData:
         actionNames:
-        - GOAP.EnemyWalkState
+        - Framework.GOAP.EnemyWalkState
         customNames:
         - 
         actionEnabled: 01
         actionIsOpen: 01
         actionStartIndex: 00000000
-        actionHashCodes: 45682c00
+        actionHashCodes: 6cc1fc01
         unityObjectParams:
         - {fileID: 11400000, guid: 6c6a1e6262ade6243aa93d9b368cbfc8, type: 2}
         fsmGameObjectParams: []
@@ -193,7 +193,7 @@ MonoBehaviour:
           tooltip: "\u73AF\u5883\u914D\u7F6E"
           showInInspector: 0
           networkSync: 0
-          typeName: GOAP.AIContextBase`1
+          typeName: UnityEngine.Object
           value: {fileID: 0}
         fsmVarParams: []
         fsmArrayParams: []

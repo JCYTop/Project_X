@@ -1,6 +1,6 @@
 ﻿using HutongGames.PlayMaker;
 
-namespace GOAP
+namespace Framework.GOAP
 {
     /// <summary>
     /// 测试类

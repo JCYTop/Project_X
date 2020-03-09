@@ -17,13 +17,13 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace GOAP
+namespace Framework.GOAP
 {
     /// <summary>
     /// 配置文件基类
     /// </summary>
     [Serializable]
-    public abstract class StateConfig<TElementTag> : ScriptableObject
+    public abstract class StateConfig<TElementTag> : UnityEngine.ScriptableObject
     {
         protected SortedList<TElementTag, IConfigElement> stateConfigSet = new SortedList<TElementTag, IConfigElement>();
 

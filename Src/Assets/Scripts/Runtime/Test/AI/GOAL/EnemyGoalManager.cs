@@ -1,4 +1,4 @@
-namespace GOAP
+namespace Framework.GOAP
 {
     public class EnemyGoalManager : GoalManagerBase<ActionEnemyTag, GoalEnemyTag>
     {

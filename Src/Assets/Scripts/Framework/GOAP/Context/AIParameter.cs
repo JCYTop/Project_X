@@ -19,7 +19,7 @@ using Framework.EventDispatcher;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
-namespace GOAP
+namespace Framework.GOAP
 {
     /// <summary>
     /// 参数类

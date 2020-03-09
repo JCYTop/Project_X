@@ -17,7 +17,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine.Serialization;
 
-namespace GOAP
+namespace Framework.GOAP
 {
     /// <summary>
     /// 敌人的所有的目标

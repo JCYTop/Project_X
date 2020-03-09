@@ -1,6 +1,6 @@
 using System;
 
-namespace GOAP
+namespace Framework.GOAP
 {
     public class EmenyDefaultActionHandler : ActionHandler<ActionEnemyTag>
     {

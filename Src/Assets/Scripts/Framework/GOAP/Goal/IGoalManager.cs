@@ -13,7 +13,7 @@
  ----------------------------------
 */
 
-namespace GOAP
+namespace Framework.GOAP
 {
     /// <summary>
     /// IGoalManager接口

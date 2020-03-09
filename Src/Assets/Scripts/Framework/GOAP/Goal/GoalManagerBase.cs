@@ -15,7 +15,7 @@
 
 using System.Collections.Generic;
 
-namespace GOAP
+namespace Framework.GOAP
 {
     public abstract class GoalManagerBase<TAction, TGoal> : IGoalManager<TGoal>
     {

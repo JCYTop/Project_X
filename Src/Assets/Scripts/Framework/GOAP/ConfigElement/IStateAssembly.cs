@@ -13,7 +13,7 @@
  ----------------------------------
 */
 
-namespace GOAP
+namespace Framework.GOAP
 {
     /// <summary>
     /// 存在进行判断

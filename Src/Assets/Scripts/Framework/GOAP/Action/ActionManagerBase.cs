@@ -17,7 +17,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace GOAP
+namespace Framework.GOAP
 {
     /// <summary>
     /// Action管理类

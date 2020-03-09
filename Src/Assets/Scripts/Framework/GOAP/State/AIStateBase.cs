@@ -18,7 +18,7 @@ using System.Collections.Generic;
 using HutongGames.PlayMaker;
 using JetBrains.Annotations;
 
-namespace GOAP
+namespace Framework.GOAP
 {
     /// <summary>
     /// FSM中State的基类

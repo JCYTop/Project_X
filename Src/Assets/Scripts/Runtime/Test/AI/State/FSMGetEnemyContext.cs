@@ -1,6 +1,6 @@
 ﻿using HutongGames.PlayMaker;
 
-namespace GOAP
+namespace Framework.GOAP
 {
     [ActionCategory("AI.GetContext")] 
     public class FSMGetEnemyContext : FSMAIGetContext<EnemyContext>

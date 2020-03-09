@@ -16,7 +16,7 @@
 using System;
 using UnityEngine;
 
-namespace GOAP
+namespace Framework.GOAP
 {
     [Serializable]
     public class ParameterUnit
@@ -45,11 +45,16 @@ namespace GOAP
         /// <summary>
         /// 血量
         /// </summary>
-        Bleed,
+        Bleed_Value,
 
         /// <summary>
         /// 能量
         /// </summary>
-        Enemgy,
+        Energy_Value,
+
+        /// <summary>
+        /// 愤怒值
+        /// </summary>
+        Anger_Value
     }
 }

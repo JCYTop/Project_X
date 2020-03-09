@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace GOAP
+namespace Framework.GOAP
 {
     public class EnemyActionConfigUnit : ActionConfigUnit<EnemyActionElementTag>
     {

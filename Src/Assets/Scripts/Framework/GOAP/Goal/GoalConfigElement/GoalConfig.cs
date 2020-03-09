@@ -17,7 +17,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace GOAP
+namespace Framework.GOAP
 {
     /// <summary>
     /// 配置文件基类
@@ -26,7 +26,7 @@ namespace GOAP
     /// <typeparam name="T1">GoalTag标签使用</typeparam>
     /// <typeparam name="T2">GoalConfigElementTag标签使用</typeparam>
     [Serializable]
-    public abstract class GoalConfig<T1, T2> : ScriptableObject
+    public abstract class GoalConfig<T1, T2> : UnityEngine.ScriptableObject
     {
         protected SortedList<T1, GoalConfigUnit<T2>> goalConfigSet = new SortedList<T1, GoalConfigUnit<T2>>();
 
