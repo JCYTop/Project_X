@@ -26,30 +26,5 @@ namespace GOAP
     public class ParameterConfig : ScriptableObject
     {
         public ParameterUnit[] Array;
-      }
-
-    [Serializable]
-    public class ParameterUnit
-    {
-        [Header("标签")] public ParameterTag Tag;
-        [Header("值")] public int Value;
-    }
-
-    public enum ParameterTag
-    {
-        /// <summary>
-        /// 默认
-        /// </summary>
-        Default,
-
-        /// <summary>
-        /// 血量
-        /// </summary>
-        Bleed,
-
-        /// <summary>
-        /// 能量
-        /// </summary>
-        Enemgy,
     }
 }

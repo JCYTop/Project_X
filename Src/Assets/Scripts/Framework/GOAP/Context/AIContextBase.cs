@@ -27,7 +27,9 @@ namespace GOAP
     [RequireComponent(typeof(AIParameter))]
     public abstract class AIContextBase : MonoEventEmitter, IContext
     {
-        public abstract PlayMakerFSM StateFsm { get; }
+        private PlayMakerFSM stateFsm;
+        private AIParameter parameter;
+        public PlayMakerFSM StateFsm => stateFsm;
 
         private void Awake()
         {
@@ -39,7 +41,11 @@ namespace GOAP
             StartFSM();
         }
 
-        public abstract void Init();
+        public virtual void Init()
+        {
+            stateFsm = this.GetComponent<PlayMakerFSM>();
+            parameter = this.GetComponent<AIParameter>();
+        }
 
         /// <summary>
         /// 开始正式运行状态机

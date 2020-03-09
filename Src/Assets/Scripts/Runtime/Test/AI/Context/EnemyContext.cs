@@ -7,11 +7,10 @@ namespace GOAP
         #region variable
 
         private IAgent<ActionEnemyTag, GoalEnemyTag> agent;
-        private PlayMakerFSM stateFsm;
+
         [SerializeField] private EnemyAllActionConfig actionConfig;
         [SerializeField] private EnemyAllGoal goalConfig;
         public IAgent<ActionEnemyTag, GoalEnemyTag> Agent => agent;
-        public override PlayMakerFSM StateFsm => stateFsm;
         public EnemyAllActionConfig ActionConfig => actionConfig;
         public EnemyAllGoal GoalConfig => goalConfig;
 
@@ -19,7 +18,7 @@ namespace GOAP
 
         public override void Init()
         {
-            stateFsm = this.GetComponent<PlayMakerFSM>();
+            base.Init();
             agent = new EnemyAgent(this);
         }
 

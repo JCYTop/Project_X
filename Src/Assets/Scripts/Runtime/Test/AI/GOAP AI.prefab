@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3686397335937195637}
   - component: {fileID: 3686397335937195643}
-  - component: {fileID: 3686397335937195642}
   - component: {fileID: 54566932999146474}
+  - component: {fileID: 3686397335937195642}
   m_Layer: 0
   m_Name: GOAP AI
   m_TagString: Untagged
@@ -188,6 +188,19 @@ MonoBehaviour:
     handleAnimatorIK: 0
   fsmTemplate: {fileID: 11400000, guid: 9fdd605cd604c9949ba5142f9ea67a5b, type: 2}
   eventHandlerComponentsAdded: 1
+--- !u!114 &54566932999146474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3686397335937195636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40f118732bbe7f947818e23fd889ef02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseParameter: {fileID: 11400000, guid: 7348ab1304d1a0346a40d8ca43e526df, type: 2}
 --- !u!114 &3686397335937195642
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -202,18 +215,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actionConfig: {fileID: 11400000, guid: 44b108e27885df8449c915111a0533ed, type: 2}
   goalConfig: {fileID: 11400000, guid: ce58d8bf36d06764b9be6b58a8617918, type: 2}
---- !u!114 &54566932999146474
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3686397335937195636}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 40f118732bbe7f947818e23fd889ef02, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  baseParameter: {fileID: 11400000, guid: 7348ab1304d1a0346a40d8ca43e526df, type: 2}
-  Bleed: 0
-  Energy: 0

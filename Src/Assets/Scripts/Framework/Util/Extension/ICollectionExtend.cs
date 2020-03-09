@@ -99,10 +99,50 @@ public static class ICollectionExtend
         else
         {
             LogTool.Log($"出现重复！！！", LogEnum.NormalLog);
-            tmpvalue = value;
         }
 
         return sortList;
+    }
+
+    /// <summary>
+    /// 移除相对应的Key
+    /// </summary>
+    /// <param name="sortList"></param>
+    /// <param name="key"></param>
+    /// <typeparam name="Tkey"></typeparam>
+    /// <typeparam name="TValue"></typeparam>
+    /// <returns></returns>
+    public static bool DeleteSortListElement<Tkey, TValue>(this SortedList<Tkey, TValue> sortList, Tkey key)
+    {
+        if (sortList.ContainsKey(key))
+        {
+            sortList.Remove(key);
+            return true;
+        }
+        else
+        {
+            LogTool.LogError("不含有相对应的Key");
+            return false;
+        }
+    }
+
+    /// <summary>
+    /// 设置队列中一个元素的数值
+    /// </summary>
+    /// <param name="sortList"></param>
+    /// <param name="key"></param>
+    /// <param name="value"></param>
+    /// <typeparam name="Tkey"></typeparam>
+    /// <typeparam name="TValue"></typeparam>
+    public static void SetSortListElementValue<Tkey, TValue>(this SortedList<Tkey, TValue> sortList, Tkey key, TValue value)
+    {
+        sortList.TryGetValue(key, out TValue tmpvalue);
+        if (tmpvalue == null)
+        {
+            LogTool.Log($"不含有对应Key！！！", LogEnum.NormalLog);
+        }
+        else
+            tmpvalue = value;
     }
 
     #endregion
