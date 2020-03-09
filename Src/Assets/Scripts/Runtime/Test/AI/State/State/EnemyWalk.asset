@@ -13,4 +13,8 @@ MonoBehaviour:
   m_Name: EnemyWalk
   m_EditorClassIdentifier: 
   Tag: 2
-  Normal: 0
+  StateElement:
+  - ElementTag: 1
+    IsRight: 1
+  - ElementTag: 2
+    IsRight: 1

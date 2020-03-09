@@ -24,6 +24,7 @@ namespace GOAP
     /// 场景中物体调整参数类
     /// </summary>
     [RequireComponent(typeof(PlayMakerFSM))]
+    [RequireComponent(typeof(AIParameter))]
     public abstract class AIContextBase : MonoEventEmitter, IContext
     {
         public abstract PlayMakerFSM StateFsm { get; }

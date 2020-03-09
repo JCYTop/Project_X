@@ -7,5 +7,6 @@ namespace GOAP
     public class EnemyState : IStateAssembly<EnemyStateElementTag>
     {
         [Header("具体元素标签")] public EnemyStateElementTag ElementTag;
+        [Header("标志位")] public bool IsRight = true;
     }
 }

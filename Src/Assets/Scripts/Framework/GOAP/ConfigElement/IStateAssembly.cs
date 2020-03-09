@@ -24,8 +24,4 @@ namespace GOAP
     public interface IStateAssembly<TElementTag>
     {
     }
-
-    public enum CompareTag
-    {
-    }
 }

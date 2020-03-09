@@ -18,3 +18,4 @@ MonoBehaviour:
     ParticleEffects: []
   Priority: 0
   IsInterruptible: 1
+  Cost: 0

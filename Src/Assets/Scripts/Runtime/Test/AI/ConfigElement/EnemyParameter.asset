@@ -9,13 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d6814cc2d49a49b99b8da1fdb42391d3, type: 3}
-  m_Name: Idle
+  m_Script: {fileID: 11500000, guid: aa60fb84adbeb904fad66514bcc40b08, type: 3}
+  m_Name: EnemyParameter
   m_EditorClassIdentifier: 
-  ActionUnityGroup:
-    Animation: []
-    AudioClip: []
-    ParticleEffects: []
-  Priority: 100
-  IsInterruptible: 1
-  Cost: 0
+  Array:
+  - Tag: 1
+    Value: 100
+  - Tag: 2
+    Value: 50

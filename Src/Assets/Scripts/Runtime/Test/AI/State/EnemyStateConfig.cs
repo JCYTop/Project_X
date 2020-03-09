@@ -14,6 +14,7 @@ namespace GOAP
 
         public override StateConfig<EnemyStateElementTag> Init()
         {
+            //TODO 返回掉必须信息
             return this;
         }
     }

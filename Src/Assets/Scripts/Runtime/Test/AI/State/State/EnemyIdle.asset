@@ -13,4 +13,6 @@ MonoBehaviour:
   m_Name: EnemyIdle
   m_EditorClassIdentifier: 
   Tag: 1
-  Normal: 1
+  StateElement:
+  - ElementTag: 1
+    IsRight: 0
