@@ -60,6 +60,8 @@ namespace GOAP
         }
     }
 
+    #region State标签
+
     /// <summary>
     /// IConfigElementBase标签
     /// IConfigElementBase配置文件标签
@@ -67,7 +69,7 @@ namespace GOAP
     /// 方便通过标签快速查找工具类
     /// 可以以后继承
     /// </summary>
-    public enum AIStateCommonElementTag
+    public enum AIStateElementTag
     {
         #region Common  0~199
 
@@ -90,10 +92,14 @@ namespace GOAP
         #endregion
     }
 
+    #endregion
+
+    #region GOAL标签
+
     /// <summary>
     /// 可以以后继承
     /// </summary>
-    public enum GoalCommonElementTag
+    public enum GoalElementTag
     {
         #region Common  0~199
 
@@ -120,10 +126,11 @@ namespace GOAP
         #endregion
     }
 
-    /// <summary>
-    /// 可以以后继承
-    /// </summary>
-    public enum ActionCommonElementTag
+    #endregion
+
+    #region Action标签
+
+    public enum ActionElementTag
     {
         #region Common  0~199
 
@@ -149,4 +156,14 @@ namespace GOAP
 
         #endregion
     }
+
+    public enum EnemyActionElementTag
+    {
+        Default = ActionElementTag.Default,
+        Priority = ActionElementTag.Priority,
+        Interruptible = ActionElementTag.Interruptible,
+        Cost = ActionElementTag.Cost,
+    }
+
+    #endregion
 }

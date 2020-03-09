@@ -96,7 +96,7 @@ namespace GOAP
         /// </summary>
         /// <param name="key"></param>
         /// <returns></returns>
-        IConfigElement GetSingleValue(AIStateCommonElementTag key);
+        IConfigElement GetSingleValue(AIStateElementTag key);
 
         /// <summary>
         /// 根据AIConfigElement类型
@@ -105,13 +105,13 @@ namespace GOAP
         /// </summary>
         /// <param name="key">AIConfigElement类型</param>
         /// <returns></returns>
-        bool CompareKey(AIStateCommonElementTag key);
+        bool CompareKey(AIStateElementTag key);
 
         /// <summary>
         /// 获取当前所有配置标签AIConfigElement
         /// </summary>
         /// <returns></returns>
-        ICollection<AIStateCommonElementTag> GetKeys();
+        ICollection<AIStateElementTag> GetKeys();
 
         /// <summary>
         /// 完全复制另一个状态的值
@@ -131,21 +131,21 @@ namespace GOAP
         /// 获取两个State
         /// 同时包含的键值及当前状态键值对应的数据
         /// </summary>
-        SortedList<AIStateCommonElementTag, Dictionary<IState, IConfigElement>> GetSameData(IState otherState);
+        SortedList<AIStateElementTag, Dictionary<IState, IConfigElement>> GetSameData(IState otherState);
 
         /// <summary>
         /// 获取跟另外一个状态的差异键值集合
         /// </summary>
         /// <param name="otherState"></param>
         /// <returns></returns>
-        ICollection<AIStateCommonElementTag> GetValueDifferences(IState otherState);
+        ICollection<AIStateElementTag> GetValueDifferences(IState otherState);
 
         /// <summary>
         /// 把所提供状态的所有键值进行筛选
         /// 当前状态不存在的就添加进
         /// 存在则忽略
         /// </summary>
-        ICollection<AIStateCommonElementTag> GetNotExistKeys(IState otherState);
+        ICollection<AIStateElementTag> GetNotExistKeys(IState otherState);
     }
 
     /// <summary>
@@ -153,7 +153,7 @@ namespace GOAP
     /// 方便查找对应关系
     /// 要与State中的状态机全局标签相对应
     /// </summary>
-    public enum StateCommonTag
+    public enum StateTag
     {
         #region Common 0~199
 
@@ -182,8 +182,8 @@ namespace GOAP
     /// </summary>
     public enum EnemyStateTag
     {
-        Default = StateCommonTag.Default,
-        Idle = StateCommonTag.Idle,
-        Walk = StateCommonTag.Walk,
+        Default = StateTag.Default,
+        Idle = StateTag.Idle,
+        Walk = StateTag.Walk,
     }
 }

@@ -64,6 +64,7 @@ public static class ICollectionExtend
 
     /// <summary>
     /// 获取SortList值
+    /// 根据string转换成enum来处理
     /// </summary>
     /// <param name="sortList"></param>
     /// <param name="key"></param>

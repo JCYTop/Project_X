@@ -80,7 +80,7 @@ namespace GOAP
     /// 执行动作标签
     /// 用在 IAction<TAction>
     /// </summary>i
-    public enum ActionCommonTag
+    public enum ActionTag
     {
         #region Common  0~199
 
@@ -99,7 +99,7 @@ namespace GOAP
 
     public enum ActionEnemyTag
     {
-        Default = ActionCommonTag.Default,
-        Idle = ActionCommonTag.Idle,
+        Default = ActionTag.Default,
+        Idle = ActionTag.Idle,
     }
 }

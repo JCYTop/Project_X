@@ -35,7 +35,7 @@ namespace GOAP
         {
             get
             {
-                var interruptible = ActionGroup.ActionConfigUnitSet.GetSortListValue(ActionCommonElementTag.Cost.ToString());
+                var interruptible = ActionGroup.ActionConfigUnitSet.GetSortListValue(ActionElementTag.Cost.ToString());
                 var intValue = interruptible.CastStateConfigEle<ValueAggregation>();
                 return intValue.Data;
             }
@@ -45,7 +45,7 @@ namespace GOAP
         {
             get
             {
-                var interruptible = ActionGroup.ActionConfigUnitSet.GetSortListValue(ActionCommonElementTag.Priority.ToString());
+                var interruptible = ActionGroup.ActionConfigUnitSet.GetSortListValue(ActionElementTag.Priority.ToString());
                 var intValue = interruptible.CastStateConfigEle<ValueAggregation>();
                 return intValue.Data;
             }
@@ -55,7 +55,7 @@ namespace GOAP
         {
             get
             {
-                var interruptible = ActionGroup.ActionConfigUnitSet.GetSortListValue(ActionCommonElementTag.Interruptible.ToString());
+                var interruptible = ActionGroup.ActionConfigUnitSet.GetSortListValue(ActionElementTag.Interruptible.ToString());
                 var boolValue = interruptible.CastStateConfigEle<BoolAggregation>();
                 return boolValue.Data;
             }
