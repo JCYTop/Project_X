@@ -23,7 +23,7 @@ namespace Framework.GOAP
     /// 外部关联
     /// 外部对其主要修改这里的数据
     /// 还可能有标签类信息(队伍标签)
-    /// 应该由外部筛选器选择最优解传送进来
+    /// 应该由外部筛选器Filter选择最优解传送进来
     /// </summary>
     public abstract class AIDynamic : MonoEventEmitter
     {
