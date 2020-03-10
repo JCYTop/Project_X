@@ -154,7 +154,7 @@ MonoBehaviour:
         - StateConfig
         paramDataPos: 0000000000000000
         paramByteDataSize: 0000000000000000
-    - name: Walk
+    - name: Idle_Walk
       description: 
       colorIndex: 0
       position:
@@ -225,7 +225,7 @@ MonoBehaviour:
     - name: Idle
       isSystemEvent: 0
       isGlobal: 0
-    - name: Walk
+    - name: Idle_Walk
       isSystemEvent: 0
       isGlobal: 0
     globalTransitions:
@@ -238,10 +238,10 @@ MonoBehaviour:
       linkConstraint: 0
       colorIndex: 0
     - fsmEvent:
-        name: Walk
+        name: Idle_Walk
         isSystemEvent: 0
         isGlobal: 0
-      toState: Walk
+      toState: Idle_Walk
       linkStyle: 0
       linkConstraint: 0
       colorIndex: 0

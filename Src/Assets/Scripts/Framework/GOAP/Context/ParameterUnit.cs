@@ -51,37 +51,4 @@ namespace Framework.GOAP
             this.Value = value;
         }
     }
-
-    public enum ParameterTag
-    {
-        /// <summary>
-        /// 默认
-        /// </summary>
-        Default,
-
-        /// <summary>
-        /// 血量
-        /// </summary>
-        Bleed_Value,
-
-        /// <summary>
-        /// 能量
-        /// </summary>
-        Energy_Value,
-
-        /// <summary>
-        /// 愤怒值
-        /// </summary>
-        Anger_Value,
-
-        /// <summary>
-        /// 默认警戒距离
-        /// </summary>
-        Alert_Dis,
-
-        /// <summary>
-        /// 默认攻击距离
-        /// </summary>
-        Attack_Dis
-    }
 }

@@ -15,16 +15,16 @@ MonoBehaviour:
   Array:
   - Tag: 1
     DynamicRange: {x: 0, y: 100}
-    BeginValue: 100
+    Value: 100
   - Tag: 2
     DynamicRange: {x: 0, y: 50}
-    BeginValue: 50
+    Value: 50
   - Tag: 3
     DynamicRange: {x: 0, y: 50}
-    BeginValue: 0
+    Value: 0
   - Tag: 4
     DynamicRange: {x: 0, y: 30}
-    BeginValue: 30
+    Value: 15
   - Tag: 5
     DynamicRange: {x: 0, y: 15}
-    BeginValue: 15
+    Value: 15

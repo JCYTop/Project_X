@@ -13,10 +13,16 @@
  ----------------------------------
 */
 
+using Sirenix.OdinInspector;
+using UnityEngine;
+
 namespace Framework.Base
 {
     public class GameObjectBase : ObjectBase
     {
+        [BoxGroup("基本属性手动设置"), SerializeField, EnumPaging, OnValueChanged("SetCurrentTag")]
+        private ObjSubTag objectSubTag = ObjSubTag.Default;
+
         public override void Init()
         {
         }
@@ -24,5 +30,10 @@ namespace Framework.Base
         public override void Release()
         {
         }
+    }
+
+    public enum ObjSubTag
+    {
+        Default,
     }
 }

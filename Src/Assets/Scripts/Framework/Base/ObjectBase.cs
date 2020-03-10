@@ -18,7 +18,7 @@ namespace Framework.Base
         private Layer objectLayer = Layer.Default;
 
         [BoxGroup("基本属性手动设置"), SerializeField, EnumPaging, OnValueChanged("SetCurrentTag")]
-        private Tag objectTag = Tag.None;
+        private Tag objectTag = Tag.Default;
 
         [BoxGroup("基本属性手动设置")] public string Des = string.Empty;
         [BoxGroup("基本属性手动设置")] public bool IsPreLoad = false;
@@ -148,7 +148,7 @@ namespace Framework.Base
 
     public enum ActPosType
     {
-        None = 0,
+        Default = 0,
         Effect,
         Tip,
     }
@@ -169,12 +169,12 @@ namespace Framework.Base
 
     public enum ConfigType
     {
-        None,
+        Default,
     }
 
     public enum Tag
     {
-        None,
+        Default,
         UI,
         Character,
         Camera,

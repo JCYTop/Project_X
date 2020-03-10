@@ -27,7 +27,7 @@ namespace Framework.GOAP
     /// 可以动态添加或者删除（可能因为不同装备的增加或删除而改变）
     /// 存储数据使用
     /// </summary>
-    public class AIParameter : MonoEventEmitter
+    public abstract class AIParameter : MonoEventEmitter
     {
         /// <summary>
         /// 这里只是一个基础数值
@@ -124,6 +124,11 @@ namespace Framework.GOAP
                     unit.Value = unit.DynamicRange.y;
                 }
             }
+            else
+            {
+                LogTool.LogError("未发现对应标签！！！");
+            }
+
             RefreshPanelInfo();
         }
 
@@ -141,7 +146,7 @@ namespace Framework.GOAP
         {
             public ParameterTag Tag;
             public float Value;
-            public Vector2 DynamicRange;
+            [HideInInspector] public Vector2 DynamicRange;
 
             public ParameterPanel(ParameterTag tag, float value, Vector2 dynamicRange)
             {
@@ -150,5 +155,38 @@ namespace Framework.GOAP
                 this.DynamicRange = dynamicRange;
             }
         }
+    }
+
+    public enum ParameterTag
+    {
+        /// <summary>
+        /// 默认
+        /// </summary>
+        Default,
+
+        /// <summary>
+        /// 血量
+        /// </summary>
+        Bleed_Value,
+
+        /// <summary>
+        /// 能量
+        /// </summary>
+        Energy_Value,
+
+        /// <summary>
+        /// 愤怒值
+        /// </summary>
+        Anger_Value,
+
+        /// <summary>
+        /// 默认警戒距离
+        /// </summary>
+        Alert_Dis,
+
+        /// <summary>
+        /// 默认攻击距离
+        /// </summary>
+        Attack_Dis
     }
 }
