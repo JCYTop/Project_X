@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Tag: 1
   StateElement:
-  - ElementTag: 1
+  - ElementTag: 200
     IsRight: 0

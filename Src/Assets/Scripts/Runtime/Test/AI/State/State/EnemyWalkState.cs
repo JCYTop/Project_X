@@ -31,14 +31,9 @@ namespace Framework.GOAP
             throw new System.NotImplementedException();
         }
 
-        public override void SetData(IState data)
+        public override EnemyStateConfig GetData()
         {
-            throw new System.NotImplementedException();
-        }
-
-        public override IState GetData()
-        {
-            throw new System.NotImplementedException();
+            return StateConfig;
         }
     }
 }

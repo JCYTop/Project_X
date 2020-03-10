@@ -8,9 +8,9 @@ namespace Framework.GOAP
     /// 基本上和AIStateBase对应
     /// 但是也可以进行 多对一 匹配
     /// </summary>
-    public class EnemyStateConfig : StateConfig<EnemyStateElementTag>
+    public class EnemyStateConfig : StateConfig
     {
-        [Header("状态标签")] public EnemyStateTag Tag;
-        [Header("状态元素")] public List<EnemyState> StateElement;
+        [Header("状态标签")] public StateTag Tag;
+        [Header("状态元素")] public List<StateAssembly> StateElement;
     }
 }

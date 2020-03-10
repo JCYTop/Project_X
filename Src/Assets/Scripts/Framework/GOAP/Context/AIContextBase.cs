@@ -22,16 +22,19 @@ namespace Framework.GOAP
     /// 启动每一个单独的GOAP
     /// 附着场景物体类
     /// 场景中物体调整参数类
+    /// 跟Mono有关的集合类
     /// </summary>
     [RequireComponent(typeof(PlayMakerFSM))]
-    [RequireComponent(typeof(AIDynamic))]
-    [RequireComponent(typeof(AIParameter))]
     public abstract class AIContextBase : MonoEventEmitter, IContext
     {
         private PlayMakerFSM stateFsm;
         private AIParameter parameter;
+        private AIDynamic dynamic;
+        private AICondition condition;
         public PlayMakerFSM StateFsm => stateFsm;
         public AIParameter Parameter => parameter;
+        public AIDynamic Dynamic => dynamic;
+        public AICondition Condition => condition;
 
         private void Awake()
         {
@@ -47,6 +50,8 @@ namespace Framework.GOAP
         {
             stateFsm = this.GetComponent<PlayMakerFSM>();
             parameter = this.GetComponent<AIParameter>();
+            dynamic = this.GetComponent<AIDynamic>();
+            condition = this.GetComponent<AICondition>();
         }
 
         /// <summary>

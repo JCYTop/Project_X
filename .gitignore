@@ -54,3 +54,6 @@ Src/AssetBundles/
 Src/Assets/Scripts/UnSync/
 Src/Assets/Scripts/UnSync.meta
 Src/Assets/AssetGraph/AssetBundles/Cache/TemporalSettingFiles/AssetReferenceDB.asset
+Src/Assets/3dr/Sirenix/Demos/
+Src/Assets/Plugins/Sirenix/Demos/
+Src/Assets/Plugins/Sirenix/Demos.meta

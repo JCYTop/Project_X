@@ -27,6 +27,10 @@ namespace Framework.GOAP
     /// </summary>
     public interface IContext
     {
+        AIParameter Parameter { get; }
+        AIDynamic Dynamic { get; }
+        AICondition Condition { get; }
+
         /// <summary>
         /// 基础初始化
         /// </summary>

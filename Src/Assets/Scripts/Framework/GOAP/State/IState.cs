@@ -65,19 +65,6 @@ namespace Framework.GOAP
         void Exit();
 
         /// <summary>
-        /// 设置参数
-        /// 通过配置文件类进行加载
-        /// </summary>
-        void SetData(IState data);
-
-        /// <summary>
-        /// 获取参数
-        /// 获取的是State中的缓存数据
-        /// 不是序列化文件了！！！
-        /// </summary>
-        IState GetData();
-
-        /// <summary>
         /// 添加数据修改监听
         /// </summary>
         /// <param name="onChange"></param>
@@ -165,25 +152,13 @@ namespace Framework.GOAP
         /// <summary>
         /// 待机
         /// </summary>
-        Idle = 1,
+        Idle,
 
         /// <summary>
         /// 行走
         /// </summary>
-        Walk = 2,
+        Idle_Walk,
 
         #endregion
-    }
-
-    /// <summary>
-    /// TODO 枚举继承
-    /// 演示测试代码
-    /// 后期根据这个修改
-    /// </summary>
-    public enum EnemyStateTag
-    {
-        Default = StateTag.Default,
-        Idle = StateTag.Idle,
-        Walk = StateTag.Walk,
     }
 }

@@ -13,7 +13,6 @@
  ----------------------------------
 */
 
-using System;
 using System.Collections.Generic;
 using Framework.EventDispatcher;
 
@@ -23,6 +22,7 @@ namespace Framework.GOAP
     /// 外部动态变量
     /// 外部关联
     /// 外部对其主要修改这里的数据
+    /// 还可能有标签类信息(队伍标签)
     /// </summary>
     public abstract class AIDynamic : MonoEventEmitter
     {
@@ -33,6 +33,9 @@ namespace Framework.GOAP
             Init();
         }
 
+        /// <summary>
+        /// 就是初始化
+        /// </summary>
         public abstract void Init();
     }
 

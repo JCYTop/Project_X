@@ -2,7 +2,12 @@ using UnityEngine;
 
 namespace Framework.GOAP
 {
+    /// <summary>
+    /// 三个相关联的数据要填写
+    /// </summary>
     [RequireComponent(typeof(EnemyParameter))]
+    [RequireComponent(typeof(EnemyDynamic))]
+    [RequireComponent(typeof(EnemyCondition))]
     public class EnemyContext : AIContextBase
     {
         #region variable

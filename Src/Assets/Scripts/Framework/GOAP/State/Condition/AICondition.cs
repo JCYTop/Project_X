@@ -7,31 +7,40 @@
  *Version:      0.1.0
  *AuthorEmail:  jcyemail@qq.com
  *UnityVersion：Unity2019.3.0f6
- *CreateTime:   2020/03/09 23:33:28
+ *CreateTime:   2020/03/09 23:20:43
  *Description:  IndieGame 
  *History:
  ----------------------------------
 */
 
+using System;
 using System.Collections.Generic;
 using Framework.EventDispatcher;
 using UnityEngine;
 
 namespace Framework.GOAP
 {
-    public class AICondition : MonoEventEmitter, ICondition
+    public abstract class AICondition : MonoEventEmitter
     {
-        //TODO 拿到当前状态
-        //TODO 根据这个具体的Tag来判断
-        public delegate bool Method1(Transform t1, Transform t2, float dis);
-
-        public static Dictionary<ParameterTag, Method1> test1 =
-            new Dictionary<ParameterTag, Method1>();
-
         private void Start()
         {
-//            Method1 m = delegate(Transform t1, Transform t2, float dis) { return false; };
-//            test1.Add(ParameterTag.Alert_Dis,Method1);
-        } 
+            Init();
+        }
+
+        protected abstract void Init();
+    }
+
+    public static class AIConditionExtend
+    {
+        public static Dictionary<AIStateElementTag, Func<IContext, bool>> Map = new Dictionary<AIStateElementTag, Func<IContext, bool>>()
+        {
+            {
+                AIStateElementTag.Normal_Targets, (context) =>
+                {
+                    var count = context.Dynamic.PushDynamicData<List<GameObject>>(DynamicObjTag.Targets).Count;
+                    return count > 0;
+                }
+            }
+        };
     }
 }

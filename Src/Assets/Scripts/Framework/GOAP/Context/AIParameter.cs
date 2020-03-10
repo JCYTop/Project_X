@@ -157,6 +157,17 @@ namespace Framework.GOAP
         }
     }
 
+    /// <summary>
+    /// 和Dynamic同样设置
+    /// </summary>
+    public static class AIParameterExtend
+    {
+        public static ParameterUnit PushParameterData(this AIParameter parameter, ParameterTag tag)
+        {
+            return parameter.ParameterList.GetSortListValue(tag);
+        }
+    }
+
     public enum ParameterTag
     {
         /// <summary>

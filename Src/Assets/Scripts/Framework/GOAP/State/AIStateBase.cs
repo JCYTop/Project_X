@@ -40,7 +40,7 @@ namespace Framework.GOAP
         /// <summary>
         /// 获取关联的Context环境
         /// </summary>
-        public TContext GetContext => Context.Value as TContext;
+        protected TContext GetContext => Context.Value as TContext;
 
         #region FSM
 
@@ -76,8 +76,7 @@ namespace Framework.GOAP
         public abstract void Enter();
         public abstract void Execute();
         public abstract void Exit();
-        public abstract void SetData(IState data);
-        public abstract IState GetData();
+        public abstract TConfig GetData();
 
         public virtual void RegiestEvent()
         {

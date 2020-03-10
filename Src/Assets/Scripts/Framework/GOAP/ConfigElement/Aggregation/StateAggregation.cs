@@ -15,9 +15,9 @@
 
 namespace Framework.GOAP
 {
-    public class StateAggregation<EnemyStateElementTag> : ConfigElementBase<IStateAssembly<EnemyStateElementTag>>
+    public class StateAggregation : ConfigElementBase<StateAssembly>
     {
-        public StateAggregation(IStateAssembly<EnemyStateElementTag> value) : base(value)
+        public StateAggregation(StateAssembly value) : base(value)
         {
         }
     }

@@ -78,24 +78,23 @@ namespace Framework.GOAP
         /// </summary>
         Default = 0,
 
+        #endregion
+
+        #region Target目标 200~399
+
         /// <summary>
         /// 是否存在目标
+        /// 非战斗目标
         /// </summary>
-        Is_Target = 1,
+        Normal_Targets = 200,
 
         /// <summary>
         /// 是否离目标过远
+        /// 是否离非战斗目标过远
         /// </summary>
-        Is_Far_Target = 2,
+        Far_Normal_Target,
 
         #endregion
-    }
-
-    public enum EnemyStateElementTag
-    {
-        Default = AIStateElementTag.Default,
-        Is_Target = AIStateElementTag.Is_Target,
-        Is_Far_Target = AIStateElementTag.Is_Far_Target,
     }
 
     #endregion

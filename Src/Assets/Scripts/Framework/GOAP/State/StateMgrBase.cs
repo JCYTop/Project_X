@@ -17,20 +17,20 @@ using System.Collections.Generic;
 
 namespace Framework.GOAP
 {
-    public abstract class StateMgrBase<TStateTag, TStateBase> : IStateMgr
+    public abstract class StateMgrBase<TStateBase> : IStateMgr
     {
         /// <summary>
         /// 静态默认载入的State的Event
         /// </summary>
         public virtual string StartStateEvent => "Idle";
 
-        public abstract SortedList<TStateTag, TStateBase> StateSortList { get; }
-        public abstract TStateTag CurrStateTag { get; }
+        public abstract SortedList<StateTag, TStateBase> StateSortList { get; }
+        public abstract StateTag CurrStateTag { get; }
         public abstract IState CurrState { get; }
 
         /// <summary>
         /// 设置当前的进行状态
         /// </summary>
-        public abstract void SetCurrActivity(TStateTag tag);
+        public abstract void SetCurrActivity(StateTag tag);
     }
 }

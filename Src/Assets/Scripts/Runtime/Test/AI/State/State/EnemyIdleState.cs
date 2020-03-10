@@ -29,13 +29,9 @@ namespace Framework.GOAP
         {
         }
 
-        public override void SetData(IState data)
+        public override EnemyStateConfig GetData()
         {
-        }
-
-        public override IState GetData()
-        {
-            return default;
+            return StateConfig;
         }
     }
 }

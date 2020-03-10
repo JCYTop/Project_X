@@ -23,7 +23,7 @@ namespace Framework.GOAP
     /// 配置文件基类
     /// </summary>
     [Serializable]
-    public abstract class StateConfig<TElementTag> : UnityEngine.ScriptableObject
+    public abstract class StateConfig : UnityEngine.ScriptableObject
     {
     }
 }
