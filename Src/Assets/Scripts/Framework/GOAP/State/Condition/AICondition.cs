@@ -13,6 +13,7 @@
  ----------------------------------
 */
 
+using System.Collections.Generic;
 using Framework.EventDispatcher;
 using UnityEngine;
 
@@ -22,6 +23,15 @@ namespace Framework.GOAP
     {
         //TODO 拿到当前状态
         //TODO 根据这个具体的Tag来判断
-        delegate bool Method1(Transform trans);
+        public delegate bool Method1(Transform t1, Transform t2, float dis);
+
+        public static Dictionary<ParameterTag, Method1> test1 =
+            new Dictionary<ParameterTag, Method1>();
+
+        private void Start()
+        {
+//            Method1 m = delegate(Transform t1, Transform t2, float dis) { return false; };
+//            test1.Add(ParameterTag.Alert_Dis,Method1);
+        } 
     }
 }

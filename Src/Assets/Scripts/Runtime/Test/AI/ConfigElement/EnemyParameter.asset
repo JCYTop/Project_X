@@ -14,8 +14,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Array:
   - Tag: 1
-    Value: 100
+    DynamicRange: {x: 0, y: 100}
+    BeginValue: 100
   - Tag: 2
-    Value: 50
+    DynamicRange: {x: 0, y: 50}
+    BeginValue: 50
   - Tag: 3
-    Value: 0
+    DynamicRange: {x: 0, y: 50}
+    BeginValue: 0
+  - Tag: 4
+    DynamicRange: {x: 0, y: 30}
+    BeginValue: 30
+  - Tag: 5
+    DynamicRange: {x: 0, y: 15}
+    BeginValue: 15

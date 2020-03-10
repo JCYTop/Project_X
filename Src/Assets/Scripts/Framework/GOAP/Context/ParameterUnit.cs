@@ -14,21 +14,38 @@
 */
 
 using System;
+using Sirenix.OdinInspector;
 using UnityEngine;
 
 namespace Framework.GOAP
 {
+    /// <summary>
+    /// 配置文件单元
+    /// 某些装备也可以进行挂载
+    /// </summary>
     [Serializable]
     public class ParameterUnit
     {
-        [Header("标签")] public ParameterTag Tag;
-        [Header("值")] public int Value;
+        /// <summary>
+        /// 标签
+        /// </summary>
+        public ParameterTag Tag;
+
+        /// <summary>
+        /// 值的范围
+        /// </summary>
+        public Vector2 DynamicRange;
+
+        /// <summary>
+        /// 值
+        /// </summary>
+        public float Value;
 
         public ParameterUnit()
         {
         }
 
-        public ParameterUnit(ParameterTag tag, int value)
+        public ParameterUnit(ParameterTag tag, float value)
         {
             this.Tag = tag;
             this.Value = value;
@@ -60,11 +77,11 @@ namespace Framework.GOAP
         /// <summary>
         /// 默认警戒距离
         /// </summary>
-        Default_Alert_Dis,
+        Alert_Dis,
 
         /// <summary>
         /// 默认攻击距离
         /// </summary>
-        Default_Attack_Dis
+        Attack_Dis
     }
 }

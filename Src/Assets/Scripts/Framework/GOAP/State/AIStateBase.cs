@@ -26,8 +26,7 @@ namespace Framework.GOAP
     /// <typeparam name="TContext">Context具体类</typeparam>
     /// <typeparam name="TConfig">配置文件具体的类型</typeparam>
     [ActionCategory("AI.Base")]
-    public abstract class AIStateBase<TContext, TConfig> : FsmStateAction, IState
-        where TContext : class, IContext
+    public abstract class AIStateBase<TContext, TConfig> : FsmStateAction, IState where TContext : class, IContext
     {
         private Action onChange;
         public FsmObject Context;

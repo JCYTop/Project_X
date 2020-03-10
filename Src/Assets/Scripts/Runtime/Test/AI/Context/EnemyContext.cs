@@ -2,6 +2,7 @@ using UnityEngine;
 
 namespace Framework.GOAP
 {
+    [RequireComponent(typeof(EnemyParameter))]
     public class EnemyContext : AIContextBase
     {
         #region variable
@@ -20,6 +21,7 @@ namespace Framework.GOAP
         {
             base.Init();
             agent = new EnemyAgent(this);
+            var ssss = Parameter.ParameterList;
         }
 
         private void OnEnable()

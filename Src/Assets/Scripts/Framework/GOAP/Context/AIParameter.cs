@@ -77,7 +77,7 @@ namespace Framework.GOAP
             if (parameterList == null) return;
             foreach (var unit in parameterList)
             {
-                panelList.Add(new ParameterPanel(unit.Key, unit.Value.Value));
+                panelList.Add(new ParameterPanel(unit.Key, unit.Value.Value, unit.Value.DynamicRange));
             }
 #endif
         }
@@ -98,9 +98,9 @@ namespace Framework.GOAP
         /// 可能因为装备的或者属性的改变而删除
         /// </summary>
         /// <param name="unit"></param>
-        public void DeleteParameter(ParameterUnit unit)
+        public void DeleteParameter(ParameterTag tag)
         {
-            ParameterList.DeleteSortListElement(unit.Tag);
+            ParameterList.DeleteSortListElement(tag);
             RefreshPanelInfo();
         }
 
@@ -111,7 +111,19 @@ namespace Framework.GOAP
         /// <param name="value"></param>
         public void SetParameter(ParameterTag tag, int value)
         {
-            ParameterList.SetSortListElementValue(tag, new ParameterUnit(tag, value));
+            var unit = ParameterList.GetSortListValue(tag);
+            if (unit != null)
+            {
+                unit.Value += value;
+                if (unit.Value < unit.DynamicRange.x)
+                {
+                    unit.Value = unit.DynamicRange.x;
+                }
+                else if (unit.Value > unit.DynamicRange.y)
+                {
+                    unit.Value = unit.DynamicRange.y;
+                }
+            }
             RefreshPanelInfo();
         }
 
@@ -128,12 +140,14 @@ namespace Framework.GOAP
         struct ParameterPanel
         {
             public ParameterTag Tag;
-            public int Value;
+            public float Value;
+            public Vector2 DynamicRange;
 
-            public ParameterPanel(ParameterTag tag, int value)
+            public ParameterPanel(ParameterTag tag, float value, Vector2 dynamicRange)
             {
-                Tag = tag;
-                Value = value;
+                this.Tag = tag;
+                this.Value = value;
+                this.DynamicRange = dynamicRange;
             }
         }
     }
