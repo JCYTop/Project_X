@@ -35,10 +35,10 @@ namespace Framework.GOAP
         public static Dictionary<AIStateElementTag, Func<IContext, bool>> Map = new Dictionary<AIStateElementTag, Func<IContext, bool>>()
         {
             {
-                AIStateElementTag.Normal_Targets, (context) =>
+                AIStateElementTag.Normal_Target, (context) =>
                 {
-                    var count = context.Dynamic.PushDynamicData<List<GameObject>>(DynamicObjTag.Targets).Count;
-                    return count > 0;
+                    var normalTargets = context.Dynamic.PushDynamicData<GameObject>(DynamicObjTag.Normal_Target);
+                    return normalTargets != null;
                 }
             }
         };

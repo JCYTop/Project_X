@@ -37,7 +37,7 @@ namespace Framework.GOAP
             }
 
             //TODO 试验
-            var data = AIConditionExtend.Map[AIStateElementTag.Normal_Targets];
+            var data = AIConditionExtend.Map[AIStateElementTag.Normal_Target];
             data(enemyContext);
         }
     }

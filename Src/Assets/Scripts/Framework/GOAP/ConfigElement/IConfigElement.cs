@@ -86,7 +86,7 @@ namespace Framework.GOAP
         /// 是否存在目标
         /// 非战斗目标
         /// </summary>
-        Normal_Targets = 200,
+        Normal_Target = 200,
 
         /// <summary>
         /// 是否离目标过远

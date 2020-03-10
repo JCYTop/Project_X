@@ -1,25 +1,20 @@
-﻿using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Framework.GOAP
 {
     public class EnemyDynamic : AIDynamic
     {
-        [Header("当前目标列表"), SerializeField] private List<GameObject> targets = new List<GameObject>();
+        [Header("当前目标列表"), SerializeField] private GameObject targets;
 
-        public List<GameObject> Targets
+        public GameObject Target
         {
             get { return targets; }
-            set
-            {
-                targets = null;
-                targets = value;
-            }
+            set { targets = value; }
         }
 
         public override void Init()
         {
-            DynamicDic.Add(DynamicObjTag.Targets, Targets);
+            DynamicDic.Add(DynamicObjTag.Normal_Target, Target);
         }
     }
 }
