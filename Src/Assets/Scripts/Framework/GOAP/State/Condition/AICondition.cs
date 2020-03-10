@@ -40,7 +40,8 @@ namespace Framework.GOAP
                     var normalTargets = context.Dynamic.PushDynamicData<GameObject>(DynamicObjTag.Normal_Target);
                     return normalTargets != null;
                 }
-            }
+            },
+            {AIStateElementTag.Far_Normal_Target, (context) => { return false; }}
         };
     }
 }
