@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Framework.GOAP
@@ -10,12 +11,6 @@ namespace Framework.GOAP
     public class EnemyStateConfig : StateConfig<EnemyStateElementTag>
     {
         [Header("状态标签")] public EnemyStateTag Tag;
-        [Header("状态元素")] public EnemyState[] StateElement;
-
-        public override StateConfig<EnemyStateElementTag> Init()
-        {
-            //TODO 返回掉必须信息
-            return this;
-        }
+        [Header("状态元素")] public List<EnemyState> StateElement;
     }
 }

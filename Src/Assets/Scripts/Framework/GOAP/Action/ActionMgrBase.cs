@@ -23,7 +23,7 @@ namespace Framework.GOAP
     /// Action管理类
     /// </summary>
     /// <typeparam name="TAction"></typeparam>
-    public abstract class ActionManagerBase<TAction, TGoal> : IActionManager<TAction>
+    public abstract class ActionMgrBase<TAction, TGoal> : IActionMgr<TAction>
     {
         /// <summary>
         /// 动作完成的回调
@@ -46,7 +46,7 @@ namespace Framework.GOAP
         public List<IActionHandler<TAction>> InterruptibleHandlers => interruptibleHandlers;
         public Dictionary<TAction, HashSet<IActionHandler<TAction>>> Effect_Action_Map { get; }
 
-        public ActionManagerBase(IAgent<TAction, TGoal> agent)
+        public ActionMgrBase(IAgent<TAction, TGoal> agent)
         {
             this.agent = agent;
             handlersSort = new SortedList<TAction, IActionHandler<TAction>>();

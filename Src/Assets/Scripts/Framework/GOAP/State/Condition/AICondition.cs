@@ -14,6 +14,7 @@
 */
 
 using Framework.EventDispatcher;
+using UnityEngine;
 
 namespace Framework.GOAP
 {
@@ -21,5 +22,6 @@ namespace Framework.GOAP
     {
         //TODO 拿到当前状态
         //TODO 根据这个具体的Tag来判断
+        delegate bool Method1(Transform trans);
     }
 }

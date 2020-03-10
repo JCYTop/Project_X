@@ -9,16 +9,16 @@ namespace Framework.GOAP
     [ActionCategory("AI.Enemy")]
     public class EnemyIdleState : AIStateBase<EnemyContext, EnemyStateConfig>
     {
-        private EnemyStateManager EnemyStateManager => GetContext.Agent.AgentStateManager.GetStateMgr<EnemyStateManager>();
+        private EnemyStateMgr EnemyStateMgr => GetContext.Agent.AgentStateMgr.GetStateMgr<EnemyStateMgr>();
 
         public override void Init()
         {
-            EnemyStateManager.StateSortList.AddSortListElement(StateConfig.Tag, this);
+            EnemyStateMgr.StateSortList.AddSortListElement(StateConfig.Tag, this);
         }
 
         public override void Enter()
         {
-            EnemyStateManager.SetCurrActivity(StateConfig.Tag);
+            EnemyStateMgr.SetCurrActivity(StateConfig.Tag);
         }
 
         public override void Execute()

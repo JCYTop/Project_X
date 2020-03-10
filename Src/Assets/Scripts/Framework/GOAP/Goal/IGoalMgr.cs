@@ -19,7 +19,7 @@ namespace Framework.GOAP
     /// IGoalManager接口
     /// </summary>
     /// <typeparam name="TGoal">由类传入string</typeparam>
-    public interface IGoalManager<TGoal>
+    public interface IGoalMgr<TGoal>
     {
         /// <summary>
         /// 当前执行的目标

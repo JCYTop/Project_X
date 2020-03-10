@@ -25,6 +25,7 @@ namespace Framework.GOAP
     /// 参数类
     /// 所用通用
     /// 可以动态添加或者删除（可能因为不同装备的增加或删除而改变）
+    /// 存储数据使用
     /// </summary>
     public class AIParameter : MonoEventEmitter
     {
@@ -72,7 +73,6 @@ namespace Framework.GOAP
         private void RefreshPanelInfo()
         {
 #if UNITY_EDITOR
-
             panelList.Clear();
             if (parameterList == null) return;
             foreach (var unit in parameterList)

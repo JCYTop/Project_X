@@ -17,7 +17,7 @@ using System.Collections.Generic;
 
 namespace Framework.GOAP
 {
-    public abstract class StateManagerBase<TStateTag, TStateBase> : IStateManager
+    public abstract class StateMgrBase<TStateTag, TStateBase> : IStateMgr
     {
         /// <summary>
         /// 静态默认载入的State的Event

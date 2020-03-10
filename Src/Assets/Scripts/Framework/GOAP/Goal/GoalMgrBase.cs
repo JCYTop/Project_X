@@ -17,14 +17,14 @@ using System.Collections.Generic;
 
 namespace Framework.GOAP
 {
-    public abstract class GoalManagerBase<TAction, TGoal> : IGoalManager<TGoal>
+    public abstract class GoalMgrBase<TAction, TGoal> : IGoalMgr<TGoal>
     {
         protected IAgent<TAction, TGoal> agent;
         private Dictionary<TGoal, IGoal<TGoal>> goalsDic;
         private List<IGoal<TGoal>> activeGoals;
         public IGoal<TGoal> CurrentGoal { get; }
 
-        public GoalManagerBase(IAgent<TAction, TGoal> agent)
+        public GoalMgrBase(IAgent<TAction, TGoal> agent)
         {
             this.agent = agent;
             CurrentGoal = null;

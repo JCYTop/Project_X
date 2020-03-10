@@ -18,7 +18,7 @@ using System.Collections.Generic;
 
 namespace Framework.GOAP
 {
-    public interface IActionManager<TAction>
+    public interface IActionMgr<TAction>
     {
         /// <summary>
         /// 当前是否在执行动的标志位

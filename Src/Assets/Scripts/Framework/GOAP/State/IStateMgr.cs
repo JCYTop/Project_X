@@ -21,7 +21,7 @@ namespace Framework.GOAP
     /// 主要用于Agent中存储信息使用
     /// 记录当前状态使用
     /// </summary>
-    public interface IStateManager
+    public interface IStateMgr
     {
         string StartStateEvent { get; }
         IState CurrState { get; }
@@ -35,7 +35,7 @@ namespace Framework.GOAP
         /// <param name="stateMgr">stateMgr类型</param>
         /// <typeparam name="T">stateMgr类型</typeparam>
         /// <returns></returns>
-        public static T GetStateMgr<T>(this IStateManager stateMgr) where T : class, IStateManager
+        public static T GetStateMgr<T>(this IStateMgr stateMgr) where T : class, IStateMgr
         {
             try
             {

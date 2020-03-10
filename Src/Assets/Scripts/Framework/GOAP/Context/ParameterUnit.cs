@@ -55,6 +55,16 @@ namespace Framework.GOAP
         /// <summary>
         /// 愤怒值
         /// </summary>
-        Anger_Value
+        Anger_Value,
+
+        /// <summary>
+        /// 默认警戒距离
+        /// </summary>
+        Default_Alert_Dis,
+
+        /// <summary>
+        /// 默认攻击距离
+        /// </summary>
+        Default_Attack_Dis
     }
 }

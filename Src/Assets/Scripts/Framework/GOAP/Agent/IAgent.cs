@@ -41,19 +41,19 @@ namespace Framework.GOAP
         /// <summary>
         /// StateMgr管理器
         /// </summary>
-        IStateManager AgentStateManager { get; }
+        IStateMgr AgentStateMgr { get; }
 
         /// <summary>
         /// 获取动作管理类对象
         /// </summary>
         /// <returns></returns>
-        IActionManager<TAction> AgentActionManager { get; }
+        IActionMgr<TAction> AgentActionMgr { get; }
 
         /// <summary>
         /// 获取目标管理类对象
         /// </summary>
         /// <returns></returns>
-        IGoalManager<TGoal> AgentGoalManager { get; }
+        IGoalMgr<TGoal> AgentGoalMgr { get; }
 
         /// <summary>
         /// 注册事件

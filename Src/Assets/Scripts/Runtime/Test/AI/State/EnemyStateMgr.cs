@@ -2,7 +2,7 @@
 
 namespace Framework.GOAP
 {
-    public class EnemyStateManager : StateManagerBase<EnemyStateTag, AIStateBase<EnemyContext, EnemyStateConfig>>
+    public class EnemyStateMgr : StateMgrBase<EnemyStateTag, AIStateBase<EnemyContext, EnemyStateConfig>>
     {
         private EnemyStateTag currStateTag;
         private AIStateBase<EnemyContext, EnemyStateConfig> currState;
@@ -11,7 +11,7 @@ namespace Framework.GOAP
         public override EnemyStateTag CurrStateTag => currStateTag;
         public override IState CurrState => currState;
 
-        public EnemyStateManager()
+        public EnemyStateMgr()
         {
             stateSortList = new SortedList<EnemyStateTag, AIStateBase<EnemyContext, EnemyStateConfig>>();
         }

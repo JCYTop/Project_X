@@ -23,14 +23,14 @@ namespace Framework.GOAP
         public EnemyAgent(IContext context) : base(context)
         {
             //初始化到指定 --->>> Context 方便全局调用
-            AgentStateManager = new EnemyStateManager();
-            AgentActionManager = new EnemyActionManager(this);
-            AgentGoalManager = new EnemyGoalManager(this);
+            AgentStateMgr = new EnemyStateMgr();
+            AgentActionMgr = new EnemyActionMgr(this);
+            AgentGoalMgr = new EnemyGoalMgr(this);
         }
 
         public override void StartFSM()
         {
-            TargetEvent(AgentStateManager.StartStateEvent);
+            TargetEvent(AgentStateMgr.StartStateEvent);
         }
 
         protected override void TargetEvent(string eventName)
