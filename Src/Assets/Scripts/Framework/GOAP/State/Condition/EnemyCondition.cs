@@ -16,7 +16,6 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Rendering;
 
 namespace Framework.GOAP
 {
@@ -26,11 +25,11 @@ namespace Framework.GOAP
         private EnemyStateMgr stateMgr;
         private HashSet<AIStateElementTag> existTag;
         private Dictionary<AIStateElementTag, Func<IContext, bool>> conditionMap;
+        
 #if UNITY_EDITOR
-        [SerializeField] private List<StateAssembly> panelInfo = new List<StateAssembly>();
+        [SerializeField] private List<StateAssembly> panelInfo = new List<StateAssembly>(1 << 4);
 #endif
-
-        protected override void Init()
+         protected override void Init()
         {
             existTag = new HashSet<AIStateElementTag>();
             conditionMap = new Dictionary<AIStateElementTag, Func<IContext, bool>>(1 << 4);
@@ -40,14 +39,14 @@ namespace Framework.GOAP
             {
                 foreach (var state in stateBase.GetData().StateElement)
                 {
-                    //获取配置文件中所有的 Tag 标签
+                    //获取配置文件中所有的 hTag 标签
                     existTag.Add(state.ElementTag);
                 }
             }
 
             foreach (var elementTag in existTag)
             {
-                var action = AIConditionExtend.ConditionMap[elementTag];
+                var action = AIConditionExtend.ConditionMap.GetDictionaryValue(elementTag);
                 conditionMap.Add(elementTag, action);
 #if UNITY_EDITOR
                 panelInfo.Add(new StateAssembly(elementTag, action(enemyContext)));
@@ -55,10 +54,28 @@ namespace Framework.GOAP
             }
         }
 
+        private void OnEnable()
+        {
+        }
+
+        private void OnDisable()
+        {
+        }
+
         private void Update()
         {
             foreach (var stateAssembly in conditionMap)
             {
+                var currFlag = stateAssembly.Value(enemyContext);
+#if UNITY_EDITOR
+                foreach (var panel in panelInfo)
+                {
+                    if (panel.ElementTag == stateAssembly.Key)
+                    {
+                        panel.IsRight = currFlag;
+                    }
+                }
+#endif
             }
         }
     }

@@ -1,11 +1,10 @@
-﻿using Sirenix.OdinInspector;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Framework.GOAP
 {
     public class EnemyDynamic : AIDynamic
     {
-        [Header("当前目标列表"), SerializeField, ReadOnly]
+        [Rename("当前目标列表"), SerializeField]
         private GameObject targets;
 
         public GameObject Target
