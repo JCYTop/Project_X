@@ -4,18 +4,11 @@ namespace Framework.GOAP
 {
     public class EnemyDynamic : AIDynamic
     {
-        [Rename("当前目标列表"), SerializeField]
-        private GameObject targets;
-
-        public GameObject Target
-        {
-            get { return targets; }
-            set { targets = value; }
-        }
+        [Rename("当前目标列表"), SerializeField] public GameObject Target;
 
         public override void Init()
         {
-            DynamicDic.Add(DynamicObjTag.Normal_Target, Target);
+            DynamicDic.Add(DynamicObjTag.Normal_Target, () => { return Target; });
         }
     }
 }

@@ -25,11 +25,11 @@ namespace Framework.GOAP
         private EnemyStateMgr stateMgr;
         private HashSet<AIStateElementTag> existTag;
         private Dictionary<AIStateElementTag, Func<IContext, bool>> conditionMap;
-        
+
 #if UNITY_EDITOR
         [SerializeField] private List<StateAssembly> panelInfo = new List<StateAssembly>(1 << 4);
 #endif
-         protected override void Init()
+        protected override void Init()
         {
             existTag = new HashSet<AIStateElementTag>();
             conditionMap = new Dictionary<AIStateElementTag, Func<IContext, bool>>(1 << 4);

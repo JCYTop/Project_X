@@ -13,6 +13,7 @@
  ----------------------------------
 */
 
+using System;
 using System.Collections.Generic;
 using Framework.Base;
 using Framework.EventDispatcher;
@@ -29,7 +30,7 @@ namespace Framework.GOAP
     public abstract class AIDynamic : MonoEventEmitter, IGoalbalID
     {
         private int goalbalID = 0;
-        public Dictionary<DynamicObjTag, object> DynamicDic = new Dictionary<DynamicObjTag, object>(1 << 5);
+        public Dictionary<DynamicObjTag, Func<object>> DynamicDic = new Dictionary<DynamicObjTag, Func<object>>(1 << 5);
 
         public int GoalbalID
         {
@@ -64,7 +65,7 @@ namespace Framework.GOAP
         /// <returns></returns>
         public static T PushDynamicData<T>(this AIDynamic dynamic, DynamicObjTag tag)
         {
-            return (T) dynamic.DynamicDic.GetDictionaryValue(tag);
+            return (T) dynamic.DynamicDic.GetDictionaryValue(tag).Invoke();
         }
     }
 
