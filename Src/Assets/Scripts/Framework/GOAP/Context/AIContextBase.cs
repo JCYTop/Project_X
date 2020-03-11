@@ -13,6 +13,7 @@
  ----------------------------------
 */
 
+using Framework.Base;
 using Framework.EventDispatcher;
 using UnityEngine;
 
@@ -25,16 +26,30 @@ namespace Framework.GOAP
     /// 跟Mono有关的集合类
     /// </summary>
     [RequireComponent(typeof(PlayMakerFSM))]
-    public abstract class AIContextBase : MonoEventEmitter, IContext
+    public abstract class AIContextBase : MonoEventEmitter, IContext, IGoalbalID
     {
         private PlayMakerFSM stateFsm;
         private AIParameter parameter;
         private AIDynamic dynamic;
         private AICondition condition;
+        private int goalbalID = 0;
         public PlayMakerFSM StateFsm => stateFsm;
         public AIParameter Parameter => parameter;
         public AIDynamic Dynamic => dynamic;
         public AICondition Condition => condition;
+
+        public int GoalbalID
+        {
+            get
+            {
+                if (goalbalID <= 0)
+                {
+                    goalbalID = this.GetComponentInParent<ObjectBase>().GlobalID;
+                }
+
+                return goalbalID;
+            }
+        }
 
         private void Awake()
         {

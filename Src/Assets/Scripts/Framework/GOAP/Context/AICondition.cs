@@ -15,13 +15,29 @@
 
 using System;
 using System.Collections.Generic;
+using Framework.Base;
 using Framework.EventDispatcher;
 using UnityEngine;
 
 namespace Framework.GOAP
 {
-    public abstract class AICondition : MonoEventEmitter
+    public abstract class AICondition : MonoEventEmitter, IGoalbalID
     {
+        private int goalbalID = 0;
+
+        public int GoalbalID
+        {
+            get
+            {
+                if (goalbalID <= 0)
+                {
+                    goalbalID = this.GetComponentInParent<ObjectBase>().GlobalID;
+                }
+
+                return goalbalID;
+            }
+        }
+
         private void Start()
         {
             Init();

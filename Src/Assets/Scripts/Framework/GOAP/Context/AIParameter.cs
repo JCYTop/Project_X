@@ -15,6 +15,7 @@
 
 using System;
 using System.Collections.Generic;
+using Framework.Base;
 using Framework.EventDispatcher;
 using Sirenix.OdinInspector;
 using UnityEngine;
@@ -27,8 +28,23 @@ namespace Framework.GOAP
     /// 可以动态添加或者删除（可能因为不同装备的增加或删除而改变）
     /// 存储数据使用
     /// </summary>
-    public abstract class AIParameter : MonoEventEmitter
+    public abstract class AIParameter : MonoEventEmitter, IGoalbalID
     {
+        private int goalbalID = 0;
+
+        public int GoalbalID
+        {
+            get
+            {
+                if (goalbalID <= 0)
+                {
+                    goalbalID = this.GetComponentInParent<ObjectBase>().GlobalID;
+                }
+
+                return goalbalID;
+            }
+        }
+
         /// <summary>
         /// 这里只是一个基础数值
         /// 初始化读取用的

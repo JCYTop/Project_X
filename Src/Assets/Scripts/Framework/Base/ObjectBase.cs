@@ -41,25 +41,20 @@ namespace Framework.Base
 
         public string BaseName
         {
-            get => baseName;
-            set => baseName = value;
+            get { return baseName; }
+            set { baseName = value; }
         }
 
-        public int ObjectLayer
-        {
-            get => (int) objectLayer;
-        }
-
-        public string ObjectTag
-        {
-            get => Enum.GetName(typeof(Tag), objectTag);
-        }
+        public int ObjectLayer => (int) objectLayer;
+        public string ObjectTag => Enum.GetName(typeof(Tag), objectTag);
 
         public int ResID
         {
-            get => resID;
-            set => resID = value;
+            get { return resID; }
+            set { resID = value; }
         }
+
+        public int GlobalID => globalID;
 
         #endregion
 

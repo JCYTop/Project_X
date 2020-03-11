@@ -14,6 +14,7 @@
 */
 
 using System.Collections.Generic;
+using Framework.Base;
 using Framework.EventDispatcher;
 
 namespace Framework.GOAP
@@ -25,9 +26,23 @@ namespace Framework.GOAP
     /// 还可能有标签类信息(队伍标签)
     /// 应该由外部筛选器Filter选择最优解传送进来
     /// </summary>
-    public abstract class AIDynamic : MonoEventEmitter
+    public abstract class AIDynamic : MonoEventEmitter, IGoalbalID
     {
+        private int goalbalID = 0;
         public Dictionary<DynamicObjTag, object> DynamicDic = new Dictionary<DynamicObjTag, object>(1 << 5);
+
+        public int GoalbalID
+        {
+            get
+            {
+                if (goalbalID <= 0)
+                {
+                    goalbalID = this.GetComponentInParent<ObjectBase>().GlobalID;
+                }
+
+                return goalbalID;
+            }
+        }
 
         private void Awake()
         {

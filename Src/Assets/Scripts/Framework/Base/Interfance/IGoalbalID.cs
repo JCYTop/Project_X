@@ -20,5 +20,6 @@ namespace Framework.Base
     /// </summary>
     public interface IGoalbalID
     {
+        int GoalbalID { get; }
     }
 }
