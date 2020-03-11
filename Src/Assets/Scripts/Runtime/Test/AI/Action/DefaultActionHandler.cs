@@ -2,7 +2,7 @@ using System;
 
 namespace Framework.GOAP
 {
-    public class EmenyDefaultActionHandler : ActionHandler<ActionEnemyTag>
+    public class DefaultActionHandler : ActionHandler
     {
         public override ActionExcuteState ExcuteState { get; }
 

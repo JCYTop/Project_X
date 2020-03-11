@@ -17,22 +17,20 @@ using System;
 
 namespace Framework.GOAP
 {
-    public abstract class ActionHandler<TAction> : IActionHandler<TAction>
+    public abstract class ActionHandler : IActionHandler<ActionTag>
     {
         protected Action onFinishAction;
-        public TAction Label { get; private set; }
 
-        public IAction<TAction> Action { get; private set; }
+        public IAction<ActionTag> Action { get; private set; }
 
         /// <summary>
         /// 执行中的状态
         /// </summary>
         public abstract ActionExcuteState ExcuteState { get; }
 
-        public virtual void Init(IAction<TAction> action)
+        public virtual void Init(IAction<ActionTag> action)
         {
             this.Action = action;
-            this.Label = Action.Label;
         }
 
         public abstract void AddFinishCallBack(Action onFinishAction);

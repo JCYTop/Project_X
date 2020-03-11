@@ -18,11 +18,11 @@ namespace Framework.GOAP
     /// <summary>
     /// 执行动作
     /// 加载配置文件信息
-    /// </summary>
-    /// <typeparam name="TAction">
     /// 由类传入string
-    /// 指代不同动作类型，有标记作用
-    /// </typeparam>
+    /// 有标记作用
+    /// 指代不同动作类型
+    /// </summary>
+    /// <typeparam name="TAction"></typeparam>
     public interface IAction<TAction>
     {
         /// <summary>
@@ -95,11 +95,5 @@ namespace Framework.GOAP
         Idle = 1,
 
         #endregion
-    }
-
-    public enum ActionEnemyTag
-    {
-        Default = ActionTag.Default,
-        Idle = ActionTag.Idle,
     }
 }

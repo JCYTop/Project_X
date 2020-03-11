@@ -28,7 +28,6 @@ namespace Framework.GOAP
     /// </summary>
     public interface IActionHandler<TAction>
     {
-        TAction Label { get; }
         IAction<TAction> Action { get; }
 
         /// <summary>
@@ -86,7 +85,7 @@ namespace Framework.GOAP
         /// <summary>
         /// 初始化
         /// </summary>
-        INIT = Default,
+        INIT,
 
         /// <summary>
         /// 进入
@@ -102,12 +101,5 @@ namespace Framework.GOAP
         /// 退出
         /// </summary>
         EXIT
-    }
-
-    public static class IActionHandlerExtend
-    {
-        public static void GetActionHand<TAction>(this IActionHandler<TAction> handler)
-        {
-        }
     }
 }

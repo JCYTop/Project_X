@@ -2,7 +2,7 @@
 ----------------------------------
  *Copyright(C) 2019 by IndieGame
  *All rights reserved.
- *FileName:     EnemyActionHandleMap
+ *FileName:     ActionHandlerMap
  *Author:       @JCY
  *Version:      0.1.0
  *AuthorEmail:  jcyemail@qq.com
@@ -23,31 +23,32 @@ namespace Framework.GOAP
     /// 手动注册ActionHandle类
     /// 没办法只能手动注册！！！
     /// </summary>
-    public class EnemyActionHandleMap : Singleton<EnemyActionHandleMap>, IActionHandleMap<ActionEnemyTag, IActionHandler<ActionEnemyTag>>
+    public static class ActionHandlerMap
     {
-        private SortedList<ActionEnemyTag, IActionHandler<ActionEnemyTag>> handleMap;
+        private static SortedList<ActionHanderTag, IActionHandler<ActionTag>> handleMap;
 
-        public SortedList<ActionEnemyTag, IActionHandler<ActionEnemyTag>> HandleMap
+        public static SortedList<ActionHanderTag, IActionHandler<ActionTag>> HandleMap
         {
             get
             {
                 if (handleMap == null)
                 {
-                    handleMap = new SortedList<ActionEnemyTag, IActionHandler<ActionEnemyTag>>()
+                    handleMap = new SortedList<ActionHanderTag, IActionHandler<ActionTag>>()
                     {
                         //TODO 这是一个例子
-                        {ActionEnemyTag.Default, new EmenyDefaultActionHandler()},
-                        {ActionEnemyTag.Idle, new EmenyIdleActionHandler()},
+                        {ActionHanderTag.Default_Handle, new DefaultActionHandler()},
+                        {ActionHanderTag.Idle_Handle, new IdleActionHandler()},
                     };
                 }
 
                 return handleMap;
             }
         }
+    }
 
-        public IActionHandler<ActionEnemyTag> GetHandle(ActionEnemyTag type)
-        {
-            return HandleMap.GetSortListValue(type);
-        }
+    public enum ActionHanderTag
+    {
+        Default_Handle = 0,
+        Idle_Handle,
     }
 }

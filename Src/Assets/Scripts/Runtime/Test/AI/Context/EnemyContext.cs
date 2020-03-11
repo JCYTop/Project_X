@@ -12,11 +12,11 @@ namespace Framework.GOAP
     {
         #region variable
 
-        private IAgent<ActionEnemyTag, GoalEnemyTag> agent;
+        private IAgent<ActionTag, GoalEnemyTag> agent;
 
         [SerializeField] private EnemyAllActionConfig actionConfig;
         [SerializeField] private EnemyAllGoal goalConfig;
-        public IAgent<ActionEnemyTag, GoalEnemyTag> Agent => agent;
+        public IAgent<ActionTag, GoalEnemyTag> Agent => agent;
         public EnemyAllActionConfig ActionConfig => actionConfig;
         public EnemyAllGoal GoalConfig => goalConfig;
 

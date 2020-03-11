@@ -16,6 +16,7 @@ MonoBehaviour:
     Animation: []
     AudioClip: []
     ParticleEffects: []
+  HanderTag: 1
   Priority: 100
   IsInterruptible: 1
   Cost: 0

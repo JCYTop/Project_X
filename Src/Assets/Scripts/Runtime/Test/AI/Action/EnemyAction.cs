@@ -3,9 +3,9 @@ namespace Framework.GOAP
     /// <summary>
     /// 用在具体的生成类
     /// </summary>
-    public class EnemyAction : ActionBase<ActionEnemyTag, EnemyActionElementTag>
+    public class EnemyAction : ActionBase<ActionTag, ActionElementTag>
     {
-        public EnemyAction(ActionEnemyTag tag, ActionConfigUnit<EnemyActionElementTag> actionGroup) : base(tag, actionGroup)
+        public EnemyAction(ActionTag tag, ActionConfigUnit<ActionElementTag> actionGroup) : base(tag, actionGroup)
         {
         }
     }

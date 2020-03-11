@@ -162,13 +162,5 @@ namespace Framework.GOAP
         #endregion
     }
 
-    public enum EnemyActionElementTag
-    {
-        Default = ActionElementTag.Default,
-        Priority = ActionElementTag.Priority,
-        Interruptible = ActionElementTag.Interruptible,
-        Cost = ActionElementTag.Cost,
-    }
-
     #endregion
 }

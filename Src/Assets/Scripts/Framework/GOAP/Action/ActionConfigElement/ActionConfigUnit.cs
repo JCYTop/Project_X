@@ -27,6 +27,7 @@ namespace Framework.GOAP
     public abstract class ActionConfigUnit<T> : UnityEngine.ScriptableObject
     {
         public ActionUnityGroup ActionUnityGroup;
+        public ActionHanderTag HanderTag;
         public SortedList<T, IConfigElement> ActionConfigUnitSet = new SortedList<T, IConfigElement>();
 
         /// <summary>

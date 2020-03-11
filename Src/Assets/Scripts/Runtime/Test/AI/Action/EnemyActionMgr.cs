@@ -1,11 +1,11 @@
 namespace Framework.GOAP
 {
-    public class EnemyActionMgr : ActionMgrBase<ActionEnemyTag, GoalEnemyTag>
+    public class EnemyActionMgr : ActionMgrBase<ActionTag, GoalEnemyTag>
     {
         public EnemyAgent EnemyAgent => agent.GetAgent<EnemyAgent>();
         public EnemyContext EnemyContext => EnemyAgent.Context.GetContext<EnemyContext>();
 
-        public EnemyActionMgr(IAgent<ActionEnemyTag, GoalEnemyTag> agent) : base(agent)
+        public EnemyActionMgr(IAgent<ActionTag, GoalEnemyTag> agent) : base(agent)
         {
         }
 
@@ -15,18 +15,18 @@ namespace Framework.GOAP
             foreach (var unit in list)
             {
                 var action = new EnemyAction(unit.Key, unit.Value);
-                var handle = EnemyActionHandleMap.Instance().GetHandle(unit.Key);
+                var handle = ActionHandlerMap.HandleMap.GetSortListValue(unit.Value.HanderTag);
                 handle.Init(action);
                 handle.AddFinishCallBack(() =>
                 {
-                    LogTool.Log($"动作执行完成开始执行回调 {handle.Label}", LogEnum.NormalLog);
-                    onActionComplete(handle.Label);
+                    LogTool.Log($"动作执行完成开始执行回调 === {handle.Action.Label}", LogEnum.NormalLog);
+                    onActionComplete(handle.Action.Label);
                 });
-                handlersSort.Add(handle.Label, handle);
+                handlersSort.Add(handle.Action.Label, handle);
             }
         }
 
-        public override ActionEnemyTag GetDefaultActionLabel()
+        public override ActionTag GetDefaultActionLabel()
         {
             throw new System.NotImplementedException();
         }
