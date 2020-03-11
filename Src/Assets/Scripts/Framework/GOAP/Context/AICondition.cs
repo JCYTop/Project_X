@@ -15,6 +15,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Threading;
 using Framework.Base;
 using Framework.EventDispatcher;
 using UnityEngine;
@@ -48,7 +49,7 @@ namespace Framework.GOAP
 
     public static class AIConditionExtend
     {
-        public static Dictionary<AIStateElementTag, Func<IContext, bool>> Map = new Dictionary<AIStateElementTag, Func<IContext, bool>>()
+        public static Dictionary<AIStateElementTag, Func<IContext, bool>> ConditionMap = new Dictionary<AIStateElementTag, Func<IContext, bool>>()
         {
             {
                 AIStateElementTag.Normal_Target, (context) =>

@@ -15,6 +15,8 @@
 
 using System;
 using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.Rendering;
 
 namespace Framework.GOAP
 {
@@ -22,23 +24,42 @@ namespace Framework.GOAP
     {
         private EnemyContext enemyContext;
         private EnemyStateMgr stateMgr;
-        private HashSet<(StateAssembly, Action)> tmp = new HashSet<(StateAssembly, Action)>();
+        private HashSet<AIStateElementTag> existTag;
+        private Dictionary<AIStateElementTag, Func<IContext, bool>> conditionMap;
+#if UNITY_EDITOR
+        [SerializeField] private List<StateAssembly> panelInfo = new List<StateAssembly>();
+#endif
 
         protected override void Init()
         {
+            existTag = new HashSet<AIStateElementTag>();
+            conditionMap = new Dictionary<AIStateElementTag, Func<IContext, bool>>(1 << 4);
             enemyContext = this.GetComponent<EnemyContext>();
             stateMgr = enemyContext.Agent.AgentStateMgr.GetStateMgr<EnemyStateMgr>();
             foreach (var stateBase in stateMgr.StateSortList.Values)
             {
                 foreach (var state in stateBase.GetData().StateElement)
                 {
-                    //TODO 
+                    //获取配置文件中所有的 Tag 标签
+                    existTag.Add(state.ElementTag);
                 }
             }
 
-            //TODO 试验
-            var data = AIConditionExtend.Map[AIStateElementTag.Normal_Target];
-            data(enemyContext);
+            foreach (var elementTag in existTag)
+            {
+                var action = AIConditionExtend.ConditionMap[elementTag];
+                conditionMap.Add(elementTag, action);
+#if UNITY_EDITOR
+                panelInfo.Add(new StateAssembly(elementTag, action(enemyContext)));
+#endif
+            }
+        }
+
+        private void Update()
+        {
+            foreach (var stateAssembly in conditionMap)
+            {
+            }
         }
     }
 }

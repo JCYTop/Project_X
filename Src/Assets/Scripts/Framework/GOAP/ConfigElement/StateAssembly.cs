@@ -9,9 +9,19 @@ namespace Framework.GOAP
     /// 应该专门写一个外部环境类保存时事计算参数 && 保存基础数值
     /// </summary>
     [Serializable]
-    public class StateAssembly 
+    public class StateAssembly
     {
         [Rename("元素标签")] public AIStateElementTag ElementTag;
         [Rename("标志位")] public bool IsRight = true;
+
+        public StateAssembly()
+        {
+        }
+
+        public StateAssembly(AIStateElementTag elementTag, bool right)
+        {
+            this.ElementTag = elementTag;
+            this.IsRight = right;
+        }
     }
 }

@@ -83,6 +83,8 @@ namespace Framework.GOAP
             }
         }
 
+        protected abstract void Init();
+
         /// <summary>
         /// 刷新面板信息
         /// </summary>

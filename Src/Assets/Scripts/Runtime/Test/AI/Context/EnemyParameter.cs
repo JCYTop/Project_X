@@ -2,5 +2,8 @@
 {
     public class EnemyParameter : AIParameter
     {
+        protected override void Init()
+        {
+        }
     }
 }
