@@ -29,17 +29,17 @@ namespace Framework.GOAP
         /// <summary>
         /// 标签
         /// </summary>
-        public ParameterTag Tag;
+        [Rename("标签")] public ParameterTag Tag;
 
         /// <summary>
-        /// 值的范围
+        /// 值范围
         /// </summary>
-        public Vector2 DynamicRange;
+        [Rename("值范围")] public Vector2 DynamicRange;
 
         /// <summary>
         /// 值
         /// </summary>
-        public float Value;
+        [Rename("值")] public float Value;
 
         public ParameterUnit()
         {

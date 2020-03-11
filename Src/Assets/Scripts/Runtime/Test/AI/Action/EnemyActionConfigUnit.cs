@@ -1,12 +1,10 @@
-using UnityEngine;
-
 namespace Framework.GOAP
 {
     public class EnemyActionConfigUnit : ActionConfigUnit<ActionElementTag>
     {
-        [Header("权重")] public int Priority;
-        [Header("是否可打断")] public bool IsInterruptible = false;
-        [Header("消耗")] public int Cost;
+        [Rename("权重")] public int Priority;
+        [Rename("是否可打断")] public bool IsInterruptible = false;
+        [Rename("消耗")] public int Cost;
 
         public override ActionConfigUnit<ActionElementTag> Init()
         {

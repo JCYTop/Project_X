@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Reflection;
 using Framework.Singleton;
 
@@ -24,14 +23,14 @@ namespace Framework.GM
         public void Init()
         {
             methods.Clear();
-            Type type = typeof(GMList);
-            MethodInfo[] _methods = type.GetMethods();
-            foreach (MethodInfo methodInfo in _methods)
+            var type = typeof(GMList);
+            var _methods = type.GetMethods();
+            foreach (var methodInfo in _methods)
             {
-                object[] attribute = methodInfo.GetCustomAttributes(typeof(GMCommandAttribute), false);
+                var attribute = methodInfo.GetCustomAttributes(typeof(GMCommandAttribute), false);
                 if (attribute != null && attribute.Length > 0)
                 {
-                    GMCommandAttribute gmc = attribute[0] as GMCommandAttribute;
+                    var gmc = attribute[0] as GMCommandAttribute;
                     methods.Add(gmc.CMD, methodInfo);
                 }
             }
@@ -39,16 +38,16 @@ namespace Framework.GM
 
         public string Call(string input)
         {
-            string[] tmpStr = input.Split(' ');
+            var tmpStr = input.Split(' ');
             if (methods.ContainsKey(tmpStr[0]))
             {
-                List<string> param = new List<string>();
+                var param = new List<string>();
                 for (int i = 0; i < tmpStr.Length; i++)
                 {
                     param.Add(tmpStr[i]);
                 }
 
-                MethodInfo method = methods[tmpStr[0]];
+                var method = methods[tmpStr[0]];
                 var info = method.GetCustomAttributes(typeof(GMCommandAttribute), false)[0] as GMCommandAttribute;
                 if (param.Count != info.paramNum)
                     return "Usage: " + info.Des;

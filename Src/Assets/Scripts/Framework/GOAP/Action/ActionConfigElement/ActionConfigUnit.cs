@@ -26,8 +26,8 @@ namespace Framework.GOAP
     [Serializable]
     public abstract class ActionConfigUnit<T> : UnityEngine.ScriptableObject
     {
-        public ActionUnityGroup ActionUnityGroup;
-        public ActionHanderTag HanderTag;
+        [Rename("文件组")] public ActionUnityGroup ActionUnityGroup;
+        [Rename("Handler标签")] public ActionHanderTag HanderTag;
         public SortedList<T, IConfigElement> ActionConfigUnitSet = new SortedList<T, IConfigElement>();
 
         /// <summary>
