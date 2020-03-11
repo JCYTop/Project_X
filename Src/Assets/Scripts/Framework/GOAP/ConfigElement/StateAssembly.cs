@@ -11,7 +11,7 @@ namespace Framework.GOAP
     [Serializable]
     public class StateAssembly 
     {
-        [Header("具体元素标签")] public AIStateElementTag ElementTag;
-        [Header("标志位")] public bool IsRight = true;
+        [Rename("元素标签")] public AIStateElementTag ElementTag;
+        [Rename("标志位")] public bool IsRight = true;
     }
 }

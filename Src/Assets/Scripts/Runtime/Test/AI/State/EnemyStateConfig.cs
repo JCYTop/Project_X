@@ -9,7 +9,7 @@ namespace Framework.GOAP
     /// </summary>
     public class EnemyStateConfig : StateConfig
     {
-        [Rename("标签")] public StateTag Tag;
-        [Rename("元素")] public List<StateAssembly> StateElement;
+        [Rename("状态标签")] public StateTag Tag;
+        public List<StateAssembly> StateElement;
     }
 }
