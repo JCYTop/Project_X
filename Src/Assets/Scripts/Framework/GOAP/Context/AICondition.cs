@@ -39,12 +39,7 @@ namespace Framework.GOAP
             }
         }
 
-        private void Start()
-        {
-            Init();
-        }
-
-        protected abstract void Init();
+        public abstract void Init();
     }
 
     public static class AIConditionExtend

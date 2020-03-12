@@ -2,7 +2,7 @@
 {
     public class EnemyParameter : AIParameter
     {
-        protected override void Init()
+        public override void Init()
         {
         }
     }

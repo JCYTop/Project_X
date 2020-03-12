@@ -22,10 +22,11 @@ namespace Framework.GOAP
 
         #endregion
 
-        public override void Init()
+        public override void InitAwake()
         {
-            base.Init();
+            base.InitAwake();
             agent = new EnemyAgent(this);
+    
             var ssss = Parameter.ParameterList;
         }
 

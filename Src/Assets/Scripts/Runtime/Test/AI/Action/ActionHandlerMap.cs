@@ -24,15 +24,15 @@ namespace Framework.GOAP
     /// </summary>
     public static class ActionHandlerMap
     {
-        private static SortedList<ActionHanderTag, IActionHandler<ActionTag>> handleMap;
+        private static SortedList<ActionHanderTag, ActionHandler> handleMap;
 
-        public static SortedList<ActionHanderTag, IActionHandler<ActionTag>> HandleMap
+        public static SortedList<ActionHanderTag, ActionHandler> HandleMap
         {
             get
             {
                 if (handleMap == null)
                 {
-                    handleMap = new SortedList<ActionHanderTag, IActionHandler<ActionTag>>()
+                    handleMap = new SortedList<ActionHanderTag, ActionHandler>()
                     {
                         //TODO 这是一个例子
                         {ActionHanderTag.Default_Handle, new DefaultActionHandler()},

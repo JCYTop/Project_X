@@ -27,10 +27,15 @@ namespace Framework.GOAP
         private Dictionary<AIStateElementTag, Func<IContext, bool>> conditionMap;
 
 #if UNITY_EDITOR
-        [SerializeField] private List<StateAssembly> panelInfo = new List<StateAssembly>(1 << 4);
+        [SerializeField, Sirenix.OdinInspector.ReadOnly]
+        private List<StateAssembly> panelInfo = new List<StateAssembly>(1 << 4);
 #endif
-        protected override void Init()
+
+        public override void Init()
         {
+#if UNITY_EDITOR
+            panelInfo.Clear();
+#endif
             existTag = new HashSet<AIStateElementTag>();
             conditionMap = new Dictionary<AIStateElementTag, Func<IContext, bool>>(1 << 4);
             enemyContext = this.GetComponent<EnemyContext>();
@@ -64,17 +69,18 @@ namespace Framework.GOAP
 
         private void Update()
         {
+            if (conditionMap.Count <= 0) return;
             foreach (var stateAssembly in conditionMap)
             {
                 var currFlag = stateAssembly.Value(enemyContext);
 #if UNITY_EDITOR
-                foreach (var panel in panelInfo)
+                panelInfo.ForEach((panel) =>
                 {
                     if (panel.ElementTag == stateAssembly.Key)
                     {
                         panel.IsRight = currFlag;
                     }
-                }
+                });
 #endif
             }
         }

@@ -45,11 +45,6 @@ namespace Framework.GOAP
             }
         }
 
-        private void Awake()
-        {
-            Init();
-        }
-
         /// <summary>
         /// 就是初始化
         /// </summary>
