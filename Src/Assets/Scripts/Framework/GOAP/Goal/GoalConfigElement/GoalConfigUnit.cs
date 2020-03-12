@@ -26,7 +26,7 @@ namespace Framework.GOAP
     [Serializable]
     public abstract class GoalConfigUnit<T> : UnityEngine.ScriptableObject
     {
-        protected SortedList<T, IConfigElement> goalConfigUnitSet = new SortedList<T, IConfigElement>();
+        protected SortedList<T, object> goalConfigUnitSet = new SortedList<T, object>();
 
         /// <summary>
         /// 初始化数据

@@ -83,7 +83,7 @@ namespace Framework.GOAP
         /// </summary>
         /// <param name="key"></param>
         /// <returns></returns>
-        IConfigElement GetSingleValue(AIStateElementTag key);
+        object GetSingleValue(AIStateElementTag key);
 
         /// <summary>
         /// 根据AIConfigElement类型
@@ -118,7 +118,7 @@ namespace Framework.GOAP
         /// 获取两个State
         /// 同时包含的键值及当前状态键值对应的数据
         /// </summary>
-        SortedList<AIStateElementTag, Dictionary<IState, IConfigElement>> GetSameData(IState otherState);
+        SortedList<AIStateElementTag, Dictionary<IState, object>> GetSameData(IState otherState);
 
         /// <summary>
         /// 获取跟另外一个状态的差异键值集合

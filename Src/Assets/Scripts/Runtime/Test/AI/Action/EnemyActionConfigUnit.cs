@@ -8,12 +8,9 @@ namespace Framework.GOAP
 
         public override ActionConfigUnit<ActionElementTag> Init()
         {
-            var priority = new ValueAggregation(Priority);
-            ActionConfigUnitSet.Add(ActionElementTag.Priority, priority);
-            var interruptible = new BoolAggregation(IsInterruptible);
-            ActionConfigUnitSet.Add(ActionElementTag.Interruptible, interruptible);
-            var cost = new ValueAggregation(Cost);
-            ActionConfigUnitSet.Add(ActionElementTag.Cost, cost);
+            ActionConfigUnitSet.Add(ActionElementTag.Priority, Priority);
+            ActionConfigUnitSet.Add(ActionElementTag.Interruptible, IsInterruptible);
+            ActionConfigUnitSet.Add(ActionElementTag.Cost, Cost);
             LogTool.Log($"{this.name} , ActionConfigUnit数据已经加载完成", LogEnum.AssetLog);
             return this;
         }

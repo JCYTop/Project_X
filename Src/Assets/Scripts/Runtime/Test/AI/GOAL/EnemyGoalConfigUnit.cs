@@ -9,8 +9,7 @@ namespace Framework.GOAP
 
         public override GoalConfigUnit<GoalElementTag> Init()
         {
-            var priority = new ValueAggregation(Priority);
-            goalConfigUnitSet.Add(GoalElementTag.Priority, priority);
+            goalConfigUnitSet.Add(GoalElementTag.Priority, Priority);
             LogTool.Log($"{this.name} , GoalConfigUnit数据已经加载完成", LogEnum.AssetLog);
             return this;
         }

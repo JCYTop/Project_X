@@ -2,7 +2,7 @@
 ----------------------------------
  *Copyright(C) 2019 by IndieGame
  *All rights reserved.
- *FileName:     IConfigElementBase
+ *FileName:     ConfigElementExtend
  *Author:       @JCY
  *Version:      0.0.1
  *AuthorEmail:  jcyemail@qq.com
@@ -17,28 +17,7 @@ using System;
 
 namespace Framework.GOAP
 {
-    /// <summary>
-    /// 序列化文件配置基础接口
-    /// 所有需要配置序列化问价都继承这里
-    /// </summary>
-    public interface IConfigElement
-    {
-    }
-
-    public abstract class ConfigElementBase<T> : IConfigElement
-    {
-        /// <summary>
-        /// 获取当前存入的值
-        /// </summary>
-        public T Data { get; private set; }
-
-        public ConfigElementBase(T value)
-        {
-            this.Data = value;
-        }
-    }
-
-    public static class IConfigElementExtend
+    public static class ConfigElementExtend
     {
         /// <summary>
         /// 转换成指定类型的IStateConfigElementBase
@@ -46,7 +25,7 @@ namespace Framework.GOAP
         /// <param name="configElement">IStateConfigElementBase类型</param>
         /// <typeparam name="T">指定类型</typeparam>
         /// <returns>返回指定类型T</returns>
-        public static T CastStateConfigEle<T>(this IConfigElement configElement)
+        public static T CastStateConfigEle<T>(this object configElement)
         {
             try
             {

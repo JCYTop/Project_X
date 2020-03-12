@@ -47,7 +47,7 @@ namespace Framework.GOAP
         /// <param name="tag"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        T GetActionData<T>(string tag) where T : IConfigElement;
+        T GetActionData<T>(string tag);
 
         /// <summary>
         /// 当前动作是否能够中断

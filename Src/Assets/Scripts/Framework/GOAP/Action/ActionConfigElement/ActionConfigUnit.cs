@@ -28,7 +28,7 @@ namespace Framework.GOAP
     {
         [Rename("文件组")] public ActionUnityGroup ActionUnityGroup;
         [Rename("Handler标签")] public ActionHanderTag HanderTag;
-        public SortedList<T, IConfigElement> ActionConfigUnitSet = new SortedList<T, IConfigElement>();
+        public SortedList<T, object> ActionConfigUnitSet = new SortedList<T, object>();
 
         /// <summary>
         /// 初始化数据

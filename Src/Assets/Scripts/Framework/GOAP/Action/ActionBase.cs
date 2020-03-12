@@ -36,8 +36,8 @@ namespace Framework.GOAP
             get
             {
                 var element = ActionGroup.ActionConfigUnitSet.GetSortListValue(ActionElementTag.Cost.ToString());
-                var intValue = element.CastStateConfigEle<ValueAggregation>();
-                return intValue.Data;
+                var intValue = element.CastStateConfigEle<int>();
+                return intValue;
             }
         }
 
@@ -46,8 +46,8 @@ namespace Framework.GOAP
             get
             {
                 var element = ActionGroup.ActionConfigUnitSet.GetSortListValue(ActionElementTag.Priority.ToString());
-                var intValue = element.CastStateConfigEle<ValueAggregation>();
-                return intValue.Data;
+                var intValue = element.CastStateConfigEle<int>();
+                return intValue;
             }
         }
 
@@ -56,8 +56,8 @@ namespace Framework.GOAP
             get
             {
                 var element = ActionGroup.ActionConfigUnitSet.GetSortListValue(ActionElementTag.Interruptible.ToString());
-                var boolValue = element.CastStateConfigEle<BoolAggregation>();
-                return boolValue.Data;
+                var boolValue = element.CastStateConfigEle<bool>();
+                return boolValue;
             }
         }
 
@@ -69,7 +69,7 @@ namespace Framework.GOAP
             this.ActionGroup = actionGroup;
         }
 
-        public T GetActionData<T>(string tag) where T : IConfigElement
+        public T GetActionData<T>(string tag)
         {
             try
             {

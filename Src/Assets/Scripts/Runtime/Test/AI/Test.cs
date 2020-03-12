@@ -6,7 +6,7 @@ namespace Framework.GOAP
     public class Test : MonoBehaviour
     {
         public int Bleed;
-        protected SortedList<AIStateElementTag, IConfigElement> stateConfigSet;
+//        protected SortedList<AIStateElementTag, IConfigElement> stateConfigSet;
 
         private void Start()
         {
