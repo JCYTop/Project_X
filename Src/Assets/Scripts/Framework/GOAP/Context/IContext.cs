@@ -34,7 +34,7 @@ namespace Framework.GOAP
         /// <summary>
         /// 基础初始化
         /// </summary>
-        void InitAwake();
+        void Init();
     }
 
     /// <summary>

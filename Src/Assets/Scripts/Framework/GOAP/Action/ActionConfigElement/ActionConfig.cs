@@ -29,7 +29,6 @@ namespace Framework.GOAP
     public abstract class ActionConfig<T1, T2> : UnityEngine.ScriptableObject
     {
         protected SortedList<T1, ActionConfigUnit<T2>> actionConfigSet = new SortedList<T1, ActionConfigUnit<T2>>();
-        private int count = 0;
 
         /// <summary>
         /// 初始化数据

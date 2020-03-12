@@ -15,7 +15,6 @@
 
 using System;
 using System.Collections.Generic;
-using UnityEngine;
 
 namespace Framework.GOAP
 {
@@ -25,5 +24,7 @@ namespace Framework.GOAP
     [Serializable]
     public abstract class StateConfig : UnityEngine.ScriptableObject
     {
+        [Rename("状态标签")] public StateTag Tag;
+        public List<StateAssembly> StateElement;
     }
 }

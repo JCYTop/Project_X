@@ -53,28 +53,23 @@ namespace Framework.GOAP
 
         private void Awake()
         {
-            InitAwake();
-        }
-
-        private void Start()
-        {
-            InitStart();
-            StartFSM();
-        }
-
-        public virtual void InitAwake()
-        {
             stateFsm = this.GetComponent<PlayMakerFSM>();
             parameter = this.GetComponent<AIParameter>();
             dynamic = this.GetComponent<AIDynamic>();
             condition = this.GetComponent<AICondition>();
             Parameter.Init();
             Dynamic.Init();
+            Init();
         }
 
-        public virtual void InitStart()
+        private void Start()
         {
             Condition.Init();
+            StartFSM();
+        }
+
+        public virtual void Init()
+        {
         }
 
         /// <summary>

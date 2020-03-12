@@ -33,6 +33,7 @@ namespace Framework.GOAP
 
         public override void Init()
         {
+            
 #if UNITY_EDITOR
             panelInfo.Clear();
 #endif

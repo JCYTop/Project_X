@@ -1,5 +1,3 @@
-using System.Collections.Generic;
-
 namespace Framework.GOAP
 {
     /// <summary>
@@ -9,7 +7,5 @@ namespace Framework.GOAP
     /// </summary>
     public class EnemyStateConfig : StateConfig
     {
-        [Rename("状态标签")] public StateTag Tag;
-        public List<StateAssembly> StateElement;
     }
 }

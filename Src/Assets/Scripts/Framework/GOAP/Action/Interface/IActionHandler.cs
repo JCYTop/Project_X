@@ -85,21 +85,21 @@ namespace Framework.GOAP
         /// <summary>
         /// 初始化
         /// </summary>
-        INIT,
+        Init,
 
         /// <summary>
         /// 进入
         /// </summary>
-        ENTER,
+        Enter,
 
         /// <summary>
         /// 执行
         /// </summary>
-        EXCUTE,
+        Excute,
 
         /// <summary>
         /// 退出
         /// </summary>
-        EXIT
+        Exit
     }
 }
