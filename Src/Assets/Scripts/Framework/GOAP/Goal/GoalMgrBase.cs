@@ -58,7 +58,6 @@ namespace Framework.GOAP
         {
             throw new System.NotImplementedException();
         }
-
         public void UpdateData()
         {
             throw new System.NotImplementedException();

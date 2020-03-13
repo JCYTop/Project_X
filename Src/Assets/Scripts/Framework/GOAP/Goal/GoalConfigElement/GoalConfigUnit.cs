@@ -29,7 +29,7 @@ namespace Framework.GOAP
         [Rename("权重")] public int Priority;
         public List<CondtionAssembly> Condition;
         public List<CondtionAssembly> Effets;
-        protected SortedList<T, object> goalConfigUnitSet = new SortedList<T, object>();
+        public SortedList<T, object> goalConfigUnitSet = new SortedList<T, object>();
 
         /// <summary>
         /// 初始化数据

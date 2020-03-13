@@ -11,7 +11,11 @@ namespace Framework.GOAP
 
         protected override void InitGoals()
         {
-            EnemyContext.GoalConfig.Init();
+            var list = EnemyContext.GoalConfig.Init();
+            foreach (var unit in list)
+            {
+                var goal = new EnemyGoal(unit.Key, unit.Value);
+            }
         }
     }
 }

@@ -14,6 +14,7 @@
 */
 
 using System;
+using System.Collections.Generic;
 
 namespace Framework.GOAP
 {
@@ -23,30 +24,65 @@ namespace Framework.GOAP
     /// GoalBase 生成一个具体的Goal类
     /// </summary>
     /// <typeparam name="TGoal"></typeparam>
-    public abstract class GoalBase<TAction, TGoal> : IGoal<TGoal>
+    public abstract class GoalBase<TGoal, TGoalElementTag> : IGoal<TGoal>
     {
-        private IAgent<TAction, TGoal> agent;
-        private IState effects;
-        private IState activeCondition;
+        private ICollection<StateAssembly> conditions;
+        private ICollection<StateAssembly> effects;
         private Action<IGoal<TGoal>> onActivate;
         private Action<IGoal<TGoal>> onInactivate;
         public TGoal Label { get; }
+        public GoalConfigUnit<TGoalElementTag> goalGroup { get; private set; }
 
-        public GoalBase(IAgent<TAction, TGoal> agent)
+        public int Priority
         {
-            this.agent = agent;
-            effects = InitEffects();
-            activeCondition = InitCondition();
+            get
+            {
+                var element = goalGroup.goalConfigUnitSet.GetSortListValue(ActionElementTag.Priority.ToString());
+                var intValue = element.CastType<int>();
+                return intValue;
+            }
         }
 
-        public IState GetEffects()
+        public ICollection<StateAssembly> Effects
         {
-            return effects;
+            get
+            {
+                if (effects == null)
+                {
+                    effects = InitEffects();
+                }
+
+                return effects;
+            }
         }
 
-        public IState GetActiveCondition()
+        public ICollection<StateAssembly> Condition
         {
-            return activeCondition;
+            get
+            {
+                if (conditions == null)
+                {
+                    conditions = InitCondition();
+                }
+
+                return conditions;
+            }
+        }
+
+        public GoalBase(TGoal tag, GoalConfigUnit<TGoalElementTag> goalGroup)
+        {
+            this.Label = tag;
+            this.goalGroup = goalGroup;
+        }
+
+        private ICollection<StateAssembly> InitCondition()
+        {
+            return (ICollection<StateAssembly>) goalGroup.goalConfigUnitSet.GetSortListValue(GoalElementTag.Conditon.ToString());
+        }
+
+        private ICollection<StateAssembly> InitEffects()
+        {
+            return (ICollection<StateAssembly>) goalGroup.goalConfigUnitSet.GetSortListValue(GoalElementTag.Effects.ToString());
         }
 
         public bool IsGoalComplete()
@@ -68,9 +104,5 @@ namespace Framework.GOAP
         {
             throw new NotImplementedException();
         }
-
-        public abstract IState InitEffects();
-        public abstract IState InitCondition();
-        public abstract int GetPriority();
     }
 }

@@ -1,24 +1,9 @@
 namespace Framework.GOAP
 {
-    public class EnemyGoal : GoalBase<ActionTag, GoalTag>
+    public class EnemyGoal : GoalBase<GoalTag, GoalElementTag>
     {
-        public EnemyGoal(IAgent<ActionTag, GoalTag> agent) : base(agent)
+        public EnemyGoal(GoalTag tag, GoalConfigUnit<GoalElementTag> actionGroup) : base(tag, actionGroup)
         {
-        }
-
-        public override IState InitEffects()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public override IState InitCondition()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public override int GetPriority()
-        {
-            throw new System.NotImplementedException();
         }
     }
 }
