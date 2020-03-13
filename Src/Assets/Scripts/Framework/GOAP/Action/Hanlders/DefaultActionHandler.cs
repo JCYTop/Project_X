@@ -19,8 +19,6 @@ namespace Framework.GOAP
 {
     public class DefaultActionHandler : ActionHandler
     {
-        public override ActionExcuteState ExcuteState { get; }
-
         public override void AddFinishCallBack(Action onFinishAction)
         {
             this.onFinishAction = onFinishAction;
@@ -28,17 +26,17 @@ namespace Framework.GOAP
 
         public override void Enter()
         {
-            throw new NotImplementedException();
+            base.Enter();
         }
 
         public override void Execute()
         {
-            throw new NotImplementedException();
+            base.Execute();
         }
 
         public override void Exit()
         {
-            throw new NotImplementedException();
+            base.Exit();
         }
     }
 }

@@ -26,16 +26,29 @@ namespace Framework.GOAP
         /// <summary>
         /// 执行中的状态
         /// </summary>
-        public abstract ActionExcuteState ExcuteState { get; }
+        public ActionExcuteState ExcuteState { get; private set; }
 
         public virtual void Init(IAction<ActionTag> action)
         {
             this.Action = action;
+            ExcuteState = ActionExcuteState.Init;
         }
 
         public abstract void AddFinishCallBack(Action onFinishAction);
-        public abstract void Enter();
-        public abstract void Execute();
-        public abstract void Exit();
+
+        public virtual void Enter()
+        {
+            ExcuteState = ActionExcuteState.Enter;
+        }
+
+        public virtual void Execute()
+        {
+            ExcuteState = ActionExcuteState.Excute;
+        }
+
+        public virtual void Exit()
+        {
+            ExcuteState = ActionExcuteState.Exit;
+        }
     }
 }
