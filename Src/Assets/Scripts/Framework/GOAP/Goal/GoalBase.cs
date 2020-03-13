@@ -31,7 +31,7 @@ namespace Framework.GOAP
         private Action<IGoal<TGoal>> onActivate;
         private Action<IGoal<TGoal>> onInactivate;
         public TGoal Label { get; }
-        public GoalConfigUnit goalGroup { get; private set; }
+        public GoalConfigUnit goalGroup { get; }
 
         public int Priority
         {
