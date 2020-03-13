@@ -5,8 +5,6 @@ namespace Framework.GOAP
     /// </summary>
     public class EnemyGoalConfigUnit : GoalConfigUnit<GoalElementTag>
     {
-        [Rename("权重")] public int Priority;
-
         public override GoalConfigUnit<GoalElementTag> Init()
         {
             goalConfigUnitSet.Add(GoalElementTag.Priority, Priority);

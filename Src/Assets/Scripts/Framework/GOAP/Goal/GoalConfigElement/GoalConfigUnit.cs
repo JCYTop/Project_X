@@ -26,6 +26,7 @@ namespace Framework.GOAP
     [Serializable]
     public abstract class GoalConfigUnit<T> : UnityEngine.ScriptableObject
     {
+        [Rename("权重")] public int Priority;
         protected SortedList<T, object> goalConfigUnitSet = new SortedList<T, object>();
 
         /// <summary>

@@ -1,8 +1,8 @@
 namespace Framework.GOAP
 {
-    public class EnemyGoal : GoalBase<ActionTag, GoalCommonTag>
+    public class EnemyGoal : GoalBase<ActionTag, GoalTag>
     {
-        public EnemyGoal(IAgent<ActionTag, GoalCommonTag> agent) : base(agent)
+        public EnemyGoal(IAgent<ActionTag, GoalTag> agent) : base(agent)
         {
         }
 

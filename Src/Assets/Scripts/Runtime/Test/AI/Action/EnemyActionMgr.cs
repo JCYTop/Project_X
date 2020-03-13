@@ -1,11 +1,11 @@
 namespace Framework.GOAP
 {
-    public class EnemyActionMgr : ActionMgrBase<ActionTag, GoalEnemyTag>
+    public class EnemyActionMgr : ActionMgrBase<ActionTag, GoalTag>
     {
         public EnemyAgent EnemyAgent => agent.GetAgent<EnemyAgent>();
         public EnemyContext EnemyContext => EnemyAgent.Context.GetContext<EnemyContext>();
 
-        public EnemyActionMgr(IAgent<ActionTag, GoalEnemyTag> agent) : base(agent)
+        public EnemyActionMgr(IAgent<ActionTag, GoalTag> agent) : base(agent)
         {
         }
 
