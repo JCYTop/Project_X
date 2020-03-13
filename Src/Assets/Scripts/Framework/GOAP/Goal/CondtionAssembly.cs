@@ -21,8 +21,9 @@ namespace Framework.GOAP
     [Serializable]
     public class CondtionAssembly
     {
-        [Rename("状态标签")] public CondtionTag Tag;
-        public List<StateAssembly> StateElement;
+        [Rename("标签")] public CondtionTag ElementTag;
+        [Rename("标志位")] public bool IsRight = true;
+
     }
 
     public enum CondtionTag

@@ -34,12 +34,12 @@ namespace Framework.GOAP
         /// <summary>
         /// 先决条件
         /// </summary>
-        public List<StateAssembly> Preconditions;
+        public List<CondtionAssembly> Preconditions;
 
         /// <summary>
         /// 影响条件
         /// </summary>
-        public List<StateAssembly> Effects;
+        public List<CondtionAssembly> Effects;
 
         public SortedList<T, object> ActionConfigUnitSet = new SortedList<T, object>();
 

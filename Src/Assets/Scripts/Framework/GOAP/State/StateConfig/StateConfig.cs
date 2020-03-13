@@ -36,7 +36,7 @@ namespace Framework.GOAP
     [Serializable]
     public class StateAssembly
     {
-        [Rename("元素标签")] public AIStateElementTag ElementTag;
+        [Rename("标签")] public AIStateElementTag ElementTag;
         [Rename("标志位")] public bool IsRight = true;
 
         public StateAssembly()
