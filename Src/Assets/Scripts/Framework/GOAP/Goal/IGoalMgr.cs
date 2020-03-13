@@ -55,5 +55,12 @@ namespace Framework.GOAP
         /// 更新数据
         /// </summary>
         void UpdateData();
+
+        /// <summary>
+        /// 获取相对应的GoalMgr
+        /// </summary>
+        /// <typeparam name="TGoalMgr"></typeparam>
+        /// <returns></returns>
+        TGoalMgr GetGoalMgr<TGoalMgr>() where TGoalMgr : class;
     }
 }

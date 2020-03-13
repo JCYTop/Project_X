@@ -13,6 +13,7 @@
  ----------------------------------
 */
 
+using System;
 using System.Collections.Generic;
 
 namespace Framework.GOAP
@@ -61,6 +62,19 @@ namespace Framework.GOAP
         public void UpdateData()
         {
             throw new System.NotImplementedException();
+        }
+
+        public TGoalMgr GetGoalMgr<TGoalMgr>() where TGoalMgr : class
+        {
+            try
+            {
+                return this as TGoalMgr;
+            }
+            catch (Exception e)
+            {
+                LogTool.LogException(e);
+                throw;
+            }
         }
     }
 }
