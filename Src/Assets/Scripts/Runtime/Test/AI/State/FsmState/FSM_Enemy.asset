@@ -154,14 +154,14 @@ MonoBehaviour:
         - StateConfig
         paramDataPos: 0000000000000000
         paramByteDataSize: 0000000000000000
-    - name: Idle_To_Target
-      description: "\u5F85\u673A\u72B6\u6001\u4E0B\u5230\u8FBE\u76EE\u6807"
+    - name: Battle
+      description: "\u6218\u6597\u72B6\u6001\r"
       colorIndex: 0
       position:
         serializedVersion: 2
         x: 221
         y: 223
-        width: 128
+        width: 100
         height: 16
       isBreakpoint: 0
       isSequence: 0
@@ -169,7 +169,7 @@ MonoBehaviour:
       transitions: []
       actionData:
         actionNames:
-        - Framework.GOAP.EnemyWalkState
+        - Framework.GOAP.EnemyBattleState
         customNames:
         - 
         actionEnabled: 01
@@ -222,10 +222,10 @@ MonoBehaviour:
     - name: FINISHED
       isSystemEvent: 1
       isGlobal: 0
-    - name: Idle
+    - name: Battle
       isSystemEvent: 0
       isGlobal: 0
-    - name: Idle_Walk
+    - name: Idle
       isSystemEvent: 0
       isGlobal: 0
     globalTransitions:
@@ -238,10 +238,10 @@ MonoBehaviour:
       linkConstraint: 0
       colorIndex: 0
     - fsmEvent:
-        name: Idle_Walk
+        name: Battle
         isSystemEvent: 0
         isGlobal: 0
-      toState: Idle_To_Target
+      toState: Battle
       linkStyle: 0
       linkConstraint: 0
       colorIndex: 0

@@ -48,8 +48,6 @@ namespace Framework.GOAP
     }
 
     /// <summary>
-    /// IConfigElementBase标签
-    /// IConfigElementBase配置文件标签
     /// 每个标签对应这当前属性的类
     /// 方便通过标签快速查找工具类
     /// 可以以后继承
@@ -64,44 +62,5 @@ namespace Framework.GOAP
         Default = 0,
 
         #endregion
-
-        #region Target目标 200~399
-
-        /// <summary>
-        /// 是否存在目标
-        /// 非战斗目标
-        /// </summary>
-        Normal_Target = 200,
-
-        /// <summary>
-        /// 是否离目标过远
-        /// 是否离非战斗目标过远
-        /// </summary>
-        Far_Normal_Target,
-
-        #endregion
-    }
-
-    /// <summary>
-    /// 存在进行判断
-    /// 不存在忽略判断
-    /// 应该专门写一个外部环境类保存时事计算参数 && 保存基础数值
-    /// </summary>
-    [Serializable]
-    [Obsolete]
-    public class StateConfigUnitsss
-    {
-        [Rename("标签")] public AIStateElementTag ElementTag;
-        [Rename("标志位")] public bool IsRight = true;
-
-        public StateConfigUnitsss()
-        {
-        }
-
-        public StateConfigUnitsss(AIStateElementTag elementTag, bool right)
-        {
-            this.ElementTag = elementTag;
-            this.IsRight = right;
-        }
     }
 }

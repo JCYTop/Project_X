@@ -156,10 +156,9 @@ namespace Framework.GOAP
         Idle,
 
         /// <summary>
-        /// 待机
-        /// 到达目标
+        /// 战斗
         /// </summary>
-        Idle_To_Target,
+        Battle,
 
         #endregion
     }

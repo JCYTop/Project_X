@@ -20,7 +20,7 @@ namespace Framework.Base
 {
     public class GameObjectBase : ObjectBase
     {
-        [BoxGroup("基本属性手动设置"), SerializeField, EnumPaging, OnValueChanged("SetCurrentTag")]
+        [BoxGroup("基本属性手动设置"), SerializeField, EnumPaging]
         private ObjSubTag objectSubTag = ObjSubTag.Default;
 
         public override void Init()

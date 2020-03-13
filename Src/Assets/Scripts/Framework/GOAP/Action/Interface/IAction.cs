@@ -52,13 +52,13 @@ namespace Framework.GOAP
         /// 执行动作
         /// 先决条件
         /// </summary>
-        ICollection<StateConfigUnitsss> Conditions { get; }
+        ICollection<CondtionAssembly> Conditions { get; }
 
         /// <summary>
         /// 动作执行后
         /// 影响状态结果
         /// </summary>
-        ICollection<StateConfigUnitsss> Effects { get; }
+        ICollection<CondtionAssembly> Effects { get; }
 
         /// <summary>
         /// 验证先决条件

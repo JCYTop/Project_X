@@ -15,6 +15,7 @@
 
 using System;
 using JetBrains.Annotations;
+using UnityEngine;
 
 namespace Framework.GOAP
 {
@@ -30,6 +31,7 @@ namespace Framework.GOAP
         AIParameter Parameter { get; }
         AIDynamic Dynamic { get; }
         AICondition Condition { get; }
+        GameObject GameObject { get; }
 
         /// <summary>
         /// 基础初始化

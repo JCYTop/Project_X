@@ -67,28 +67,59 @@ namespace Framework.GOAP
 
         private void OnEnable()
         {
+            OnEvent(GOAPEventType.Change_Normal_Target, Change_Normal_Target);
         }
 
         private void OnDisable()
         {
+            OffEvent(GOAPEventType.Change_Normal_Target, Change_Normal_Target);
+        }
+
+        private void Change_Normal_Target(object[] args)
+        {
+            if (args != null && args.Length > 0)
+            {
+                if (GoalbalID != Convert.ToInt32(args[0])) return;
+                var go = (GameObject) args[1];
+                if (go)
+                {
+                    panelInfo.ForEach((panel) =>
+                    {
+                        if (panel.ElementTag == CondtionTag.Normal_Target)
+                        {
+                            panel.IsRight = true;
+                        }
+                    });
+                }
+                else
+                {
+                    panelInfo.ForEach((panel) =>
+                    {
+                        if (panel.ElementTag == CondtionTag.Normal_Target)
+                        {
+                            panel.IsRight = false;
+                        }
+                    });
+                }
+            }
         }
 
         private void Update()
         {
-            if (conditionMap.Count <= 0) return;
-            foreach (var stateAssembly in conditionMap)
-            {
-                var currFlag = stateAssembly.Value(enemyContext);
-#if UNITY_EDITOR
-                panelInfo.ForEach((panel) =>
-                {
-                    if (panel.ElementTag == stateAssembly.Key)
-                    {
-                        panel.IsRight = currFlag;
-                    }
-                });
-#endif
-            }
+//            if (conditionMap.Count <= 0) return;
+//            foreach (var stateAssembly in conditionMap)
+//            {
+//                var currFlag = stateAssembly.Value(enemyContext);
+//#if UNITY_EDITOR
+//                panelInfo.ForEach((panel) =>
+//                {
+//                    if (panel.ElementTag == stateAssembly.Key)
+//                    {
+//                        panel.IsRight = currFlag;
+//                    }
+//                });
+//#endif
+//            }
         }
     }
 }

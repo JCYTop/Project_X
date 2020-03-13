@@ -48,11 +48,55 @@ namespace Framework.GOAP
             {
                 CondtionTag.Normal_Target, (context) =>
                 {
-                    var normalTargets = context.Dynamic.PushDynamicData<GameObject>(DynamicObjTag.Normal_Target);
-                    return normalTargets != null;
+                    var normalTarget = context.Dynamic.PushDynamicData<GameObject>(DynamicObjTag.Normal_Target);
+                    return normalTarget != null;
                 }
             },
-            {CondtionTag.Near_Normal_Target, (context) => { return false; }}
+            {
+                CondtionTag.Near_Normal_Target, (context) =>
+                {
+                    var normalTarget = context.Dynamic.PushDynamicData<GameObject>(DynamicObjTag.Normal_Target);
+                    if (normalTarget == null)
+                    {
+                        return false;
+                    }
+
+                    var dis = Vector3.Distance(normalTarget.transform.position, context.GameObject.transform.position);
+                    var param = context.Parameter.ParameterList.GetSortListValue(ParameterTag.Near_Dis);
+                    if (dis <= param.Value)
+                    {
+                        return true;
+                    }
+
+                    return false;
+                }
+            },
+            {
+                CondtionTag.Attack_Target, (context) =>
+                {
+                    var attackTarget = context.Dynamic.PushDynamicData<GameObject>(DynamicObjTag.Attack_Target);
+                    return attackTarget != null;
+                }
+            },
+            {
+                CondtionTag.Near_Attack_Target, (context) =>
+                {
+                    var attackTarget = context.Dynamic.PushDynamicData<GameObject>(DynamicObjTag.Attack_Target);
+                    if (attackTarget == null)
+                    {
+                        return false;
+                    }
+
+                    var dis = Vector3.Distance(attackTarget.transform.position, context.GameObject.transform.position);
+                    var param = context.Parameter.ParameterList.GetSortListValue(ParameterTag.Attack_Dis);
+                    if (dis <= param.Value)
+                    {
+                        return true;
+                    }
+
+                    return false;
+                }
+            },
         };
     }
 }

@@ -37,6 +37,7 @@ namespace Framework.GOAP
         public AIParameter Parameter => parameter;
         public AIDynamic Dynamic => dynamic;
         public AICondition Condition => condition;
+        public GameObject GameObject => this.gameObject;
 
         public int GoalbalID
         {

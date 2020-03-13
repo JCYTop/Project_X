@@ -13,7 +13,7 @@ namespace Framework.GOAP
         #region variable
 
         private IAgent<ActionTag, GoalTag> agent;
-
+        [SerializeField] private FsmTemplate fsmTemplate;
         [SerializeField] private EnemyAllActionConfig actionConfig;
         [SerializeField] private EnemyAllGoal goalConfig;
         public IAgent<ActionTag, GoalTag> Agent => agent;
@@ -26,6 +26,7 @@ namespace Framework.GOAP
         {
             base.Init();
             agent = new EnemyAgent(this);
+            StateFsm.SetFsmTemplate(fsmTemplate);
             var ssss = Parameter.ParameterList;
         }
 

@@ -1,8 +1,4 @@
-﻿//public class UIEventName
-//{
-//}
-
-namespace Framework.EventDispatcher
+﻿namespace Framework.EventDispatcher
 {
     public class GlobalEventType
     {

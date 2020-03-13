@@ -60,6 +60,18 @@ namespace Framework.GOAP
         /// </summary>
         Near_Normal_Target,
 
+        /// <summary>
+        /// 是否存在战斗目标
+        /// 战斗目标
+        /// </summary>
+        Attack_Target,
+
+        /// <summary>
+        /// 是否离目标过远
+        /// 是否离战斗目标过远
+        /// </summary>
+        Near_Attack_Target,
+
         #endregion
     }
 }

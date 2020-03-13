@@ -28,3 +28,6 @@ MonoBehaviour:
   - Tag: 5
     DynamicRange: {x: 0, y: 15}
     Value: 15
+  - Tag: 6
+    DynamicRange: {x: 0, y: 2}
+    Value: 2

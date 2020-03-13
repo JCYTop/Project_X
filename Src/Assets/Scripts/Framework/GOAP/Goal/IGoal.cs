@@ -79,9 +79,15 @@ namespace Framework.GOAP
         Default = 0,
 
         /// <summary>
-        /// 初始化
+        /// 正常状态
         /// </summary>
         Idle = 1,
+
+        /// <summary>
+        /// 正常状态
+        /// 到达目标周围
+        /// </summary>
+        Idle_To_Target,
 
         #endregion
     }

@@ -65,7 +65,7 @@ namespace Framework.GOAP
     }
 
     /// <summary>
-    /// 为了统一拿数据的结构
+    /// 为了拿统一的数据
     /// </summary>
     public enum DynamicObjTag
     {
@@ -73,8 +73,14 @@ namespace Framework.GOAP
 
         /// <summary>
         /// 目标
-        /// GameObject
+        /// 返回GameObject
         /// </summary>
         Normal_Target,
+
+        /// <summary>
+        /// 攻击目标
+        /// 返回GameObject
+        /// </summary>
+        Attack_Target,
     }
 }

@@ -9,11 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 848d04c1137445b4dbde7c800725dd31, type: 3}
-  m_Name: GOAP.EnemyAllGoal
+  m_Script: {fileID: 11500000, guid: 504119798f8f4b01a98a44c4ddbbd4ac, type: 3}
+  m_Name: Idle_Enemy
   m_EditorClassIdentifier: 
-  allGoal:
-  - tag: 1
-    File: {fileID: 11400000, guid: 11c1046313037394f809fb67eac98998, type: 2}
-  - tag: 2
-    File: {fileID: 11400000, guid: ebe72a702d5eb5e47a993d9678419aea, type: 2}
+  Priority: 0
+  Condition: []
+  Effets: []

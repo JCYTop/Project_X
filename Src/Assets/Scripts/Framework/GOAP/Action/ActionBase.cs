@@ -17,8 +17,6 @@ using System.Collections.Generic;
 
 namespace Framework.GOAP
 {
-    //TODO 添加一个通用提取API
-
     /// <summary>
     /// 每一个具体的Action
     /// 通过读取具体的配置文件信息生成一个具体的类
@@ -27,12 +25,12 @@ namespace Framework.GOAP
     /// <typeparam name="TAction"></typeparam>
     public abstract class ActionBase<TAction> : IAction<TAction>
     {
-        private ICollection<StateConfigUnitsss> conditions;
-        private ICollection<StateConfigUnitsss> effects;
+        private ICollection<CondtionAssembly> conditions;
+        private ICollection<CondtionAssembly> effects;
 
         public ActionConfigUnit ActionGroup { get; private set; }
 
-        public ICollection<StateConfigUnitsss> Conditions
+        public ICollection<CondtionAssembly> Conditions
         {
             get
             {
@@ -45,7 +43,7 @@ namespace Framework.GOAP
             }
         }
 
-        public ICollection<StateConfigUnitsss> Effects
+        public ICollection<CondtionAssembly> Effects
         {
             get
             {
@@ -96,14 +94,14 @@ namespace Framework.GOAP
             this.ActionGroup = actionGroup;
         }
 
-        private ICollection<StateConfigUnitsss> InitConditions()
+        private ICollection<CondtionAssembly> InitConditions()
         {
-            return (ICollection<StateConfigUnitsss>) ActionGroup.ConfigUnitSet.GetSortListValue(ActionElementTag.Preconditions.ToString());
+            return (ICollection<CondtionAssembly>) ActionGroup.ConfigUnitSet.GetSortListValue(ActionElementTag.Preconditions.ToString());
         }
 
-        private ICollection<StateConfigUnitsss> InitEffects()
+        private ICollection<CondtionAssembly> InitEffects()
         {
-            return (ICollection<StateConfigUnitsss>) ActionGroup.ConfigUnitSet.GetSortListValue(ActionElementTag.Effects.ToString());
+            return (ICollection<CondtionAssembly>) ActionGroup.ConfigUnitSet.GetSortListValue(ActionElementTag.Effects.ToString());
         }
 
         public virtual bool VerifyPreconditions()
