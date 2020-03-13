@@ -24,6 +24,15 @@ namespace Framework.GOAP
         [Rename("标签")] public CondtionTag ElementTag;
         [Rename("标志位")] public bool IsRight = true;
 
+        public CondtionAssembly()
+        {
+        }
+
+        public CondtionAssembly(CondtionTag elementTag, bool right)
+        {
+            this.ElementTag = elementTag;
+            this.IsRight = right;
+        }
     }
 
     public enum CondtionTag
@@ -49,7 +58,7 @@ namespace Framework.GOAP
         /// 是否离目标过远
         /// 是否离非战斗目标过远
         /// </summary>
-        Far_Normal_Target,
+        Near_Normal_Target,
 
         #endregion
     }

@@ -14,6 +14,7 @@
 */
 
 using System;
+using System.Collections.Generic;
 
 namespace Framework.GOAP
 {
@@ -27,6 +28,16 @@ namespace Framework.GOAP
         /// 目标的标签
         /// </summary>
         TGoal Label { get; }
+
+        /// <summary>
+        /// 先决条件
+        /// </summary>
+        ICollection<CondtionAssembly> Condition { get; }
+
+        /// <summary>
+        /// 影响条件
+        /// </summary>
+        ICollection<CondtionAssembly> Effects { get; }
 
         /// <summary>
         /// 是否已经实现目标

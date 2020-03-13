@@ -13,3 +13,13 @@ MonoBehaviour:
   m_Name: Default
   m_EditorClassIdentifier: 
   Priority: 0
+  Condition:
+  - ElementTag: 200
+    IsRight: 0
+  - ElementTag: 201
+    IsRight: 0
+  Effets:
+  - ElementTag: 200
+    IsRight: 1
+  - ElementTag: 201
+    IsRight: 1

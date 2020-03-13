@@ -43,16 +43,16 @@ namespace Framework.GOAP
 
     public static class AIConditionExtend
     {
-        public static Dictionary<AIStateElementTag, Func<IContext, bool>> ConditionMap = new Dictionary<AIStateElementTag, Func<IContext, bool>>()
+        public static Dictionary<CondtionTag, Func<IContext, bool>> ConditionMap = new Dictionary<CondtionTag, Func<IContext, bool>>()
         {
             {
-                AIStateElementTag.Normal_Target, (context) =>
+                CondtionTag.Normal_Target, (context) =>
                 {
                     var normalTargets = context.Dynamic.PushDynamicData<GameObject>(DynamicObjTag.Normal_Target);
                     return normalTargets != null;
                 }
             },
-            {AIStateElementTag.Far_Normal_Target, (context) => { return false; }}
+            {CondtionTag.Near_Normal_Target, (context) => { return false; }}
         };
     }
 }

@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: GOAP.EnemyAllGoal
   m_EditorClassIdentifier: 
   allGoal:
-  - commonTag: 0
+  - tag: 1
     File: {fileID: 11400000, guid: 11c1046313037394f809fb67eac98998, type: 2}

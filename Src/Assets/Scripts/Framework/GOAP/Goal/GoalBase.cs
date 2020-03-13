@@ -26,8 +26,8 @@ namespace Framework.GOAP
     /// <typeparam name="TGoal"></typeparam>
     public abstract class GoalBase<TGoal> : IGoal<TGoal>
     {
-        private ICollection<StateConfigUnitsss> conditions;
-        private ICollection<StateConfigUnitsss> effects;
+        private ICollection<CondtionAssembly> conditions;
+        private ICollection<CondtionAssembly> effects;
         private Action<IGoal<TGoal>> onActivate;
         private Action<IGoal<TGoal>> onInactivate;
         public TGoal Label { get; }
@@ -43,7 +43,7 @@ namespace Framework.GOAP
             }
         }
 
-        public ICollection<StateConfigUnitsss> Effects
+        public ICollection<CondtionAssembly> Effects
         {
             get
             {
@@ -56,7 +56,7 @@ namespace Framework.GOAP
             }
         }
 
-        public ICollection<StateConfigUnitsss> Condition
+        public ICollection<CondtionAssembly> Condition
         {
             get
             {
@@ -75,14 +75,14 @@ namespace Framework.GOAP
             this.goalGroup = goalGroup;
         }
 
-        private ICollection<StateConfigUnitsss> InitCondition()
+        private ICollection<CondtionAssembly> InitCondition()
         {
-            return (ICollection<StateConfigUnitsss>) goalGroup.ConfigUnitSet.GetSortListValue(GoalElementTag.Conditon.ToString());
+            return (ICollection<CondtionAssembly>) goalGroup.ConfigUnitSet.GetSortListValue(GoalElementTag.Conditon.ToString());
         }
 
-        private ICollection<StateConfigUnitsss> InitEffects()
+        private ICollection<CondtionAssembly> InitEffects()
         {
-            return (ICollection<StateConfigUnitsss>) goalGroup.ConfigUnitSet.GetSortListValue(GoalElementTag.Effects.ToString());
+            return (ICollection<CondtionAssembly>) goalGroup.ConfigUnitSet.GetSortListValue(GoalElementTag.Effects.ToString());
         }
 
         public bool IsGoalComplete()

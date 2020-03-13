@@ -22,31 +22,36 @@ namespace Framework.GOAP
     public class EnemyCondition : AICondition
     {
         private EnemyContext enemyContext;
-        private EnemyStateMgr stateMgr;
-        private HashSet<AIStateElementTag> existTag;
-        private Dictionary<AIStateElementTag, Func<IContext, bool>> conditionMap;
+        private EnemyGoalMgr goalMgr;
+        private HashSet<CondtionTag> existTag;
+        private Dictionary<CondtionTag, Func<IContext, bool>> conditionMap;
 
 #if UNITY_EDITOR
         [SerializeField, Sirenix.OdinInspector.ReadOnly]
-        private List<StateConfigUnitsss> panelInfo = new List<StateConfigUnitsss>(1 << 4);
+        private List<CondtionAssembly> panelInfo = new List<CondtionAssembly>(1 << 4);
 #endif
 
         public override void Init()
         {
-            
 #if UNITY_EDITOR
             panelInfo.Clear();
 #endif
-            existTag = new HashSet<AIStateElementTag>();
-            conditionMap = new Dictionary<AIStateElementTag, Func<IContext, bool>>(1 << 4);
+            existTag = new HashSet<CondtionTag>();
+            conditionMap = new Dictionary<CondtionTag, Func<IContext, bool>>(1 << 4);
             enemyContext = this.GetComponent<EnemyContext>();
-            stateMgr = enemyContext.Agent.AgentStateMgr.GetStateMgr<EnemyStateMgr>();
-            foreach (var stateBase in stateMgr.StateSortList.Values)
+            goalMgr = enemyContext.Agent.AgentGoalMgr.GetGoalMgr<EnemyGoalMgr>();
+            foreach (var stateBase in goalMgr.GoalsDic.Values)
             {
-                foreach (var state in stateBase.GetData().StateElement)
+                foreach (var condtion in stateBase.Condition)
                 {
-                    //获取配置文件中所有的 hTag 标签
-                    existTag.Add(state.ElementTag);
+                    //获取配置文件中所有的 Tag 标签
+                    existTag.Add(condtion.ElementTag);
+                }
+
+                foreach (var condtion in stateBase.Effects)
+                {
+                    //获取配置文件中所有的 Tag 标签
+                    existTag.Add(condtion.ElementTag);
                 }
             }
 
@@ -55,7 +60,7 @@ namespace Framework.GOAP
                 var action = AIConditionExtend.ConditionMap.GetDictionaryValue(elementTag);
                 conditionMap.Add(elementTag, action);
 #if UNITY_EDITOR
-                panelInfo.Add(new StateConfigUnitsss(elementTag, action(enemyContext)));
+                panelInfo.Add(new CondtionAssembly(elementTag, action(enemyContext)));
 #endif
             }
         }

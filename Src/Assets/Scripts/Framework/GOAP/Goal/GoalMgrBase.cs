@@ -21,17 +21,13 @@ namespace Framework.GOAP
     public abstract class GoalMgrBase<TAction, TGoal> : IGoalMgr<TGoal>
     {
         protected IAgent<TAction, TGoal> agent;
-        private Dictionary<TGoal, IGoal<TGoal>> goalsDic;
-        private List<IGoal<TGoal>> activeGoals;
-        public IGoal<TGoal> CurrentGoal { get; }
+        public abstract Dictionary<TGoal, IGoal<TGoal>> GoalsDic { get; }
+        public abstract List<IGoal<TGoal>> ActiveGoals { get; }
+        public abstract IGoal<TGoal> CurrentGoal { get; }
 
         public GoalMgrBase(IAgent<TAction, TGoal> agent)
         {
             this.agent = agent;
-            CurrentGoal = null;
-            goalsDic = new Dictionary<TGoal, IGoal<TGoal>>();
-            activeGoals = new List<IGoal<TGoal>>();
-            InitGoals();
         }
 
         /// <summary>
@@ -58,6 +54,7 @@ namespace Framework.GOAP
         {
             throw new System.NotImplementedException();
         }
+
         public void UpdateData()
         {
             throw new System.NotImplementedException();
