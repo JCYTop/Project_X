@@ -11,7 +11,7 @@ namespace Framework.GOAP
             throw new System.NotImplementedException();
         }
 
-        public override IState InitActiveCondition()
+        public override IState InitCondition()
         {
             throw new System.NotImplementedException();
         }

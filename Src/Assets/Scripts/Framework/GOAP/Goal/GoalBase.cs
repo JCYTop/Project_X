@@ -36,7 +36,7 @@ namespace Framework.GOAP
         {
             this.agent = agent;
             effects = InitEffects();
-            activeCondition = InitActiveCondition();
+            activeCondition = InitCondition();
         }
 
         public IState GetEffects()
@@ -70,7 +70,7 @@ namespace Framework.GOAP
         }
 
         public abstract IState InitEffects();
-        public abstract IState InitActiveCondition();
+        public abstract IState InitCondition();
         public abstract int GetPriority();
     }
 }

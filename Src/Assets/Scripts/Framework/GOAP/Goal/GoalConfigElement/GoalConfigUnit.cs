@@ -27,6 +27,8 @@ namespace Framework.GOAP
     public abstract class GoalConfigUnit<T> : UnityEngine.ScriptableObject
     {
         [Rename("权重")] public int Priority;
+        public List<CondtionAssembly> Condition;
+        public List<CondtionAssembly> Effets;
         protected SortedList<T, object> goalConfigUnitSet = new SortedList<T, object>();
 
         /// <summary>
@@ -34,6 +36,11 @@ namespace Framework.GOAP
         /// 必须手动填写已经添加的数据
         /// </summary>
         public abstract GoalConfigUnit<T> Init();
+
+        protected void ADD(T tag, object obj)
+        {
+            goalConfigUnitSet.AddSortListElement(tag, obj);
+        }
     }
 
     /// <summary>
@@ -61,7 +68,7 @@ namespace Framework.GOAP
         /// <summary>
         /// 激活条件
         /// </summary>
-        ActiveConditon = 3,
+        Conditon = 3,
 
         #endregion
     }
