@@ -26,14 +26,14 @@ namespace Framework.GOAP
     /// <typeparam name="T1">ActionTag 标签</typeparam>
     /// <typeparam name="T2">ActionConfigElementTag 标签</typeparam>
     [Serializable]
-    public abstract class ActionConfig<T1, T2> : UnityEngine.ScriptableObject
+    public abstract class ActionConfig<T1> : UnityEngine.ScriptableObject
     {
-        protected SortedList<T1, ActionConfigUnit<T2>> actionConfigSet = new SortedList<T1, ActionConfigUnit<T2>>();
+        protected SortedList<T1, ActionConfigUnit> actionConfigSet = new SortedList<T1, ActionConfigUnit>();
 
         /// <summary>
         /// 初始化数据
         /// 必须手动填写已经添加的数据
         /// </summary>
-        public abstract SortedList<T1, ActionConfigUnit<T2>> Init();
+        public abstract SortedList<T1, ActionConfigUnit> Init();
     }
 }

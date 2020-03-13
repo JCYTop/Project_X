@@ -25,12 +25,12 @@ namespace Framework.GOAP
     /// 数据类
     /// </summary>
     /// <typeparam name="TAction"></typeparam>
-    public abstract class ActionBase<TAction, TConfigElementTag> : IAction<TAction>
+    public abstract class ActionBase<TAction> : IAction<TAction>
     {
         private ICollection<StateAssembly> conditions;
         private ICollection<StateAssembly> effects;
 
-        public ActionConfigUnit<TConfigElementTag> ActionGroup { get; private set; }
+        public ActionConfigUnit ActionGroup { get; private set; }
 
         public ICollection<StateAssembly> Conditions
         {
@@ -62,7 +62,7 @@ namespace Framework.GOAP
         {
             get
             {
-                var element = ActionGroup.ActionConfigUnitSet.GetSortListValue(ActionElementTag.Cost.ToString());
+                var element = ActionGroup.ConfigUnitSet.GetSortListValue(ActionElementTag.Cost.ToString());
                 var intValue = element.CastType<int>();
                 return intValue;
             }
@@ -72,7 +72,7 @@ namespace Framework.GOAP
         {
             get
             {
-                var element = ActionGroup.ActionConfigUnitSet.GetSortListValue(ActionElementTag.Priority.ToString());
+                var element = ActionGroup.ConfigUnitSet.GetSortListValue(ActionElementTag.Priority.ToString());
                 var intValue = element.CastType<int>();
                 return intValue;
             }
@@ -82,7 +82,7 @@ namespace Framework.GOAP
         {
             get
             {
-                var element = ActionGroup.ActionConfigUnitSet.GetSortListValue(ActionElementTag.Interruptible.ToString());
+                var element = ActionGroup.ConfigUnitSet.GetSortListValue(ActionElementTag.Interruptible.ToString());
                 var boolValue = element.CastType<bool>();
                 return boolValue;
             }
@@ -90,7 +90,7 @@ namespace Framework.GOAP
 
         public TAction Label { get; private set; }
 
-        public ActionBase(TAction tag, ActionConfigUnit<TConfigElementTag> actionGroup)
+        public ActionBase(TAction tag, ActionConfigUnit actionGroup)
         {
             this.Label = tag;
             this.ActionGroup = actionGroup;
@@ -98,12 +98,12 @@ namespace Framework.GOAP
 
         private ICollection<StateAssembly> InitConditions()
         {
-            return (ICollection<StateAssembly>) ActionGroup.ActionConfigUnitSet.GetSortListValue(ActionElementTag.Preconditions.ToString());
+            return (ICollection<StateAssembly>) ActionGroup.ConfigUnitSet.GetSortListValue(ActionElementTag.Preconditions.ToString());
         }
 
         private ICollection<StateAssembly> InitEffects()
         {
-            return (ICollection<StateAssembly>) ActionGroup.ActionConfigUnitSet.GetSortListValue(ActionElementTag.Effects.ToString());
+            return (ICollection<StateAssembly>) ActionGroup.ConfigUnitSet.GetSortListValue(ActionElementTag.Effects.ToString());
         }
 
         public virtual bool VerifyPreconditions()

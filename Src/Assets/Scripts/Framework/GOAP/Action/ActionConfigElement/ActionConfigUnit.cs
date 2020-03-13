@@ -24,34 +24,44 @@ namespace Framework.GOAP
     /// </summary>
     /// <typeparam name="T">ActionConfigElementTag 标签</typeparam>
     [Serializable]
-    public abstract class ActionConfigUnit<T> : UnityEngine.ScriptableObject
+    public abstract class ActionConfigUnit : UnityEngine.ScriptableObject, IConfigUnit<ActionElementTag>
     {
-        [Rename("权重")] public int Priority;
-        [Rename("是否可打断")] public bool IsInterruptible = false;
-        [Rename("消耗")] public int Cost;
-        public ActionUnityGroup ActionUnityGroups;
+        private SortedList<ActionElementTag, object> ActionConfigUnitSet;
+        [Rename("权重"), SerializeField] private int Priority;
+        [Rename("是否可打断"), SerializeField] private bool IsInterruptible = false;
+        [Rename("消耗"), SerializeField] private int Cost;
+        [SerializeField] private ActionUnityGroup ActionUnityGroups;
+        [SerializeField] private List<CondtionAssembly> Preconditions;
+        [SerializeField] private List<CondtionAssembly> Effects;
 
-        /// <summary>
-        /// 先决条件
-        /// </summary>
-        public List<CondtionAssembly> Preconditions;
+        public SortedList<ActionElementTag, object> ConfigUnitSet
+        {
+            get
+            {
+                if (ActionConfigUnitSet == null)
+                {
+                    ActionConfigUnitSet = new SortedList<ActionElementTag, object>();
+                }
 
-        /// <summary>
-        /// 影响条件
-        /// </summary>
-        public List<CondtionAssembly> Effects;
+                return ActionConfigUnitSet;
+            }
+        }
 
-        public SortedList<T, object> ActionConfigUnitSet = new SortedList<T, object>();
+        public ActionConfigUnit GetActionConfigUnit => this;
 
         /// <summary>
         /// 初始化数据
         /// 必须手动填写已经添加的数据
         /// </summary>
-        public abstract ActionConfigUnit<T> Init();
-
-        protected void ADD(T tag, object obj)
+        public void Init()
         {
-            ActionConfigUnitSet.AddSortListElement(tag, obj);
+            ConfigUnitSet.Add(ActionElementTag.Priority, Priority);
+            ConfigUnitSet.Add(ActionElementTag.Interruptible, IsInterruptible);
+            ConfigUnitSet.Add(ActionElementTag.Cost, Cost);
+            ConfigUnitSet.Add(ActionElementTag.ActionUnityGroups, ActionUnityGroups);
+            ConfigUnitSet.Add(ActionElementTag.Preconditions, Preconditions);
+            ConfigUnitSet.Add(ActionElementTag.Effects, Effects);
+            LogTool.Log($"{this.name} , ActionConfigUnit数据已经加载完成", LogEnum.AssetLog);
         }
     }
 
