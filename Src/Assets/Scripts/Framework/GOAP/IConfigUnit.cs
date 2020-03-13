@@ -17,8 +17,9 @@ using System.Collections.Generic;
 
 namespace Framework.GOAP
 {
-    public interface IConfigUnit<T>
+    public interface IConfigUnit<T1, T2>
     {
-        SortedList<T, object> ConfigUnitSet { get; }
+        T1 GetConfigUnit { get; }
+        SortedList<T2, object> ConfigUnitSet { get; }
     }
 }

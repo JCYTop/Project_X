@@ -14,7 +14,7 @@ namespace Framework.GOAP
             allAction.ForEach((action) =>
             {
                 action.File.Init();
-                actionSort.Add(action.commonTag, action.File.GetActionConfigUnit);
+                actionSort.Add(action.commonTag, action.File.GetConfigUnit);
             });
             LogTool.Log($" --- {this.name} , Action数据已经加载完成 --->>> 共计${allAction.Count}个", LogEnum.AssetLog);
             return actionSort;

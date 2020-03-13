@@ -24,22 +24,37 @@ namespace Framework.GOAP
     /// </summary>
     /// <typeparam name="T">GoalConfigElementTag标签使用</typeparam>
     [Serializable]
-    public abstract class GoalConfigUnit<T> : UnityEngine.ScriptableObject
+    public abstract class GoalConfigUnit : UnityEngine.ScriptableObject, IConfigUnit<GoalConfigUnit, GoalElementTag>
     {
-        [Rename("权重")] public int Priority;
-        public List<CondtionAssembly> Condition;
-        public List<CondtionAssembly> Effets;
-        public SortedList<T, object> goalConfigUnitSet = new SortedList<T, object>();
+        private SortedList<GoalElementTag, object> goalConfigUnitSet;
+        [Rename("权重"), SerializeField] private int Priority;
+        [SerializeField] private List<CondtionAssembly> Condition;
+        [SerializeField] private List<CondtionAssembly> Effets;
+        public GoalConfigUnit GetConfigUnit => this;
+
+        public SortedList<GoalElementTag, object> ConfigUnitSet
+        {
+            get
+            {
+                if (goalConfigUnitSet == null)
+                {
+                    goalConfigUnitSet = new SortedList<GoalElementTag, object>();
+                }
+
+                return goalConfigUnitSet;
+            }
+        }
 
         /// <summary>
         /// 初始化数据
         /// 必须手动填写已经添加的数据
         /// </summary>
-        public abstract GoalConfigUnit<T> Init();
-
-        protected void ADD(T tag, object obj)
+        public void Init()
         {
-            goalConfigUnitSet.AddSortListElement(tag, obj);
+            ConfigUnitSet.Add(GoalElementTag.Priority, Priority);
+            ConfigUnitSet.Add(GoalElementTag.Conditon, Condition);
+            ConfigUnitSet.Add(GoalElementTag.Effects, Effets);
+            LogTool.Log($"{this.name} , GoalConfigUnit数据已经加载完成", LogEnum.AssetLog);
         }
     }
 

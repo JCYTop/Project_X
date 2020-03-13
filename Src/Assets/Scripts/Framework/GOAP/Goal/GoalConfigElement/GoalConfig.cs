@@ -26,14 +26,14 @@ namespace Framework.GOAP
     /// <typeparam name="T1">GoalTag标签使用</typeparam>
     /// <typeparam name="T2">GoalConfigElementTag标签使用</typeparam>
     [Serializable]
-    public abstract class GoalConfig<T1, T2> : UnityEngine.ScriptableObject
+    public abstract class GoalConfig<T1> : UnityEngine.ScriptableObject
     {
-        protected SortedList<T1, GoalConfigUnit<T2>> goalConfigSet = new SortedList<T1, GoalConfigUnit<T2>>();
+        protected SortedList<T1, GoalConfigUnit> goalConfigSet = new SortedList<T1, GoalConfigUnit>();
 
         /// <summary>
         /// 初始化数据
         /// 必须手动填写已经添加的数据
         /// </summary>
-        public abstract SortedList<T1, GoalConfigUnit<T2>> Init();
+        public abstract SortedList<T1, GoalConfigUnit> Init();
     }
 }

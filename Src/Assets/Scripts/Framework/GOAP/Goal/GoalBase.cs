@@ -24,20 +24,20 @@ namespace Framework.GOAP
     /// GoalBase 生成一个具体的Goal类
     /// </summary>
     /// <typeparam name="TGoal"></typeparam>
-    public abstract class GoalBase<TGoal, TGoalElementTag> : IGoal<TGoal>
+    public abstract class GoalBase<TGoal> : IGoal<TGoal>
     {
         private ICollection<StateAssembly> conditions;
         private ICollection<StateAssembly> effects;
         private Action<IGoal<TGoal>> onActivate;
         private Action<IGoal<TGoal>> onInactivate;
         public TGoal Label { get; }
-        public GoalConfigUnit<TGoalElementTag> goalGroup { get; private set; }
+        public GoalConfigUnit goalGroup { get; private set; }
 
         public int Priority
         {
             get
             {
-                var element = goalGroup.goalConfigUnitSet.GetSortListValue(ActionElementTag.Priority.ToString());
+                var element = goalGroup.ConfigUnitSet.GetSortListValue(ActionElementTag.Priority.ToString());
                 var intValue = element.CastType<int>();
                 return intValue;
             }
@@ -69,7 +69,7 @@ namespace Framework.GOAP
             }
         }
 
-        public GoalBase(TGoal tag, GoalConfigUnit<TGoalElementTag> goalGroup)
+        public GoalBase(TGoal tag, GoalConfigUnit goalGroup)
         {
             this.Label = tag;
             this.goalGroup = goalGroup;
@@ -77,12 +77,12 @@ namespace Framework.GOAP
 
         private ICollection<StateAssembly> InitCondition()
         {
-            return (ICollection<StateAssembly>) goalGroup.goalConfigUnitSet.GetSortListValue(GoalElementTag.Conditon.ToString());
+            return (ICollection<StateAssembly>) goalGroup.ConfigUnitSet.GetSortListValue(GoalElementTag.Conditon.ToString());
         }
 
         private ICollection<StateAssembly> InitEffects()
         {
-            return (ICollection<StateAssembly>) goalGroup.goalConfigUnitSet.GetSortListValue(GoalElementTag.Effects.ToString());
+            return (ICollection<StateAssembly>) goalGroup.ConfigUnitSet.GetSortListValue(GoalElementTag.Effects.ToString());
         }
 
         public bool IsGoalComplete()

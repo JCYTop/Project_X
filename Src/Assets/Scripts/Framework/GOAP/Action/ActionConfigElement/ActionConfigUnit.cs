@@ -24,7 +24,7 @@ namespace Framework.GOAP
     /// </summary>
     /// <typeparam name="T">ActionConfigElementTag 标签</typeparam>
     [Serializable]
-    public abstract class ActionConfigUnit : UnityEngine.ScriptableObject, IConfigUnit<ActionElementTag>
+    public abstract class ActionConfigUnit : UnityEngine.ScriptableObject, IConfigUnit<ActionConfigUnit, ActionElementTag>
     {
         private SortedList<ActionElementTag, object> ActionConfigUnitSet;
         [Rename("权重"), SerializeField] private int Priority;
@@ -33,6 +33,7 @@ namespace Framework.GOAP
         [SerializeField] private ActionUnityGroup ActionUnityGroups;
         [SerializeField] private List<CondtionAssembly> Preconditions;
         [SerializeField] private List<CondtionAssembly> Effects;
+        public ActionConfigUnit GetConfigUnit => this;
 
         public SortedList<ActionElementTag, object> ConfigUnitSet
         {
@@ -46,8 +47,6 @@ namespace Framework.GOAP
                 return ActionConfigUnitSet;
             }
         }
-
-        public ActionConfigUnit GetActionConfigUnit => this;
 
         /// <summary>
         /// 初始化数据
