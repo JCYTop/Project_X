@@ -82,7 +82,7 @@ namespace Framework.GOAP
     /// </summary>i
     public enum ActionTag
     {
-        #region Common  0~199
+        #region Common通用各个AI的动作处理器  0~199
 
         /// <summary>
         /// 默认标签
@@ -91,8 +91,15 @@ namespace Framework.GOAP
 
         /// <summary>
         /// 待机
+        /// 动作标签
         /// </summary>
         Idle = 1,
+
+        /// <summary>
+        /// 行走
+        /// 动作标签
+        /// </summary>
+        Walk = 2
 
         #endregion
     }

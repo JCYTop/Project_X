@@ -35,7 +35,7 @@ namespace Framework.GOAP
                     handleMap = new SortedList<ActionHanderTag, ActionHandler>()
                     {
                         //TODO 这是一个例子
-                        {ActionHanderTag.Default_Handle, new DefaultActionHandler()},
+                        {ActionHanderTag.Default, new DefaultActionHandler()},
                         {ActionHanderTag.Idle_Handle, new IdleActionHandler()},
                     };
                 }
@@ -47,7 +47,7 @@ namespace Framework.GOAP
 
     public enum ActionHanderTag
     {
-        Default_Handle = 0,
+        Default = 0,
         Idle_Handle,
     }
 }

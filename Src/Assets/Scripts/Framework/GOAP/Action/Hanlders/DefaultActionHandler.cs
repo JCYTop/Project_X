@@ -1,8 +1,23 @@
+/** 
+----------------------------------
+ *Copyright(C) 2019 by IndieGame
+ *All rights reserved.
+ *FileName:     DefaultActionHandler
+ *Author:       @JCY
+ *Version:      0.1.0
+ *AuthorEmail:  jcyemail@qq.com
+ *UnityVersion：Unity2019.3.0f6
+ *CreateTime:   2020/03/13 14:51:44
+ *Description:  IndieGame 
+ *History:
+ ----------------------------------
+*/
+
 using System;
 
 namespace Framework.GOAP
 {
-    public class IdleActionHandler : ActionHandler
+    public class DefaultActionHandler : ActionHandler
     {
         public override ActionExcuteState ExcuteState { get; }
 

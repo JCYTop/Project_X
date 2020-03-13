@@ -22,9 +22,9 @@ namespace Framework.GOAP
     /// 配置文件基类
     /// </summary>
     [Serializable]
-    public abstract class StateConfig : UnityEngine.ScriptableObject
+    public abstract class StateConfig<T> : UnityEngine.ScriptableObject
     {
-        [Rename("状态标签")] public StateTag Tag;
+        [Rename("状态标签")] public T Tag;
         public List<StateAssembly> StateElement;
     }
 }

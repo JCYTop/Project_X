@@ -13,21 +13,9 @@
  ----------------------------------
 */
 
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class AIFilter : MonoBehaviour
+namespace GOAP
 {
-    // Start is called before the first frame update
-    void Start()
+    public class AIFilter
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

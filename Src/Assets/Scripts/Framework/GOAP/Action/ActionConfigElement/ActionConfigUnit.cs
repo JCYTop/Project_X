@@ -28,6 +28,11 @@ namespace Framework.GOAP
     {
         [Rename("文件组")] public ActionUnityGroup ActionUnityGroup;
         [Rename("Handler标签")] public ActionHanderTag HanderTag;
+        [Rename("权重")] public int Priority;
+        [Rename("是否可打断")] public bool IsInterruptible = false;
+        [Rename("消耗")] public int Cost;
+        public List<StateAssembly> Preconditions;
+        public List<StateAssembly> Effects;
         public SortedList<T, object> ActionConfigUnitSet = new SortedList<T, object>();
 
         /// <summary>

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: GOAP.EnemyAllActionConfig
   m_EditorClassIdentifier: 
   allAction:
-  - commonTag: 0
-    File: {fileID: 11400000, guid: 07e1f41b4e07e3141a425ecebf7d8bac, type: 2}
   - commonTag: 1
     File: {fileID: 11400000, guid: d9ec2d33d89377d4e91ca83983126646, type: 2}
+  - commonTag: 2
+    File: {fileID: 11400000, guid: 07e1f41b4e07e3141a425ecebf7d8bac, type: 2}

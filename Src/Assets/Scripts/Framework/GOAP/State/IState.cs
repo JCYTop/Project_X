@@ -151,13 +151,15 @@ namespace Framework.GOAP
 
         /// <summary>
         /// 待机
+        /// 初始化
         /// </summary>
         Idle,
 
         /// <summary>
-        /// 行走
+        /// 待机
+        /// 到达目标
         /// </summary>
-        Idle_Walk,
+        Idle_To_Target,
 
         #endregion
     }

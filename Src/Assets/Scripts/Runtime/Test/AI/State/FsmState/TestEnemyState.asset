@@ -91,7 +91,7 @@ MonoBehaviour:
         paramDataPos: 0000000000000000
         paramByteDataSize: 0000000000000000
     - name: Idle
-      description: "\u9ED8\u8BA4\u72B6\u6001\r"
+      description: "\u5F85\u673A\u72B6\u6001\r"
       colorIndex: 0
       position:
         serializedVersion: 2
@@ -154,14 +154,14 @@ MonoBehaviour:
         - StateConfig
         paramDataPos: 0000000000000000
         paramByteDataSize: 0000000000000000
-    - name: Idle_Walk
-      description: 
+    - name: Idle_To_Target
+      description: "\u5F85\u673A\u72B6\u6001\u4E0B\u5230\u8FBE\u76EE\u6807"
       colorIndex: 0
       position:
         serializedVersion: 2
         x: 221
         y: 223
-        width: 100
+        width: 128
         height: 16
       isBreakpoint: 0
       isSequence: 0
@@ -241,7 +241,7 @@ MonoBehaviour:
         name: Idle_Walk
         isSystemEvent: 0
         isGlobal: 0
-      toState: Idle_Walk
+      toState: Idle_To_Target
       linkStyle: 0
       linkConstraint: 0
       colorIndex: 0
