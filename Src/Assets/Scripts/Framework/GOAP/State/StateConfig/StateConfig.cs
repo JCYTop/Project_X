@@ -15,6 +15,7 @@
 
 using System;
 using System.Collections.Generic;
+using UnityEngine;
 
 namespace Framework.GOAP
 {
@@ -22,31 +23,27 @@ namespace Framework.GOAP
     /// 配置文件基类
     /// </summary>
     [Serializable]
-    public abstract class StateConfig<T> : UnityEngine.ScriptableObject
+    public abstract class StateConfig : UnityEngine.ScriptableObject, IConfigUnit<StateConfig, AIStateElementTag>
     {
-        [Rename("状态标签")] public T Tag;
-        public List<StateAssembly> StateElement;
-    }
+        private SortedList<AIStateElementTag, object> configUnitSet;
+        [Rename("标签")] public StateTag Tag;
+        public StateConfig GetConfigUnit => this;
 
-    /// <summary>
-    /// 存在进行判断
-    /// 不存在忽略判断
-    /// 应该专门写一个外部环境类保存时事计算参数 && 保存基础数值
-    /// </summary>
-    [Serializable]
-    public class StateAssembly
-    {
-        [Rename("标签")] public AIStateElementTag ElementTag;
-        [Rename("标志位")] public bool IsRight = true;
-
-        public StateAssembly()
+        public SortedList<AIStateElementTag, object> ConfigUnitSet
         {
+            get
+            {
+                if (configUnitSet == null)
+                {
+                    configUnitSet = new SortedList<AIStateElementTag, object>();
+                }
+
+                return configUnitSet;
+            }
         }
 
-        public StateAssembly(AIStateElementTag elementTag, bool right)
+        public void Init()
         {
-            this.ElementTag = elementTag;
-            this.IsRight = right;
         }
     }
 
@@ -83,5 +80,28 @@ namespace Framework.GOAP
         Far_Normal_Target,
 
         #endregion
+    }
+
+    /// <summary>
+    /// 存在进行判断
+    /// 不存在忽略判断
+    /// 应该专门写一个外部环境类保存时事计算参数 && 保存基础数值
+    /// </summary>
+    [Serializable]
+    [Obsolete]
+    public class StateConfigUnitsss
+    {
+        [Rename("标签")] public AIStateElementTag ElementTag;
+        [Rename("标志位")] public bool IsRight = true;
+
+        public StateConfigUnitsss()
+        {
+        }
+
+        public StateConfigUnitsss(AIStateElementTag elementTag, bool right)
+        {
+            this.ElementTag = elementTag;
+            this.IsRight = right;
+        }
     }
 }

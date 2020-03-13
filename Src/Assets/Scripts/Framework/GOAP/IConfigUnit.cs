@@ -21,5 +21,6 @@ namespace Framework.GOAP
     {
         T1 GetConfigUnit { get; }
         SortedList<T2, object> ConfigUnitSet { get; }
+        void Init();
     }
 }

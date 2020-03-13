@@ -27,12 +27,12 @@ namespace Framework.GOAP
     /// <typeparam name="TAction"></typeparam>
     public abstract class ActionBase<TAction> : IAction<TAction>
     {
-        private ICollection<StateAssembly> conditions;
-        private ICollection<StateAssembly> effects;
+        private ICollection<StateConfigUnitsss> conditions;
+        private ICollection<StateConfigUnitsss> effects;
 
         public ActionConfigUnit ActionGroup { get; private set; }
 
-        public ICollection<StateAssembly> Conditions
+        public ICollection<StateConfigUnitsss> Conditions
         {
             get
             {
@@ -45,7 +45,7 @@ namespace Framework.GOAP
             }
         }
 
-        public ICollection<StateAssembly> Effects
+        public ICollection<StateConfigUnitsss> Effects
         {
             get
             {
@@ -96,14 +96,14 @@ namespace Framework.GOAP
             this.ActionGroup = actionGroup;
         }
 
-        private ICollection<StateAssembly> InitConditions()
+        private ICollection<StateConfigUnitsss> InitConditions()
         {
-            return (ICollection<StateAssembly>) ActionGroup.ConfigUnitSet.GetSortListValue(ActionElementTag.Preconditions.ToString());
+            return (ICollection<StateConfigUnitsss>) ActionGroup.ConfigUnitSet.GetSortListValue(ActionElementTag.Preconditions.ToString());
         }
 
-        private ICollection<StateAssembly> InitEffects()
+        private ICollection<StateConfigUnitsss> InitEffects()
         {
-            return (ICollection<StateAssembly>) ActionGroup.ConfigUnitSet.GetSortListValue(ActionElementTag.Effects.ToString());
+            return (ICollection<StateConfigUnitsss>) ActionGroup.ConfigUnitSet.GetSortListValue(ActionElementTag.Effects.ToString());
         }
 
         public virtual bool VerifyPreconditions()

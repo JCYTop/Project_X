@@ -28,7 +28,7 @@ namespace Framework.GOAP
 
 #if UNITY_EDITOR
         [SerializeField, Sirenix.OdinInspector.ReadOnly]
-        private List<StateAssembly> panelInfo = new List<StateAssembly>(1 << 4);
+        private List<StateConfigUnitsss> panelInfo = new List<StateConfigUnitsss>(1 << 4);
 #endif
 
         public override void Init()
@@ -55,7 +55,7 @@ namespace Framework.GOAP
                 var action = AIConditionExtend.ConditionMap.GetDictionaryValue(elementTag);
                 conditionMap.Add(elementTag, action);
 #if UNITY_EDITOR
-                panelInfo.Add(new StateAssembly(elementTag, action(enemyContext)));
+                panelInfo.Add(new StateConfigUnitsss(elementTag, action(enemyContext)));
 #endif
             }
         }
