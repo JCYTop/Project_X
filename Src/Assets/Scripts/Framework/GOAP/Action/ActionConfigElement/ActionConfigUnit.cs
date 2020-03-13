@@ -67,4 +67,46 @@ namespace Framework.GOAP
         public AudioClip[] AudioClip;
         public GameObject[] ParticleEffects;
     }
+
+    public enum ActionElementTag
+    {
+        #region Common  0~199
+
+        /// <summary>
+        /// 默认
+        /// </summary>
+        Default = 0,
+
+        /// <summary>
+        /// 权重
+        /// </summary>
+        Priority = 1,
+
+        /// <summary>
+        /// 是否可打断
+        /// </summary>
+        Interruptible = 2,
+
+        /// <summary>
+        /// 动作花费
+        /// </summary>
+        Cost = 3,
+
+        /// <summary>
+        /// 动画相关簇
+        /// </summary>
+        ActionUnityGroups = 4,
+
+        /// <summary>
+        /// 先决条件
+        /// </summary>
+        Preconditions = 5,
+
+        /// <summary>
+        /// 影响条件
+        /// </summary>
+        Effects = 6,
+
+        #endregion
+    }
 }

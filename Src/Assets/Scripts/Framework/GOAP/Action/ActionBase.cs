@@ -63,7 +63,7 @@ namespace Framework.GOAP
             get
             {
                 var element = ActionGroup.ActionConfigUnitSet.GetSortListValue(ActionElementTag.Cost.ToString());
-                var intValue = element.CastStateConfigEle<int>();
+                var intValue = element.CastType<int>();
                 return intValue;
             }
         }
@@ -73,7 +73,7 @@ namespace Framework.GOAP
             get
             {
                 var element = ActionGroup.ActionConfigUnitSet.GetSortListValue(ActionElementTag.Priority.ToString());
-                var intValue = element.CastStateConfigEle<int>();
+                var intValue = element.CastType<int>();
                 return intValue;
             }
         }
@@ -83,7 +83,7 @@ namespace Framework.GOAP
             get
             {
                 var element = ActionGroup.ActionConfigUnitSet.GetSortListValue(ActionElementTag.Interruptible.ToString());
-                var boolValue = element.CastStateConfigEle<bool>();
+                var boolValue = element.CastType<bool>();
                 return boolValue;
             }
         }

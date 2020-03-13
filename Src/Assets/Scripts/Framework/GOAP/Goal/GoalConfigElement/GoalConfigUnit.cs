@@ -35,4 +35,34 @@ namespace Framework.GOAP
         /// </summary>
         public abstract GoalConfigUnit<T> Init();
     }
+
+    /// <summary>
+    /// 可以以后继承
+    /// </summary>
+    public enum GoalElementTag
+    {
+        #region Common  0~199
+
+        /// <summary>
+        /// 默认
+        /// </summary>
+        Default = 0,
+
+        /// <summary>
+        /// 权重
+        /// </summary>
+        Priority = 1,
+
+        /// <summary>
+        /// 初始化影响
+        /// </summary>
+        Effects = 2,
+
+        /// <summary>
+        /// 激活条件
+        /// </summary>
+        ActiveConditon = 3,
+
+        #endregion
+    }
 }

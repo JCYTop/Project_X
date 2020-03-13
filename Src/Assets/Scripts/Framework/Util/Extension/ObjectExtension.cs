@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using Object = UnityEngine.Object;
 
 public static class ObjectExtension
 {
@@ -13,7 +14,7 @@ public static class ObjectExtension
 
     #region  Instantiate_Name
 
-    public static T Name<T>(this T selfObj, string name) where T : Object
+    public static T InstantiateName<T>(this T selfObj, string name) where T : Object
     {
         selfObj.name = name;
         return selfObj;
@@ -69,4 +70,23 @@ public static class ObjectExtension
     }
 
     #endregion
+
+    /// <summary>
+    /// 转换成指定类型的
+    /// </summary>
+    /// <param name="element"></param>
+    /// <typeparam name="T"></typeparam>
+    /// <returns></returns>
+    public static T CastType<T>(this object element)
+    {
+        try
+        {
+            return (T) element;
+        }
+        catch (Exception e)
+        {
+            LogTool.LogException(e);
+            throw;
+        }
+    }
 }

@@ -49,4 +49,39 @@ namespace Framework.GOAP
             this.IsRight = right;
         }
     }
+
+    /// <summary>
+    /// IConfigElementBase标签
+    /// IConfigElementBase配置文件标签
+    /// 每个标签对应这当前属性的类
+    /// 方便通过标签快速查找工具类
+    /// 可以以后继承
+    /// </summary>
+    public enum AIStateElementTag
+    {
+        #region Common  0~199
+
+        /// <summary>
+        /// 默认
+        /// </summary>
+        Default = 0,
+
+        #endregion
+
+        #region Target目标 200~399
+
+        /// <summary>
+        /// 是否存在目标
+        /// 非战斗目标
+        /// </summary>
+        Normal_Target = 200,
+
+        /// <summary>
+        /// 是否离目标过远
+        /// 是否离非战斗目标过远
+        /// </summary>
+        Far_Normal_Target,
+
+        #endregion
+    }
 }
