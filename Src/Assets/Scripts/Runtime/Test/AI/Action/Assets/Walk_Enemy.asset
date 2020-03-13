@@ -10,15 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d6814cc2d49a49b99b8da1fdb42391d3, type: 3}
-  m_Name: Walk
+  m_Name: Walk_Enemy
   m_EditorClassIdentifier: 
-  ActionUnityGroup:
+  Priority: 100
+  IsInterruptible: 1
+  Cost: 0
+  ActionUnityGroups:
     Animation: []
     AudioClip: []
     ParticleEffects: []
-  HanderTag: 0
-  Priority: 0
-  IsInterruptible: 1
-  Cost: 0
-  Preconditions: []
-  Effects: []
+  Preconditions:
+  - ElementTag: 200
+    IsRight: 1
+  - ElementTag: 201
+    IsRight: 1
+  Effects:
+  - ElementTag: 201
+    IsRight: 0

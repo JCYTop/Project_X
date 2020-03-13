@@ -15,7 +15,7 @@ namespace Framework.GOAP
             foreach (var unit in list)
             {
                 var action = new EnemyAction(unit.Key, unit.Value);
-                var handle = ActionHandlerMap.HandleMap.GetSortListValue(unit.Value.HanderTag);
+                var handle = ActionHandlerMap.HandleMap.GetSortListValue(unit.Key);
                 handle.Init(action);
                 handle.AddFinishCallBack(() =>
                 {

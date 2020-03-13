@@ -26,13 +26,21 @@ namespace Framework.GOAP
     [Serializable]
     public abstract class ActionConfigUnit<T> : UnityEngine.ScriptableObject
     {
-        [Rename("文件组")] public ActionUnityGroup ActionUnityGroup;
-        [Rename("Handler标签")] public ActionHanderTag HanderTag;
         [Rename("权重")] public int Priority;
         [Rename("是否可打断")] public bool IsInterruptible = false;
         [Rename("消耗")] public int Cost;
+        public ActionUnityGroup ActionUnityGroups;
+
+        /// <summary>
+        /// 先决条件
+        /// </summary>
         public List<StateAssembly> Preconditions;
+
+        /// <summary>
+        /// 影响条件
+        /// </summary>
         public List<StateAssembly> Effects;
+
         public SortedList<T, object> ActionConfigUnitSet = new SortedList<T, object>();
 
         /// <summary>
@@ -40,6 +48,11 @@ namespace Framework.GOAP
         /// 必须手动填写已经添加的数据
         /// </summary>
         public abstract ActionConfigUnit<T> Init();
+
+        protected void ADD(T tag, object obj)
+        {
+            ActionConfigUnitSet.AddSortListElement(tag, obj);
+        }
     }
 
     /// <summary>

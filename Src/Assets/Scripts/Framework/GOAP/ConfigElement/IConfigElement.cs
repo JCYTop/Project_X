@@ -138,6 +138,21 @@ namespace Framework.GOAP
         /// </summary>
         Cost = 3,
 
+        /// <summary>
+        /// 动画相关簇
+        /// </summary>
+        ActionUnityGroups = 4,
+
+        /// <summary>
+        /// 先决条件
+        /// </summary>
+        Preconditions = 5,
+
+        /// <summary>
+        /// 影响条件
+        /// </summary>
+        Effects = 6,
+
         #endregion
     }
 

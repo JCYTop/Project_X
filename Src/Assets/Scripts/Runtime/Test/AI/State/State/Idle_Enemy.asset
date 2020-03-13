@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 734b99739af81234a98366f672a97280, type: 3}
-  m_Name: EnemyIdle
+  m_Name: Idle_Enemy
   m_EditorClassIdentifier: 
   Tag: 1
   StateElement:

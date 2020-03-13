@@ -4,9 +4,12 @@ namespace Framework.GOAP
     {
         public override ActionConfigUnit<ActionElementTag> Init()
         {
-            ActionConfigUnitSet.Add(ActionElementTag.Priority, Priority);
-            ActionConfigUnitSet.Add(ActionElementTag.Interruptible, IsInterruptible);
-            ActionConfigUnitSet.Add(ActionElementTag.Cost, Cost);
+            ADD(ActionElementTag.Priority, Priority);
+            ADD(ActionElementTag.Interruptible, IsInterruptible);
+            ADD(ActionElementTag.Cost, Cost);
+            ADD(ActionElementTag.ActionUnityGroups, ActionUnityGroups);
+            ADD(ActionElementTag.Preconditions, Preconditions);
+            ADD(ActionElementTag.Effects, Effects);
             LogTool.Log($"{this.name} , ActionConfigUnit数据已经加载完成", LogEnum.AssetLog);
             return this;
         }

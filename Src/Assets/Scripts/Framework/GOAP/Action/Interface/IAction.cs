@@ -13,6 +13,8 @@
  ----------------------------------
 */
 
+using System.Collections.Generic;
+
 namespace Framework.GOAP
 {
     /// <summary>
@@ -42,14 +44,6 @@ namespace Framework.GOAP
         int Cost { get; }
 
         /// <summary>
-        /// 获取配置信息中的标签信息
-        /// </summary>
-        /// <param name="tag"></param>
-        /// <typeparam name="T"></typeparam>
-        /// <returns></returns>
-        T GetActionData<T>(string tag);
-
-        /// <summary>
         /// 当前动作是否能够中断
         /// </summary>
         bool CanInterruptiblePlan { get; }
@@ -57,16 +51,14 @@ namespace Framework.GOAP
         /// <summary>
         /// 执行动作
         /// 先决条件
-        /// 
         /// </summary>
-        IState PreConditions { get; }
+        ICollection<StateAssembly> Conditions { get; }
 
         /// <summary>
         /// 动作执行后
         /// 影响状态结果
-        /// 
         /// </summary>
-        IState Effects { get; }
+        ICollection<StateAssembly> Effects { get; }
 
         /// <summary>
         /// 验证先决条件
@@ -78,7 +70,8 @@ namespace Framework.GOAP
 
     /// <summary>
     /// 执行动作标签
-    /// 用在 IAction<TAction>
+    /// 用在 IAction
+    /// ActionHandler也有关联
     /// </summary>i
     public enum ActionTag
     {

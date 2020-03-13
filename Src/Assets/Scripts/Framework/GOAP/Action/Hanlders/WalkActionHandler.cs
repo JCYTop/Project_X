@@ -20,9 +20,10 @@ namespace Framework.GOAP
     public class WalkActionHandler : ActionHandler
     {
         public override ActionExcuteState ExcuteState { get; }
+
         public override void AddFinishCallBack(Action onFinishAction)
         {
-            throw new NotImplementedException();
+            this.onFinishAction = onFinishAction;
         }
 
         public override void Enter()

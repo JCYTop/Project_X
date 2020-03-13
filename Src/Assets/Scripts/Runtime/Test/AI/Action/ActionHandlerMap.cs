@@ -24,30 +24,24 @@ namespace Framework.GOAP
     /// </summary>
     public static class ActionHandlerMap
     {
-        private static SortedList<ActionHanderTag, ActionHandler> handleMap;
+        private static SortedList<ActionTag, ActionHandler> handleMap;
 
-        public static SortedList<ActionHanderTag, ActionHandler> HandleMap
+        public static SortedList<ActionTag, ActionHandler> HandleMap
         {
             get
             {
                 if (handleMap == null)
                 {
-                    handleMap = new SortedList<ActionHanderTag, ActionHandler>()
+                    handleMap = new SortedList<ActionTag, ActionHandler>()
                     {
-                        //TODO 这是一个例子
-                        {ActionHanderTag.Default, new DefaultActionHandler()},
-                        {ActionHanderTag.Idle_Handle, new IdleActionHandler()},
+                        {ActionTag.Default, new DefaultActionHandler()},
+                        {ActionTag.Idle, new IdleActionHandler()},
+                        {ActionTag.Walk, new WalkActionHandler()},
                     };
                 }
 
                 return handleMap;
             }
         }
-    }
-
-    public enum ActionHanderTag
-    {
-        Default = 0,
-        Idle_Handle,
     }
 }

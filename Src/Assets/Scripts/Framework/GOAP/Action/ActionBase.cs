@@ -14,6 +14,7 @@
 */
 
 using System;
+using System.Collections.Generic;
 
 namespace Framework.GOAP
 {
@@ -27,9 +28,36 @@ namespace Framework.GOAP
     /// <typeparam name="TAction"></typeparam>
     public abstract class ActionBase<TAction, TConfigElementTag> : IAction<TAction>
     {
+        private ICollection<StateAssembly> conditions;
+        private ICollection<StateAssembly> effects;
+
         public ActionConfigUnit<TConfigElementTag> ActionGroup { get; private set; }
-        public IState PreConditions => InitPreConditions();
-        public IState Effects => InitEffects();
+
+        public ICollection<StateAssembly> Conditions
+        {
+            get
+            {
+                if (conditions == null)
+                {
+                    conditions = InitConditions();
+                }
+
+                return conditions;
+            }
+        }
+
+        public ICollection<StateAssembly> Effects
+        {
+            get
+            {
+                if (effects == null)
+                {
+                    effects = InitEffects();
+                }
+
+                return effects;
+            }
+        }
 
         public int Cost
         {
@@ -69,27 +97,14 @@ namespace Framework.GOAP
             this.ActionGroup = actionGroup;
         }
 
-        public T GetActionData<T>(string tag)
+        private ICollection<StateAssembly> InitConditions()
         {
-            try
-            {
-                return (T) ActionGroup.ActionConfigUnitSet.GetSortListValue(tag);
-            }
-            catch (Exception e)
-            {
-                LogTool.LogException(e);
-                throw;
-            }
+            return (ICollection<StateAssembly>) ActionGroup.ActionConfigUnitSet.GetSortListValue(ActionElementTag.Preconditions.ToString());
         }
 
-        protected IState InitEffects()
+        private ICollection<StateAssembly> InitEffects()
         {
-            throw new System.NotImplementedException();
-        }
-
-        protected IState InitPreConditions()
-        {
-            throw new System.NotImplementedException();
+            return (ICollection<StateAssembly>) ActionGroup.ActionConfigUnitSet.GetSortListValue(ActionElementTag.Effects.ToString());
         }
 
         public virtual bool VerifyPreconditions()

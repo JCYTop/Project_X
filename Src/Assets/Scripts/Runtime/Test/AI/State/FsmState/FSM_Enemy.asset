@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 1219815696, guid: e743331561ef77147ae48cda9bcb8209, type: 3}
-  m_Name: TestEnemyState
+  m_Name: FSM_Enemy
   m_EditorClassIdentifier: 
   category: "\u5E38\u7528"
   fsm:
