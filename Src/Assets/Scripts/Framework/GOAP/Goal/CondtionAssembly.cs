@@ -13,10 +13,16 @@
  ----------------------------------
 */
 
+using System;
+using System.Collections.Generic;
+
 namespace Framework.GOAP
 {
+    [Serializable]
     public class CondtionAssembly
     {
+        [Rename("状态标签")] public CondtionTag Tag;
+        public List<StateAssembly> StateElement;
     }
 
     public enum CondtionTag
