@@ -10,11 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 5834672036963611575}
   - component: {fileID: 1527100429836616126}
-  - component: {fileID: 8750331309921104885}
+  - component: {fileID: 2333419324138673673}
   - component: {fileID: 6524474057141994584}
   m_Layer: 0
   m_Name: ExcelDataMgr
-  m_TagString: Util
+  m_TagString: Manager
   m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AssetName: 
---- !u!114 &8750331309921104885
+--- !u!114 &2333419324138673673
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -55,15 +55,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 652732097153272055}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e81a0163e9f4bd180817d9e590605e7, type: 3}
+  m_Script: {fileID: 11500000, guid: bc1fbc70e1eedb2429e981d9ce3ff8fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   objectLayer: 0
-  objectTag: 8
+  objectTag: 6
   Des: ExcelDataMgr
   IsPreLoad: 0
   resID: 0
   globalID: 0
+  baseName: 
   PointTrans: []
   Config: []
 --- !u!114 &6524474057141994584
