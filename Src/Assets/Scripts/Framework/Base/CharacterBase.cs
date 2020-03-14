@@ -21,28 +21,28 @@ namespace Framework.Base
 {
     public class CharacterBase : ObjectBase
     {
-        [BoxGroup("角色属性设置"), InfoBox("角色注册类型"), SerializeField]
-        private Character Options = Character.Player;
+        [BoxGroup("基本属性手动设置"), SerializeField] private Character objectSubTag = Character.Player;
 
         public override void Init()
         {
-            ScenesCenterMgr.AddGameObjectInfo<Character>(globalID, (int) Options, this);
+            ScenesCenterMgr.AddGameObjectInfo<Character>(globalID, (int) objectSubTag, this);
         }
 
         public override void Release()
         {
-            ScenesCenterMgr.RemoveGameObjectInfo<Character>(globalID, (int) Options);
+            ScenesCenterMgr.RemoveGameObjectInfo<Character>(globalID, (int) objectSubTag);
         }
     }
 
     [Flags]
     public enum Character
     {
-        None = 0,
+        Default = 0,
         Player = 1,
-        Enemy = 1 << 1,
-        Boss = 1 << 2,
-        NPC = 1 << 3,
-        ALL = Player | Enemy | Boss | NPC
+        Robot = 1 << 1,
+        Enemy = 1 << 2,
+        Boss = 1 << 3,
+        NPC = 1 << 4,
+        ALL = Player | Robot | Enemy | Boss | NPC,
     }
 }

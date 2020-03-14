@@ -18,7 +18,7 @@ namespace Framework.Base
         private Layer objectLayer = Layer.Default;
 
         [BoxGroup("基本属性手动设置"), SerializeField, EnumPaging, OnValueChanged("SetCurrentTag")]
-        private Tag objectTag = Tag.Default;
+        private Tag objectTag = Tag.None;
 
         [BoxGroup("基本属性手动设置")] public string Des = string.Empty;
         [BoxGroup("基本属性手动设置")] public bool IsPreLoad = false;
@@ -169,15 +169,14 @@ namespace Framework.Base
 
     public enum Tag
     {
-        Default,
-        UI,
-        Character,
-        Camera,
-        Trigger,
-        GameObject,
-        DevTool,
-        Manager,
-        Util,
+        None = 0,
+        UI = 1,
+        Character = 2,
+        Camera = 3,
+        Trigger = 4,
+        DevTool = 5,
+        Manager = 6,
+        Util = 7,
     }
 
     public enum Layer
@@ -186,5 +185,6 @@ namespace Framework.Base
         UI = 5,
         PostProcessing = 8,
         Scene = 9,
+        GameObject = 10,
     }
 }

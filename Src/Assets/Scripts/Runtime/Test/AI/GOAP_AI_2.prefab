@@ -40,9 +40,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2288368103054580803}
-  m_Layer: 0
+  - component: {fileID: 2730782623495095255}
+  - component: {fileID: 7313580085430583960}
+  m_Layer: 10
   m_Name: GOAP_AI_2
-  m_TagString: Untagged
+  m_TagString: Character
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -64,6 +66,41 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2730782623495095255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2288368103054580807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d005f11f1b5f61540aa260bd99ec33a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AssetName: 
+--- !u!114 &7313580085430583960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2288368103054580807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cafdfd7f32109f04391d14005bb79565, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectLayer: 10
+  objectTag: 2
+  Des: AI
+  IsPreLoad: 0
+  resID: 0
+  globalID: 0
+  baseName: 
+  PointTrans: []
+  Config: []
+  objectSubTag: 4
 --- !u!1 &7517287808761667595
 GameObject:
   m_ObjectHideFlags: 0

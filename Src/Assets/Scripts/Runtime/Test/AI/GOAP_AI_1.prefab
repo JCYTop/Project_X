@@ -70,9 +70,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3686397335937195637}
-  - component: {fileID: 5143629590194016621}
-  - component: {fileID: 434612301918317147}
-  m_Layer: 0
+  - component: {fileID: 7109507678908178149}
+  - component: {fileID: 8069673658110815829}
+  m_Layer: 10
   m_Name: GOAP_AI_1
   m_TagString: Character
   m_Icon: {fileID: 0}
@@ -96,7 +96,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5143629590194016621
+--- !u!114 &7109507678908178149
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -109,7 +109,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AssetName: 
---- !u!114 &434612301918317147
+--- !u!114 &8069673658110815829
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -118,10 +118,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 3686397335937195636}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e81a0163e9f4bd180817d9e590605e7, type: 3}
+  m_Script: {fileID: 11500000, guid: cafdfd7f32109f04391d14005bb79565, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectLayer: 0
+  objectLayer: 10
   objectTag: 2
   Des: AI
   IsPreLoad: 0
@@ -130,7 +130,7 @@ MonoBehaviour:
   baseName: 
   PointTrans: []
   Config: []
-  objectSubTag: 0
+  objectSubTag: 4
 --- !u!1 &4534019649204392506
 GameObject:
   m_ObjectHideFlags: 0

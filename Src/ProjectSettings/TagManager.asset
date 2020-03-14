@@ -9,7 +9,6 @@ TagManager:
   - Character
   - Camera
   - Trigger
-  - GameObject
   - DevTool
   - Manager
   - Util
@@ -24,7 +23,7 @@ TagManager:
   - 
   - PostProcessing
   - Scene
-  - 
+  - GameObject
   - 
   - 
   - 
