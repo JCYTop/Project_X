@@ -231,30 +231,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 2032347150}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &879984089 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 434612301918317147, guid: 348c58c2a71f42f283f956bd4d1b935c,
-    type: 3}
-  m_PrefabInstance: {fileID: 2032347150}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 879984088}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e81a0163e9f4bd180817d9e590605e7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &879984090 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5143629590194016621, guid: 348c58c2a71f42f283f956bd4d1b935c,
-    type: 3}
-  m_PrefabInstance: {fileID: 2032347150}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 879984088}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d005f11f1b5f61540aa260bd99ec33a8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &879984091 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3686397335937195637, guid: 348c58c2a71f42f283f956bd4d1b935c,
@@ -576,6 +552,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: GOAP_AI_2
       objectReference: {fileID: 0}
+    - target: {fileID: 2288368103054580807, guid: 783ffa5e36aec084aa3e31fe5ae387a2,
+        type: 3}
+      propertyPath: m_TagString
+      value: Character
+      objectReference: {fileID: 0}
+    - target: {fileID: 7313580085430583960, guid: 783ffa5e36aec084aa3e31fe5ae387a2,
+        type: 3}
+      propertyPath: objectTag
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 783ffa5e36aec084aa3e31fe5ae387a2, type: 3}
 --- !u!1 &1555094835
@@ -787,7 +773,7 @@ MonoBehaviour:
     - {fileID: 879984091}
     - {fileID: 1476420201}
     - {fileID: 1476420200}
-    - {fileID: 879984090}
+    - {fileID: 0}
     - {fileID: 1723293931}
     - {fileID: 1476420202}
     - {fileID: 1594976619}
@@ -796,7 +782,7 @@ MonoBehaviour:
     - {fileID: 1723293930}
     - {fileID: 1594976618}
     - {fileID: 398054548}
-    - {fileID: 879984089}
+    - {fileID: 0}
     - {fileID: 1594976620}
     - {fileID: 1594976621}
     - {fileID: 2288368103054580803, guid: 783ffa5e36aec084aa3e31fe5ae387a2, type: 3}

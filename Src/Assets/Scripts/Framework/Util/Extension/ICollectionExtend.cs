@@ -39,6 +39,26 @@ public static class ICollectionExtend
         return value != null ? value : default(TValue);
     }
 
+    /// <summary>
+    /// 直接修改数值
+    /// </summary>
+    /// <param name="dic"></param>
+    /// <param name="key"></param>
+    /// <param name="value"></param>
+    /// <typeparam name="Tkey"></typeparam>
+    /// <typeparam name="TValue"></typeparam>
+    /// <returns></returns>
+    public static TValue SetDictionaryValue<Tkey, TValue>(this Dictionary<Tkey, TValue> dic, Tkey key, TValue value)
+    {
+        if (!dic.ContainsKey(key))
+        {
+            LogTool.LogError($"没有Key对应的Value", LogEnum.NormalLog);
+        }
+
+        dic[key] = value;
+        return dic[key];
+    }
+
     #endregion
 
     #region SortList Extend
@@ -112,7 +132,7 @@ public static class ICollectionExtend
     /// <typeparam name="Tkey"></typeparam>
     /// <typeparam name="TValue"></typeparam>
     /// <returns></returns>
-    public static bool DeleteSortListElement<Tkey, TValue>(this SortedList<Tkey, TValue> sortList, Tkey key)
+    public static bool RemoveSortListElement<Tkey, TValue>(this SortedList<Tkey, TValue> sortList, Tkey key)
     {
         if (sortList.ContainsKey(key))
         {
@@ -121,7 +141,7 @@ public static class ICollectionExtend
         }
         else
         {
-            LogTool.LogError("不含有相对应的Key");
+            LogTool.LogError($"不含有相对应的Key  {key}");
             return false;
         }
     }

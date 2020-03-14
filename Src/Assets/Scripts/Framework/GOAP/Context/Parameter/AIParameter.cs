@@ -116,9 +116,9 @@ namespace Framework.GOAP
         /// 可能因为装备的或者属性的改变而删除
         /// </summary>
         /// <param name="unit"></param>
-        public void DeleteParameter(ParameterTag tag)
+        public void RemoveParameter(ParameterTag tag)
         {
-            ParameterList.DeleteSortListElement(tag);
+            ParameterList.RemoveSortListElement(tag);
             RefreshPanelInfo();
         }
 

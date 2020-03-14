@@ -18,6 +18,7 @@ namespace Framework.GOAP
 
         private void Change_Attack_Target()
         {
+            EmitEvent(GOAPEventType.Change_Attack_Target, new object[] {GoalbalID, Attack_Target,});
         }
 
         public override void Init()
