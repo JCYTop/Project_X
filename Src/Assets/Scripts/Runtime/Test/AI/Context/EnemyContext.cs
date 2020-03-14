@@ -8,16 +8,12 @@ namespace Framework.GOAP
     [RequireComponent(typeof(EnemyParameter))]
     [RequireComponent(typeof(EnemyDynamic))]
     [RequireComponent(typeof(EnemyCondition))]
-    public class EnemyContext : AIContextBase
+    public class EnemyContext : AIContextBase<EnemyAllActionConfig, EnemyAllGoal>
     {
         #region variable
 
-        private IAgent<ActionTag, GoalTag> agent;
-        [SerializeField] private EnemyAllActionConfig actionConfig;
-        [SerializeField] private EnemyAllGoal goalConfig;
-        public IAgent<ActionTag, GoalTag> Agent => agent;
-        public EnemyAllActionConfig ActionConfig => actionConfig;
-        public EnemyAllGoal GoalConfig => goalConfig;
+        private EnemyAgent agent;
+        public EnemyAgent Agent => agent;
 
         #endregion
 
@@ -31,7 +27,6 @@ namespace Framework.GOAP
         {
             base.Start();
             var ssss = Parameter.ParameterList;
-            StartFSM();
         }
 
         private void OnEnable()
@@ -42,11 +37,6 @@ namespace Framework.GOAP
         private void OnDisable()
         {
             agent.UnRegiestEvent();
-        }
-
-        protected override void StartFSM()
-        {
-            agent.StartFSM();
         }
     }
 }

@@ -28,11 +28,6 @@ namespace Framework.GOAP
             AgentGoalMgr = new EnemyGoalMgr(this);
         }
 
-        public override void StartFSM()
-        {
-            TargetEvent(AgentStateMgr.StartStateEvent);
-        }
-
         protected override void TargetEvent(string eventName)
         {
             EnemyContext.StateFsm.Fsm.Event(eventName);

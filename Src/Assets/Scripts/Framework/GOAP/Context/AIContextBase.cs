@@ -13,6 +13,7 @@
  ----------------------------------
 */
 
+using System;
 using Framework.Base;
 using Framework.EventDispatcher;
 using UnityEngine;
@@ -26,7 +27,7 @@ namespace Framework.GOAP
     /// 跟Mono有关的集合类
     /// </summary>
     [RequireComponent(typeof(PlayMakerFSM))]
-    public abstract class AIContextBase : MonoEventEmitter, IContext, IGoalbalID
+    public abstract class AIContextBase<T1, T2> : MonoEventEmitter, IContext, IGoalbalID
     {
         private PlayMakerFSM stateFsm;
         private AIParameter parameter;
@@ -34,11 +35,15 @@ namespace Framework.GOAP
         private AICondition condition;
         private int goalbalID = 0;
         [SerializeField] private FsmTemplate fsmTemplate;
+        [SerializeField] private T1 actionConfig;
+        [SerializeField] private T2 goalConfig;
         public PlayMakerFSM StateFsm => stateFsm;
         public AIParameter Parameter => parameter;
         public AIDynamic Dynamic => dynamic;
         public AICondition Condition => condition;
         public GameObject GameObject => this.gameObject;
+        public T1 ActionConfig => actionConfig;
+        public T2 GoalConfig => goalConfig;
 
         public int GoalbalID
         {
@@ -68,10 +73,5 @@ namespace Framework.GOAP
             Condition.Init();
             StateFsm.SetFsmTemplate(fsmTemplate);
         }
-
-        /// <summary>
-        /// 开始正式运行状态机
-        /// </summary>
-        protected abstract void StartFSM();
     }
 }

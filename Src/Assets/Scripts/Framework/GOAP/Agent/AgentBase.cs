@@ -37,12 +37,6 @@ namespace Framework.GOAP
             Context = context;
         }
 
-        /// <summary>
-        /// 初始化进入指定的状态
-        /// </summary>
-        /// <returns></returns>
-        public abstract void StartFSM();
-
         public virtual void RegiestEvent()
         {
         }
