@@ -74,7 +74,7 @@ namespace Framework.GOAP
                     parameterList = new SortedList<ParameterTag, ParameterUnit>();
                     for (int i = 0; i < baseParameter.Array.Length; i++)
                     {
-                        parameterList.AddSortListElement(baseParameter.Array[i].Tag, baseParameter.Array[i]);
+                        parameterList.AddSortListElements(baseParameter.Array[i].Tag, baseParameter.Array[i]);
                     }
                 }
 
@@ -107,7 +107,7 @@ namespace Framework.GOAP
         /// <param name="unit"></param>
         public void AppendParameter(ParameterUnit unit)
         {
-            ParameterList.AddSortListElement(unit.Tag, unit);
+            ParameterList.AddSortListElements(unit.Tag, unit);
             RefreshPanelInfo();
         }
 
@@ -118,7 +118,7 @@ namespace Framework.GOAP
         /// <param name="unit"></param>
         public void RemoveParameter(ParameterTag tag)
         {
-            ParameterList.RemoveSortListElement(tag);
+            ParameterList.RemoveSortListElements(tag);
             RefreshPanelInfo();
         }
 

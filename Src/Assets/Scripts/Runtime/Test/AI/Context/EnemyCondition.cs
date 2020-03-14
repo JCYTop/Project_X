@@ -87,7 +87,7 @@ namespace Framework.GOAP
                 var value = conditionMap.SetDictionaryValue(CondtionTag.Normal_Target, go != null);
                 if (value)
                 {
-                    updateData.AddSortListElement(CondtionTag.Near_Normal_Target, (context) =>
+                    updateData.AddSortListElements(CondtionTag.Near_Normal_Target, (context) =>
                     {
                         var dis = Vector3.Distance(context.GameObject.transform.position, go.transform.position);
                         var near = context.Parameter.ParameterList.GetSortListValue(ParameterTag.Near_Dis);
@@ -98,7 +98,7 @@ namespace Framework.GOAP
                 }
                 else
                 {
-                    updateData.RemoveSortListElement(CondtionTag.Near_Attack_Target);
+                    updateData.RemoveSortListElements(CondtionTag.Near_Normal_Target);
                 }
 #if UNITY_EDITOR
                 panelInfo.ForEach((panel) =>
@@ -139,10 +139,20 @@ namespace Framework.GOAP
         {
             //遍历动态查找需要检测的标签
             if (updateData.Count <= 0) return;
-            var enumerator = updateData.GetEnumerator();
-            while (enumerator.MoveNext())
+            var sortList = updateData.GetEnumerator();
+            while (sortList.MoveNext())
             {
-                conditionMap.SetDictionaryValue(enumerator.Current.Key, enumerator.Current.Value(enemyContext));
+                var value = conditionMap.SetDictionaryValue(sortList.Current.Key, sortList.Current.Value(enemyContext));
+#if UNITY_EDITOR
+                var list = panelInfo.GetEnumerator();
+                while (list.MoveNext())
+                {
+                    if (list.Current.ElementTag == sortList.Current.Key)
+                    {
+                        list.Current.IsRight = value;
+                    }
+                }
+#endif
             }
         }
     }

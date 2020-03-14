@@ -111,7 +111,7 @@ public static class ICollectionExtend
     /// <typeparam name="Tkey"></typeparam>
     /// <typeparam name="TValue"></typeparam>
     /// <returns></returns>
-    public static SortedList<Tkey, TValue> AddSortListElement<Tkey, TValue>(this SortedList<Tkey, TValue> sortList, Tkey key, TValue value)
+    public static SortedList<Tkey, TValue> AddSortListElements<Tkey, TValue>(this SortedList<Tkey, TValue> sortList, Tkey key, TValue value)
     {
         sortList.TryGetValue(key, out TValue tmpvalue);
         if (tmpvalue == null)
@@ -132,7 +132,7 @@ public static class ICollectionExtend
     /// <typeparam name="Tkey"></typeparam>
     /// <typeparam name="TValue"></typeparam>
     /// <returns></returns>
-    public static bool RemoveSortListElement<Tkey, TValue>(this SortedList<Tkey, TValue> sortList, Tkey key)
+    public static bool RemoveSortListElements<Tkey, TValue>(this SortedList<Tkey, TValue> sortList, Tkey key)
     {
         if (sortList.ContainsKey(key))
         {
@@ -141,7 +141,7 @@ public static class ICollectionExtend
         }
         else
         {
-            LogTool.LogError($"不含有相对应的Key  {key}");
+            LogTool.LogError($"不含有相对应的 Key：  {key}");
             return false;
         }
     }
@@ -154,12 +154,12 @@ public static class ICollectionExtend
     /// <param name="value"></param>
     /// <typeparam name="Tkey"></typeparam>
     /// <typeparam name="TValue"></typeparam>
-    public static void SetSortListElementValue<Tkey, TValue>(this SortedList<Tkey, TValue> sortList, Tkey key, TValue value)
+    public static void SetSortListElementsValue<Tkey, TValue>(this SortedList<Tkey, TValue> sortList, Tkey key, TValue value)
     {
         sortList.TryGetValue(key, out TValue tmpvalue);
         if (tmpvalue == null)
         {
-            LogTool.Log($"不含有对应Key！！！", LogEnum.NormalLog);
+            LogTool.Log($"不含有对应 Key：  {key}", LogEnum.NormalLog);
         }
         else
             tmpvalue = value;

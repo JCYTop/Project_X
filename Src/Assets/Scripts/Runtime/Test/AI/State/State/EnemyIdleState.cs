@@ -14,7 +14,7 @@ namespace Framework.GOAP
         public override void Awake()
         {
             base.Awake();
-            EnemyStateMgr.StateSortList.AddSortListElement(StateConfig.Tag, this);
+            EnemyStateMgr.StateSortList.AddSortListElements(StateConfig.Tag, this);
         }
 
         public override void Enter()
