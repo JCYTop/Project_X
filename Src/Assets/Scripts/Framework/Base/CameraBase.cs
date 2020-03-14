@@ -2,12 +2,12 @@
 ----------------------------------
  *Copyright(C) 2019 by IndieGame
  *All rights reserved.
- *FileName:     GameObjectBase
+ *FileName:     CameraBase
  *Author:       @JCY
- *Version:      0.0.1
+ *Version:      0.1.0
  *AuthorEmail:  jcyemail@qq.com
- *UnityVersion：2019.1.0f2
- *CreateTime:   2019/06/16 18:23:45
+ *UnityVersion：Unity2019.3.0f6
+ *CreateTime:   2020/03/14 21:32:55
  *Description:  IndieGame 
  *History:
  ----------------------------------
@@ -15,7 +15,7 @@
 
 namespace Framework.Base
 {
-    public class GameObjectBase : ObjectBase
+    public class CameraBase : ObjectBase
     {
         public override void Init()
         {
