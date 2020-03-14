@@ -23,8 +23,12 @@ namespace Framework.GOAP
     {
         private EnemyContext enemyContext;
         private EnemyGoalMgr goalMgr;
-        private Dictionary<CondtionTag, bool> conditionMap;
         private SortedList<CondtionTag, Func<IContext, bool>> updateData;
+
+        /// <summary>
+        /// 本类的核心
+        /// </summary>
+        private Dictionary<CondtionTag, bool> conditionMap;
 
 #if UNITY_EDITOR
         [SerializeField, Sirenix.OdinInspector.ReadOnly]
@@ -117,9 +121,23 @@ namespace Framework.GOAP
             if (args != null && args.Length > 0)
             {
                 if (GoalbalID != Convert.ToInt32(args[0])) return;
-                var value = conditionMap.GetDictionaryValue(CondtionTag.Attack_Target);
                 var go = (GameObject) args[1];
-                value = go != null;
+                var value = conditionMap.SetDictionaryValue(CondtionTag.Attack_Target, go != null);
+                if (value)
+                {
+                    updateData.AddSortListElements(CondtionTag.Near_Attack_Target, (context) =>
+                    {
+                        var dis = Vector3.Distance(context.GameObject.transform.position, go.transform.position);
+                        var near = context.Parameter.ParameterList.GetSortListValue(ParameterTag.Attack_Dis);
+                        if (dis < near.Value)
+                            return true;
+                        return false;
+                    });
+                }
+                else
+                {
+                    updateData.RemoveSortListElements(CondtionTag.Near_Attack_Target);
+                }
 #if UNITY_EDITOR
                 panelInfo.ForEach((panel) =>
                 {
