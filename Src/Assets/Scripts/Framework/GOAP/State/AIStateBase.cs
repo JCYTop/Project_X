@@ -47,14 +47,13 @@ namespace Framework.GOAP
         public override void Awake()
         {
             base.Awake();
-            Init();
-            RegiestEvent();
         }
 
         public override void OnEnter()
         {
             base.OnEnter();
             Enter();
+            RegiestEvent();
         }
 
         public override void OnUpdate()
@@ -72,7 +71,6 @@ namespace Framework.GOAP
 
         #endregion
 
-        public abstract void Init();
         public abstract void Enter();
         public abstract void Execute();
         public abstract void Exit();

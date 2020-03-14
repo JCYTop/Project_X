@@ -33,6 +33,7 @@ namespace Framework.GOAP
         private AIDynamic dynamic;
         private AICondition condition;
         private int goalbalID = 0;
+        [SerializeField] private FsmTemplate fsmTemplate;
         public PlayMakerFSM StateFsm => stateFsm;
         public AIParameter Parameter => parameter;
         public AIDynamic Dynamic => dynamic;
@@ -52,7 +53,7 @@ namespace Framework.GOAP
             }
         }
 
-        private void Awake()
+        protected virtual void Awake()
         {
             stateFsm = this.GetComponent<PlayMakerFSM>();
             parameter = this.GetComponent<AIParameter>();
@@ -60,17 +61,12 @@ namespace Framework.GOAP
             condition = this.GetComponent<AICondition>();
             Parameter.Init();
             Dynamic.Init();
-            Init();
         }
 
-        private void Start()
+        protected virtual void Start()
         {
             Condition.Init();
-            StartFSM();
-        }
-
-        public virtual void Init()
-        {
+            StateFsm.SetFsmTemplate(fsmTemplate);
         }
 
         /// <summary>

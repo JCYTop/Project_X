@@ -32,11 +32,6 @@ namespace Framework.GOAP
         AIDynamic Dynamic { get; }
         AICondition Condition { get; }
         GameObject GameObject { get; }
-
-        /// <summary>
-        /// 基础初始化
-        /// </summary>
-        void Init();
     }
 
     /// <summary>

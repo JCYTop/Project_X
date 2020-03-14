@@ -43,13 +43,6 @@ namespace Framework.GOAP
         void UnRegiestEvent();
 
         /// <summary>
-        /// 初始化信息
-        /// StateConfig序列化文件载入
-        /// StateConfig进行一次实例化
-        /// </summary>
-        void Init();
-
-        /// <summary>
         /// 进入动作
         /// </summary>
         void Enter();

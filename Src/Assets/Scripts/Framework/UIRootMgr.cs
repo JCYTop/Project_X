@@ -130,12 +130,12 @@ public sealed class UIRootMgr : MonoBehaviour
 
     private void OnEnable()
     {
-        EventDispatcher.Instance().OnEvent(GlobalEventType.OnApplicationQuit, ApplicationQuit);
+        EventDispatcher.Instance().RegiestEvent(GlobalEventType.OnApplicationQuit, ApplicationQuit);
     }
 
     private void OnDisable()
     {
-        EventDispatcher.Instance().OffEvent(GlobalEventType.OnApplicationQuit, ApplicationQuit);
+        EventDispatcher.Instance().UnRegiestEvent(GlobalEventType.OnApplicationQuit, ApplicationQuit);
     }
 
     private void ApplicationQuit(params object[] args)

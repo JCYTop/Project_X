@@ -11,8 +11,9 @@ namespace Framework.GOAP
     {
         private EnemyStateMgr EnemyStateMgr => GetContext.Agent.AgentStateMgr.GetStateMgr<EnemyStateMgr>();
 
-        public override void Init()
+        public override void Awake()
         {
+            base.Awake();
             EnemyStateMgr.StateSortList.AddSortListElement(StateConfig.Tag, this);
         }
 

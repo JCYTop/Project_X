@@ -66,13 +66,13 @@ namespace Framework.Base
 
         void OnEnable()
         {
-            OnEvent(globalID.ToString(), Refresh);
+            RegiestEvent(globalID.ToString(), Refresh);
             Enable();
         }
 
         void OnDisable()
         {
-            OffEvent(globalID.ToString(), Refresh);
+            UnRegiestEvent(globalID.ToString(), Refresh);
             Disable();
         }
 

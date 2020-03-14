@@ -23,21 +23,16 @@ namespace Framework.GOAP
     {
         private EnemyContext enemyContext;
         private EnemyGoalMgr goalMgr;
-        private HashSet<CondtionTag> existTag;
-        private Dictionary<CondtionTag, Func<IContext, bool>> conditionMap;
+        private Dictionary<CondtionTag, bool> conditionMap;
 
 #if UNITY_EDITOR
         [SerializeField, Sirenix.OdinInspector.ReadOnly]
-        private List<CondtionAssembly> panelInfo = new List<CondtionAssembly>(1 << 4);
+        private List<CondtionAssembly> panelInfo;
 #endif
 
         public override void Init()
         {
-#if UNITY_EDITOR
-            panelInfo.Clear();
-#endif
-            existTag = new HashSet<CondtionTag>();
-            conditionMap = new Dictionary<CondtionTag, Func<IContext, bool>>(1 << 4);
+            conditionMap = new Dictionary<CondtionTag, bool>(1 << 4);
             enemyContext = this.GetComponent<EnemyContext>();
             goalMgr = enemyContext.Agent.AgentGoalMgr.GetGoalMgr<EnemyGoalMgr>();
             foreach (var stateBase in goalMgr.GoalsDic.Values)
@@ -45,34 +40,38 @@ namespace Framework.GOAP
                 foreach (var condtion in stateBase.Condition)
                 {
                     //获取配置文件中所有的 Tag 标签
-                    existTag.Add(condtion.ElementTag);
+                    if (!conditionMap.ContainsKey(condtion.ElementTag))
+                    {
+                        conditionMap.Add(condtion.ElementTag, default(bool));
+                    }
                 }
 
                 foreach (var condtion in stateBase.Effects)
                 {
                     //获取配置文件中所有的 Tag 标签
-                    existTag.Add(condtion.ElementTag);
+                    if (!conditionMap.ContainsKey(condtion.ElementTag))
+                    {
+                        conditionMap.Add(condtion.ElementTag, default(bool));
+                    }
                 }
             }
-
-            foreach (var elementTag in existTag)
-            {
-                var action = AIConditionExtend.ConditionMap.GetDictionaryValue(elementTag);
-                conditionMap.Add(elementTag, action);
 #if UNITY_EDITOR
-                panelInfo.Add(new CondtionAssembly(elementTag, action(enemyContext)));
-#endif
+            panelInfo = new List<CondtionAssembly>(1 << 4);
+            foreach (var elementTag in conditionMap)
+            {
+                panelInfo.Add(new CondtionAssembly(elementTag.Key, default(bool)));
             }
+#endif
         }
 
         private void OnEnable()
         {
-            OnEvent(GOAPEventType.Change_Normal_Target, Change_Normal_Target);
+            RegiestEvent(GOAPEventType.Change_Normal_Target, Change_Normal_Target);
         }
 
         private void OnDisable()
         {
-            OffEvent(GOAPEventType.Change_Normal_Target, Change_Normal_Target);
+            UnRegiestEvent(GOAPEventType.Change_Normal_Target, Change_Normal_Target);
         }
 
         private void Change_Normal_Target(object[] args)
@@ -80,27 +79,18 @@ namespace Framework.GOAP
             if (args != null && args.Length > 0)
             {
                 if (GoalbalID != Convert.ToInt32(args[0])) return;
+                var value = conditionMap.GetDictionaryValue(CondtionTag.Normal_Target);
                 var go = (GameObject) args[1];
-                if (go)
+                value = go != null;
+#if UNITY_EDITOR
+                panelInfo.ForEach((panel) =>
                 {
-                    panelInfo.ForEach((panel) =>
+                    if (panel.ElementTag == CondtionTag.Normal_Target)
                     {
-                        if (panel.ElementTag == CondtionTag.Normal_Target)
-                        {
-                            panel.IsRight = true;
-                        }
-                    });
-                }
-                else
-                {
-                    panelInfo.ForEach((panel) =>
-                    {
-                        if (panel.ElementTag == CondtionTag.Normal_Target)
-                        {
-                            panel.IsRight = false;
-                        }
-                    });
-                }
+                        panel.IsRight = value;
+                    }
+                });
+#endif
             }
         }
 

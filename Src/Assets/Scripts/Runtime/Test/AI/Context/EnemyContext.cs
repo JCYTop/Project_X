@@ -13,7 +13,6 @@ namespace Framework.GOAP
         #region variable
 
         private IAgent<ActionTag, GoalTag> agent;
-        [SerializeField] private FsmTemplate fsmTemplate;
         [SerializeField] private EnemyAllActionConfig actionConfig;
         [SerializeField] private EnemyAllGoal goalConfig;
         public IAgent<ActionTag, GoalTag> Agent => agent;
@@ -22,12 +21,17 @@ namespace Framework.GOAP
 
         #endregion
 
-        public override void Init()
+        protected override void Awake()
         {
-            base.Init();
+            base.Awake();
             agent = new EnemyAgent(this);
-            StateFsm.SetFsmTemplate(fsmTemplate);
+        }
+
+        protected override void Start()
+        {
+            base.Start();
             var ssss = Parameter.ParameterList;
+            StartFSM();
         }
 
         private void OnEnable()

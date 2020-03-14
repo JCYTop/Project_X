@@ -10,7 +10,6 @@ namespace Framework.GOAP
 
         private void Change_Normal_Target()
         {
-            Debug.Log("Change_Normal_Target");
             EmitEvent(GOAPEventType.Change_Normal_Target, new object[] {GoalbalID, Normal_Target,});
         }
 
@@ -19,7 +18,6 @@ namespace Framework.GOAP
 
         private void Change_Attack_Target()
         {
-            Debug.Log("Change_Attack_Target");
         }
 
         public override void Init()
