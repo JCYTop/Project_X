@@ -42,8 +42,9 @@ namespace Framework.GOAP
             }
         }
 
-        public void Init()
+        public virtual void Init()
         {
+            //TODO  添加一些State的特性
         }
     }
 

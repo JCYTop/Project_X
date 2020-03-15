@@ -11,22 +11,21 @@ namespace Framework.GOAP
     {
         private EnemyStateMgr EnemyStateMgr => GetContext.Agent.AgentStateMgr.GetStateMgr<EnemyStateMgr>();
 
-        public override void Awake()
+        public override void AwakeState()
         {
-            base.Awake();
             EnemyStateMgr.StateSortList.AddSortListElements(StateConfig.Tag, this);
         }
 
-        public override void Enter()
+        public override void EnterState()
         {
             EnemyStateMgr.SetCurrActivity(StateConfig.Tag);
         }
 
-        public override void Execute()
+        public override void ExecuteState()
         {
         }
 
-        public override void Exit()
+        public override void ExitState()
         {
         }
 

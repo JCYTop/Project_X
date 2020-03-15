@@ -47,33 +47,35 @@ namespace Framework.GOAP
         public override void Awake()
         {
             base.Awake();
+            AwakeState();
         }
 
         public override void OnEnter()
         {
             base.OnEnter();
-            Enter();
+            EnterState();
             RegiestEvent();
         }
 
         public override void OnUpdate()
         {
             base.OnUpdate();
-            Execute();
+            ExecuteState();
         }
 
         public override void OnExit()
         {
             base.OnExit();
             UnRegiestEvent();
-            Exit();
+            ExitState();
         }
 
         #endregion
 
-        public abstract void Enter();
-        public abstract void Execute();
-        public abstract void Exit();
+        public abstract void AwakeState();
+        public abstract void EnterState();
+        public abstract void ExecuteState();
+        public abstract void ExitState();
         public abstract TConfig GetData();
 
         public virtual void RegiestEvent()
@@ -87,56 +89,6 @@ namespace Framework.GOAP
         public void AddStateChangeListener([NotNull] Action callback)
         {
             this.onChange = callback;
-        }
-
-        public void Clear()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public IState InversionValue()
-        {
-            throw new NotImplementedException();
-        }
-
-        public object GetSingleValue(AIStateElementTag key)
-        {
-            throw new NotImplementedException();
-        }
-
-        public bool CompareKey(AIStateElementTag key)
-        {
-            throw new NotImplementedException();
-        }
-
-        public ICollection<AIStateElementTag> GetKeys()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Copy(IState otherState)
-        {
-            throw new NotImplementedException();
-        }
-
-        public bool ContainState(IState otherState)
-        {
-            throw new NotImplementedException();
-        }
-
-        public SortedList<AIStateElementTag, Dictionary<IState, object>> GetSameData(IState otherState)
-        {
-            throw new NotImplementedException();
-        }
-
-        public ICollection<AIStateElementTag> GetValueDifferences(IState otherState)
-        {
-            throw new NotImplementedException();
-        }
-
-        public ICollection<AIStateElementTag> GetNotExistKeys(IState otherState)
-        {
-            throw new NotImplementedException();
         }
     }
 }
