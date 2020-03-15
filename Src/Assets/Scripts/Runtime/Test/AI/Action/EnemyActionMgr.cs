@@ -28,7 +28,7 @@ namespace Framework.GOAP
 
         public override ActionTag GetDefaultActionLabel()
         {
-            throw new System.NotImplementedException();
+            return ActionTag.Idle;
         }
     }
 }

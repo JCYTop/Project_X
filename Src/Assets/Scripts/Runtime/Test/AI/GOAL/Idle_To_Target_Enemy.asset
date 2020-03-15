@@ -20,4 +20,4 @@ MonoBehaviour:
   - ElementTag: 200
     IsRight: 1
   - ElementTag: 201
-    IsRight: 0
+    IsRight: 1

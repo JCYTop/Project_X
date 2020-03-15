@@ -28,7 +28,7 @@ namespace Framework.GOAP
             AgentGoalMgr = new EnemyGoalMgr(this);
         }
 
-        protected override void TargetEvent(string eventName)
+        public override void TargetEvent(string eventName)
         {
             EnemyContext.StateFsm.Fsm.Event(eventName);
         }

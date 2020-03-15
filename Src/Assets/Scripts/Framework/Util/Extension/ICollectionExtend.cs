@@ -59,6 +59,28 @@ public static class ICollectionExtend
         return dic[key];
     }
 
+    /// <summary>
+    /// 移除相对应的Key
+    /// </summary>
+    /// <param name="dic"></param>
+    /// <param name="key"></param>
+    /// <typeparam name="Tkey"></typeparam>
+    /// <typeparam name="TValue"></typeparam>
+    /// <returns></returns>
+    public static bool RemoveDictionaryElements<Tkey, TValue>(this Dictionary<Tkey, TValue> dic, Tkey key)
+    {
+        if (dic.ContainsKey(key))
+        {
+            dic.Remove(key);
+            return true;
+        }
+        else
+        {
+            LogTool.LogError($"不含有相对应的 Key：  {key}");
+            return false;
+        }
+    }
+
     #endregion
 
     #region SortList Extend

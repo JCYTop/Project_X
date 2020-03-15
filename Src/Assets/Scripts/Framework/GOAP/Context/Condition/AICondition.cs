@@ -13,6 +13,7 @@
  ----------------------------------
 */
 
+using System;
 using Framework.Base;
 using Framework.EventDispatcher;
 
@@ -36,5 +37,21 @@ namespace Framework.GOAP
         }
 
         public abstract void Init();
+    }
+
+    public static class AIConditionExtend
+    {
+        public static T GetCondition<T>(this AICondition context) where T : class
+        {
+            try
+            {
+                return context as T;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
+        }
     }
 }

@@ -71,6 +71,6 @@ namespace Framework.GOAP
         /// 所有默认都为Idle状态
         /// </summary>
         /// <param name="eventName"></param>
-        protected abstract void TargetEvent([NotNull] string eventName);
+        public abstract void TargetEvent([NotNull] string eventName);
     }
 }

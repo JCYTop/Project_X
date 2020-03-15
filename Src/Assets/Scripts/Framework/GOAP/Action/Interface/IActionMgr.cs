@@ -29,7 +29,7 @@ namespace Framework.GOAP
         /// <summary>
         /// 效果和动作的映射关系
         /// </summary>
-        Dictionary<TAction, HashSet<IActionHandler<TAction>>> Effect_Action_Map { get; }
+        Dictionary<CondtionTag, HashSet<IActionHandler<TAction>>> EffectActionMap { get; }
 
         /// <summary>
         /// 获取默认动作的标签
@@ -47,7 +47,7 @@ namespace Framework.GOAP
         /// 改变当前执行的动作
         /// </summary>
         /// <param name="actionLabel"></param>
-        void ExcuteNewState(TAction actionLabel);
+        void ExcuteHandler(TAction actionLabel);
 
         /// <summary>
         /// 添加动作完成的监听

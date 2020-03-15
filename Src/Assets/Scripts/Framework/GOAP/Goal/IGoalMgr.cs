@@ -36,8 +36,8 @@ namespace Framework.GOAP
         /// <summary>
         /// 添加一个目标
         /// </summary>
-        /// <param name="goalLabel"></param>
-        void AddGoal(TGoal goalLabel);
+        /// <param name="goal"></param>
+        void AddGoal(IGoal<TGoal> goal);
 
         /// <summary>
         /// 移除一个目标

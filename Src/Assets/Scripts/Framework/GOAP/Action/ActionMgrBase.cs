@@ -33,7 +33,7 @@ namespace Framework.GOAP
         protected IAgent<TAction, TGoal> agent;
 
         /// <summary>
-        /// 动作字典
+        /// 动作字典列表
         /// </summary>
         protected SortedList<TAction, IActionHandler<TAction>> handlersSort;
 
@@ -42,9 +42,10 @@ namespace Framework.GOAP
         /// </summary>
         private List<IActionHandler<TAction>> interruptibleHandlers;
 
-        public bool IsPerformAction { get; set; }
         public List<IActionHandler<TAction>> InterruptibleHandlers => interruptibleHandlers;
-        public Dictionary<TAction, HashSet<IActionHandler<TAction>>> Effect_Action_Map { get; }
+        private Dictionary<CondtionTag, HashSet<IActionHandler<TAction>>> effectActionMap;
+        public Dictionary<CondtionTag, HashSet<IActionHandler<TAction>>> EffectActionMap => effectActionMap;
+        public bool IsPerformAction { get; set; }
 
         public ActionMgrBase(IAgent<TAction, TGoal> agent)
         {
@@ -53,13 +54,19 @@ namespace Framework.GOAP
             interruptibleHandlers = new List<IActionHandler<TAction>>();
             InitActionHandlers();
             InitInterruptiblers();
-            InitEffect_Action_Map();
+            Init_Effect_Action_Map();
         }
 
         /// <summary>
         /// 初始化当前代理的动作处理器
         /// </summary>
         protected abstract void InitActionHandlers();
+
+        /// <summary>
+        /// 获得默认标签值
+        /// </summary>
+        /// <returns></returns>
+        public abstract TAction GetDefaultActionLabel();
 
         /// <summary>
         /// 初始化能够打断计划的动作缓存
@@ -80,26 +87,47 @@ namespace Framework.GOAP
         /// <summary>
         /// 初始化动作和动作影响的映射
         /// </summary>
-        private void InitEffect_Action_Map()
+        private void Init_Effect_Action_Map()
         {
-            //TODO next step 处理这里
-        }
+            effectActionMap = new Dictionary<CondtionTag, HashSet<IActionHandler<TAction>>>();
+            foreach (var handler in handlersSort)
+            {
+                var effects = handler.Value.Action.Effects;
+                if (effects.Count <= 0)
+                    continue;
+                foreach (var assembly in effects)
+                {
+                    if (!effectActionMap.ContainsKey(assembly.ElementTag) || effectActionMap[assembly.ElementTag] == null)
+                    {
+                        effectActionMap.Add(assembly.ElementTag, new HashSet<IActionHandler<TAction>>());
+                    }
 
-        public abstract TAction GetDefaultActionLabel();
+                    effectActionMap[assembly.ElementTag].Add(handler.Value);
+                }
+            }
+        }
 
         public IActionHandler<TAction> GetHandler(TAction actionLabel)
         {
             return handlersSort.GetSortListValue(actionLabel);
         }
 
-        public void ExcuteNewState(TAction actionLabel)
+        /// <summary>
+        /// 执行新动作
+        /// </summary>
+        /// <param name="actionLabel"></param>
+        public void ExcuteHandler(TAction actionLabel)
         {
-            throw new NotImplementedException();
+            //TODO next step
         }
 
+        /// <summary>
+        /// Planner计划中使用
+        /// </summary>
+        /// <param name="actionComplete"></param>
         public void AddActionCompleteListener(Action<TAction> actionComplete)
         {
-            throw new NotImplementedException();
+            this.onActionComplete = actionComplete;
         }
 
         public void Update()

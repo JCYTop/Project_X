@@ -37,5 +37,12 @@ namespace Framework.GOAP
                 GoalsDic.Add(goal.Label, goal);
             }
         }
+
+        public override IGoal<GoalTag> FindGoal()
+        {
+//            //TODO 根据Condition中的判断条件
+//            CurrentGoal = agent.Context.Condition.GetCondition<EnemyCondition>();
+            return default;
+        }
     }
 }

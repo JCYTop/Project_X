@@ -35,25 +35,37 @@ namespace Framework.GOAP
         /// </summary>
         protected abstract void InitGoals();
 
-        public void AddGoal(TGoal goalLabel)
+        public void AddGoal(IGoal<TGoal> goal)
         {
-            throw new System.NotImplementedException();
-        }
-
-        public IGoal<TGoal> GetGoal(TGoal goalLabel)
-        {
-            throw new System.NotImplementedException();
+            if (!GoalsDic.ContainsKey(goal.Label))
+            {
+                goal.AddGoalActivateListener((activeGoal) =>
+                {
+                    //TODO 激活之后做的事情
+                });
+                goal.AddGoalInactivateListener((activeGoal) =>
+                {
+                    //TODO 未被激活之后做的事情
+                });
+                GoalsDic.Add(goal.Label, goal);
+            }
         }
 
         public void RemoveGoal(TGoal goalLabel)
         {
-            throw new System.NotImplementedException();
+            GoalsDic.RemoveDictionaryElements(goalLabel);
         }
 
-        public IGoal<TGoal> FindGoal()
+        public IGoal<TGoal> GetGoal(TGoal goalLabel)
         {
-            throw new System.NotImplementedException();
+            return GoalsDic.GetDictionaryValue(goalLabel);
         }
+
+        /// <summary>
+        /// 核心方法 *** 
+        /// </summary>
+        /// <returns></returns>
+        public abstract IGoal<TGoal> FindGoal();
 
         public void UpdateData()
         {

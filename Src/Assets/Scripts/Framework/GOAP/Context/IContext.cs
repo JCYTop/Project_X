@@ -45,8 +45,7 @@ namespace Framework.GOAP
         /// <param name="context"></param>
         /// <typeparam name="TContext"></typeparam>
         /// <returns></returns>
-        public static TContext GetContext<TContext>([NotNull] this IContext context)
-            where TContext : class, IContext
+        public static TContext GetContext<TContext>(this IContext context) where TContext : class, IContext
         {
             try
             {

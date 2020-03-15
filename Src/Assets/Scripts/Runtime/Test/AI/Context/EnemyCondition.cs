@@ -151,7 +151,7 @@ namespace Framework.GOAP
         }
 
         /// <summary>
-        /// 需要时事更新的标签
+        /// 需要实时更新的标签
         /// </summary>
         private void Update()
         {

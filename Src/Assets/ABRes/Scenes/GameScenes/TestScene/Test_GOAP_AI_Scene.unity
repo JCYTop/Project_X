@@ -654,16 +654,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: GOAP_AI_2
       objectReference: {fileID: 0}
-    - target: {fileID: 2288368103054580807, guid: 783ffa5e36aec084aa3e31fe5ae387a2,
-        type: 3}
-      propertyPath: m_TagString
-      value: Character
-      objectReference: {fileID: 0}
-    - target: {fileID: 7313580085430583960, guid: 783ffa5e36aec084aa3e31fe5ae387a2,
-        type: 3}
-      propertyPath: objectTag
-      value: 2
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 783ffa5e36aec084aa3e31fe5ae387a2, type: 3}
 --- !u!1 &1555094835
