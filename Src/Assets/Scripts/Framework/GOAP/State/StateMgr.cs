@@ -2,7 +2,7 @@
 ----------------------------------
  *Copyright(C) 2019 by IndieGame
  *All rights reserved.
- *FileName:     StateManagerBase
+ *FileName:     StateMgr
  *Author:       @JCY
  *Version:      0.1.0
  *AuthorEmail:  jcyemail@qq.com
@@ -17,7 +17,7 @@ using System.Collections.Generic;
 
 namespace Framework.GOAP
 {
-    public abstract class StateMgrBase<TStateBase> : IStateMgr
+    public abstract class StateMgr<TStateBase> : IStateMgr
     {
         /// <summary>
         /// 静态默认载入的State的Event

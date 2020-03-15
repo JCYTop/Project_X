@@ -53,7 +53,7 @@ namespace Framework.GOAP
         /// 添加动作完成的监听
         /// </summary>
         /// <param name="actionComplete"></param>
-        void AddActionCompleteListener(Action<TAction> actionComplete);
+        void AddActionCompleteListener(System.Action<TAction> actionComplete);
 
         /// <summary>
         /// 帧函数

@@ -2,7 +2,7 @@
 ----------------------------------
  *Copyright(C) 2019 by IndieGame
  *All rights reserved.
- *FileName:     GoalManagerBase
+ *FileName:     GoalMgr
  *Author:       @JCY
  *Version:      0.0.1
  *AuthorEmail:  jcyemail@qq.com
@@ -18,14 +18,14 @@ using System.Collections.Generic;
 
 namespace Framework.GOAP
 {
-    public abstract class GoalMgrBase<TAction, TGoal> : IGoalMgr<TGoal>
+    public abstract class GoalMgr<TAction, TGoal> : IGoalMgr<TGoal>
     {
         protected IAgent<TAction, TGoal> agent;
         public abstract Dictionary<TGoal, IGoal<TGoal>> GoalsDic { get; }
         public abstract List<IGoal<TGoal>> ActiveGoals { get; }
         public abstract IGoal<TGoal> CurrentGoal { get; }
 
-        public GoalMgrBase(IAgent<TAction, TGoal> agent)
+        public GoalMgr(IAgent<TAction, TGoal> agent)
         {
             this.agent = agent;
         }

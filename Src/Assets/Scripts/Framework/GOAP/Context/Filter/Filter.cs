@@ -2,7 +2,7 @@
 ----------------------------------
  *Copyright(C) 2019 by IndieGame
  *All rights reserved.
- *FileName:     AIFilter
+ *FileName:     Filter
  *Author:       @JCY
  *Version:      0.1.0
  *AuthorEmail:  jcyemail@qq.com
@@ -15,7 +15,7 @@
 
 namespace Framework.GOAP
 {
-    public class AIFilter
+    public class Filter
     {
     }
 }

@@ -28,9 +28,9 @@ namespace Framework.GOAP
     /// </summary>
     public interface IContext
     {
-        AIParameter Parameter { get; }
-        AIDynamic Dynamic { get; }
-        AICondition Condition { get; }
+        Parameter Parameter { get; }
+        Dynamic Dynamic { get; }
+        Condition Condition { get; }
         GameObject GameObject { get; }
     }
 

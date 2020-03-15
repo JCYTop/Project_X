@@ -2,7 +2,7 @@
 ----------------------------------
  *Copyright(C) 2019 by IndieGame
  *All rights reserved.
- *FileName:     AIDynamic
+ *FileName:     Dynamic
  *Author:       @JCY
  *Version:      0.1.0
  *AuthorEmail:  jcyemail@qq.com
@@ -27,7 +27,7 @@ namespace Framework.GOAP
     /// 还可能有标签类信息(队伍标签)
     /// 应该由外部筛选器Filter选择最优解传送进来
     /// </summary>
-    public abstract class AIDynamic : MonoEventEmitter, IGoalbalID
+    public abstract class Dynamic : MonoEventEmitter, IGoalbalID
     {
         private int goalbalID = 0;
         public Dictionary<DynamicObjTag, Func<object>> DynamicDic = new Dictionary<DynamicObjTag, Func<object>>(1 << 5);
@@ -58,7 +58,7 @@ namespace Framework.GOAP
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static T PushDynamicData<T>(this AIDynamic dynamic, DynamicObjTag tag)
+        public static T PushDynamicData<T>(this Dynamic dynamic, DynamicObjTag tag)
         {
             return (T) dynamic.DynamicDic.GetDictionaryValue(tag).Invoke();
         }

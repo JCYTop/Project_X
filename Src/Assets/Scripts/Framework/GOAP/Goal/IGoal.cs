@@ -49,13 +49,13 @@ namespace Framework.GOAP
         /// 添加目标激活的监听
         /// </summary>
         /// <param name="onActivate"></param>
-        void AddGoalActivateListener(Action<IGoal<TGoal>> onActivate);
+        void AddGoalActivateListener(System.Action<IGoal<TGoal>> onActivate);
 
         /// <summary>
         /// 添加目标未激活的监听
         /// </summary>
         /// <param name="onInactivate"></param>
-        void AddGoalInactivateListener(Action<IGoal<TGoal>> onInactivate);
+        void AddGoalInactivateListener(System.Action<IGoal<TGoal>> onInactivate);
 
         /// <summary>
         /// 更新数据

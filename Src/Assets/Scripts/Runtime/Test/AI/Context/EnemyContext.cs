@@ -8,7 +8,7 @@ namespace Framework.GOAP
     [RequireComponent(typeof(EnemyParameter))]
     [RequireComponent(typeof(EnemyDynamic))]
     [RequireComponent(typeof(EnemyCondition))]
-    public class EnemyContext : AIContextBase<EnemyAllActionConfig, EnemyAllGoal>
+    public class EnemyContext : AIContext<EnemyAllActionConfig, EnemyAllGoal>
     {
         #region variable
 

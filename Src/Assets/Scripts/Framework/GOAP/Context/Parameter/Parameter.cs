@@ -2,7 +2,7 @@
 ----------------------------------
  *Copyright(C) 2019 by IndieGame
  *All rights reserved.
- *FileName:     AIParameter
+ *FileName:     Parameter
  *Author:       @JCY
  *Version:      0.1.0
  *AuthorEmail:  jcyemail@qq.com
@@ -28,7 +28,7 @@ namespace Framework.GOAP
     /// 可以动态添加或者删除（可能因为不同装备的增加或删除而改变）
     /// 存储数据使用
     /// </summary>
-    public abstract class AIParameter : MonoEventEmitter, IGoalbalID
+    public abstract class Parameter : MonoEventEmitter, IGoalbalID
     {
         private int goalbalID = 0;
 
@@ -180,7 +180,7 @@ namespace Framework.GOAP
     /// </summary>
     public static class AIParameterExtend
     {
-        public static ParameterUnit PushParameterData(this AIParameter parameter, ParameterTag tag)
+        public static ParameterUnit PushParameterData(this Parameter parameter, ParameterTag tag)
         {
             return parameter.ParameterList.GetSortListValue(tag);
         }

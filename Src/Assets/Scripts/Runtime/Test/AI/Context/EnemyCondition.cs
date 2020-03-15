@@ -19,7 +19,7 @@ using UnityEngine;
 
 namespace Framework.GOAP
 {
-    public class EnemyCondition : AICondition
+    public class EnemyCondition : Condition
     {
         private EnemyContext enemyContext;
         private EnemyGoalMgr goalMgr;

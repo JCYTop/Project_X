@@ -13,7 +13,6 @@
  ----------------------------------
 */
 
-using System;
 using Framework.Base;
 using Framework.EventDispatcher;
 using UnityEngine;
@@ -27,20 +26,20 @@ namespace Framework.GOAP
     /// 跟Mono有关的集合类
     /// </summary>
     [RequireComponent(typeof(PlayMakerFSM))]
-    public abstract class AIContextBase<T1, T2> : MonoEventEmitter, IContext, IGoalbalID
+    public abstract class AIContext<T1, T2> : MonoEventEmitter, IContext, IGoalbalID
     {
         private PlayMakerFSM stateFsm;
-        private AIParameter parameter;
-        private AIDynamic dynamic;
-        private AICondition condition;
+        private Parameter parameter;
+        private Dynamic dynamic;
+        private Condition condition;
         private int goalbalID = 0;
         [SerializeField] private FsmTemplate fsmTemplate;
         [SerializeField] private T1 actionConfig;
         [SerializeField] private T2 goalConfig;
         public PlayMakerFSM StateFsm => stateFsm;
-        public AIParameter Parameter => parameter;
-        public AIDynamic Dynamic => dynamic;
-        public AICondition Condition => condition;
+        public Parameter Parameter => parameter;
+        public Dynamic Dynamic => dynamic;
+        public Condition Condition => condition;
         public GameObject GameObject => this.gameObject;
         public T1 ActionConfig => actionConfig;
         public T2 GoalConfig => goalConfig;
@@ -61,9 +60,9 @@ namespace Framework.GOAP
         protected virtual void Awake()
         {
             stateFsm = this.GetComponent<PlayMakerFSM>();
-            parameter = this.GetComponent<AIParameter>();
-            dynamic = this.GetComponent<AIDynamic>();
-            condition = this.GetComponent<AICondition>();
+            parameter = this.GetComponent<Parameter>();
+            dynamic = this.GetComponent<Dynamic>();
+            condition = this.GetComponent<Condition>();
             Parameter.Init();
             Dynamic.Init();
         }

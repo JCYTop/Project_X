@@ -2,7 +2,7 @@
 ----------------------------------
  *Copyright(C) 2019 by IndieGame
  *All rights reserved.
- *FileName:     AICondition
+ *FileName:     Condition
  *Author:       @JCY
  *Version:      0.1.0
  *AuthorEmail:  jcyemail@qq.com
@@ -19,7 +19,7 @@ using Framework.EventDispatcher;
 
 namespace Framework.GOAP
 {
-    public abstract class AICondition : MonoEventEmitter, IGoalbalID
+    public abstract class Condition : MonoEventEmitter, IGoalbalID
     {
         private int goalbalID = 0;
 
@@ -41,7 +41,7 @@ namespace Framework.GOAP
 
     public static class AIConditionExtend
     {
-        public static T GetCondition<T>(this AICondition context) where T : class
+        public static T GetCondition<T>(this Condition context) where T : class
         {
             try
             {

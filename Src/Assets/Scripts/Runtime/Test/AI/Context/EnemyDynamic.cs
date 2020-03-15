@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Framework.GOAP
 {
-    public class EnemyDynamic : AIDynamic
+    public class EnemyDynamic : Dynamic
     {
         [Rename("正常目标"), SerializeField, OnValueChanged("Change_Normal_Target")]
         public GameObject Normal_Target;

@@ -7,7 +7,7 @@ namespace Framework.GOAP
     /// Fsm子状态
     /// </summary>
     [ActionCategory("AI.Enemy")]
-    public class EnemyIdleState : AIStateBase<EnemyContext, EnemyStateConfig>
+    public class EnemyIdleState : AIState<EnemyContext, EnemyStateConfig>
     {
         private EnemyStateMgr EnemyStateMgr => GetContext.Agent.AgentStateMgr.GetStateMgr<EnemyStateMgr>();
 

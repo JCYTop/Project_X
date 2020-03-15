@@ -2,7 +2,7 @@ using System.Collections.Generic;
 
 namespace Framework.GOAP
 {
-    public class EnemyGoalMgr : GoalMgrBase<ActionTag, GoalTag>
+    public class EnemyGoalMgr : GoalMgr<ActionTag, GoalTag>
     {
         private Dictionary<GoalTag, IGoal<GoalTag>> goalsDic;
         private List<IGoal<GoalTag>> activeGoals;

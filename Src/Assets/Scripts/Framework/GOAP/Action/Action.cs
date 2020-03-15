@@ -2,7 +2,7 @@
 ----------------------------------
  *Copyright(C) 2019 by IndieGame
  *All rights reserved.
- *FileName:     ActionBase
+ *FileName:     Action
  *Author:       @JCY
  *Version:      0.0.1
  *AuthorEmail:  jcyemail@qq.com
@@ -23,7 +23,7 @@ namespace Framework.GOAP
     /// 数据类
     /// </summary>
     /// <typeparam name="TAction"></typeparam>
-    public abstract class ActionBase<TAction> : IAction<TAction>
+    public abstract class Action<TAction> : IAction<TAction>
     {
         private ICollection<CondtionAssembly> conditions;
         private ICollection<CondtionAssembly> effects;
@@ -88,7 +88,7 @@ namespace Framework.GOAP
 
         public TAction Label { get; private set; }
 
-        public ActionBase(TAction tag, ActionConfigUnit actionGroup)
+        public Action(TAction tag, ActionConfigUnit actionGroup)
         {
             this.Label = tag;
             this.ActionGroup = actionGroup;

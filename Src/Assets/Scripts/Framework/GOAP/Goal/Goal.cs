@@ -2,7 +2,7 @@
 ----------------------------------
  *Copyright(C) 2019 by IndieGame
  *All rights reserved.
- *FileName:     GoalBase
+ *FileName:     Goal
  *Author:       @JCY
  *Version:      0.0.1
  *AuthorEmail:  jcyemail@qq.com
@@ -24,12 +24,12 @@ namespace Framework.GOAP
     /// GoalBase 生成一个具体的Goal类
     /// </summary>
     /// <typeparam name="TGoal"></typeparam>
-    public abstract class GoalBase<TGoal> : IGoal<TGoal>
+    public abstract class Goal<TGoal> : IGoal<TGoal>
     {
         private ICollection<CondtionAssembly> conditions;
         private ICollection<CondtionAssembly> effects;
-        private Action<IGoal<TGoal>> onActivate;
-        private Action<IGoal<TGoal>> onInactivate;
+        private System.Action<IGoal<TGoal>> onActivate;
+        private System.Action<IGoal<TGoal>> onInactivate;
         public TGoal Label { get; }
         public GoalConfigUnit goalGroup { get; }
 
@@ -69,7 +69,7 @@ namespace Framework.GOAP
             }
         }
 
-        public GoalBase(TGoal tag, GoalConfigUnit goalGroup)
+        public Goal(TGoal tag, GoalConfigUnit goalGroup)
         {
             this.Label = tag;
             this.goalGroup = goalGroup;
@@ -90,12 +90,12 @@ namespace Framework.GOAP
             throw new NotImplementedException();
         }
 
-        public void AddGoalActivateListener(Action<IGoal<TGoal>> onActivate)
+        public void AddGoalActivateListener(System.Action<IGoal<TGoal>> onActivate)
         {
             this.onActivate = onActivate;
         }
 
-        public void AddGoalInactivateListener(Action<IGoal<TGoal>> onInactivate)
+        public void AddGoalInactivateListener(System.Action<IGoal<TGoal>> onInactivate)
         {
             this.onInactivate = onInactivate;
         }

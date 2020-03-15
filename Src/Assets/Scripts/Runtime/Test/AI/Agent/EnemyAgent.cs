@@ -15,7 +15,7 @@
 
 namespace Framework.GOAP
 {
-    public class EnemyAgent : AgentBase<ActionTag, GoalTag>
+    public class EnemyAgent : Agent<ActionTag, GoalTag>
     {
         private EnemyContext EnemyContext => Context.GetContext<EnemyContext>();
         public override bool IsAgentOver { get; set; } = false;

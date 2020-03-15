@@ -2,7 +2,7 @@
 ----------------------------------
  *Copyright(C) 2019 by IndieGame
  *All rights reserved.
- *FileName:     AgentBase
+ *FileName:     Agent
  *Author:       @JCY
  *Version:      0.1.0
  *AuthorEmail:  jcyemail@qq.com
@@ -23,7 +23,7 @@ namespace Framework.GOAP
     /// </summary>
     /// <typeparam name="TAction"></typeparam>
     /// <typeparam name="TGoal"></typeparam>
-    public abstract class AgentBase<TAction, TGoal> : IAgent<TAction, TGoal>
+    public abstract class Agent<TAction, TGoal> : IAgent<TAction, TGoal>
     {
         public IContext Context { get; private set; }
         public abstract bool IsAgentOver { get; set; }
@@ -32,7 +32,7 @@ namespace Framework.GOAP
         public IActionMgr<TAction> AgentActionMgr { get; protected set; }
         public IGoalMgr<TGoal> AgentGoalMgr { get; protected set; }
 
-        public AgentBase(IContext context)
+        public Agent(IContext context)
         {
             Context = context;
         }

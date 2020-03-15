@@ -2,7 +2,7 @@
 ----------------------------------
  *Copyright(C) 2019 by IndieGame
  *All rights reserved.
- *FileName:     ActionManagerBase
+ *FileName:     ActionMgr
  *Author:       @JCY
  *Version:      0.1.0
  *AuthorEmail:  jcyemail@qq.com
@@ -23,12 +23,12 @@ namespace Framework.GOAP
     /// Action管理类
     /// </summary>
     /// <typeparam name="TAction"></typeparam>
-    public abstract class ActionMgrBase<TAction, TGoal> : IActionMgr<TAction>
+    public abstract class ActionMgr<TAction, TGoal> : IActionMgr<TAction>
     {
         /// <summary>
         /// 动作完成的回调
         /// </summary>
-        protected Action<TAction> onActionComplete;
+        protected System.Action<TAction> onActionComplete;
 
         protected IAgent<TAction, TGoal> agent;
 
@@ -47,7 +47,7 @@ namespace Framework.GOAP
         public Dictionary<CondtionTag, HashSet<IActionHandler<TAction>>> EffectActionMap => effectActionMap;
         public bool IsPerformAction { get; set; }
 
-        public ActionMgrBase(IAgent<TAction, TGoal> agent)
+        public ActionMgr(IAgent<TAction, TGoal> agent)
         {
             this.agent = agent;
             handlersSort = new SortedList<TAction, IActionHandler<TAction>>();
@@ -125,7 +125,7 @@ namespace Framework.GOAP
         /// Planner计划中使用
         /// </summary>
         /// <param name="actionComplete"></param>
-        public void AddActionCompleteListener(Action<TAction> actionComplete)
+        public void AddActionCompleteListener(System.Action<TAction> actionComplete)
         {
             this.onActionComplete = actionComplete;
         }
