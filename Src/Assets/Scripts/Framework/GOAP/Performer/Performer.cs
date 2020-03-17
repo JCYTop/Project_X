@@ -17,31 +17,28 @@ namespace Framework.GOAP
 {
     public abstract class Performer<TAction, TGoal> : IPerformer<TAction, TGoal>
     {
-        private IAgent<TAction, TGoal> agent;
+        protected IAgent<TAction, TGoal> agent;
+        protected IPlanHandler<TAction> planHandler;
+        protected IPlanner<TAction, TGoal> planner;
+        public IPlanHandler<TAction> PlanHandler => planHandler;
+        public IPlanner<TAction, TGoal> Planner => planner;
 
         public Performer(IAgent<TAction, TGoal> agent)
         {
             this.agent = agent;
-            this.agent.AgentActionMgr.AddActionCompleteListener(PlanActionComplete);
         }
 
-        //计划完成了当前动作 
-        private void PlanActionComplete(TAction actionLabel)
-        {
-            LogTool.Log($"下一步");
-            //TODO 后续操作
-//            if (planHandler.GetCurrentHandler().Label.ToString() == actionLabel.ToString())
-//                planHandler.NextAction();
-        }
+        /// <summary>
+        /// 更新数据函数
+        /// 更新新的数据
+        /// </summary>
+        /// <exception cref="NotImplementedException"></exception>
+        public abstract void UpdateData();
 
-        public void UpdateData()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public void Interruptible()
-        {
-            throw new System.NotImplementedException();
-        }
+        /// <summary>
+        /// 中断计划
+        /// </summary>
+        /// <exception cref="NotImplementedException"></exception>
+        public abstract void Interruptible();
     }
 }

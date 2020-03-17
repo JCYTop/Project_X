@@ -55,6 +55,41 @@ namespace Framework.GOAP
             InitActionHandlers();
             InitInterruptiblers();
             Init_Effect_Action_Map();
+
+            //初始化能够打断计划的动作缓存
+            void InitInterruptiblers()
+            {
+                foreach (var handler in handlersSort.Values)
+                {
+                    if (handler.Action.CanInterruptiblePlan)
+                    {
+                        interruptibleHandlers.Add(handler);
+                    }
+                }
+
+                interruptibleHandlers = interruptibleHandlers.OrderByDescending(u => u.Action.Priority).ToList();
+            }
+
+            //初始化动作和动作影响的映射
+            void Init_Effect_Action_Map()
+            {
+                effectActionMap = new Dictionary<CondtionTag, HashSet<IActionHandler<TAction>>>();
+                foreach (var handler in handlersSort)
+                {
+                    var effects = handler.Value.Action.Effects;
+                    if (effects.Count <= 0)
+                        continue;
+                    foreach (var assembly in effects)
+                    {
+                        if (!effectActionMap.ContainsKey(assembly.ElementTag) || effectActionMap[assembly.ElementTag] == null)
+                        {
+                            effectActionMap.Add(assembly.ElementTag, new HashSet<IActionHandler<TAction>>());
+                        }
+
+                        effectActionMap[assembly.ElementTag].Add(handler.Value);
+                    }
+                }
+            }
         }
 
         /// <summary>
@@ -67,45 +102,6 @@ namespace Framework.GOAP
         /// </summary>
         /// <returns></returns>
         public abstract TAction GetDefaultActionLabel();
-
-        /// <summary>
-        /// 初始化能够打断计划的动作缓存
-        /// </summary>
-        private void InitInterruptiblers()
-        {
-            foreach (var handler in handlersSort.Values)
-            {
-                if (handler.Action.CanInterruptiblePlan)
-                {
-                    interruptibleHandlers.Add(handler);
-                }
-            }
-
-            interruptibleHandlers = interruptibleHandlers.OrderByDescending(u => u.Action.Priority).ToList();
-        }
-
-        /// <summary>
-        /// 初始化动作和动作影响的映射
-        /// </summary>
-        private void Init_Effect_Action_Map()
-        {
-            effectActionMap = new Dictionary<CondtionTag, HashSet<IActionHandler<TAction>>>();
-            foreach (var handler in handlersSort)
-            {
-                var effects = handler.Value.Action.Effects;
-                if (effects.Count <= 0)
-                    continue;
-                foreach (var assembly in effects)
-                {
-                    if (!effectActionMap.ContainsKey(assembly.ElementTag) || effectActionMap[assembly.ElementTag] == null)
-                    {
-                        effectActionMap.Add(assembly.ElementTag, new HashSet<IActionHandler<TAction>>());
-                    }
-
-                    effectActionMap[assembly.ElementTag].Add(handler.Value);
-                }
-            }
-        }
 
         public IActionHandler<TAction> GetHandler(TAction actionLabel)
         {

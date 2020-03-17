@@ -13,9 +13,18 @@
  ----------------------------------
 */
 
+using System.Collections.Generic;
+
 namespace Framework.GOAP
 {
-    public interface IPlanner
+    public interface IPlanner<TAction, TGoal>
     {
+        /// <summary>
+        /// 产生动作序列
+        /// TODO 可打断的
+        /// TODO 可重新生成
+        /// TODO 可插入可删除
+        /// </summary>
+        LinkedList<IActionHandler<TAction>> BuildPlan(IGoal<TGoal> goal);
     }
 }
