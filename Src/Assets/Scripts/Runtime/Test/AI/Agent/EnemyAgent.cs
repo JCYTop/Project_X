@@ -26,6 +26,7 @@ namespace Framework.GOAP
             AgentStateMgr = new EnemyStateMgr();
             AgentActionMgr = new EnemyActionMgr(this);
             AgentGoalMgr = new EnemyGoalMgr(this);
+            Performer = new EnemyPerformer(this);
         }
 
         public override void TargetEvent(string eventName)

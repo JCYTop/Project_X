@@ -15,7 +15,7 @@
 
 namespace Framework.GOAP
 {
-    public interface IPerformer
+    public interface IPerformer<TAction, TGoal>
     {
         /// <summary>
         /// 更新数据函数

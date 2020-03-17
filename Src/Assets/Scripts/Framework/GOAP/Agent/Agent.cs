@@ -31,6 +31,7 @@ namespace Framework.GOAP
         public IStateMgr AgentStateMgr { get; protected set; }
         public IActionMgr<TAction> AgentActionMgr { get; protected set; }
         public IGoalMgr<TGoal> AgentGoalMgr { get; protected set; }
+        public IPerformer<TAction, TGoal> Performer { get; protected set; }
 
         public Agent(IContext context)
         {

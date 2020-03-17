@@ -15,8 +15,15 @@
 
 namespace Framework.GOAP
 {
-    public class Performer : IPerformer
+    public abstract class Performer<TAction, TGoal> : IPerformer<TAction, TGoal>
     {
+        private IAgent<TAction, TGoal> agent;
+
+        public Performer(IAgent<TAction, TGoal> agent)
+        {
+            this.agent = agent;
+        }
+
         public void UpdateData()
         {
             throw new System.NotImplementedException();
