@@ -54,8 +54,7 @@ namespace Framework.GOAP
         {
         }
 
-        public TAgent GetAgent<TAgent>()
-            where TAgent : class, IAgent<TAction, TGoal>
+        public TAgent GetAgent<TAgent>() where TAgent : class, IAgent<TAction, TGoal>
         {
             try
             {

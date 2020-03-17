@@ -22,6 +22,16 @@ namespace Framework.GOAP
         public Performer(IAgent<TAction, TGoal> agent)
         {
             this.agent = agent;
+            this.agent.AgentActionMgr.AddActionCompleteListener(PlanActionComplete);
+        }
+
+        //计划完成了当前动作 
+        private void PlanActionComplete(TAction actionLabel)
+        {
+            LogTool.Log($"下一步");
+            //TODO 后续操作
+//            if (planHandler.GetCurrentHandler().Label.ToString() == actionLabel.ToString())
+//                planHandler.NextAction();
         }
 
         public void UpdateData()

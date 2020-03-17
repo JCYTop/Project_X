@@ -98,7 +98,7 @@ namespace Framework.GOAP
                         if (dis < near.Value)
                             return true;
                         return false;
-                    });
+                    }); 
                 }
                 else
                 {
