@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class DisplacementControl : MonoBehaviour
 {
-
     public float displacementAmount;
+
     //public ParticleSystem explosionParticles;
     MeshRenderer meshRender;
     public AudioSource audio;
@@ -26,12 +26,12 @@ public class DisplacementControl : MonoBehaviour
     // UpdateTask is called once per frame
     void Update()
     {
-
         audio.GetOutputData(m_Samples, 0);
         for (int i = 0; i < m_NumSamples; i++)
         {
             sum = m_Samples[i] * m_Samples[i];
         }
+
         rms = Mathf.Sqrt(sum / m_NumSamples);
         scale.y = Mathf.Clamp01(rms * volume);
 
@@ -39,8 +39,6 @@ public class DisplacementControl : MonoBehaviour
         //meshRender.material.SetFloat("_Amount", displacementAmount);
         meshRender.material.SetFloat("_Amount", scale.y);
         meshRender.material.SetColor("_Color", GetVolumeColor(scale.y));
-
-
     }
 
     Color GetVolumeColor(float volume)
@@ -54,7 +52,7 @@ public class DisplacementControl : MonoBehaviour
 
         else
         {
-           return Color.blue;
+            return Color.blue;
         }
     }
 }

@@ -29,7 +29,12 @@ namespace Framework.GOAP
         private SortedList<ActionElementTag, object> ActionConfigUnitSet;
         [Rename("权重"), SerializeField] private int Priority;
         [Rename("是否可打断"), SerializeField] private bool IsInterruptible = false;
+
+        /// <summary>
+        ///TODO 消耗应该有很多种
+        /// </summary>
         [Rename("消耗"), SerializeField] private int Cost;
+
         [SerializeField] private ActionUnityGroup ActionUnityGroups;
         [SerializeField] private List<CondtionAssembly> Preconditions;
         [SerializeField] private List<CondtionAssembly> Effects;

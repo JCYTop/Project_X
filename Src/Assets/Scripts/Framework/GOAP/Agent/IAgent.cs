@@ -34,11 +34,6 @@ namespace Framework.GOAP
         bool IsAgentOver { get; set; }
 
         /// <summary>
-        /// 当前状态
-        /// </summary>
-        IState AgentState { get; }
-
-        /// <summary>
         /// StateMgr管理器
         /// </summary>
         IStateMgr AgentStateMgr { get; }

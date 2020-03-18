@@ -27,7 +27,6 @@ namespace Framework.GOAP
     {
         public IContext Context { get; private set; }
         public abstract bool IsAgentOver { get; set; }
-        public IState AgentState { get; }
         public IStateMgr AgentStateMgr { get; protected set; }
         public IActionMgr<TAction> AgentActionMgr { get; protected set; }
         public IGoalMgr<TGoal> AgentGoalMgr { get; protected set; }

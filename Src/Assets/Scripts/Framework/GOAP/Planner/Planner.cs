@@ -19,6 +19,13 @@ namespace Framework.GOAP
 {
     public abstract class Planner<TAction, TGoal> : IPlanner<TAction, TGoal>
     {
+        protected IAgent<TAction, TGoal> agent;
+
+        public Planner(IAgent<TAction, TGoal> agent)
+        {
+            this.agent = agent;
+        }
+
         public abstract LinkedList<IActionHandler<TAction>> BuildPlan(IGoal<TGoal> goal);
     }
 }
