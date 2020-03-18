@@ -18,10 +18,8 @@ namespace Framework.GOAP
     public abstract class Performer<TAction, TGoal> : IPerformer<TAction, TGoal>
     {
         protected IAgent<TAction, TGoal> agent;
-        protected IPlanHandler<TAction> planHandler;
-        protected IPlanner<TAction, TGoal> planner;
-        public IPlanHandler<TAction> PlanHandler => planHandler;
-        public IPlanner<TAction, TGoal> Planner => planner;
+        protected IPlanHandler<TAction, TGoal> planHandler;
+        public IPlanHandler<TAction, TGoal> PlanHandler => planHandler;
 
         public Performer(IAgent<TAction, TGoal> agent)
         {

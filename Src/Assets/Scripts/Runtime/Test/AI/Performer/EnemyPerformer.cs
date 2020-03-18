@@ -13,15 +13,14 @@ namespace Framework.GOAP
             });
             //TODO Handler 最干净设置
             this.planHandler = new EnemyPlanHandler();
+            //设置计划
+            this.planHandler.Planner = new EnemyPlanner();
             this.planHandler.AddCompleteCallBack(() =>
             {
                 //计划完成
                 LogTool.Log($"计划完成");
                 // TODO 计划完成做该做的事情
             });
-            //TODO Planner 最干净
-            //TODO Planner 要放到Hander吗？
-            this.planner = new EnemyPlanner();
         }
 
         public override void UpdateData()

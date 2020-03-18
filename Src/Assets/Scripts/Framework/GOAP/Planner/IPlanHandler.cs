@@ -17,18 +17,17 @@ using System;
 
 namespace Framework.GOAP
 {
-    public interface IPlanHandler<TAction>
+    public interface IPlanHandler<TAction, TGoal>
     {
+        /// <summary>
+        /// 不同的计划可以随时改变
+        /// </summary>
+        IPlanner<TAction, TGoal> Planner { get; set; }
+
         /// <summary>
         /// 当前计划是否完成
         /// </summary>
         bool IsComplete { get; }
-
-        /// <summary>
-        /// 初始化
-        /// </summary>
-        /// <param name="plan"></param>
-        void Init();
 
         /// <summary>
         /// 完成回调
@@ -37,14 +36,9 @@ namespace Framework.GOAP
         void AddCompleteCallBack(Action onComplete);
 
         /// <summary>
-        /// 开始执行计划
-        /// </summary>
-        void StartPlan();
-
-        /// <summary>
         /// 执行下一个动作
         /// </summary>
-        void NextAction();
+        void HandlerAction();
 
         /// <summary>
         /// 中断计划

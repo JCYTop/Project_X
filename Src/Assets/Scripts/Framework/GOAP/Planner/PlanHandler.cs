@@ -17,26 +17,31 @@ using System;
 
 namespace Framework.GOAP
 {
-    public abstract class PlanHandler<TAction> : IPlanHandler<TAction>
+    public abstract class PlanHandler<TAction, TGoal> : IPlanHandler<TAction, TGoal>
     {
-        public bool IsComplete { get; }
+        private Action onComplete;
+        private IActionHandler<TAction> currentActionHandler;
+        protected IPlanner<TAction, TGoal> planner;
 
-        public void Init()
+        public IPlanner<TAction, TGoal> Planner
         {
-            throw new NotImplementedException();
+            set
+            {
+                if (value != null) planner = value;
+            }
+            get { return planner; }
         }
 
-        public void AddCompleteCallBack(Action onComplete)
+        public bool IsComplete
         {
-            throw new NotImplementedException();
+            get
+            {
+                //TODO 是否进行打断处理
+                return default;
+            }
         }
 
-        public void StartPlan()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void NextAction()
+        public void HandlerAction()
         {
             throw new NotImplementedException();
         }
@@ -48,7 +53,12 @@ namespace Framework.GOAP
 
         public IActionHandler<TAction> GetCurrentHandler()
         {
-            throw new NotImplementedException();
+            return currentActionHandler;
+        }
+
+        public void AddCompleteCallBack(Action onComplete)
+        {
+            this.onComplete = onComplete;
         }
     }
 }

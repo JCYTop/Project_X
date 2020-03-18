@@ -1,6 +1,6 @@
 namespace Framework.GOAP
 {
-    public class EnemyPlanHandler : PlanHandler<ActionTag>
+    public class EnemyPlanHandler : PlanHandler<ActionTag, GoalTag>
     {
     }
 }
