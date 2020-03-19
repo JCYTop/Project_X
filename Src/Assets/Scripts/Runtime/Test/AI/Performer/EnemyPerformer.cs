@@ -11,9 +11,7 @@ namespace Framework.GOAP
                 LogTool.Log($"下一步");
                 //TODO 后续操作
             });
-            this.planHandler = new EnemyPlanHandler();
-            //设置计划
-            this.planHandler.Planner = new EnemyPlanner(agent);
+            this.planHandler = new EnemyPlanHandler(new EnemyPlanner(agent));
             this.planHandler.AddCompleteCallBack(() =>
             {
                 //计划完成

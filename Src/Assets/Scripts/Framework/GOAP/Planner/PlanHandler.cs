@@ -41,6 +41,11 @@ namespace Framework.GOAP
             }
         }
 
+        public PlanHandler(IPlanner<TAction, TGoal> planner)
+        {
+            this.planner = planner;
+        }
+
         public void HandlerAction()
         {
             throw new NotImplementedException();
