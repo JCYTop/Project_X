@@ -1,26 +1,23 @@
 using System.Collections.Generic;
-using System.Linq;
 
 namespace Framework.GOAP
 {
-    public class EnemyPlanner : Planner<ActionTag, GoalTag>
+    /// <summary>
+    /// 构建一个计划 Tree 树
+    /// </summary>
+    public class EnemyTreePlanner : Planner<ActionTag, GoalTag>
     {
-        public EnemyPlanner(IAgent<ActionTag, GoalTag> agent) : base(agent)
+        public EnemyTreePlanner(IAgent<ActionTag, GoalTag> agent) : base(agent)
         {
         }
 
-        //TODO 需要理解具体过程
-        //TODO 以下皆为实验体
         public override LinkedList<IActionHandler<ActionTag>> BuildPlan(IGoal<GoalTag> goal)
         {
-//            LogTool.Log($"制定计划");
-//            LogTool.Log($"---------------当前代理状态------------");
-//            LogTool.Log(agent.AgentStateMgr.CurrState.ToString());
-//            LogTool.Log("---------------------------");
-//            //创建一个队列开始
-//            var plan = new LinkedList<IActionHandler<ActionTag>>();
-//            if (goal == null)
-//                return plan;
+            LogTool.Log($"制定计划");
+            //创建一个队列开始
+            var plan = new LinkedList<IActionHandler<ActionTag>>();
+            if (goal == null)
+                return plan;
 
             return default;
         }

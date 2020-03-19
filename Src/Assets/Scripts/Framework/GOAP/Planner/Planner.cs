@@ -17,6 +17,11 @@ using System.Collections.Generic;
 
 namespace Framework.GOAP
 {
+    /// <summary>
+    /// 具体的执行计算排序类
+    /// </summary>
+    /// <typeparam name="TAction"></typeparam>
+    /// <typeparam name="TGoal"></typeparam>
     public abstract class Planner<TAction, TGoal> : IPlanner<TAction, TGoal>
     {
         protected IAgent<TAction, TGoal> agent;
