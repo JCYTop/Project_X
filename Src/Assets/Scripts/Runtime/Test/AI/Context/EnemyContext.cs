@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace Framework.GOAP
@@ -37,6 +38,12 @@ namespace Framework.GOAP
         private void OnDisable()
         {
             agent.UnRegiestEvent();
+        }
+
+        private void Update()
+        {
+//            //测试
+//            agent.AgentGoalMgr.FindGoal();
         }
     }
 }

@@ -21,19 +21,18 @@ namespace Framework.GOAP
 {
     public class EnemyCondition : Condition
     {
-        private EnemyContext enemyContext;
-        private EnemyGoalMgr goalMgr;
-        private SortedList<CondtionTag, Func<IContext, bool>> updateData;
-
         /// <summary>
         /// 本类的核心
         /// </summary>
         private Dictionary<CondtionTag, bool> conditionMap;
-
+        private EnemyContext enemyContext;
+        private EnemyGoalMgr goalMgr;
+        private SortedList<CondtionTag, Func<IContext, bool>> updateData;
 #if UNITY_EDITOR
         [SerializeField, Sirenix.OdinInspector.ReadOnly]
         private List<CondtionAssembly> panelInfo;
 #endif
+        public Dictionary<CondtionTag, bool> ConditionMap => conditionMap;
 
         public override void Init()
         {
@@ -98,7 +97,7 @@ namespace Framework.GOAP
                         if (dis < near.Value)
                             return true;
                         return false;
-                    }); 
+                    });
                 }
                 else
                 {

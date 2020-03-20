@@ -13,6 +13,8 @@
  ----------------------------------
 */
 
+using System.Collections.Generic;
+
 namespace Framework.GOAP
 {
     /// <summary>
@@ -49,7 +51,7 @@ namespace Framework.GOAP
         /// 找到合适的可执行的当前目标
         /// </summary>
         /// <returns></returns>
-        IGoal<TGoal> FindGoal();
+        List<IGoal<TGoal>> FindGoal();
 
         /// <summary>
         /// 更新数据

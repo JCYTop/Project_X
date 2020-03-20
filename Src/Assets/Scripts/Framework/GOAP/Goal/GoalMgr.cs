@@ -62,10 +62,11 @@ namespace Framework.GOAP
         }
 
         /// <summary>
-        /// 核心方法 *** 
+        /// 核心方法 ***
+        /// 获取所有满足条件的目标
         /// </summary>
         /// <returns></returns>
-        public abstract IGoal<TGoal> FindGoal();
+        public abstract List<IGoal<TGoal>> FindGoal();
 
         public void UpdateData()
         {
@@ -84,5 +85,12 @@ namespace Framework.GOAP
                 throw;
             }
         }
+    }
+
+    /// <summary>
+    /// 扩展类方法
+    /// </summary>
+    public static class GoalMgrExtend
+    {
     }
 }

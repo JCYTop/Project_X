@@ -44,10 +44,6 @@ namespace Base.BinaryTree
             set => traversalStrategy = value ?? throw new ArgumentNullException(nameof(value));
         }
 
-        public BinaryTree()
-        {
-        }
-
         public BinaryTree(int capacity)
         {
             if (capacity <= 0)

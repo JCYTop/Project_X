@@ -14,36 +14,36 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   All: 1
   LogDatas:
-  - LogType: 0
+  - logEnum: 0
     Show: 1
     LogColor: {r: 1, g: 1, b: 1, a: 1}
-  - LogType: 1
-    Show: 1
+  - logEnum: 1
+    Show: 0
     LogColor: {r: 0.6666667, g: 0, b: 0.73333335, a: 1}
-  - LogType: 2
+  - logEnum: 2
     Show: 0
     LogColor: {r: 0, g: 1, b: 0, a: 1}
-  - LogType: 3
+  - logEnum: 3
     Show: 0
     LogColor: {r: 0, g: 0, b: 1, a: 1}
-  - LogType: 4
+  - logEnum: 4
     Show: 0
     LogColor: {r: 0.33333334, g: 0.9333334, b: 1, a: 1}
-  - LogType: 5
+  - logEnum: 5
     Show: 0
     LogColor: {r: 1, g: 0.73333335, b: 0, a: 1}
-  - LogType: 6
+  - logEnum: 6
     Show: 1
     LogColor: {r: 0.73333335, g: 0.73333335, b: 0.13333334, a: 1}
-  - LogType: 7
+  - logEnum: 7
     Show: 0
     LogColor: {r: 1, g: 1, b: 1, a: 1}
-  - LogType: 8
+  - logEnum: 8
     Show: 1
     LogColor: {r: 0, g: 0.86666673, b: 1, a: 1}
-  - LogType: 9
+  - logEnum: 9
     Show: 1
     LogColor: {r: 0.8705883, g: 0.65882355, b: 0.29803923, a: 1}
-  - LogType: 10
+  - logEnum: 10
     Show: 1
     LogColor: {r: 0.46274513, g: 0.7686275, b: 0.42352945, a: 1}

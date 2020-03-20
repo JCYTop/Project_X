@@ -38,11 +38,27 @@ namespace Framework.GOAP
             }
         }
 
-        public override IGoal<GoalTag> FindGoal()
+        public override List<IGoal<GoalTag>> FindGoal()
         {
-//            //TODO 根据Condition中的判断条件
-//            CurrentGoal = agent.Context.Condition.GetCondition<EnemyCondition>();
-            return default;
+            var goalList = new List<IGoal<GoalTag>>();
+            foreach (var goal in goalsDic.Values)
+            {
+                if (goal.Condition.Count > 0)
+                {
+                    var isAdd = true;
+                    foreach (var assembly in goal.Condition)
+                    {
+                        isAdd = EnemyContext.Condition.GetCondition<EnemyCondition>().ConditionMap.GetDictionaryValue(assembly.ElementTag);
+                        if (!isAdd)
+                            break;
+                    }
+
+                    if (isAdd)
+                        goalList.AddListElement(goal);
+                }
+            }
+
+            return goalList;
         }
     }
 }

@@ -15,6 +15,7 @@
 
 using System;
 using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.Serialization;
 
 namespace Framework.GOAP
@@ -43,7 +44,11 @@ namespace Framework.GOAP
     [Serializable]
     public class EnemyAllGoalUnit
     {
-        [Rename("标签")] public GoalTag tag;
-        [Rename("配置文件")] public EnemyGoalConfigUnit File;
+        [Space(5), Rename("标签")] public GoalTag tag;
+
+        [Space(5), Rename("权重"), SerializeField]
+        private int Priority;
+
+        [Space(5), Rename("配置文件")] public EnemyGoalConfigUnit File;
     }
 }

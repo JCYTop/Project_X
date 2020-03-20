@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Base.MultiTree;
 
 namespace Framework.GOAP
 {
@@ -11,6 +12,11 @@ namespace Framework.GOAP
         {
         }
 
+        /// <summary>
+        /// 目标由GoalMgr提供
+        /// </summary>
+        /// <param name="goal"></param>
+        /// <returns></returns>
         public override LinkedList<IActionHandler<ActionTag>> BuildPlan(IGoal<GoalTag> goal)
         {
             LogTool.Log($"制定计划");
@@ -18,8 +24,14 @@ namespace Framework.GOAP
             var plan = new LinkedList<IActionHandler<ActionTag>>();
             if (goal == null)
                 return plan;
-
+            GoalPlan();
             return default;
+
+            //构建目标树
+            void GoalPlan()
+            {
+                
+            }
         }
 
 //        /// <summary>

@@ -90,5 +90,29 @@ namespace Framework.GOAP
         Idle_To_Target,
 
         #endregion
+
+        #region 敌人 200~399
+
+        /// <summary>
+        /// 警戒
+        /// </summary>
+        Alert = 200,
+
+        /// <summary>
+        /// 攻击
+        /// </summary>
+        Attack = 201,
+
+        /// <summary>
+        /// 消灭目标
+        /// </summary>
+        Kill_Target = 202,
+
+        /// <summary>
+        /// 逃跑
+        /// </summary>
+        Runaway = 203,
+
+        #endregion
     }
 }

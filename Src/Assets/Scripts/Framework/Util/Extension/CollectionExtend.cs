@@ -15,8 +15,9 @@
 
 using System;
 using System.Collections.Generic;
+using UnityEngine;
 
-public static class ICollectionExtend
+public static class CollectionExtend
 {
     #region Dictionary Extend
 
@@ -185,6 +186,21 @@ public static class ICollectionExtend
         }
         else
             tmpvalue = value;
+    }
+
+    #endregion
+
+    #region List Extend 
+
+    public static bool AddListElement<T>(this List<T> list, T element)
+    {
+        if (!list.Contains(element))
+        {
+            list.Add(element);
+            return true;
+        }
+
+        return false;
     }
 
     #endregion

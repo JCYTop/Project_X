@@ -27,7 +27,6 @@ namespace Framework.GOAP
     public abstract class GoalConfigUnit : UnityEngine.ScriptableObject, IConfigUnit<GoalConfigUnit, GoalElementTag>
     {
         private SortedList<GoalElementTag, object> goalConfigUnitSet;
-        [Rename("权重"), SerializeField] private int Priority;
         [SerializeField] private List<CondtionAssembly> Condition;
         [SerializeField] private List<CondtionAssembly> Effets;
         public GoalConfigUnit GetConfigUnit => this;
@@ -51,7 +50,6 @@ namespace Framework.GOAP
         /// </summary>
         public void Init()
         {
-            ConfigUnitSet.Add(GoalElementTag.Priority, Priority);
             ConfigUnitSet.Add(GoalElementTag.Conditon, Condition);
             ConfigUnitSet.Add(GoalElementTag.Effects, Effets);
             LogTool.Log($"{this.name} , GoalConfigUnit数据已经加载完成", LogEnum.AssetLog);
@@ -71,19 +69,14 @@ namespace Framework.GOAP
         Default = 0,
 
         /// <summary>
-        /// 权重
-        /// </summary>
-        Priority = 1,
-
-        /// <summary>
         /// 初始化影响
         /// </summary>
-        Effects = 2,
+        Effects = 1,
 
         /// <summary>
         /// 激活条件
         /// </summary>
-        Conditon = 3,
+        Conditon = 2,
 
         #endregion
     }
