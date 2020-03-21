@@ -13,6 +13,7 @@
  ----------------------------------
 */
 
+using System.Collections;
 using System.Collections.Generic;
 
 namespace Base.MultiTree
@@ -24,11 +25,17 @@ namespace Base.MultiTree
     public class MultiTreeNode<T>
     {
         private T data;
+        private Hashtable otherData = new Hashtable();
 
         /// <summary>
         /// 数据节点
         /// </summary>
         public T Data => data;
+
+        /// <summary>
+        /// 存储其他数据
+        /// </summary>
+        public Hashtable OtherData => otherData;
 
         /// <summary>
         /// 父节点

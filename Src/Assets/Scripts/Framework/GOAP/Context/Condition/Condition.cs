@@ -105,5 +105,44 @@ namespace Framework.GOAP
 
             return null;
         }
+
+        /// <summary>
+        /// 获取和目标不相同的条件
+        /// </summary>
+        /// <param name="curr"></param>
+        /// <param name="target"></param>
+        /// <returns></returns>
+        public static ICollection<CondtionAssembly> GetDiffecentCondition(ICollection<CondtionAssembly> curr, ICollection<CondtionAssembly> target)
+        {
+            var list = new List<CondtionAssembly>();
+            foreach (var assembly in curr)
+            {
+                foreach (var subAssembly in target)
+                {
+                    if (assembly.ElementTag == subAssembly.ElementTag && assembly.IsRight != subAssembly.IsRight)
+                    {
+                        list.Add(assembly);
+                    }
+                }
+            }
+
+            return list;
+        }
+
+        /// <summary>
+        /// 提供集合返回集合标签
+        /// </summary>
+        /// <param name="collection"></param>
+        /// <returns></returns>
+        public static ICollection<CondtionTag> GetDiffecentConditionTag(this ICollection<CondtionAssembly> collection)
+        {
+            var list = new List<CondtionTag>();
+            foreach (var assembly in collection)
+            {
+                list.Add(assembly.ElementTag);
+            }
+
+            return list;
+        }
     }
 }

@@ -94,7 +94,7 @@ namespace Framework.GOAP
     /// </summary>
     public static class GoalMgrExtend
     {
-        #region Goal 目标获取
+        #region Goal 目标获取方法
 
         /// <summary>
         /// 根据目标进行降序排列

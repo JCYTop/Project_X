@@ -14,6 +14,7 @@
 */
 
 using System;
+using System.Collections;
 using System.Collections.Generic;
 
 public static class ICollectionExtend
@@ -207,6 +208,53 @@ public static class ICollectionExtend
         }
 
         return false;
+    }
+
+    #endregion
+
+    #region Hashtable
+
+    /// <summary>
+    /// 添加元素给Hashtable
+    /// </summary>
+    /// <param name="table"></param>
+    /// <param name="key"></param>
+    /// <param name="value"></param>
+    public static void AddHashtableElement(this Hashtable table, object key, object value)
+    {
+        if (!table.ContainsKey(key))
+        {
+            table.Add(key, value);
+        }
+        else
+        {
+            table[key] = value;
+        }
+    }
+
+    /// <summary>
+    /// 添加元素给Hashtable
+    /// </summary>
+    /// <param name="table"></param>
+    /// <param name="key"></param>
+    /// <param name="value"></param>
+    public static T GetHashtableElement<T>(this Hashtable table, object key)
+    {
+        try
+        {
+            if (table.ContainsKey(key))
+            {
+                return (T) table[key];
+            }
+
+            LogTool.Log($"，没有含有对应的Key");
+            return default;
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            throw;
+        }
     }
 
     #endregion
