@@ -51,7 +51,7 @@ namespace Framework.GOAP
         /// 找到合适的可执行的当前目标
         /// </summary>
         /// <returns></returns>
-        List<IGoal<TGoal>> FindGoal();
+        List<IGoal<TGoal>> FindGoals();
 
         /// <summary>
         /// 更新数据

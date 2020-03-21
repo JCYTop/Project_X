@@ -28,8 +28,8 @@ namespace Framework.GOAP
     {
         private SortedList<GoalElementTag, object> goalConfigUnitSet;
         [SerializeField] private List<CondtionAssembly> Condition;
-        [SerializeField] private List<CondtionAssembly> Effets;
         public GoalConfigUnit GetConfigUnit => this;
+        public int Priority { set; get; }
 
         public SortedList<GoalElementTag, object> ConfigUnitSet
         {
@@ -51,7 +51,7 @@ namespace Framework.GOAP
         public void Init()
         {
             ConfigUnitSet.Add(GoalElementTag.Conditon, Condition);
-            ConfigUnitSet.Add(GoalElementTag.Effects, Effets);
+            ConfigUnitSet.Add(GoalElementTag.Priority, Priority);
             LogTool.Log($"{this.name} , GoalConfigUnit数据已经加载完成", LogEnum.AssetLog);
         }
     }
@@ -69,14 +69,14 @@ namespace Framework.GOAP
         Default = 0,
 
         /// <summary>
-        /// 初始化影响
-        /// </summary>
-        Effects = 1,
-
-        /// <summary>
         /// 激活条件
         /// </summary>
-        Conditon = 2,
+        Conditon = 1,
+
+        /// <summary>
+        /// 权重
+        /// </summary>
+        Priority = 2,
 
         #endregion
     }

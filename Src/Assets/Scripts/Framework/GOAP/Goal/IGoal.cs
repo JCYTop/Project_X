@@ -13,7 +13,6 @@
  ----------------------------------
 */
 
-using System;
 using System.Collections.Generic;
 
 namespace Framework.GOAP
@@ -30,14 +29,14 @@ namespace Framework.GOAP
         TGoal Label { get; }
 
         /// <summary>
-        /// 先决条件
+        /// 获得权重值
         /// </summary>
-        ICollection<CondtionAssembly> Condition { get; }
+        int Priority { get; }
 
         /// <summary>
-        /// 影响条件
+        /// 进入条件
         /// </summary>
-        ICollection<CondtionAssembly> Effects { get; }
+        ICollection<CondtionAssembly> Condition { get; }
 
         /// <summary>
         /// 是否已经实现目标
@@ -56,11 +55,6 @@ namespace Framework.GOAP
         /// </summary>
         /// <param name="onInactivate"></param>
         void AddGoalInactivateListener(System.Action<IGoal<TGoal>> onInactivate);
-
-        /// <summary>
-        /// 更新数据
-        /// </summary>
-        void UpdateData();
     }
 
     /// <summary>

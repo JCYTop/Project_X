@@ -31,6 +31,6 @@ namespace Framework.GOAP
             this.agent = agent;
         }
 
-        public abstract LinkedList<IActionHandler<TAction>> BuildPlan(IGoal<TGoal> goal);
+        public abstract LinkedList<IActionHandler<TAction>> BuildPlan(List<IGoal<TGoal>> goals);
     }
 }

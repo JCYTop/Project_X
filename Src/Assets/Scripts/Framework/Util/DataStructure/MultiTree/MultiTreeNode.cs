@@ -13,7 +13,6 @@
  ----------------------------------
 */
 
-using System;
 using System.Collections.Generic;
 
 namespace Base.MultiTree
@@ -22,7 +21,7 @@ namespace Base.MultiTree
     /// 多叉树树节点
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    public class MultiTreeNode<T>  
+    public class MultiTreeNode<T>
     {
         private T data;
 
@@ -44,24 +43,6 @@ namespace Base.MultiTree
         public MultiTreeNode(T data)
         {
             this.data = data;
-        }
-
-        public MultiTreeNode(T data, MultiTreeNode<T> parent)
-        {
-            this.data = data;
-            this.Parent = parent;
-        }
-
-        public MultiTreeNode(T data, MultiTreeNode<T> parent, List<MultiTreeNode<T>> childen)
-        {
-            this.data = data;
-            this.Parent = parent;
-            this.Childen = childen;
-        }
-
-        public int CompareTo(T other)
-        {
-            throw new NotImplementedException();
         }
     }
 }

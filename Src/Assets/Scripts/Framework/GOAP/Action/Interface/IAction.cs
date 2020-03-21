@@ -69,6 +69,52 @@ namespace Framework.GOAP
     }
 
     /// <summary>
+    /// IAction扩展方法
+    /// </summary>
+    public static class IActionExtend
+    {
+        /// <summary>
+        /// 获取Action中配置的Effects值
+        /// </summary>
+        /// <param name="action"></param>
+        /// <param name="tag"></param>
+        /// <typeparam name="TAction"></typeparam>
+        /// <returns></returns>
+        public static CondtionAssembly GetEffectsValue<TAction>(this IAction<TAction> action, CondtionTag tag)
+        {
+            foreach (var effect in action.Effects)
+            {
+                if (effect.ElementTag == tag)
+                {
+                    return effect;
+                }
+            }
+
+            return default;
+        }
+
+        /// <summary>
+        /// 获取Action中配置的Conditions值
+        /// </summary>
+        /// <param name="action"></param>
+        /// <param name="tag"></param>
+        /// <typeparam name="TAction"></typeparam>
+        /// <returns></returns>
+        public static CondtionAssembly GetConditionsValue<TAction>(this IAction<TAction> action, CondtionTag tag)
+        {
+            foreach (var effect in action.Conditions)
+            {
+                if (effect.ElementTag == tag)
+                {
+                    return effect;
+                }
+            }
+
+            return default;
+        }
+    }
+
+    /// <summary>
     /// 执行动作标签
     /// 用在 IAction
     /// ActionHandler也有关联

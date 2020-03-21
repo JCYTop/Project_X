@@ -27,7 +27,6 @@ namespace Framework.GOAP
     public abstract class Goal<TGoal> : IGoal<TGoal>
     {
         private ICollection<CondtionAssembly> conditions;
-        private ICollection<CondtionAssembly> effects;
         private System.Action<IGoal<TGoal>> onActivate;
         private System.Action<IGoal<TGoal>> onInactivate;
         public TGoal Label { get; }
@@ -37,22 +36,9 @@ namespace Framework.GOAP
         {
             get
             {
-                var element = goalGroup.ConfigUnitSet.GetSortListValue(ActionElementTag.Priority.ToString());
+                var element = goalGroup.ConfigUnitSet.GetSortListValue(GoalElementTag.Priority);
                 var intValue = element.CastType<int>();
                 return intValue;
-            }
-        }
-
-        public ICollection<CondtionAssembly> Effects
-        {
-            get
-            {
-                if (effects == null)
-                {
-                    effects = InitEffects();
-                }
-
-                return effects;
             }
         }
 
@@ -77,12 +63,7 @@ namespace Framework.GOAP
 
         private ICollection<CondtionAssembly> InitCondition()
         {
-            return (ICollection<CondtionAssembly>) goalGroup.ConfigUnitSet.GetSortListValue(GoalElementTag.Conditon.ToString());
-        }
-
-        private ICollection<CondtionAssembly> InitEffects()
-        {
-            return (ICollection<CondtionAssembly>) goalGroup.ConfigUnitSet.GetSortListValue(GoalElementTag.Effects.ToString());
+            return (ICollection<CondtionAssembly>) goalGroup.ConfigUnitSet.GetSortListValue(GoalElementTag.Conditon);
         }
 
         public bool IsGoalComplete()
@@ -98,11 +79,6 @@ namespace Framework.GOAP
         public void AddGoalInactivateListener(System.Action<IGoal<TGoal>> onInactivate)
         {
             this.onInactivate = onInactivate;
-        }
-
-        public void UpdateData()
-        {
-            throw new NotImplementedException();
         }
     }
 }

@@ -25,6 +25,7 @@ namespace Framework.GOAP
         /// 本类的核心
         /// </summary>
         private Dictionary<CondtionTag, bool> conditionMap;
+
         private EnemyContext enemyContext;
         private EnemyGoalMgr goalMgr;
         private SortedList<CondtionTag, Func<IContext, bool>> updateData;
@@ -32,7 +33,10 @@ namespace Framework.GOAP
         [SerializeField, Sirenix.OdinInspector.ReadOnly]
         private List<CondtionAssembly> panelInfo;
 #endif
-        public Dictionary<CondtionTag, bool> ConditionMap => conditionMap;
+        public override Dictionary<CondtionTag, bool> ConditionMap
+        {
+            get { return conditionMap; }
+        }
 
         public override void Init()
         {
@@ -43,15 +47,6 @@ namespace Framework.GOAP
             foreach (var stateBase in goalMgr.GoalsDic.Values)
             {
                 foreach (var condtion in stateBase.Condition)
-                {
-                    //获取配置文件中所有的 Tag 标签
-                    if (!conditionMap.ContainsKey(condtion.ElementTag))
-                    {
-                        conditionMap.Add(condtion.ElementTag, default(bool));
-                    }
-                }
-
-                foreach (var condtion in stateBase.Effects)
                 {
                     //获取配置文件中所有的 Tag 标签
                     if (!conditionMap.ContainsKey(condtion.ElementTag))

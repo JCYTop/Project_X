@@ -15,6 +15,8 @@
 
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using Random = UnityEngine.Random;
 
 namespace Framework.GOAP
 {
@@ -66,7 +68,7 @@ namespace Framework.GOAP
         /// 获取所有满足条件的目标
         /// </summary>
         /// <returns></returns>
-        public abstract List<IGoal<TGoal>> FindGoal();
+        public abstract List<IGoal<TGoal>> FindGoals();
 
         public void UpdateData()
         {
@@ -92,5 +94,31 @@ namespace Framework.GOAP
     /// </summary>
     public static class GoalMgrExtend
     {
+        #region Goal 目标获取
+
+        /// <summary>
+        /// 根据目标进行降序排列
+        /// </summary>
+        /// <param name="goals"></param>
+        /// <typeparam name="TGoal"></typeparam>
+        /// <returns></returns>
+        public static IGoal<TGoal> GoalsSortPriority<TGoal>(this List<IGoal<TGoal>> goals)
+        {
+            goals = goals.OrderByDescending(goal => goal.Priority).ToList();
+            return goals[0];
+        }
+
+        /// <summary>
+        /// 目标进行随机排序
+        /// </summary>
+        /// <param name="goals"></param>
+        /// <typeparam name="TGoal"></typeparam>
+        /// <returns></returns>
+        public static IGoal<TGoal> GoalsRandom<TGoal>(this List<IGoal<TGoal>> goals)
+        {
+            return goals[Random.Range(0, goals.Count)];
+        }
+
+        #endregion
     }
 }

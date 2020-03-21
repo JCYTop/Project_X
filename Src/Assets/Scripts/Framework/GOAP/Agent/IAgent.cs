@@ -79,8 +79,4 @@ namespace Framework.GOAP
         /// <returns>Agent类型</returns>
         TAgent GetAgent<TAgent>() where TAgent : class, IAgent<TAction, TGoal>;
     }
-
-    public static class IAgentExtend
-    {
-    }
 }

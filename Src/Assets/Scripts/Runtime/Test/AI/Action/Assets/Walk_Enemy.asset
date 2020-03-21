@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Priority: 100
   IsInterruptible: 1
-  Cost: 0
+  Cost: 100
   ActionUnityGroups:
     Animation: []
     AudioClip: []
@@ -23,7 +23,9 @@ MonoBehaviour:
   - ElementTag: 200
     IsRight: 1
   - ElementTag: 201
-    IsRight: 1
-  Effects:
-  - ElementTag: 201
     IsRight: 0
+  Effects:
+  - ElementTag: 200
+    IsRight: 1
+  - ElementTag: 201
+    IsRight: 1

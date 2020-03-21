@@ -38,7 +38,7 @@ namespace Framework.GOAP
             }
         }
 
-        public override List<IGoal<GoalTag>> FindGoal()
+        public override List<IGoal<GoalTag>> FindGoals()
         {
             var goalList = new List<IGoal<GoalTag>>();
             foreach (var goal in goalsDic.Values)

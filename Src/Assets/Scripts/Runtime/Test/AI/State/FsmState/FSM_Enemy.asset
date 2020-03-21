@@ -111,7 +111,7 @@ MonoBehaviour:
         paramDataPos: 0000000000000000000000000000000000000000
         paramByteDataSize: 0000000000000000000000000000000001000000
     - name: Idle
-      description: "\u5F85\u673A\u72B6\u6001\r"
+      description: "\u6B63\u5E38\u72B6\u6001\r"
       colorIndex: 0
       position:
         serializedVersion: 2

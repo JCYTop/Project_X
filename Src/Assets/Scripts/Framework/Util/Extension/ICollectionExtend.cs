@@ -15,9 +15,8 @@
 
 using System;
 using System.Collections.Generic;
-using UnityEngine;
 
-public static class CollectionExtend
+public static class ICollectionExtend
 {
     #region Dictionary Extend
 
@@ -192,6 +191,13 @@ public static class CollectionExtend
 
     #region List Extend 
 
+    /// <summary>
+    /// 添加列表元素
+    /// </summary>
+    /// <param name="list"></param>
+    /// <param name="element"></param>
+    /// <typeparam name="T"></typeparam>
+    /// <returns></returns>
     public static bool AddListElement<T>(this List<T> list, T element)
     {
         if (!list.Contains(element))

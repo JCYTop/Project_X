@@ -19,7 +19,5 @@ MonoBehaviour:
     Animation: []
     AudioClip: []
     ParticleEffects: []
-  Preconditions:
-  - ElementTag: 200
-    IsRight: 0
+  Preconditions: []
   Effects: []

@@ -11,10 +11,10 @@
         "XrDevice": ""
     },
     "EditorVersion": {
-        "FullVersion": "2019.2.1f1 (ca4d5af0be6f)",
-        "DateSeconds": 1564776172,
-        "Branch": "2019.2/staging",
-        "RevisionValue": 13258074
+        "FullVersion": "2019.3.1f1 (f9e94bdc1fc8)",
+        "DateSeconds": 1582532480,
+        "Branch": "2019.3/china_unity/release",
+        "RevisionValue": 16378187
     },
     "BuildSettings": {
         "Platform": "",
@@ -45,13 +45,13 @@
         "Batchmode": "False",
         "StereoRenderingPath": "MultiPass",
         "RenderThreadingMode": "MultiThreaded",
-        "AndroidMinimumSdkVersion": "AndroidApiLevel16",
+        "AndroidMinimumSdkVersion": "AndroidApiLevel19",
         "AndroidTargetSdkVersion": "AndroidApiLevelAuto",
         "EnabledXrTargets": [],
         "ScriptingRuntimeVersion": ""
     },
     "TestSuite": "",
-    "StartTime": 1578491139960.3596,
+    "StartTime": 1584766183863.0117,
     "EndTime": 0.0,
     "Results": []
 }

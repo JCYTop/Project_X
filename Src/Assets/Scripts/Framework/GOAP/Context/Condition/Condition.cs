@@ -14,6 +14,7 @@
 */
 
 using System;
+using System.Collections.Generic;
 using Framework.Base;
 using Framework.EventDispatcher;
 
@@ -22,6 +23,7 @@ namespace Framework.GOAP
     public abstract class Condition : MonoEventEmitter, IGoalbalID
     {
         private int goalbalID = 0;
+        public abstract Dictionary<CondtionTag, bool> ConditionMap { get; }
 
         public int GoalbalID
         {
@@ -41,6 +43,12 @@ namespace Framework.GOAP
 
     public static class AIConditionExtend
     {
+        /// <summary>
+        /// 获取不同类型
+        /// </summary>
+        /// <param name="context"></param>
+        /// <typeparam name="T"></typeparam>
+        /// <returns></returns>
         public static T GetCondition<T>(this Condition context) where T : class
         {
             try
@@ -52,6 +60,50 @@ namespace Framework.GOAP
                 Console.WriteLine(e);
                 throw;
             }
+        }
+
+        /// <summary>
+        /// 获取和目标不相同的条件的CondtionTag标签
+        /// </summary>
+        /// <param name="condition"></param>
+        /// <param name="goal"></param>
+        /// <typeparam name="TGoal"></typeparam>
+        /// <returns></returns>
+        public static ICollection<CondtionTag> GetDiffecentCondition<TGoal>(this Condition condition, IGoal<TGoal> goal)
+        {
+            var list = new List<CondtionTag>();
+            foreach (var cond in goal.Condition)
+            {
+                var value = condition.ConditionMap.GetDictionaryValue(cond.ElementTag);
+                if (!value)
+                {
+                    list.Add(cond.ElementTag);
+                }
+            }
+
+            return list;
+        }
+
+        /// <summary>
+        /// 根据条件队列
+        /// 提供标签返回相应的值
+        /// </summary>
+        /// <param name="collection"></param>
+        /// <param name="tag"></param>
+        /// <typeparam name="T1"></typeparam>
+        /// <typeparam name="T2"></typeparam>
+        /// <returns></returns>
+        public static CondtionAssembly GetDiffecentCondition(this ICollection<CondtionAssembly> collection, CondtionTag tag)
+        {
+            foreach (var unit in collection)
+            {
+                if (unit.ElementTag == tag)
+                {
+                    return unit;
+                }
+            }
+
+            return null;
         }
     }
 }

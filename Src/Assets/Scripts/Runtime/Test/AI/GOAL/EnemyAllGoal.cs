@@ -33,6 +33,7 @@ namespace Framework.GOAP
             var goalSort = new SortedList<GoalTag, GoalConfigUnit>();
             allGoal.ForEach((goal) =>
             {
+                goal.File.Priority = goal.Priority;
                 goal.File.Init();
                 goalSort.Add(goal.tag, goal.File.GetConfigUnit);
             });
@@ -47,7 +48,7 @@ namespace Framework.GOAP
         [Space(5), Rename("标签")] public GoalTag tag;
 
         [Space(5), Rename("权重"), SerializeField]
-        private int Priority;
+        public int Priority;
 
         [Space(5), Rename("配置文件")] public EnemyGoalConfigUnit File;
     }
