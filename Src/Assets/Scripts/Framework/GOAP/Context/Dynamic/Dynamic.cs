@@ -72,12 +72,6 @@ namespace Framework.GOAP
         Default,
 
         /// <summary>
-        /// 目标
-        /// 返回GameObject
-        /// </summary>
-        Normal_Target,
-
-        /// <summary>
         /// 攻击目标
         /// 返回GameObject
         /// </summary>

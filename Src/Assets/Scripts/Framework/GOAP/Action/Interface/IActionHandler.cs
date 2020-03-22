@@ -70,6 +70,13 @@ namespace Framework.GOAP
         /// Playable可控制
         /// </summary>
         void Exit();
+
+        /// <summary>
+        /// 验证先决条件
+        /// 主要使用在是否可以进行打断的上面判断
+        /// </summary>
+        /// <returns></returns>
+        bool VerifyPreconditions();
     }
 
     /// <summary>

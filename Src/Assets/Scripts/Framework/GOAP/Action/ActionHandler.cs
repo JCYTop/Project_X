@@ -50,5 +50,10 @@ namespace Framework.GOAP
         {
             ExcuteState = ActionExcuteState.Exit;
         }
+
+        public virtual bool VerifyPreconditions()
+        {
+            return true;
+        }
     }
 }

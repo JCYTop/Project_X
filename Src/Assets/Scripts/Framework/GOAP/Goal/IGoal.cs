@@ -98,14 +98,9 @@ namespace Framework.GOAP
         Attack = 201,
 
         /// <summary>
-        /// 消灭目标
-        /// </summary>
-        Kill_Target = 202,
-
-        /// <summary>
         /// 逃跑
         /// </summary>
-        Runaway = 203,
+        Runaway = 202,
 
         #endregion
     }

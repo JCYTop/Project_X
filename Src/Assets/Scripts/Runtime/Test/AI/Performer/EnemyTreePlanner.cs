@@ -141,11 +141,12 @@ namespace Framework.GOAP
             else if (left.OtherData.GetHashtableElement<int>("CurrCost") < right.OtherData.GetHashtableElement<int>("CurrCost"))
             {
                 return left;
-            }
+            } 
             else
             {
                 if (left.Data.Action.Priority > right.Data.Action.Priority)
                 {
+                    
                     return left;
                 }
                 else

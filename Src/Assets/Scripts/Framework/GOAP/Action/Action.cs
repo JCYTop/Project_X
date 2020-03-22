@@ -103,10 +103,5 @@ namespace Framework.GOAP
         {
             return (ICollection<CondtionAssembly>) ActionGroup.ConfigUnitSet.GetSortListValue(ActionElementTag.Effects.ToString());
         }
-
-        public virtual bool VerifyPreconditions()
-        {
-            throw new System.NotImplementedException();
-        }
-    }
+ }
 }

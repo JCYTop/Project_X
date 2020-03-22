@@ -66,48 +66,12 @@ namespace Framework.GOAP
 
         private void OnEnable()
         {
-            RegiestEvent(GOAPEventType.Change_Normal_Target, Change_Normal_Target);
-            RegiestEvent(GOAPEventType.Change_Attack_Target, Change_Attack_Target);
+            RegiestEvent(GOAPEventType.Change_Target, Change_Attack_Target);
         }
 
         private void OnDisable()
         {
-            UnRegiestEvent(GOAPEventType.Change_Normal_Target, Change_Normal_Target);
-            UnRegiestEvent(GOAPEventType.Change_Attack_Target, Change_Attack_Target);
-        }
-
-        private void Change_Normal_Target(object[] args)
-        {
-            if (args != null && args.Length > 0)
-            {
-                if (GoalbalID != Convert.ToInt32(args[0])) return;
-                var go = (GameObject) args[1];
-                var value = conditionMap.SetDictionaryValue(CondtionTag.Normal_Target, go != null);
-                if (value)
-                {
-                    updateData.AddSortListElements(CondtionTag.Near_Normal_Target, (context) =>
-                    {
-                        var dis = Vector3.Distance(context.GameObject.transform.position, go.transform.position);
-                        var near = context.Parameter.ParameterList.GetSortListValue(ParameterTag.Near_Dis);
-                        if (dis < near.Value)
-                            return true;
-                        return false;
-                    });
-                }
-                else
-                {
-                    updateData.RemoveSortListElements(CondtionTag.Near_Normal_Target);
-                }
-#if UNITY_EDITOR
-                panelInfo.ForEach((panel) =>
-                {
-                    if (panel.ElementTag == CondtionTag.Normal_Target)
-                    {
-                        panel.IsRight = value;
-                    }
-                });
-#endif
-            }
+            UnRegiestEvent(GOAPEventType.Change_Target, Change_Attack_Target);
         }
 
         private void Change_Attack_Target(object[] args)
