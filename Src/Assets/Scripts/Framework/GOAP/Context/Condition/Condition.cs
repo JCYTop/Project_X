@@ -72,7 +72,7 @@ namespace Framework.GOAP
         public static ICollection<CondtionTag> GetDiffecentCondition<TGoal>(this Condition condition, IGoal<TGoal> goal)
         {
             var list = new List<CondtionTag>();
-            foreach (var cond in goal.Condition)
+            foreach (var cond in goal.Target)
             {
                 var value = condition.ConditionMap.GetDictionaryValue(cond.ElementTag);
                 if (!value)
@@ -114,14 +114,15 @@ namespace Framework.GOAP
         /// <returns></returns>
         public static ICollection<CondtionAssembly> GetDiffecentCondition(ICollection<CondtionAssembly> curr, ICollection<CondtionAssembly> target)
         {
-            var list = new List<CondtionAssembly>();
+            var list = new HashSet<CondtionAssembly>();
             foreach (var assembly in curr)
             {
+                list.Add(assembly);
                 foreach (var subAssembly in target)
                 {
-                    if (assembly.ElementTag == subAssembly.ElementTag && assembly.IsRight != subAssembly.IsRight)
+                    if (assembly.ElementTag == subAssembly.ElementTag && assembly.IsRight == subAssembly.IsRight)
                     {
-                        list.Add(assembly);
+                        list.Remove(assembly);
                     }
                 }
             }

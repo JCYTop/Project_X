@@ -39,6 +39,11 @@ namespace Framework.GOAP
         ICollection<CondtionAssembly> Condition { get; }
 
         /// <summary>
+        /// 目标条件
+        /// </summary>
+        ICollection<CondtionAssembly> Target { get; }
+
+        /// <summary>
         /// 是否已经实现目标
         /// </summary>
         /// <returns></returns>

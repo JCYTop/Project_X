@@ -26,7 +26,8 @@ namespace Framework.GOAP
     /// <typeparam name="TGoal"></typeparam>
     public abstract class Goal<TGoal> : IGoal<TGoal>
     {
-        private ICollection<CondtionAssembly> conditions;
+        private ICollection<CondtionAssembly> condition;
+        private ICollection<CondtionAssembly> target;
         private System.Action<IGoal<TGoal>> onActivate;
         private System.Action<IGoal<TGoal>> onInactivate;
         public TGoal Label { get; }
@@ -46,12 +47,25 @@ namespace Framework.GOAP
         {
             get
             {
-                if (conditions == null)
+                if (condition == null)
                 {
-                    conditions = InitCondition();
+                    condition = InitCondition();
                 }
 
-                return conditions;
+                return condition;
+            }
+        }
+
+        public ICollection<CondtionAssembly> Target
+        {
+            get
+            {
+                if (target == null)
+                {
+                    target = InitTarget();
+                }
+
+                return target;
             }
         }
 
@@ -64,6 +78,11 @@ namespace Framework.GOAP
         private ICollection<CondtionAssembly> InitCondition()
         {
             return (ICollection<CondtionAssembly>) goalGroup.ConfigUnitSet.GetSortListValue(GoalElementTag.Conditon);
+        }
+
+        private ICollection<CondtionAssembly> InitTarget()
+        {
+            return (ICollection<CondtionAssembly>) goalGroup.ConfigUnitSet.GetSortListValue(GoalElementTag.Target);
         }
 
         public bool IsGoalComplete()

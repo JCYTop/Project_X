@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6814cc2d49a49b99b8da1fdb42391d3, type: 3}
   m_Name: Alert_TODO_Enemy
   m_EditorClassIdentifier: 
-  Priority: 100
+  Priority: 500
   IsInterruptible: 1
   Cost: 100
   ActionUnityGroups:
@@ -24,4 +24,6 @@ MonoBehaviour:
     IsRight: 1
   Effects:
   - ElementTag: 200
+    IsRight: 1
+  - ElementTag: 400
     IsRight: 1

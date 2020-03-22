@@ -19,9 +19,3 @@ MonoBehaviour:
   - tag: 200
     Priority: 500
     File: {fileID: 11400000, guid: cc2ae6c38a64d8d49b993cb40d090113, type: 2}
-  - tag: 201
-    Priority: 1000
-    File: {fileID: 11400000, guid: 47b9417b727ae174cb689cff31e7330d, type: 2}
-  - tag: 202
-    Priority: 10000
-    File: {fileID: 11400000, guid: 4dd8ab269de5ae94fa942fe244bddec9, type: 2}

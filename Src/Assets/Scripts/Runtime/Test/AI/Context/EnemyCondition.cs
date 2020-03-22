@@ -54,6 +54,15 @@ namespace Framework.GOAP
                         conditionMap.Add(condtion.ElementTag, default(bool));
                     }
                 }
+
+                foreach (var condtion in stateBase.Target)
+                {
+                    //获取配置文件中所有的 Tag 标签
+                    if (!conditionMap.ContainsKey(condtion.ElementTag))
+                    {
+                        conditionMap.Add(condtion.ElementTag, default(bool));
+                    }
+                }
             }
 #if UNITY_EDITOR
             panelInfo = new List<CondtionAssembly>(1 << 4);

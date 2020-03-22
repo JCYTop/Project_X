@@ -46,6 +46,7 @@ namespace Framework.GOAP
         #endregion
 
         #region Target目标 200~399
+
         /// <summary>
         /// 是否存在战斗目标
         /// </summary>
@@ -55,6 +56,16 @@ namespace Framework.GOAP
         /// 是否离目标过远
         /// </summary>
         Near_Target,
+
+        #endregion
+        
+        #region StateGoal 400~599
+
+        /// <summary>
+        /// 进入Alert
+        /// State状态
+        /// </summary>
+        Into_Alert_State = 400,
 
         #endregion
     }
