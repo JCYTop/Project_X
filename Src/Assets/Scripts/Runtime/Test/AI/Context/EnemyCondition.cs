@@ -80,10 +80,10 @@ namespace Framework.GOAP
             {
                 if (GoalbalID != Convert.ToInt32(args[0])) return;
                 var go = (GameObject) args[1];
-                var value = conditionMap.SetDictionaryValue(CondtionTag.Attack_Target, go != null);
+                var value = conditionMap.SetDictionaryValue(CondtionTag.Target, go != null);
                 if (value)
                 {
-                    updateData.AddSortListElements(CondtionTag.Near_Attack_Target, (context) =>
+                    updateData.AddSortListElements(CondtionTag.Near_Target, (context) =>
                     {
                         var dis = Vector3.Distance(context.GameObject.transform.position, go.transform.position);
                         var near = context.Parameter.ParameterList.GetSortListValue(ParameterTag.Attack_Dis);
@@ -94,12 +94,12 @@ namespace Framework.GOAP
                 }
                 else
                 {
-                    updateData.RemoveSortListElements(CondtionTag.Near_Attack_Target);
+                    updateData.RemoveSortListElements(CondtionTag.Near_Target);
                 }
 #if UNITY_EDITOR
                 panelInfo.ForEach((panel) =>
                 {
-                    if (panel.ElementTag == CondtionTag.Attack_Target)
+                    if (panel.ElementTag == CondtionTag.Target)
                     {
                         panel.IsRight = value;
                     }

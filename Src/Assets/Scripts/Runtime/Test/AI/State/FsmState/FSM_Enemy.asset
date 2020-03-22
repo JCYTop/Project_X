@@ -238,9 +238,76 @@ MonoBehaviour:
         - StateConfig
         paramDataPos: 0000000000000000
         paramByteDataSize: 0000000000000000
+    - name: Alert
+      description: 
+      colorIndex: 0
+      position:
+        serializedVersion: 2
+        x: 391
+        y: 103
+        width: 100
+        height: 16
+      isBreakpoint: 0
+      isSequence: 0
+      hideUnused: 0
+      transitions: []
+      actionData:
+        actionNames:
+        - Framework.GOAP.EnemyAlertState
+        customNames:
+        - 
+        actionEnabled: 01
+        actionIsOpen: 01
+        actionStartIndex: 00000000
+        actionHashCodes: 6cc1fc01
+        unityObjectParams:
+        - {fileID: 11400000, guid: 1d646f64f9eeaa441b004b587b7f00ba, type: 2}
+        fsmGameObjectParams: []
+        fsmOwnerDefaultParams: []
+        animationCurveParams: []
+        functionCallParams: []
+        fsmTemplateControlParams: []
+        fsmEventTargetParams: []
+        fsmPropertyParams: []
+        layoutOptionParams: []
+        fsmStringParams: []
+        fsmObjectParams:
+        - useVariable: 1
+          name: Context
+          tooltip: "\u73AF\u5883\u914D\u7F6E"
+          showInInspector: 0
+          networkSync: 0
+          typeName: UnityEngine.Object
+          value: {fileID: 0}
+        fsmVarParams: []
+        fsmArrayParams: []
+        fsmEnumParams: []
+        fsmFloatParams: []
+        fsmIntParams: []
+        fsmBoolParams: []
+        fsmVector2Params: []
+        fsmVector3Params: []
+        fsmColorParams: []
+        fsmRectParams: []
+        fsmQuaternionParams: []
+        stringParams: []
+        byteData: 
+        arrayParamSizes: 
+        arrayParamTypes: []
+        customTypeSizes: 
+        customTypeNames: []
+        paramDataType: 1800000005000000
+        paramName:
+        - Context
+        - StateConfig
+        paramDataPos: 0000000000000000
+        paramByteDataSize: 0000000000000000
     events:
     - name: FINISHED
       isSystemEvent: 1
+      isGlobal: 0
+    - name: Alert
+      isSystemEvent: 0
       isGlobal: 0
     - name: Battle
       isSystemEvent: 0
@@ -262,6 +329,14 @@ MonoBehaviour:
         isSystemEvent: 0
         isGlobal: 0
       toState: Battle
+      linkStyle: 0
+      linkConstraint: 0
+      colorIndex: 0
+    - fsmEvent:
+        name: Alert
+        isSystemEvent: 0
+        isGlobal: 0
+      toState: Alert
       linkStyle: 0
       linkConstraint: 0
       colorIndex: 0

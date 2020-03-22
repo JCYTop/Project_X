@@ -13,8 +13,15 @@ namespace Framework.GOAP
             var actionSort = new SortedList<ActionTag, ActionConfigUnit>();
             allAction.ForEach((action) =>
             {
-                action.File.Init();
-                actionSort.Add(action.commonTag, action.File.GetConfigUnit);
+                if (action.File != null)
+                {
+                    action.File.Init();
+                    actionSort.Add(action.commonTag, action.File.GetConfigUnit);
+                }
+                else
+                {
+                    LogTool.Log($"File文件缺失");
+                }
             });
             LogTool.Log($" --- {this.name} , Action数据已经加载完成 --->>> 共计${allAction.Count}个", LogEnum.AssetLog);
             return actionSort;

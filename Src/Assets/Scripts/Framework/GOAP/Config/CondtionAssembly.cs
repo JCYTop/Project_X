@@ -46,30 +46,15 @@ namespace Framework.GOAP
         #endregion
 
         #region Target目标 200~399
-
-        /// <summary>
-        /// 是否存在目标
-        /// 非战斗目标
-        /// </summary>
-        Normal_Target = 200,
-
-        /// <summary>
-        /// 是否离目标过远
-        /// 是否离非战斗目标过远
-        /// </summary>
-        Near_Normal_Target,
-
         /// <summary>
         /// 是否存在战斗目标
-        /// 战斗目标
         /// </summary>
-        Attack_Target,
+        Target = 200,
 
         /// <summary>
         /// 是否离目标过远
-        /// 是否离战斗目标过远
         /// </summary>
-        Near_Attack_Target,
+        Near_Target,
 
         #endregion
     }

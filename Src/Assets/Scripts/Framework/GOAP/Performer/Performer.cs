@@ -13,6 +13,8 @@
  ----------------------------------
 */
 
+using System.Collections.Generic;
+
 namespace Framework.GOAP
 {
     public abstract class Performer<TAction, TGoal> : IPerformer<TAction, TGoal>
@@ -38,5 +40,10 @@ namespace Framework.GOAP
         /// </summary>
         /// <exception cref="NotImplementedException"></exception>
         public abstract void Interruptible();
+
+        public LinkedList<IActionHandler<TAction>> BuildPlan()
+        {
+            return planHandler.Planner.BuildPlan(agent.AgentGoalMgr.FindGoals());
+        }
     }
 }

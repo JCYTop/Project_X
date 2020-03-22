@@ -597,7 +597,7 @@ PrefabInstance:
     - target: {fileID: 2288368103054580803, guid: 783ffa5e36aec084aa3e31fe5ae387a2,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 10
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 2288368103054580803, guid: 783ffa5e36aec084aa3e31fe5ae387a2,
         type: 3}
@@ -607,7 +607,7 @@ PrefabInstance:
     - target: {fileID: 2288368103054580803, guid: 783ffa5e36aec084aa3e31fe5ae387a2,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 10
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 2288368103054580803, guid: 783ffa5e36aec084aa3e31fe5ae387a2,
         type: 3}
@@ -1046,7 +1046,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1815963127}
-        m_MethodName: GOAP_Context_Agent_GoalMgr_FindGoal
+        m_MethodName: GOAP_Context_Agent_EnemyTreePlanner_BuildPlan
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

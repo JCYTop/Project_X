@@ -59,7 +59,6 @@ namespace Framework.GOAP
         /// 影响状态结果
         /// </summary>
         ICollection<CondtionAssembly> Effects { get; }
-     
     }
 
     /// <summary>
@@ -126,13 +125,18 @@ namespace Framework.GOAP
         /// 待机
         /// 动作标签
         /// </summary>
-        Idle = 1,
+        Idle,
 
         /// <summary>
         /// 行走
         /// 动作标签
         /// </summary>
-        Walk = 2
+        Walk,
+
+        /// <summary>
+        /// 警戒状态去做什么
+        /// </summary>
+        Alert_TODO,
 
         #endregion
     }

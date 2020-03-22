@@ -21,12 +21,29 @@ namespace Framework.GOAP
         public override LinkedList<IActionHandler<ActionTag>> BuildPlan(List<IGoal<GoalTag>> goals)
         {
             LogTool.Log($"制定计划");
-            //创建一个队列开始
             var plan = new LinkedList<IActionHandler<ActionTag>>();
             if (goals == null)
                 return plan;
-            var goal = GetStartGoal();
+            var goal = goals.GoalsSortPriority();
             var lastAction = BuildActionTree();
+            if (lastAction != null)
+            {
+                while (lastAction.Data != null)
+                {
+                    plan.AddLast(lastAction.Data);
+                    lastAction = lastAction.Parent;
+                }
+            }
+            else
+                LogTool.LogError($"当前节点为空");
+
+            LogTool.Log($"---------------最终生成计划------------");
+            foreach (var handler in plan)
+            {
+                LogTool.Log($"计划项： {handler.Action.Label}");
+            }
+
+            LogTool.Log($"计划结束");
             return plan;
 
             //构建Action树
@@ -104,12 +121,6 @@ namespace Framework.GOAP
                     return handlers;
                 }
             }
-
-            //构建目标树
-            IGoal<GoalTag> GetStartGoal()
-            {
-                return goals.GoalsSortPriority();
-            }
         }
 
         /// <summary>
@@ -141,12 +152,11 @@ namespace Framework.GOAP
             else if (left.OtherData.GetHashtableElement<int>("CurrCost") < right.OtherData.GetHashtableElement<int>("CurrCost"))
             {
                 return left;
-            } 
+            }
             else
             {
                 if (left.Data.Action.Priority > right.Data.Action.Priority)
                 {
-                    
                     return left;
                 }
                 else

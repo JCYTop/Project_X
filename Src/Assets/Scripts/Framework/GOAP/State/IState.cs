@@ -89,6 +89,11 @@ namespace Framework.GOAP
         /// </summary>
         Battle,
 
+        /// <summary>
+        /// 警戒状态
+        /// </summary>
+        Alert,
+
         #endregion
     }
 }

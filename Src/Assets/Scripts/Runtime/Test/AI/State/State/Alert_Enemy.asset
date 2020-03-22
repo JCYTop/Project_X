@@ -9,11 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 504119798f8f4b01a98a44c4ddbbd4ac, type: 3}
-  m_Name: Idle_To_Target_Enemy
+  m_Script: {fileID: 11500000, guid: 734b99739af81234a98366f672a97280, type: 3}
+  m_Name: Alert_Enemy
   m_EditorClassIdentifier: 
-  Condition:
-  - ElementTag: 200
-    IsRight: 1
-  - ElementTag: 201
-    IsRight: 1
+  Tag: 3
