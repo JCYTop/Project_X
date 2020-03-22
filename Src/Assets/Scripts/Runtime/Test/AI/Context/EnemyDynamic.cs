@@ -15,7 +15,7 @@ namespace Framework.GOAP
 
         public override void Init()
         {
-            DynamicDic.Add(DynamicObjTag.Attack_Target, () => { return Target; });
+            DynamicDic.Add(DynamicObjTag.Target, () => { return Target; });
         }
     }
 }

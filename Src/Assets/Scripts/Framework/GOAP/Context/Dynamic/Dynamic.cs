@@ -72,9 +72,9 @@ namespace Framework.GOAP
         Default,
 
         /// <summary>
-        /// 攻击目标
+        /// 目标
         /// 返回GameObject
         /// </summary>
-        Attack_Target,
+        Target,
     }
 }
