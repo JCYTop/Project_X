@@ -57,8 +57,8 @@ namespace Framework.GOAP
                 var topTree = new MultiTreeNode<IActionHandler<ActionTag>>(null);
                 topTree.OtherData.AddHashtableElement("CurrCost", 0);
                 var currNode = topTree;
-                var ResetTarget = goal.Target;
-                var currKeys = agent.Context.Condition.GetDiffecentCondition(goal).ToList();
+                var ResetTarget = agent.Context.Condition.GetDiffecentTargetTags(goal.Target).ToList();
+                var currKeys = agent.Context.Condition.GetDiffecentTargetTags(goal).ToList();
                 MultiTreeNode<IActionHandler<ActionTag>> subNode = null;
                 MultiTreeNode<IActionHandler<ActionTag>> cheapestNode = null;
                 //循环创建多叉树
@@ -80,7 +80,8 @@ namespace Framework.GOAP
                         .GetDiffecentConditionTag()
                         .ToList();
                     ResetTarget = AIConditionExtend
-                        .GetDiffecentCondition(ResetTarget, currNode.Data.Action.Effects);
+                        .GetDiffecentCondition(ResetTarget, currNode.Data.Action.Effects)
+                        .ToList();
                     cheapestNode = null;
                 }
 
