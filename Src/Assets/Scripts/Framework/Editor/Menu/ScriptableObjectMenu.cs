@@ -59,9 +59,9 @@ namespace Framework.Editor
 
         public override void OnEnable()
         {
-            Assembly assembly = GetAssembly();
+            var assembly = GetAssembly();
             // Get all classes derived from ScriptableObject
-            Type[] allScriptableObjects =
+            var allScriptableObjects =
                 (from t in assembly.GetTypes() where t.IsSubclassOf(typeof(UnityEngine.ScriptableObject)) select t).ToArray();
             Types = allScriptableObjects;
         }
