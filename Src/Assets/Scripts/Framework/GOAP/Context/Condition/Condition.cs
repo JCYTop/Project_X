@@ -69,7 +69,7 @@ namespace Framework.GOAP
         /// <param name="goal"></param>
         /// <typeparam name="TGoal"></typeparam>
         /// <returns></returns>
-        public static ICollection<CondtionTag> GetDiffecentCondition<TGoal>(this Condition condition, IGoal<TGoal> goal)
+        public static ICollection<CondtionTag> GetDiffecentTargetTags<TGoal>(this Condition condition, IGoal<TGoal> goal)
         {
             var list = new List<CondtionTag>();
             foreach (var cond in goal.Target)
@@ -78,6 +78,28 @@ namespace Framework.GOAP
                 if (!value)
                 {
                     list.Add(cond.ElementTag);
+                }
+            }
+
+            return list;
+        }
+
+        /// <summary>
+        /// 获取和目标不相同的条件的CondtionAssembly
+        /// </summary>
+        /// <param name="condition"></param>
+        /// <param name="assemblies"></param>
+        /// <typeparam name="TGoal"></typeparam>
+        /// <returns></returns>
+        public static ICollection<CondtionAssembly> GetDiffecentTargetTags(this Condition condition, ICollection<CondtionAssembly> assemblies)
+        {
+            var list = new List<CondtionAssembly>();
+            foreach (var cond in assemblies)
+            {
+                var value = condition.ConditionMap.GetDictionaryValue(cond.ElementTag);
+                if (!value)
+                {
+                    list.Add(cond);
                 }
             }
 
