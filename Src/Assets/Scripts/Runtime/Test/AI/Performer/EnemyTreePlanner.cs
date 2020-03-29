@@ -25,6 +25,7 @@ namespace Framework.GOAP
             if (goals.Count <= 0)
             {
                 plan.AddLast(agent.AgentActionMgr.GetHandler(ActionTag.Idle));
+                LogTool.Log($"无计划制定");
                 return plan;
             }
 
@@ -41,7 +42,7 @@ namespace Framework.GOAP
             else
                 LogTool.LogError($"当前节点为空");
 
-            LogTool.Log($"---------------最终生成计划------------");
+            LogTool.Log($"---------- 最终生成计划 ----------");
             foreach (var handler in plan)
             {
                 LogTool.Log($"计划项： {handler.Action.Label}");
@@ -89,12 +90,18 @@ namespace Framework.GOAP
 
                 int GetAllCost()
                 {
-                    var configCost = 0;
+                    var configCost = 0f;
                     if (subNode.Data != null)
-                        configCost = subNode.Data.Action.Cost;
+                    {
+                        foreach (var costParameter in subNode.Data.Action.Cost)
+                        {
+                            configCost += costParameter.value * costParameter.CostPriority;
+                        }
+                    }
+
                     var currCost = currNode.OtherData.GetHashtableElement<int>("CurrCost");
-                    //上一个节点消耗+配置消耗+比较之前节点消耗
-                    return currCost + configCost + AIConditionExtend.GetDiffecentCondition(ResetTarget, subNode.Data.Action.Effects).Count;
+                    //上一个节点消耗 + 配置消耗 + 比较之前节点消耗
+                    return currCost + (int) configCost + AIConditionExtend.GetDiffecentCondition(ResetTarget, subNode.Data.Action.Effects).Count;
                 }
 
                 //获取当前节点所有可能的子节点

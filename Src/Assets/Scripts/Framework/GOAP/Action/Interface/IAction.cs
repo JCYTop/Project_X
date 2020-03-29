@@ -39,9 +39,9 @@ namespace Framework.GOAP
         int Priority { get; }
 
         /// <summary>
-        /// 动作花费
+        /// 消耗
         /// </summary>
-        int Cost { get; }
+        List<CostParameter> Cost { get; }
 
         /// <summary>
         /// 当前动作是否能够中断

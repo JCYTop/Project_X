@@ -56,13 +56,13 @@ namespace Framework.GOAP
             }
         }
 
-        public int Cost
+        public List<CostParameter> Cost
         {
             get
             {
                 var element = ActionGroup.ConfigUnitSet.GetSortListValue(ActionElementTag.Cost.ToString());
-                var intValue = element.CastType<int>();
-                return intValue;
+                var cost = element.CastType<List<CostParameter>>();
+                return cost;
             }
         }
 
@@ -103,5 +103,5 @@ namespace Framework.GOAP
         {
             return (ICollection<CondtionAssembly>) ActionGroup.ConfigUnitSet.GetSortListValue(ActionElementTag.Effects.ToString());
         }
- }
+    }
 }

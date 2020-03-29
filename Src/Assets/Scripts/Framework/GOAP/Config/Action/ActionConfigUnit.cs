@@ -27,15 +27,10 @@ namespace Framework.GOAP
     public abstract class ActionConfigUnit : UnityEngine.ScriptableObject, IConfigUnit<ActionConfigUnit, ActionElementTag>
     {
         private SortedList<ActionElementTag, object> ActionConfigUnitSet;
+        [SerializeField] private ActionUnityGroup ActionUnityGroups;
         [Rename("权重"), SerializeField] private int Priority;
         [Rename("是否可打断"), SerializeField] private bool IsInterruptible = false;
-
-        /// <summary>
-        ///TODO 消耗应该有很多种
-        /// </summary>
-        [Rename("消耗"), SerializeField] private int Cost;
-
-        [SerializeField] private ActionUnityGroup ActionUnityGroups;
+        [SerializeField] private List<CostParameter> Cost;
         [SerializeField] private List<CondtionAssembly> Preconditions;
         [SerializeField] private List<CondtionAssembly> Effects;
         public ActionConfigUnit GetConfigUnit => this;
@@ -80,6 +75,17 @@ namespace Framework.GOAP
         public AnimationClip[] Animation;
         public AudioClip[] AudioClip;
         public GameObject[] ParticleEffects;
+    }
+
+    /// <summary>
+    /// 消耗类参数
+    /// </summary>
+    [Serializable]
+    public class CostParameter
+    {
+        [Rename("类型")] public ParameterTag CostTag;
+        [Rename("权重"), Range(0f, 1f)] public float CostPriority;
+        [Rename("消耗")] public float value;
     }
 
     public enum ActionElementTag

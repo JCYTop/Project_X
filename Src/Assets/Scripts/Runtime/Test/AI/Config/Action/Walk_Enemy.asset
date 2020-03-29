@@ -10,20 +10,25 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d6814cc2d49a49b99b8da1fdb42391d3, type: 3}
-  m_Name: Alert_TODO_Enemy
+  m_Name: Walk_Enemy
   m_EditorClassIdentifier: 
-  Priority: 500
-  IsInterruptible: 1
-  Cost: 100
   ActionUnityGroups:
     Animation: []
     AudioClip: []
     ParticleEffects: []
+  Priority: 100
+  IsInterruptible: 1
+  Cost:
+  - CostTag: 2
+    CostPriority: 10
+    value: 10
   Preconditions:
   - ElementTag: 200
     IsRight: 1
+  - ElementTag: 201
+    IsRight: 0
   Effects:
   - ElementTag: 200
     IsRight: 1
-  - ElementTag: 400
+  - ElementTag: 201
     IsRight: 1
