@@ -109,7 +109,7 @@ public static class GlobalDefine
 #elif UNITY_STANDALONE_WIN && !UNITY_EDITOR
             return Application.dataPath + "/StreamingAssets/AssetBundle/";
 #endif
-            return Application.dataPath + "/ABRes/";
+            return Application.dataPath + "/AssetBundleRes/";
         }
     }
 }

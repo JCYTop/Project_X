@@ -30,7 +30,7 @@ namespace Framework.Editor
             var layers = UnityEditorInternal.InternalEditorUtility.layers;
             var abInfo = GlobalDefine.ABInfo;
             var uiDatas = new Dictionary<long, ABData>();
-            var genPath = Application.dataPath + "/ABRes/";
+            var genPath = Application.dataPath + "/AssetBundleRes/";
             var filesPath = Directory.GetFiles(genPath, "*.prefab", SearchOption.AllDirectories);
             var info = "";
             var presenceResID = new HashSet<long>();
@@ -121,12 +121,12 @@ namespace Framework.Editor
                         goBase.BaseName = goBase.gameObject.name;
                         AssetDatabase.SaveAssets();
                         var path = filesPath[i];
-                        path = filesPath[i].Substring(filesPath[i].IndexOf("ABRes", StringComparison.Ordinal));
+                        path = filesPath[i].Substring(filesPath[i].IndexOf("AssetBundleRes", StringComparison.Ordinal));
                         info = path;
                         var index1 = path.IndexOf("/", StringComparison.Ordinal);
                         var index2 = path.IndexOf(".", StringComparison.Ordinal) - 1;
                         path = path.Substring(index1 + 1, index2 - index1);
-                        path = @"Assets\ABRes\" + path;
+                        path = @"Assets\AssetBundleRes\" + path;
                         uiDatas.Add(goBase.ResID, new ABData()
                         {
                             ID = goBase.ResID,
@@ -160,12 +160,12 @@ namespace Framework.Editor
             }
 
             EditorUtility.ClearProgressBar();
-            LogTool.Log(string.Format("共 {0} 个GO", uiDatas.Count), LogEnum.Editor);
+            LogTool.Log($"共产生 {uiDatas.Count} 个GO", LogEnum.Editor);
         }
 
         public static void CleanResGOConfig()
         {
-            var genPath = Application.dataPath + "/ABRes/";
+            var genPath = Application.dataPath + "/AssetBundleRes/";
             var filesPath = Directory.GetFiles(genPath, "*.prefab", SearchOption.AllDirectories);
             var info = "";
             var index = 0;
@@ -187,7 +187,7 @@ namespace Framework.Editor
             }
 
             EditorUtility.ClearProgressBar();
-            LogTool.Log(string.Format("共 {0} 个GO", index), LogEnum.Editor);
+            LogTool.Log($"共清除 {index} 个GO", LogEnum.Editor);
         }
     }
 }

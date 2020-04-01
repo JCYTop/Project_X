@@ -5,7 +5,7 @@ using Base.MultiTree;
 namespace Framework.GOAP
 {
     /// <summary>
-    /// 构建一个计划 Tree 树
+    /// 构建一个计划Tree树
     /// </summary>
     public class EnemyTreePlanner : Planner<ActionTag, GoalTag>
     {

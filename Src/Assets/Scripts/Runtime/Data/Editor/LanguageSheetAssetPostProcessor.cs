@@ -9,8 +9,8 @@ using UnityQuickSheet;
 ///
 public class LanguageSheetAssetPostprocessor : AssetPostprocessor 
 {
-    private static readonly string filePath = "Assets/ABRes/Data/ExcelData/Excel/Language.xlsx";
-    private static readonly string assetFilePath = "Assets/ABRes/Data/ExcelData/Excel/LanguageSheet.asset";
+    private static readonly string filePath = "Assets/AssetBundleRes/Data/ExcelData/Excel/Language.xlsx";
+    private static readonly string assetFilePath = "Assets/AssetBundleRes/Data/ExcelData/Excel/LanguageSheet.asset";
     private static readonly string sheetName = "LanguageSheet";
     
     static void OnPostprocessAllAssets (string[] importedAssets, string[] deletedAssets, string[] movedAssets, string[] movedFromAssetPaths)

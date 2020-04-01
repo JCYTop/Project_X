@@ -118,7 +118,7 @@ namespace Framework.Editor
             {
                 if (EditorSceneManager.SaveCurrentModifiedScenesIfUserWantsTo() == true)
                 {
-                    EditorSceneManager.OpenScene("Assets/ABRes/Scenes/GameScenes/Start.unity");
+                    EditorSceneManager.OpenScene("Assets/AssetBundleRes/Scenes/GameScenes/Start.unity");
                 }
             }
 
@@ -198,7 +198,7 @@ namespace Framework.Editor
                     File.WriteAllText("_lastScene", currentSceneName);
                     EditorApplication.SaveScene(EditorApplication.currentScene);
                     //TODO
-                    EditorApplication.OpenScene("Assets/ABRes/Scenes/GameScenes/Awake_Scene.unity");
+                    EditorApplication.OpenScene("Assets/AssetBundleRes/Scenes/GameScenes/Awake_Scene.unity");
                     EditorApplication.isPlaying = true;
                 }
 
