@@ -84,7 +84,7 @@ namespace Framework.GOAP
     public class CostParameter
     {
         [Rename("类型")] public ParameterTag CostTag;
-        [Rename("权重"), Range(0f, 1f)] public float CostPriority;
+        [Rename("权重"), Range(-100f, 100f)] public int CostPriority;
         [Rename("消耗")] public float value;
     }
 

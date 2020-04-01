@@ -95,7 +95,7 @@ namespace Framework.GOAP
                     {
                         foreach (var costParameter in subNode.Data.Action.Cost)
                         {
-                            configCost += costParameter.value * costParameter.CostPriority;
+                            configCost += (costParameter.value * costParameter.CostPriority) / 100;
                         }
                     }
 
