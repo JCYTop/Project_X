@@ -24,24 +24,6 @@ MonoBehaviour:
   m_GroupAssets:
   - {fileID: 11400000, guid: 11d288f87d4a8db429db4724a2655977, type: 2}
   - {fileID: 11400000, guid: 4c8c7318ebfa3914eba93429c6f5e25d, type: 2}
-  - {fileID: 11400000, guid: 38b1d33002f47ec449e6837acefef3e6, type: 2}
-  - {fileID: 11400000, guid: 62e07d1e62f43124b9ea67231905bbd1, type: 2}
-  - {fileID: 11400000, guid: f73161e5a8bb2b14fa71ff9f2f77fc1b, type: 2}
-  - {fileID: 11400000, guid: 6ef7b32e433d08e4faf1a51fbc21745e, type: 2}
-  - {fileID: 11400000, guid: 4c95fe2cbd19e9840ae971afa00b5817, type: 2}
-  - {fileID: 11400000, guid: 9bf5fcd33138dc1478ece0cf578de1e6, type: 2}
-  - {fileID: 11400000, guid: eff4bd20d2afbf943b1864c02cf42377, type: 2}
-  - {fileID: 11400000, guid: 7f99f70888a9b83498640896fa6c7029, type: 2}
-  - {fileID: 11400000, guid: 48d43838dce769d4c8f92b8914783c2e, type: 2}
-  - {fileID: 11400000, guid: 3f8905397429e9a4ab9f5c47c1729841, type: 2}
-  - {fileID: 11400000, guid: d9d0f310dbead2a41afb3c5f3ab9da62, type: 2}
-  - {fileID: 11400000, guid: 35775426347738b4b906161f7432bd9c, type: 2}
-  - {fileID: 11400000, guid: 224d30b485093eb40a4acf3842ec7b28, type: 2}
-  - {fileID: 11400000, guid: 5097531e68acf6f448d9b41e3eb8826e, type: 2}
-  - {fileID: 11400000, guid: ab9a7f3ca2b337e43a1adad7e87a829f, type: 2}
-  - {fileID: 11400000, guid: 99aa8d8c39af4fc42a137e2b13cd6988, type: 2}
-  - {fileID: 11400000, guid: 504b396d9de88344e90a9267bebcd25d, type: 2}
-  - {fileID: 11400000, guid: 24024cf73a7050a47bde91f48f5d0b5d, type: 2}
   m_BuildSettings:
     m_CompileScriptsInVirtualMode: 0
     m_CleanupStreamingAssetsAfterBuilds: 1
