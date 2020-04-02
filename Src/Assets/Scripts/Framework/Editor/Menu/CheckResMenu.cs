@@ -50,7 +50,7 @@ namespace Framework.Editor
             //获取所有资源路径       
             mResources.Clear();
             //Resource资源路径
-            string resourcePath = Application.dataPath + "/AssetBundleRes/";
+            string resourcePath = Application.dataPath + "/Addressable Asset/";
             string[] files = Directory.GetFiles(resourcePath, "*.*", SearchOption.AllDirectories);
             foreach (string file in files)
             {

@@ -15,43 +15,43 @@ MonoBehaviour:
   ABDatas:
   - ID: 800000
     name: Test1
-    Path: Assets\AssetBundleRes\Prefabs\UI\Test1
+    Path: Assets\Addressable Asset\Prefabs\UI\Test1
     Des: "\u6D4B\u8BD5UI1"
     Layer: UI
     Tag: UI
   - ID: 800001
     name: Test2
-    Path: Assets\AssetBundleRes\Prefabs\UI\Test2
+    Path: Assets\Addressable Asset\Prefabs\UI\Test2
     Des: "\u6D4B\u8BD5UI2"
     Layer: UI
     Tag: UI
   - ID: 800002
     name: UIRoot
-    Path: Assets\AssetBundleRes\Prefabs\UI\UIRoot
+    Path: Assets\Addressable Asset\Prefabs\UI\UIRoot
     Des: UIRoot
     Layer: UI
     Tag: UI
   - ID: 800003
     name: GraphyProfiler
-    Path: Assets\AssetBundleRes\Prefabs\UI\Tool\GraphyProfiler
+    Path: Assets\Addressable Asset\Prefabs\UI\Tool\GraphyProfiler
     Des: GraphyProfiler
     Layer: UI
     Tag: UI
   - ID: 1000000
     name: Main Camera
-    Path: Assets\AssetBundleRes\Prefabs\Camera\Main Camera
+    Path: Assets\Addressable Asset\Prefabs\Camera\Main Camera
     Des: MainCamera
     Layer: Default
     Tag: Camera
   - ID: 1300000
     name: ExcelDataMgr
-    Path: Assets\AssetBundleRes\Prefabs\Util\ExcelDataMgr
+    Path: Assets\Addressable Asset\Prefabs\Util\ExcelDataMgr
     Des: ExcelDataMgr
     Layer: Default
     Tag: Manager
   - ID: 1400000
     name: LangSetting
-    Path: Assets\AssetBundleRes\Prefabs\Util\LangSetting
+    Path: Assets\Addressable Asset\Prefabs\Util\LangSetting
     Des: LangSetting
     Layer: Default
     Tag: Util

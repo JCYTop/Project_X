@@ -14,7 +14,7 @@ namespace Framework.ScriptableObject
 {
     public class AssetsConfig : UnityEngine.ScriptableObject
     {
-        [InfoBox("资源根目录")] public string GameResourceRootDir = "AssetBundleRes/";
+        [InfoBox("资源根目录")] public string GameResourceRootDir = "Addressable Asset/";
         [InfoBox("AuthorInfo路径")] public string AuthorInfoPath = string.Empty;
         [InfoBox("FrameworkDefine路径")] public string FrameworkDefinePath = string.Empty;
         [InfoBox("LogConfig路径")] public string LogConfigPath = string.Empty;

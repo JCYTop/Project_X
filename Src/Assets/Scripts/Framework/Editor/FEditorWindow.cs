@@ -118,7 +118,7 @@ namespace Framework.Editor
             {
                 if (EditorSceneManager.SaveCurrentModifiedScenesIfUserWantsTo() == true)
                 {
-                    EditorSceneManager.OpenScene("Assets/AssetBundleRes/Scenes/GameScenes/Start.unity");
+                    EditorSceneManager.OpenScene("Assets/Addressable Asset/Scenes/GameScenes/Start.unity");
                 }
             }
 
@@ -191,22 +191,32 @@ namespace Framework.Editor
             [MenuItem("Assets/开始游戏", false, 0)]
             public static void StartGame()
             {
-                //TODO 换成通用接口
                 if (!EditorApplication.isPlaying)
                 {
                     string currentSceneName = EditorApplication.currentScene;
                     File.WriteAllText("_lastScene", currentSceneName);
                     EditorApplication.SaveScene(EditorApplication.currentScene);
-                    //TODO
-                    EditorApplication.OpenScene("Assets/AssetBundleRes/Scenes/GameScenes/Awake_Scene.unity");
+                    EditorApplication.OpenScene("Assets/Addressable Asset/Scenes/GameScenes/Awake_Scene.unity");
                     EditorApplication.isPlaying = true;
                 }
-
-                if (EditorApplication.isPlaying)
+                else
                 {
                     string lastScene = File.ReadAllText("lastScene");
                     EditorApplication.isPlaying = false;
                     EditorApplication.OpenScene(lastScene);
+                }
+            }
+
+            [MenuItem("Assets/场景列表/Test_GOAP_AI_Scene", false, 0)]
+            public static void Open_Test_GOAP_AI_Scene()
+            {
+                if (!EditorApplication.isPlaying)
+                {
+                    EditorApplication.OpenScene("Assets/Addressable Asset/Scenes/GameScenes/TestScene/Test_GOAP_AI_Scene.unity");
+                }
+                else
+                {
+                    LogTool.Log($"需要关闭场景");
                 }
             }
         }

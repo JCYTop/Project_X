@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c417cbc864f7a14cb21dacd8d0bb804, type: 3}
   m_Name: AssetsConfig
   m_EditorClassIdentifier: 
-  GameResourceRootDir: AssetBundleRes/
+  GameResourceRootDir: Addressable Asset/
   AuthorInfoPath: Configuation/AuthorInfo
   FrameworkDefinePath: Configuation/FrameworkDefine
   LogConfigPath: Configuation/LogConfig

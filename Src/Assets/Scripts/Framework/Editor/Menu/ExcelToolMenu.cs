@@ -82,7 +82,7 @@ namespace Framework.Editor
         public override void OnEnable()
         {
             excelList = null;
-            outPath = Application.dataPath + "/AssetBundleRes/Data/";
+            outPath = Application.dataPath + "/Addressable Asset/Data/";
         }
 
         public override void OnGUI()

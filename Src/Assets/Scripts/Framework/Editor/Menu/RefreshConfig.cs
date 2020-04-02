@@ -29,8 +29,8 @@ namespace Framework.Editor
             var tags = UnityEditorInternal.InternalEditorUtility.tags;
             var layers = UnityEditorInternal.InternalEditorUtility.layers;
             var abInfo = GlobalDefine.ABInfo;
-            var uiDatas = new Dictionary<long, ABData>();
-            var genPath = Application.dataPath + "/AssetBundleRes/";
+            var 资源Datas = new Dictionary<long, ABData>();
+            var genPath = Application.dataPath + "/Addressable Asset/";
             var filesPath = Directory.GetFiles(genPath, "*.prefab", SearchOption.AllDirectories);
             var info = "";
             var presenceResID = new HashSet<long>();
@@ -40,7 +40,7 @@ namespace Framework.Editor
                 filesPath[i] = filesPath[i].Substring(filesPath[i].IndexOf("Assets", StringComparison.Ordinal));
                 var prefab = AssetDatabase.LoadAssetAtPath(filesPath[i], typeof(GameObject)) as GameObject;
                 var progress = (float) i / filesPath.Length;
-                EditorUtility.DisplayProgressBar("UI记录已知ResID进度...", info, progress);
+                EditorUtility.DisplayProgressBar("资源记录已知ResID进度...", info, progress);
                 if (prefab != null)
                 {
                     var goBase = prefab.GetComponent<ObjectBase>();
@@ -64,11 +64,11 @@ namespace Framework.Editor
                 filesPath[i] = filesPath[i].Substring(filesPath[i].IndexOf("Assets", StringComparison.Ordinal));
                 var prefab = AssetDatabase.LoadAssetAtPath(filesPath[i], typeof(GameObject)) as GameObject;
                 var progress = (float) i / filesPath.Length;
-                EditorUtility.DisplayProgressBar("UI配置刷新进度...", info, progress);
+                EditorUtility.DisplayProgressBar("资源配置刷新进度...", info, progress);
                 if (prefab != null)
                 {
                     var goBase = prefab.GetComponent<ObjectBase>();
-                    if (goBase != null && !uiDatas.ContainsKey(goBase.ResID))
+                    if (goBase != null && !资源Datas.ContainsKey(goBase.ResID))
                     {
                         var indexTag = 0;
                         foreach (var tag in tags)
@@ -121,13 +121,13 @@ namespace Framework.Editor
                         goBase.BaseName = goBase.gameObject.name;
                         AssetDatabase.SaveAssets();
                         var path = filesPath[i];
-                        path = filesPath[i].Substring(filesPath[i].IndexOf("AssetBundleRes", StringComparison.Ordinal));
+                        path = filesPath[i].Substring(filesPath[i].IndexOf("Addressable Asset", StringComparison.Ordinal));
                         info = path;
                         var index1 = path.IndexOf("/", StringComparison.Ordinal);
                         var index2 = path.IndexOf(".", StringComparison.Ordinal) - 1;
                         path = path.Substring(index1 + 1, index2 - index1);
-                        path = @"Assets\AssetBundleRes\" + path;
-                        uiDatas.Add(goBase.ResID, new ABData()
+                        path = @"Assets\Addressable Asset\" + path;
+                        资源Datas.Add(goBase.ResID, new ABData()
                         {
                             ID = goBase.ResID,
                             Path = path,
@@ -151,21 +151,21 @@ namespace Framework.Editor
                 }
             }
 
-            if (uiDatas.Count != 0)
+            if (资源Datas.Count != 0)
             {
-                abInfo.ABDatas = new List<ABData>(uiDatas.Values);
+                abInfo.ABDatas = new List<ABData>(资源Datas.Values);
                 abInfo.ABDatas.Sort((x, y) => x.ID.CompareTo(y.ID));
                 EditorUtility.SetDirty(abInfo);
                 AssetDatabase.SaveAssets();
             }
 
             EditorUtility.ClearProgressBar();
-            LogTool.Log($"共产生 {uiDatas.Count} 个GO", LogEnum.Editor);
+            LogTool.Log($"共产生 {资源Datas.Count} 个GO", LogEnum.Editor);
         }
 
         public static void CleanResGOConfig()
         {
-            var genPath = Application.dataPath + "/AssetBundleRes/";
+            var genPath = Application.dataPath + "/Addressable Asset/";
             var filesPath = Directory.GetFiles(genPath, "*.prefab", SearchOption.AllDirectories);
             var info = "";
             var index = 0;
@@ -174,7 +174,7 @@ namespace Framework.Editor
                 filesPath[i] = filesPath[i].Substring(filesPath[i].IndexOf("Assets", StringComparison.Ordinal));
                 var prefab = AssetDatabase.LoadAssetAtPath(filesPath[i], typeof(GameObject)) as GameObject;
                 var progress = (float) i / filesPath.Length;
-                EditorUtility.DisplayProgressBar("UI配置清除进度...", info, progress);
+                EditorUtility.DisplayProgressBar("资源配置清除进度...", info, progress);
                 if (prefab != null)
                 {
                     var goBase = prefab.GetComponent<ObjectBase>();
