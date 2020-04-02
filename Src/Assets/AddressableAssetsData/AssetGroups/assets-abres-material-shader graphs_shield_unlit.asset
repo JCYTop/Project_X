@@ -16,8 +16,18 @@ MonoBehaviour:
   m_Data:
     m_SerializedData: []
   m_GUID: a0db82aab4921cd4ca405b1e94b7bea0
-  m_SerializeEntries: []
+  m_SerializeEntries:
+  - m_GUID: 2b7c5ff149eb5844b803ce816385a901
+    m_Address: Assets/Addressable Asset/Material/Shader Graphs_Shield_Unlit.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_mainAssetType: UnityEngine.Material, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+    m_MainAsset: {fileID: 2100000, guid: 2b7c5ff149eb5844b803ce816385a901, type: 2}
+    m_TargetAsset: {fileID: 2100000, guid: 2b7c5ff149eb5844b803ce816385a901, type: 2}
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: c2875df4b9f367a498e6ae531fcb3741, type: 2}
   m_SchemaSet:
-    m_Schemas: []
+    m_Schemas:
+    - {fileID: 11400000, guid: 9e5d12ec5ef74a94082709d71cdffb12, type: 2}
+    - {fileID: 11400000, guid: aab9346cfe71297428480a09cba2f4d5, type: 2}

@@ -16,8 +16,18 @@ MonoBehaviour:
   m_Data:
     m_SerializedData: []
   m_GUID: 496c30c9ad021264780fbc9931117950
-  m_SerializeEntries: []
+  m_SerializeEntries:
+  - m_GUID: 93ca99ae1f458ba41818666805210670
+    m_Address: Assets/Addressable Asset/Material/Shader Graphs_Blackhole.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_mainAssetType: UnityEngine.Material, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: c2875df4b9f367a498e6ae531fcb3741, type: 2}
   m_SchemaSet:
-    m_Schemas: []
+    m_Schemas:
+    - {fileID: 11400000, guid: e509e88b876aabb41880dd470225491e, type: 2}
+    - {fileID: 11400000, guid: 4b2c53bf0b8ed2745967d23b0141f21a, type: 2}

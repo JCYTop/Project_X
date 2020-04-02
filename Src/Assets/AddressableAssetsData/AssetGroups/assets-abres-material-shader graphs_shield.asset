@@ -16,8 +16,17 @@ MonoBehaviour:
   m_Data:
     m_SerializedData: []
   m_GUID: cf61285cc4b149f438a23cbfad5e978f
-  m_SerializeEntries: []
+  m_SerializeEntries:
+  - m_GUID: 2e75ad68bd83a2a448aff4a4b6e7636e
+    m_Address: Assets/Addressable Asset/Material/Shader Graphs_Shield.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_mainAssetType: 
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: c2875df4b9f367a498e6ae531fcb3741, type: 2}
   m_SchemaSet:
-    m_Schemas: []
+    m_Schemas:
+    - {fileID: 11400000, guid: 7c6aa090644bcfe4f87a2cad8d5225c0, type: 2}
+    - {fileID: 11400000, guid: f6145248f94dbdb4688df12fa5f112c2, type: 2}

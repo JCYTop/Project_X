@@ -16,8 +16,18 @@ MonoBehaviour:
   m_Data:
     m_SerializedData: []
   m_GUID: 37540ec322bf8774d868948957f18dd8
-  m_SerializeEntries: []
+  m_SerializeEntries:
+  - m_GUID: 305a0add82c865b479fd039e15eab2ef
+    m_Address: Assets/Addressable Asset/Material/Shader Graphs_VertDisplacement_min.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_mainAssetType: UnityEngine.Material, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: c2875df4b9f367a498e6ae531fcb3741, type: 2}
   m_SchemaSet:
-    m_Schemas: []
+    m_Schemas:
+    - {fileID: 11400000, guid: 036f502b26bfefe44b3ea3b7a694c272, type: 2}
+    - {fileID: 11400000, guid: 13e659b6dbaac834da89b92d5ab237fa, type: 2}

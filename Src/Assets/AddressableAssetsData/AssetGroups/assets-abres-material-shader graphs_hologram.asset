@@ -16,8 +16,18 @@ MonoBehaviour:
   m_Data:
     m_SerializedData: []
   m_GUID: ce5917ca2249ab94ebd8ce8ca52f10c2
-  m_SerializeEntries: []
+  m_SerializeEntries:
+  - m_GUID: fdf60d485180a1e4f8de0c6f94e5be40
+    m_Address: Assets/Addressable Asset/Material/Shader Graphs_Hologram.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_mainAssetType: UnityEngine.Material, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: c2875df4b9f367a498e6ae531fcb3741, type: 2}
   m_SchemaSet:
-    m_Schemas: []
+    m_Schemas:
+    - {fileID: 11400000, guid: 2c6c5cf2e7d03a3429ebf006fb654cd0, type: 2}
+    - {fileID: 11400000, guid: b642f163ab5998e44b5f70884ece1c37, type: 2}

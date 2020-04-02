@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Scenes
+  m_EditorClassIdentifier: 
+  m_GroupName: Scenes
+  m_Data:
+    m_SerializedData: []
+  m_GUID: e8f53652f77ac744bbabf6e0bceffb5c
+  m_SerializeEntries:
+  - m_GUID: 35af6fff1f14dd34ea08959fddfa8f38
+    m_Address: Assets/Addressable Asset/Scenes/GameScenes/TestScene/Test_GOAP_AI_Scene.unity
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Scene
+    m_mainAssetType: UnityEditor.SceneAsset, UnityEditor, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 4bb00f0201b5b8140908c8db3e675f8d
+    m_Address: Assets/Addressable Asset/Scenes/GameScenes/Start_Scene.unity
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Scene
+    m_mainAssetType: UnityEditor.SceneAsset, UnityEditor, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 7d62afb4ae7ab764e909c448bf589a81
+    m_Address: Assets/Addressable Asset/Scenes/GameScenes/Awake_Scene.unity
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Scene
+    m_mainAssetType: UnityEditor.SceneAsset, UnityEditor, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+    m_MainAsset: {fileID: 102900000, guid: 7d62afb4ae7ab764e909c448bf589a81, type: 3}
+    m_TargetAsset: {fileID: 102900000, guid: 7d62afb4ae7ab764e909c448bf589a81, type: 3}
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: c2875df4b9f367a498e6ae531fcb3741, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 11fdd3a7aaae73348a78873687934b90, type: 2}
+    - {fileID: 11400000, guid: 25b584e275877024ab79844f8f5b6b0c, type: 2}

@@ -16,8 +16,30 @@ MonoBehaviour:
   m_Data:
     m_SerializedData: []
   m_GUID: 6a5c59dc4375fed43ba7cfd75be3852e
-  m_SerializeEntries: []
+  m_SerializeEntries:
+  - m_GUID: 4562ffae45c5837409234ff0b2666ea9
+    m_Address: Assets/Addressable Asset/Prefabs/Util/LangSetting.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_mainAssetType: UnityEngine.GameObject, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+    m_MainAsset: {fileID: 652732097153272055, guid: 4562ffae45c5837409234ff0b2666ea9,
+      type: 3}
+    m_TargetAsset: {fileID: 652732097153272055, guid: 4562ffae45c5837409234ff0b2666ea9,
+      type: 3}
+  - m_GUID: d6988a41ed40667478cf3063febc81e8
+    m_Address: Assets/Addressable Asset/Prefabs/Util/ExcelDataMgr.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_mainAssetType: UnityEngine.GameObject, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+    m_MainAsset: {fileID: 652732097153272055, guid: d6988a41ed40667478cf3063febc81e8,
+      type: 3}
+    m_TargetAsset: {fileID: 652732097153272055, guid: d6988a41ed40667478cf3063febc81e8,
+      type: 3}
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: c2875df4b9f367a498e6ae531fcb3741, type: 2}
   m_SchemaSet:
-    m_Schemas: []
+    m_Schemas:
+    - {fileID: 11400000, guid: 229a376daec2ed54b9304ecac96e8cb7, type: 2}
+    - {fileID: 11400000, guid: 423a18fa74e919140ae3e8e3531bf48d, type: 2}

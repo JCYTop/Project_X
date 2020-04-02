@@ -5,15 +5,15 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
-    path: Assets/Addressable Asset/Scenes/GameScenes/TestScene/Test_GOAP_AI_Scene.unity
-    guid: 35af6fff1f14dd34ea08959fddfa8f38
-  - enabled: 1
+  - enabled: 0
     path: Assets/Addressable Asset/Scenes/GameScenes/Awake_Scene.unity
     guid: 7d62afb4ae7ab764e909c448bf589a81
-  - enabled: 1
+  - enabled: 0
     path: Assets/Addressable Asset/Scenes/GameScenes/Start_Scene.unity
     guid: 4bb00f0201b5b8140908c8db3e675f8d
+  - enabled: 0
+    path: Assets/Addressable Asset/Scenes/GameScenes/TestScene/Test_GOAP_AI_Scene.unity
+    guid: 35af6fff1f14dd34ea08959fddfa8f38
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: fc1ab4b0babcb4846a41d825b29fd39f,
       type: 2}
