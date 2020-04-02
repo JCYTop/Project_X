@@ -23,11 +23,13 @@ MonoBehaviour:
   m_overridePlayerVersion: 
   m_GroupAssets:
   - {fileID: 11400000, guid: 11d288f87d4a8db429db4724a2655977, type: 2}
+  - {fileID: 11400000, guid: 144f376a9fdadf043ad2f0e3c81f4fd5, type: 2}
   - {fileID: 11400000, guid: 4c8c7318ebfa3914eba93429c6f5e25d, type: 2}
+  - {fileID: 11400000, guid: 2438e36daee8f35449b4f5269729b7f6, type: 2}
   m_BuildSettings:
     m_CompileScriptsInVirtualMode: 0
     m_CleanupStreamingAssetsAfterBuilds: 1
-    m_LogResourceManagerExceptions: 1
+    m_LogResourceManagerExceptions: 0
     m_BundleBuildPath: Temp/com.unity.addressables/AssetBundles
   m_ProfileSettings:
     m_Profiles:
@@ -47,14 +49,14 @@ MonoBehaviour:
         m_Value: http://localhost/[BuildTarget]
     - m_InheritedParent: 
       m_Id: 86eff200db0491945961d58a85c0b48e
-      m_ProfileName: Develop
+      m_ProfileName: Develop_Win
       m_Values:
       - m_Id: 27d5b7f7d2e3c8e47ada1e099a05766b
         m_Value: '[UnityEditor.EditorUserBuildSettings.activeBuildTarget]'
       - m_Id: 5a797b3574e015e4199bde205a68667c
-        m_Value: '[UnityEngine.AddressableAssets.Addressables.BuildPath]/[BuildTarget]'
+        m_Value: '[UnityEditor.EditorUserBuildSettings.activeBuildTarget]'
       - m_Id: c1c1515653330e54f9eab50b2cab3b42
-        m_Value: '{UnityEngine.AddressableAssets.Addressables.RuntimePath}/[BuildTarget]'
+        m_Value: '[UnityEditor.EditorUserBuildSettings.activeBuildTarget]'
       - m_Id: 2751c8847dfc7414e96131ecbc244cef
         m_Value: ServerData/[BuildTarget]
       - m_Id: 22750f9914cc0bd408182ec3fe54e0c5
@@ -80,6 +82,8 @@ MonoBehaviour:
     m_LabelNames:
     - default
     - Scene
+    - Font
+    - Utils
   m_SchemaTemplates: []
   m_GroupTemplateObjects:
   - {fileID: 11400000, guid: 7b2dfbfabae003a4780ee23aaeec3bd5, type: 2}
@@ -93,7 +97,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 4251b51e37f870f4b9fddb6bcdccb4e4, type: 2}
   - {fileID: 11400000, guid: 178d9e52c9201bc4eba7d33ae57195e1, type: 2}
   - {fileID: 11400000, guid: 7dbbc6d29013bc544ba8fb7ac4d5ddf3, type: 2}
-  m_ActiveProfileId: 7ce20314bb27ff04ea1e99461e27160f
+  m_ActiveProfileId: 86eff200db0491945961d58a85c0b48e
   m_HostingServicesManager:
     m_HostingServiceInfos: []
     m_Settings: {fileID: 11400000}

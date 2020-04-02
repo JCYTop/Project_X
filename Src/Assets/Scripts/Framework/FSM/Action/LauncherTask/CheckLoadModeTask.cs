@@ -8,17 +8,16 @@
 // -  独立游戏开发
 //======================================================
 
-
 using System.Collections;
 using HutongGames.PlayMaker;
 using UnityEngine;
 
-[ActionCategory("GameLanucherTask")]
+[ActionCategory("GameLanucherTask.CheckLoadModeTask")]
 public class CheckLoadModeTask : GameLanucherTask
 {
     protected override IEnumerator Task()
     {
-        LogTool.Log(string.Format(TaskName.Value), LogEnum.TaskLog);
+        LogTool.Log($"{TaskName.Value}", LogEnum.TaskLog);
         yield return new WaitForFixedUpdate();
         IsFinish = true;
     }

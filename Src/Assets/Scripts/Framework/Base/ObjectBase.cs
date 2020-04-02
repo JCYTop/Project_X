@@ -1,13 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using Framework.Assets;
 using Framework.EventDispatcher;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
 namespace Framework.Base
 {
-    [RequireComponent(typeof(AssetPoolItem))]
     public abstract class ObjectBase : MonoEventEmitter
     {
         #region 字段

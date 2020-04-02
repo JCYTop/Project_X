@@ -9,37 +9,32 @@
 //======================================================
 
 using System.Collections;
-using System.Collections.Generic;
-using Framework.Assets;
 using HutongGames.PlayMaker;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
 
-[ActionCategory("GameLanucherTask")]
+[ActionCategory("GameLanucherTask.LoadBaseTask")]
 public class LoadBaseTask : GameLanucherTask
 {
-    private List<string> resources = new List<string>();
+    private AssetLabelReference label = new AssetLabelReference();
+    public string LabelName;
 
     protected override void InitTask()
     {
-        resources.Add("ExcelDataMgr");
-        resources.Add("UIRoot");
+        label.labelString = LabelName;
     }
 
     protected override IEnumerator Task()
     {
-        LogTool.Log(string.Format(TaskName.Value), LogEnum.TaskLog);
-        for (int i = 0; i < resources.Count; i++)
+        LogTool.Log($"{TaskName.Value}", LogEnum.TaskLog);
+        yield return new WaitForFixedUpdate();
+        AddressableMgr.LoadAssetsAsync<GameObject>(label, (go) => { EntityUtil.InstantiateGo(go, true); }, (completed) =>
         {
-            AssetsManager.Instance().GetPrefabAsync(resources[i], (prefab) =>
+            completed.Completed += handle =>
             {
-                if (prefab != null)
-                {
-                    EntityUtil.InstantiateGo(prefab, true);
-                }
-            });
-            yield return new WaitForFixedUpdate();
-        }
-
-        IsFinish = true;
+                LogTool.Log($"本次资源加载任务结束", LogEnum.TaskLog);
+                IsFinish = true;
+            };
+        });
     }
 }

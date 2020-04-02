@@ -15,7 +15,7 @@
 
 using HutongGames.PlayMaker;
 
-[ActionCategory("GlobalState")]
+[ActionCategory("GlobalState.AwakeState")]
 public class AwakeState : GlobalState
 {
     public FsmEvent FsmNextEvent;

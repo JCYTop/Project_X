@@ -13,12 +13,13 @@
  ----------------------------------
 */
 
-using Framework.Assets;
+using System;
 using UnityEditor;
 using UnityEngine;
 
 namespace Framework.Editor
 {
+    [Obsolete]
     public class BuildWindow : EditorMenu<BuildWindow>
     {
         #region 字段
@@ -62,7 +63,7 @@ namespace Framework.Editor
             EditorWindow = GetWindow<BuildWindow>();
             EditorWindow.position = new Rect(250, 300, 400, 600);
             EditorWindow.Show();
-            isReadAB = !AssetBundleManager.SimulateAssetBundleInEditor;
+//            isReadAB = !AssetBundleManager.SimulateAssetBundleInEditor;
         }
 
         public override void OnEnable()
@@ -152,11 +153,11 @@ namespace Framework.Editor
 
             //=========================== 版本号 ================================
             appVer = EditorGUILayout.TextField("App Version：", appVer);
-            if (!appVer.Equals(VersionEditorManager.Instance().CurrVersion))
-            {
-                VersionEditorManager.Instance().CurrVersion = appVer;
-                PlayerSettings.bundleVersion = appVer;
-            }
+//            if (!appVer.Equals(VersionEditorManager.Instance().CurrVersion))
+//            {
+//                VersionEditorManager.Instance().CurrVersion = appVer;
+//                PlayerSettings.bundleVersion = appVer;
+//            }
 
             GUILayout.Space(10);
 
@@ -170,7 +171,7 @@ namespace Framework.Editor
             if (Packager.isReadAB != isReadAB)
             {
                 Packager.isReadAB = isReadAB;
-                AssetBundleManager.SimulateAssetBundleInEditor = !Packager.isReadAB;
+//                AssetBundleManager.SimulateAssetBundleInEditor = !Packager.isReadAB;
             }
 
             #endregion
@@ -244,9 +245,9 @@ namespace Framework.Editor
             if (GUILayout.Button("生成版本更新包 ", GUILayout.Height(30)))
             {
                 Packager.CopyFullABRes();
-                var patch = PatchUtil.Instance();
-                patch.Init();
-                patch.BuildPatch();
+//                var patch = PatchUtil.Instance();
+//                patch.Init();
+//                patch.BuildPatch();
             }
 
             GUILayout.Space(10);

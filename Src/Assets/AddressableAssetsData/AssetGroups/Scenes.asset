@@ -18,7 +18,7 @@ MonoBehaviour:
   m_GUID: e8f53652f77ac744bbabf6e0bceffb5c
   m_SerializeEntries:
   - m_GUID: 35af6fff1f14dd34ea08959fddfa8f38
-    m_Address: Assets/Addressable Asset/Scenes/GameScenes/TestScene/Test_GOAP_AI_Scene.unity
+    m_Address: Test_GOAP_AI_Scene
     m_ReadOnly: 0
     m_SerializedLabels:
     - Scene
@@ -27,7 +27,7 @@ MonoBehaviour:
     m_MainAsset: {fileID: 102900000, guid: 35af6fff1f14dd34ea08959fddfa8f38, type: 3}
     m_TargetAsset: {fileID: 102900000, guid: 35af6fff1f14dd34ea08959fddfa8f38, type: 3}
   - m_GUID: 4bb00f0201b5b8140908c8db3e675f8d
-    m_Address: Assets/Addressable Asset/Scenes/GameScenes/Start_Scene.unity
+    m_Address: Start_Scene
     m_ReadOnly: 0
     m_SerializedLabels:
     - Scene
@@ -36,7 +36,7 @@ MonoBehaviour:
     m_MainAsset: {fileID: 102900000, guid: 4bb00f0201b5b8140908c8db3e675f8d, type: 3}
     m_TargetAsset: {fileID: 102900000, guid: 4bb00f0201b5b8140908c8db3e675f8d, type: 3}
   - m_GUID: 7d62afb4ae7ab764e909c448bf589a81
-    m_Address: Assets/Addressable Asset/Scenes/GameScenes/Awake_Scene.unity
+    m_Address: Awake_Scene
     m_ReadOnly: 0
     m_SerializedLabels:
     - Scene

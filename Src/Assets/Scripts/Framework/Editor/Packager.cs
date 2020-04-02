@@ -16,7 +16,6 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using Framework.Assets;
 using UnityEditor;
 using UnityEngine;
 
@@ -83,32 +82,32 @@ namespace Framework.Editor
         /// </summary>
         public static void WritePreloadFile()
         {
-            var sourcePath = Application.dataPath + "/" + GlobalDefine.AssetsConfig.GameResourceRootDir;
-            var fileSystemEntries = new List<string>();
-            fileSystemEntries.AddRange(Directory.GetDirectories(sourcePath, "*", SearchOption.AllDirectories).Select(d => d + "\\"));
-            fileSystemEntries.AddRange(Directory.GetFiles(sourcePath, "*", SearchOption.AllDirectories));
-            var fileList = new PreloadFileModel();
-            for (int i = 0; i < fileSystemEntries.Count; i++)
-            {
-                var filePath = fileSystemEntries[i];
-                var ext = Path.GetExtension(filePath).ToLower();
-                var assetPath = filePath.Replace(Application.dataPath, "Assets");
-                var import = AssetImporter.GetAtPath(assetPath);
-                if (import != null)
-                {
-                    assetPath = assetPath.Replace(ext, "").Replace("\\", "/");
-                    //Common文件夹标记提前加载
-                    if (ext.Equals(".prefab") && assetPath.Contains("Common"))
-                    {
-                        fileList.Add(assetPath);
-                    }
-
-                    UpdateProgress(i, fileSystemEntries.Count, assetPath);
-                }
-            }
-
-            FileUtils.JsonWrite<PreloadFileModel>(fileList, Application.streamingAssetsPath + "/Config/PreloadAB.json");
-            EditorUtility.ClearProgressBar();
+//            var sourcePath = Application.dataPath + "/" + GlobalDefine.AssetsConfig.GameResourceRootDir;
+//            var fileSystemEntries = new List<string>();
+//            fileSystemEntries.AddRange(Directory.GetDirectories(sourcePath, "*", SearchOption.AllDirectories).Select(d => d + "\\"));
+//            fileSystemEntries.AddRange(Directory.GetFiles(sourcePath, "*", SearchOption.AllDirectories));
+//            var fileList = new PreloadFileModel();
+//            for (int i = 0; i < fileSystemEntries.Count; i++)
+//            {
+//                var filePath = fileSystemEntries[i];
+//                var ext = Path.GetExtension(filePath).ToLower();
+//                var assetPath = filePath.Replace(Application.dataPath, "Assets");
+//                var import = AssetImporter.GetAtPath(assetPath);
+//                if (import != null)
+//                {
+//                    assetPath = assetPath.Replace(ext, "").Replace("\\", "/");
+//                    //Common文件夹标记提前加载
+//                    if (ext.Equals(".prefab") && assetPath.Contains("Common"))
+//                    {
+//                        fileList.Add(assetPath);
+//                    }
+//
+//                    UpdateProgress(i, fileSystemEntries.Count, assetPath);
+//                }
+//            }
+//
+//            FileUtils.JsonWrite<PreloadFileModel>(fileList, Application.streamingAssetsPath + "/Config/PreloadAB.json");
+//            EditorUtility.ClearProgressBar();
         }
 
         /// <summary>

@@ -14,7 +14,7 @@ using System.Runtime.InteropServices;
 using HutongGames.PlayMaker;
 using UnityEngine;
 
-[ActionCategory("GameLanucherTask")]
+[ActionCategory("GameLanucherTask.CheckMemoryTask")]
 public class CheckMemoryTask : GameLanucherTask
 {
 #if UNITY_EDITOR || UNITY_STANDALONE
@@ -25,7 +25,7 @@ public class CheckMemoryTask : GameLanucherTask
 
     protected override IEnumerator Task()
     {
-        LogTool.Log(string.Format(TaskName.Value), LogEnum.TaskLog);
+        LogTool.Log($"{TaskName.Value}", LogEnum.TaskLog);
         yield return new WaitForFixedUpdate();
         var memory = 0L;
 #if UNITY_EDITOR|| UNITY_STANDALONE
@@ -34,17 +34,17 @@ public class CheckMemoryTask : GameLanucherTask
             var MemInfo = new MemoryInfo();
             GlobalMemoryStatus(ref MemInfo);
             memory = Convert.ToInt64(MemInfo.AvailPhys.ToString()) / 1024 / 1024;
-            LogTool.Log(string.Format("FreeMemory: {0} MB", Convert.ToString(memory)), LogEnum.TaskLog);
+            LogTool.Log($"FreeMemory: {Convert.ToString(memory)} MB", LogEnum.TaskLog);
             if (memory < memoryDefault)
             {
-                LogTool.LogError(string.Format("内存不足！"), LogEnum.TaskLog);
+                LogTool.LogError($"内存不足！", LogEnum.TaskLog);
                 //弹出内存警告
             }
             else
             {
-                LogTool.Log(string.Format("可以使用 ^_^"), LogEnum.TaskLog);
+                LogTool.Log($"可以使用 ^_^", LogEnum.TaskLog);
                 //自动取消内存警告
-                LogTool.Log(Environment.WorkingSet.ToString(), LogEnum.TaskLog);
+                LogTool.Log($"{Environment.WorkingSet.ToString()}", LogEnum.TaskLog);
             }
         }
         catch (Exception e)

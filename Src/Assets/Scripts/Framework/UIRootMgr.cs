@@ -16,7 +16,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Framework.Assets;
 using Framework.Base;
 using Framework.EventDispatcher;
 using Sirenix.OdinInspector;
@@ -305,7 +304,8 @@ public sealed class UIRootMgr : MonoBehaviour
             }
         }
 
-        AssetsManager.Instance().GetPrefabAsync(name, callback);
+//TODO 替换Address
+//        AssetsManager.Instance().GetPrefabAsync(name, callback);
     }
 
     #endregion

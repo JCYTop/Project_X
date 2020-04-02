@@ -24,8 +24,8 @@ MonoBehaviour:
       colorIndex: 4
       position:
         serializedVersion: 2
-        x: 58
-        y: 102
+        x: 54
+        y: 250
         width: 100
         height: 32
       isBreakpoint: 0
@@ -36,7 +36,7 @@ MonoBehaviour:
           name: FINISHED
           isSystemEvent: 1
           isGlobal: 0
-        toState: SystemCheckTask
+        toState: AwakeState
         linkStyle: 0
         linkConstraint: 0
         colorIndex: 0
@@ -93,22 +93,22 @@ MonoBehaviour:
         paramByteDataSize: 000000000000000001000000
     - name: AwakeState
       description: "\u6E38\u620F\u5524\u9192"
-      colorIndex: 1
+      colorIndex: 3
       position:
         serializedVersion: 2
-        x: 266.53906
-        y: 600.89844
-        width: 125
+        x: 226.53906
+        y: 251.89844
+        width: 102
         height: 32
       isBreakpoint: 0
       isSequence: 0
       hideUnused: 0
       transitions:
       - fsmEvent:
-          name: FsmNextEvent
-          isSystemEvent: 0
+          name: FINISHED
+          isSystemEvent: 1
           isGlobal: 0
-        toState: Test_GOAP_AI_State
+        toState: SystemCheckTask
         linkStyle: 0
         linkConstraint: 0
         colorIndex: 0
@@ -120,7 +120,7 @@ MonoBehaviour:
         actionEnabled: 01
         actionIsOpen: 01
         actionStartIndex: 00000000
-        actionHashCodes: 55b32302
+        actionHashCodes: 88611604
         unityObjectParams: []
         fsmGameObjectParams: []
         fsmOwnerDefaultParams: []
@@ -144,25 +144,24 @@ MonoBehaviour:
         fsmRectParams: []
         fsmQuaternionParams: []
         stringParams:
-        - FsmNextEvent
-        byteData: 01
+        - FINISHED
+        byteData: 
         arrayParamSizes: 
         arrayParamTypes: []
         customTypeSizes: 
         customTypeNames: []
-        paramDataType: 1700000001000000
+        paramDataType: 17000000
         paramName:
         - FsmNextEvent
-        - EveryFrame
-        paramDataPos: 0000000000000000
-        paramByteDataSize: 0000000001000000
+        paramDataPos: 00000000
+        paramByteDataSize: 00000000
     - name: Start_Scene
       description: 
-      colorIndex: 2
+      colorIndex: 3
       position:
         serializedVersion: 2
-        x: 684.6172
-        y: 273.8672
+        x: 669.6172
+        y: 190.86719
         width: 102
         height: 16
       isBreakpoint: 0
@@ -171,13 +170,13 @@ MonoBehaviour:
       transitions: []
       actionData:
         actionNames:
-        - StartState
+        - LoadSceneState
         customNames:
         - 
         actionEnabled: 01
         actionIsOpen: 01
         actionStartIndex: 00000000
-        actionHashCodes: 1c346c01
+        actionHashCodes: 78c53001
         unityObjectParams: []
         fsmGameObjectParams: []
         fsmOwnerDefaultParams: []
@@ -200,33 +199,34 @@ MonoBehaviour:
         fsmColorParams: []
         fsmRectParams: []
         fsmQuaternionParams: []
-        stringParams: []
-        byteData: 00
+        stringParams:
+        - Start_Scene
+        byteData: 
         arrayParamSizes: 
         arrayParamTypes: []
         customTypeSizes: 
         customTypeNames: []
-        paramDataType: 01000000
+        paramDataType: 03000000
         paramName:
-        - EveryFrame
+        - SceneName
         paramDataPos: 00000000
-        paramByteDataSize: 01000000
+        paramByteDataSize: 00000000
     - name: SystemCheckTask
       description: 
       colorIndex: 1
       position:
         serializedVersion: 2
-        x: 277
-        y: 119
-        width: 150
+        x: 428
+        y: 101
+        width: 141
         height: 32
       isBreakpoint: 0
       isSequence: 0
       hideUnused: 0
       transitions:
       - fsmEvent:
-          name: FinishTask
-          isSystemEvent: 0
+          name: FINISHED
+          isSystemEvent: 1
           isGlobal: 0
         toState: CheckMemoryTask
         linkStyle: 0
@@ -270,7 +270,7 @@ MonoBehaviour:
         fsmRectParams: []
         fsmQuaternionParams: []
         stringParams:
-        - FinishTask
+        - FINISHED
         byteData: 
         arrayParamSizes: 
         arrayParamTypes: []
@@ -287,19 +287,19 @@ MonoBehaviour:
       colorIndex: 1
       position:
         serializedVersion: 2
-        x: 272.9375
-        y: 170.85938
-        width: 154
+        x: 423.9375
+        y: 152.85938
+        width: 144
         height: 32
       isBreakpoint: 0
       isSequence: 0
       hideUnused: 0
       transitions:
       - fsmEvent:
-          name: FinishTask
-          isSystemEvent: 0
+          name: FINISHED
+          isSystemEvent: 1
           isGlobal: 0
-        toState: AssetsTask
+        toState: LoadBaseTask
         linkStyle: 0
         linkConstraint: 0
         colorIndex: 0
@@ -341,78 +341,7 @@ MonoBehaviour:
         fsmRectParams: []
         fsmQuaternionParams: []
         stringParams:
-        - FinishTask
-        byteData: 
-        arrayParamSizes: 
-        arrayParamTypes: []
-        customTypeSizes: 
-        customTypeNames: []
-        paramDataType: 1200000017000000
-        paramName:
-        - TaskName
-        - FinishTask
-        paramDataPos: 0000000000000000
-        paramByteDataSize: 0000000000000000
-    - name: AssetsTask
-      description: 
-      colorIndex: 1
-      position:
-        serializedVersion: 2
-        x: 297.15625
-        y: 216.96094
-        width: 104
-        height: 32
-      isBreakpoint: 0
-      isSequence: 0
-      hideUnused: 0
-      transitions:
-      - fsmEvent:
-          name: FinishTask
-          isSystemEvent: 0
-          isGlobal: 0
-        toState: LoadBaseTask
-        linkStyle: 0
-        linkConstraint: 0
-        colorIndex: 0
-      actionData:
-        actionNames:
-        - AssetsTask
-        customNames:
-        - 
-        actionEnabled: 01
-        actionIsOpen: 01
-        actionStartIndex: 00000000
-        actionHashCodes: d5ea8900
-        unityObjectParams: []
-        fsmGameObjectParams: []
-        fsmOwnerDefaultParams: []
-        animationCurveParams: []
-        functionCallParams: []
-        fsmTemplateControlParams: []
-        fsmEventTargetParams: []
-        fsmPropertyParams: []
-        layoutOptionParams: []
-        fsmStringParams:
-        - useVariable: 0
-          name: 
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: "\u8D44\u6E90\u7BA1\u7406\u542F\u52A8"
-        fsmObjectParams: []
-        fsmVarParams: []
-        fsmArrayParams: []
-        fsmEnumParams: []
-        fsmFloatParams: []
-        fsmIntParams: []
-        fsmBoolParams: []
-        fsmVector2Params: []
-        fsmVector3Params: []
-        fsmColorParams: []
-        fsmRectParams: []
-        fsmQuaternionParams: []
-        stringParams:
-        - FinishTask
+        - FINISHED
         byteData: 
         arrayParamSizes: 
         arrayParamTypes: []
@@ -429,19 +358,19 @@ MonoBehaviour:
       colorIndex: 1
       position:
         serializedVersion: 2
-        x: 285.0547
-        y: 267.53125
-        width: 125
+        x: 439.0547
+        y: 202.53125
+        width: 117
         height: 32
       isBreakpoint: 0
       isSequence: 0
       hideUnused: 0
       transitions:
       - fsmEvent:
-          name: FinishTask
-          isSystemEvent: 0
+          name: FINISHED
+          isSystemEvent: 1
           isGlobal: 0
-        toState: ManagerTask
+        toState: CheckLoadModeTask
         linkStyle: 0
         linkConstraint: 0
         colorIndex: 0
@@ -453,7 +382,7 @@ MonoBehaviour:
         actionEnabled: 01
         actionIsOpen: 01
         actionStartIndex: 00000000
-        actionHashCodes: d5ea8900
+        actionHashCodes: 9c12b903
         unityObjectParams: []
         fsmGameObjectParams: []
         fsmOwnerDefaultParams: []
@@ -483,176 +412,36 @@ MonoBehaviour:
         fsmRectParams: []
         fsmQuaternionParams: []
         stringParams:
-        - FinishTask
+        - Utils
+        - FINISHED
         byteData: 
         arrayParamSizes: 
         arrayParamTypes: []
         customTypeSizes: 
         customTypeNames: []
-        paramDataType: 1200000017000000
+        paramDataType: 030000001200000017000000
         paramName:
+        - LabelName
         - TaskName
         - FinishTask
-        paramDataPos: 0000000000000000
-        paramByteDataSize: 0000000000000000
-    - name: ManagerTask
-      description: 
-      colorIndex: 1
-      position:
-        serializedVersion: 2
-        x: 289.17188
-        y: 315.97656
-        width: 118
-        height: 32
-      isBreakpoint: 0
-      isSequence: 0
-      hideUnused: 0
-      transitions:
-      - fsmEvent:
-          name: FinishTask
-          isSystemEvent: 0
-          isGlobal: 0
-        toState: UtilTask
-        linkStyle: 0
-        linkConstraint: 0
-        colorIndex: 0
-      actionData:
-        actionNames:
-        - ManagerTask
-        customNames:
-        - 
-        actionEnabled: 01
-        actionIsOpen: 01
-        actionStartIndex: 00000000
-        actionHashCodes: d5ea8900
-        unityObjectParams: []
-        fsmGameObjectParams: []
-        fsmOwnerDefaultParams: []
-        animationCurveParams: []
-        functionCallParams: []
-        fsmTemplateControlParams: []
-        fsmEventTargetParams: []
-        fsmPropertyParams: []
-        layoutOptionParams: []
-        fsmStringParams:
-        - useVariable: 0
-          name: 
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: "\u57FA\u7840Manager\u542F\u52A8"
-        fsmObjectParams: []
-        fsmVarParams: []
-        fsmArrayParams: []
-        fsmEnumParams: []
-        fsmFloatParams: []
-        fsmIntParams: []
-        fsmBoolParams: []
-        fsmVector2Params: []
-        fsmVector3Params: []
-        fsmColorParams: []
-        fsmRectParams: []
-        fsmQuaternionParams: []
-        stringParams:
-        - FinishTask
-        byteData: 
-        arrayParamSizes: 
-        arrayParamTypes: []
-        customTypeSizes: 
-        customTypeNames: []
-        paramDataType: 1200000017000000
-        paramName:
-        - TaskName
-        - FinishTask
-        paramDataPos: 0000000000000000
-        paramByteDataSize: 0000000000000000
-    - name: UtilTask
-      description: 
-      colorIndex: 1
-      position:
-        serializedVersion: 2
-        x: 296.39062
-        y: 361.34375
-        width: 100
-        height: 32
-      isBreakpoint: 0
-      isSequence: 0
-      hideUnused: 0
-      transitions:
-      - fsmEvent:
-          name: FinishTask
-          isSystemEvent: 0
-          isGlobal: 0
-        toState: CheckLoadModeTask
-        linkStyle: 0
-        linkConstraint: 0
-        colorIndex: 0
-      actionData:
-        actionNames:
-        - UtilTask
-        customNames:
-        - 
-        actionEnabled: 01
-        actionIsOpen: 01
-        actionStartIndex: 00000000
-        actionHashCodes: d5ea8900
-        unityObjectParams: []
-        fsmGameObjectParams: []
-        fsmOwnerDefaultParams: []
-        animationCurveParams: []
-        functionCallParams: []
-        fsmTemplateControlParams: []
-        fsmEventTargetParams: []
-        fsmPropertyParams: []
-        layoutOptionParams: []
-        fsmStringParams:
-        - useVariable: 0
-          name: 
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: "\u5DE5\u5177\u7C7B\u52A0\u8F7D"
-        fsmObjectParams: []
-        fsmVarParams: []
-        fsmArrayParams: []
-        fsmEnumParams: []
-        fsmFloatParams: []
-        fsmIntParams: []
-        fsmBoolParams: []
-        fsmVector2Params: []
-        fsmVector3Params: []
-        fsmColorParams: []
-        fsmRectParams: []
-        fsmQuaternionParams: []
-        stringParams:
-        - FinishTask
-        byteData: 
-        arrayParamSizes: 
-        arrayParamTypes: []
-        customTypeSizes: 
-        customTypeNames: []
-        paramDataType: 1200000017000000
-        paramName:
-        - TaskName
-        - FinishTask
-        paramDataPos: 0000000000000000
-        paramByteDataSize: 0000000000000000
+        paramDataPos: 000000000000000001000000
+        paramByteDataSize: 000000000000000000000000
     - name: CheckLoadModeTask
       description: 
       colorIndex: 1
       position:
         serializedVersion: 2
-        x: 258.25
-        y: 408.76562
-        width: 168
+        x: 417.25
+        y: 248.76562
+        width: 158
         height: 32
       isBreakpoint: 0
       isSequence: 0
       hideUnused: 0
       transitions:
       - fsmEvent:
-          name: FinishTask
-          isSystemEvent: 0
+          name: FINISHED
+          isSystemEvent: 1
           isGlobal: 0
         toState: SDKTask
         linkStyle: 0
@@ -696,7 +485,7 @@ MonoBehaviour:
         fsmRectParams: []
         fsmQuaternionParams: []
         stringParams:
-        - FinishTask
+        - FINISHED
         byteData: 
         arrayParamSizes: 
         arrayParamTypes: []
@@ -713,8 +502,8 @@ MonoBehaviour:
       colorIndex: 1
       position:
         serializedVersion: 2
-        x: 290.20312
-        y: 458.25
+        x: 449.20312
+        y: 298.25
         width: 100
         height: 32
       isBreakpoint: 0
@@ -722,8 +511,8 @@ MonoBehaviour:
       hideUnused: 0
       transitions:
       - fsmEvent:
-          name: FinishTask
-          isSystemEvent: 0
+          name: FINISHED
+          isSystemEvent: 1
           isGlobal: 0
         toState: UpdateTask
         linkStyle: 0
@@ -767,7 +556,7 @@ MonoBehaviour:
         fsmRectParams: []
         fsmQuaternionParams: []
         stringParams:
-        - FinishTask
+        - FINISHED
         byteData: 
         arrayParamSizes: 
         arrayParamTypes: []
@@ -784,17 +573,17 @@ MonoBehaviour:
       colorIndex: 1
       position:
         serializedVersion: 2
-        x: 285.0547
-        y: 505.67188
-        width: 108
+        x: 447.0547
+        y: 342.67188
+        width: 103
         height: 32
       isBreakpoint: 0
       isSequence: 0
       hideUnused: 0
       transitions:
       - fsmEvent:
-          name: FinishTask
-          isSystemEvent: 0
+          name: FINISHED
+          isSystemEvent: 1
           isGlobal: 0
         toState: PreloadingTask
         linkStyle: 0
@@ -838,7 +627,7 @@ MonoBehaviour:
         fsmRectParams: []
         fsmQuaternionParams: []
         stringParams:
-        - FinishTask
+        - FINISHED
         byteData: 
         arrayParamSizes: 
         arrayParamTypes: []
@@ -855,19 +644,19 @@ MonoBehaviour:
       colorIndex: 1
       position:
         serializedVersion: 2
-        x: 269.57812
-        y: 550
-        width: 132
+        x: 437.57812
+        y: 391
+        width: 122
         height: 32
       isBreakpoint: 0
       isSequence: 0
       hideUnused: 0
       transitions:
       - fsmEvent:
-          name: FinishTask
-          isSystemEvent: 0
+          name: FINISHED
+          isSystemEvent: 1
           isGlobal: 0
-        toState: AwakeState
+        toState: Test_GOAP_AI_State
         linkStyle: 0
         linkConstraint: 0
         colorIndex: 0
@@ -909,7 +698,7 @@ MonoBehaviour:
         fsmRectParams: []
         fsmQuaternionParams: []
         stringParams:
-        - FinishTask
+        - FINISHED
         byteData: 
         arrayParamSizes: 
         arrayParamTypes: []
@@ -923,11 +712,11 @@ MonoBehaviour:
         paramByteDataSize: 0000000000000000
     - name: Test_GOAP_AI_State
       description: 
-      colorIndex: 2
+      colorIndex: 3
       position:
         serializedVersion: 2
-        x: 692
-        y: 397
+        x: 659
+        y: 332
         width: 154
         height: 16
       isBreakpoint: 0
@@ -936,13 +725,13 @@ MonoBehaviour:
       transitions: []
       actionData:
         actionNames:
-        - TestState
+        - LoadSceneState
         customNames:
         - 
         actionEnabled: 01
         actionIsOpen: 01
         actionStartIndex: 00000000
-        actionHashCodes: 1c346c01
+        actionHashCodes: 78c53001
         unityObjectParams: []
         fsmGameObjectParams: []
         fsmOwnerDefaultParams: []
@@ -965,26 +754,21 @@ MonoBehaviour:
         fsmColorParams: []
         fsmRectParams: []
         fsmQuaternionParams: []
-        stringParams: []
-        byteData: 00
+        stringParams:
+        - Test_GOAP_AI_Scene
+        byteData: 
         arrayParamSizes: 
         arrayParamTypes: []
         customTypeSizes: 
         customTypeNames: []
-        paramDataType: 01000000
+        paramDataType: 03000000
         paramName:
-        - EveryFrame
+        - SceneName
         paramDataPos: 00000000
-        paramByteDataSize: 01000000
+        paramByteDataSize: 00000000
     events:
     - name: FINISHED
       isSystemEvent: 1
-      isGlobal: 0
-    - name: FinishTask
-      isSystemEvent: 0
-      isGlobal: 0
-    - name: FsmNextEvent
-      isSystemEvent: 0
       isGlobal: 0
     globalTransitions: []
     variables:

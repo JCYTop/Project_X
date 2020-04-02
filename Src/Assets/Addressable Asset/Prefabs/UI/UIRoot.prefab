@@ -463,8 +463,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Texture: {fileID: 0}
   m_UVRect:
     serializedVersion: 2
@@ -494,7 +492,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5378563272879768533}
-  - component: {fileID: -7958195499504557754}
   - component: {fileID: 7901312140832347402}
   - component: {fileID: 5124980737728070941}
   m_Layer: 5
@@ -524,19 +521,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &-7958195499504557754
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6400667260366954580}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d005f11f1b5f61540aa260bd99ec33a8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  AssetName: 
 --- !u!114 &7901312140832347402
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -577,7 +561,6 @@ MonoBehaviour:
   - {fileID: 1362508389070363806}
   - {fileID: 5728743447849800823}
   recycleTrash: {fileID: 1882909967451438420}
-  DelUIBase: []
   rootUIShow: []
   stackUIShow:
   - {fileID: 0}
