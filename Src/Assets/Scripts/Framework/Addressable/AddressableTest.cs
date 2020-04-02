@@ -10,7 +10,7 @@ namespace Framework.Addressable
 
         private void Start()
         {
-//              archerObject .InstantiateAsync()
+            archerObject.LoadAssetAsync<GameObject>().Completed += handle => { };
         }
     }
 }

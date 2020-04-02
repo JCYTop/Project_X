@@ -45,6 +45,20 @@ MonoBehaviour:
         m_Value: ServerData/[BuildTarget]
       - m_Id: 22750f9914cc0bd408182ec3fe54e0c5
         m_Value: http://localhost/[BuildTarget]
+    - m_InheritedParent: 
+      m_Id: 86eff200db0491945961d58a85c0b48e
+      m_ProfileName: Develop
+      m_Values:
+      - m_Id: 27d5b7f7d2e3c8e47ada1e099a05766b
+        m_Value: '[UnityEditor.EditorUserBuildSettings.activeBuildTarget]'
+      - m_Id: 5a797b3574e015e4199bde205a68667c
+        m_Value: '[UnityEngine.AddressableAssets.Addressables.BuildPath]/[BuildTarget]'
+      - m_Id: c1c1515653330e54f9eab50b2cab3b42
+        m_Value: '{UnityEngine.AddressableAssets.Addressables.RuntimePath}/[BuildTarget]'
+      - m_Id: 2751c8847dfc7414e96131ecbc244cef
+        m_Value: ServerData/[BuildTarget]
+      - m_Id: 22750f9914cc0bd408182ec3fe54e0c5
+        m_Value: http://localhost/[BuildTarget]
     m_ProfileEntryNames:
     - m_Id: 27d5b7f7d2e3c8e47ada1e099a05766b
       m_Name: BuildTarget
@@ -83,5 +97,6 @@ MonoBehaviour:
   m_HostingServicesManager:
     m_HostingServiceInfos: []
     m_Settings: {fileID: 11400000}
-    m_NextInstanceId: 0
-    m_RegisteredServiceTypeRefs: []
+    m_NextInstanceId: 1
+    m_RegisteredServiceTypeRefs:
+    - UnityEditor.AddressableAssets.HostingServices.HttpHostingService, Unity.Addressables.Editor
