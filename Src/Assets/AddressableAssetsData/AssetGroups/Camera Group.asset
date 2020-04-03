@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Camera Group
+  m_EditorClassIdentifier: 
+  m_GroupName: Camera Group
+  m_Data:
+    m_SerializedData: []
+  m_GUID: f5d1f9d448d805d498e11f1ee1a33898
+  m_SerializeEntries:
+  - m_GUID: 69a679404106d03458824969f24a5778
+    m_Address: Main Camera
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Camera
+    m_mainAssetType: UnityEngine.GameObject, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+    m_MainAsset: {fileID: 308418087955758350, guid: 69a679404106d03458824969f24a5778,
+      type: 3}
+    m_TargetAsset: {fileID: 308418087955758350, guid: 69a679404106d03458824969f24a5778,
+      type: 3}
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: c2875df4b9f367a498e6ae531fcb3741, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 01ce2797af821e041aad9cebe5f92b62, type: 2}
+    - {fileID: 11400000, guid: f37ab563124bab6488a66e17ed5afb77, type: 2}

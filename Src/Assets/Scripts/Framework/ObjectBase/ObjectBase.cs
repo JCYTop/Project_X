@@ -1,4 +1,19 @@
-﻿using System;
+﻿/** 
+----------------------------------
+ *Copyright(C) 2019 by IndieGame
+ *All rights reserved.
+ *FileName:     ObjectBase
+ *Author:       @JCY
+ *Version:      0.1.0
+ *AuthorEmail:  jcyemail@qq.com
+ *UnityVersion：Unity2019.3.1f1
+ *CreateTime:   2020/03/14 16:18:12
+ *Description:  IndieGame 
+ *History:
+ ----------------------------------
+*/
+
+using System;
 using System.Collections.Generic;
 using Framework.EventDispatcher;
 using Sirenix.OdinInspector;

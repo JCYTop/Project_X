@@ -2,7 +2,7 @@
 ----------------------------------
  *Copyright(C) 2019 by IndieGame
  *All rights reserved.
- *FileName:     StartState
+ *FileName:     LoadSceneState
  *Author:       @JCY
  *Version:      0.0.1
  *AuthorEmail:  jcyemail@qq.com
@@ -14,27 +14,38 @@
 */
 
 using HutongGames.PlayMaker;
+using UnityEngine.ResourceManagement.AsyncOperations;
 using UnityEngine.SceneManagement;
 
 [ActionCategory("GlobalState.LoadSceneState")]
 public class LoadSceneState : GlobalState
 {
     public string SceneName;
+    [ArrayEditor(VariableType.String)] public FsmArray AddressName;
 
     public override void OnEnter()
     {
         base.OnEnter();
         LogTool.Log($"LoadSceneState", LogEnum.State);
-        AddressableMgr.LoadSceneAsync(SceneName, LoadSceneMode.Single,
-            (conplete) => { conplete.Completed += handle => { LogTool.Log($"场景切换完成", LogEnum.NormalLog); }; });
-
-//        SceneManager.LoadScene(GlobalDefine.StartScene);
-//        AssetsManager.Instance().GetPrefabAsync("Main Camera", (prefab) =>
-//        {
-//            if (prefab != null)
-//            {
-//                EntityUtil.InstantiateGo(prefab, false);
-//            }
-//        });
+        AddressableAsyncAdapter.LoadSceneAsync(SceneName, LoadSceneMode.Single, (conplete) =>
+        {
+            conplete.Completed += handle =>
+            {
+                if (conplete.Status == AsyncOperationStatus.Succeeded)
+                {
+                    LogTool.Log($"场景切换完成 {conplete.Result}");
+                }
+            };
+        });
+        foreach (var value in AddressName.Values)
+        {
+            AddressableAsyncAdapter.InstantiateAsync(value.ToString(), (conplete) =>
+            {
+                if (conplete.Status == AsyncOperationStatus.Succeeded)
+                {
+                    LogTool.Log($"资源加载完成 {conplete.Result}");
+                }
+            });
+        }
     }
 }

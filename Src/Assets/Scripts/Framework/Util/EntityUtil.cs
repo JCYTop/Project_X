@@ -37,7 +37,7 @@ public static class EntityUtil
         return gameObject;
     }
 
-    public static (GameObject, T ) CreateGameobject<T>(string name, Vector3 pos, bool IsDestroy) where T : Component
+    public static (GameObject, T) CreateGameobject<T>(string name, Vector3 pos, bool IsDestroy) where T : Component
     {
         var gameObject = new GameObject(name);
         gameObject.transform.position = pos;

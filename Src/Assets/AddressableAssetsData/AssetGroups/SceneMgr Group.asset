@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
-  m_Name: SceneMgr
+  m_Name: SceneMgr Group
   m_EditorClassIdentifier: 
-  m_GroupName: SceneMgr
+  m_GroupName: SceneMgr Group
   m_Data:
     m_SerializedData: []
   m_GUID: 26690d9416cce4449aa10edc6c23e55f
@@ -26,10 +26,8 @@ MonoBehaviour:
     - Utils
     m_mainAssetType: UnityEngine.GameObject, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-    m_MainAsset: {fileID: 652732097153272055, guid: 4562ffae45c5837409234ff0b2666ea9,
-      type: 3}
-    m_TargetAsset: {fileID: 652732097153272055, guid: 4562ffae45c5837409234ff0b2666ea9,
-      type: 3}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: b0c8649b79698fe42a75e6da1cb122cf
     m_Address: GM
     m_ReadOnly: 0
@@ -39,10 +37,8 @@ MonoBehaviour:
     - Utils
     m_mainAssetType: UnityEngine.GameObject, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-    m_MainAsset: {fileID: 2443185776552936200, guid: b0c8649b79698fe42a75e6da1cb122cf,
-      type: 3}
-    m_TargetAsset: {fileID: 2443185776552936200, guid: b0c8649b79698fe42a75e6da1cb122cf,
-      type: 3}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: d6988a41ed40667478cf3063febc81e8
     m_Address: ExcelDataMgr
     m_ReadOnly: 0
@@ -52,10 +48,8 @@ MonoBehaviour:
     - Utils
     m_mainAssetType: UnityEngine.GameObject, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-    m_MainAsset: {fileID: 652732097153272055, guid: d6988a41ed40667478cf3063febc81e8,
-      type: 3}
-    m_TargetAsset: {fileID: 652732097153272055, guid: d6988a41ed40667478cf3063febc81e8,
-      type: 3}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: e8329c01851c2c640b0d2d4361d9aaf5
     m_Address: GlobalEvent
     m_ReadOnly: 0
@@ -65,10 +59,8 @@ MonoBehaviour:
     - Utils
     m_mainAssetType: UnityEngine.GameObject, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-    m_MainAsset: {fileID: 4452209497140034357, guid: e8329c01851c2c640b0d2d4361d9aaf5,
-      type: 3}
-    m_TargetAsset: {fileID: 4452209497140034357, guid: e8329c01851c2c640b0d2d4361d9aaf5,
-      type: 3}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: c2875df4b9f367a498e6ae531fcb3741, type: 2}
   m_SchemaSet:

@@ -37,7 +37,6 @@ namespace Framework.Editor
 
         public static class ToolsList
         {
-            public const string OpenScence_Start = "Framework/OpenScence/Start";
             public const string FindMissScriptInResource = "Framework/FindMissScriptInResource";
             public const string ShowExcelTools = "Framework/Excel工具";
             public const string FindConfig_ABInfo = "Framework/关于配置文件/配置文件/ABInfo";
@@ -53,8 +52,7 @@ namespace Framework.Editor
 
         public enum ToolsListPriorities
         {
-            OpenScence_Start = 151,
-            FindMissScriptInResource,
+            FindMissScriptInResource = 151,
             ShowExcelTools,
             FindConfig_ABInfo,
             FindConfig_AssetsConfig,
@@ -112,15 +110,6 @@ namespace Framework.Editor
             }
 
             #endregion
-
-            [MenuItem(ToolsList.OpenScence_Start, false, (int) ToolsListPriorities.OpenScence_Start)]
-            private static void OpenScence_Start()
-            {
-                if (EditorSceneManager.SaveCurrentModifiedScenesIfUserWantsTo() == true)
-                {
-                    EditorSceneManager.OpenScene("Assets/Addressable Asset/Scenes/GameScenes/Start.unity");
-                }
-            }
 
             [MenuItem(ToolsList.FindMissScriptInResource, false, (int) ToolsListPriorities.FindMissScriptInResource)]
             public static void FindMissScriptInResource()
@@ -204,6 +193,32 @@ namespace Framework.Editor
                     string lastScene = File.ReadAllText("lastScene");
                     EditorApplication.isPlaying = false;
                     EditorApplication.OpenScene(lastScene);
+                }
+            }
+
+            [MenuItem("Assets/场景列表/Awake_Scene", false, 0)]
+            public static void Open_Awake_Scene()
+            {
+                if (!EditorApplication.isPlaying)
+                {
+                    EditorApplication.OpenScene("Assets/Addressable Asset/Scenes/GameScenes/Awake_Scene.unity");
+                }
+                else
+                {
+                    LogTool.Log($"需要关闭场景");
+                }
+            }
+
+            [MenuItem("Assets/场景列表/Start_Scene", false, 0)]
+            public static void Open_Start_Scene()
+            {
+                if (!EditorApplication.isPlaying)
+                {
+                    EditorApplication.OpenScene("Assets/Addressable Asset/Scenes/GameScenes/Start_Scene.unity");
+                }
+                else
+                {
+                    LogTool.Log($"需要关闭场景");
                 }
             }
 

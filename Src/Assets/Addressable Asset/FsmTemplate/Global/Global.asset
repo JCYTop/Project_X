@@ -24,8 +24,8 @@ MonoBehaviour:
       colorIndex: 4
       position:
         serializedVersion: 2
-        x: 54
-        y: 250
+        x: 57
+        y: 259
         width: 100
         height: 32
       isBreakpoint: 0
@@ -96,8 +96,8 @@ MonoBehaviour:
       colorIndex: 3
       position:
         serializedVersion: 2
-        x: 226.53906
-        y: 251.89844
+        x: 229.53906
+        y: 260.89844
         width: 102
         height: 32
       isBreakpoint: 0
@@ -161,7 +161,7 @@ MonoBehaviour:
       position:
         serializedVersion: 2
         x: 669.6172
-        y: 190.86719
+        y: 225.86719
         width: 102
         height: 16
       isBreakpoint: 0
@@ -176,7 +176,7 @@ MonoBehaviour:
         actionEnabled: 01
         actionIsOpen: 01
         actionStartIndex: 00000000
-        actionHashCodes: 78c53001
+        actionHashCodes: f3efcc03
         unityObjectParams: []
         fsmGameObjectParams: []
         fsmOwnerDefaultParams: []
@@ -189,7 +189,20 @@ MonoBehaviour:
         fsmStringParams: []
         fsmObjectParams: []
         fsmVarParams: []
-        fsmArrayParams: []
+        fsmArrayParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          type: 4
+          objectTypeName: UnityEngine.Object
+          floatValues: []
+          intValues: 
+          boolValues: 
+          stringValues: []
+          vector4Values: []
+          objectReferences: []
         fsmEnumParams: []
         fsmFloatParams: []
         fsmIntParams: []
@@ -206,18 +219,19 @@ MonoBehaviour:
         arrayParamTypes: []
         customTypeSizes: 
         customTypeNames: []
-        paramDataType: 03000000
+        paramDataType: 0300000029000000
         paramName:
         - SceneName
-        paramDataPos: 00000000
-        paramByteDataSize: 00000000
+        - sss
+        paramDataPos: 0000000000000000
+        paramByteDataSize: 0000000000000000
     - name: SystemCheckTask
       description: 
       colorIndex: 1
       position:
         serializedVersion: 2
-        x: 428
-        y: 101
+        x: 426
+        y: 113
         width: 141
         height: 32
       isBreakpoint: 0
@@ -287,8 +301,8 @@ MonoBehaviour:
       colorIndex: 1
       position:
         serializedVersion: 2
-        x: 423.9375
-        y: 152.85938
+        x: 421.9375
+        y: 164.85938
         width: 144
         height: 32
       isBreakpoint: 0
@@ -358,8 +372,8 @@ MonoBehaviour:
       colorIndex: 1
       position:
         serializedVersion: 2
-        x: 439.0547
-        y: 202.53125
+        x: 437.0547
+        y: 214.53125
         width: 117
         height: 32
       isBreakpoint: 0
@@ -431,8 +445,8 @@ MonoBehaviour:
       colorIndex: 1
       position:
         serializedVersion: 2
-        x: 417.25
-        y: 248.76562
+        x: 415.25
+        y: 260.76562
         width: 158
         height: 32
       isBreakpoint: 0
@@ -502,8 +516,8 @@ MonoBehaviour:
       colorIndex: 1
       position:
         serializedVersion: 2
-        x: 449.20312
-        y: 298.25
+        x: 447.20312
+        y: 310.25
         width: 100
         height: 32
       isBreakpoint: 0
@@ -573,8 +587,8 @@ MonoBehaviour:
       colorIndex: 1
       position:
         serializedVersion: 2
-        x: 447.0547
-        y: 342.67188
+        x: 445.0547
+        y: 354.67188
         width: 103
         height: 32
       isBreakpoint: 0
@@ -644,8 +658,8 @@ MonoBehaviour:
       colorIndex: 1
       position:
         serializedVersion: 2
-        x: 437.57812
-        y: 391
+        x: 435.57812
+        y: 403
         width: 122
         height: 32
       isBreakpoint: 0
@@ -656,7 +670,7 @@ MonoBehaviour:
           name: FINISHED
           isSystemEvent: 1
           isGlobal: 0
-        toState: Test_GOAP_AI_State
+        toState: Start_Scene
         linkStyle: 0
         linkConstraint: 0
         colorIndex: 0
@@ -715,8 +729,8 @@ MonoBehaviour:
       colorIndex: 3
       position:
         serializedVersion: 2
-        x: 659
-        y: 332
+        x: 648
+        y: 316
         width: 154
         height: 16
       isBreakpoint: 0
@@ -731,7 +745,7 @@ MonoBehaviour:
         actionEnabled: 01
         actionIsOpen: 01
         actionStartIndex: 00000000
-        actionHashCodes: 78c53001
+        actionHashCodes: f3efcc03
         unityObjectParams: []
         fsmGameObjectParams: []
         fsmOwnerDefaultParams: []
@@ -744,7 +758,21 @@ MonoBehaviour:
         fsmStringParams: []
         fsmObjectParams: []
         fsmVarParams: []
-        fsmArrayParams: []
+        fsmArrayParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          type: 4
+          objectTypeName: UnityEngine.Object
+          floatValues: []
+          intValues: 
+          boolValues: 
+          stringValues:
+          - Main Camera
+          vector4Values: []
+          objectReferences: []
         fsmEnumParams: []
         fsmFloatParams: []
         fsmIntParams: []
@@ -761,11 +789,12 @@ MonoBehaviour:
         arrayParamTypes: []
         customTypeSizes: 
         customTypeNames: []
-        paramDataType: 03000000
+        paramDataType: 0300000029000000
         paramName:
         - SceneName
-        paramDataPos: 00000000
-        paramByteDataSize: 00000000
+        - AddressName
+        paramDataPos: 0000000000000000
+        paramByteDataSize: 0000000000000000
     events:
     - name: FINISHED
       isSystemEvent: 1
@@ -785,11 +814,24 @@ MonoBehaviour:
       objectVariables: []
       materialVariables: []
       textureVariables: []
-      arrayVariables: []
+      arrayVariables:
+      - useVariable: 1
+        name: sss
+        tooltip: 
+        showInInspector: 0
+        networkSync: 0
+        type: 0
+        objectTypeName: UnityEngine.Object
+        floatValues: []
+        intValues: 
+        boolValues: 
+        stringValues: []
+        vector4Values: []
+        objectReferences: []
       enumVariables: []
       categories:
       - 
-      variableCategoryIDs: 
+      variableCategoryIDs: 00000000
     description: 
     docUrl: 
     showStateLabel: 0

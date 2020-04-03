@@ -12,6 +12,7 @@ using System.Collections;
 using HutongGames.PlayMaker;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
+using UnityEngine.ResourceManagement.AsyncOperations;
 
 [ActionCategory("GameLanucherTask.LoadBaseTask")]
 public class LoadBaseTask : GameLanucherTask
@@ -28,13 +29,17 @@ public class LoadBaseTask : GameLanucherTask
     {
         LogTool.Log($"{TaskName.Value}", LogEnum.TaskLog);
         yield return new WaitForFixedUpdate();
-        AddressableMgr.LoadAssetsAsync<GameObject>(label, (go) => { EntityUtil.InstantiateGo(go, true); }, (completed) =>
+        AddressableAsyncAdapter.LoadAssetsAsync<GameObject>(label, (go) =>
         {
-            completed.Completed += handle =>
+            LogTool.Log($"{go.name}");
+            EntityUtil.InstantiateGo(go, true);
+        }, (completed) =>
+        {
+            if (completed.Status == AsyncOperationStatus.Succeeded)
             {
-                LogTool.Log($"本次资源加载任务结束", LogEnum.TaskLog);
+                LogTool.Log($"资源加载完成", LogEnum.TaskLog);
                 IsFinish = true;
-            };
+            }
         });
     }
 }

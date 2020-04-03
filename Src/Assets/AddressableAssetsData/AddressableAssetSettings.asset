@@ -26,6 +26,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 144f376a9fdadf043ad2f0e3c81f4fd5, type: 2}
   - {fileID: 11400000, guid: 4c8c7318ebfa3914eba93429c6f5e25d, type: 2}
   - {fileID: 11400000, guid: 2438e36daee8f35449b4f5269729b7f6, type: 2}
+  - {fileID: 11400000, guid: ae80b6ff7efc9db489a77221edd6ff06, type: 2}
   m_BuildSettings:
     m_CompileScriptsInVirtualMode: 0
     m_CleanupStreamingAssetsAfterBuilds: 1
@@ -47,6 +48,8 @@ MonoBehaviour:
         m_Value: ServerData/[BuildTarget]
       - m_Id: 22750f9914cc0bd408182ec3fe54e0c5
         m_Value: http://localhost/[BuildTarget]
+      - m_Id: 799f815637367de43a52ffa540c58046
+        m_Value: 0.1.0
     - m_InheritedParent: 
       m_Id: 86eff200db0491945961d58a85c0b48e
       m_ProfileName: Develop_Win
@@ -61,6 +64,8 @@ MonoBehaviour:
         m_Value: ServerData/[BuildTarget]
       - m_Id: 22750f9914cc0bd408182ec3fe54e0c5
         m_Value: http://localhost/[BuildTarget]
+      - m_Id: 799f815637367de43a52ffa540c58046
+        m_Value: 0.1.0
     m_ProfileEntryNames:
     - m_Id: 27d5b7f7d2e3c8e47ada1e099a05766b
       m_Name: BuildTarget
@@ -77,6 +82,9 @@ MonoBehaviour:
     - m_Id: 22750f9914cc0bd408182ec3fe54e0c5
       m_Name: RemoteLoadPath
       m_InlineUsage: 0
+    - m_Id: 799f815637367de43a52ffa540c58046
+      m_Name: Version
+      m_InlineUsage: 0
     m_ProfileVersion: 1
   m_LabelTable:
     m_LabelNames:
@@ -84,6 +92,7 @@ MonoBehaviour:
     - Scene
     - Font
     - Utils
+    - Camera
   m_SchemaTemplates: []
   m_GroupTemplateObjects:
   - {fileID: 11400000, guid: 7b2dfbfabae003a4780ee23aaeec3bd5, type: 2}

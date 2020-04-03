@@ -108,7 +108,6 @@ namespace Framework.Base
         /// <param name="target"></param>
         /// <param name="isActive"></param>
         public void SetActiveSet(GameObject target, bool isActive)
-
         {
             target.SetActive(isActive);
         }
