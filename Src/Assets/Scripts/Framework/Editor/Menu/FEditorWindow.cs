@@ -75,11 +75,6 @@ namespace Framework.Editor
                 Application.OpenURL(GlobalDefine.FrameworkDefine.FrameworkWebsite);
             }
 
-            private static void DownloadLatestVersion()
-            {
-                //TODO 搭建网络模块之后回来编写
-            }
-
             #endregion
 
             #region FrameworkToolsMenu

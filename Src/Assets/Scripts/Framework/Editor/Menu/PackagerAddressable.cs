@@ -20,7 +20,6 @@ using UnityEditor;
 using UnityEditor.AddressableAssets;
 using UnityEditor.AddressableAssets.Settings;
 using UnityEngine;
-using UnityEngine.AddressableAssets;
 
 namespace Framework.Editor
 {

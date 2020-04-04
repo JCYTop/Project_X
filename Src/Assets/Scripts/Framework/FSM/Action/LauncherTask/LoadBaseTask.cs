@@ -26,8 +26,6 @@ public class LoadBaseTask : GameLanucherTask
         label.labelString = LabelName;
         Addressables.InitializeAsync().Completed += ((complete) =>
         {
-            Debug.Log($"{complete.IsDone}");
-            Debug.Log($"{complete.Status}");
             if (complete.IsDone)
             {
                 AddressableAsync.LoadAssetsAsync<GameObject>(label, (go) =>
