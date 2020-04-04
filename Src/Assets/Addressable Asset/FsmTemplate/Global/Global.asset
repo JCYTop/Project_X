@@ -670,7 +670,7 @@ MonoBehaviour:
           name: FINISHED
           isSystemEvent: 1
           isGlobal: 0
-        toState: Start_Scene
+        toState: Test_GOAP_AI_State
         linkStyle: 0
         linkConstraint: 0
         colorIndex: 0

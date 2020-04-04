@@ -234,13 +234,21 @@ namespace Framework.Editor
                 var path = Application.dataPath.Substring(0, tmp);
                 if (Directory.Exists(path))
                 {
-                    
-                }
-                else
-                {
-                    Directory.CreateDirectory(path);
+                    var dir = new DirectoryInfo(path);
+                    var fileinfo = dir.GetFileSystemInfos(); //返回目录中所有文件和子目录
+                    foreach (FileSystemInfo i in fileinfo)
+                    {
+                        if (i is DirectoryInfo) //判断是否文件夹
+                        {
+                            DirectoryInfo subdir = new DirectoryInfo(i.FullName);
+                            subdir.Delete(true); //删除子目录和文件
+                        }
+                        else
+                            File.Delete(i.FullName); //删除指定文件
+                    }
                 }
 
+                Directory.CreateDirectory(path);
                 return path;
             }
         }
