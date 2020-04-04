@@ -9,7 +9,6 @@
 //======================================================
 
 using System;
-using Sirenix.OdinInspector;
 
 namespace Framework.ScriptableObject
 {
@@ -18,6 +17,6 @@ namespace Framework.ScriptableObject
     /// </summary>
     public class FrameworkDefine : UnityEngine.ScriptableObject
     {
-        [InfoBox("源码网址")] public string FrameworkWebsite = String.Empty;
+        [Rename("源码网址")] public string FrameworkWebsite = String.Empty;
     }
 }

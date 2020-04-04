@@ -29,16 +29,7 @@ using UnityEngine.ResourceManagement.ResourceProviders;
 /// </summary>
 public static class AddressableAsync
 {
-    /// <summary>
-    /// 初始化
-    /// </summary>
-    /// <param name="complete"></param>
-    public static void InitializeAsync(Action<AsyncOperationHandle<IResourceLocator>> complete = null)
-    {
-        Addressables.InitializeAsync().Completed += complete;
-    }
-
-    #region 获取依赖关系
+   #region 获取依赖关系
 
     /// <summary>
     /// 以资源的“地址”或者标签为参数

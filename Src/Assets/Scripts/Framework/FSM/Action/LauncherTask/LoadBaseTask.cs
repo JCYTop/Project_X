@@ -22,30 +22,35 @@ public class LoadBaseTask : GameLanucherTask
 
     protected override void InitTask()
     {
+        LogTool.Log($"{TaskName.Value}", LogEnum.TaskLog);
         label.labelString = LabelName;
+        LogTool.Log($"????????");
+        Addressables.InitializeAsync().Completed += (comp) =>
+        {
+            Addressables.InitializeAsync().Completed += ((complete) =>
+            {
+                if (complete.IsDone)
+                {
+                    AddressableAsync.LoadAssetsAsync<GameObject>(label, (go) =>
+                    {
+                        LogTool.Log($"{go.name}");
+                        EntityUtil.InstantiateGo(go, true);
+                    }, (completed) =>
+                    {
+                        if (completed.Status == AsyncOperationStatus.Succeeded)
+                        {
+                            LogTool.Log($"资源加载完成", LogEnum.TaskLog);
+                            IsFinish = true;
+                        }
+                    });
+                }
+            });
+        };
+        LogTool.Log($"----------????????");
     }
 
     protected override IEnumerator Task()
     {
-        LogTool.Log($"{TaskName.Value}", LogEnum.TaskLog);
-        yield return new WaitForFixedUpdate();
-        AddressableAsync.InitializeAsync((complete) =>
-        {
-            if (complete.IsDone)
-            {
-                AddressableAsync.LoadAssetsAsync<GameObject>(label, (go) =>
-                {
-                    LogTool.Log($"{go.name}");
-                    EntityUtil.InstantiateGo(go, true);
-                }, (completed) =>
-                {
-                    if (completed.Status == AsyncOperationStatus.Succeeded)
-                    {
-                        LogTool.Log($"资源加载完成", LogEnum.TaskLog);
-                        IsFinish = true;
-                    }
-                });
-            }
-        });
+        yield break;
     }
 }

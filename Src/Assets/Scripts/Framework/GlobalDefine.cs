@@ -22,10 +22,8 @@ using UnityEngine;
 public static class GlobalDefine
 {
     private static AssetsConfig assetsConfig;
-    private static AuthorInfo authorInfo;
     private static FrameworkDefine frameworkDefine;
     private static LogConfig logConfig;
-    private static ABInfo abInfo;
     public const string AwakeScene = "Awake_Scene";
     public const string StartScene = "Start_Scene";
     public const string TestScene = "Test_GOAP_AI_Scene";
@@ -42,19 +40,6 @@ public static class GlobalDefine
             }
 
             return assetsConfig;
-        }
-    }
-
-    public static AuthorInfo AuthorInfo
-    {
-        get
-        {
-            if (authorInfo == null)
-            {
-                authorInfo = Resources.Load<AuthorInfo>(AssetsConfig.AuthorInfoPath);
-            }
-
-            return authorInfo;
         }
     }
 
@@ -81,15 +66,6 @@ public static class GlobalDefine
             }
 
             return logConfig;
-        }
-    }
-
-    public static ABInfo ABInfo
-    {
-        get
-        {
-            abInfo = Resources.Load<ABInfo>(AssetsConfig.ABInfoPath);
-            return abInfo;
         }
     }
 

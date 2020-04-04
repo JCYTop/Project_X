@@ -8,22 +8,14 @@
 // -  独立游戏开发
 //======================================================
 
-using Sirenix.OdinInspector;
-
 namespace Framework.ScriptableObject
 {
     public class AssetsConfig : UnityEngine.ScriptableObject
     {
-        [InfoBox("资源根目录")] public string GameResourceRootDir = "Addressable Asset/";
-        [InfoBox("AuthorInfo路径")] public string AuthorInfoPath = string.Empty;
-        [InfoBox("FrameworkDefine路径")] public string FrameworkDefinePath = string.Empty;
-        [InfoBox("LogConfig路径")] public string LogConfigPath = string.Empty;
-        [InfoBox("ABInfo路径")] public string ABInfoPath = string.Empty;
-        [InfoBox("Scence场景所在文件夹")] public string ScencePath = string.Empty;
-
-        /// <summary>
-        /// 添加根目录或者文件夹
-        /// </summary>
-        [InfoBox("预加载系统资源")] public string[] preloadAssetPath;
+        [Rename("资源根目录")] public string GameResourceRootDir = "Addressable Asset/";
+        [Rename("AuthorInfo路径")] public string AuthorInfoPath = string.Empty;
+        [Rename("FrameworkDefine路径")] public string FrameworkDefinePath = string.Empty;
+        [Rename("LogConfig路径")] public string LogConfigPath = string.Empty;
+        [Rename("ABInfo路径")] public string ABInfoPath = string.Empty;
     }
 }
