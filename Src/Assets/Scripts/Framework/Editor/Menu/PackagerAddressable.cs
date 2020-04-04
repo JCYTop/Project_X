@@ -17,6 +17,7 @@
 using System;
 using System.IO;
 using UnityEditor;
+using UnityEditor.AddressableAssets;
 using UnityEditor.AddressableAssets.Settings;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
@@ -163,17 +164,17 @@ namespace Framework.Editor
 
             #endregion
 
-            #region 生成资源包
+            #region 生成完整资源包
 
-            if (GUILayout.Button("生成资源包 ", GUILayout.Height(30)))
+            if (GUILayout.Button("生成完整资源包 ", GUILayout.Height(30)))
             {
                 AssetDatabase.Refresh();
+                AddressableAssetSettings.CleanPlayerContent();
+                AddressableAssetSettings.CleanPlayerContent(AddressableAssetSettingsDefaultObject.Settings.ActivePlayerDataBuilder);
                 if (version.Length == 0 || version.Equals("0.0.0"))
                     EditorUtility.DisplayDialog(" Error ！！", " 请修改版本为有效数字", "确定");
                 else
-                {
                     AddressableAssetSettings.BuildPlayerContent();
-                }
             }
 
             GUILayout.Space(15);
@@ -196,22 +197,30 @@ namespace Framework.Editor
 
             if (GUILayout.Button("生成安装包 ", GUILayout.Height(30)))
             {
-                AssetDatabase.Refresh();
                 switch (EditorUserBuildSettings.activeBuildTarget)
                 {
                     case BuildTarget.StandaloneWindows:
                         appName = $"RunGameWin32.exe";
-                        BuildPipeline.BuildPlayer(levels, $"{GetPath()}/Build/Win32/{appName}", BuildTarget.StandaloneWindows,
+                        BuildPipeline.BuildPlayer(
+                            levels,
+                            ParentPath(),
+                            BuildTarget.StandaloneWindows,
                             BuildOptions.ShowBuiltPlayer | BuildOptions.Development);
                         break;
                     case BuildTarget.StandaloneWindows64:
                         appName = $"RunGameWin64.exe";
-                        BuildPipeline.BuildPlayer(levels, $"{GetPath()}/Build/Win64/{appName}", BuildTarget.StandaloneWindows64,
+                        BuildPipeline.BuildPlayer(
+                            levels,
+                            ParentPath(),
+                            BuildTarget.StandaloneWindows64,
                             BuildOptions.ShowBuiltPlayer | BuildOptions.Development);
                         break;
                     case BuildTarget.Android:
                         appName = $"RunGameAndroid.apk";
-                        BuildPipeline.BuildPlayer(levels, GetPath() + $"{GetPath()}/Build/Win64/{appName}", BuildTarget.Android,
+                        BuildPipeline.BuildPlayer(
+                            levels,
+                            ParentPath(),
+                            BuildTarget.Android,
                             BuildOptions.ShowBuiltPlayer);
                         break;
                     case BuildTarget.iOS:
@@ -228,28 +237,48 @@ namespace Framework.Editor
 
             #endregion
 
-            string GetPath()
+            string ParentPath()
             {
                 var tmp = Application.dataPath.LastIndexOf("/Src", StringComparison.Ordinal);
                 var path = Application.dataPath.Substring(0, tmp);
-                if (Directory.Exists(path))
+                switch (EditorUserBuildSettings.activeBuildTarget)
                 {
-                    var dir = new DirectoryInfo(path);
-                    var fileinfo = dir.GetFileSystemInfos(); //返回目录中所有文件和子目录
-                    foreach (FileSystemInfo i in fileinfo)
-                    {
-                        if (i is DirectoryInfo) //判断是否文件夹
-                        {
-                            DirectoryInfo subdir = new DirectoryInfo(i.FullName);
-                            subdir.Delete(true); //删除子目录和文件
-                        }
-                        else
-                            File.Delete(i.FullName); //删除指定文件
-                    }
+                    case BuildTarget.StandaloneWindows:
+                        return $"{Handle($"{path}/Build/Win32")}" + $"/{appName}";
+                    case BuildTarget.StandaloneWindows64:
+                        return $"{Handle($"{path}/Build/Win64")}" + $"/{appName}";
+                    case BuildTarget.Android:
+                        return $"{Handle($"{path}/Build/Win64")}" + $"/{appName}";
+                    case BuildTarget.iOS:
+#if UNITY_EDITOR_OSX
+                        return  String.Empty;
+#endif
+                        break;
                 }
 
-                Directory.CreateDirectory(path);
-                return path;
+                return String.Empty;
+
+                string Handle(string tmpPath)
+                {
+                    if (Directory.Exists(tmpPath))
+                    {
+                        var dir = new DirectoryInfo(tmpPath);
+                        var fileinfo = dir.GetFileSystemInfos(); //返回目录中所有文件和子目录
+                        foreach (FileSystemInfo i in fileinfo)
+                        {
+                            if (i is DirectoryInfo) //判断是否文件夹
+                            {
+                                var subdir = new DirectoryInfo(i.FullName);
+                                subdir.Delete(true); //删除子目录和文件
+                            }
+                            else
+                                File.Delete(i.FullName); //删除指定文件
+                        }
+                    }
+
+                    Directory.CreateDirectory(tmpPath);
+                    return tmpPath;
+                }
             }
         }
     }
