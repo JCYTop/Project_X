@@ -82,6 +82,26 @@ public static class ICollectionExtend
         }
     }
 
+    /// <summary>
+    /// 添加值
+    /// </summary>
+    /// <param name="dic"></param>
+    /// <param name="key"></param>
+    /// <param name="value"></param>
+    /// <typeparam name="Tkey"></typeparam>
+    /// <typeparam name="TValue"></typeparam>
+    public static void AddDictionaryValue<Tkey, TValue>(this Dictionary<Tkey, TValue> dic, Tkey key, TValue value)
+    {
+        if (!dic.ContainsKey(key))
+        {
+            dic.Add(key, value);
+        }
+        else
+        {
+            dic[key] = value;
+        }
+    }
+
     #endregion
 
     #region SortList Extend

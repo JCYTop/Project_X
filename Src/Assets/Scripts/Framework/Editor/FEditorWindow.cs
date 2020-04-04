@@ -24,18 +24,16 @@ namespace Framework.Editor
             SourceWebsite,
         }
 
-        public const string Packager = "Framework/Packager _F12";
         public const string OpenInFileBrowser = "Framework/OpenInFileBrowser";
         public const string OpenInPersistentDataPath = "Framework/OpenInPersistentDataPath";
 
         public enum FrameworkToolsMenuPriorities
         {
-            Packager = 51,
-            OpenInFileBrowser,
+            OpenInFileBrowser = 51,
             OpenInPersistentDataPath
         }
 
-        public static class ToolsList
+        public class ToolsList
         {
             public const string FindMissScriptInResource = "Framework/FindMissScriptInResource";
             public const string ShowExcelTools = "Framework/Excel工具";
@@ -87,15 +85,6 @@ namespace Framework.Editor
             #endregion
 
             #region FrameworkToolsMenu
-
-            /// <summary>
-            /// 打AB包操作
-            /// </summary>
-            [MenuItem(Packager, false, (int) FrameworkToolsMenuPriorities.Packager)]
-            private static void ShowPackager()
-            {
-                BuildWindow.Instance().ShowMenu();
-            }
 
             [MenuItem(FrameworkToolsMenu.OpenInFileBrowser, false, (int) FrameworkToolsMenuPriorities.OpenInFileBrowser)]
             private static void OpenInFileBrowser()

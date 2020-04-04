@@ -29,16 +29,22 @@ public class LoadBaseTask : GameLanucherTask
     {
         LogTool.Log($"{TaskName.Value}", LogEnum.TaskLog);
         yield return new WaitForFixedUpdate();
-        AddressableAsyncAdapter.LoadAssetsAsync<GameObject>(label, (go) =>
+        AddressableAsync.InitializeAsync((complete) =>
         {
-            LogTool.Log($"{go.name}");
-            EntityUtil.InstantiateGo(go, true);
-        }, (completed) =>
-        {
-            if (completed.Status == AsyncOperationStatus.Succeeded)
+            if (complete.IsDone)
             {
-                LogTool.Log($"资源加载完成", LogEnum.TaskLog);
-                IsFinish = true;
+                AddressableAsync.LoadAssetsAsync<GameObject>(label, (go) =>
+                {
+                    LogTool.Log($"{go.name}");
+                    EntityUtil.InstantiateGo(go, true);
+                }, (completed) =>
+                {
+                    if (completed.Status == AsyncOperationStatus.Succeeded)
+                    {
+                        LogTool.Log($"资源加载完成", LogEnum.TaskLog);
+                        IsFinish = true;
+                    }
+                });
             }
         });
     }

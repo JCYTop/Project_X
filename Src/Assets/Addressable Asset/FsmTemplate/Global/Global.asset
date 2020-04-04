@@ -195,7 +195,7 @@ MonoBehaviour:
           tooltip: 
           showInInspector: 0
           networkSync: 0
-          type: 4
+          type: -1
           objectTypeName: UnityEngine.Object
           floatValues: []
           intValues: 
@@ -222,7 +222,7 @@ MonoBehaviour:
         paramDataType: 0300000029000000
         paramName:
         - SceneName
-        - sss
+        - AddressName
         paramDataPos: 0000000000000000
         paramByteDataSize: 0000000000000000
     - name: SystemCheckTask
@@ -769,8 +769,7 @@ MonoBehaviour:
           floatValues: []
           intValues: 
           boolValues: 
-          stringValues:
-          - Main Camera
+          stringValues: []
           vector4Values: []
           objectReferences: []
         fsmEnumParams: []

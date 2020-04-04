@@ -27,7 +27,7 @@ public class LoadSceneState : GlobalState
     {
         base.OnEnter();
         LogTool.Log($"LoadSceneState", LogEnum.State);
-        AddressableAsyncAdapter.LoadSceneAsync(SceneName, LoadSceneMode.Single, (conplete) =>
+        AddressableAsync.LoadSceneAsync(SceneName, LoadSceneMode.Single, (conplete) =>
         {
             conplete.Completed += handle =>
             {
@@ -39,7 +39,7 @@ public class LoadSceneState : GlobalState
         });
         foreach (var value in AddressName.Values)
         {
-            AddressableAsyncAdapter.InstantiateAsync(value.ToString(), (conplete) =>
+            AddressableAsync.InstantiateAsync(value.ToString(), (conplete) =>
             {
                 if (conplete.Status == AsyncOperationStatus.Succeeded)
                 {

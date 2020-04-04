@@ -2,7 +2,7 @@
 ----------------------------------
  *Copyright(C) 2019 by IndieGame
  *All rights reserved.
- *FileName:     AddressableAdapter
+ *FileName:     AddressableAsync
  *Author:       @JCY
  *Version:      0.1.0
  *AuthorEmail:  jcyemail@qq.com
@@ -19,6 +19,7 @@ using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine.AddressableAssets;
+using UnityEngine.AddressableAssets.ResourceLocators;
 using UnityEngine.ResourceManagement.AsyncOperations;
 using UnityEngine.ResourceManagement.ResourceProviders;
 
@@ -26,8 +27,17 @@ using UnityEngine.ResourceManagement.ResourceProviders;
 /// 地址化资源加载适配器
 /// 简单封装接口
 /// </summary>
-public static class AddressableAsyncAdapter
+public static class AddressableAsync
 {
+    /// <summary>
+    /// 初始化
+    /// </summary>
+    /// <param name="complete"></param>
+    public static void InitializeAsync(Action<AsyncOperationHandle<IResourceLocator>> complete = null)
+    {
+        Addressables.InitializeAsync().Completed += complete;
+    }
+
     #region 获取依赖关系
 
     /// <summary>
