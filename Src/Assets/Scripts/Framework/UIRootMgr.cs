@@ -35,7 +35,6 @@ public sealed class UIRootMgr : MonoBehaviour
     private List<UIBase> rootUI = new List<UIBase>(1 << 2);
     private Stack<UIBase> stackUI = new Stack<UIBase>(1 << 3);
     private Stack<UIBase> topUI = new Stack<UIBase>(1 << 3);
-    public Dictionary<int, UIBase> UIResIDDic = new Dictionary<int, UIBase>(1 << 4);
     public Dictionary<string, UIBase> UINameDic = new Dictionary<string, UIBase>(1 << 4);
     private int capacity = 1 << 3;
     private float multiple = 1.5f;
@@ -140,7 +139,6 @@ public sealed class UIRootMgr : MonoBehaviour
     private void ApplicationQuit(params object[] args)
     {
         applicationQuit = true;
-        UIResIDDic.Clear();
         UINameDic.Clear();
         closeUIStroe.Clear();
     }
@@ -181,7 +179,6 @@ public sealed class UIRootMgr : MonoBehaviour
     {
         if (applicationQuit) return;
         closeUIStroe.Remove(ui);
-        UIResIDDic.Add(ui.ResID, ui);
         UINameDic.Add(ui.BaseName, ui);
         switch (ui.ShowType)
         {
@@ -221,7 +218,6 @@ public sealed class UIRootMgr : MonoBehaviour
     public void CloseUIBase(UIBase ui)
     {
         if (applicationQuit) return;
-        UIResIDDic.Remove(ui.ResID);
         UINameDic.Remove(ui.BaseName);
         closeUIStroe.AddFirst(ui);
         //进行LRU尾部删除
@@ -267,7 +263,6 @@ public sealed class UIRootMgr : MonoBehaviour
                     }
                 }
 
-
                 stackUIShow = stackUI.ToList();
                 break;
             default:
@@ -304,8 +299,11 @@ public sealed class UIRootMgr : MonoBehaviour
             }
         }
 
-//TODO 替换Address
-//        AssetsManager.Instance().GetPrefabAsync(name, callback);
+        AddressableAsync.LoadAssetAsync<GameObject>(name, (go) =>
+        {
+            Debug.Log($"加载完");
+            Debug.Log("加载完");
+        });
     }
 
     #endregion

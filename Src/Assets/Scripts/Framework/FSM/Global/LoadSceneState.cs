@@ -13,39 +13,48 @@
  ----------------------------------
 */
 
+using System.Collections;
 using HutongGames.PlayMaker;
-using UnityEngine.ResourceManagement.AsyncOperations;
+using UnityEngine;
+using UnityEngine.AddressableAssets;
 using UnityEngine.SceneManagement;
 
 [ActionCategory("GlobalState.LoadSceneState")]
 public class LoadSceneState : GlobalState
 {
     public string SceneName;
-    [ArrayEditor(VariableType.String)] public FsmArray AddressName;
+    [ArrayEditor(VariableType.String)] public FsmArray AddressNameAsync;
+    [ArrayEditor(VariableType.String)] public FsmArray AddressNameSync;
 
     public override void OnEnter()
     {
         base.OnEnter();
         LogTool.Log($"LoadSceneState", LogEnum.State);
-        AddressableAsync.LoadSceneAsync(SceneName, LoadSceneMode.Single, (conplete) =>
+        AddressableAsync.LoadSceneAsync(SceneName, LoadSceneMode.Single, () =>
         {
-            conplete.Completed += handle =>
+            LogTool.Log($"场景切换完成 ");
+            foreach (var value in AddressNameAsync.Values)
             {
-                if (conplete.Status == AsyncOperationStatus.Succeeded)
+                AddressableAsync.InstantiateAsync(value.ToString(), (go) =>
                 {
-                    LogTool.Log($"场景切换完成 {conplete.Result}");
-                }
-            };
+                    Debug.Log($"{go.name}");
+                });
+            }
+
+            StartCoroutine(HandleSync());
         });
-        foreach (var value in AddressName.Values)
+   
+    }
+
+    private IEnumerator HandleSync()
+    {
+        foreach (var value in AddressNameSync.Values)
         {
-            AddressableAsync.InstantiateAsync(value.ToString(), (conplete) =>
+            var operation = AddressableAsync.InstantiateAsync(value.ToString(), (go) =>
             {
-                if (conplete.Status == AsyncOperationStatus.Succeeded)
-                {
-                    LogTool.Log($"资源加载完成 {conplete.Result}");
-                }
+                Debug.Log($"{go.name}");
             });
+            yield return operation;
         }
     }
 }

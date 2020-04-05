@@ -176,7 +176,7 @@ MonoBehaviour:
         actionEnabled: 01
         actionIsOpen: 01
         actionStartIndex: 00000000
-        actionHashCodes: f3efcc03
+        actionHashCodes: 490e8704
         unityObjectParams: []
         fsmGameObjectParams: []
         fsmOwnerDefaultParams: []
@@ -195,12 +195,28 @@ MonoBehaviour:
           tooltip: 
           showInInspector: 0
           networkSync: 0
-          type: -1
+          type: 4
           objectTypeName: UnityEngine.Object
           floatValues: []
           intValues: 
           boolValues: 
           stringValues: []
+          vector4Values: []
+          objectReferences: []
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          type: 4
+          objectTypeName: UnityEngine.Object
+          floatValues: []
+          intValues: 
+          boolValues: 
+          stringValues:
+          - UIRoot
+          - UITest1
+          - UITest2
           vector4Values: []
           objectReferences: []
         fsmEnumParams: []
@@ -219,12 +235,13 @@ MonoBehaviour:
         arrayParamTypes: []
         customTypeSizes: 
         customTypeNames: []
-        paramDataType: 0300000029000000
+        paramDataType: 030000002900000029000000
         paramName:
         - SceneName
-        - AddressName
-        paramDataPos: 0000000000000000
-        paramByteDataSize: 0000000000000000
+        - AddressNameAsync
+        - AddressNameSync
+        paramDataPos: 000000000000000001000000
+        paramByteDataSize: 000000000000000000000000
     - name: SystemCheckTask
       description: 
       colorIndex: 1
@@ -242,7 +259,7 @@ MonoBehaviour:
           name: FINISHED
           isSystemEvent: 1
           isGlobal: 0
-        toState: LoadBaseTask
+        toState: CheckMemoryTask
         linkStyle: 0
         linkConstraint: 0
         colorIndex: 0
@@ -670,7 +687,7 @@ MonoBehaviour:
           name: FINISHED
           isSystemEvent: 1
           isGlobal: 0
-        toState: Test_GOAP_AI_State
+        toState: Start_Scene
         linkStyle: 0
         linkConstraint: 0
         colorIndex: 0
@@ -745,7 +762,7 @@ MonoBehaviour:
         actionEnabled: 01
         actionIsOpen: 01
         actionStartIndex: 00000000
-        actionHashCodes: f3efcc03
+        actionHashCodes: 490e8704
         unityObjectParams: []
         fsmGameObjectParams: []
         fsmOwnerDefaultParams: []
@@ -759,6 +776,19 @@ MonoBehaviour:
         fsmObjectParams: []
         fsmVarParams: []
         fsmArrayParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          type: 4
+          objectTypeName: UnityEngine.Object
+          floatValues: []
+          intValues: 
+          boolValues: 
+          stringValues: []
+          vector4Values: []
+          objectReferences: []
         - useVariable: 0
           name: 
           tooltip: 
@@ -788,12 +818,13 @@ MonoBehaviour:
         arrayParamTypes: []
         customTypeSizes: 
         customTypeNames: []
-        paramDataType: 0300000029000000
+        paramDataType: 030000002900000029000000
         paramName:
         - SceneName
-        - AddressName
-        paramDataPos: 0000000000000000
-        paramByteDataSize: 0000000000000000
+        - AddressNameAsync
+        - AddressNameArrayync
+        paramDataPos: 000000000000000001000000
+        paramByteDataSize: 000000000000000000000000
     events:
     - name: FINISHED
       isSystemEvent: 1

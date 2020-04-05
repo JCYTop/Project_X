@@ -23,10 +23,12 @@ MonoBehaviour:
   m_overridePlayerVersion: 
   m_GroupAssets:
   - {fileID: 11400000, guid: 11d288f87d4a8db429db4724a2655977, type: 2}
-  - {fileID: 11400000, guid: 144f376a9fdadf043ad2f0e3c81f4fd5, type: 2}
   - {fileID: 11400000, guid: 4c8c7318ebfa3914eba93429c6f5e25d, type: 2}
   - {fileID: 11400000, guid: 2438e36daee8f35449b4f5269729b7f6, type: 2}
   - {fileID: 11400000, guid: ae80b6ff7efc9db489a77221edd6ff06, type: 2}
+  - {fileID: 11400000, guid: 144f376a9fdadf043ad2f0e3c81f4fd5, type: 2}
+  - {fileID: 11400000, guid: 49eeb4bf92db76642b53eb64a0dd4bb1, type: 2}
+  - {fileID: 11400000, guid: ea410a15a90ca244eb3e46c2585e26bf, type: 2}
   m_BuildSettings:
     m_CompileScriptsInVirtualMode: 0
     m_CleanupStreamingAssetsAfterBuilds: 1
@@ -120,11 +122,12 @@ MonoBehaviour:
     m_ProfileVersion: 1
   m_LabelTable:
     m_LabelNames:
-    - default
     - Scene
     - Font
     - Utils
     - Camera
+    - Base
+    - UI
   m_SchemaTemplates: []
   m_GroupTemplateObjects:
   - {fileID: 11400000, guid: 7b2dfbfabae003a4780ee23aaeec3bd5, type: 2}

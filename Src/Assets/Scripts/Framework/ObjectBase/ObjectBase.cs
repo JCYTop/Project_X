@@ -36,9 +36,6 @@ namespace Framework.Base
         [BoxGroup("基本属性手动设置")] public string Des = string.Empty;
         [BoxGroup("基本属性手动设置")] public bool IsPreLoad = false;
 
-        [BoxGroup("自动设置"), Header("唯一资源标识ID"), SerializeField, ReadOnly]
-        private int resID;
-
         [BoxGroup("自动设置"), Header("运行时场景唯一标识ID"), SerializeField, ReadOnly]
         protected int globalID;
 
@@ -61,11 +58,7 @@ namespace Framework.Base
         public int ObjectLayer => (int) objectLayer;
         public string ObjectTag => Enum.GetName(typeof(Tag), objectTag);
 
-        public int ResID
-        {
-            get { return resID; }
-            set { resID = value; }
-        }
+        public int ResID { set; get; }
 
         public int GlobalID => globalID;
 
@@ -142,15 +135,6 @@ namespace Framework.Base
         private void SetCurrentLayer()
         {
             gameObject.layer = ObjectLayer;
-        }
-
-        [Button(ButtonSizes.Small), GUIColor(1, 0, 0)]
-        private void ResetResID()
-        {
-            if (!Application.isPlaying)
-            {
-                resID = -1;
-            }
         }
     }
 
