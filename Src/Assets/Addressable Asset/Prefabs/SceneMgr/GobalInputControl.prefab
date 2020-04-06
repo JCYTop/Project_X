@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8006674396816267245}
   - component: {fileID: 392929661546097441}
   m_Layer: 0
-  m_Name: GobalInputControlMgr
+  m_Name: GobalInputControl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

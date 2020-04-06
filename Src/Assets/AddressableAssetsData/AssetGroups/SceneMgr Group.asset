@@ -31,14 +31,16 @@ MonoBehaviour:
     m_TargetAsset: {fileID: 652732097153272055, guid: 4562ffae45c5837409234ff0b2666ea9,
       type: 3}
   - m_GUID: 5b964b0b67e9ae149943c8cb2c834bd2
-    m_Address: InputControlMgr
+    m_Address: GobalInputControl
     m_ReadOnly: 0
     m_SerializedLabels:
     - Utils
     m_mainAssetType: UnityEngine.GameObject, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-    m_MainAsset: {fileID: 0}
-    m_TargetAsset: {fileID: 0}
+    m_MainAsset: {fileID: 7497912737860311120, guid: 5b964b0b67e9ae149943c8cb2c834bd2,
+      type: 3}
+    m_TargetAsset: {fileID: 7497912737860311120, guid: 5b964b0b67e9ae149943c8cb2c834bd2,
+      type: 3}
   - m_GUID: b0c8649b79698fe42a75e6da1cb122cf
     m_Address: GM
     m_ReadOnly: 0
@@ -48,8 +50,10 @@ MonoBehaviour:
     - Utils
     m_mainAssetType: UnityEngine.GameObject, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-    m_MainAsset: {fileID: 0}
-    m_TargetAsset: {fileID: 0}
+    m_MainAsset: {fileID: 2443185776552936200, guid: b0c8649b79698fe42a75e6da1cb122cf,
+      type: 3}
+    m_TargetAsset: {fileID: 2443185776552936200, guid: b0c8649b79698fe42a75e6da1cb122cf,
+      type: 3}
   - m_GUID: d6988a41ed40667478cf3063febc81e8
     m_Address: ExcelDataMgr
     m_ReadOnly: 0
