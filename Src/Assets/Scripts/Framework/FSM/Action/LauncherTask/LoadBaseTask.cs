@@ -9,8 +9,8 @@
 //======================================================
 
 using System.Collections;
+using Framework.Singleton;
 using HutongGames.PlayMaker;
-using UnityEditor.AddressableAssets.Settings;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
@@ -25,20 +25,17 @@ public class LoadBaseTask : GameLanucherTask
     {
         LogTool.Log($"{TaskName.Value}", LogEnum.TaskLog);
         label.labelString = LabelName;
-        AddressableAsync.InitializeAsync(() =>
+        AddressableAsync.LoadAssetsAsync<GameObject>(label, (go) =>
         {
-            AddressableAsync.LoadAssetsAsync<GameObject>(label, (go) =>
+            LogTool.Log($"{go.name}");
+            AddressableUtil.InstantiateGo(go, true);
+        }, (completed) =>
+        {
+            if (completed.Status == AsyncOperationStatus.Succeeded)
             {
-                LogTool.Log($"{go.name}");
-                EntityUtil.InstantiateGo(go, true);
-            }, (completed) =>
-            {
-                if (completed.Status == AsyncOperationStatus.Succeeded)
-                {
-                    LogTool.Log($"资源加载完成", LogEnum.TaskLog);
-                    IsFinish = true;
-                }
-            });
+                LogTool.Log($"资源加载完成", LogEnum.TaskLog);
+                IsFinish = true;
+            }
         });
     }
 

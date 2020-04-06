@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Sprite Atlas
+  m_EditorClassIdentifier: 
+  m_GroupName: Sprite Atlas
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 01eb065577239064d80e2dd94d70b23f
+  m_SerializeEntries:
+  - m_GUID: 463085ea2cc0693498506f501993c0b1
+    m_Address: New Sprite Atlas
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PreLoad
+    m_mainAssetType: UnityEngine.U2D.SpriteAtlas, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+    m_MainAsset: {fileID: 4343727234628468602, guid: 463085ea2cc0693498506f501993c0b1,
+      type: 2}
+    m_TargetAsset: {fileID: 4343727234628468602, guid: 463085ea2cc0693498506f501993c0b1,
+      type: 2}
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: c2875df4b9f367a498e6ae531fcb3741, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 14598aecbe9565148a6846e9062e10af, type: 2}
+    - {fileID: 11400000, guid: 68bd8da848cf258478de6b919b4e49fe, type: 2}

@@ -286,7 +286,7 @@ public sealed class UIRootMgr : MonoBehaviour
     /// </summary>
     /// <param name="name"></param>
     /// <param name="callback"></param>
-    public void SpawnUI(string name, Action<GameObject> callback)
+    public void SpawnUI(string name, Action<GameObject> callback = null)
     {
         foreach (var ui in closeUIStroe)
         {
@@ -301,8 +301,9 @@ public sealed class UIRootMgr : MonoBehaviour
 
         AddressableAsync.LoadAssetAsync<GameObject>(name, (go) =>
         {
-            Debug.Log($"加载完");
-            Debug.Log("加载完");
+            Debug.Log($"UI Asset 加载完成");
+            if (callback != null)
+                callback(go);
         });
     }
 

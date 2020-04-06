@@ -14,13 +14,13 @@
 */
 
 using System.Collections;
+using Framework.Singleton;
 using HutongGames.PlayMaker;
 using UnityEngine;
-using UnityEngine.AddressableAssets;
 using UnityEngine.SceneManagement;
 
-[ActionCategory("GlobalState.LoadSceneState")]
-public class LoadSceneState : GlobalState
+[ActionCategory("SceneState.LoadSceneState")]
+public class LoadSceneState : SceneState
 {
     public string SceneName;
     [ArrayEditor(VariableType.String)] public FsmArray AddressNameAsync;
@@ -29,21 +29,22 @@ public class LoadSceneState : GlobalState
     public override void OnEnter()
     {
         base.OnEnter();
+        Resources.UnloadUnusedAssets();
         LogTool.Log($"LoadSceneState", LogEnum.State);
         AddressableAsync.LoadSceneAsync(SceneName, LoadSceneMode.Single, () =>
         {
-            LogTool.Log($"场景切换完成 ");
+            LogTool.Log($"场景切换完成");
             foreach (var value in AddressNameAsync.Values)
             {
                 AddressableAsync.InstantiateAsync(value.ToString(), (go) =>
                 {
+                    Debug.Log($"开始载入异步资源");
                     Debug.Log($"{go.name}");
                 });
             }
 
             StartCoroutine(HandleSync());
         });
-   
     }
 
     private IEnumerator HandleSync()
@@ -52,6 +53,7 @@ public class LoadSceneState : GlobalState
         {
             var operation = AddressableAsync.InstantiateAsync(value.ToString(), (go) =>
             {
+                Debug.Log($"开始载入同步资源");
                 Debug.Log($"{go.name}");
             });
             yield return operation;

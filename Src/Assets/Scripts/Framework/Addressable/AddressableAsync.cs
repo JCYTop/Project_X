@@ -23,342 +23,345 @@ using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
 using UnityEngine.ResourceManagement.ResourceProviders;
 
-/// <summary>
-/// 地址化资源加载适配器
-/// 简单封装接口
-/// </summary>
-public static class AddressableAsync
+namespace Framework.Singleton
 {
-    #region 初始化
-
     /// <summary>
-    /// 初始化操作
+    /// 地址化资源加载适配器
+    /// 简单封装接口
     /// </summary>
-    /// <param name="complete"></param>
-    public static void InitializeAsync([NotNull] Action callBack)
+    public static class AddressableAsync
     {
-        Addressables.InitializeAsync().Completed += (complete) =>
+        #region 初始化
+
+        /// <summary>
+        /// 初始化操作
+        /// </summary>
+        /// <param name="complete"></param>
+        public static void InitializeAsync([NotNull] Action callBack)
         {
-            if (complete.IsDone)
+            Addressables.InitializeAsync().Completed += (complete) =>
             {
-                callBack();
-            }
-        };
-    }
+                if (complete.IsDone)
+                {
+                    callBack();
+                }
+            };
+        }
 
-    #endregion
+        #endregion
 
-    #region 获取依赖关系
+        #region 获取依赖关系
 
-    /// <summary>
-    /// 以资源的“地址”或者标签为参数
-    /// 进行依赖项资源的加载
-    /// 一般情况下这些资源都是AssetBundle
-    /// </summary>
-    /// <param name="addressNames"></param>
-    /// <param name="percent"></param>
-    public static AsyncOperationHandle DownloadDependenciesAsync(string addressNames, Action<float> percent = null)
-    {
-        var download = Addressables.DownloadDependenciesAsync(addressNames);
-        if (percent != null)
-            percent(download.PercentComplete);
-        return download;
-    }
-
-    #endregion
-
-    #region 加载资源
-
-    /// <summary>
-    /// 异步实例化本地资源
-    /// </summary>
-    /// <param name="addressName"></param>
-    /// <param name="completed"></param>
-    /// <returns></returns>
-    public static AsyncOperationHandle<GameObject> InstantiateAsync(string addressName, Action<GameObject> completed = null)
-    {
-        var operation = Addressables.InstantiateAsync(addressName);
-        operation.Completed += (handle) =>
+        /// <summary>
+        /// 以资源的“地址”或者标签为参数
+        /// 进行依赖项资源的加载
+        /// 一般情况下这些资源都是AssetBundle
+        /// </summary>
+        /// <param name="addressNames"></param>
+        /// <param name="percent"></param>
+        public static AsyncOperationHandle DownloadDependenciesAsync(string addressNames, Action<float> percent = null)
         {
-            if (handle.Status == AsyncOperationStatus.Succeeded)
-            {
-                if (completed != null)
-                    completed(handle.Result);
-            }
-        };
-        return operation;
-    }
+            var download = Addressables.DownloadDependenciesAsync(addressNames);
+            if (percent != null)
+                percent(download.PercentComplete);
+            return download;
+        }
 
-    /// <summary>
-    /// 异步实例化资源
-    /// </summary>
-    /// <param name="addressName"></param>
-    /// <param name="completed"></param>
-    /// <typeparam name="T"></typeparam>
-    /// <returns></returns>
-    public static AsyncOperationHandle<T> LoadAssetAsync<T>(string addressName, Action<T> completed = null)
-    {
-        var operation = Addressables.LoadAssetAsync<T>(addressName);
-        operation.Completed += (handle) =>
+        #endregion
+
+        #region 加载资源
+
+        /// <summary>
+        /// 异步实例化本地资源
+        /// </summary>
+        /// <param name="addressName"></param>
+        /// <param name="completed"></param>
+        /// <returns></returns>
+        public static AsyncOperationHandle<GameObject> InstantiateAsync(string addressName, Action<GameObject> completed = null)
         {
-            if (handle.Status == AsyncOperationStatus.Succeeded)
+            var operation = Addressables.InstantiateAsync(addressName);
+            operation.Completed += (handle) =>
             {
-                if (completed != null)
-                    completed(handle.Result);
-            }
-        };
-        return operation;
-    }
+                if (handle.Status == AsyncOperationStatus.Succeeded)
+                {
+                    if (completed != null)
+                        completed(handle.Result);
+                }
+            };
+            return operation;
+        }
 
-    /// <summary>
-    /// 异步加载资源集合
-    /// </summary>
-    /// <param name="label"></param>
-    /// <param name="callback"></param>
-    /// <param name="completed"></param>
-    /// <typeparam name="T"></typeparam>
-    /// <returns></returns>
-    public static AsyncOperationHandle<IList<T>> LoadAssetsAsync<T>(AssetLabelReference label, Action<T> callback,
-        Action<AsyncOperationHandle<IList<T>>> completed = null)
-    {
-        var operation = Addressables.LoadAssetsAsync<T>(label, callback);
-        operation.Completed += completed;
-        return operation;
-    }
-
-    /// <summary>
-    /// 异步加载场景
-    /// </summary>
-    /// <param name="sceneName"></param>
-    /// <param name="mode"></param>
-    /// <param name="completed"></param>
-    /// <returns></returns>
-    public static AsyncOperationHandle<SceneInstance> LoadSceneAsync(string sceneName, LoadSceneMode mode = LoadSceneMode.Single,
-        Action completed = null)
-    {
-        var operation = Addressables.LoadSceneAsync(sceneName, mode);
-        operation.Completed += (handle) =>
+        /// <summary>
+        /// 异步实例化资源
+        /// </summary>
+        /// <param name="addressName"></param>
+        /// <param name="completed"></param>
+        /// <typeparam name="T"></typeparam>
+        /// <returns></returns>
+        public static AsyncOperationHandle<T> LoadAssetAsync<T>(string addressName, Action<T> completed = null)
         {
-            if (handle.Status == AsyncOperationStatus.Succeeded)
+            var operation = Addressables.LoadAssetAsync<T>(addressName);
+            operation.Completed += (handle) =>
             {
-                if (completed != null)
-                    completed();
-            }
-        };
-        return operation;
-    }
+                if (handle.Status == AsyncOperationStatus.Succeeded)
+                {
+                    if (completed != null)
+                        completed(handle.Result);
+                }
+            };
+            return operation;
+        }
 
-    #region 扩展
+        /// <summary>
+        /// 异步加载资源集合
+        /// </summary>
+        /// <param name="label"></param>
+        /// <param name="callback"></param>
+        /// <param name="completed"></param>
+        /// <typeparam name="T"></typeparam>
+        /// <returns></returns>
+        public static AsyncOperationHandle<IList<T>> LoadAssetsAsync<T>(AssetLabelReference label, Action<T> callback,
+            Action<AsyncOperationHandle<IList<T>>> completed = null)
+        {
+            var operation = Addressables.LoadAssetsAsync<T>(label, callback);
+            operation.Completed += completed;
+            return operation;
+        }
 
-    /// <summary>
-    /// 加载
-    /// </summary>
-    /// <param name="reference"></param>
-    /// <returns></returns>
-    public static AsyncOperationHandle<GameObject> InstantiateAsync(this AssetReference reference)
-    {
+        /// <summary>
+        /// 异步加载场景
+        /// </summary>
+        /// <param name="sceneName"></param>
+        /// <param name="mode"></param>
+        /// <param name="completed"></param>
+        /// <returns></returns>
+        public static AsyncOperationHandle<SceneInstance> LoadSceneAsync(string sceneName, LoadSceneMode mode = LoadSceneMode.Single,
+            Action completed = null)
+        {
+            var operation = Addressables.LoadSceneAsync(sceneName, mode);
+            operation.Completed += (handle) =>
+            {
+                if (handle.Status == AsyncOperationStatus.Succeeded)
+                {
+                    if (completed != null)
+                        completed();
+                }
+            };
+            return operation;
+        }
+
+        #region 扩展
+
+        /// <summary>
+        /// 加载
+        /// </summary>
+        /// <param name="reference"></param>
+        /// <returns></returns>
+        public static AsyncOperationHandle<GameObject> InstantiateAsync(this AssetReference reference)
+        {
 //        AssetReferenceTexture
-        return reference.InstantiateAsync();
-    }
+            return reference.InstantiateAsync();
+        }
 
-    /// <summary>
-    /// 加载
-    /// </summary>
-    /// <param name="reference"></param>
-    /// <typeparam name="T"></typeparam>
-    /// <returns></returns>
-    public static AsyncOperationHandle<T> LoadAssetAsync<T>(this AssetReference reference)
-    {
-        return reference.LoadAssetAsync<T>();
-    }
-
-    /// <summary>
-    /// 资源完成操作
-    /// </summary>
-    /// <param name="operation"></param>
-    /// <param name="completed"></param>
-    /// <typeparam name="T"></typeparam>
-    public static void AsyncOperationHandle<T>(this AsyncOperationHandle<T> operation, Action completed = null)
-    {
-        operation.Completed += (handle) =>
+        /// <summary>
+        /// 加载
+        /// </summary>
+        /// <param name="reference"></param>
+        /// <typeparam name="T"></typeparam>
+        /// <returns></returns>
+        public static AsyncOperationHandle<T> LoadAssetAsync<T>(this AssetReference reference)
         {
-            if (handle.Status == AsyncOperationStatus.Succeeded)
+            return reference.LoadAssetAsync<T>();
+        }
+
+        /// <summary>
+        /// 资源完成操作
+        /// </summary>
+        /// <param name="operation"></param>
+        /// <param name="completed"></param>
+        /// <typeparam name="T"></typeparam>
+        public static void AsyncOperationHandle<T>(this AsyncOperationHandle<T> operation, Action completed = null)
+        {
+            operation.Completed += (handle) =>
+            {
+                if (handle.Status == AsyncOperationStatus.Succeeded)
+                {
+                    if (completed != null)
+                        completed();
+                }
+            };
+        }
+
+        /// <summary>
+        /// 资源完成操作
+        /// </summary>
+        /// <param name="operation"></param>
+        /// <param name="success"></param>
+        /// <param name="failed"></param>
+        /// <typeparam name="T"></typeparam>
+        public static void AsyncOperationHandle<T>(this AsyncOperationHandle<T> operation, Action<T> success, Action failed)
+        {
+            operation.Completed += complete =>
+            {
+                switch (complete.Status)
+                {
+                    case AsyncOperationStatus.Succeeded:
+                        success(complete.Result);
+                        break;
+                    case AsyncOperationStatus.Failed:
+                    default:
+                        failed();
+                        break;
+                }
+            };
+        }
+
+        /// <summary>
+        /// 资源完成操作
+        /// </summary>
+        /// <param name="operation"></param>
+        /// <param name="completed"></param>
+        /// <typeparam name="T"></typeparam>
+        /// <returns></returns>
+        public static IEnumerator AsyncOperationHandleIEnumerator<T>(this AsyncOperationHandle<T> operation, Action completed)
+        {
+            yield return operation;
+            operation.Completed += (handle) =>
             {
                 if (completed != null)
                     completed();
-            }
-        };
-    }
+            };
+        }
 
-    /// <summary>
-    /// 资源完成操作
-    /// </summary>
-    /// <param name="operation"></param>
-    /// <param name="success"></param>
-    /// <param name="failed"></param>
-    /// <typeparam name="T"></typeparam>
-    public static void AsyncOperationHandle<T>(this AsyncOperationHandle<T> operation, Action<T> success, Action failed)
-    {
-        operation.Completed += complete =>
+        /// <summary>
+        /// 资源完成操作
+        /// </summary>
+        /// <param name="operation"></param>
+        /// <param name="success"></param>
+        /// <param name="failed"></param>
+        /// <typeparam name="T"></typeparam>
+        /// <returns></returns>
+        public static IEnumerator AsyncOperationHandleIEnumerator<T>(this AsyncOperationHandle<T> operation, Action<T> success, Action failed)
         {
-            switch (complete.Status)
+            yield return operation;
+            operation.Completed += complete =>
             {
-                case AsyncOperationStatus.Succeeded:
-                    success(complete.Result);
-                    break;
-                case AsyncOperationStatus.Failed:
-                default:
-                    failed();
-                    break;
-            }
-        };
-    }
+                switch (complete.Status)
+                {
+                    case AsyncOperationStatus.Succeeded:
+                        success(complete.Result);
+                        break;
+                    case AsyncOperationStatus.Failed:
+                    default:
+                        failed();
+                        break;
+                }
+            };
+        }
 
-    /// <summary>
-    /// 资源完成操作
-    /// </summary>
-    /// <param name="operation"></param>
-    /// <param name="completed"></param>
-    /// <typeparam name="T"></typeparam>
-    /// <returns></returns>
-    public static IEnumerator AsyncOperationHandleIEnumerator<T>(this AsyncOperationHandle<T> operation, Action completed)
-    {
-        yield return operation;
-        operation.Completed += (handle) =>
+        /// <summary>
+        /// 资源完成操作
+        /// </summary>
+        /// <param name="operation"></param>
+        /// <param name="completed"></param>
+        /// <typeparam name="T"></typeparam>
+        public static async void AsyncOperationHandleAwait<T>(this AsyncOperationHandle<T> operation, Action completed = null)
         {
-            if (completed != null)
-                completed();
-        };
-    }
-
-    /// <summary>
-    /// 资源完成操作
-    /// </summary>
-    /// <param name="operation"></param>
-    /// <param name="success"></param>
-    /// <param name="failed"></param>
-    /// <typeparam name="T"></typeparam>
-    /// <returns></returns>
-    public static IEnumerator AsyncOperationHandleIEnumerator<T>(this AsyncOperationHandle<T> operation, Action<T> success, Action failed)
-    {
-        yield return operation;
-        operation.Completed += complete =>
-        {
-            switch (complete.Status)
+            await operation.Task;
+            operation.Completed += (handle) =>
             {
-                case AsyncOperationStatus.Succeeded:
-                    success(complete.Result);
-                    break;
-                case AsyncOperationStatus.Failed:
-                default:
-                    failed();
-                    break;
-            }
-        };
-    }
+                if (handle.Status == AsyncOperationStatus.Succeeded)
+                {
+                    if (completed != null)
+                        completed();
+                }
+            };
+        }
 
-    /// <summary>
-    /// 资源完成操作
-    /// </summary>
-    /// <param name="operation"></param>
-    /// <param name="completed"></param>
-    /// <typeparam name="T"></typeparam>
-    public static async void AsyncOperationHandleAwait<T>(this AsyncOperationHandle<T> operation, Action completed = null)
-    {
-        await operation.Task;
-        operation.Completed += (handle) =>
+        /// <summary>
+        /// 资源完成操作
+        /// </summary>
+        /// <param name="operation"></param>
+        /// <param name="success"></param>
+        /// <param name="failed"></param>
+        /// <typeparam name="T"></typeparam>
+        public static async void AsyncOperationHandleAwait<T>(this AsyncOperationHandle<T> operation, Action<T> success, Action failed)
         {
-            if (handle.Status == AsyncOperationStatus.Succeeded)
+            await operation.Task;
+            operation.Completed += complete =>
             {
-                if (completed != null)
-                    completed();
-            }
-        };
-    }
+                switch (complete.Status)
+                {
+                    case AsyncOperationStatus.Succeeded:
+                        success(complete.Result);
+                        break;
+                    case AsyncOperationStatus.Failed:
+                    default:
+                        failed();
+                        break;
+                }
+            };
+        }
 
-    /// <summary>
-    /// 资源完成操作
-    /// </summary>
-    /// <param name="operation"></param>
-    /// <param name="success"></param>
-    /// <param name="failed"></param>
-    /// <typeparam name="T"></typeparam>
-    public static async void AsyncOperationHandleAwait<T>(this AsyncOperationHandle<T> operation, Action<T> success, Action failed)
-    {
-        await operation.Task;
-        operation.Completed += complete =>
+        #endregion
+
+        #endregion
+
+        #region 卸载资源
+
+        /// <summary>
+        /// 释放资源
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <typeparam name="T"></typeparam>
+        public static void Release<T>(T obj)
         {
-            switch (complete.Status)
-            {
-                case AsyncOperationStatus.Succeeded:
-                    success(complete.Result);
-                    break;
-                case AsyncOperationStatus.Failed:
-                default:
-                    failed();
-                    break;
-            }
-        };
+            Addressables.Release<T>(obj);
+        }
+
+        public static void Release<T>(AsyncOperationHandle<T> handle)
+        {
+            Addressables.Release<T>(handle);
+        }
+
+        public static void Release(AsyncOperationHandle handle)
+        {
+            Addressables.Release(handle);
+        }
+
+        /// <summary>
+        /// 卸载场景物体
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <typeparam name="T"></typeparam>
+        public static bool ReleaseInstance(GameObject obj)
+        {
+            return Addressables.ReleaseInstance(obj);
+        }
+
+        /// <summary>
+        /// 卸载资源
+        /// </summary>
+        /// <param name="reference"></param>
+        public static void ReleaseAsset(this AssetReference reference)
+        {
+            reference.ReleaseAsset();
+        }
+
+        /// <summary>
+        /// 卸载场景
+        /// </summary>
+        /// <param name="sceneName"></param>
+        /// <param name="completed"></param>
+        /// <returns></returns>
+        public static AsyncOperationHandle<SceneInstance> UnloadSceneAsync(SceneInstance sceneName,
+            Action<AsyncOperationHandle<SceneInstance>> completed = null)
+        {
+            var operation = Addressables.UnloadSceneAsync(sceneName);
+            operation.Completed += completed;
+            return operation;
+        }
+
+        #endregion
     }
-
-    #endregion
-
-    #endregion
-
-    #region 卸载资源
-
-    /// <summary>
-    /// 释放资源
-    /// </summary>
-    /// <param name="obj"></param>
-    /// <typeparam name="T"></typeparam>
-    public static void Release<T>(T obj)
-    {
-        Addressables.Release<T>(obj);
-    }
-
-    public static void Release<T>(AsyncOperationHandle<T> handle)
-    {
-        Addressables.Release<T>(handle);
-    }
-
-    public static void Release(AsyncOperationHandle handle)
-    {
-        Addressables.Release(handle);
-    }
-
-    /// <summary>
-    /// 卸载场景物体
-    /// </summary>
-    /// <param name="obj"></param>
-    /// <typeparam name="T"></typeparam>
-    public static bool ReleaseInstance(GameObject obj)
-    {
-        return Addressables.ReleaseInstance(obj);
-    }
-
-    /// <summary>
-    /// 卸载资源
-    /// </summary>
-    /// <param name="reference"></param>
-    public static void ReleaseAsset(this AssetReference reference)
-    {
-        reference.ReleaseAsset();
-    }
-
-    /// <summary>
-    /// 卸载场景
-    /// </summary>
-    /// <param name="sceneName"></param>
-    /// <param name="completed"></param>
-    /// <returns></returns>
-    public static AsyncOperationHandle<SceneInstance> UnloadSceneAsync(SceneInstance sceneName,
-        Action<AsyncOperationHandle<SceneInstance>> completed = null)
-    {
-        var operation = Addressables.UnloadSceneAsync(sceneName);
-        operation.Completed += completed;
-        return operation;
-    }
-
-    #endregion
 }

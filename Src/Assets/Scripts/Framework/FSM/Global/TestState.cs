@@ -16,8 +16,8 @@
 using HutongGames.PlayMaker;
 using UnityEngine.SceneManagement;
 
-[ActionCategory("GlobalState")]
-public class TestState : GlobalState
+[ActionCategory("SceneState.TestState")]
+public class TestState : SceneState
 {
     public override void OnEnter()
     {

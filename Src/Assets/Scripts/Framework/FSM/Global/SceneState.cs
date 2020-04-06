@@ -2,7 +2,7 @@
 ----------------------------------
  *Copyright(C) 2019 by IndieGame
  *All rights reserved.
- *FileName:     AwakeGame
+ *FileName:     SceneState
  *Author:       @JCY
  *Version:      0.0.1
  *AuthorEmail:  jcyemail@qq.com
@@ -15,7 +15,7 @@
 
 using HutongGames.PlayMaker;
 
-public abstract class GlobalState : FsmStateAction
+public abstract class SceneState : FsmStateAction
 {
    
 }

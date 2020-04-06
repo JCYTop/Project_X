@@ -9,16 +9,28 @@
 //======================================================
 
 using System.Collections;
+using Framework.Singleton;
 using HutongGames.PlayMaker;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
 
 [ActionCategory("GameLanucherTask.PreloadingTask")]
 public class PreloadingTask : GameLanucherTask
 {
+    private AssetLabelReference label = new AssetLabelReference();
+
     protected override IEnumerator Task()
     {
-        LogTool.Log($"{TaskName.Value}", LogEnum.TaskLog);
         yield return new WaitForFixedUpdate();
-        IsFinish = true;
+        LogTool.Log($"{TaskName.Value}", LogEnum.TaskLog);
+        label.labelString = "PreLoad";
+        AddressableAsync.InitializeAsync(() =>
+        {
+            AddressableAsync.LoadAssetsAsync<object>(label, null, (completed) =>
+            {
+                LogTool.Log($"资源预加载完成", LogEnum.TaskLog);
+                IsFinish = true;
+            });
+        });
     }
 }

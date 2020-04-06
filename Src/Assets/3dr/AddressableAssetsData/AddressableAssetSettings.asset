@@ -15,7 +15,7 @@ MonoBehaviour:
   m_DefaultGroup: e8f53652f77ac744bbabf6e0bceffb5c
   m_BuildRemoteCatalog: 0
   m_DisableCatalogUpdateOnStart: 0
-  m_UniqueBundleIds: 0
+  m_UniqueBundleIds: 1
   m_RemoteCatalogBuildPath:
     m_Id: 2751c8847dfc7414e96131ecbc244cef
   m_RemoteCatalogLoadPath:
@@ -29,6 +29,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 144f376a9fdadf043ad2f0e3c81f4fd5, type: 2}
   - {fileID: 11400000, guid: 49eeb4bf92db76642b53eb64a0dd4bb1, type: 2}
   - {fileID: 11400000, guid: ea410a15a90ca244eb3e46c2585e26bf, type: 2}
+  - {fileID: 11400000, guid: dd78376aee547714c82c02b3c18119ff, type: 2}
   m_BuildSettings:
     m_CompileScriptsInVirtualMode: 0
     m_CleanupStreamingAssetsAfterBuilds: 1
@@ -122,11 +123,12 @@ MonoBehaviour:
     m_ProfileVersion: 1
   m_LabelTable:
     m_LabelNames:
+    - PreLoad
+    - Camera
+    - Base
     - Scene
     - Font
     - Utils
-    - Camera
-    - Base
     - UI
   m_SchemaTemplates: []
   m_GroupTemplateObjects:

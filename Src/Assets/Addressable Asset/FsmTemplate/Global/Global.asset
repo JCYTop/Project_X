@@ -200,7 +200,8 @@ MonoBehaviour:
           floatValues: []
           intValues: 
           boolValues: 
-          stringValues: []
+          stringValues:
+          - UIRoot
           vector4Values: []
           objectReferences: []
         - useVariable: 0
@@ -213,10 +214,7 @@ MonoBehaviour:
           floatValues: []
           intValues: 
           boolValues: 
-          stringValues:
-          - UIRoot
-          - UITest1
-          - UITest2
+          stringValues: []
           vector4Values: []
           objectReferences: []
         fsmEnumParams: []
@@ -330,7 +328,7 @@ MonoBehaviour:
           name: FINISHED
           isSystemEvent: 1
           isGlobal: 0
-        toState: LoadBaseTask
+        toState: PreloadingTask
         linkStyle: 0
         linkConstraint: 0
         colorIndex: 0
@@ -390,7 +388,7 @@ MonoBehaviour:
       position:
         serializedVersion: 2
         x: 437.0547
-        y: 214.53125
+        y: 257.53125
         width: 117
         height: 32
       isBreakpoint: 0
@@ -463,7 +461,7 @@ MonoBehaviour:
       position:
         serializedVersion: 2
         x: 415.25
-        y: 260.76562
+        y: 303.76562
         width: 158
         height: 32
       isBreakpoint: 0
@@ -534,7 +532,7 @@ MonoBehaviour:
       position:
         serializedVersion: 2
         x: 447.20312
-        y: 310.25
+        y: 353.25
         width: 100
         height: 32
       isBreakpoint: 0
@@ -605,7 +603,7 @@ MonoBehaviour:
       position:
         serializedVersion: 2
         x: 445.0547
-        y: 354.67188
+        y: 397.67188
         width: 103
         height: 32
       isBreakpoint: 0
@@ -616,7 +614,7 @@ MonoBehaviour:
           name: FINISHED
           isSystemEvent: 1
           isGlobal: 0
-        toState: PreloadingTask
+        toState: Start_Scene
         linkStyle: 0
         linkConstraint: 0
         colorIndex: 0
@@ -675,8 +673,8 @@ MonoBehaviour:
       colorIndex: 1
       position:
         serializedVersion: 2
-        x: 435.57812
-        y: 403
+        x: 438.57812
+        y: 214
         width: 122
         height: 32
       isBreakpoint: 0
@@ -687,7 +685,7 @@ MonoBehaviour:
           name: FINISHED
           isSystemEvent: 1
           isGlobal: 0
-        toState: Start_Scene
+        toState: LoadBaseTask
         linkStyle: 0
         linkConstraint: 0
         colorIndex: 0
