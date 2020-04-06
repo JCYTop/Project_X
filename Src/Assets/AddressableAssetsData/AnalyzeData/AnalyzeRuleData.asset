@@ -23,9 +23,19 @@ MonoBehaviour:
     Results: []
   - RuleName: Build Bundle Layout
     Results:
+    - m_ResultName: font_assets_all.bundle:Explicit:Assets/Addressable Asset/Data/Font/bmwy.ttf
+      m_Severity: 0
+    - m_ResultName: font_assets_all.bundle:Explicit:Assets/Addressable Asset/Data/Font/TextFront.asset
+      m_Severity: 0
+    - m_ResultName: font_assets_all.bundle:Explicit:Assets/Addressable Asset/Data/Font/ywsj.ttf
+      m_Severity: 0
+    - m_ResultName: font_assets_all.bundle:Explicit:Assets/Addressable Asset/Data/Font/Source/3500ChineseWord.txt
+      m_Severity: 0
     - m_ResultName: scenesgroup_scenes_all.bundle:Explicit:Assets/Addressable Asset/Scenes/GameScenes/TestScene/Test_GOAP_AI_Scene.unity
       m_Severity: 0
     - m_ResultName: scenesgroup_scenes_all.bundle:Explicit:Assets/Addressable Asset/Scenes/GameScenes/Start_Scene.unity
+      m_Severity: 0
+    - m_ResultName: scenesgroup_scenes_all.bundle:Explicit:Assets/Addressable Asset/Scenes/GameScenes/Awake_Scene.unity
       m_Severity: 0
     - m_ResultName: scenemgrgroup_assets_all.bundle:Explicit:Assets/Addressable Asset/Prefabs/SceneMgr/LangSettingMgr.prefab
       m_Severity: 0
@@ -38,19 +48,9 @@ MonoBehaviour:
     - m_ResultName: cameragroup_assets_all.bundle:Explicit:Assets/Addressable Asset/Camera/Main
         Camera.prefab
       m_Severity: 0
-    - m_ResultName: font_assets_all.bundle:Explicit:Assets/Addressable Asset/Data/Font/bmwy.ttf
+    - m_ResultName: font_assets_all.bundle:Implicit:Assets/3dr/TextMesh Pro/Resources/Shaders/TMP_SDF.shader
       m_Severity: 0
-    - m_ResultName: font_assets_all.bundle:Explicit:Assets/Addressable Asset/Data/Font/TextFront.asset
-      m_Severity: 0
-    - m_ResultName: font_assets_all.bundle:Explicit:Assets/Addressable Asset/Data/Font/ywsj.ttf
-      m_Severity: 0
-    - m_ResultName: font_assets_all.bundle:Explicit:Assets/Addressable Asset/Data/Font/Source/3500ChineseWord.txt
-      m_Severity: 0
-    - m_ResultName: uibase_assets_all.bundle:Explicit:Assets/Addressable Asset/Prefabs/UI/UIRoot.prefab
-      m_Severity: 0
-    - m_ResultName: uiset_assets_all.bundle:Explicit:Assets/Addressable Asset/Prefabs/UI/UITest1.prefab
-      m_Severity: 0
-    - m_ResultName: uiset_assets_all.bundle:Explicit:Assets/Addressable Asset/Prefabs/UI/UITest2.prefab
+    - m_ResultName: font_assets_all.bundle:Implicit:Assets/3dr/TextMesh Pro/Resources/Shaders/TMP_SDF-Mobile.shader
       m_Severity: 0
     - m_ResultName: scenesgroup_scenes_all.bundle:Implicit:Packages/com.unity.render-pipelines.universal/Runtime/Materials/Lit.mat
       m_Severity: 0
@@ -60,9 +60,9 @@ MonoBehaviour:
       m_Severity: 0
     - m_ResultName: scenesgroup_scenes_all.bundle:Implicit:Assets/Addressable Asset/Material/ChainRed.mat
       m_Severity: 0
-    - m_ResultName: scenesgroup_scenes_all.bundle:Implicit:Assets/AstarPathfindingProject/Editor/EditorAssets/Materials/Navmesh.mat
+    - m_ResultName: scenesgroup_scenes_all.bundle:Implicit:Assets/3dr/AstarPathfindingProject/Editor/EditorAssets/Materials/Navmesh.mat
       m_Severity: 0
-    - m_ResultName: scenesgroup_scenes_all.bundle:Implicit:Assets/AstarPathfindingProject/Editor/EditorAssets/Materials/NavmeshOutline.mat
+    - m_ResultName: scenesgroup_scenes_all.bundle:Implicit:Assets/3dr/AstarPathfindingProject/Editor/EditorAssets/Materials/NavmeshOutline.mat
       m_Severity: 0
     - m_ResultName: scenesgroup_scenes_all.bundle:Implicit:Assets/Addressable Asset/Material/Walls.mat
       m_Severity: 0
@@ -70,7 +70,7 @@ MonoBehaviour:
       m_Severity: 0
     - m_ResultName: scenesgroup_scenes_all.bundle:Implicit:Assets/Addressable Asset/Textures/Test/GraphPaperTexture.png
       m_Severity: 0
-    - m_ResultName: scenesgroup_scenes_all.bundle:Implicit:Assets/AstarPathfindingProject/Editor/EditorAssets/Materials/Navmesh.shader
+    - m_ResultName: scenesgroup_scenes_all.bundle:Implicit:Assets/3dr/AstarPathfindingProject/Editor/EditorAssets/Materials/Navmesh.shader
       m_Severity: 0
     - m_ResultName: scenesgroup_scenes_all.bundle:Implicit:Packages/com.unity.render-pipelines.universal/Shaders/Lit.shader
       m_Severity: 0
@@ -78,7 +78,7 @@ MonoBehaviour:
       m_Severity: 0
     - m_ResultName: scenesgroup_scenes_all.bundle:Implicit:Packages/com.unity.render-pipelines.universal/Shaders/Utils/FallbackError.shader
       m_Severity: 0
-    - m_ResultName: scenesgroup_scenes_all.bundle:Implicit:Assets/AstarPathfindingProject/Editor/EditorAssets/Materials/NavmeshOutline.shader
+    - m_ResultName: scenesgroup_scenes_all.bundle:Implicit:Assets/3dr/AstarPathfindingProject/Editor/EditorAssets/Materials/NavmeshOutline.shader
       m_Severity: 0
     - m_ResultName: scenesgroup_scenes_all.bundle:Implicit:Packages/com.unity.shadergraph/Editor/Resources/Shaders/FallbackError.shader
       m_Severity: 0
@@ -172,11 +172,16 @@ MonoBehaviour:
       m_Severity: 0
     - m_ResultName: scenesgroup_scenes_all.bundle:Implicit:Assets/Scripts/Runtime/Test/AI/GOAP_AI_2.prefab
       m_Severity: 0
+    - m_ResultName: 25fbcd50d923a243ca1ceaa2dad5cb14_scenes_all.bundle:Implicit:Assets/Addressable
+        Asset/Material/Shader Graphs_VertDisplacement_min.mat
+      m_Severity: 0
+    - m_ResultName: 25fbcd50d923a243ca1ceaa2dad5cb14_scenes_all.bundle:Implicit:Assets/Addressable
+        Asset/Shader/VertDisplacement_min.shadergraph
+      m_Severity: 0
+    - m_ResultName: 25fbcd50d923a243ca1ceaa2dad5cb14_scenes_all.bundle:Implicit:Assets/Addressable
+        Asset/FsmTemplate/Global/Global.asset
+      m_Severity: 0
     - m_ResultName: scenemgrgroup_assets_all.bundle:Implicit:Assets/Addressable Asset/Data/ExcelData/Data/LanguageSheet.asset
       m_Severity: 0
     - m_ResultName: scenemgrgroup_assets_all.bundle:Implicit:Assets/Addressable Asset/Data/ExcelData/Data/MachineSheet.asset
-      m_Severity: 0
-    - m_ResultName: font_assets_all.bundle:Implicit:Assets/3dr/TextMesh Pro/Resources/Shaders/TMP_SDF.shader
-      m_Severity: 0
-    - m_ResultName: font_assets_all.bundle:Implicit:Assets/3dr/TextMesh Pro/Resources/Shaders/TMP_SDF-Mobile.shader
       m_Severity: 0

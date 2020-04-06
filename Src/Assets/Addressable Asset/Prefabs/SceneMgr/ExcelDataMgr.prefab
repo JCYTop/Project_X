@@ -48,7 +48,6 @@ MonoBehaviour:
   objectTag: 6
   Des: ExcelDataMgr
   IsPreLoad: 0
-  resID: 0
   globalID: 0
   baseName: 
   PointTrans: []
@@ -65,5 +64,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c838c1d3953bbae4abe561b01a2b672d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  language: {fileID: 11400000, guid: 2edd3f4ef91ab5641a57077d3847b2b5, type: 2}
-  machine: {fileID: 11400000, guid: 43a0d98e386ebfc429a645b05fd736bc, type: 2}
+  language: {fileID: 11400000, guid: 54a6463ffc8bd334d959a72822fe4c2f, type: 2}
+  machine: {fileID: 11400000, guid: 52653dd1fbd677c4798e9fb3fc4f5598, type: 2}

@@ -10,13 +10,22 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
-  m_Name: UIBase
+  m_Name: UISet
   m_EditorClassIdentifier: 
-  m_GroupName: UIBase
+  m_GroupName: UISet
   m_Data:
     m_SerializedData: []
-  m_GUID: 06d0debacaa65a448a954105e2073d5f
+  m_GUID: 3130ca9d317b6544bae853b2525818f4
   m_SerializeEntries:
+  - m_GUID: 3b4560febea4828478ed68667b737fa1
+    m_Address: UITest1
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - UI
+    m_mainAssetType: UnityEngine.GameObject, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: 5cd6ecdb7d07ce4479ec8e242c816325
     m_Address: UIRoot
     m_ReadOnly: 0
@@ -29,9 +38,18 @@ MonoBehaviour:
       type: 3}
     m_TargetAsset: {fileID: 6400667260366954580, guid: 5cd6ecdb7d07ce4479ec8e242c816325,
       type: 3}
+  - m_GUID: 8535559bd4c1ab241936b135dd575dae
+    m_Address: UITest2
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - UI
+    m_mainAssetType: UnityEngine.GameObject, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: c2875df4b9f367a498e6ae531fcb3741, type: 2}
   m_SchemaSet:
     m_Schemas:
-    - {fileID: 11400000, guid: e41a4d68cca325c4aae534b15b23d60c, type: 2}
-    - {fileID: 11400000, guid: df2552ba87a585646a76751ad43ac7ae, type: 2}
+    - {fileID: 11400000, guid: 4980ab4aa1acd194fa3cbf025ee3cbc1, type: 2}
+    - {fileID: 11400000, guid: e56d560e1954a584d9f87ec82fa24cef, type: 2}
