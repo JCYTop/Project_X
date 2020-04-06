@@ -31,7 +31,6 @@ namespace Framework.Editor
         /// <summary>
         /// 绘制窗口基本信息
         /// </summary>
-        [HideInInspector]
         public abstract void CreatWindow();
 
         /// <summary>

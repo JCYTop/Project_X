@@ -25,21 +25,21 @@ namespace Framework.Editor
 {
     public class PackagerAddressable : EditorMenu<PackagerAddressable>
     {
+        private string defaultDevDefineSymbols =
+            @"Dev;GM;COMMON_DEV;UNITY_POST_PROCESSING_STACK_V2;CROSS_PLATFORM_INPUT;PLAYMAKER;PLAYMAKER_1_9;PLAYMAKER_1_9_0;PLAYMAKER_1_8_OR_NEWER;PLAYMAKER_1_8_5_OR_NEWER;PLAYMAKER_1_9_OR_NEWER;ODIN_INSPECTOR;UNITY_CCU";
+
+        private string defaultDebugDefineSymbols =
+            @"Debug;Dev;GM;COMMON_DEV;UNITY_POST_PROCESSING_STACK_V2;CROSS_PLATFORM_INPUT;PLAYMAKER;PLAYMAKER_1_9;PLAYMAKER_1_9_0;PLAYMAKER_1_8_OR_NEWER;PLAYMAKER_1_8_5_OR_NEWER;PLAYMAKER_1_9_OR_NEWER;ODIN_INSPECTOR;UNITY_CCU";
+
+        private string defaultReleaseDefineSymbols =
+            @"Release;COMMON_DEV;UNITY_POST_PROCESSING_STACK_V2;CROSS_PLATFORM_INPUT;PLAYMAKER;PLAYMAKER_1_9;PLAYMAKER_1_9_0;PLAYMAKER_1_8_OR_NEWER;PLAYMAKER_1_8_5_OR_NEWER;PLAYMAKER_1_9_OR_NEWER;ODIN_INSPECTOR;UNITY_CCU";
+
+        private string devDefineSymbols { set; get; }
+        private string debugDefineSymbols { set; get; }
+        private string releaseDefineSymbols { set; get; }
         private string[] versionList = new string[3] {"正式版本", "开发版本", "测试版本"};
-
-        private string DevDefineSymbols =
-            "Dev;GM;COMMON_DEV;UNITY_POST_PROCESSING_STACK_V2;CROSS_PLATFORM_INPUT;PLAYMAKER;PLAYMAKER_1_9;PLAYMAKER_1_9_0;PLAYMAKER_1_8_OR_NEWER;PLAYMAKER_1_8_5_OR_NEWER;PLAYMAKER_1_9_OR_NEWER;ODIN_INSPECTOR;UNITY_CCU";
-
         private string DevIdentifier = $"com.{CompanyName}.{ProductName}";
-
-        private string DebugDefineSymbols =
-            "Debug;Dev;GM;COMMON_DEV;UNITY_POST_PROCESSING_STACK_V2;CROSS_PLATFORM_INPUT;PLAYMAKER;PLAYMAKER_1_9;PLAYMAKER_1_9_0;PLAYMAKER_1_8_OR_NEWER;PLAYMAKER_1_8_5_OR_NEWER;PLAYMAKER_1_9_OR_NEWER;ODIN_INSPECTOR;UNITY_CCU";
-
         private string DebugIdentifier = $"com.{CompanyName}.{ProductName}";
-
-        private string ReleaseDefineSymbols =
-            "Release;COMMON_DEV;UNITY_POST_PROCESSING_STACK_V2;CROSS_PLATFORM_INPUT;PLAYMAKER;PLAYMAKER_1_9;PLAYMAKER_1_9_0;PLAYMAKER_1_8_OR_NEWER;PLAYMAKER_1_8_5_OR_NEWER;PLAYMAKER_1_9_OR_NEWER;ODIN_INSPECTOR;UNITY_CCU";
-
         private string ReleaseIdentifier = $"com.{CompanyName}.{ProductName}";
         private const string CompanyName = "Single";
         private const string ProductName = "ProjectX";
@@ -50,6 +50,7 @@ namespace Framework.Editor
         private static int curSelect = -1;
         private int selectChannelEnvIndex;
         private int currTarget;
+        private bool isReadly = false;
 
         public override void CreatWindow()
         {
@@ -63,14 +64,42 @@ namespace Framework.Editor
             version = Application.version;
             buildTarget = EditorUserBuildSettings.selectedBuildTargetGroup;
             curSelect = -1;
+            if (ES3.KeyExists("DevDefineSymbols"))
+                devDefineSymbols = ES3.Load<string>("DevDefineSymbols");
+            else
+            {
+                ES3.Save<string>("DevDefineSymbols", defaultDevDefineSymbols);
+                devDefineSymbols = ES3.Load<string>("DevDefineSymbols");
+            }
+
+            if (ES3.KeyExists("DebugDefineSymbols"))
+                debugDefineSymbols = ES3.Load<string>("DebugDefineSymbols");
+            else
+            {
+                ES3.Save<string>("DebugDefineSymbols", defaultDebugDefineSymbols);
+                debugDefineSymbols = ES3.Load<string>("DebugDefineSymbols");
+            }
+
+            if (ES3.KeyExists("ReleaseDefineSymbols"))
+                releaseDefineSymbols = ES3.Load<string>("ReleaseDefineSymbols");
+            else
+            {
+                ES3.Save<string>("ReleaseDefineSymbols", defaultReleaseDefineSymbols);
+                releaseDefineSymbols = ES3.Load<string>("ReleaseDefineSymbols");
+            }
+
+            isReadly = true;
         }
 
         public override void OnDisable()
         {
+            isReadly = false;
         }
 
         public override void OnGUI()
         {
+            if (!isReadly) return;
+
             #region 版本号 
 
             version = EditorGUILayout.TextField("App Version：", version);
@@ -80,15 +109,33 @@ namespace Framework.Editor
 
             #region 版本设置
 
-            DevDefineSymbols = EditorGUILayout.TextField("DevDefineSymbols", DevDefineSymbols);
+            devDefineSymbols = EditorGUILayout.TextField("DevDefineSymbols", devDefineSymbols);
             DevIdentifier = EditorGUILayout.TextField("DevIdentifier", DevIdentifier);
             GUILayout.Space(5);
-            DebugDefineSymbols = EditorGUILayout.TextField("TestDefineSymbols", DebugDefineSymbols);
+            debugDefineSymbols = EditorGUILayout.TextField("TestDefineSymbols", debugDefineSymbols);
             DebugIdentifier = EditorGUILayout.TextField("TestIdentifier", DebugIdentifier);
             GUILayout.Space(5);
-            ReleaseDefineSymbols = EditorGUILayout.TextField("ReleaseDefineSymbols", ReleaseDefineSymbols);
+            releaseDefineSymbols = EditorGUILayout.TextField("ReleaseDefineSymbols", releaseDefineSymbols);
             ReleaseIdentifier = EditorGUILayout.TextField("ReleaseIdentifier", ReleaseIdentifier);
             GUILayout.Space(5);
+            if (GUILayout.Button("保存信息", GUILayout.Height(30)))
+            {
+                if (!ES3.Load<string>("DevDefineSymbols").Equals(devDefineSymbols))
+                {
+                    ES3.Save<string>("DevDefineSymbols", devDefineSymbols);
+                }
+
+                if (!ES3.Load<string>("DebugDefineSymbols").Equals(debugDefineSymbols))
+                {
+                    ES3.Save<string>("DebugDefineSymbols", debugDefineSymbols);
+                }
+
+                if (!ES3.Load<string>("ReleaseDefineSymbols").Equals(releaseDefineSymbols))
+                {
+                    ES3.Save<string>("ReleaseDefineSymbols", releaseDefineSymbols);
+                }
+            }
+
             GUILayout.Space(15);
             var curSymbol = PlayerSettings.GetScriptingDefineSymbolsForGroup(buildTarget);
             if (curSelect == -1)
@@ -133,7 +180,7 @@ namespace Framework.Editor
                 {
                     case 0:
                         //TODO 可以根据平台添加东西
-                        curSymbol = ReleaseDefineSymbols;
+                        curSymbol = releaseDefineSymbols;
 #if UNITY_EDITOR_OSX
 						PlayerSettings.bundleIdentifier = ReleaseIdentifier;
 #else
@@ -141,10 +188,10 @@ namespace Framework.Editor
 #endif
                         break;
                     case 1:
-                        curSymbol = DevDefineSymbols;
+                        curSymbol = devDefineSymbols;
                         break;
                     case 2:
-                        curSymbol = DebugDefineSymbols;
+                        curSymbol = debugDefineSymbols;
 #if UNITY_EDITOR_OSX
 						PlayerSettings.bundleIdentifier = DebugIdentifier;
 #else
