@@ -1,4 +1,5 @@
 using System;
+using UnityEngine;
 
 namespace Framework.GOAP
 {
@@ -12,6 +13,7 @@ namespace Framework.GOAP
         public override void Enter()
         {
             base.Enter();
+            Debug.Log("---");
         }
 
         public override void Execute()

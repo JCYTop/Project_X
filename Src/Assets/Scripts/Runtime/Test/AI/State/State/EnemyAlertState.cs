@@ -19,12 +19,10 @@ namespace Framework.GOAP
 
         public override void ExecuteState()
         {
-            throw new System.NotImplementedException();
         }
 
         public override void ExitState()
         {
-            throw new System.NotImplementedException();
         }
 
         public override EnemyStateConfig GetData()

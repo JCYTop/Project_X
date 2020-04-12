@@ -112,11 +112,7 @@ namespace Framework.GOAP
         /// 执行新动作
         /// </summary>
         /// <param name="actionLabel"></param>
-        public void ExcuteHandler(IActionHandler<TAction> actionLabel)
-        {
-            //TODO next step
-            LogTool.Log($"执行了相应的动作 {actionLabel.Action.Label}");
-        }
+        public abstract void ExcuteHandler(IActionHandler<TAction> actionLabel);
 
         /// <summary>
         /// Planner计划中使用

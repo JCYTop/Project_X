@@ -30,5 +30,14 @@ namespace Framework.GOAP
         {
             return ActionTag.Idle;
         }
+
+        public override void ExcuteHandler(IActionHandler<ActionTag> actionLabel)
+        {
+            //TODO next step
+            LogTool.Log($"执行了相应的动作 {actionLabel.Action.Label}");
+            var handle = handlersSort.GetSortListValue(actionLabel.Action.Label);
+            handle.Enter();
+            EnemyAgent.TargetEvent("Alert");
+        }
     }
 }
