@@ -34,7 +34,7 @@ namespace Framework.Base
         private Tag objectTag = Tag.None;
 
         [BoxGroup("基本属性手动设置")] public string Des = string.Empty;
-        [BoxGroup("基本属性手动设置")] public bool IsPreLoad = false;
+//        [BoxGroup("基本属性手动设置")] public bool IsPreLoad = false;
 
         [BoxGroup("自动设置"), Header("运行时场景唯一标识ID"), SerializeField, ReadOnly]
         protected int globalID;
@@ -183,5 +183,7 @@ namespace Framework.Base
         PostProcessing = 8,
         Scene = 9,
         GameObject = 10,
+        Terrain = 11,
+        Cameras = 12,
     }
 }

@@ -185,3 +185,5 @@ MonoBehaviour:
       m_Severity: 0
     - m_ResultName: scenemgrgroup_assets_all.bundle:Implicit:Assets/Addressable Asset/Data/ExcelData/Data/MachineSheet.asset
       m_Severity: 0
+  - RuleName: UnityEditor.AddressableAssets.Build.AnalyzeRules.AnalyzeRule
+    Results: []

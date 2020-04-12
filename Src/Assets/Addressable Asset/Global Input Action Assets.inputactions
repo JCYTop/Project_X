@@ -1,5 +1,5 @@
 {
-    "name": "Input Action Assets",
+    "name": "Global Input Action Assets",
     "maps": [
         {
             "name": "Player",
@@ -179,6 +179,33 @@
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
+                }
+            ]
+        },
+        {
+            "name": "System",
+            "id": "6c61575d-b667-4cd2-8623-027da0e04432",
+            "actions": [
+                {
+                    "name": "New action",
+                    "type": "Button",
+                    "id": "05a0ba61-d5c8-4272-a647-6715788607ee",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "d4803f63-43eb-4d1a-a926-3d5f8cb87d7c",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "New action",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }

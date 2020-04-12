@@ -61,8 +61,6 @@ public static class ScenesCenterMgr
 
     #region 属性
 
-    public static Camera MainCamera { set; get; }
-
     public static int GlobalID
     {
         get

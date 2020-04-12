@@ -614,7 +614,7 @@ MonoBehaviour:
           name: FINISHED
           isSystemEvent: 1
           isGlobal: 0
-        toState: Start_Scene
+        toState: Test_GOAP_AI_State
         linkStyle: 0
         linkConstraint: 0
         colorIndex: 0
@@ -784,7 +784,8 @@ MonoBehaviour:
           floatValues: []
           intValues: 
           boolValues: 
-          stringValues: []
+          stringValues:
+          - UIRoot
           vector4Values: []
           objectReferences: []
         - useVariable: 0
@@ -820,7 +821,7 @@ MonoBehaviour:
         paramName:
         - SceneName
         - AddressNameAsync
-        - AddressNameArrayync
+        - AddressNameSync
         paramDataPos: 000000000000000001000000
         paramByteDataSize: 000000000000000000000000
     events:

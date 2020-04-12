@@ -34,10 +34,8 @@ MonoBehaviour:
     - UI
     m_mainAssetType: UnityEngine.GameObject, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-    m_MainAsset: {fileID: 6400667260366954580, guid: 5cd6ecdb7d07ce4479ec8e242c816325,
-      type: 3}
-    m_TargetAsset: {fileID: 6400667260366954580, guid: 5cd6ecdb7d07ce4479ec8e242c816325,
-      type: 3}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: 8535559bd4c1ab241936b135dd575dae
     m_Address: UITest2
     m_ReadOnly: 0

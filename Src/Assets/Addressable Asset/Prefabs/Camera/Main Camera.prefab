@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4649677165815096876}
   - component: {fileID: 308418087955758346}
   - component: {fileID: -3997986753714788762}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Main Camera
   m_TagString: Camera
   m_Icon: {fileID: 0}
@@ -98,11 +98,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75019057926959a4a965ca4c08bfe7c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectLayer: 0
+  objectLayer: 12
   objectTag: 3
   Des: MainCamera
   IsPreLoad: 0
-  resID: 0
   globalID: 0
   baseName: 
   PointTrans: []
