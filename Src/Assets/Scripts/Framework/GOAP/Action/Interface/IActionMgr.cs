@@ -13,7 +13,6 @@
  ----------------------------------
 */
 
-using System;
 using System.Collections.Generic;
 
 namespace Framework.GOAP
@@ -47,7 +46,7 @@ namespace Framework.GOAP
         /// 改变当前执行的动作
         /// </summary>
         /// <param name="actionLabel"></param>
-        void ExcuteHandler(TAction actionLabel);
+        void ExcuteHandler(IActionHandler<TAction> actionLabel);
 
         /// <summary>
         /// 添加动作完成的监听

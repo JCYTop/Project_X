@@ -51,7 +51,7 @@ namespace Framework.GOAP
             if (args != null && args.Length > 0)
             {
                 if (EnemyContext.GoalbalID != Convert.ToInt32(args[0])) return;
-                Performer.BuildPlan();
+                Performer.UpdateData();
             }
         }
 

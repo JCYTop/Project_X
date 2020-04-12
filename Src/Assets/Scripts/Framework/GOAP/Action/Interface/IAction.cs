@@ -46,7 +46,7 @@ namespace Framework.GOAP
         /// <summary>
         /// 当前动作是否能够中断
         /// </summary>
-        bool CanInterruptiblePlan { get; }
+        bool IsInterruptiblePlan { get; }
 
         /// <summary>
         /// 执行动作

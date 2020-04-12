@@ -41,9 +41,6 @@ namespace Framework.GOAP
         /// <exception cref="NotImplementedException"></exception>
         public abstract void Interruptible();
 
-        public LinkedList<IActionHandler<TAction>> BuildPlan()
-        {
-            return planHandler.Planner.BuildPlan(agent.AgentGoalMgr.FindGoals());
-        }
+        public abstract void BuildPlan();
     }
 }

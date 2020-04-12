@@ -14,6 +14,7 @@
 */
 
 using System;
+using System.Collections.Generic;
 
 namespace Framework.GOAP
 {
@@ -23,6 +24,9 @@ namespace Framework.GOAP
         /// 不同的计划可以随时改变
         /// </summary>
         IPlanner<TAction, TGoal> Planner { get; set; }
+
+        LinkedList<IActionHandler<TAction>> CurrActionHandlers { get; set; }
+        IGoal<TGoal> CurrGoal { get; set; }
 
         /// <summary>
         /// 当前计划是否完成
@@ -38,7 +42,7 @@ namespace Framework.GOAP
         /// <summary>
         /// 执行下一个动作
         /// </summary>
-        void HandlerAction();
+        IActionHandler<TAction> HandlerAction();
 
         /// <summary>
         /// 中断计划

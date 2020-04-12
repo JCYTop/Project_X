@@ -33,6 +33,6 @@ namespace Framework.GOAP
         /// 构建计划
         /// </summary>
         /// <returns></returns>
-        LinkedList<IActionHandler<TAction>> BuildPlan();
+        void BuildPlan();
     }
 }

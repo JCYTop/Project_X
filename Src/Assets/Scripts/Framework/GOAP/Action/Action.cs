@@ -76,7 +76,7 @@ namespace Framework.GOAP
             }
         }
 
-        public bool CanInterruptiblePlan
+        public bool IsInterruptiblePlan
         {
             get
             {

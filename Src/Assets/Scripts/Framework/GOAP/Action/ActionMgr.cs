@@ -61,7 +61,7 @@ namespace Framework.GOAP
             {
                 foreach (var handler in handlersSort.Values)
                 {
-                    if (handler.Action.CanInterruptiblePlan)
+                    if (handler.Action.IsInterruptiblePlan)
                     {
                         interruptibleHandlers.Add(handler);
                     }
@@ -112,9 +112,10 @@ namespace Framework.GOAP
         /// 执行新动作
         /// </summary>
         /// <param name="actionLabel"></param>
-        public void ExcuteHandler(TAction actionLabel)
+        public void ExcuteHandler(IActionHandler<TAction> actionLabel)
         {
             //TODO next step
+            LogTool.Log($"执行了相应的动作 {actionLabel.Action.Label}");
         }
 
         /// <summary>

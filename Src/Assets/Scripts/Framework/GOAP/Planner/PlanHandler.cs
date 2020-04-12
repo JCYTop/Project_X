@@ -14,6 +14,7 @@
 */
 
 using System;
+using System.Collections.Generic;
 
 namespace Framework.GOAP
 {
@@ -21,7 +22,10 @@ namespace Framework.GOAP
     {
         private Action onComplete;
         private IActionHandler<TAction> currentActionHandler;
+        private bool isInterruptible;
         protected IPlanner<TAction, TGoal> planner;
+        public LinkedList<IActionHandler<TAction>> CurrActionHandlers { get; set; }
+        public IGoal<TGoal> CurrGoal { get; set; }
 
         public IPlanner<TAction, TGoal> Planner
         {
@@ -36,8 +40,30 @@ namespace Framework.GOAP
         {
             get
             {
-                //TODO 是否进行打断处理
-                return default;
+                if (isInterruptible)
+                {
+                    var handle = GetCurrentHandler();
+                    //还需要判断当前执行的动作是否可以被打断
+                    //大部分动作是可以被打断的
+                    if (handle.Action.IsInterruptiblePlan)
+                        return true;
+                    else
+                        return false;
+                }
+
+                if (CurrActionHandlers == null || CurrActionHandlers.Count <= 0)
+                {
+                    return true;
+                }
+
+                if (currentActionHandler == null)
+                {
+                    return CurrActionHandlers.Count <= 0;
+                }
+                else
+                {
+                    return currentActionHandler.ExcuteState == ActionExcuteState.Exit && CurrActionHandlers.Count <= 0;
+                }
             }
         }
 
@@ -46,14 +72,26 @@ namespace Framework.GOAP
             this.planner = planner;
         }
 
-        public void HandlerAction()
+        public IActionHandler<TAction> HandlerAction()
         {
-            throw new NotImplementedException();
+            if (IsComplete)
+            {
+                onComplete();
+                return null;
+            }
+            else
+            {
+                currentActionHandler = CurrActionHandlers.First.Value;
+                CurrActionHandlers.RemoveFirst();
+                LogTool.Log($"----当前要进行 执行的动作 ::: {currentActionHandler.Action.Label}");
+            }
+
+            return currentActionHandler;
         }
 
         public void Interruptible()
         {
-            throw new NotImplementedException();
+            isInterruptible = true;
         }
 
         public IActionHandler<TAction> GetCurrentHandler()

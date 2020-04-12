@@ -18,18 +18,10 @@ namespace Framework.GOAP
         /// </summary>
         /// <param name="goal"></param>
         /// <returns></returns>
-        public override LinkedList<IActionHandler<ActionTag>> BuildPlan(List<IGoal<GoalTag>> goals)
+        public override LinkedList<IActionHandler<ActionTag>> BuildPlan(IGoal<GoalTag> goal)
         {
             LogTool.Log($"制定计划 ------");
             var plan = new LinkedList<IActionHandler<ActionTag>>();
-            if (goals.Count <= 0)
-            {
-                plan.AddLast(agent.AgentActionMgr.GetHandler(ActionTag.Idle));
-                LogTool.Log($"无计划制定");
-                return plan;
-            }
-
-            var goal = goals.GoalsSortPriority();
             var lastAction = BuildActionTree();
             if (lastAction != null)
             {

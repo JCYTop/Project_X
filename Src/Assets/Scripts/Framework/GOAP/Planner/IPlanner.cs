@@ -25,6 +25,6 @@ namespace Framework.GOAP
         /// TODO 可重新生成
         /// TODO 可插入可删除
         /// </summary>
-        LinkedList<IActionHandler<TAction>> BuildPlan(List<IGoal<TGoal>> goals);
+        LinkedList<IActionHandler<TAction>> BuildPlan(IGoal<TGoal> goal);
     }
 }
