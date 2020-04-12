@@ -5,16 +5,16 @@
 
 using UnityEngine;
 
-namespace Framework.EventDispatcher
+namespace Framework.Event
 {
     /// <summary>
     /// 一般类，一般类中调用
     /// </summary>
     public abstract class EventEmitter : IEvent
     {
-        public void RegiestEvent(string eventName, EventMethod fn)
+        public void OnRegiestEvent(string eventName, EventMethod fn)
         {
-            EventDispatcher.Instance().RegiestEvent(eventName, fn);
+            EventDispatcher.Instance().OnRegiestEvent(eventName, fn);
         }
 
         public void OnceRegiestEvent(string eventName, EventMethod fn)
@@ -22,14 +22,14 @@ namespace Framework.EventDispatcher
             EventDispatcher.Instance().OnceRegiestEvent(eventName, fn);
         }
 
-        public void UnRegiestEvent(string eventName, EventMethod fn)
+        public void OnUnRegiestEvent(string eventName, EventMethod fn)
         {
-            EventDispatcher.Instance().UnRegiestEvent(eventName, fn);
+            EventDispatcher.Instance().OnUnRegiestEvent(eventName, fn);
         }
 
-        public void EmitEvent(string eventName, params object[] args)
+        public void OnEmitEvent(string eventName, params object[] args)
         {
-            EventDispatcher.Instance().EmitEvent(eventName, args);
+            EventDispatcher.Instance().OnEmitEvent(eventName, args);
         }
 
         public void Clear(ClearEventType clearEventType = ClearEventType.ALL)
@@ -43,9 +43,9 @@ namespace Framework.EventDispatcher
     /// </summary>
     public abstract class MonoEventEmitter : MonoBehaviour, IEvent
     {
-        public void RegiestEvent(string eventName, EventMethod fn)
+        public void OnRegiestEvent(string eventName, EventMethod fn)
         {
-            EventDispatcher.Instance().RegiestEvent(eventName, fn);
+            EventDispatcher.Instance().OnRegiestEvent(eventName, fn);
         }
 
         public void OnceRegiestEvent(string eventName, EventMethod fn)
@@ -53,14 +53,14 @@ namespace Framework.EventDispatcher
             EventDispatcher.Instance().OnceRegiestEvent(eventName, fn);
         }
 
-        public void UnRegiestEvent(string eventName, EventMethod fn)
+        public void OnUnRegiestEvent(string eventName, EventMethod fn)
         {
-            EventDispatcher.Instance().UnRegiestEvent(eventName, fn);
+            EventDispatcher.Instance().OnUnRegiestEvent(eventName, fn);
         }
 
-        public void EmitEvent(string eventName, params object[] args)
+        public void OnEmitEvent(string eventName, params object[] args)
         {
-            EventDispatcher.Instance().EmitEvent(eventName, args);
+            EventDispatcher.Instance().OnEmitEvent(eventName, args);
         }
 
         public void Clear(ClearEventType clearEventType = ClearEventType.ALL)

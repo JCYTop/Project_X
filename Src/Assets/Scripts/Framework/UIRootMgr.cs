@@ -17,7 +17,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Framework.Base;
-using Framework.EventDispatcher;
+using Framework.Event;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using Framework.Singleton;
@@ -128,12 +128,12 @@ public sealed class UIRootMgr : MonoBehaviour
 
     private void OnEnable()
     {
-        EventDispatcher.Instance().RegiestEvent(GlobalEventType.OnApplicationQuit, ApplicationQuit);
+        EventDispatcher.Instance().OnRegiestEvent(GlobalEventType.OnApplicationQuit, ApplicationQuit);
     }
 
     private void OnDisable()
     {
-        EventDispatcher.Instance().UnRegiestEvent(GlobalEventType.OnApplicationQuit, ApplicationQuit);
+        EventDispatcher.Instance().OnUnRegiestEvent(GlobalEventType.OnApplicationQuit, ApplicationQuit);
     }
 
     private void ApplicationQuit(params object[] args)

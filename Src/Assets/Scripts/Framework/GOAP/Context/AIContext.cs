@@ -14,7 +14,7 @@
 */
 
 using Framework.Base;
-using Framework.EventDispatcher;
+using Framework.Event;
 using UnityEngine;
 
 namespace Framework.GOAP

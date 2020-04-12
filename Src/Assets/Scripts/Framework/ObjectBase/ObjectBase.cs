@@ -15,7 +15,7 @@
 
 using System;
 using System.Collections.Generic;
-using Framework.EventDispatcher;
+using Framework.Event;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
@@ -72,13 +72,13 @@ namespace Framework.Base
 
         void OnEnable()
         {
-            RegiestEvent(globalID.ToString(), Refresh);
+            OnRegiestEvent(globalID.ToString(), Refresh);
             Enable();
         }
 
         void OnDisable()
         {
-            UnRegiestEvent(globalID.ToString(), Refresh);
+            OnUnRegiestEvent(globalID.ToString(), Refresh);
             Disable();
         }
 

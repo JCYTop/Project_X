@@ -2240,12 +2240,12 @@ PrefabInstance:
     - target: {fileID: 4830433488949376274, guid: af90201321a267245a4649d51ad43974,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 139
+      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 4830433488949376274, guid: af90201321a267245a4649d51ad43974,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 244
+      value: 263
       objectReference: {fileID: 0}
     - target: {fileID: 4830433488949376274, guid: af90201321a267245a4649d51ad43974,
         type: 3}
@@ -2544,18 +2544,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2032347150}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1496268517 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5697008256847850177, guid: 348c58c2a71f42f283f956bd4d1b935c,
-    type: 3}
-  m_PrefabInstance: {fileID: 2032347150}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1496268515}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b60a46482a2cbff4a8f486e837ce5d1a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1497602410 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4301763993091331685, guid: 348c58c2a71f42f283f956bd4d1b935c,
@@ -6387,7 +6375,7 @@ MonoBehaviour:
     - {fileID: 3937231538764391438, guid: 783ffa5e36aec084aa3e31fe5ae387a2, type: 3}
     - {fileID: 8661886168719840410, guid: 783ffa5e36aec084aa3e31fe5ae387a2, type: 3}
     - {fileID: 7243238276526484322, guid: 783ffa5e36aec084aa3e31fe5ae387a2, type: 3}
-    - {fileID: 1496268517}
+    - {fileID: 0}
     - {fileID: 11500000, guid: b60a46482a2cbff4a8f486e837ce5d1a, type: 3}
     - {fileID: 5697008256847850177, guid: 348c58c2a71f42f283f956bd4d1b935c, type: 3}
   prefabs: []
@@ -7172,6 +7160,26 @@ PrefabInstance:
     - target: {fileID: 3686397335937195637, guid: 348c58c2a71f42f283f956bd4d1b935c,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5697008256847850177, guid: 348c58c2a71f42f283f956bd4d1b935c,
+        type: 3}
+      propertyPath: Play.detectionAngle
+      value: 240
+      objectReference: {fileID: 0}
+    - target: {fileID: 5697008256847850177, guid: 348c58c2a71f42f283f956bd4d1b935c,
+        type: 3}
+      propertyPath: Play.heightOffset
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5697008256847850177, guid: 348c58c2a71f42f283f956bd4d1b935c,
+        type: 3}
+      propertyPath: Play.detectionRadius
+      value: 7.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5697008256847850177, guid: 348c58c2a71f42f283f956bd4d1b935c,
+        type: 3}
+      propertyPath: Play.viewBlockerLayerMask.m_Bits
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

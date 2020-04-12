@@ -41,7 +41,7 @@ namespace Framework.GOAP
         public override List<IGoal<GoalTag>> FindGoals()
         {
             var goalList = new List<IGoal<GoalTag>>();
-            foreach (var goal in goalsDic.Values)
+            foreach (var goal in GoalsDic.Values)
             {
                 if (goal.Condition.Count > 0)
                 {

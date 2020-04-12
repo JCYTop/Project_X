@@ -1,4 +1,4 @@
-﻿namespace Framework.EventDispatcher
+﻿namespace Framework.Event
 {
     public class GlobalEventType
     {

@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Framework.EventDispatcher
+namespace Framework.Event
 {
     #region 事件单位
 

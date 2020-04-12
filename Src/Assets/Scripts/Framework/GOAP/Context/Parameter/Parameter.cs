@@ -16,7 +16,7 @@
 using System;
 using System.Collections.Generic;
 using Framework.Base;
-using Framework.EventDispatcher;
+using Framework.Event;
 using Sirenix.OdinInspector;
 using UnityEngine;
 

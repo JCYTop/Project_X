@@ -75,12 +75,12 @@ namespace Framework.GOAP
 
         private void OnEnable()
         {
-            RegiestEvent(GOAPEventType.Change_Target, Change_Attack_Target);
+            OnRegiestEvent(GOAPEventType.Change_Target, Change_Attack_Target);
         }
 
         private void OnDisable()
         {
-            UnRegiestEvent(GOAPEventType.Change_Target, Change_Attack_Target);
+            OnUnRegiestEvent(GOAPEventType.Change_Target, Change_Attack_Target);
         }
 
         private void Change_Attack_Target(object[] args)
@@ -105,6 +105,8 @@ namespace Framework.GOAP
                 {
                     updateData.RemoveSortListElements(CondtionTag.Near_Target);
                 }
+
+                OnEmitEvent(GOAPEventType.Change_Condition, new object[] {GoalbalID,});
 #if UNITY_EDITOR
                 panelInfo.ForEach((panel) =>
                 {
@@ -120,21 +122,27 @@ namespace Framework.GOAP
         /// <summary>
         /// 需要实时更新的标签
         /// </summary>
-        private void Update()
+        private void FixedUpdate()
         {
             //遍历动态查找需要检测的标签
             if (updateData.Count <= 0) return;
             var sortList = updateData.GetEnumerator();
             while (sortList.MoveNext())
             {
-                var value = conditionMap.SetDictionaryValue(sortList.Current.Key, sortList.Current.Value(enemyContext));
+                var preValue = conditionMap.GetDictionaryValue(sortList.Current.Key);
+                var currValue = conditionMap.SetDictionaryValue(sortList.Current.Key, sortList.Current.Value(enemyContext));
+                //updateData 中要实时跟新的数据发送，其他由事件改变的在事件接受处发送
+                if (preValue != currValue)
+                {
+                    OnEmitEvent(GOAPEventType.Change_Condition, new object[] {GoalbalID,});
+                }
 #if UNITY_EDITOR
                 var list = panelInfo.GetEnumerator();
                 while (list.MoveNext())
                 {
                     if (list.Current.ElementTag == sortList.Current.Key)
                     {
-                        list.Current.IsRight = value;
+                        list.Current.IsRight = currValue;
                     }
                 }
 #endif

@@ -20,7 +20,7 @@ namespace Framework.GOAP
         /// <returns></returns>
         public override LinkedList<IActionHandler<ActionTag>> BuildPlan(List<IGoal<GoalTag>> goals)
         {
-            LogTool.Log($"制定计划");
+            LogTool.Log($"制定计划 ------");
             var plan = new LinkedList<IActionHandler<ActionTag>>();
             if (goals.Count <= 0)
             {
@@ -42,13 +42,13 @@ namespace Framework.GOAP
             else
                 LogTool.LogError($"当前节点为空");
 
-            LogTool.Log($"---------- 最终生成计划 ----------");
+            LogTool.Log($"------ 最终生成计划 ------");
             foreach (var handler in plan)
             {
                 LogTool.Log($"计划项： {handler.Action.Label}");
             }
 
-            LogTool.Log($"计划结束");
+            LogTool.Log($"------ 计划结束");
             return plan;
 
             //构建Action树

@@ -10,7 +10,7 @@ namespace Framework.GOAP
 
         private void Change_Target()
         {
-            EmitEvent(GOAPEventType.Change_Target, new object[] {GoalbalID, Target});
+            OnEmitEvent(GOAPEventType.Change_Target, new object[] {GoalbalID, Target});
         }
 
         public override void Init()

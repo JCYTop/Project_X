@@ -13,7 +13,7 @@
  ----------------------------------
 */
 
-using Framework.EventDispatcher;
+using Framework.Event;
 
 namespace Framework.Base
 {
