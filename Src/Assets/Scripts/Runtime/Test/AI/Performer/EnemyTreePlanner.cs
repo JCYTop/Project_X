@@ -27,6 +27,11 @@ namespace Framework.GOAP
             var lastAction = BuildActionTree();
             if (lastAction != null)
             {
+                if (lastAction.Data == null)
+                {
+                    plan.AddLast(agent.AgentActionMgr.GetHandler(ActionTag.Idle));
+                }
+
                 while (lastAction.Data != null)
                 {
                     plan.AddLast(lastAction.Data);
@@ -52,12 +57,13 @@ namespace Framework.GOAP
                 var topTree = new MultiTreeNode<IActionHandler<ActionTag>>(null);
                 topTree.OtherData.AddHashtableElement(CurrCost, 0);
                 var currNode = topTree;
-                var ResetTarget = agent.Context.Condition.GetDiffecentTargetTags(goal.Target).ToList();
-                var currKeys = agent.Context.Condition.GetDiffecentTargetTags(goal).ToList();
+                var tuple = agent.Context.Condition.GetDiffecentTargetTags(goal);
+                var restCurrKeys = tuple.Item1.ToList();
+                var resetTarget = tuple.Item2.ToList();
                 MultiTreeNode<IActionHandler<ActionTag>> subNode = null;
                 MultiTreeNode<IActionHandler<ActionTag>> cheapestNode = null;
                 //循环创建多叉树
-                while (!IsNodeEnd(currKeys))
+                while (!IsNodeEnd(restCurrKeys))
                 {
                     //获取状态差异的Handlers
                     var handlers = GetSubHandlers();
@@ -70,13 +76,9 @@ namespace Framework.GOAP
                     }
 
                     currNode = cheapestNode;
-                    currKeys = AIConditionExtend
-                        .GetDiffecentCondition(ResetTarget, currNode.Data.Action.Effects)
-                        .GetDiffecentConditionTag()
-                        .ToList();
-                    ResetTarget = AIConditionExtend
-                        .GetDiffecentCondition(ResetTarget, currNode.Data.Action.Effects)
-                        .ToList();
+                    tuple = AIConditionExtend.GetDiffecentCondition(resetTarget, currNode.Data.Action.Effects);
+                    restCurrKeys = tuple.Item1.ToList();
+                    resetTarget = tuple.Item2.ToList();
                     cheapestNode = null;
                 }
 
@@ -95,7 +97,8 @@ namespace Framework.GOAP
 
                     var currCost = currNode.OtherData.GetHashtableElement<int>(CurrCost);
                     //上一个节点消耗 + 配置消耗 + 比较之前节点消耗
-                    return currCost + (int) configCost + AIConditionExtend.GetDiffecentCondition(ResetTarget, subNode.Data.Action.Effects).Count;
+                    var count = AIConditionExtend.GetDiffecentCondition(resetTarget, subNode.Data.Action.Effects);
+                    return currCost + (int) configCost + count.Item1.Count;
                 }
 
                 //获取当前节点所有可能的子节点
@@ -106,7 +109,7 @@ namespace Framework.GOAP
                         return handlers;
                     var maps = agent.AgentActionMgr.EffectActionMap;
                     //下面进行查找相对应的Handler 
-                    foreach (var key in currKeys)
+                    foreach (var key in restCurrKeys)
                     {
                         if (maps.ContainsKey(key))
                         {
@@ -114,7 +117,7 @@ namespace Framework.GOAP
                             {
                                 //筛选能够执行的动作
                                 if (!handlers.Contains(handler) &&
-                                    handler.Action.GetEffectsValue(key).IsRight == ResetTarget.GetDiffecentCondition(key).IsRight)
+                                    handler.Action.GetEffectsValue(key).IsRight == resetTarget.GetDiffecentCondition(key).IsRight)
                                 {
                                     handlers.Add(handler);
                                 }

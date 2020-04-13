@@ -41,21 +41,36 @@ namespace Framework.GOAP
         public override List<IGoal<GoalTag>> FindGoals()
         {
             var goalList = new List<IGoal<GoalTag>>();
+            var tmpCondition = new List<CondtionTag>();
             foreach (var goal in GoalsDic.Values)
             {
+                tmpCondition.Clear();
+                var isAdd = true;
                 if (goal.Condition.Count > 0)
                 {
-                    var isAdd = true;
                     foreach (var assembly in goal.Condition)
                     {
+                        tmpCondition.Add(assembly.ElementTag);
                         isAdd = EnemyContext.Condition.GetCondition<EnemyCondition>().ConditionMap.GetDictionaryValue(assembly.ElementTag);
                         if (!isAdd)
                             break;
                     }
 
-                    if (isAdd)
-                        goalList.AddListElement(goal);
+                    if (goal.Target.Count > 0)
+                    {
+                        foreach (var assembly in goal.Target)
+                        {
+                            if (tmpCondition.Contains(assembly.ElementTag))
+                                continue;
+                            isAdd = !EnemyContext.Condition.GetCondition<EnemyCondition>().ConditionMap.GetDictionaryValue(assembly.ElementTag);
+                            if (!isAdd)
+                                break;
+                        }
+                    }
                 }
+
+                if (isAdd)
+                    goalList.AddListElement(goal);
             }
 
             return goalList;

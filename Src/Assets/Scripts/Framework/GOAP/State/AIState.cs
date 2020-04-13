@@ -14,6 +14,7 @@
 */
 
 using HutongGames.PlayMaker;
+using UnityEngine;
 
 namespace Framework.GOAP
 {
@@ -81,6 +82,8 @@ namespace Framework.GOAP
 
         public virtual void ExitState()
         {
+            if (!Application.isPlaying)
+                return;
             UnRegiestEvent();
         }
 

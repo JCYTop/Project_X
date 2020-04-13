@@ -79,8 +79,8 @@ namespace Framework.GOAP
 
         public override void OnExit()
         {
-            EventDispatcher.Instance().OnEmitEvent(GOAPEventType.StateChangeAlert, new object[] {GetContext.GoalbalID, StateTag.Default});
             base.OnExit();
+            EventDispatcher.Instance().OnEmitEvent(GOAPEventType.StateChangeAlert, new object[] {GetContext.GoalbalID, StateTag.Default});
         }
     }
 }

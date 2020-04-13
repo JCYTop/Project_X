@@ -136,7 +136,7 @@ namespace Framework.GOAP
         /// <summary>
         /// 警戒状态去做什么
         /// </summary>
-        Alert_TODO,
+        Alert_Into,
 
         #endregion
     }

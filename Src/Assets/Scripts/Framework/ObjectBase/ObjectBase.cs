@@ -34,13 +34,9 @@ namespace Framework.Base
         private Tag objectTag = Tag.None;
 
         [BoxGroup("基本属性手动设置")] public string Des = string.Empty;
-//        [BoxGroup("基本属性手动设置")] public bool IsPreLoad = false;
 
         [BoxGroup("自动设置"), Header("运行时场景唯一标识ID"), SerializeField, ReadOnly]
         protected int globalID;
-
-        [BoxGroup("自动设置"), Header("基础命名"), SerializeField, ReadOnly]
-        private string baseName;
 
         [SerializeField] private List<PointTrans> PointTrans = new List<PointTrans>();
         [SerializeField] private List<ConfigInfo> Config = new List<ConfigInfo>();
@@ -49,11 +45,7 @@ namespace Framework.Base
 
         #region 属性
 
-        public string BaseName
-        {
-            get { return baseName; }
-            set { baseName = value; }
-        }
+        public string BaseName { set; get; }
 
         public int ObjectLayer => (int) objectLayer;
         public string ObjectTag => Enum.GetName(typeof(Tag), objectTag);

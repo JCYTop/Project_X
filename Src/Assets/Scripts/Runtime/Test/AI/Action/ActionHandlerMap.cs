@@ -37,7 +37,7 @@ namespace Framework.GOAP
                         {ActionTag.Default, new DefaultActionHandler()},
                         {ActionTag.Idle, new IdleActionHandler()},
                         {ActionTag.Walk, new WalkActionHandler()},
-                        {ActionTag.Alert_TODO, new EnemyAlertTODOHandler()},
+                        {ActionTag.Alert_Into, new EnemyAlertIntoHandler()},
                     };
                 }
 

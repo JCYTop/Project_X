@@ -69,41 +69,22 @@ namespace Framework.GOAP
         /// <param name="goal"></param>
         /// <typeparam name="TGoal"></typeparam>
         /// <returns></returns>
-        public static ICollection<CondtionTag> GetDiffecentTargetTags<TGoal>(this Condition condition, IGoal<TGoal> goal)
+        public static (ICollection<CondtionTag>, ICollection<CondtionAssembly>) GetDiffecentTargetTags<TGoal>(this Condition condition,
+            IGoal<TGoal> goal)
         {
-            var list = new List<CondtionTag>();
-            foreach (var cond in goal.Target)
+            var condtionTag = new List<CondtionTag>();
+            var condtionAssembly = new List<CondtionAssembly>();
+            foreach (var item in goal.Target)
             {
-                var value = condition.ConditionMap.GetDictionaryValue(cond.ElementTag);
+                var value = condition.ConditionMap.GetDictionaryValue(item.ElementTag);
                 if (!value)
                 {
-                    list.Add(cond.ElementTag);
+                    condtionTag.Add(item.ElementTag);
+                    condtionAssembly.Add(item);
                 }
             }
 
-            return list;
-        }
-
-        /// <summary>
-        /// 获取和目标不相同的条件的CondtionAssembly
-        /// </summary>
-        /// <param name="condition"></param>
-        /// <param name="assemblies"></param>
-        /// <typeparam name="TGoal"></typeparam>
-        /// <returns></returns>
-        public static ICollection<CondtionAssembly> GetDiffecentTargetTags(this Condition condition, ICollection<CondtionAssembly> assemblies)
-        {
-            var list = new List<CondtionAssembly>();
-            foreach (var cond in assemblies)
-            {
-                var value = condition.ConditionMap.GetDictionaryValue(cond.ElementTag);
-                if (!value)
-                {
-                    list.Add(cond);
-                }
-            }
-
-            return list;
+            return (condtionTag, condtionAssembly);
         }
 
         /// <summary>
@@ -134,38 +115,29 @@ namespace Framework.GOAP
         /// <param name="curr"></param>
         /// <param name="target"></param>
         /// <returns></returns>
-        public static ICollection<CondtionAssembly> GetDiffecentCondition(ICollection<CondtionAssembly> curr, ICollection<CondtionAssembly> target)
+        public static (List<CondtionTag>, ICollection<CondtionAssembly>) GetDiffecentCondition(ICollection<CondtionAssembly> curr,
+            ICollection<CondtionAssembly> target)
         {
-            var list = new HashSet<CondtionAssembly>();
-            foreach (var assembly in curr)
+            var condtionTag = new List<CondtionTag>();
+            var condtionAssembly = new HashSet<CondtionAssembly>();
+            foreach (var item in curr)
             {
-                list.Add(assembly);
+                condtionAssembly.Add(item);
                 foreach (var subAssembly in target)
                 {
-                    if (assembly.ElementTag == subAssembly.ElementTag && assembly.IsRight == subAssembly.IsRight)
+                    if (item.ElementTag == subAssembly.ElementTag && item.IsRight == subAssembly.IsRight)
                     {
-                        list.Remove(assembly);
+                        condtionAssembly.Remove(item);
                     }
                 }
             }
 
-            return list;
-        }
-
-        /// <summary>
-        /// 提供集合返回集合标签
-        /// </summary>
-        /// <param name="collection"></param>
-        /// <returns></returns>
-        public static ICollection<CondtionTag> GetDiffecentConditionTag(this ICollection<CondtionAssembly> collection)
-        {
-            var list = new List<CondtionTag>();
-            foreach (var assembly in collection)
+            foreach (var assembly in condtionAssembly)
             {
-                list.Add(assembly.ElementTag);
+                condtionTag.Add(assembly.ElementTag);
             }
 
-            return list;
+            return (condtionTag, condtionAssembly);
         }
     }
 }

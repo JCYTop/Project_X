@@ -3,7 +3,7 @@ using Framework.Event;
 
 namespace Framework.GOAP
 {
-    public class EnemyAlertTODOHandler : ActionHandler
+    public class EnemyAlertIntoHandler : ActionHandler
     {
         public override void AddFinishCallBack(Action onFinishAction)
         {
