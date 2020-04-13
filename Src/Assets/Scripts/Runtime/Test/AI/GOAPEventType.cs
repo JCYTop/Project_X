@@ -29,5 +29,14 @@ namespace Framework.GOAP
         public const string ChangeCondition = "ChangeCondition";
 
         #endregion
+
+        #region State 
+
+        /// <summary>
+        /// 状态机状态发生变化
+        /// </summary>
+        public const string StateChange = "StateChange";
+
+        #endregion
     }
 }

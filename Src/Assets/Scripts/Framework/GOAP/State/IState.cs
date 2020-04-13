@@ -56,12 +56,6 @@ namespace Framework.GOAP
         /// 退出动作
         /// </summary>
         void ExitState();
-
-        /// <summary>
-        /// 添加数据修改监听
-        /// </summary>
-        /// <param name="onChange"></param>
-        void AddStateChangeListener(Action callback);
     }
 
     /// <summary>

@@ -65,7 +65,7 @@ namespace Framework.GOAP
         /// 进入Alert
         /// State状态
         /// </summary>
-        Into_Alert_State = 400,
+        Alert_State = 400,
 
         #endregion
     }

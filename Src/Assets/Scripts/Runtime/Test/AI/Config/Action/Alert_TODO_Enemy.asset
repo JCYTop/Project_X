@@ -30,3 +30,5 @@ MonoBehaviour:
     IsRight: 1
   - ElementTag: 400
     IsRight: 1
+  - ElementTag: 400
+    IsRight: 1

@@ -12,5 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 504119798f8f4b01a98a44c4ddbbd4ac, type: 3}
   m_Name: Idle_Enemy
   m_EditorClassIdentifier: 
+  ConditionState: 
+  TargetState: 01000000
   Condition: []
   Target: []

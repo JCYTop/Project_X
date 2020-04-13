@@ -13,11 +13,7 @@
  ----------------------------------
 */
 
-using System;
-using System.Collections.Generic;
-using Framework.Event;
 using HutongGames.PlayMaker;
-using JetBrains.Annotations;
 
 namespace Framework.GOAP
 {
@@ -29,7 +25,6 @@ namespace Framework.GOAP
     [ActionCategory("AI.Base")]
     public abstract class AIState<TContext, TConfig> : FsmStateAction, IState where TContext : class, IContext
     {
-        private Action onChange;
         public FsmObject Context;
 
         /// <summary>
@@ -41,7 +36,7 @@ namespace Framework.GOAP
         /// <summary>
         /// 获取关联的Context环境
         /// </summary>
-        protected TContext GetContext => Context.Value as TContext;
+        public TContext GetContext => Context.Value as TContext;
 
         #region FSM
 
@@ -87,8 +82,6 @@ namespace Framework.GOAP
         public virtual void ExitState()
         {
             UnRegiestEvent();
-            if (onChange != null) 
-                onChange();
         }
 
         public TConfig GetData()
@@ -102,11 +95,6 @@ namespace Framework.GOAP
 
         public virtual void UnRegiestEvent()
         {
-        }
-
-        public void AddStateChangeListener([NotNull] Action callback)
-        {
-            this.onChange = callback;
         }
     }
 }
