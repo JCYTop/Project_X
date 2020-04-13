@@ -26,7 +26,7 @@ namespace Framework.GOAP
     /// 跟Mono有关的集合类
     /// </summary>
     [RequireComponent(typeof(PlayMakerFSM))]
-    public abstract class AIContext<T1, T2> : MonoEventEmitter, IContext, IGoalbalID
+    public abstract class AIContext<T1, T2> : MonoEventEmitter, IContext
     {
         private PlayMakerFSM stateFsm;
         private Parameter parameter;

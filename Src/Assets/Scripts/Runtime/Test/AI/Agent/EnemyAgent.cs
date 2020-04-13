@@ -34,12 +34,24 @@ namespace Framework.GOAP
 
         public override void RegiestEvent()
         {
-            EventDispatcher.Instance().OnRegiestEvent(GOAPEventType.Change_Condition, ChangeCondition);
+            EventDispatcher.Instance().OnRegiestEvent(GOAPEventType.ChangeCondition, ChangeCondition);
+            EventDispatcher.Instance().OnRegiestEvent(GOAPEventType.ActionChangeState, ActionChangeState);
         }
 
         public override void UnRegiestEvent()
         {
-            EventDispatcher.Instance().OnUnRegiestEvent(GOAPEventType.Change_Condition, ChangeCondition);
+            EventDispatcher.Instance().OnUnRegiestEvent(GOAPEventType.ChangeCondition, ChangeCondition);
+            EventDispatcher.Instance().OnUnRegiestEvent(GOAPEventType.ActionChangeState, ActionChangeState);
+        }
+
+        private void ActionChangeState(object[] args)
+        {
+            if (args != null && args.Length > 0)
+            {
+                if (EnemyContext.GoalbalID != Convert.ToInt32(args[0]))
+                    return;
+                TargetEvent(args[1].ToString());
+            }
         }
 
         /// <summary>
@@ -50,7 +62,8 @@ namespace Framework.GOAP
         {
             if (args != null && args.Length > 0)
             {
-                if (EnemyContext.GoalbalID != Convert.ToInt32(args[0])) return;
+                if (EnemyContext.GoalbalID != Convert.ToInt32(args[0]))
+                    return;
                 Performer.UpdateData();
             }
         }

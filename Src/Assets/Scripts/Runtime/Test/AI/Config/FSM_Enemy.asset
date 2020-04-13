@@ -111,7 +111,7 @@ MonoBehaviour:
         paramDataPos: 0000000000000000000000000000000000000000
         paramByteDataSize: 0000000000000000000000000000000001000000
     - name: Idle
-      description: "\u6B63\u5E38\u72B6\u6001\r"
+      description: 
       colorIndex: 0
       position:
         serializedVersion: 2
@@ -175,7 +175,7 @@ MonoBehaviour:
         paramDataPos: 0000000000000000
         paramByteDataSize: 0000000000000000
     - name: Battle
-      description: "\u6218\u6597\u72B6\u6001\r"
+      description: 
       colorIndex: 0
       position:
         serializedVersion: 2

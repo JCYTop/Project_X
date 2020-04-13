@@ -24,19 +24,19 @@ namespace Framework.GOAP
             this.onFinishAction = onFinishAction;
         }
 
-        public override void Enter()
+        public override void Enter(IContext context, Action callback)
         {
-            base.Enter();
+            base.Enter(context, callback);
         }
 
-        public override void Execute()
+        public override void Execute(IContext context, Action callback)
         {
-            base.Execute();
+            base.Execute(context, callback);
         }
 
-        public override void Exit()
+        public override void Exit(IContext context, Action callback)
         {
-            base.Exit();
+            base.Exit(context, callback);
         }
     }
 }

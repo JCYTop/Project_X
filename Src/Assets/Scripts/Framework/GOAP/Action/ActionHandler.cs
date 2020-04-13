@@ -28,7 +28,7 @@ namespace Framework.GOAP
         /// </summary>
         public ActionExcuteState ExcuteState { get; private set; }
 
-        public virtual void Init(IAction<ActionTag> action)
+        public void Init(IAction<ActionTag> action)
         {
             this.Action = action;
             ExcuteState = ActionExcuteState.Init;
@@ -36,24 +36,21 @@ namespace Framework.GOAP
 
         public abstract void AddFinishCallBack(Action onFinishAction);
 
-        public virtual void Enter()
+        public virtual void Enter(IContext context, Action callback)
         {
             ExcuteState = ActionExcuteState.Enter;
         }
 
-        public virtual void Execute()
+        public virtual void Execute(IContext context, Action callback)
         {
             ExcuteState = ActionExcuteState.Excute;
         }
 
-        public virtual void Exit()
+        public virtual void Exit(IContext context, Action callback)
         {
             ExcuteState = ActionExcuteState.Exit;
-        }
-
-        public virtual bool VerifyPreconditions()
-        {
-            return true;
+            if (onFinishAction != null)
+                onFinishAction();
         }
     }
 }

@@ -15,6 +15,7 @@
 
 using System;
 using System.Collections.Generic;
+using Framework.Event;
 using HutongGames.PlayMaker;
 using JetBrains.Annotations;
 
@@ -73,10 +74,27 @@ namespace Framework.GOAP
         #endregion
 
         public abstract void AwakeState();
-        public abstract void EnterState();
-        public abstract void ExecuteState();
-        public abstract void ExitState();
-        public abstract TConfig GetData();
+
+        public virtual void EnterState()
+        {
+            RegiestEvent();
+        }
+
+        public virtual void ExecuteState()
+        {
+        }
+
+        public virtual void ExitState()
+        {
+            UnRegiestEvent();
+            if (onChange != null) 
+                onChange();
+        }
+
+        public TConfig GetData()
+        {
+            return StateConfig;
+        }
 
         public virtual void RegiestEvent()
         {

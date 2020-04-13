@@ -75,15 +75,15 @@ namespace Framework.GOAP
 
         private void OnEnable()
         {
-            OnRegiestEvent(GOAPEventType.Change_Target, Change_Attack_Target);
+            OnRegiestEvent(GOAPEventType.ChangeTarget, ChangeAttackTarget);
         }
 
         private void OnDisable()
         {
-            OnUnRegiestEvent(GOAPEventType.Change_Target, Change_Attack_Target);
+            OnUnRegiestEvent(GOAPEventType.ChangeTarget, ChangeAttackTarget);
         }
 
-        private void Change_Attack_Target(object[] args)
+        private void ChangeAttackTarget(object[] args)
         {
             if (args != null && args.Length > 0)
             {
@@ -106,7 +106,7 @@ namespace Framework.GOAP
                     updateData.RemoveSortListElements(CondtionTag.Near_Target);
                 }
 
-                OnEmitEvent(GOAPEventType.Change_Condition, new object[] {GoalbalID,});
+                OnEmitEvent(GOAPEventType.ChangeCondition, new object[] {GoalbalID,});
 #if UNITY_EDITOR
                 panelInfo.ForEach((panel) =>
                 {
@@ -134,7 +134,7 @@ namespace Framework.GOAP
                 //updateData 中要实时跟新的数据发送，其他由事件改变的在事件接受处发送
                 if (preValue != currValue)
                 {
-                    OnEmitEvent(GOAPEventType.Change_Condition, new object[] {GoalbalID,});
+                    OnEmitEvent(GOAPEventType.ChangeCondition, new object[] {GoalbalID,});
                 }
 #if UNITY_EDITOR
                 var list = panelInfo.GetEnumerator();

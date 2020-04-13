@@ -14,7 +14,7 @@
 */
 
 using System;
-using JetBrains.Annotations;
+using Framework.Base;
 using UnityEngine;
 
 namespace Framework.GOAP
@@ -26,7 +26,7 @@ namespace Framework.GOAP
     /// 提供给IAgent数据使用
     /// 属于数据类
     /// </summary>
-    public interface IContext
+    public interface IContext : IGoalbalID
     {
         Parameter Parameter { get; }
         Dynamic Dynamic { get; }

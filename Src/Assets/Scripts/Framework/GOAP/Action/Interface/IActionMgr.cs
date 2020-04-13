@@ -19,6 +19,8 @@ namespace Framework.GOAP
 {
     public interface IActionMgr<TAction>
     {
+        IActionHandler<TAction> CurrHandle { get; }
+
         /// <summary>
         /// 当前是否在执行动的标志位
         /// 用于避免动作已经结束，却还在执行帧函数的情况
@@ -46,22 +48,12 @@ namespace Framework.GOAP
         /// 改变当前执行的动作
         /// </summary>
         /// <param name="actionLabel"></param>
-        void ExcuteHandler(IActionHandler<TAction> actionLabel);
+        void ExcuteHandler(IActionHandler<TAction> action);
 
         /// <summary>
         /// 添加动作完成的监听
         /// </summary>
         /// <param name="actionComplete"></param>
         void AddActionCompleteListener(System.Action<TAction> actionComplete);
-
-        /// <summary>
-        /// 帧函数
-        /// </summary>
-        void Update();
-
-        /// <summary>
-        /// 更新数据
-        /// </summary>
-        void UpdateData();
     }
 }

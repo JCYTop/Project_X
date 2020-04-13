@@ -1,5 +1,5 @@
 using System;
-using UnityEngine;
+using Framework.Event;
 
 namespace Framework.GOAP
 {
@@ -10,20 +10,29 @@ namespace Framework.GOAP
             this.onFinishAction = onFinishAction;
         }
 
-        public override void Enter()
+        public override void Enter(IContext context, Action callback)
         {
-            base.Enter();
-            Debug.Log("---");
+            base.Enter(context, callback);
+            EventDispatcher.Instance().OnEmitEvent(GOAPEventType.ActionChangeState, new object[] {context.GoalbalID, "Alert"});
+            LogTool.Log($"进入AlertLog通知");
+            if (callback != null)
+                callback();
         }
 
-        public override void Execute()
+        public override void Execute(IContext context, Action callback)
         {
-            base.Execute();
+            base.Execute(context, callback);
+            LogTool.Log($"进入ExecuteLog通知");
+            if (callback != null)
+                callback();
         }
 
-        public override void Exit()
+        public override void Exit(IContext context, Action callback)
         {
-            base.Exit();
+            LogTool.Log($"进入ExitLog通知");
+            if (callback != null)
+                callback();
+            base.Exit(context, callback);
         }
     }
 }

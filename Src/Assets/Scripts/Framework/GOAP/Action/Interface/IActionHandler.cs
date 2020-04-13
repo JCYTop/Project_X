@@ -49,34 +49,25 @@ namespace Framework.GOAP
         void AddFinishCallBack(Action onFinishAction);
 
         /// <summary>
-        /// 进入动作
-        /// 可以由动画事件进入
-        /// 也可以由Playable进入设置
-        /// Playable可控制
+        /// 进入动作逻辑
         /// </summary>
-        void Enter();
+        /// <param name="context"></param>
+        /// <param name="callback"></param>
+        void Enter(IContext context, Action callback);
 
         /// <summary>
-        /// 更新动作
-        /// 也可以由Playable进入设置
-        /// Playable可控制
+        /// 更新动作逻辑
         /// </summary>
-        void Execute();
+        /// <param name="context"></param>
+        /// <param name="callback"></param>
+        void Execute(IContext context, Action callback);
 
         /// <summary>
-        /// 退出动作
-        /// 可以由动画事件进入
-        /// 也可以由Playable进入设置
-        /// Playable可控制
+        /// 退出动作逻辑
         /// </summary>
-        void Exit();
-
-        /// <summary>
-        /// 验证先决条件
-        /// 主要使用在是否可以进行打断的上面判断
-        /// </summary>
-        /// <returns></returns>
-        bool VerifyPreconditions();
+        /// <param name="context"></param>
+        /// <param name="callback"></param>
+        void Exit(IContext context, Action callback);
     }
 
     /// <summary>

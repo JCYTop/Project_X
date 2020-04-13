@@ -13,9 +13,9 @@
  ----------------------------------
 */
 
-using System;
 using System.Collections.Generic;
 using System.Linq;
+using Framework.Event;
 
 namespace Framework.GOAP
 {
@@ -25,12 +25,17 @@ namespace Framework.GOAP
     /// <typeparam name="TAction"></typeparam>
     public abstract class ActionMgr<TAction, TGoal> : IActionMgr<TAction>
     {
+        protected IAgent<TAction, TGoal> agent;
+
+        /// <summary>
+        /// 正在使用的动作
+        /// </summary>
+        public IActionHandler<TAction> CurrHandle { get; private set; }
+
         /// <summary>
         /// 动作完成的回调
         /// </summary>
         protected System.Action<TAction> onActionComplete;
-
-        protected IAgent<TAction, TGoal> agent;
 
         /// <summary>
         /// 动作字典列表
@@ -111,8 +116,12 @@ namespace Framework.GOAP
         /// <summary>
         /// 执行新动作
         /// </summary>
-        /// <param name="actionLabel"></param>
-        public abstract void ExcuteHandler(IActionHandler<TAction> actionLabel);
+        /// <param name="action"></param>
+        public void ExcuteHandler(IActionHandler<TAction> action)
+        {
+            CurrHandle = action;
+            EventDispatcher.Instance().OnEmitEvent(GOAPEventType.ActionMgrExcuteHandler, new object[] {agent.Context.GoalbalID, CurrHandle});
+        }
 
         /// <summary>
         /// Planner计划中使用
@@ -121,16 +130,6 @@ namespace Framework.GOAP
         public void AddActionCompleteListener(System.Action<TAction> actionComplete)
         {
             this.onActionComplete = actionComplete;
-        }
-
-        public void Update()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void UpdateData()
-        {
-            throw new NotImplementedException();
         }
     }
 }
