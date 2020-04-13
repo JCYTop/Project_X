@@ -27,7 +27,6 @@ namespace Framework.GOAP
 
             currStateTag = tag;
             currState = stateSortList[tag];
-            EventDispatcher.Instance().OnEmitEvent(GOAPEventType.StateChange, new object[] {currState.GetContext.GoalbalID, currStateTag});
         }
     }
 }

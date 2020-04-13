@@ -35,7 +35,7 @@ namespace Framework.GOAP
         /// <summary>
         /// 状态机状态发生变化
         /// </summary>
-        public const string StateChange = "StateChange";
+        public const string StateChangeAlert = "StateChange";
 
         #endregion
     }

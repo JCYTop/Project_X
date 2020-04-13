@@ -26,17 +26,21 @@ namespace Framework.GOAP
 
         public override void Enter(IContext context, Action callback)
         {
+            LogTool.Log($"进入WalkActionHandler通知");
             base.Enter(context, callback);
         }
 
         public override void Execute(IContext context, Action callback)
         {
             base.Execute(context, callback);
+            LogTool.Log($"进入ExecuteWalkActionHandler通知");
+
         }
 
         public override void Exit(IContext context, Action callback)
         {
             base.Exit(context, callback);
+            LogTool.Log($"进入ExitWalkActionHandler通知");
         }
     }
 }

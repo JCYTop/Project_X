@@ -33,6 +33,7 @@ namespace Framework.GOAP
         {
             base.EnterState();
             EnemyStateMgr.SetCurrActivity(StateConfig.Tag);
+            EventDispatcher.Instance().OnEmitEvent(GOAPEventType.StateChangeAlert, new object[] {GetContext.GoalbalID, StateConfig.Tag});
         }
 
         private void ActionMgrExcuteHandler(object[] args)
@@ -74,6 +75,12 @@ namespace Framework.GOAP
             if (currAction == null)
                 return;
             currAction.Execute(GetContext, () => { });
+        }
+
+        public override void OnExit()
+        {
+            EventDispatcher.Instance().OnEmitEvent(GOAPEventType.StateChangeAlert, new object[] {GetContext.GoalbalID, StateTag.Default});
+            base.OnExit();
         }
     }
 }

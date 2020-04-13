@@ -9,6 +9,8 @@ namespace Framework.GOAP
     /// </summary>
     public class EnemyTreePlanner : Planner<ActionTag, GoalTag>
     {
+        private readonly string CurrCost = "CurrCost";
+
         public EnemyTreePlanner(IAgent<ActionTag, GoalTag> agent) : base(agent)
         {
         }
@@ -40,7 +42,7 @@ namespace Framework.GOAP
                 LogTool.Log($"计划项： {handler.Action.Label}");
             }
 
-            LogTool.Log($"------ 计划结束");
+            LogTool.Log($"------ 生成计划结束");
             return plan;
 
             //构建Action树
@@ -48,7 +50,7 @@ namespace Framework.GOAP
             {
                 //初始化默认父节点
                 var topTree = new MultiTreeNode<IActionHandler<ActionTag>>(null);
-                topTree.OtherData.AddHashtableElement("CurrCost", 0);
+                topTree.OtherData.AddHashtableElement(CurrCost, 0);
                 var currNode = topTree;
                 var ResetTarget = agent.Context.Condition.GetDiffecentTargetTags(goal.Target).ToList();
                 var currKeys = agent.Context.Condition.GetDiffecentTargetTags(goal).ToList();
@@ -62,7 +64,7 @@ namespace Framework.GOAP
                     foreach (var handler in handlers)
                     {
                         subNode = new MultiTreeNode<IActionHandler<ActionTag>>(handler);
-                        subNode.OtherData.AddHashtableElement("CurrCost", GetAllCost());
+                        subNode.OtherData.AddHashtableElement(CurrCost, GetAllCost());
                         subNode.Parent = currNode;
                         cheapestNode = GetCheapestNode(subNode, cheapestNode);
                     }
@@ -91,7 +93,7 @@ namespace Framework.GOAP
                         }
                     }
 
-                    var currCost = currNode.OtherData.GetHashtableElement<int>("CurrCost");
+                    var currCost = currNode.OtherData.GetHashtableElement<int>(CurrCost);
                     //上一个节点消耗 + 配置消耗 + 比较之前节点消耗
                     return currCost + (int) configCost + AIConditionExtend.GetDiffecentCondition(ResetTarget, subNode.Data.Action.Effects).Count;
                 }
@@ -150,11 +152,11 @@ namespace Framework.GOAP
                 return right;
             if (right == null || right.Data == null)
                 return left;
-            if (left.OtherData.GetHashtableElement<int>("CurrCost") > right.OtherData.GetHashtableElement<int>("CurrCost"))
+            if (left.OtherData.GetHashtableElement<int>(CurrCost) > right.OtherData.GetHashtableElement<int>(CurrCost))
             {
                 return right;
             }
-            else if (left.OtherData.GetHashtableElement<int>("CurrCost") < right.OtherData.GetHashtableElement<int>("CurrCost"))
+            else if (left.OtherData.GetHashtableElement<int>(CurrCost) < right.OtherData.GetHashtableElement<int>(CurrCost))
             {
                 return left;
             }

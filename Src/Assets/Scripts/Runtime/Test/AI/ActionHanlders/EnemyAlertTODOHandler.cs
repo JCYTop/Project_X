@@ -12,9 +12,9 @@ namespace Framework.GOAP
 
         public override void Enter(IContext context, Action callback)
         {
+            LogTool.Log($"进入AlertLog通知");
             base.Enter(context, callback);
             EventDispatcher.Instance().OnEmitEvent(GOAPEventType.ActionChangeState, new object[] {context.GoalbalID, "Alert"});
-            LogTool.Log($"进入AlertLog通知");
             if (callback != null)
                 callback();
         }

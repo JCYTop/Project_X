@@ -24,11 +24,9 @@ namespace Framework.GOAP
         {
             if (planHandler.IsComplete)
             {
-                LogTool.Log($"planHandler 显示可以创建新的计划 {planHandler.IsComplete}");
                 BuildPlan();
             }
 
-            //TODO 构成回环 明天完成
             agent.AgentActionMgr.ExcuteHandler(planHandler.HandlerAction());
         }
 

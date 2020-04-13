@@ -76,18 +76,41 @@ namespace Framework.GOAP
         private void OnEnable()
         {
             OnRegiestEvent(GOAPEventType.ChangeTarget, ChangeAttackTarget);
+            OnRegiestEvent(GOAPEventType.StateChangeAlert, StateChangeAlert);
         }
 
         private void OnDisable()
         {
             OnUnRegiestEvent(GOAPEventType.ChangeTarget, ChangeAttackTarget);
+            OnUnRegiestEvent(GOAPEventType.StateChangeAlert, StateChangeAlert);
+        }
+
+        private void StateChangeAlert(object[] args)
+        {
+            if (args != null && args.Length > 0)
+            {
+                if (GoalbalID != Convert.ToInt32(args[0]))
+                    return;
+                var value = conditionMap.SetDictionaryValue(CondtionTag.Target, args[1] != null);
+#if UNITY_EDITOR
+                panelInfo.ForEach((panel) =>
+                {
+                    if (panel.ElementTag == CondtionTag.Alert_State)
+                    {
+                        panel.IsRight = value;
+                    }
+                });
+#endif
+                OnEmitEvent(GOAPEventType.ChangeCondition, new object[] {GoalbalID,});
+            }
         }
 
         private void ChangeAttackTarget(object[] args)
         {
             if (args != null && args.Length > 0)
             {
-                if (GoalbalID != Convert.ToInt32(args[0])) return;
+                if (GoalbalID != Convert.ToInt32(args[0]))
+                    return;
                 var go = (GameObject) args[1];
                 var value = conditionMap.SetDictionaryValue(CondtionTag.Target, go != null);
                 if (value)
@@ -122,7 +145,7 @@ namespace Framework.GOAP
         /// <summary>
         /// 需要实时更新的标签
         /// </summary>
-        private void FixedUpdate()
+        private void Update()
         {
             //遍历动态查找需要检测的标签
             if (updateData.Count <= 0) return;
