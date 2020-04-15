@@ -21,6 +21,11 @@ namespace Framework.GOAP
     public interface IPlanHandler<TAction, TGoal>
     {
         /// <summary>
+        /// 中断计划
+        /// </summary>
+        bool IsInterruptible { set; get; }
+
+        /// <summary>
         /// 不同的计划可以随时改变
         /// </summary>
         IPlanner<TAction, TGoal> Planner { get; set; }
@@ -43,11 +48,6 @@ namespace Framework.GOAP
         /// 执行下一个动作
         /// </summary>
         IActionHandler<TAction> HandlerAction();
-
-        /// <summary>
-        /// 中断计划
-        /// </summary>
-        void Interruptible();
 
         /// <summary>
         /// 获取当前动作处理器

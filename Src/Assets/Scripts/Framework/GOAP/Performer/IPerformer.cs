@@ -13,8 +13,6 @@
  ----------------------------------
 */
 
-using System.Collections.Generic;
-
 namespace Framework.GOAP
 {
     public interface IPerformer<TAction, TGoal>
@@ -28,11 +26,5 @@ namespace Framework.GOAP
         /// 中断计划
         /// </summary>
         void Interruptible();
-
-        /// <summary>
-        /// 构建计划
-        /// </summary>
-        /// <returns></returns>
-        void BuildPlan();
     }
 }

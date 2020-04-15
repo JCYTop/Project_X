@@ -22,10 +22,10 @@ namespace Framework.GOAP
     {
         private Action onComplete;
         private IActionHandler<TAction> currentActionHandler;
-        private bool isInterruptible;
         protected IPlanner<TAction, TGoal> planner;
         public LinkedList<IActionHandler<TAction>> CurrActionHandlers { get; set; }
         public IGoal<TGoal> CurrGoal { get; set; }
+        public bool IsInterruptible { set; get; }
 
         public IPlanner<TAction, TGoal> Planner
         {
@@ -40,7 +40,7 @@ namespace Framework.GOAP
         {
             get
             {
-                if (isInterruptible)
+                if (IsInterruptible)
                 {
                     var handle = GetCurrentHandler();
                     //还需要判断当前执行的动作是否可以被打断
@@ -56,14 +56,12 @@ namespace Framework.GOAP
                     return true;
                 }
 
-                if (currentActionHandler == null)
+                if ((currentActionHandler != null && currentActionHandler.ExcuteState == ActionExcuteState.Exit) && CurrActionHandlers.Count <= 0)
                 {
-                    return CurrActionHandlers.Count <= 0;
+                    return true;
                 }
-                else
-                {
-                    return currentActionHandler.ExcuteState == ActionExcuteState.Exit && CurrActionHandlers.Count <= 0;
-                }
+
+                return false;
             }
         }
 
@@ -87,11 +85,6 @@ namespace Framework.GOAP
             }
 
             return currentActionHandler;
-        }
-
-        public void Interruptible()
-        {
-            isInterruptible = true;
         }
 
         public IActionHandler<TAction> GetCurrentHandler()
