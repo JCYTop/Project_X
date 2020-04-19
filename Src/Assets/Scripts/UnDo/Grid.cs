@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace UnSync
+namespace UnDo
 {
 	[RequireComponent(typeof(MeshFilter), typeof(MeshRenderer))]
 	public class Grid : MonoBehaviour
@@ -20,7 +20,6 @@ namespace UnSync
 		{
 			GetComponent<MeshFilter>().mesh = mesh = new Mesh();
 			mesh.name = "Procedural Grid";
-
 			vertices = new Vector3[(xSize + 1) * (ySize + 1)];
 			Vector2[] uv = new Vector2[vertices.Length];
 			Vector4[] tangents = new Vector4[vertices.Length];
