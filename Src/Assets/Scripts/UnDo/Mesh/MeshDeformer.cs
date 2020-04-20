@@ -1,11 +1,11 @@
 using UnityEngine;
 
-namespace UnDo
+namespace UnDo.Mesh
 {
     [RequireComponent(typeof(MeshFilter))]
     public class MeshDeformer : MonoBehaviour
     {
-        private Mesh deformingMesh;
+        private UnityEngine.Mesh deformingMesh;
         private Vector3[] originalVertices;
         private Vector3[] displacedVertices;
         private Vector3[] vertexVelocities;

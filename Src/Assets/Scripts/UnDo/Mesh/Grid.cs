@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace UnDo
+namespace UnDo.Mesh
 {
 	[RequireComponent(typeof(MeshFilter), typeof(MeshRenderer))]
 	public class Grid : MonoBehaviour
@@ -8,7 +8,7 @@ namespace UnDo
 
 		public int xSize, ySize;
 
-		private Mesh mesh;
+		private UnityEngine.Mesh mesh;
 		private Vector3[] vertices;
 
 		private void Awake()
@@ -18,7 +18,7 @@ namespace UnDo
 
 		private void Generate()
 		{
-			GetComponent<MeshFilter>().mesh = mesh = new Mesh();
+			GetComponent<MeshFilter>().mesh = mesh = new UnityEngine.Mesh();
 			mesh.name = "Procedural Grid";
 			vertices = new Vector3[(xSize + 1) * (ySize + 1)];
 			Vector2[] uv = new Vector2[vertices.Length];

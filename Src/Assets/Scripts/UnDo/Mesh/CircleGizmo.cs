@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace UnDo
+namespace UnDo.Mesh
 {
     public class CircleGizmo : MonoBehaviour
     {

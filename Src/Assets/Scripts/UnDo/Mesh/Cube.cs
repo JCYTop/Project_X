@@ -1,11 +1,11 @@
 ﻿using UnityEngine;
 
-namespace UnDo
+namespace UnDo.Mesh
 {
     [RequireComponent(typeof(MeshFilter), typeof(MeshRenderer))]
     public class Cube : MonoBehaviour
     {
-        private Mesh mesh;
+        private UnityEngine.Mesh mesh;
         private Vector3[] vertices;
         public int xSize;
         public int ySize;
@@ -18,7 +18,7 @@ namespace UnDo
 
         private void Generate()
         {
-            GetComponent<MeshFilter>().mesh = mesh = new Mesh();
+            GetComponent<MeshFilter>().mesh = mesh = new UnityEngine.Mesh();
             mesh.name = "Procedural Cube";
             CreateVertices();
             CreateTriangles();
