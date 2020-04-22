@@ -1,31 +1,27 @@
-/** 
-----------------------------------
- *Copyright(C) 2019 by IndieGame
- *All rights reserved.
- *FileName:     CustomRenderPipeline
- *Author:       @JCY
- *Version:      0.1.0
- *AuthorEmail:  jcyemail@qq.com
- *UnityVersion：2019.3.1f1
- *CreateTime:   2020/04/21 15:02:55
- *Description:   
- *History:
- ----------------------------------
-*/
-
-
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.Rendering;
 
-public class CustomRenderPipeline : RenderPipeline
-{
-    private CameraRenderer renderer = new CameraRenderer();
+public class CustomRenderPipeline : RenderPipeline {
 
-    protected override void Render(ScriptableRenderContext context, Camera[] cameras)
-    {
-        foreach (Camera camera in cameras)
-        {
-            renderer.Render(context, camera);
-        }
-    }
+	CameraRenderer renderer = new CameraRenderer();
+
+	bool useDynamicBatching, useGPUInstancing;
+
+	public CustomRenderPipeline (
+		bool useDynamicBatching, bool useGPUInstancing, bool useSRPBatcher
+	) {
+		this.useDynamicBatching = useDynamicBatching;
+		this.useGPUInstancing = useGPUInstancing;
+		GraphicsSettings.useScriptableRenderPipelineBatching = useSRPBatcher;
+	}
+
+	protected override void Render (
+		ScriptableRenderContext context, Camera[] cameras
+	) {
+		foreach (Camera camera in cameras) {
+			renderer.Render(
+				context, camera, useDynamicBatching, useGPUInstancing
+			);
+		}
+	}
 }

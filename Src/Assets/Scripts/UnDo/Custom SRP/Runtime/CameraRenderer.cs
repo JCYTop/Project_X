@@ -1,152 +1,98 @@
-﻿using UnityEditor;
-using UnityEngine;
-using UnityEngine.Profiling;
+﻿using UnityEngine;
 using UnityEngine.Rendering;
 
-public partial class CameraRenderer
-{
-    private ScriptableRenderContext context;
-    private Camera camera;
-    private const string bufferName = "Render Camera";
-    private CommandBuffer buffer = new CommandBuffer {name = bufferName};
-    private CullingResults cullingResults;
-    private static ShaderTagId unlitShaderTagId = new ShaderTagId("SRPDefaultUnlit");
+public partial class CameraRenderer {
 
+	const string bufferName = "Render Camera";
 
-    public void Render(ScriptableRenderContext context, Camera camera)
-    {
-        this.context = context;
-        this.camera = camera;
-        PrepareBuffer();
-        PrepareForSceneWindow();
-        if (!Cull())
-        {
-            return;
-        }
+	static ShaderTagId unlitShaderTagId = new ShaderTagId("SRPDefaultUnlit");
 
-        Setup();
-        DrawVisibleGeometry();
-        DrawUnsupportedShaders();
-        DrawGizmos();
-        Submit();
-    }
+	CommandBuffer buffer = new CommandBuffer {
+		name = bufferName
+	};
 
-    partial void DrawGizmos();
-    partial void DrawUnsupportedShaders();
-    partial void PrepareForSceneWindow();
-    partial void PrepareBuffer();
+	ScriptableRenderContext context;
 
-    private void Setup()
-    {
-        context.SetupCameraProperties(camera);
-        var flags = camera.clearFlags;
-        buffer.ClearRenderTarget(flags <= CameraClearFlags.Depth, flags <= CameraClearFlags.Color,
-            flags == CameraClearFlags.Color ? camera.backgroundColor.linear : Color.green);
-        buffer.BeginSample(SampleName);
-        ExecuteBuffer();
-    }
+	Camera camera;
 
-    private void DrawVisibleGeometry()
-    {
-        //先绘制不透明
-        var sortingSettings = new SortingSettings(camera) {criteria = SortingCriteria.CommonOpaque};
-        var drawingSettings = new DrawingSettings(unlitShaderTagId, sortingSettings);
-        var filteringSettings = new FilteringSettings(RenderQueueRange.opaque);
-        context.DrawRenderers(cullingResults, ref drawingSettings, ref filteringSettings);
-        context.DrawSkybox(camera);
-        //然后在绘制透明物体
-        sortingSettings.criteria = SortingCriteria.CommonTransparent;
-        drawingSettings.sortingSettings = sortingSettings;
-        filteringSettings.renderQueueRange = RenderQueueRange.transparent;
-        context.DrawRenderers(
-            cullingResults, ref drawingSettings, ref filteringSettings
-        );
-    }
+	CullingResults cullingResults;
 
-    private void Submit()
-    {
-        buffer.EndSample(SampleName);
-        ExecuteBuffer();
-        context.Submit();
-    }
+	public void Render (
+		ScriptableRenderContext context, Camera camera,
+		bool useDynamicBatching, bool useGPUInstancing
+	) {
+		this.context = context;
+		this.camera = camera;
 
-    private void ExecuteBuffer()
-    {
-        context.ExecuteCommandBuffer(buffer);
-        buffer.Clear();
-    }
+		PrepareBuffer();
+		PrepareForSceneWindow();
+		if (!Cull()) {
+			return;
+		}
 
-    private bool Cull()
-    {
-        if (camera.TryGetCullingParameters(out var p))
-        {
-            cullingResults = context.Cull(ref p);
-            return true;
-        }
+		Setup();
+		DrawVisibleGeometry(useDynamicBatching, useGPUInstancing);
+		DrawUnsupportedShaders();
+		DrawGizmos();
+		Submit();
+	}
 
-        return false;
-    }
-}
+	bool Cull () {
+		if (camera.TryGetCullingParameters(out ScriptableCullingParameters p)) {
+			cullingResults = context.Cull(ref p);
+			return true;
+		}
+		return false;
+	}
 
-public partial class CameraRenderer
-{
-#if UNITY_EDITOR
-    private static ShaderTagId[] legacyShaderTagIds =
-    {
-        new ShaderTagId("Always"),
-        new ShaderTagId("ForwardBase"),
-        new ShaderTagId("PrepassBase"),
-        new ShaderTagId("Vertex"),
-        new ShaderTagId("VertexLMRGBM"),
-        new ShaderTagId("VertexLM")
-    };
+	void Setup () {
+		context.SetupCameraProperties(camera);
+		CameraClearFlags flags = camera.clearFlags;
+		buffer.ClearRenderTarget(
+			flags <= CameraClearFlags.Depth,
+			flags == CameraClearFlags.Color,
+			flags == CameraClearFlags.Color ?
+				camera.backgroundColor.linear : Color.clear
+		);
+		buffer.BeginSample(SampleName);
+		ExecuteBuffer();
+	}
 
-    private static Material errorMaterial;
-    private string SampleName { get; set; }
+	void Submit () {
+		buffer.EndSample(SampleName);
+		ExecuteBuffer();
+		context.Submit();
+	}
 
-    partial void DrawGizmos()
-    {
-        if (Handles.ShouldRenderGizmos())
-        {
-            context.DrawGizmos(camera, GizmoSubset.PreImageEffects);
-            context.DrawGizmos(camera, GizmoSubset.PostImageEffects);
-        }
-    }
+	void ExecuteBuffer () {
+		context.ExecuteCommandBuffer(buffer);
+		buffer.Clear();
+	}
 
-    partial void DrawUnsupportedShaders()
-    {
-        if (errorMaterial == null)
-        {
-            errorMaterial = new Material(Shader.Find("Hidden/InternalErrorShader"));
-        }
+	void DrawVisibleGeometry (bool useDynamicBatching, bool useGPUInstancing) {
+		var sortingSettings = new SortingSettings(camera) {
+			criteria = SortingCriteria.CommonOpaque
+		};
+		var drawingSettings = new DrawingSettings(
+			unlitShaderTagId, sortingSettings
+		) {
+			enableDynamicBatching = useDynamicBatching,
+			enableInstancing = useGPUInstancing
+		};
+		var filteringSettings = new FilteringSettings(RenderQueueRange.opaque);
 
-        var drawingSettings = new DrawingSettings(
-            legacyShaderTagIds[0], new SortingSettings(camera)
-        ) {overrideMaterial = errorMaterial};
-        for (int i = 1; i < legacyShaderTagIds.Length; i++)
-        {
-            drawingSettings.SetShaderPassName(i, legacyShaderTagIds[i]);
-        }
+		context.DrawRenderers(
+			cullingResults, ref drawingSettings, ref filteringSettings
+		);
 
-        var filteringSettings = FilteringSettings.defaultValue;
-        context.DrawRenderers(cullingResults, ref drawingSettings, ref filteringSettings);
-    }
+		context.DrawSkybox(camera);
 
-    partial void PrepareForSceneWindow()
-    {
-        if (camera.cameraType == CameraType.SceneView)
-        {
-            ScriptableRenderContext.EmitWorldGeometryForSceneView(camera);
-        }
-    }
+		sortingSettings.criteria = SortingCriteria.CommonTransparent;
+		drawingSettings.sortingSettings = sortingSettings;
+		filteringSettings.renderQueueRange = RenderQueueRange.transparent;
 
-    partial void PrepareBuffer()
-    {
-        Profiler.BeginSample("Editor Only");
-        buffer.name = SampleName = camera.name;
-        Profiler.EndSample();
-    }
-#else
-    private	const string SampleName = bufferName;
-#endif
+		context.DrawRenderers(
+			cullingResults, ref drawingSettings, ref filteringSettings
+		);
+	}
 }
