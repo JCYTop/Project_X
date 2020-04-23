@@ -43,6 +43,7 @@ namespace Runtime.HexMap
             new Vector3(0f, 0f, -outerRadius),
             new Vector3(-innerRadius, 0f, -0.5f * outerRadius),
             new Vector3(-innerRadius, 0f, 0.5f * outerRadius),
+            new Vector3(0f, 0f, outerRadius)
         };
     }
 }
