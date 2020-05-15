@@ -71,6 +71,30 @@ namespace Runtime.HexMap
             cell.transform.localPosition = position;
             cell.coordinates = HexCoordinates.FromOffsetCoordinates(x, z);
             cell.color = defaultColor;
+            if (x > 0)
+            {
+                cell.SetNeighbor(HexDirection.W, cells[i - 1]);
+            }
+
+            if (z > 0)
+            {
+                if ((z & 1) == 0)
+                {
+                    cell.SetNeighbor(HexDirection.SE, cells[i - width]);
+                    if (x > 0)
+                    {
+                        cell.SetNeighbor(HexDirection.SW, cells[i - width - 1]);
+                    }
+                }
+                else
+                {
+                    cell.SetNeighbor(HexDirection.SW, cells[i - width]);
+                    if (x < width - 1)
+                    {
+                        cell.SetNeighbor(HexDirection.SE, cells[i - width + 1]);
+                    }
+                }
+            }
 
             var label = Instantiate<Text>(cellLabelPrefab);
             label.rectTransform.SetParent(gridCanvas.transform, false);
@@ -89,11 +113,24 @@ namespace Runtime.HexMap
         NW
     }
 
+    /// <summary>
+    /// 六边形指向扩展方法
+    /// </summary>
     public static class HexDirectionExtensions
     {
         public static HexDirection Opposite(this HexDirection direction)
         {
             return (int) direction < 3 ? (direction + 3) : (direction - 3);
+        }
+
+        public static HexDirection Previous(this HexDirection direction)
+        {
+            return direction == HexDirection.NE ? HexDirection.NW : (direction - 1);
+        }
+
+        public static HexDirection Next(this HexDirection direction)
+        {
+            return direction == HexDirection.NW ? HexDirection.NE : (direction + 1);
         }
     }
 }

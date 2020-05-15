@@ -22,6 +22,8 @@ namespace Runtime.HexMap
         [SerializeField] private HexCell[] neighbors;
         public HexCoordinates coordinates;
         public Color color;
+        public int elevation;
+
         public HexCell GetNeighbor(HexDirection direction)
         {
             return neighbors[(int) direction];
