@@ -20,6 +20,7 @@ namespace Runtime.HexMap
 {
     public class HexMapEditor : MonoBehaviour
     {
+        private int activeElevation;
         private Color activeColor;
         public Color[] colors;
         public HexGrid hexGrid;
@@ -42,13 +43,25 @@ namespace Runtime.HexMap
             var inputRay = Camera.main.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast(inputRay, out var hit))
             {
-                hexGrid.TouchCell(hit.point, activeColor);
+                EditCell(hexGrid.GetCell(hit.point));
             }
+        }
+
+        private void EditCell(HexCell cell)
+        {
+            cell.color = activeColor;
+            cell.Elevation = activeElevation;
+            hexGrid.Refresh();
         }
 
         public void SelectColor(int index)
         {
             activeColor = colors[index];
+        }
+
+        public void SetElevation(float elevation)
+        {
+            activeElevation = (int) elevation;
         }
     }
 }
