@@ -6,9 +6,6 @@ namespace Runtime.HexMap.Scripts
     public class HexGrid : MonoBehaviour
     {
         private HexCell[] cells;
-
-//        private Canvas gridCanvas;
-//        private HexMesh hexMesh;
         private int cellCountX;
         private int cellCountZ;
         private HexGridChunk[] chunks;
@@ -23,8 +20,6 @@ namespace Runtime.HexMap.Scripts
         private void Awake()
         {
             HexMetrics.noiseSource = noiseSource;
-//            gridCanvas = GetComponentInChildren<Canvas>();
-//            hexMesh = GetComponentInChildren<HexMesh>();
             cellCountX = chunkCountX * HexMetrics.chunkSizeX;
             cellCountZ = chunkCountZ * HexMetrics.chunkSizeZ;
             CreateChunks();
@@ -61,6 +56,23 @@ namespace Runtime.HexMap.Scripts
             HexMetrics.noiseSource = noiseSource;
         }
 
+        public HexCell GetCell(HexCoordinates coordinates)
+        {
+            var z = coordinates.Z;
+            if (z < 0 || z >= cellCountZ)
+            {
+                return null;
+            }
+
+            var x = coordinates.X + z / 2;
+            if (x < 0 || x >= cellCountX)
+            {
+                return null;
+            }
+
+            return cells[x + z * cellCountX];
+        }
+
         public HexCell GetCell(Vector3 position)
         {
             position = transform.InverseTransformPoint(position);
@@ -76,7 +88,6 @@ namespace Runtime.HexMap.Scripts
             position.y = 0f;
             position.z = z * (HexMetrics.outerRadius * 1.5f);
             var cell = cells[i] = Instantiate<HexCell>(cellPrefab);
-//            cell.transform.SetParent(transform, false);
             cell.transform.localPosition = position;
             cell.coordinates = HexCoordinates.FromOffsetCoordinates(x, z);
             cell.Color = defaultColor;
@@ -106,7 +117,6 @@ namespace Runtime.HexMap.Scripts
             }
 
             var label = Instantiate<Text>(cellLabelPrefab);
-//            label.rectTransform.SetParent(gridCanvas.transform, false);
             label.rectTransform.anchoredPosition = new Vector2(position.x, position.z);
             label.text = cell.coordinates.ToStringOnSeparateLines();
             cell.uiRect = label.rectTransform;
@@ -122,6 +132,14 @@ namespace Runtime.HexMap.Scripts
             var localX = x - chunkX * HexMetrics.chunkSizeX;
             var localZ = z - chunkZ * HexMetrics.chunkSizeZ;
             chunk.AddCell(localX + localZ * HexMetrics.chunkSizeX, cell);
+        }
+
+        public void ShowUI(bool visible)
+        {
+            for (int i = 0; i < chunks.Length; i++)
+            {
+                chunks[i].ShowUI(visible);
+            }
         }
     }
 }
