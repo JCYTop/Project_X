@@ -53,30 +53,30 @@ public class CheckMemoryTask : GameLanucherTask
             throw;
         }
 #elif UNITY_ANDROID
-        try
-        {
-            AndroidJavaClass unityPlayer = new AndroidJavaClass("com.unity3d.player.UnityPlayer");
-            AndroidJavaObject currentActivity = unityPlayer.GetStatic<AndroidJavaObject>("currentActivity");
-            AndroidJavaClass unityPluginLoader = new AndroidJavaClass("java类全名");
-            float tempMemory = unityPluginLoader.CallStatic<float>("GetMemory", currentActivity);
-            memory = (int) tempMemory;
-            if (memory < memoryDefault)
-            {
-                LogUtil.LogError(string.Format("内存不足！"), LogType.TaskLog);
-                //弹出内存警告
-            }
-            else
-            {
-                LogUtil.Log(string.Format("可以使用 ^_^"), LogType.TaskLog);
-                //自动取消内存警告
-                LogUtil.Log(Environment.WorkingSet.ToString(), LogType.TaskLog);
-            }
-        }
-        catch (Exception e)
-        {
-            Console.WriteLine("com.moba.unityplugin.AndroidUtile GetMemory: " + e.Message);
-            throw;
-        }
+        // try
+        // {
+        //     AndroidJavaClass unityPlayer = new AndroidJavaClass("com.unity3d.player.UnityPlayer");
+        //     AndroidJavaObject currentActivity = unityPlayer.GetStatic<AndroidJavaObject>("currentActivity");
+        //     AndroidJavaClass unityPluginLoader = new AndroidJavaClass("java类全名");
+        //     float tempMemory = unityPluginLoader.CallStatic<float>("GetMemory", currentActivity);
+        //     memory = (int) tempMemory;
+        //     if (memory < memoryDefault)
+        //     {
+        //         LogUtil.LogError(string.Format("内存不足！"), LogType.TaskLog);
+        //         //弹出内存警告
+        //     }
+        //     else
+        //     {
+        //         LogUtil.Log(string.Format("可以使用 ^_^"), LogType.TaskLog);
+        //         //自动取消内存警告
+        //         LogUtil.Log(Environment.WorkingSet.ToString(), LogType.TaskLog);
+        //     }
+        // }
+        // catch (Exception e)
+        // {
+        //     Console.WriteLine("com.moba.unityplugin.AndroidUtile GetMemory: " + e.Message);
+        //     throw;
+        // }
 #elif UNITY_IOS
         try
         {
