@@ -32,8 +32,8 @@ public class SkipList<TKey, TValue> : IDictionary<TKey, TValue> where TKey : ICo
     private int count;
 
     /// <summary>
-    /// A read-only value representing the current number of items in the map.
-    /// 当前容量大小
+    /// A read-only value representing the current number of items in the
+    /// map.
     /// </summary>
     public int Count
     {
@@ -41,7 +41,7 @@ public class SkipList<TKey, TValue> : IDictionary<TKey, TValue> where TKey : ICo
     }
 
     /// <summary>
-    /// 在此实现中，始终是读/写结构。
+    /// Skiplists are always read/write structures in this implementation.
     /// </summary>
     public bool IsReadOnly
     {
@@ -70,7 +70,7 @@ public class SkipList<TKey, TValue> : IDictionary<TKey, TValue> where TKey : ICo
     {
         get
         {
-            var keys = new List<TKey>();
+            var keys = new List<TKey>(count);
             WalkEntries(n => keys.Add(n.Key));
             return keys;
         }
@@ -90,6 +90,58 @@ public class SkipList<TKey, TValue> : IDictionary<TKey, TValue> where TKey : ICo
         }
     }
 
+    private struct SkipListKVPair<TNKey, TNValue>
+    {
+        private TNKey key;
+
+        public TNKey Key
+        {
+            get { return key; }
+        }
+
+        public TNValue Value;
+
+        public SkipListKVPair(TNKey key, TNValue value)
+        {
+            this.key = key;
+            this.Value = value;
+        }
+    }
+
+    private class SkipListNode<TNKey, TNValue>
+    {
+        public SkipListNode<TNKey, TNValue> Forward, Back, Up, Down;
+        public SkipListKVPair<TNKey, TNValue> KeyValue;
+        public bool IsFront = false;
+
+        public TNKey Key
+        {
+            get { return KeyValue.Key; }
+        }
+
+        public TNValue Value
+        {
+            get { return KeyValue.Value; }
+            set { KeyValue.Value = value; }
+        }
+
+        public SkipListNode()
+        {
+            this.KeyValue = new SkipListKVPair<TNKey, TNValue>(default(TNKey), default(TNValue));
+            this.IsFront = true;
+        }
+
+        public SkipListNode(SkipListKVPair<TNKey, TNValue> keyValue)
+        {
+            this.KeyValue = keyValue;
+        }
+
+        public SkipListNode(TNKey key, TNValue value)
+        {
+            this.KeyValue = new SkipListKVPair<TNKey, TNValue>(key, value);
+        }
+    }
+
     /// <summary>
     /// Creates and returns a new empty skiplist.
     /// </summary>
@@ -100,36 +152,8 @@ public class SkipList<TKey, TValue> : IDictionary<TKey, TValue> where TKey : ICo
     }
 
     /// <summary>
-    /// Provides a System.Collections.Generic.IEnumerator<> interface to a
-    /// collection of System.Collection.Generic.KeyValuePair<>s
-    /// representing the entries in the map in key-sorted order.
-    /// NOTE: The enumerator returned enumerates over internally used
-    /// values, modifying the value is fine but do not modify the key
-    /// because that would invalidate the internal structural assumptions.
-    /// </summary>
-    /// <returns>An IEnumerator<> of the map entries in key-sorted order</returns>
-    public IEnumerator<KeyValuePair<TKey, TValue>> GetEnumerator()
-    {
-        var position = head;
-        while (position.Down != null)
-        {
-            position = position.Down;
-        }
-
-        while (position.Forward != null)
-        {
-            position = position.Forward;
-            yield return new KeyValuePair<TKey, TValue>(position.Key, position.Value);
-        }
-    }
-
-    IEnumerator IEnumerable.GetEnumerator()
-    {
-        return GetEnumerator();
-    }
-
-    /// <summary>
-    /// This is an alternative (to indexing) interface to add and modify existing values in the map.
+    /// This is an alternative (to indexing) interface to add and modify
+    /// existing values in the map.
     /// </summary>
     /// <param name="key">The IComparable key</param>
     /// <param name="value">The new value</param>
@@ -137,16 +161,15 @@ public class SkipList<TKey, TValue> : IDictionary<TKey, TValue> where TKey : ICo
     {
         // Duh, we have to be able to tell when no key is found from when one is found
         // and if none is found have a reference to the last place searched....  return
-        // a bool and use an out value? 
-        var found = Search(key, out var position);
-        //有相同的key则直接进行覆盖
+        // a bool and use an out value?
+        bool found = Search(key, out var position);
         if (found)
             position.Value = value;
         else
         {
             // In this scenario position, rather than the value we searched
             // for is the value immediately previous to where it should be inserted.
-            var newEntry = new SkipListNode<TKey, TValue>(key, value);
+            var newEntry = new SkipListNode<TKey, TValue>((TKey) key, value);
             count++;
             newEntry.Back = position;
             if (position.Forward != null)
@@ -159,13 +182,12 @@ public class SkipList<TKey, TValue> : IDictionary<TKey, TValue> where TKey : ICo
     /// <summary>
     /// Add an entry using a System.Collections.Generic.KeyValuePair<>.
     /// </summary>
-    /// <param name="item">The KeyValuePair<> to add.
-    /// The key must be an IComparable.
-    /// If a matching entry already exists the value will be updated to the value specified in the KeyValuePair.
-    /// </param>
-    public void Add(KeyValuePair<TKey, TValue> item)
+    /// <param name="keyValue">The KeyValuePair<> to add.  The key must be
+    /// an IComparable.  If a matching entry already exists the value will
+    /// be updated to the value specified in the KeyValuePair.</param>
+    public void Add(KeyValuePair<TKey, TValue> keyValue)
     {
-        Add(item.Key, item.Value);
+        Add(keyValue.Key, keyValue.Value);
     }
 
     /// <summary>
@@ -182,7 +204,8 @@ public class SkipList<TKey, TValue> : IDictionary<TKey, TValue> where TKey : ICo
     /// Test for the existence of an entry with the given key.
     /// </summary>
     /// <param name="key">The IComparable key to search for.</param>
-    /// <returns>a bool indicating whether the map contains an entry with the specified key</returns>
+    /// <returns>a bool indicating whether the map contains an entry with
+    /// the specified key</returns>
     public bool ContainsKey(TKey key)
     {
         return Search(key, out var notused);
@@ -193,13 +216,86 @@ public class SkipList<TKey, TValue> : IDictionary<TKey, TValue> where TKey : ICo
     /// System.Collections.Generic.KeyValuePair<>.  Note that the value from
     /// the KeyValuePair is ignored and only the key is used in this test.
     /// </summary>
-    /// <param name="item">The KeyValuePair<> for which to search the
+    /// <param name="keyValue">The KeyValuePair<> for which to search the
     /// map, note that only the IComparable key is used.</param>
     /// <returns>a bool indicating whether or not a matching entry exists
     /// in the map</returns>
-    public bool Contains(KeyValuePair<TKey, TValue> item)
+    public bool Contains(KeyValuePair<TKey, TValue> keyValue)
     {
-        return ContainsKey(item.Key);
+        return ContainsKey(keyValue.Key);
+    }
+
+    /// <summary>
+    /// Remove an entry in the map matching the specified key.
+    /// </summary>
+    /// <param name="key">The IComparable key to search for.  If found the
+    /// matching entry is removed from the map.</param>
+    /// <returns>a bool indicating whether the specified key was found in
+    /// the map and the entry removed</returns>
+    public bool Remove(TKey key)
+    {
+        bool found = Search(key, out var position);
+        if (!found)
+            return false;
+        else
+        {
+            var old = position;
+            do
+            {
+                old.Back.Forward = old.Forward;
+                if (old.Forward != null)
+                    old.Forward.Back = old.Back;
+                old = old.Up;
+            } while (old != null);
+
+            count--;
+            // Clean up rows with only a head remaining.
+            while (head.Forward == null)
+            {
+                head = head.Down;
+            }
+
+            return true;
+        }
+    }
+
+    /// <summary>
+    /// Remove an entry in the map matching the key from the specified
+    /// System.Collections.Generic.KeyValuePair<>.  Only the key part of the
+    /// KeyValuePair is used in the search.  Note that the value part of
+    /// the KeyValuePair is not used.
+    /// </summary>
+    /// <param name="key">A KeyValuePair<> containing the IComparable key to
+    /// search for.  If found the matching entry is removed from the map.</param>
+    /// <returns>a bool indicating whether the a matching entry was found
+    /// in the map and removed</returns>
+    public bool Remove(KeyValuePair<TKey, TValue> keyValue)
+    {
+        return Remove(keyValue.Key);
+    }
+
+    /// <summary>
+    /// Allows searching for a matching entry by IComparable key returning
+    /// the value, if found as an out value.  Also returns as the standard
+    /// return value whether or not a matching entry was found.
+    /// </summary>
+    /// <param name="key">IComparable key to search for</param>
+    /// <param name="value">An out value specifying the value of the entry
+    /// if found, otherwise the default is returned.</param>
+    /// <returns>a bool indicating whether or not a matching entry was
+    /// found</returns>
+    public bool TryGetValue(TKey key, out TValue value)
+    {
+        try
+        {
+            value = Get(key);
+            return true;
+        }
+        catch (KeyNotFoundException)
+        {
+            value = default(TValue);
+            return false;
+        }
     }
 
     /// <summary>
@@ -230,52 +326,42 @@ public class SkipList<TKey, TValue> : IDictionary<TKey, TValue> where TKey : ICo
         if (array.IsFixedSize && array.Length < count + index)
             throw new ArgumentException("The array argument does not have sufficient space for the SkipList entries.");
         var i = index;
-        //depth copy
         WalkEntries(n => array[i++] = new KeyValuePair<TKey, TValue>(n.Key, n.Value));
     }
 
-    public bool Remove(TKey key)
+    /// <summary>
+    /// Provides a System.Collections.Generic.IEnumerator<> interface to a
+    /// collection of System.Collection.Generic.KeyValuePair<>s
+    /// representing the entries in the map in key-sorted order.
+    /// NOTE: The enumerator returned enumerates over internally used
+    /// values, modifying the value is fine but do not modify the key
+    /// because that would invalidate the internal structural assumptions.
+    /// </summary>
+    /// <returns>An IEnumerator<> of the map entries in key-sorted order</returns>
+    public IEnumerator<KeyValuePair<TKey, TValue>> GetEnumerator()
     {
-        throw new NotImplementedException();
+        var position = head;
+        while (position.Down != null)
+            position = position.Down;
+        while (position.Forward != null)
+        {
+            position = position.Forward;
+            yield return new KeyValuePair<TKey, TValue>(position.Key, position.Value);
+        }
     }
 
     /// <summary>
-    /// Remove an entry in the map matching the key from the specified
-    /// System.Collections.Generic.KeyValuePair<>.  Only the key part of the
-    /// KeyValuePair is used in the search.  Note that the value part of
-    /// the KeyValuePair is not used.
+    /// Provides a System.Collections.IEnumerator interface to a collection
+    /// of System.Collection.Generic.KeyValuePair<>s representing the
+    /// entries in the map in key-sorted order.
+    /// NOTE: The enumerator returned enumerates over internally used
+    /// values, modifying the value is fine but do not modify the key
+    /// because that would invalidate the internal structural assumptions.
     /// </summary>
-    /// <param name="item">A KeyValuePair<> containing the IComparable key to
-    /// search for.  If found the matching entry is removed from the map.</param>
-    /// <returns>a bool indicating whether the a matching entry was found
-    /// in the map and removed</returns>
-    public bool Remove(KeyValuePair<TKey, TValue> item)
+    /// <returns>An IEnumerator of the map entries in key-sorted order</returns>
+    IEnumerator IEnumerable.GetEnumerator()
     {
-        return Remove(item.Key);
-    }
-
-    /// <summary>
-    /// Allows searching for a matching entry by IComparable key returning
-    /// the value, if found as an out value.  Also returns as the standard
-    /// return value whether or not a matching entry was found.
-    /// </summary>
-    /// <param name="key">IComparable key to search for</param>
-    /// <param name="value">An out value specifying the value of the entry
-    /// if found, otherwise the default is returned.</param>
-    /// <returns>a bool indicating whether or not a matching entry was
-    /// found</returns>
-    public bool TryGetValue(TKey key, out TValue value)
-    {
-        try
-        {
-            value = Get(key);
-            return true;
-        }
-        catch (KeyNotFoundException)
-        {
-            value = default(TValue);
-            return false;
-        }
+        return (IEnumerator) GetEnumerator();
     }
 
     /// <summary>
@@ -294,14 +380,18 @@ public class SkipList<TKey, TValue> : IDictionary<TKey, TValue> where TKey : ICo
         return position.Value;
     }
 
+    /// <summary>
+    /// Takes an Action that accepts one argument representing a
+    /// SkipListNode in the map and performs the given action on every entry
+    /// in the map in key-sorted order.
+    /// </summary>
+    /// <param name="lambda">A System.Action(T) that accepts one parameter
+    /// which will be each unique entry as a SkipListNode</param>
     private void WalkEntries(Action<SkipListNode<TKey, TValue>> lambda)
     {
         var node = head;
         while (node.Down != null)
-        {
             node = node.Down;
-        }
-
         while (node.Forward != null)
         {
             node = node.Forward;
@@ -324,29 +414,22 @@ public class SkipList<TKey, TValue> : IDictionary<TKey, TValue> where TKey : ICo
     {
         if (key == null)
             throw new ArgumentNullException("key");
-        var current = position = head;
-        //TODO 完成核心搜索
+        SkipListNode<TKey, TValue> current;
+        position = current = head;
         while ((current.IsFront || key.CompareTo(current.Key) >= 0) && (current.Forward != null || current.Down != null))
         {
             position = current;
-            //找到当前退出节点
             if (key.CompareTo(current.Key) == 0)
                 return true;
             if (current.Forward == null || key.CompareTo(current.Forward.Key) < 0)
             {
                 if (current.Down == null)
-                {
                     return false;
-                }
                 else
-                {
                     current = current.Down;
-                }
             }
             else
-            {
                 current = current.Forward;
-            }
         }
 
         position = current;
@@ -358,7 +441,8 @@ public class SkipList<TKey, TValue> : IDictionary<TKey, TValue> where TKey : ICo
     }
 
     /// <summary>
-    /// This algorithm promotes the newly added node on a probabilistic basis.
+    /// This algorithm promotes the newly added node on a probabilistic
+    /// basis.
     /// </summary>
     /// <param name="node">The root node (initially added node added to the
     /// bottom, primary, row) to consider promoting.</param>
@@ -368,10 +452,10 @@ public class SkipList<TKey, TValue> : IDictionary<TKey, TValue> where TKey : ICo
         // added value in the next row to which the newly added value
         // should be promoted.
         // last represents the most recently added node, starting with the
-        // newly created node. 
+        // newly created node.
         var up = node.Back;
         var last = node;
-        for (var levels = Levels(); levels > 0; levels--)
+        for (int levels = this.Levels(); levels > 0; levels--)
         {
             // Find the next node back that links to next row up.
             // If we find our way back to the head of the row and there is
@@ -383,7 +467,7 @@ public class SkipList<TKey, TValue> : IDictionary<TKey, TValue> where TKey : ICo
                 // As mentioned above is this is the front of the row and
                 // there is no link up then we need to start a new row and
                 // update the head to ensure it always points to the start
-                // of the topmost row. 
+                // of the topmost row.
                 up.Up = new SkipListNode<TKey, TValue>();
                 head = up.Up;
             }
@@ -413,74 +497,8 @@ public class SkipList<TKey, TValue> : IDictionary<TKey, TValue> where TKey : ICo
     {
         var generator = new Random();
         var levels = 0;
-        while (generator.NextDouble() < 0.5f)
-        {
+        while (generator.NextDouble() < 0.5)
             levels++;
-        }
-
         return levels;
-    }
-}
-
-/// <summary>
-/// 跳表节点
-/// </summary>
-/// <typeparam name="TNKey"></typeparam>
-/// <typeparam name="TNValue"></typeparam>
-public class SkipListNode<TNKey, TNValue>
-{
-    public SkipListKVPair<TNKey, TNValue> KeyValue;
-    public SkipListNode<TNKey, TNValue> Forward { set; get; }
-    public SkipListNode<TNKey, TNValue> Back { set; get; }
-    public SkipListNode<TNKey, TNValue> Up { set; get; }
-    public SkipListNode<TNKey, TNValue> Down { set; get; }
-
-    /// <summary>
-    /// 标记是不是最后点
-    /// </summary>
-    public bool IsFront = false;
-
-    public TNKey Key
-    {
-        get { return KeyValue.Key; }
-    }
-
-    public TNValue Value
-    {
-        get { return KeyValue.Value; }
-        set { KeyValue.Value = value; }
-    }
-
-    public SkipListNode()
-    {
-        this.KeyValue = new SkipListKVPair<TNKey, TNValue>(default(TNKey), default(TNValue));
-        IsFront = true;
-    }
-
-    public SkipListNode(SkipListKVPair<TNKey, TNValue> keyValue)
-    {
-        this.KeyValue = keyValue;
-    }
-
-    public SkipListNode(TNKey key, TNValue value)
-    {
-        this.KeyValue = new SkipListKVPair<TNKey, TNValue>(key, value);
-    }
-}
-
-/// <summary>
-/// 键值对
-/// </summary>
-/// <typeparam name="TNKey"></typeparam>
-/// <typeparam name="TNValue"></typeparam>
-public struct SkipListKVPair<TNKey, TNValue>
-{
-    public TNKey Key { private set; get; }
-    public TNValue Value { set; get; }
-
-    public SkipListKVPair(TNKey key, TNValue value)
-    {
-        this.Key = key;
-        this.Value = value;
     }
 }
