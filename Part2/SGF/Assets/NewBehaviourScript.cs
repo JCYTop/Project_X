@@ -2,7 +2,7 @@
 ----------------------------------
  *Copyright(C) 2019 by #Company#
  *All rights reserved.
- *FileName:     Idel
+ *FileName:     NewBehaviourScript
  *Author:       #AuthorName#
  *Version:      #Version#
  *AuthorEmail:  #AuthorEmail#
@@ -17,7 +17,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Idel : MonoBehaviour
+public class NewBehaviourScript : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()

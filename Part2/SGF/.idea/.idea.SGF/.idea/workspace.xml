@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="044312c6-4dce-4149-b2ba-3a8375d7d144" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../SCFUnity/GlobalData/Class1.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SCFUnity/GlobalData/Properties/AssemblyInfo.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SCFUnity/ILRScript/Class1.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SCFUnity/ILRScript/Properties/AssemblyInfo.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Idel.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Idel.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Libs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Libs/GlobalData.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Libs/GlobalData.dll.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Libs/ILRScript.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Libs/ILRScript.dll.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/ManagedLib.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/ManagedLib.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/ILR.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/ILR.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SGFDll/Libs/PublishLibrary.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SGFDll/Libs/SGFDebuger.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SGFDll/Libs/SGFUnity.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SGFDll/SGFCore/Class1.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SGFDll/SGFCore/Properties/AssemblyInfo.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SGFDll/SGFDebuger/Class1.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SGFDll/SGFDebuger/Properties/AssemblyInfo.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SGFDll/SGFUnity/Class1.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SGFDll/SGFUnity/Properties/AssemblyInfo.cs" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/NewBehaviourScript.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="ProjectId" id="1freyp02m86O6WIl4uybPzbX1b5" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="Discover.Launch.Via.Unity" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+  </component>
+  <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+    <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="044312c6-4dce-4149-b2ba-3a8375d7d144" name="Default Changelist" comment="" />
+      <created>1596980896749</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1596980896749</updated>
+      <workItem from="1596980914621" duration="1000" />
+    </task>
+    <servers />
+  </component>
+  <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
+  <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
+  <component name="VcsManagerConfiguration">
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+</project>
