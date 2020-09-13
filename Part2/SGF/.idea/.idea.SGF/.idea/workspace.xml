@@ -6,16 +6,16 @@
       <change beforePath="$PROJECT_DIR$/../SCFUnity/GlobalData/Properties/AssemblyInfo.cs" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../SCFUnity/ILRScript/Class1.cs" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../SCFUnity/ILRScript/Properties/AssemblyInfo.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Idel.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Idel.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Libs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Libs/GlobalData.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Libs/GlobalData.dll.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Libs/ILRScript.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Libs/ILRScript.dll.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/ManagedLib.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/ManagedLib.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/ILR.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/ILR.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SGFDll/Libs/PublishLibrary.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SCFUnity/Libs/GlobalData.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SCFUnity/Libs/ILRScript.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.SGF/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SGF/.idea/indexLayout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.SGF/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SGF/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.SGF/riderModule.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SGF/riderModule.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NewBehaviourScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NewBehaviourScript.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NewBehaviourScript.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NewBehaviourScript.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SGFDll/Libs/SGFCore.dll" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../SGFDll/Libs/SGFDebuger.dll" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../SGFDll/Libs/SGFUnity.dll" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../SGFDll/SGFCore/Class1.cs" beforeDir="false" />
@@ -24,6 +24,11 @@
       <change beforePath="$PROJECT_DIR$/../SGFDll/SGFDebuger/Properties/AssemblyInfo.cs" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../SGFDll/SGFUnity/Class1.cs" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../SGFDll/SGFUnity/Properties/AssemblyInfo.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/Apps/ServerLite.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/Apps/ServerLite.exe.config" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/ServerLite/App.config" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/ServerLite/Program.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/ServerLite/Properties/AssemblyInfo.cs" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,15 +58,22 @@
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
       <option name="pid" />
+      <option name="selectedOptions">
+        <set />
+      </option>
       <method v="2" />
     </configuration>
     <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
       <option name="pid" />
+      <option name="selectedOptions">
+        <set />
+      </option>
       <method v="2" />
     </configuration>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -73,6 +85,7 @@
       <option name="presentableId" value="Default" />
       <updated>1596980896749</updated>
       <workItem from="1596980914621" duration="1000" />
+      <workItem from="1599970954249" duration="11000" />
     </task>
     <servers />
   </component>

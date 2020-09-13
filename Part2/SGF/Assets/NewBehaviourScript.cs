@@ -1,19 +1,4 @@
-﻿/** 
-----------------------------------
- *Copyright(C) 2019 by #Company#
- *All rights reserved.
- *FileName:     NewBehaviourScript
- *Author:       #AuthorName#
- *Version:      #Version#
- *AuthorEmail:  #AuthorEmail#
- *UnityVersion：#UnityVersion#
- *CreateTime:   #CreateTime#
- *Description:  #Description# 
- *History:
- ----------------------------------
-*/
-
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
