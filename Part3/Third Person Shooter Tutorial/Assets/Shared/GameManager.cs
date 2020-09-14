@@ -1,7 +1,9 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class GameManager
 {
+    public event Action<Player> OnLocalPlayerJoined;
     private GameObject gameObject;
     private static GameManager m_Instance;
 
@@ -30,5 +32,18 @@ public class GameManager
                 m_InputController = gameObject.GetComponent<InputController>();
             return m_InputController;
         }
+    }
+
+    private Player m_LocalPlayer;
+
+    public Player LocalPlayer
+    {
+        set
+        {
+            m_LocalPlayer = value;
+            if (OnLocalPlayerJoined != null)
+                OnLocalPlayerJoined(m_LocalPlayer);
+        }
+        get { return m_LocalPlayer; }
     }
 }
