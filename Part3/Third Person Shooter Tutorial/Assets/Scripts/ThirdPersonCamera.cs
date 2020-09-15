@@ -1,6 +1,4 @@
-﻿using System;
-using Extend;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class ThirdPersonCamera : MonoBehaviour
 {
