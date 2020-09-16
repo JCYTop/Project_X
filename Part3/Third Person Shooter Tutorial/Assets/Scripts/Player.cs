@@ -30,6 +30,18 @@ public class Player : MonoBehaviour
         }
     }
 
+    private Crosshair m_Crosshair;
+
+    private Crosshair Crosshair
+    {
+        get
+        {
+            if (m_Crosshair == null)
+                m_Crosshair = GetComponentInChildren<Crosshair>();
+            return m_Crosshair;
+        }
+    }
+
     private InputController playerInput;
     private Vector2 mouseInput;
 
@@ -44,6 +56,8 @@ public class Player : MonoBehaviour
         var direction = new Vector2(playerInput.Vertical * speed, playerInput.Horizontal * speed);
         MoveController.Move(direction);
         mouseInput.x = Mathf.Lerp(mouseInput.x, playerInput.MouseInput.x, 1f / MouseControl.Damping.x);
+        mouseInput.y = Mathf.Lerp(mouseInput.y, playerInput.MouseInput.y, 1f / MouseControl.Damping.y);
         transform.Rotate(Vector3.up * mouseInput.x * MouseControl.Sensitivity.x);
+        Crosshair.LookHeight(mouseInput.y * MouseControl.Sensitivity.y);
     }
 }

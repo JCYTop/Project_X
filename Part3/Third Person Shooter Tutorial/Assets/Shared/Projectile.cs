@@ -19,6 +19,9 @@ public class Projectile : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log($"Hit! {other.name}");
+        var destructable = other.transform.GetComponent<Destructable>();
+        if (destructable == null)
+            return;
+        destructable.TakeDamage(damage);
     }
 }
