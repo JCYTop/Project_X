@@ -2,10 +2,17 @@
 
 public class Health : Destructable
 {
+    [SerializeField] private float inSeconds;
+
     public override void Die()
     {
         base.Die();
-        Debug.Log("Die");
+        GameManager.Instance.Respawner.Despawn(gameObject, inSeconds);
+    }
+
+    private void OnEnable()
+    {
+        Reset();
     }
 
     public override void TakeDamage(float amount)

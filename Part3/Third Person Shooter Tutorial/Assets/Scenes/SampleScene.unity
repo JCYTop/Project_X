@@ -234,6 +234,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitPoints: 5
+  inSeconds: 5
 --- !u!65 &175164623
 BoxCollider:
   m_ObjectHideFlags: 0
