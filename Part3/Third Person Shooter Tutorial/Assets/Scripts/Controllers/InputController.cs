@@ -6,6 +6,7 @@ public class InputController : MonoBehaviour
     public float Horizontal;
     public Vector2 MouseInput;
     public bool Fire1;
+    public bool Reload;
 
     private void Update()
     {
@@ -13,5 +14,6 @@ public class InputController : MonoBehaviour
         Horizontal = Input.GetAxis("Horizontal");
         MouseInput = new Vector2(Input.GetAxisRaw("Mouse X"), Input.GetAxisRaw("Mouse Y"));
         Fire1 = Input.GetButton("Fire1");
+        Reload = Input.GetKey(KeyCode.R);
     }
 }

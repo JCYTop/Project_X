@@ -9,7 +9,7 @@ namespace Combat
         [SerializeField] private int clipSize;
 
         private int ammo;
-        private int shotsFiredInClip;
+        public int shotsFiredInClip;
         private bool isReloading;
 
         public int RoundsRemainingInClip
@@ -24,11 +24,13 @@ namespace Combat
             if (isReloading)
                 return;
             isReloading = true;
-            // GameManager.Instance.Time
+            Debug.Log("Reload Start");
+            GameManager.Instance.Timer.Add(ExecuteReload, reloadTime);
         }
 
         private void ExecuteReload()
         {
+            Debug.Log("Reload");
             isReloading = false;
             ammo -= shotsFiredInClip;
             shotsFiredInClip = 0;
@@ -37,6 +39,11 @@ namespace Combat
                 ammo = 0;
                 shotsFiredInClip += -ammo;
             }
+        }
+
+        public void TakeFromClip(int amout)
+        {
+            shotsFiredInClip += amout;
         }
     }
 }
