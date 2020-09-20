@@ -8,8 +8,9 @@ namespace Shared
     {
         [SerializeField] private float rateOfFire;
         [SerializeField] private Transform projectile;
-        [HideInInspector] public Transform muzzle;
+        [SerializeField] public Transform hand;
         private float nextFireAllowed;
+        private Transform muzzle;
         public bool canFire;
         private WeaponReloader reloader;
 
@@ -17,6 +18,7 @@ namespace Shared
         {
             muzzle = transform.FindInChild("Muzzle");
             reloader = GetComponent<WeaponReloader>();
+            transform.SetParent(hand);
         }
 
         public void Reload()

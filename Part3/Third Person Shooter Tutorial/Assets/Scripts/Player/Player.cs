@@ -9,9 +9,13 @@ public class Player : MonoBehaviour
     {
         public Vector2 Damping;
         public Vector2 Sensitivity;
+        public bool LockMouse;
     }
 
-    [SerializeField] private float speed;
+    [SerializeField] private float runSpeed;
+    [SerializeField] private float walkSpeed;
+    [SerializeField] private float crouchSpeed;
+    [SerializeField] private float sprintSpeed;
 
     [SerializeField] private MouseInput MouseControl;
 
@@ -49,12 +53,34 @@ public class Player : MonoBehaviour
     {
         playerInput = GameManager.Instance.InputController;
         GameManager.Instance.LocalPlayer = this;
+        if (MouseControl.LockMouse)
+        {
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
+        }
     }
 
     private void Update()
     {
-        var direction = new Vector2(playerInput.Vertical * speed, playerInput.Horizontal * speed);
+        Move();
+        LookAround();
+    }
+
+    private void Move()
+    {
+        var moveSpeed = runSpeed;
+        if (playerInput.IsWalking)
+            moveSpeed = walkSpeed;
+        if (playerInput.IsSprinting)
+            moveSpeed = sprintSpeed;
+        if (playerInput.IsCrouched)
+            moveSpeed = crouchSpeed;
+        var direction = new Vector2(playerInput.Vertical * moveSpeed, playerInput.Horizontal * moveSpeed);
         MoveController.Move(direction);
+    }
+
+    private void LookAround()
+    {
         mouseInput.x = Mathf.Lerp(mouseInput.x, playerInput.MouseInput.x, 1f / MouseControl.Damping.x);
         mouseInput.y = Mathf.Lerp(mouseInput.y, playerInput.MouseInput.y, 1f / MouseControl.Damping.y);
         transform.Rotate(Vector3.up * mouseInput.x * MouseControl.Sensitivity.x);
