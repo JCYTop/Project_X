@@ -802,7 +802,6 @@ SkinnedMeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -1557,7 +1556,6 @@ SkinnedMeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -1814,8 +1812,9 @@ GameObject:
   m_Component:
   - component: {fileID: 6642404128361149466}
   - component: {fileID: 778739590510947936}
+  - component: {fileID: 112014069}
   m_Layer: 0
-  m_Name: swat
+  m_Name: Swat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1850,12 +1849,39 @@ Animator:
   m_Controller: {fileID: 9100000, guid: ba806c48cb726324395b78a2c69e7c0f, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
-  m_ApplyRootMotion: 1
+  m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &112014069
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6297545138465779360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6b901707cfa3c04aa9b16a84566f2b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  useIK: 1
+  leftHandIK: 0
+  rightHandIK: 0
+  leftHandPos: {x: 0, y: 0, z: 0}
+  rightHandPos: {x: 0, y: 0, z: 0}
+  leftHandOffset: {x: 0.05, y: 0.08, z: 0.15}
+  rightHandOffset: {x: -0.05, y: 0.08, z: 0.15}
+  leftHandRot: {x: 0, y: 0, z: 0, w: 0}
+  rightHandRot: {x: 0, y: 0, z: 0, w: 0}
+  leftFootIK: 0
+  rightFootIK: 0
+  leftFootPos: {x: 0, y: 0, z: 0}
+  rightFootPos: {x: 0, y: 0, z: 0}
+  leftFootOffset: {x: 0, y: 0, z: 0.1}
+  rightFootOffset: {x: 0, y: 0, z: 0.1}
 --- !u!1 &6368267340104963339
 GameObject:
   m_ObjectHideFlags: 0
