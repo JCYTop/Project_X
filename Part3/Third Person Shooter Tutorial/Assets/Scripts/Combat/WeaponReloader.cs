@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace Combat
 {
@@ -7,10 +8,10 @@ namespace Combat
         [SerializeField] private int maxAmmo;
         [SerializeField] private float reloadTime;
         [SerializeField] private int clipSize;
-
-        private int ammo;
+        [SerializeField] private Container Inventory;
         public int shotsFiredInClip;
         private bool isReloading;
+        private Guid containerItemID;
 
         public int RoundsRemainingInClip
         {
@@ -19,26 +20,23 @@ namespace Combat
 
         public bool IsReloading => isReloading;
 
+        private void Awake()
+        {
+            containerItemID = Inventory.Add(this.name, maxAmmo);
+        }
+
         public void Reload()
         {
             if (isReloading)
                 return;
             isReloading = true;
-            Debug.Log("Reload Start");
-            GameManager.Instance.Timer.Add(ExecuteReload, reloadTime);
+            GameManager.Instance.Timer.Add(() => { ExecuteReload(Inventory.TakeFromContainer(containerItemID, clipSize - RoundsRemainingInClip)); }, reloadTime);
         }
 
-        private void ExecuteReload()
+        private void ExecuteReload(int amount)
         {
-            Debug.Log("Reload");
             isReloading = false;
-            ammo -= shotsFiredInClip;
-            shotsFiredInClip = 0;
-            if (ammo < 0)
-            {
-                ammo = 0;
-                shotsFiredInClip += -ammo;
-            }
+            shotsFiredInClip -= amount;
         }
 
         public void TakeFromClip(int amout)
