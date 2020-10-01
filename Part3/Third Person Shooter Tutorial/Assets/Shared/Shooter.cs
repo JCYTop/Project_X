@@ -1,4 +1,5 @@
-﻿using Combat;
+﻿using System;
+using Combat;
 using Extend;
 using UnityEngine;
 
@@ -18,7 +19,15 @@ namespace Shared
         {
             muzzle = transform.FindInChild("Muzzle");
             reloader = GetComponent<WeaponReloader>();
+        }
+
+        public void Equip()
+        {
             transform.SetParent(hand);
+        }
+
+        private void OnDisable()
+        {
         }
 
         public void Reload()
