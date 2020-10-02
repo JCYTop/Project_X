@@ -18,10 +18,7 @@ public class Container : MonoBehaviour
             ID = Guid.NewGuid();
         }
 
-        public int Remaining
-        {
-            get { return Maximum - amountToken; }
-        }
+        public int Remaining { get { return Maximum - amountToken; } }
 
         public int Get(int value)
         {
@@ -37,7 +34,14 @@ public class Container : MonoBehaviour
         }
     }
 
-    public List<ContainerItem> items= new List<ContainerItem>();
+    public List<ContainerItem> items = new List<ContainerItem>();
+    public event Action OnContainerReady;
+
+    private void Awake()
+    {
+        if (OnContainerReady != null)
+            OnContainerReady();
+    }
 
     public Guid Add(string name, int maximum)
     {

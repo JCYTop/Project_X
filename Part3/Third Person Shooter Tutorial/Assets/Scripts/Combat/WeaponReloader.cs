@@ -8,21 +8,18 @@ namespace Combat
         [SerializeField] private int maxAmmo;
         [SerializeField] private float reloadTime;
         [SerializeField] private int clipSize;
-        [SerializeField] private Container Inventory;
+        [SerializeField] private Container inventory;
         public int shotsFiredInClip;
         private bool isReloading;
         private Guid containerItemID;
 
-        public int RoundsRemainingInClip
-        {
-            get { return clipSize - shotsFiredInClip; }
-        }
+        public int RoundsRemainingInClip { get { return clipSize - shotsFiredInClip; } }
 
         public bool IsReloading => isReloading;
 
         private void Awake()
         {
-            containerItemID = Inventory.Add(this.name, maxAmmo);
+            inventory.OnContainerReady += () => { containerItemID = inventory.Add(this.name, maxAmmo); };
         }
 
         public void Reload()
@@ -30,7 +27,7 @@ namespace Combat
             if (isReloading)
                 return;
             isReloading = true;
-            GameManager.Instance.Timer.Add(() => { ExecuteReload(Inventory.TakeFromContainer(containerItemID, clipSize - RoundsRemainingInClip)); }, reloadTime);
+            GameManager.Instance.Timer.Add(() => { ExecuteReload(inventory.TakeFromContainer(containerItemID, clipSize - RoundsRemainingInClip)); }, reloadTime);
         }
 
         private void ExecuteReload(int amount)
