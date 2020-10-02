@@ -11,9 +11,10 @@ public class AudioController : MonoBehaviour
     private void Start()
     {
         source = GetComponent<AudioSource>();
+        canPlay = true;
     }
 
-    private void Play()
+    public void Play()
     {
         if (!canPlay)
             return;
