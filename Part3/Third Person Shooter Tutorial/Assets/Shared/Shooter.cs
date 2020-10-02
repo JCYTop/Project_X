@@ -24,6 +24,8 @@ namespace Shared
         public void Equip()
         {
             transform.SetParent(hand);
+            transform.localPosition = Vector3.zero;
+            transform.localRotation = Quaternion.identity;
         }
 
         private void OnDisable()
