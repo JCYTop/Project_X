@@ -10,6 +10,8 @@ namespace Shared
         [SerializeField] private float rateOfFire;
         [SerializeField] private Transform projectile;
         [SerializeField] public Transform hand;
+        [SerializeField] private AudioController audioReload;
+        [SerializeField] private AudioController audioFire;
         private float nextFireAllowed;
         private Transform muzzle;
         public bool canFire;
@@ -37,6 +39,7 @@ namespace Shared
             if (reloader == null)
                 return;
             reloader.Reload();
+            audioReload.Play();
         }
 
         public virtual void Fire()
@@ -55,6 +58,7 @@ namespace Shared
 
             nextFireAllowed = Time.time + rateOfFire;
             Instantiate(projectile, muzzle.position, muzzle.rotation);
+            audioFire.Play();
             canFire = true;
         }
     }
