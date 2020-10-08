@@ -12,8 +12,12 @@ namespace Combat
         public int shotsFiredInClip;
         private bool isReloading;
         private Guid containerItemID;
+        public event Action OnAmmoChanged;
 
-        public int RoundsRemainingInClip { get { return clipSize - shotsFiredInClip; } }
+        public int RoundsRemainingInClip
+        {
+            get { return clipSize - shotsFiredInClip; }
+        }
 
         public bool IsReloading => isReloading;
 
@@ -39,6 +43,8 @@ namespace Combat
         public void TakeFromClip(int amout)
         {
             shotsFiredInClip += amout;
+            if (OnAmmoChanged != null)
+                OnAmmoChanged();
         }
     }
 }

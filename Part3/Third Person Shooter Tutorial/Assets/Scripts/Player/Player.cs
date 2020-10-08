@@ -18,9 +18,10 @@ public class Player : MonoBehaviour
     [SerializeField] private float sprintSpeed;
     [SerializeField] private MouseInput MouseControl;
     [SerializeField] private AudioController footSteps;
-    [SerializeField] private float minimumMoveTreshold; 
+    [SerializeField] private float minimumMoveTreshold;
     private Vector3 previousPosition;
     private MoveController m_MoveController;
+    public PlayerShoot PlayerShoot { get; }
 
     public MoveController MoveController
     {

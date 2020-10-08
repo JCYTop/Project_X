@@ -22,6 +22,8 @@ public class ThirdPersonCamera : MonoBehaviour
 
     private void Update()
     {
+        if (locaPlayer == null)
+            return;
         var targetPosition = cameraLookTarget.position +
                              locaPlayer.transform.forward * cameraOffset.z +
                              locaPlayer.transform.up * cameraOffset.y +

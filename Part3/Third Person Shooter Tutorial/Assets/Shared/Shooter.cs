@@ -16,6 +16,7 @@ namespace Shared
         private Transform muzzle;
         public bool canFire;
         private WeaponReloader reloader;
+        public WeaponReloader Reloader => reloader;
 
         private void Awake()
         {
