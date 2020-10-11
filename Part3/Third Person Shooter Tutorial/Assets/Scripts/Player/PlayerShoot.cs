@@ -1,4 +1,5 @@
-﻿using Extend;
+﻿using System;
+using Extend;
 using Shared;
 using UnityEngine;
 
@@ -11,8 +12,9 @@ public class PlayerShoot : MonoBehaviour
     public Shooter ActiveWeapon => activeWeapon;
     private bool canFire;
     private Transform weaponHolster;
+    public event Action<Shooter> OnWeaponSwitch;
 
-    private void Awake()
+    private void Start()
     {
         canFire = true;
         weaponHolster = transform.FindInChild("Weapons");
@@ -49,6 +51,8 @@ public class PlayerShoot : MonoBehaviour
         activeWeapon = weapons[index];
         activeWeapon.Equip();
         weapons[index].gameObject.SetActive(true);
+        if (OnWeaponSwitch != null)
+            OnWeaponSwitch(activeWeapon);
     }
 
     private void Update()

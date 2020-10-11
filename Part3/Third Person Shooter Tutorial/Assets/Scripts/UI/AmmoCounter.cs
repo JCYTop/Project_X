@@ -1,10 +1,13 @@
-﻿using UnityEngine;
+﻿using Combat;
+using Shared;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class AmmoCounter : MonoBehaviour
 {
     [SerializeField] private Text text;
     private PlayerShoot playerShoot;
+    private WeaponReloader reloader;
 
     private void Awake()
     {
@@ -14,11 +17,20 @@ public class AmmoCounter : MonoBehaviour
     private void HandleOnLocalPlayerJoined(Player player)
     {
         playerShoot = player.PlayerShoot;
-        playerShoot.ActiveWeapon.Reloader.OnAmmoChanged += HandleOnAmmoChange;
+        playerShoot.OnWeaponSwitch += HandleOnWeaponSwitch;
+    }
+
+    private void HandleOnWeaponSwitch(Shooter activeWeapon)
+    {
+        reloader = activeWeapon.Reloader;
+        reloader.OnAmmoChanged += HandleOnAmmoChange;
+        HandleOnAmmoChange();
     }
 
     private void HandleOnAmmoChange()
     {
-        text.text = playerShoot.ActiveWeapon.Reloader.RoundsRemainingInClip
+        var amountInventory = reloader.RoundsRemainingInInventory;
+        var amountInClip = reloader.RoundsRemainingInClip;
+        text.text = $"{amountInClip} / {amountInventory}";
     }
 }

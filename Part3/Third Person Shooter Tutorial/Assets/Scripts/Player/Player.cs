@@ -21,7 +21,20 @@ public class Player : MonoBehaviour
     [SerializeField] private float minimumMoveTreshold;
     private Vector3 previousPosition;
     private MoveController m_MoveController;
-    public PlayerShoot PlayerShoot { get; }
+    private PlayerShoot playerShoot;
+
+    public PlayerShoot PlayerShoot
+    {
+        get
+        {
+            if (playerShoot == null)
+            {
+                playerShoot = GetComponent<PlayerShoot>();
+            }
+
+            return playerShoot;
+        }
+    }
 
     public MoveController MoveController
     {

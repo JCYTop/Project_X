@@ -43,7 +43,7 @@ RenderSettings:
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 11
+  serializedVersion: 12
   m_GIWorkflowMode: 1
   m_GISettings:
     serializedVersion: 2
@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -118,6 +118,8 @@ NavMeshSettings:
     manualTileSize: 0
     tileSize: 256
     accuratePlacement: 0
+    maxJobWorkers: 0
+    preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
@@ -297,6 +299,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -321,6 +324,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &175164625
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -387,7 +391,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c86e20225937a494fb4565c76288581b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clips: []
+  clips:
+  - {fileID: 8300000, guid: f5ef777f581aaeb40a87e3ef35e1e404, type: 3}
   delayBetweenClips: 0
 --- !u!82 &255494094
 AudioSource:
@@ -550,8 +555,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9848e35a4f7490e9187be8bbf1eadc3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxAmmo: 20
-  reloadTime: 2
+  maxAmmo: 120
+  reloadTime: 1
   clipSize: 20
   inventory: {fileID: 913739965}
   shotsFiredInClip: 0
@@ -614,6 +619,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1243,6 +1249,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -1267,6 +1274,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &1041558198
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -1506,7 +1514,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c86e20225937a494fb4565c76288581b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clips: []
+  clips:
+  - {fileID: 8300000, guid: 1a9cefa9f4429d94284671f0468216f9, type: 3}
   delayBetweenClips: 0
 --- !u!82 &1318485387
 AudioSource:
@@ -2025,6 +2034,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -2379,7 +2389,7 @@ GameObject:
   - component: {fileID: 2111379184}
   - component: {fileID: 2111379183}
   m_Layer: 0
-  m_Name: Shotgun
+  m_Name: Shotguns
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2415,7 +2425,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxAmmo: 20
   reloadTime: 2
-  clipSize: 20
+  clipSize: 5
   inventory: {fileID: 913739965}
   shotsFiredInClip: 0
 --- !u!114 &2111379184
