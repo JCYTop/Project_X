@@ -54,7 +54,6 @@ public class Container : MonoBehaviour
             Maximum = maximum,
             name = name,
         });
-        Debug.Log(items.Last().ID);
         return items.Last().ID;
     }
 

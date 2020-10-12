@@ -19,7 +19,6 @@ public class PlayerShoot : MonoBehaviour
         canFire = true;
         weaponHolster = transform.FindInChild("Weapons");
         weapons = weaponHolster.GetComponentsInChildren<Shooter>();
-        Debug.Log(weapons.Length);
         if (weapons.Length > 0)
             Equip(0);
     }
