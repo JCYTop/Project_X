@@ -9,7 +9,7 @@ public class Container : MonoBehaviour
     public class ContainerItem
     {
         public Guid ID;
-        public string name;
+        public string Name;
         public int Maximum;
         public int amountToken;
 
@@ -35,6 +35,13 @@ public class Container : MonoBehaviour
             amountToken += value;
             return value;
         }
+
+        public void Set(int amount)
+        {
+            amountToken -= amount;
+            if (amountToken < 0)
+                amountToken = 0;
+        }
     }
 
     public List<ContainerItem> items = new List<ContainerItem>();
@@ -52,9 +59,17 @@ public class Container : MonoBehaviour
         {
             ID = Guid.NewGuid(),
             Maximum = maximum,
-            name = name,
+            Name = name,
         });
         return items.Last().ID;
+    }
+
+    public void Put(string name, int amount)
+    {
+        var containerItem = items.Where(x => x.Name == name).FirstOrDefault();
+        if (containerItem == null)
+            return;
+        containerItem.Set(amount);
     }
 
     public int TakeFromContainer(Guid id, int ammout)
@@ -76,6 +91,6 @@ public class Container : MonoBehaviour
     private ContainerItem GetContainerItem(Guid id)
     {
         var containerItem = items.Where(x => x.ID == id).FirstOrDefault();
-        return containerItem; 
+        return containerItem;
     }
 }
