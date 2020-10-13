@@ -15,7 +15,6 @@ namespace Pcikups
             var playerInventory = item.GetComponentInChildren<Container>();
             GameManager.Instance.Respawner.Despawn(gameObject, respawnTime);
             playerInventory.Put(weaponType.ToString(), amount);
-            
             item.GetComponent<Player>().PlayerShoot.ActiveWeapon.Reloader.HandleOnAmmoChanged();
         }
     }
