@@ -6,6 +6,7 @@ public class InputController : MonoBehaviour
     public float Horizontal;
     public Vector2 MouseInput;
     public bool Fire1;
+    public bool Fire2;
     public bool Reload;
     public bool IsWalking;
     public bool IsSprinting;
@@ -19,6 +20,7 @@ public class InputController : MonoBehaviour
         Horizontal = Input.GetAxis("Horizontal");
         MouseInput = new Vector2(Input.GetAxisRaw("Mouse X"), Input.GetAxisRaw("Mouse Y"));
         Fire1 = Input.GetButton("Fire1");
+        Fire2 = Input.GetButton("Fire2");
         Reload = Input.GetKey(KeyCode.R);
         IsWalking = Input.GetKey(KeyCode.LeftAlt);
         IsSprinting = Input.GetKey(KeyCode.LeftShift);

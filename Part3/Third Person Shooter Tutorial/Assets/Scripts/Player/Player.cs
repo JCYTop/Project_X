@@ -2,6 +2,7 @@
 using UnityEngine;
 
 [RequireComponent(typeof(MoveController))]
+[RequireComponent(typeof(PlayerState))]
 public class Player : MonoBehaviour
 {
     [Serializable]
@@ -50,15 +51,15 @@ public class Player : MonoBehaviour
         }
     }
 
-    private Crosshair m_Crosshair;
+    private PlayerState m_PlayerState;
 
-    private Crosshair Crosshair
+    public PlayerState PlayerState
     {
         get
         {
-            if (m_Crosshair == null)
-                m_Crosshair = GetComponentInChildren<Crosshair>();
-            return m_Crosshair;
+            if (m_PlayerState == null)
+                m_PlayerState = GetComponentInChildren<PlayerState>();
+            return m_PlayerState;
         }
     }
 
@@ -103,7 +104,7 @@ public class Player : MonoBehaviour
         mouseInput.x = Mathf.Lerp(mouseInput.x, playerInput.MouseInput.x, 1f / MouseControl.Damping.x);
         mouseInput.y = Mathf.Lerp(mouseInput.y, playerInput.MouseInput.y, 1f / MouseControl.Damping.y);
         transform.Rotate(Vector3.up * mouseInput.x * MouseControl.Sensitivity.x);
-        Crosshair.LookHeight(mouseInput.y * MouseControl.Sensitivity.y);
+        // Crosshair.LookHeight(mouseInput.y * MouseControl.Sensitivity.y);
         PlayerAim.SetRotation(mouseInput.y * MouseControl.Sensitivity.y);
     }
 }
