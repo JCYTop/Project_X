@@ -12,7 +12,7 @@ public class Crosshair : MonoBehaviour
         {
             var screenPosition = Camera.main.WorldToScreenPoint(transform.position);
             screenPosition.y = Screen.height - screenPosition.y;
-            GUI.DrawTexture(new Rect(screenPosition.x, screenPosition.y, size, size), image);
+            GUI.DrawTexture(new Rect(screenPosition.x - size / 2, screenPosition.y - size / 2, size, size), image);
         }
     }
 }

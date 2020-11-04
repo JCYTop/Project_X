@@ -2,7 +2,6 @@
 using UnityEngine;
 
 [RequireComponent(typeof(MoveController))]
-[RequireComponent(typeof(PlayerState))]
 public class Player : MonoBehaviour
 {
     [Serializable]
