@@ -23,7 +23,7 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="shader.h">
+    <ClInclude Include="shader_s.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
