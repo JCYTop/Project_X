@@ -72,8 +72,8 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>E:\PersonalPro\Project_X\Part6\Libraries\Include;$(IncludePath)</IncludePath>
-    <LibraryPath>E:\PersonalPro\Project_X\Part6\Libraries\Libs;$(LibraryPath)</LibraryPath>
+    <IncludePath>..\Libraries\Include;$(IncludePath)</IncludePath>
+    <LibraryPath>..\Libraries\Libs;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
