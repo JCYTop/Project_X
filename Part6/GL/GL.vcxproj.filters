@@ -24,6 +24,9 @@
     <ClCompile Include="Image.cpp">
       <Filter>资源文件</Filter>
     </ClCompile>
+    <ClCompile Include="matrix.cpp">
+      <Filter>资源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="shader_s.h">

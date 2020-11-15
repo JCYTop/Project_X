@@ -147,6 +147,7 @@
     <ClCompile Include="glad.c" />
     <ClCompile Include="Image.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="matrix.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="shader_s.h" />
