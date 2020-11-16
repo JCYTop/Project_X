@@ -27,6 +27,12 @@
     <ClCompile Include="matrix.cpp">
       <Filter>资源文件</Filter>
     </ClCompile>
+    <ClCompile Include="3d_panel.cpp">
+      <Filter>资源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="3d_model.cpp">
+      <Filter>资源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="shader_s.h">
