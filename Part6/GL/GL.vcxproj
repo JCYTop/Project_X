@@ -146,6 +146,7 @@
   <ItemGroup>
     <ClCompile Include="3d_model.cpp" />
     <ClCompile Include="3d_panel.cpp" />
+    <ClCompile Include="camera.cpp" />
     <ClCompile Include="glad.c" />
     <ClCompile Include="Image.cpp" />
     <ClCompile Include="main.cpp" />

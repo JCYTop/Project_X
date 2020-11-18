@@ -222,6 +222,11 @@
 //
 //		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 //
+//		//Ðý×ª·¶Î§
+//		float radius = 10.0f;
+//		float camX = sin(glfwGetTime()) * radius;
+//		float camZ = cos(glfwGetTime()) * radius;
+//
 //		//×ø±ê×ª»»
 //		// create transformations
 //		glm::mat4 model = glm::mat4(1.0f); // make sure to initialize matrix to identity matrix first
@@ -229,7 +234,7 @@
 //		glm::mat4 projection = glm::mat4(1.0f);
 //		//model = glm::rotate(model, glm::radians(-55.0f), glm::vec3(1.0f, 0.0f, 0.0f));
 //		model = glm::rotate(model, (float)glfwGetTime() * glm::radians(50.0f), glm::vec3(0.5f, 1.0f, 0.0f));
-//		view = glm::translate(view, glm::vec3(0.0f, 0.0f, -3.0f));
+//		view = glm::lookAt(glm::vec3(camX, 0.0, camZ), glm::vec3(0.0, 0.0, 0.0), glm::vec3(0.0, 1.0, 0.0));
 //		projection = glm::perspective(glm::radians(45.0f), (float)SCR_WIDTH / (float)SCR_HEIGHT, 0.1f, 100.0f);
 //
 //		unsigned int modelLoc = glGetUniformLocation(ourShader.ID, "model");
@@ -248,7 +253,7 @@
 //			// calculate the model matrix for each object and pass it to shader before drawing
 //			glm::mat4 model = glm::mat4(1.0f);
 //			model = glm::translate(model, cubePositions[i]);
-//			float angle = 20.0f * i +3;
+//			float angle = 20.0f * i + 3;
 //			model = glm::rotate(model, glm::radians(angle) * (float)glfwGetTime(), glm::vec3(1.0f, 0.3f, 0.5f));
 //			ourShader.setMat4("model", model);
 //
